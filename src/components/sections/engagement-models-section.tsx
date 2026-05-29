@@ -49,7 +49,7 @@ export function EngagementModelsSection() {
               }`}
               style={{ borderColor: card.borderColor }}
             >
-              {card.badge ? (
+              {"badge" in card && card.badge ? (
                 <div className="absolute -top-4 right-5 inline-flex h-8 items-center justify-center rounded-[10px] bg-[#2299D6] px-3 py-1.5">
                   <span className="text-[14px] font-normal text-white">{card.badge}</span>
                 </div>

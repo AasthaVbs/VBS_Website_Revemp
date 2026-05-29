@@ -1,6 +1,5 @@
 import Image from "next/image";
 import {
-  ChevronDown,
   ChevronRight,
   Plus,
 } from "lucide-react";

@@ -151,12 +151,92 @@
     will-change: transform;
   }
 
-  .hero-col-up {
-    animation: hero-col-up 18s linear infinite;
+  .hero-media-column {
+    position: relative;
+    height: 635px;
+    overflow: hidden;
   }
 
+  .hero-media-column::before,
+  .hero-media-column::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 74px;
+    pointer-events: none;
+  }
+
+  .hero-media-column::before {
+    top: 0;
+    background: linear-gradient(180deg, #ffffff 30%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  .hero-media-column::after {
+    bottom: 0;
+    background: linear-gradient(
+      0deg,
+      #ffffff 0%,
+      #ffffff 30%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .hero-col-track {
+    will-change: transform;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .hero-col-set {
+    flex-shrink: 0;
+  }
+
+  /* Stats strip — Figma Vector 2: fade top/bottom, solid center */
+  .stats-strip-divider {
+    display: none;
+    width: 1px;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .stats-strip-divider {
+      display: block;
+    }
+  }
+
+  .stats-strip-divider svg {
+    display: block;
+    height: 100%;
+    width: 1px;
+    min-height: 72px;
+  }
+
+  .nav-menu-divider {
+    width: 1px;
+    align-self: stretch;
+    min-height: 100%;
+  }
+
+  .nav-menu-divider svg {
+    display: block;
+    height: 100%;
+    width: 1px;
+    min-height: 200px;
+  }
+
+  /* Left: scroll up (niche se upar) */
+  .hero-col-up {
+    animation-name: hero-col-up;
+  }
+
+  /* Right: scroll down (upar se niche) — prototype opposite direction */
   .hero-col-down {
-    animation: hero-col-down 18s linear infinite;
+    animation-name: hero-col-down;
   }
 
   .primary-cta .primary-cta-blobs {
@@ -407,20 +487,20 @@
 }
 
 @keyframes hero-col-up {
-  0% {
-    transform: translateY(0);
+  from {
+    transform: translate3d(0, 0, 0);
   }
-  100% {
-    transform: translateY(-310px);
+  to {
+    transform: translate3d(0, -50%, 0);
   }
 }
 
 @keyframes hero-col-down {
-  0% {
-    transform: translateY(-310px);
+  from {
+    transform: translate3d(0, -50%, 0);
   }
-  100% {
-    transform: translateY(0);
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
 

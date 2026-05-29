@@ -2,51 +2,72 @@ import Image from "next/image";
 import {
   ChevronDown,
   ChevronRight,
-  Mail,
-  MapPin,
-  Phone,
   Plus,
 } from "lucide-react";
 
-import {
-  certificationLogos,
-  faqs,
-  resources,
-} from "@/constants/home-content";
+import { faqs, resources } from "@/constants/home-content";
 import { PageContainer } from "@/components/layout/page-container";
 import { SiteHeader } from "@/components/layout/site-header";
+import { CertificationSection } from "@/components/sections/certification-section";
+import { ClientSuccessStoriesSection } from "@/components/sections/client-success-stories-section";
+import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-delivery-cta-section";
+import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
+import { SectionTag } from "@/components/sections/section-primitives";
+import { SiteFooter } from "@/components/sections/site-footer";
+import { StatsStripSection } from "@/components/sections/stats-strip-section";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 
-const footerSocialLinks = [
-  { label: "Twitter", href: "#", icon: "/icons/social/twitter.svg" },
-  { label: "Instagram", href: "#", icon: "/icons/social/instagram.svg" },
-  { label: "Facebook", href: "#", icon: "/icons/social/facebook.svg" },
-  { label: "LinkedIn", href: "#", icon: "/icons/social/linkedin.svg" },
-  { label: "YouTube", href: "#", icon: "/icons/social/youtube.svg" },
-] as const;
+const heroMediaLeft = [
+  "/images/figma/capability-gc.png",
+  "/images/figma/capability-mep.png",
+  "/images/figma/capability-survey.png",
+  "/images/figma/industry-1.png",
+  "/images/figma/industry-2.png",
+  "/images/figma/industry-3.png",
+];
 
-function SectionTag({ label }: { label: string }) {
+const heroMediaRight = [
+  "/images/figma/capability-gc.png",
+  "/images/figma/capability-mep.png",
+  "/images/figma/capability-survey.png",
+  "/images/figma/industry-4.png",
+  "/images/figma/industry-5.png",
+  "/images/figma/industry-6.png",
+];
+
+function HeroMediaSet({ images, columnId, setIndex }: { images: string[]; columnId: string; setIndex: number }) {
   return (
-    <span className="inline-flex rounded-lg border border-vbs-blue bg-vbs-blue/10 px-3 py-1 text-[13px] font-medium text-vbs-blue">
-      {label}
-    </span>
+    <div className="hero-col-set flex w-full flex-col items-start gap-[10px]">
+      {images.map((src, idx) => (
+        <div
+          key={`${columnId}-set${setIndex}-${src}-${idx}`}
+          className="relative h-[300px] w-full max-w-[290px] shrink-0 overflow-hidden rounded-[10px]"
+        >
+          <div className="absolute inset-0 rounded-[10px] border-[0.74px] border-[#FAFAFA]" />
+          <Image src={src} alt="" fill className="rounded-[10px] object-cover" />
+          <div className="absolute inset-0 rounded-[10px] border-[5.94px] border-[#FAFAFA]" />
+        </div>
+      ))}
+      <div className="h-[124px] w-full max-w-[290px] shrink-0 rounded-[10px] bg-white" aria-hidden />
+    </div>
   );
 }
 
-function SectionHeader({
-  tag,
-  title,
-  description,
+function HeroMediaTrack({
+  images,
+  direction,
+  columnId,
 }: {
-  tag: string;
-  title: string;
-  description: string;
+  images: string[];
+  direction: "up" | "down";
+  columnId: string;
 }) {
+  const trackClass = direction === "up" ? "hero-col-up" : "hero-col-down";
+
   return (
-    <div className="mx-auto flex max-w-3xl flex-col items-center gap-3 text-center">
-      <SectionTag label={tag} />
-      <h2 className="h2">{title}</h2>
-      <p>{description}</p>
+    <div className={`hero-col-track ${trackClass} flex w-full flex-col items-start`}>
+      <HeroMediaSet images={images} columnId={columnId} setIndex={0} />
+      <HeroMediaSet images={images} columnId={columnId} setIndex={1} />
     </div>
   );
 }
@@ -135,7 +156,7 @@ export function VbsHomePage() {
       <SiteHeader />
 
       <section className="relative overflow-hidden bg-white">
-        <PageContainer className="flex w-full flex-col items-start gap-10 py-16 lg:flex-row lg:items-center lg:justify-between lg:gap-[10px] md:py-[150px]">
+        <PageContainer className="flex w-full flex-col items-start gap-10 pb-12 pt-6 sm:pt-8 md:pb-20 md:pt-10 lg:flex-row lg:items-center lg:justify-between lg:gap-[10px] lg:pb-24 lg:pt-12">
           <div className="flex min-w-0 flex-1 flex-col items-start gap-[30px]">
             <div className="flex flex-col items-start gap-5 self-stretch">
               <div className="flex flex-col items-start gap-3">
@@ -184,72 +205,18 @@ export function VbsHomePage() {
           </div>
 
           <div className="flex w-full max-w-full shrink-0 items-center justify-end gap-[10px] lg:w-auto">
-            <div className="relative flex h-[635px] max-w-full items-start gap-[10px] overflow-hidden">
-              <div className="hero-col-up inline-flex w-[min(291.53px,42vw)] flex-col items-start gap-[10px] sm:w-[291.53px]">
-                {[
-                  "/images/figma/capability-gc.png",
-                  "/images/figma/capability-mep.png",
-                  "/images/figma/capability-survey.png",
-                  "/images/figma/industry-1.png",
-                  "/images/figma/industry-2.png",
-                  "/images/figma/industry-3.png",
-                ].map((src, idx) => (
-                  <div key={`${src}-${idx}`} className="relative h-[300px] w-full max-w-[290px] overflow-hidden rounded-[10px]">
-                    <div className="absolute inset-0 rounded-[10px] border-[0.74px] border-[#FAFAFA]" />
-                    <Image src={src} alt={`Hero column left ${idx + 1}`} fill className="rounded-[10px] object-cover" />
-                    <div className="absolute inset-0 rounded-[10px] border-[5.94px] border-[#FAFAFA]" />
-                  </div>
-                ))}
-              </div>
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-[74px] bg-[linear-gradient(180deg,white_30%,rgba(255,255,255,0)_100%)]" />
-              <div className="pointer-events-none absolute inset-x-0 top-[561px] h-[74px] bg-[linear-gradient(180deg,white_30%,rgba(255,255,255,0)_100%)]" />
+            <div className="hero-media-column w-[min(291.53px,42vw)] sm:w-[291.53px]">
+              <HeroMediaTrack images={heroMediaLeft} direction="up" columnId="left" />
             </div>
 
-            <div className="relative flex h-[635px] max-w-full items-end gap-[10px] overflow-hidden">
-              <div className="hero-col-down inline-flex w-[min(290px,42vw)] flex-col items-start gap-[10px] sm:w-[290px]">
-                {[
-                  "/images/figma/capability-gc.png",
-                  "/images/figma/capability-mep.png",
-                  "/images/figma/capability-survey.png",
-                  "/images/figma/industry-4.png",
-                  "/images/figma/industry-5.png",
-                  "/images/figma/industry-6.png",
-                ].map((src, idx) => (
-                  <div key={`${src}-${idx}`} className="relative h-[300px] w-full max-w-[290px] overflow-hidden rounded-[10px]">
-                    <div className="absolute inset-0 rounded-[10px] border-[0.74px] border-[#FAFAFA]" />
-                    <Image src={src} alt={`Hero column right ${idx + 1}`} fill className="rounded-[10px] object-cover" />
-                    <div className="absolute inset-0 rounded-[10px] border-[5.94px] border-[#FAFAFA]" />
-                  </div>
-                ))}
-                <div className="h-[124px] w-full max-w-[290px] rounded-[10px] bg-white" />
-              </div>
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-[74px] bg-[linear-gradient(180deg,white_30%,rgba(255,255,255,0)_100%)]" />
-              <div className="pointer-events-none absolute inset-x-0 top-[561px] h-[74px] bg-[linear-gradient(180deg,white_30%,rgba(255,255,255,0)_100%)]" />
+            <div className="hero-media-column w-[min(290px,42vw)] sm:w-[290px]">
+              <HeroMediaTrack images={heroMediaRight} direction="down" columnId="right" />
             </div>
           </div>
         </PageContainer>
       </section>
 
-      <section className="bg-white pb-[30px] pt-[60px]">
-        <PageContainer className="grid gap-5 md:grid-cols-4">
-          {[
-            { value: "11+", color: "text-vbs-red", label: "Years Embedded Inside U.S. AEC Delivery" },
-            { value: "2000+", color: "text-vbs-green", label: "Production professionals across delivery centers" },
-            { value: "5+", color: "text-vbs-blue", label: "Years Average Engagement Length" },
-            { value: "6+", color: "text-vbs-yellow", label: "Disciplines Covered" },
-          ].map((item, index) => (
-            <article
-              key={item.label}
-              className={`flex flex-col items-center justify-start gap-[7px] text-center md:pr-5 ${
-                index < 3 ? "md:border-r md:border-[#CBCCCD]" : ""
-              }`}
-            >
-              <p className={`text-[36px] font-medium leading-none ${item.color}`}>{item.value}</p>
-              <p className="max-w-[220px] text-[16px] font-normal text-[#808080]">{item.label}</p>
-            </article>
-          ))}
-        </PageContainer>
-      </section>
+      <StatsStripSection />
 
       <section className="bg-white py-[100px]">
         <PageContainer className="flex flex-col items-start gap-[60px]">
@@ -636,162 +603,9 @@ export function VbsHomePage() {
         </PageContainer>
       </section>
 
-      <section className="bg-white py-20 lg:py-[100px]">
-        <PageContainer className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
-          <div className="flex w-full shrink-0 flex-col items-start gap-5 lg:w-[528px]">
-            <div className="flex flex-col items-start gap-3">
-              <SectionTag label="Certification" />
-              <h2 className="text-[48px] capitalize leading-[1.15]">
-                <span className="block font-medium text-[#111111]">Certification/Awards</span>
-                <span className="block font-light text-vbs-red">Recognition</span>
-              </h2>
-            </div>
-            <p className="max-w-[478px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
-              We offer two flexible engagement models that work best for our clients. Each year, we
-              carefully select the
-            </p>
-          </div>
-
-          <div className="relative w-full min-w-0 flex-1 overflow-hidden lg:max-w-[912px]">
-            <div className="certification-marquee-track">
-              {[0, 1].map((setIndex) => (
-                <div
-                  key={setIndex}
-                  className="certification-marquee-set"
-                  aria-hidden={setIndex === 1}
-                >
-                  {certificationLogos.map((logo) => (
-                    <article
-                      key={`${logo.src}-${setIndex}`}
-                      className="certification-logo-card flex h-[200px] w-[200px] shrink-0 items-center justify-center rounded-[10px] bg-white p-4"
-                    >
-                      <Image
-                        src={logo.src}
-                        alt={logo.alt}
-                        width={160}
-                        height={160}
-                        className="h-full w-full object-contain"
-                        draggable={false}
-                      />
-                    </article>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </PageContainer>
-      </section>
-
-      <section className="relative overflow-hidden bg-[#FAFAFA] py-20">
-        <PageContainer className="space-y-[60px]">
-          <div className="flex flex-col items-start gap-5">
-            <div className="flex flex-col items-start gap-3">
-              <SectionTag label="Testimonials" />
-              <h2 className="text-[48px] font-medium capitalize leading-[1.15] text-[#111111]">
-                Client Success <span className="font-light text-vbs-red">Stories</span>
-              </h2>
-            </div>
-            <p className="max-w-[413px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
-              We offer two flexible engagement models that work best for our clients.
-            </p>
-          </div>
-
-          <div className="relative overflow-hidden">
-            <div className="testimonial-marquee-track">
-              {[
-                { name: "Marvin McKinney", role: "CEO at Oceanmtech", avatar: "/images/figma/testimonial-1.png", cover: "/images/figma/resource-1.png" },
-                { name: "Cody Fisher", role: "CEO at Oceanmtech", avatar: "/images/figma/testimonial-2.png", cover: "/images/figma/resource-2.png" },
-                { name: "Darlene Robertson", role: "CEO at Oceanmtech", avatar: "/images/figma/testimonial-1.png", cover: "/images/figma/resource-3.png" },
-                { name: "Savannah Nguyen", role: "CEO at Oceanmtech", avatar: "/images/figma/testimonial-2.png", cover: "/images/figma/resource-1.png" },
-                { name: "Marvin McKinney", role: "CEO at Oceanmtech", avatar: "/images/figma/testimonial-1.png", cover: "/images/figma/resource-1.png" },
-                { name: "Cody Fisher", role: "CEO at Oceanmtech", avatar: "/images/figma/testimonial-2.png", cover: "/images/figma/resource-2.png" },
-              ].map((item, index) => (
-                <article
-                  key={`${item.name}-${index}`}
-                  className="flex h-[340px] w-[732px] shrink-0 items-center gap-5 rounded-[18px] border border-[#CBCCCD] bg-white p-2.5"
-                >
-                  <div className="flex h-[320px] w-[382px] flex-col gap-[15px] p-2.5">
-                    <div className="flex items-start gap-[15px]">
-                      <div className="relative h-[60px] w-[60px] overflow-hidden rounded-[10px]">
-                        <Image src={item.avatar} alt={item.name} fill className="object-cover" />
-                      </div>
-                      <div className="flex flex-1 flex-col gap-1">
-                        <h3 className="text-[24px] font-normal text-[#111111]">{item.name}</h3>
-                        <p className="text-[13px] font-normal text-[#808080]">{item.role}</p>
-                      </div>
-                    </div>
-                    <p className="flex-1 text-[16px] font-normal leading-6 text-[#808080]">
-                      Whether you&apos;re launching a new product or entering a new segment, we
-                      design the GTM motion that lands and scales. Whether you&apos;re launching a
-                      new product or entering a new segment, we design the GTM motion that lands and
-                      scales.
-                    </p>
-                    <div className="flex items-center gap-1">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Image
-                          key={i}
-                          src="/images/solar_star-line-duotone.svg"
-                          alt=""
-                          width={14}
-                          height={14}
-                          aria-hidden
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="relative h-[300px] w-[300px] overflow-hidden rounded-[10px]">
-                    <Image src={item.cover} alt={`${item.name} testimonial`} fill className="object-cover" />
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex items-center gap-8">
-            <div className="h-[2px] flex-1 bg-[#B1B1B1]">
-              <div className="h-[2px] w-[320px] bg-[#111111]" />
-            </div>
-            <div className="flex items-center gap-4">
-              <button className="inline-flex h-12 w-12 items-center justify-center rounded-[10px] border border-[#CBCCCD] text-[#808080]">
-                <ChevronRight className="h-6 w-6 rotate-180" />
-              </button>
-              <button className="inline-flex h-12 w-12 items-center justify-center rounded-[10px] border border-[#CBCCCD] text-[#808080]">
-                <ChevronRight className="h-6 w-6" />
-              </button>
-            </div>
-          </div>
-        </PageContainer>
-      </section>
-
-      <section className="bg-white py-[100px]">
-        <PageContainer>
-          <div className="evaluate-delivery-cta-card">
-            <div className="evaluate-delivery-cta-mosaic" aria-hidden>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/figma/evaluate-cta-mosaic.svg"
-                alt=""
-                width={1440}
-                height={1467}
-              />
-            </div>
-            <div className="evaluate-delivery-cta-panel">
-              <div className="flex flex-1 flex-col items-start justify-center gap-5">
-                <h2 className="max-w-[530px] text-[48px] font-medium capitalize leading-[1.15] text-[#111111]">
-                  Evaluate Your <span className="font-light">Delivery Capacity</span>
-                </h2>
-                <p className="max-w-[478px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
-                  A structured conversation about scale, standards, and fit.
-                </p>
-              </div>
-              <PrimaryCtaButton fullWidth={false} className="shrink-0">
-                Contact Us
-                <ChevronRight className="h-2.5 w-2.5" strokeWidth={1.5} />
-              </PrimaryCtaButton>
-            </div>
-          </div>
-        </PageContainer>
-      </section>
+      <CertificationSection />
+      <ClientSuccessStoriesSection />
+      <EvaluateDeliveryCtaSection />
 
       <section className="bg-white py-20">
         <PageContainer className="grid items-start gap-10 md:grid-cols-2">
@@ -832,181 +646,8 @@ export function VbsHomePage() {
         </PageContainer>
       </section>
 
-      <section className="bg-[#FAFAFA] py-[100px]">
-        <PageContainer className="grid items-start gap-[30px] lg:grid-cols-2">
-          <div className="flex flex-col gap-[30px]">
-            <div className="flex flex-col items-start gap-5">
-              <div className="flex flex-col items-start gap-3">
-                <SectionTag label="Contact Us" />
-                <h2 className="max-w-[528px] text-[48px] font-medium capitalize leading-[1.15] text-[#111111]">
-                  Get in <span className="font-light text-vbs-red">Touch</span>
-                </h2>
-              </div>
-              <p className="max-w-[435px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
-                Let&apos;s discuss your requirements and see how our expertise can help on your next
-                project.
-              </p>
-            </div>
-
-            <form className="flex flex-col gap-4">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="flex flex-col gap-2">
-                  <span className="text-[16px] font-normal capitalize text-[#111111]">
-                    First Name<span className="text-vbs-red">*</span>
-                  </span>
-                  <input
-                    type="text"
-                    className="h-[50px] rounded-[10px] border border-[#CBCCCD] bg-white px-3 text-[16px] font-normal normal-case text-[#111111] placeholder:text-[#808080]"
-                    placeholder="Enter First Name"
-                  />
-                </label>
-                <label className="flex flex-col gap-2">
-                  <span className="text-[16px] font-normal capitalize text-[#111111]">
-                    Last Name<span className="text-vbs-red">*</span>
-                  </span>
-                  <input
-                    type="text"
-                    className="h-[50px] rounded-[10px] border border-[#CBCCCD] bg-white px-3 text-[16px] font-normal normal-case text-[#111111] placeholder:text-[#808080]"
-                    placeholder="Enter Last Name"
-                  />
-                </label>
-              </div>
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="flex flex-col gap-2">
-                  <span className="text-[16px] font-normal capitalize text-[#111111]">
-                    Number<span className="text-vbs-red">*</span>
-                  </span>
-                  <input
-                    type="tel"
-                    className="h-[50px] rounded-[10px] border border-[#CBCCCD] bg-white px-3 text-[16px] font-normal normal-case text-[#111111] placeholder:text-[#808080]"
-                    placeholder="Enter Number"
-                  />
-                </label>
-                <label className="flex flex-col gap-2">
-                  <span className="text-[16px] font-normal capitalize text-[#111111]">
-                    Email ID<span className="text-vbs-red">*</span>
-                  </span>
-                  <input
-                    type="email"
-                    className="h-[50px] rounded-[10px] border border-[#CBCCCD] bg-white px-3 text-[16px] font-normal normal-case text-[#111111] placeholder:text-[#808080]"
-                    placeholder="Enter Email ID"
-                  />
-                </label>
-              </div>
-              <label className="flex flex-col gap-2">
-                <span className="text-[16px] font-normal capitalize text-[#111111]">Message</span>
-                <textarea
-                  className="h-[100px] w-full resize-none rounded-[10px] border border-[#CBCCCD] bg-white px-3 py-2 text-[16px] font-normal normal-case text-[#111111] placeholder:text-[#808080]"
-                  placeholder="Write a Description"
-                />
-              </label>
-              <PrimaryCtaButton type="submit">Submit Now</PrimaryCtaButton>
-            </form>
-          </div>
-
-          <div className="relative min-h-[602px] overflow-hidden rounded-[20px] bg-[#111111] shadow-[0_4px_10px_rgba(0,0,0,0.15)]">
-            <Image
-              src="/images/figma/hero-profile.png"
-              alt="Contact support representative"
-              fill
-              className="object-cover object-[center_20%]"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,#111111_0%,#111111_35%,rgba(17,17,17,0.55)_55%,rgba(17,17,17,0.15)_100%)]" />
-            <div className="absolute bottom-10 left-10 z-10 flex max-w-[320px] flex-col gap-8 text-white">
-              <div className="inline-flex items-center gap-2.5">
-                <Phone className="h-5 w-5 shrink-0" />
-                <span className="text-[16px] font-normal">+1 (409) 800-6601</span>
-              </div>
-              <div className="inline-flex items-center gap-2.5">
-                <Mail className="h-5 w-5 shrink-0" />
-                <span className="text-[16px] font-normal">contact@virtualbuildingstudio.com</span>
-              </div>
-              <div className="inline-flex items-start gap-2.5">
-                <MapPin className="mt-0.5 h-5 w-5 shrink-0" />
-                <span className="text-[16px] font-normal lowercase">
-                  712 wilcrest drive 1097 houston, tx 77042 us
-                </span>
-              </div>
-            </div>
-          </div>
-        </PageContainer>
-      </section>
-
-      <footer className="relative overflow-hidden bg-[#111111] pt-[100px] text-[#CBCCCD]">
-        <PageContainer className="space-y-12">
-          <div className="grid gap-10 md:grid-cols-4">
-            <div className="space-y-6">
-              <Image src="/logos/logo.svg" alt="Virtual Building Studio" width={215} height={41} className="rounded bg-white p-2" />
-              <p className="max-w-[409px] text-[16px] text-[#CBCCCD]">
-                Always at the forefront, Virtual Building Studio leads the architecture industry with
-                its innovative solution.
-              </p>
-              <div className="flex items-center gap-4">
-                {footerSocialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="inline-flex h-[34px] w-[34px] items-center justify-center rounded-full border border-[#CBCCCD]/30 transition-colors hover:border-[#CBCCCD]"
-                  >
-                    <Image src={social.icon} alt="" width={18} height={18} aria-hidden />
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-[24px] font-normal capitalize text-[#CBCCCD]">Quick Links</h4>
-              <ul className="mt-5 space-y-4 text-[16px]">
-                {["Our Capabilities", "Engagement Model", "About us", "Leadership Team", "Careers", "Life at VBS"].map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-[24px] font-normal capitalize text-[#CBCCCD]">Resources</h4>
-              <ul className="mt-5 space-y-4 text-[16px]">
-                {["Case Studies", "Portfolio", "Testimonials", "Blog", "Webinar", "Whitepapers", "News"].map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <Image
-                src="/icons/circle-flags_us.svg"
-                alt="United States"
-                width={30}
-                height={30}
-                className="shrink-0"
-              />
-              <p className="text-[16px] text-[#CBCCCD]">712 Wilcrest Drive 1097 Houston, TX 77042 US</p>
-              <div className="inline-flex items-center gap-2.5 text-[16px]">
-                <Phone className="h-5 w-5 text-[#CBCCCD]" />
-                +1 (409) 800-6601
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start justify-between gap-5 border-t border-[#808080] py-[30px] text-[16px] md:flex-row md:items-center">
-            <p>©2026 Virtual Building Studio Inc.</p>
-            <div className="flex flex-wrap items-center gap-8">
-              <span>Privacy policy</span>
-              <span>Terms & Conditions</span>
-              <span>Cookie policy</span>
-            </div>
-          </div>
-        </PageContainer>
-
-        <div className="flex h-1 w-full items-center">
-          <span className="h-full flex-1 bg-vbs-red" />
-          <span className="h-full flex-1 bg-vbs-green" />
-          <span className="h-full flex-1 bg-vbs-blue" />
-          <span className="h-full flex-1 bg-vbs-yellow" />
-        </div>
-      </footer>
+      <GetInTouchSection />
+      <SiteFooter />
     </div>
   );
 }

@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 export function SiteNav() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isAbout = pathname === "/about";
 
   return (
     <nav className="hidden items-center gap-2.5 lg:flex">
@@ -42,7 +43,12 @@ export function SiteNav() {
 
         if ("hasDropdown" in item && item.hasDropdown === "about") {
           return (
-            <NavDropdownTrigger key={item.label} label={item.label} href={item.href}>
+            <NavDropdownTrigger
+              key={item.label}
+              label={item.label}
+              href={item.href}
+              active={isAbout}
+            >
               <AboutNavDropdown />
             </NavDropdownTrigger>
           );

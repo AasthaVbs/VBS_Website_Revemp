@@ -23,12 +23,12 @@ export const MAIN_NAV = [
   { label: "Our Capabilities", href: "#capabilities", hasDropdown: "capabilities" as const },
   { label: "Engagement Model", href: "#engagement" },
   { label: "Resources", href: "#resources", hasDropdown: "resources" as const },
-  { label: "About", href: "#about", hasDropdown: "about" as const },
+  { label: "About", href: "/about", hasDropdown: "about" as const },
   { label: "Contact Us", href: "#contact" },
 ] as const;
 
 export const ABOUT_DROPDOWN_LINKS: NavDropdownLink[] = [
-  { label: "About Us", href: "#about" },
+  { label: "About Us", href: "/about" },
   { label: "Leadership Team", href: "#leadership" },
   { label: "Careers", href: "#careers" },
   { label: "Life at VBS", href: "#life-at-vbs" },
@@ -58,7 +58,7 @@ export const CAPABILITY_CATEGORIES: CapabilityCategory[] = [
         { label: "Permit Drawings", href: "#" },
       ],
       [
-        { label: "2D to 3D Floor Plans", href: "#" },
+        { label: "2D To 3D Floor Plans", href: "#" },
         { label: "3D Visualization", href: "#" },
       ],
     ],

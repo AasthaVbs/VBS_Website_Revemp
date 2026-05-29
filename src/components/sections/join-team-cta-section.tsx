@@ -19,10 +19,10 @@ export function JoinTeamCtaSection() {
           </div>
           <div className="relative z-10 flex flex-col items-start justify-between gap-8 rounded-[10px] bg-white p-[50px] md:flex-row md:items-center">
             <div className="flex max-w-[640px] flex-col gap-5">
-              <h2 className="text-[48px] font-medium capitalize leading-[1.15] text-[#111111]">
-                Join <span className="font-light text-vbs-red">the Team</span>
+              <h2 className="text-section">
+                Join <span className="text-accent">the Team</span>
               </h2>
-              <p className="text-[16px] font-normal capitalize leading-6 text-[#808080]">
+              <p className="text-[16px] font-normal leading-6 text-[#808080]">
                 Join our team 150+ Architecture from the across the globe and contribute to
                 groundbreaking projects with top-tier architects and engineers.
               </p>

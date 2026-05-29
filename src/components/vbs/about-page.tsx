@@ -25,11 +25,11 @@ export function VbsAboutPage() {
           <div className="flex flex-col items-start gap-[30px]">
             <div className="flex flex-col items-start gap-5">
               <SectionTag label="About us" />
-              <h1 className="text-[48px] font-medium capitalize leading-[1.1] text-[#111111] md:text-[56px]">
+              <h1 className="text-section max-w-[726px]">
                 About{" "}
-                <span className="font-light text-vbs-red">Virtual Building Studio (VBS)</span>
+                <span className="text-accent">Virtual Building Studio (VBS)</span>
               </h1>
-              <p className="max-w-[637px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+              <p className="max-w-[637px] text-[16px] font-normal leading-6 text-[#808080]">
                 Since 2015, we&apos;ve been the trusted partner for Architecture and Engineering
                 firms, helping them rapidly scale their BIM teams and deliver award-winning
                 projects every time.

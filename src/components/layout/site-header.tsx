@@ -41,7 +41,7 @@ export function SiteHeader() {
           )}
           aria-hidden={scrolled}
         >
-          <PageContainer className="flex justify-end gap-8 py-2 text-[16px] text-[#111111]">
+          <PageContainer className="flex justify-end gap-8 py-2 text-[16px] font-normal leading-6 text-[#111111]">
             <span className="inline-flex items-center gap-2">
               <Mail className="h-4 w-4 shrink-0 text-vbs-red" />
               contact@virtualbuildingstudio.com

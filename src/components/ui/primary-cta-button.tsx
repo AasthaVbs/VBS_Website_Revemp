@@ -18,7 +18,7 @@ export function PrimaryCtaButton({
     <button
       type={type}
       className={cn(
-        "primary-cta relative inline-flex h-[52px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] border-[1.5px] border-[#D70416] bg-white/10 px-5 py-0 text-[16px] font-medium capitalize leading-none text-[#D70416] shadow-none backdrop-blur-[100px]",
+        "primary-cta relative inline-flex h-[52px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] border-[1.5px] border-[#D70416] bg-white/10 px-5 py-0 text-[16px] font-medium leading-none text-[#D70416] shadow-none backdrop-blur-[100px]",
         fullWidth ? "w-full" : "w-auto",
         className,
       )}

@@ -31,27 +31,72 @@ export const capabilities = [
   },
 ];
 
-export const engagementModels = [
+export const engagementModelCards = [
   {
-    title: "Project-Based Delivery",
+    icon: "⚡",
+    iconBg: "rgba(255, 240, 219, 0.5)",
+    iconBorder: "#FF9000",
+    audience: "Best for Small Firms",
+    title: "Project-Based Support",
     description:
-      "Fixed-scope and milestone-led execution for defined project requirements.",
-    cta: "Explore Project Model",
+      "Flexible BIM support for one-time projects and fast-moving delivery requirements.",
+    keyBenefits: [
+      "Plug-and-play execution",
+      "Immediate project kickoff",
+      "No long-term commitment",
+      "Flexible scope and duration",
+    ],
+    bestSuitedFor: ["Small architecture firms", "Pilot projects", "Short-term BIM needs"],
+    cta: "Start a Project",
+    borderColor: "#CBCCCD",
+    shadow: true,
+    ctaHighlighted: false,
   },
   {
-    title: "Dedicated BIM Team",
-    description:
-      "An extended remote team integrated into your internal standards and SOPs.",
-    cta: "Explore Team Model",
-    featured: true,
+    icon: "👥",
+    iconBg: "rgba(223, 239, 255, 0.5)",
+    iconBorder: "#294769",
+    audience: "Best for Growing Firms",
+    title: "Dedicated Resource Model",
+    description: "Dedicated BIM professionals working as an extension of your internal team.",
+    keyBenefits: [
+      "Fixed monthly cost",
+      "Dedicated resources",
+      "Scalable team structure",
+      "Consistent communication",
+    ],
+    bestSuitedFor: ["Mid-sized firms", "Ongoing project pipelines", "Long-term delivery support"],
+    cta: "Build your Team",
+    borderColor: "#CBCCCD",
+    shadow: false,
+    ctaHighlighted: false,
   },
   {
+    icon: "🌍",
+    iconBg: "rgba(211, 255, 211, 0.5)",
+    iconBorder: "#094004",
+    audience: "Best for Enterprise Firms",
     title: "Global Delivery Center",
     description:
-      "A scalable delivery function with governance, QA, and management support.",
+      "A fully managed offshore BIM delivery center exclusively aligned with your business.",
+    keyBenefits: [
+      "Exclusive delivery team",
+      "Enterprise scalability",
+      "Standardized workflows",
+      "Long-term operational efficiency",
+    ],
+    bestSuitedFor: [
+      "Large global firms",
+      "Multi-project delivery",
+      "Strategic outsourcing partnerships",
+    ],
     cta: "Explore GDC Model",
+    borderColor: "#2299D6",
+    shadow: false,
+    badge: "Most Demanding",
+    ctaHighlighted: true,
   },
-];
+] as const;
 
 export const resources = [
   {

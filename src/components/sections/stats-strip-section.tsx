@@ -43,8 +43,8 @@ export function StatsStripSection({
             <Fragment key={item.label}>
               {index > 0 ? <StatsStripDivider id={`stats-strip-divider-${index}`} /> : null}
               <article className="flex flex-1 flex-col items-center justify-start gap-[7px] text-center">
-                <p className={`text-[36px] font-medium leading-none ${item.color}`}>{item.value}</p>
-                <p className="max-w-[220px] text-[16px] font-normal text-[#808080]">{item.label}</p>
+                <p className={`text-stat ${item.color}`}>{item.value}</p>
+                <p className="text-body max-w-[220px] normal-case">{item.label}</p>
               </article>
             </Fragment>
           ))}

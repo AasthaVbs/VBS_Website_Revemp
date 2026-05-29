@@ -19,7 +19,7 @@ export function ClientSuccessStoriesSection({
           tag="Testimonials"
           title={
             <>
-              Client Success <span className="font-light text-vbs-red">Stories</span>
+              Client Success <span className="text-accent">Stories</span>
             </>
           }
           description={description}

@@ -9,6 +9,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        tag: ["13px", { lineHeight: "1.2" }],
+        body: ["16px", { lineHeight: "24px" }],
+        "card-title": ["24px", { lineHeight: "1.35" }],
+        stat: ["36px", { lineHeight: "1" }],
+        section: ["48px", { lineHeight: "1.15" }],
+        display: ["60px", { lineHeight: "1.1" }],
+      },
       colors: {
         border: "hsl(var(--border))",
         background: "hsl(var(--background))",
@@ -20,7 +31,7 @@ const config: Config = {
         "vbs-yellow": "#EEB211",
         "vbs-blue": "#08A0E9",
         "vbs-green": "#1DA100",
-        "vbs-red": "#D50F25",
+        "vbs-red": "#D70416",
         "vbs-soft": "#FEF3F3",
         "vbs-black": "#000000",
       },

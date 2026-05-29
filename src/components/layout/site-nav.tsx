@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { navLinkClass } from "@/components/layout/nav-link-styles";
 import { MAIN_NAV } from "@/constants/navigation";
 import {
   AboutNavDropdown,
@@ -10,7 +11,6 @@ import {
   NavDropdownTrigger,
   ResourcesNavDropdown,
 } from "@/components/layout/nav-dropdowns";
-import { cn } from "@/lib/utils";
 
 export function SiteNav() {
   const pathname = usePathname();
@@ -18,7 +18,7 @@ export function SiteNav() {
   const isAbout = pathname === "/about";
 
   return (
-    <nav className="hidden items-center gap-2.5 lg:flex">
+    <nav className="hidden items-center gap-[10px] lg:flex">
       {MAIN_NAV.map((item) => {
         if ("hasDropdown" in item && item.hasDropdown === "capabilities") {
           return (
@@ -57,16 +57,7 @@ export function SiteNav() {
         const isActiveHome = item.label === "Home" && isHome;
 
         return (
-          <Link
-            key={item.label}
-            href={item.href}
-            className={cn(
-              "inline-flex items-center self-stretch px-1.5 py-2 text-[16px] font-normal capitalize transition-colors",
-              isActiveHome
-                ? "border-b border-vbs-red text-vbs-red"
-                : "text-[#111111] hover:text-vbs-red",
-            )}
-          >
+          <Link key={item.label} href={item.href} className={navLinkClass(isActiveHome)}>
             {item.label}
           </Link>
         );

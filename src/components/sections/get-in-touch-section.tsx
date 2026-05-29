@@ -18,18 +18,18 @@ export function GetInTouchSection({
             tag="Contact Us"
             title={
               <>
-                Get in <span className="font-light text-vbs-red">Touch</span>
+                Get in <span className="text-accent">Touch</span>
               </>
             }
             description={description}
-            titleClassName="max-w-[528px] text-[48px] font-medium capitalize leading-[1.15] text-[#111111]"
+            titleClassName="text-section max-w-[528px]"
           />
 
           <form className="flex flex-col gap-4">
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="flex flex-col gap-2">
-                <span className="text-[16px] font-normal capitalize text-[#111111]">
-                  First Name<span className="text-vbs-red">*</span>
+                <span className="text-[16px] font-light text-[#111111]">
+                  First Name<span className="font-light text-[#D70416]">*</span>
                 </span>
                 <input
                   type="text"
@@ -38,8 +38,8 @@ export function GetInTouchSection({
                 />
               </label>
               <label className="flex flex-col gap-2">
-                <span className="text-[16px] font-normal capitalize text-[#111111]">
-                  Last Name<span className="text-vbs-red">*</span>
+                <span className="text-[16px] font-light text-[#111111]">
+                  Last Name<span className="font-light text-[#D70416]">*</span>
                 </span>
                 <input
                   type="text"
@@ -50,8 +50,8 @@ export function GetInTouchSection({
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="flex flex-col gap-2">
-                <span className="text-[16px] font-normal capitalize text-[#111111]">
-                  Number<span className="text-vbs-red">*</span>
+                <span className="text-[16px] font-light text-[#111111]">
+                  Number<span className="font-light text-[#D70416]">*</span>
                 </span>
                 <input
                   type="tel"
@@ -60,8 +60,8 @@ export function GetInTouchSection({
                 />
               </label>
               <label className="flex flex-col gap-2">
-                <span className="text-[16px] font-normal capitalize text-[#111111]">
-                  Email ID<span className="text-vbs-red">*</span>
+                <span className="text-[16px] font-light text-[#111111]">
+                  Email ID<span className="font-light text-[#D70416]">*</span>
                 </span>
                 <input
                   type="email"
@@ -71,7 +71,7 @@ export function GetInTouchSection({
               </label>
             </div>
             <label className="flex flex-col gap-2">
-              <span className="text-[16px] font-normal capitalize text-[#111111]">Message</span>
+              <span className="text-[16px] font-light text-[#111111]">Message</span>
               <textarea
                 className="h-[100px] w-full resize-none rounded-[10px] border border-[#CBCCCD] bg-white px-3 py-2 text-[16px] font-normal normal-case text-[#111111] placeholder:text-[#808080]"
                 placeholder="Write a Description"

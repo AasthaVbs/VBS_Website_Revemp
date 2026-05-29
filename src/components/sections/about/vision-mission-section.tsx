@@ -12,7 +12,7 @@ export function VisionMissionSection() {
           tag="Our Vision"
           title={
             <>
-              Company&apos;s <span className="font-light text-vbs-red">Vision & Mission</span>
+              Company&apos;s <span className="text-accent">Vision & Mission</span>
             </>
           }
         />

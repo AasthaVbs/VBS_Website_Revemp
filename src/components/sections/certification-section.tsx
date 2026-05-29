@@ -17,12 +17,11 @@ export function CertificationSection({
             tag="Certification"
             title={
               <>
-                <span className="block font-medium text-[#111111]">Certification/Awards</span>
-                <span className="block font-light text-vbs-red">Recognition</span>
+                Certification/<span className="text-accent">Awards Recognition</span>
               </>
             }
             description={description}
-            titleClassName="text-[48px] capitalize leading-[1.15] text-[#111111]"
+            titleClassName="text-section max-w-[528px]"
           />
         </div>
 

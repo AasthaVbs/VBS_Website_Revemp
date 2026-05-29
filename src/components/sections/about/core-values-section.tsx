@@ -11,7 +11,7 @@ export function CoreValuesSection() {
           title={
             <>
               Complete Coverage for{" "}
-              <span className="font-light text-vbs-red">MEP BIM Modeling Services</span>
+              <span className="text-accent">MEP BIM Modeling Services</span>
             </>
           }
           description="Comprehensive MEP Modeling Services Integrating HVAC, Electrical, Mechanical Piping, Plumbing, and Fire Protection Workflows"

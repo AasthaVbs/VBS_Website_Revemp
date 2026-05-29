@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 export function SectionTag({ label }: { label: string }) {
   return (
-    <span className="inline-flex rounded-lg border border-vbs-blue bg-vbs-blue/10 px-3 py-1 text-[13px] font-medium text-vbs-blue">
+    <span className="text-tag inline-flex rounded-[10px] border border-vbs-blue bg-vbs-blue/10 px-3 py-1.5 text-vbs-blue">
       {label}
     </span>
   );
@@ -36,7 +36,7 @@ export function SectionIntro({
   tag,
   title,
   description,
-  titleClassName = "text-[48px] font-medium capitalize leading-[1.15] text-[#111111]",
+  titleClassName = "text-section",
 }: {
   tag: string;
   title: ReactNode;
@@ -50,9 +50,7 @@ export function SectionIntro({
         <h2 className={titleClassName}>{title}</h2>
       </div>
       {description ? (
-        <p className="max-w-[536px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
-          {description}
-        </p>
+        <p className="max-w-[536px] text-body">{description}</p>
       ) : null}
     </div>
   );

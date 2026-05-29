@@ -10,10 +10,15 @@ import {
   RESOURCES_DROPDOWN_LINKS,
   type NavDropdownLink,
 } from "@/constants/navigation";
+import { navLinkClass } from "@/components/layout/nav-link-styles";
 import { cn } from "@/lib/utils";
 
 function NavChevron() {
-  return <ChevronDown className="h-5 w-5 shrink-0 stroke-[1.3]" aria-hidden />;
+  return (
+    <span className="relative inline-flex h-5 w-5 shrink-0 items-center justify-center overflow-hidden">
+      <ChevronDown className="h-[10px] w-[10px] stroke-[1.3] text-current" aria-hidden />
+    </span>
+  );
 }
 
 function NavMenuDivider({ id }: { id: string }) {
@@ -67,7 +72,7 @@ export function CapabilitiesMegaMenu() {
     <div className="flex items-stretch rounded-[10px] bg-white p-10 shadow-[0_2px_14px_rgba(0,0,0,0.15)]">
       <div className="w-[300px] shrink-0 pr-[30px]">
         <h3 className="text-[24px] leading-tight text-[#111111]">
-          Core <span className="font-light text-vbs-red">Offerings</span>
+          Core <span className="text-accent">Offerings</span>
         </h3>
         <p className="mt-2.5 text-[16px] font-normal leading-6 text-[#808080]">
           Scalable BIM And Engineering Solutions Helping AEC Teams Deliver Coordinated And
@@ -134,13 +139,7 @@ export function NavDropdownTrigger({
 }) {
   return (
     <div className="group/nav-item relative flex items-stretch self-stretch">
-      <Link
-        href={href}
-        className={cn(
-          "inline-flex items-center gap-1.5 px-1.5 py-2 text-[16px] font-normal capitalize transition-colors group-hover/nav-item:text-vbs-red",
-          active ? "border-b border-vbs-red text-vbs-red" : "text-[#111111]",
-        )}
-      >
+      <Link href={href} className={navLinkClass(active, true)}>
         {label}
         <NavChevron />
       </Link>

@@ -8,8 +8,10 @@ import {
 import { faqs, resources } from "@/constants/home-content";
 import { PageContainer } from "@/components/layout/page-container";
 import { SiteHeader } from "@/components/layout/site-header";
+import { AboutUsSection } from "@/components/sections/about-us-section";
 import { CertificationSection } from "@/components/sections/certification-section";
 import { ClientSuccessStoriesSection } from "@/components/sections/client-success-stories-section";
+import { EngagementModelsSection } from "@/components/sections/engagement-models-section";
 import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-delivery-cta-section";
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SectionTag } from "@/components/sections/section-primitives";
@@ -161,13 +163,14 @@ export function VbsHomePage() {
             <div className="flex flex-col items-start gap-5 self-stretch">
               <div className="flex flex-col items-start gap-3">
                 <div className="inline-flex items-center justify-center gap-[10px] rounded-[10px] border border-vbs-blue bg-vbs-blue/10 px-3 py-1.5">
-                  <span className="text-[13px] font-normal capitalize text-vbs-blue">Welcome to VBS</span>
+                  <span className="text-tag text-vbs-blue">Welcome to VBS</span>
                 </div>
-                <h1 className="max-w-[726px] text-[60px] font-medium capitalize leading-[1.1] text-[#111111]">
-                  Delivery Infrastructure for <span className="font-light text-vbs-red">AEC Firms</span>
+                <h1 className="text-display max-w-[726px]">
+                  Delivery Infrastructure for{" "}
+                  <span className="text-display-accent">AEC Firms</span>
                 </h1>
               </div>
-              <p className="max-w-[637px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+              <p className="text-body max-w-[637px]">
                 Global delivery teams for architects, engineers, and reality capture professionals.
                 Integrated into your standards. Sized to your portfolio. Governed end to end.
               </p>
@@ -223,11 +226,11 @@ export function VbsHomePage() {
           <div className="flex w-full flex-col items-start gap-5">
             <div className="flex flex-col items-start gap-3">
               <SectionTag label="Our Capabilities" />
-              <h2 className="max-w-[572px] text-[48px] font-medium capitalize leading-[1.15] text-[#111111]">
-                Built Around How You <span className="font-light text-vbs-red">Already Work</span>
+              <h2 className="max-w-[572px] text-section">
+                Built Around How You <span className="text-accent">Already Work</span>
               </h2>
             </div>
-            <p className="max-w-[729px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+            <p className="max-w-[729px] text-[16px] font-normal leading-6 text-[#808080]">
               Three buyers carry the delivery load in AEC. Our BIM modeling services adapt to each
               select the one that describes your firm and we&apos;ll show you exactly how we plug in.
             </p>
@@ -241,187 +244,22 @@ export function VbsHomePage() {
         </PageContainer>
       </section>
 
-      <section className="bg-white py-20">
-        <PageContainer className="grid items-start gap-10 lg:grid-cols-2">
-          <div className="relative mx-auto h-[534px] w-full max-w-[850px]">
-            <div className="absolute left-0 top-0 h-full w-[66%] overflow-hidden rounded-[10px]">
-              <Image src="/images/figma/hero-bg-1.png" alt="About workspace" fill className="object-cover object-center" />
-            </div>
-            <div className="absolute left-[53%] top-[104px] z-10 h-[326px] w-[34%] min-w-[200px] overflow-hidden rounded-[10px] border-[10px] border-white shadow-[0_4px_14px_rgba(0,0,0,0.14)]">
-              <Image src="/images/figma/industry-2.png" alt="About secondary visual" fill className="object-cover object-center" />
-            </div>
-          </div>
+      <AboutUsSection />
 
-          <div className="flex min-w-0 flex-col items-start gap-5 pt-1">
-            <div className="flex w-full flex-col items-start gap-3">
-              <SectionTag label="About Us" />
-              <h2 className="text-[56px] font-medium capitalize leading-[1.05] text-[#111111]">About Us</h2>
-            </div>
-
-            <div className="flex w-full flex-col items-start gap-4">
-              <p className="text-[16px] font-normal capitalize leading-8 text-[#808080]">
-                Field-level rework and uncoordinated submittals frequently derail project timelines
-                and inflate budgets. Virtual Building Studio functions as a technical extension of
-                your team, providing access to a team of{" "}
-                <span className="font-medium text-[#111111]">200+ dedicated remote BIM modelers.</span>
-              </p>
-              <p className="text-[16px] font-normal capitalize leading-8 text-[#808080]">
-                As a specialized MEP BIM modeling service provider in the USA, we ensure your
-                building systems are clash-free and fabrication-ready.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-start gap-[14px]">
-              {[
-                "Top 1% Vetted MEP Experts",
-                "US Code-Compliant Models",
-                "Fast Turnaround",
-                "3-Day Onboarding",
-              ].map((point) => (
-                <div key={point} className="inline-flex items-center gap-2.5">
-                  <span className="text-[16px]">✅</span>
-                  <span className="text-[16px] font-normal capitalize leading-6 text-[#808080]">{point}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </PageContainer>
-      </section>
-
-      <section className="bg-[#FAFAFA] py-[100px]">
-        <PageContainer className="flex flex-col items-center gap-[60px]">
-          <div className="flex w-full flex-col items-start gap-5">
-            <div className="flex flex-col items-start gap-3">
-              <div className="inline-flex items-center justify-center gap-[10px] rounded-[10px] border border-vbs-blue bg-vbs-blue/10 px-3 py-1.5">
-                <span className="text-[13px] font-normal capitalize text-vbs-blue">Engagement Models</span>
-              </div>
-              <h2 className="max-w-[884px] text-[48px] font-medium capitalize leading-[1.15] text-[#111111]">
-                Flexible Engagement Models Built Around <span className="font-light text-vbs-red">Your Delivery Needs</span>
-              </h2>
-            </div>
-            <p className="max-w-[750px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
-              Whether you need project-based BIM support, a dedicated remote team, or a fully managed global delivery center, our engagement models are designed to scale with your business.
-            </p>
-          </div>
-
-          <div className="grid w-full gap-5 lg:grid-cols-3">
-            <article className="flex min-w-0 flex-col items-start gap-5 rounded-[10px] border border-[#CBCCCD] bg-white p-5 shadow-[0_0_14px_rgba(0,0,0,0.20)]">
-              <div className="flex items-center justify-center gap-[10px] rounded-[10px] border border-[#FF9000] bg-[rgba(255,240,219,0.5)] p-2.5">
-                <span className="text-[40px]">⚡</span>
-              </div>
-              <p className="text-[16px] font-medium leading-6 text-[#D70416]">Best for Small Firms</p>
-              <div className="flex w-full flex-1 flex-col items-end gap-5">
-                <div className="flex w-full flex-col gap-5">
-                  <div className="space-y-2.5">
-                    <h3 className="text-[24px] font-medium text-[#111111]">Project-Based Support</h3>
-                    <p className="text-[16px] font-medium leading-6 text-[#808080]">
-                      Flexible BIM support for one-time projects and fast-moving delivery requirements.
-                    </p>
-                  </div>
-                  <div className="space-y-2.5">
-                    <p className="text-[16px] font-medium leading-6 text-[#808080]">Key Benefits</p>
-                    <ul className="space-y-2 text-[16px] font-normal capitalize leading-6 text-[#808080]">
-                      <li>Plug-and-play execution</li>
-                      <li>Immediate project kickoff</li>
-                      <li>No long-term commitment</li>
-                      <li>Flexible scope and duration</li>
-                    </ul>
-                  </div>
-                  <div className="space-y-2.5">
-                    <p className="text-[16px] font-medium leading-6 text-[#808080]">Best Suited For</p>
-                    <p className="text-[16px] font-normal leading-[26px] text-[#808080]">
-                      Small architecture firms<br />Pilot projects<br />Short-term BIM needs
-                    </p>
-                  </div>
-                </div>
-                <PrimaryCtaButton>Start a Project</PrimaryCtaButton>
-              </div>
-            </article>
-
-            <article className="flex min-w-0 flex-col items-start gap-5 rounded-[10px] border border-[#CBCCCD] bg-white p-5">
-              <div className="flex items-center justify-center gap-[10px] rounded-[10px] border border-[#294769] bg-[rgba(223,239,255,0.5)] p-2.5">
-                <span className="text-[40px]">👥</span>
-              </div>
-              <p className="text-[16px] font-medium leading-6 text-[#D70416]">Best for Growing Firms</p>
-              <div className="flex w-full flex-1 flex-col items-end gap-5">
-                <div className="flex w-full flex-col gap-5">
-                  <div className="space-y-2.5">
-                    <h3 className="text-[24px] font-medium text-[#111111]">Dedicated Resource Model</h3>
-                    <p className="text-[16px] font-medium leading-6 text-[#808080]">
-                      Dedicated BIM professionals working as an extension of your internal team.
-                    </p>
-                  </div>
-                  <div className="space-y-2.5">
-                    <p className="text-[16px] font-medium leading-6 text-[#808080]">Key Benefits</p>
-                    <ul className="space-y-2 text-[16px] font-normal capitalize leading-6 text-[#808080]">
-                      <li>Fixed monthly cost</li>
-                      <li>Dedicated resources</li>
-                      <li>Scalable team structure</li>
-                      <li>Consistent communication</li>
-                    </ul>
-                  </div>
-                  <div className="space-y-2.5">
-                    <p className="text-[16px] font-medium leading-6 text-[#808080]">Best Suited For</p>
-                    <p className="text-[16px] font-normal leading-[26px] text-[#808080]">
-                      Mid-sized firms<br />Ongoing project pipelines<br />Long-term delivery support
-                    </p>
-                  </div>
-                </div>
-                <PrimaryCtaButton>Build your Team</PrimaryCtaButton>
-              </div>
-            </article>
-
-            <article className="relative flex min-w-0 flex-col items-start gap-5 rounded-[10px] border border-[#2299D6] bg-white p-5">
-              <div className="flex items-center justify-center gap-[10px] rounded-[10px] border border-[#094004] bg-[rgba(211,255,211,0.5)] p-2.5">
-                <span className="text-[40px]">🌍</span>
-              </div>
-              <p className="text-[16px] font-medium leading-6 text-[#D70416]">Best for Enterprise Firms</p>
-              <div className="flex w-full flex-1 flex-col items-end gap-5">
-                <div className="flex w-full flex-col gap-5">
-                  <div className="space-y-2.5">
-                    <h3 className="text-[24px] font-medium text-[#111111]">Global Delivery Center</h3>
-                    <p className="text-[16px] font-medium leading-6 text-[#808080]">
-                      A fully managed offshore BIM delivery center exclusively aligned with your business.
-                    </p>
-                  </div>
-                  <div className="space-y-2.5">
-                    <p className="text-[16px] font-medium leading-6 text-[#808080]">Key Benefits</p>
-                    <ul className="space-y-2 text-[16px] font-normal capitalize leading-6 text-[#808080]">
-                      <li>Exclusive delivery team</li>
-                      <li>Enterprise scalability</li>
-                      <li>Standardized workflows</li>
-                      <li>Long-term operational efficiency</li>
-                    </ul>
-                  </div>
-                  <div className="space-y-2.5">
-                    <p className="text-[16px] font-medium leading-6 text-[#808080]">Best Suited For</p>
-                    <p className="text-[16px] font-normal leading-[26px] text-[#808080]">
-                      Large global firms<br />Multi-project delivery<br />Strategic outsourcing partnerships
-                    </p>
-                  </div>
-                </div>
-                <PrimaryCtaButton>Explore GDC Model</PrimaryCtaButton>
-              </div>
-              <div className="absolute -top-4 right-5 inline-flex h-8 items-center justify-center rounded-[10px] bg-[#2299D6] px-3 py-1.5">
-                <span className="text-[14px] font-normal capitalize text-white">Most Demanding</span>
-              </div>
-            </article>
-          </div>
-        </PageContainer>
-      </section>
+      <EngagementModelsSection />
 
       <section className="bg-white py-20">
         <PageContainer className="space-y-10">
           <div className="flex flex-col items-start gap-5">
             <div className="flex flex-col items-start gap-3">
               <div className="inline-flex items-center justify-center gap-[10px] rounded-[10px] border border-vbs-blue bg-vbs-blue/10 px-3 py-1.5">
-                <span className="text-[13px] font-normal capitalize text-vbs-blue">Industries</span>
+                <span className="text-tag text-vbs-blue">Industries</span>
               </div>
-              <h2 className="text-[48px] font-medium capitalize leading-[1.15] text-[#111111]">
-                Industries <span className="font-light text-vbs-red">We Serve</span>
+              <h2 className="text-section">
+                Industries <span className="text-accent">We Serve</span>
               </h2>
             </div>
-            <p className="max-w-[536px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+            <p className="max-w-[536px] text-[16px] font-normal leading-6 text-[#808080]">
               Delivering accuracy driven BIM solutions tailored to the unique requirements of every construction sector we serve.
             </p>
           </div>
@@ -461,13 +299,13 @@ export function VbsHomePage() {
           <div className="flex w-full flex-col items-start gap-5">
             <div className="flex flex-col items-start gap-3">
               <div className="inline-flex items-center justify-center gap-[10px] rounded-[10px] border border-vbs-blue bg-vbs-blue/10 px-3 py-1.5">
-                <span className="text-[13px] font-normal capitalize text-vbs-blue">Benefits</span>
+                <span className="text-tag text-vbs-blue">Benefits</span>
               </div>
-              <h2 className="text-[48px] font-medium capitalize leading-[1.15] text-[#111111]">
-                Best <span className="font-light text-vbs-red">Benefits</span>
+              <h2 className="text-section">
+                Best <span className="text-accent">Benefits</span>
               </h2>
             </div>
-            <p className="max-w-[536px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+            <p className="max-w-[536px] text-[16px] font-normal leading-6 text-[#808080]">
               Delivering accuracy driven BIM solutions tailored to the unique requirements of every construction sector we serve.
             </p>
           </div>
@@ -520,11 +358,11 @@ export function VbsHomePage() {
           <div className="flex w-full flex-col items-start gap-5">
             <div className="flex flex-col items-start gap-3">
               <SectionTag label="Resources" />
-              <h2 className="text-[48px] font-medium capitalize leading-[1.15] text-[#111111]">
-                Latest thoughts, <span className="font-light text-vbs-red">Ideas & Plan.</span>
+              <h2 className="text-section">
+                Latest thoughts, <span className="text-accent">Ideas & Plan.</span>
               </h2>
             </div>
-            <p className="max-w-[413px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+            <p className="max-w-[413px] text-[16px] font-normal leading-6 text-[#808080]">
               We offer two flexible engagement models that work best for our clients.
             </p>
           </div>
@@ -535,7 +373,7 @@ export function VbsHomePage() {
                 {["All", "Blogs", "Webinar", "Case Study", "White Paper"].map((tab, index) => (
                   <button
                     key={tab}
-                    className={`rounded-[10px] px-5 py-3 text-[16px] capitalize backdrop-blur-[50px] ${
+                    className={`rounded-[10px] px-5 py-3 text-[16px] backdrop-blur-[50px] ${
                       index === 0
                         ? "bg-vbs-red font-semibold text-white"
                         : "bg-[#FAFAFA] font-normal text-[#111111]"
@@ -612,11 +450,11 @@ export function VbsHomePage() {
           <div className="flex flex-col items-start gap-5">
             <div className="flex flex-col items-start gap-3">
               <SectionTag label="FAQs" />
-              <h2 className="max-w-[528px] text-[48px] font-medium capitalize leading-[1.15] text-[#111111]">
-                Frequently Asked <span className="font-light text-vbs-red">Questions</span>
+              <h2 className="max-w-[528px] text-section">
+                Frequently Asked <span className="text-accent">Questions</span>
               </h2>
             </div>
-            <p className="max-w-[563px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+            <p className="max-w-[563px] text-body">
               We offer two flexible engagement models that work best for our clients. Each year, we
               carefully select the
             </p>

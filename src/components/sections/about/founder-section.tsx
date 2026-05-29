@@ -20,20 +20,20 @@ export function FounderSection() {
             title={
               <>
                 Meet the Founder & CEO{" "}
-                <span className="font-light text-vbs-red">Ar. Ankit Kansara</span>
+                <span className="text-accent">Ar. Ankit Kansara</span>
               </>
             }
-            titleClassName="text-[48px] font-medium capitalize leading-[1.15] text-[#111111]"
+            titleClassName="text-section"
           />
 
-          <p className="text-[16px] font-normal capitalize leading-8 text-[#808080]">{founderBio}</p>
+          <p className="text-[16px] font-normal leading-8 text-[#808080]">{founderBio}</p>
 
           <div className="grid w-full gap-x-8 gap-y-3 sm:grid-cols-2">
             <ul className="flex flex-col gap-3">
               {leftColumn.map((point) => (
                 <li key={point} className="inline-flex items-start gap-2.5">
                   <span className="text-[16px]">✅</span>
-                  <span className="text-[16px] font-normal capitalize leading-6 text-[#808080]">
+                  <span className="text-[16px] font-normal leading-6 text-[#808080]">
                     {point}
                   </span>
                 </li>
@@ -43,7 +43,7 @@ export function FounderSection() {
               {rightColumn.map((point) => (
                 <li key={point} className="inline-flex items-start gap-2.5">
                   <span className="text-[16px]">✅</span>
-                  <span className="text-[16px] font-normal capitalize leading-6 text-[#808080]">
+                  <span className="text-[16px] font-normal leading-6 text-[#808080]">
                     {point}
                   </span>
                 </li>

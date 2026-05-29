@@ -19,8 +19,8 @@ export function EvaluateDeliveryCtaSection() {
           </div>
           <div className="evaluate-delivery-cta-panel">
             <div className="flex flex-1 flex-col items-start justify-center gap-5">
-              <h2 className="max-w-[530px] text-[48px] font-medium capitalize leading-[1.15] text-[#111111]">
-                Evaluate Your <span className="font-light">Delivery Capacity</span>
+              <h2 className="text-section max-w-[530px]">
+                Evaluate Your <span className="text-accent">Delivery Capacity</span>
               </h2>
               <p className="max-w-[478px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
                 A structured conversation about scale, standards, and fit.

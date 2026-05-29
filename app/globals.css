@@ -1,0 +1,440 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --muted: 0 0% 97%;
+  --muted-foreground: 0 0% 28%;
+  --border: 355 70% 88%;
+  --primary: 355 93% 43%;
+  --primary-foreground: 0 0% 100%;
+  --soft-accent: #fef3f3;
+  --text-primary: #000000;
+  --text-secondary: #3f3f46;
+  --text-accent: #d50f25;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+
+  h1,
+  .h1 {
+    font-size: 3rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  h2,
+  .h2 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  h3,
+  .h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  h4,
+  .h4 {
+    font-size: 1.25rem;
+    line-height: 1.35;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out both;
+  }
+
+  .animate-fade-up-delay {
+    animation: fade-up 1s ease-out 0.15s both;
+  }
+
+  .p-lead {
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--text-secondary);
+  }
+
+  .text-accent {
+    color: var(--text-accent);
+  }
+
+  .hero-media-track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    animation: hero-marquee 18s linear infinite;
+  }
+
+  .hero-media-card {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #efefef;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .hero-logo-ticker {
+    display: inline-flex;
+    align-items: center;
+    gap: 60px;
+    min-width: max-content;
+    animation: hero-logo-scroll 16s linear infinite;
+  }
+
+  .industries-marquee-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    min-width: max-content;
+    animation: industries-scroll 30s linear infinite;
+    will-change: transform;
+  }
+
+  .certification-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: certification-scroll 18s linear infinite;
+    will-change: transform;
+  }
+
+  .certification-marquee-set {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .certification-logo-card {
+    flex: 0 0 200px;
+  }
+
+  .testimonial-marquee-track {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 16px;
+    min-width: max-content;
+    animation: testimonial-scroll 34s linear infinite;
+    will-change: transform;
+  }
+
+  .hero-col-up {
+    animation: hero-col-up 18s linear infinite;
+  }
+
+  .hero-col-down {
+    animation: hero-col-down 18s linear infinite;
+  }
+
+  .primary-cta .primary-cta-blobs {
+    position: absolute;
+    width: 546px;
+    height: 546px;
+    left: 0;
+    top: 0;
+    overflow: visible;
+    pointer-events: none;
+    transform: translate(-422px, 22px);
+    transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .primary-cta .primary-cta-label {
+    transition: color 0.65s ease 0.2s;
+  }
+
+  /* Figma Group 1 — diagonal circle stack (Default positions) */
+  .primary-cta .primary-cta-blob {
+    position: absolute;
+    width: 475.4px;
+    height: 475.4px;
+    border-radius: 9999px;
+  }
+
+  .primary-cta .primary-cta-blob--yellow {
+    left: 70.6px;
+    top: 0;
+    background: #f0b300;
+    z-index: 1;
+  }
+
+  .primary-cta .primary-cta-blob--blue {
+    left: 47.07px;
+    top: 23.53px;
+    background: #2299d6;
+    z-index: 2;
+  }
+
+  .primary-cta .primary-cta-blob--green {
+    left: 23.53px;
+    top: 47.07px;
+    background: #42aa32;
+    z-index: 3;
+  }
+
+  .primary-cta .primary-cta-blob--red {
+    left: 0;
+    top: 70.6px;
+    background: #d70416;
+    z-index: 4;
+  }
+
+  /* Hover: whole group moves diagonally (Figma Variant2: -32, -198) */
+  .primary-cta:hover .primary-cta-blobs {
+    transform: translate(-32px, -198px);
+  }
+
+  .primary-cta:hover .primary-cta-label {
+    color: #ffffff;
+  }
+
+  /* Evaluate Your Delivery Capacity — Figma 958:32154 */
+  .evaluate-delivery-cta-card {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .evaluate-delivery-cta-mosaic {
+    position: absolute;
+    left: 50%;
+    top: -533px;
+    width: 1440px;
+    height: 1466.08px;
+    transform: translateX(-50%);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .evaluate-delivery-cta-mosaic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .evaluate-delivery-cta-panel {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    border-radius: 10px;
+    background: #ffffff;
+    inset: 40px;
+    padding: 60px 50px;
+  }
+
+  @media (min-width: 768px) {
+    .evaluate-delivery-cta-panel {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .industries-marquee-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    min-width: max-content;
+    animation: industries-scroll 28s linear infinite;
+  }
+
+  .capability-card__gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(17, 17, 17, 0) 55%,
+      rgba(17, 17, 17, 0.75) 78%,
+      #111111 100%
+    );
+    transition: background 0.45s ease;
+  }
+
+  .capability-card:hover .capability-card__gradient,
+  .capability-card:focus-within .capability-card__gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(17, 17, 17, 0) 8%,
+      rgba(17, 17, 17, 0.55) 42%,
+      rgba(17, 17, 17, 0.85) 62%,
+      #111111 100%
+    );
+  }
+
+  .capability-card__content {
+    gap: 0;
+    transition: gap 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .capability-card:hover .capability-card__content,
+  .capability-card:focus-within .capability-card__content {
+    gap: 20px;
+  }
+
+  .capability-card__details {
+    max-height: 0;
+    margin-top: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.35s ease,
+      margin-top 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .capability-card:hover .capability-card__details,
+  .capability-card:focus-within .capability-card__details {
+    max-height: 280px;
+    margin-top: 0;
+    opacity: 1;
+  }
+
+  .capability-card__link {
+    max-height: 0;
+    margin-top: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition:
+      max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.35s ease 0.05s,
+      margin-top 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .capability-card:hover .capability-card__link,
+  .capability-card:focus-within .capability-card__link {
+    max-height: 32px;
+    margin-top: 20px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-36px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes industries-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+
+@keyframes certification-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes testimonial-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 8px));
+  }
+}
+
+@keyframes hero-col-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-310px);
+  }
+}
+
+@keyframes hero-col-down {
+  0% {
+    transform: translateY(-310px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes industries-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1750px);
+  }
+}
+
+body {
+  background-color: hsl(var(--background));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

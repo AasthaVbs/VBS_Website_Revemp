@@ -11,7 +11,7 @@ export function CertificationSection({
 }) {
   return (
     <section className="bg-white py-20 lg:py-[100px]">
-      <PageContainer className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
+      <PageContainer className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-11">
         <div className="flex w-full shrink-0 flex-col items-start gap-5 lg:w-[528px]">
           <SectionIntro
             tag="Certification"

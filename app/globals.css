@@ -210,6 +210,15 @@
     flex: 0 0 200px;
   }
 
+  .mep-services-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .mep-services-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
   .testimonial-marquee-track {
     display: inline-flex;
     align-items: flex-start;

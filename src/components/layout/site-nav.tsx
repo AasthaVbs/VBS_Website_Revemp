@@ -16,6 +16,7 @@ export function SiteNav() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const isAbout = pathname === "/about";
+  const isMepPage = pathname === "/mep-engineers";
 
   return (
     <nav className="hidden items-center gap-[10px] lg:flex">
@@ -27,6 +28,7 @@ export function SiteNav() {
               label={item.label}
               href={item.href}
               dropdownAlign="mega-menu"
+              active={isMepPage}
             >
               <CapabilitiesMegaMenu />
             </NavDropdownTrigger>

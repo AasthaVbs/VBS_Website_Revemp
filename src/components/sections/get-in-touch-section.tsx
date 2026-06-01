@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 
+import getInTouchImg from "@/assets/images/image 56.png";
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionIntro } from "@/components/sections/section-primitives";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
@@ -83,10 +84,10 @@ export function GetInTouchSection({
 
         <div className="relative min-h-[602px] overflow-hidden rounded-[20px] bg-[#111111] shadow-[0_4px_10px_rgba(0,0,0,0.15)]">
           <Image
-            src="/images/figma/hero-profile.png"
+            src={getInTouchImg}
             alt="Contact support representative"
             fill
-            className="object-cover object-[center_20%]"
+            className="object-cover object-[72%_35%]"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,#111111_0%,#111111_35%,rgba(17,17,17,0.55)_55%,rgba(17,17,17,0.15)_100%)]" />

@@ -13,6 +13,7 @@ import { ClientSuccessStoriesSection } from "@/components/sections/client-succes
 import { EngagementModelsSection } from "@/components/sections/engagement-models-section";
 import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-delivery-cta-section";
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
+import { IndustriesSection } from "@/components/sections/industries-section";
 import { SectionTag } from "@/components/sections/section-primitives";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { StatsStripSection } from "@/components/sections/stats-strip-section";
@@ -247,51 +248,7 @@ export function VbsHomePage() {
 
       <EngagementModelsSection />
 
-      <section className="bg-white py-20">
-        <PageContainer className="space-y-10">
-          <div className="flex flex-col items-start gap-5">
-            <div className="flex flex-col items-start gap-3">
-              <div className="inline-flex items-center justify-center gap-[10px] rounded-[10px] border border-vbs-blue bg-vbs-blue/10 px-3 py-1.5">
-                <span className="text-tag text-vbs-blue">Industries</span>
-              </div>
-              <h2 className="text-section">
-                Industries <span className="text-accent">We Serve</span>
-              </h2>
-            </div>
-            <p className="max-w-[536px] text-[16px] font-normal leading-6 text-[#808080]">
-              Delivering accuracy driven BIM solutions tailored to the unique requirements of every construction sector we serve.
-            </p>
-          </div>
-
-          <div className="relative overflow-hidden">
-            <div className="industries-marquee-track">
-              {[
-                { img: "industry-1.png", title: "Commercial & Mixed-Use" },
-                { img: "industry-2.png", title: "Healthcare" },
-                { img: "industry-3.png", title: "Educational" },
-                { img: "industry-4.png", title: "Mission Critical" },
-                { img: "industry-5.png", title: "Hospitality & Residential" },
-                { img: "industry-6.png", title: "Industrial & Manufacturing" },
-                { img: "industry-7.png", title: "Civic & Government Infrastructure" },
-                { img: "industry-8.png", title: "Heritage, Religious & Cultural Spaces" },
-                { img: "industry-1.png", title: "Commercial & Mixed-Use" },
-                { img: "industry-2.png", title: "Healthcare" },
-              ].map((item, idx) => (
-                <div
-                  key={`${item.img}-${idx}`}
-                  className="relative h-[330px] w-[330px] flex-shrink-0 overflow-hidden rounded-[10px] border border-[#CBCCCD]"
-                >
-                  <Image src={`/images/figma/${item.img}`} alt={item.title} fill className="object-cover" />
-                  <div className="absolute bottom-0 left-0 h-[160px] w-full bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,#000_100%)]" />
-                  <div className="absolute bottom-8 left-1/2 w-[228px] -translate-x-1/2 text-center text-[24px] font-normal leading-[1.2] text-white">
-                    {item.title}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </PageContainer>
-      </section>
+      <IndustriesSection />
 
       <section className="bg-white py-20">
         <PageContainer className="space-y-[60px]">

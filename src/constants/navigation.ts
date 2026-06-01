@@ -68,7 +68,7 @@ export const CAPABILITY_CATEGORIES: CapabilityCategory[] = [
     label: "Engineering & Construction",
     services: [
       [
-        { label: "MEP BIM Modeling", href: "#" },
+        { label: "MEP BIM Modeling", href: "/mep-engineers" },
         { label: "Clash Detection & Coordination", href: "#" },
         { label: "Fabrication Drawings", href: "#" },
         { label: "Structural BIM Modeling", href: "#" },

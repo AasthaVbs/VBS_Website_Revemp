@@ -16,9 +16,11 @@ function DetailBlock({ title, body }: { title: string; body: string }) {
   );
 }
 
+type MepDisciplineId = (typeof mepDisciplineTabs)[number]["id"];
+
 /** Figma node 289:10637 — Core MEP Disciplines */
 export function MepDisciplinesSection() {
-  const [activeId, setActiveId] = useState(mepDisciplineTabs[0].id);
+  const [activeId, setActiveId] = useState<MepDisciplineId>(mepDisciplineTabs[0].id);
   const active = mepDisciplineTabs.find((tab) => tab.id === activeId) ?? mepDisciplineTabs[0];
 
   return (

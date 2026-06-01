@@ -1,34 +1,91 @@
 import { PageContainer } from "@/components/layout/page-container";
-import { SectionIntro } from "@/components/sections/section-primitives";
-import { coreValues } from "@/constants/about-content";
+import { SectionTag } from "@/components/sections/section-primitives";
+import { coreValues, coreValuesSectionCopy } from "@/constants/about-content";
+import { cn } from "@/lib/utils";
 
-export function CoreValuesSection() {
+function CoreValueLetterBox({ letter }: { letter: string }) {
   return (
-    <section className="bg-[#FAFAFA] py-[100px]">
-      <PageContainer className="flex flex-col gap-[60px]">
-        <SectionIntro
-          tag="Core Values"
-          title={
-            <>
-              Complete Coverage for{" "}
-              <span className="text-accent">MEP BIM Modeling Services</span>
-            </>
-          }
-          description="Comprehensive MEP Modeling Services Integrating HVAC, Electrical, Mechanical Piping, Plumbing, and Fire Protection Workflows"
-        />
+    <div
+      className="relative flex h-[100px] w-[100px] shrink-0 items-center justify-center rounded-[10px] bg-[#D70416] ring-[6px] ring-[rgba(215,4,22,0.2)]"
+      aria-hidden
+    >
+      <span className="text-[42px] font-medium leading-none text-white">{letter}</span>
+    </div>
+  );
+}
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {coreValues.map((value) => (
-            <article
-              key={value.letter}
-              className="flex items-center gap-4 rounded-[10px] border border-[#CBCCCD] bg-white p-4"
-            >
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[10px] border-[6px] border-white bg-vbs-red text-[28px] font-medium text-white shadow-[0_2px_8px_rgba(215,4,22,0.3)]">
-                {value.letter}
+function CoreValueConnector() {
+  return (
+    <div
+      className="h-[160px] w-px shrink-0 border-l border-dashed border-[#B1B1B1]"
+      aria-hidden
+    />
+  );
+}
+
+function CoreValueLabel({
+  label,
+  maxWidth,
+}: {
+  label: string;
+  maxWidth: number;
+}) {
+  return (
+    <p
+      className="flex min-h-[50px] shrink-0 items-center justify-center text-center text-[16px] font-normal leading-snug text-[#111111]"
+      style={{ width: maxWidth }}
+    >
+      {label}
+    </p>
+  );
+}
+
+/** Figma node 332:29736 — CHAMPIONS zigzag core values */
+export function CoreValuesSection() {
+  const { tag, titleLead, titleAccent, description } = coreValuesSectionCopy;
+
+  return (
+    <section className="overflow-hidden bg-[#FAFAFA] py-12 lg:py-[100px]">
+      <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
+        <div className="flex w-full max-w-[1440px] flex-col items-center gap-5 text-center">
+          <div className="flex max-w-[890px] flex-col items-center gap-3">
+            <SectionTag label={tag} />
+            <h2 className="text-section max-w-[688px] capitalize">
+              {titleLead}
+              <span className="text-accent font-light">{titleAccent}</span>
+            </h2>
+          </div>
+          <p className="max-w-[620px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+            {description}
+          </p>
+        </div>
+
+        <div className="w-full overflow-x-auto pb-2">
+          <div className="mx-auto flex w-max min-w-full items-center justify-center gap-[60px] px-4 lg:px-0">
+            {coreValues.map((value) => (
+              <div
+                key={value.letter}
+                className={cn(
+                  "flex h-[520px] w-20 shrink-0 flex-col items-center gap-5",
+                  value.labelFirst ? "justify-start" : "justify-end",
+                )}
+              >
+                {value.labelFirst ? (
+                  <>
+                    <CoreValueLabel label={value.label} maxWidth={value.labelWidth} />
+                    <CoreValueConnector />
+                    <CoreValueLetterBox letter={value.letter} />
+                  </>
+                ) : (
+                  <>
+                    <CoreValueLetterBox letter={value.letter} />
+                    <CoreValueConnector />
+                    <CoreValueLabel label={value.label} maxWidth={value.labelWidth} />
+                  </>
+                )}
               </div>
-              <p className="text-[16px] font-normal text-[#111111]">{value.label}</p>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
       </PageContainer>
     </section>

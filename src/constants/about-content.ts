@@ -1,28 +1,66 @@
+export const aboutHeroImages = {
+  main: "/images/about/about-hero-main-3ea8dd.png",
+  overlay: "/images/about/about-hero-overlay.png",
+} as const;
+
+export const aboutVisionImage = "/images/about/about-vision-main.png";
+
 export const visionMissionCards = [
   {
     title: "Vision",
     description: "To digitally transform how the World builds.",
-    icon: "👁️",
+    iconSrc: "/images/about/icon-vision.svg",
   },
   {
     title: "Mission",
     description:
       "Build digital solutions that make building faster, smarter, and more scalable.",
-    icon: "🎯",
+    iconSrc: "/images/about/icon-mission.svg",
   },
 ] as const;
 
+export const coreValuesSectionCopy = {
+  tag: "Core Values",
+  titleLead: "Complete Coverage for ",
+  titleAccent: "MEP BIM Modeling Services",
+  description:
+    "Comprehensive MEP Modeling Services Integrating HVAC, Electrical, Mechanical Piping, Plumbing, and Fire Protection Workflows",
+} as const;
+
+/** Figma 332:29736 — alternating columns: even = box above label, odd = label above box */
 export const coreValues = [
-  { letter: "C", label: "Client First Thinking" },
-  { letter: "H", label: "High Performance Mindset" },
-  { letter: "A", label: "Accountability & Ownership" },
-  { letter: "M", label: "Move with Speed" },
-  { letter: "P", label: "Process & Systems Driven" },
-  { letter: "I", label: "Innovation through Technology" },
-  { letter: "O", label: "One Team, One Goal" },
-  { letter: "N", label: "Never Stop Improving" },
-  { letter: "S", label: "Scalable Thinking" },
+  { letter: "C", label: "Client First Thinking", labelWidth: 140, labelFirst: false },
+  { letter: "H", label: "High Performance Mindset", labelWidth: 152, labelFirst: true },
+  { letter: "A", label: "Accountability & Ownership", labelWidth: 140, labelFirst: false },
+  { letter: "M", label: "Move with Speed", labelWidth: 93, labelFirst: true },
+  { letter: "P", label: "Process & Systems Driven", labelWidth: 130, labelFirst: false },
+  { letter: "I", label: "Innovation through Technology", labelWidth: 140, labelFirst: true },
+  { letter: "O", label: "One Team, One Goal", labelWidth: 101, labelFirst: false },
+  { letter: "N", label: "Never Stop Improving", labelWidth: 140, labelFirst: true },
+  { letter: "S", label: "Scalable Thinking", labelWidth: 117, labelFirst: false },
 ] as const;
+
+export const founderSectionCopy = {
+  tag: "Name Tag",
+  titleLead: "Meet the Founder & CEO ",
+  titleAccent: "Ar. Ankit Kansara",
+  linkedinLabel: "Linkedin",
+  linkedinHref: "https://www.linkedin.com/company/virtual-building-studio",
+} as const;
+
+export const founderImages = {
+  main: "/images/about/founder-main.png",
+  overlayBg: "/images/about/founder-overlay-bg.png",
+  book: "/images/about/founder-book-df6def.png",
+} as const;
+
+export const joinTeamCtaCopy = {
+  titleLine1: "Join",
+  titleAccent: "the Team",
+  description:
+    "Join our team 150+ Architecture from the across the globe and contribute to groundbreaking projects with top-tier architects and engineers.",
+  ctaLabel: "Contact Us",
+} as const;
 
 export const founderHighlights = [
   "Founder & CEO, Virtual Building Studio Inc.",

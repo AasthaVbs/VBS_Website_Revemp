@@ -123,6 +123,14 @@ export const faqs = [
   "Do you provide on-site talent?",
 ];
 
+export const certificationSectionCopy = {
+  tag: "Certification",
+  titleLead: "Certification/",
+  titleAccent: "Awards Recognition",
+  description:
+    "We offer two flexible engagement models that work best for our clients. Each year, we carefully select the",
+} as const;
+
 export const certificationLogos = [
   {
     alt: "Clutch recognition",

@@ -60,8 +60,8 @@ export function CoreValuesSection() {
           </p>
         </div>
 
-        <div className="w-full overflow-x-auto pb-2">
-          <div className="mx-auto flex w-max min-w-full items-center justify-center gap-[60px] px-4 lg:px-0">
+        <div className="-mx-6 w-[calc(100%+3rem)] overflow-x-auto pb-2 md:mx-0 md:w-full">
+          <div className="mx-auto flex w-max min-w-full items-center justify-start gap-10 px-6 md:justify-center md:gap-[60px] md:px-4 lg:px-0">
             {coreValues.map((value) => (
               <div
                 key={value.letter}

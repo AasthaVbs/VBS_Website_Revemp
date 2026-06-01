@@ -34,7 +34,7 @@ export function EvaluateDeliveryCtaSection({
 }: EvaluateDeliveryCtaSectionProps) {
   const isCentered = contentAlign === "center";
   return (
-    <section className="bg-white py-[100px]">
+    <section className="bg-white py-12 lg:py-[100px]">
       <PageContainer>
         <div className="evaluate-delivery-cta-card">
           <div className="evaluate-delivery-cta-mosaic" aria-hidden>

@@ -17,13 +17,9 @@ export function MepWhyChooseSection() {
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={mepWhyChooseSection.tag} />
-            <h2 className="max-w-[724px] capitalize text-[#111111]">
-              <span className="text-[48px] font-medium leading-[1.15]">
-                {mepWhyChooseSection.titleLine1}{" "}
-              </span>
-              <span className="text-[48px] font-light leading-[1.15] text-[#D70416]">
-                {mepWhyChooseSection.titleLine2}
-              </span>
+            <h2 className="mep-section-heading max-w-[724px] capitalize">
+              <span className="font-medium">{mepWhyChooseSection.titleLine1} </span>
+              <span className="text-accent font-light">{mepWhyChooseSection.titleLine2}</span>
             </h2>
           </div>
           <p className="max-w-[587px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
@@ -47,7 +43,7 @@ export function MepWhyChooseSection() {
 
         <PrimaryCtaButton
           fullWidth={false}
-          className="h-auto min-h-[52px] w-[164px] px-5 py-4 capitalize backdrop-blur-[50px]"
+          className="h-auto min-h-[52px] w-[164px] self-center px-5 py-4 capitalize backdrop-blur-[50px]"
         >
           Let&apos;s Talk
         </PrimaryCtaButton>

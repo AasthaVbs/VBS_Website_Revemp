@@ -8,13 +8,15 @@ import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 
 export function GetInTouchSection({
   description = "Let's discuss your requirements and see how our expertise can help on your next project.",
+  sectionId = "contact",
 }: {
   description?: string;
+  sectionId?: string;
 }) {
   return (
-    <section id="contact" className="bg-[#FAFAFA] py-[100px]">
-      <PageContainer className="grid items-start gap-[30px] lg:grid-cols-2">
-        <div className="flex flex-col gap-[30px]">
+    <section id={sectionId} className="bg-[#FAFAFA] py-12 lg:py-[100px]">
+      <PageContainer className="grid items-start gap-8 lg:grid-cols-2 lg:gap-[30px]">
+        <div className="flex min-w-0 flex-col gap-6 lg:gap-[30px]">
           <SectionIntro
             tag="Contact Us"
             title={
@@ -23,7 +25,7 @@ export function GetInTouchSection({
               </>
             }
             description={description}
-            titleClassName="text-section max-w-[528px]"
+            titleClassName="text-section max-w-[528px] normal-case"
           />
 
           <form className="flex flex-col gap-4">
@@ -78,20 +80,22 @@ export function GetInTouchSection({
                 placeholder="Write a Description"
               />
             </label>
-            <PrimaryCtaButton type="submit">Submit Now</PrimaryCtaButton>
+            <PrimaryCtaButton type="submit" stripedLong>
+              Submit Now
+            </PrimaryCtaButton>
           </form>
         </div>
 
-        <div className="relative min-h-[602px] overflow-hidden rounded-[20px] bg-[#111111] shadow-[0_4px_10px_rgba(0,0,0,0.15)]">
+        <div className="relative min-h-[320px] overflow-hidden rounded-[20px] bg-[#111111] shadow-[0_4px_10px_rgba(0,0,0,0.15)] sm:min-h-[420px] lg:min-h-[602px]">
           <Image
             src={getInTouchImg}
             alt="Contact support representative"
             fill
-            className="object-cover object-[72%_35%]"
+            className="object-cover object-center lg:object-[72%_35%]"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,#111111_0%,#111111_35%,rgba(17,17,17,0.55)_55%,rgba(17,17,17,0.15)_100%)]" />
-          <div className="absolute bottom-10 left-10 z-10 flex max-w-[320px] flex-col gap-8 text-white">
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,17,17,0.2)_0%,rgba(17,17,17,0.85)_55%,#111111_100%)] lg:bg-[linear-gradient(90deg,#111111_0%,#111111_35%,rgba(17,17,17,0.55)_55%,rgba(17,17,17,0.15)_100%)]" />
+          <div className="absolute bottom-6 left-6 right-6 z-10 flex max-w-[320px] flex-col gap-5 text-white sm:bottom-10 sm:left-10 sm:gap-8">
             <div className="inline-flex items-center gap-2.5">
               <Phone className="h-5 w-5 shrink-0" />
               <span className="text-[16px] font-normal">+1 (409) 800-6601</span>

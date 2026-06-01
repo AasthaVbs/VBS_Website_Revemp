@@ -48,9 +48,9 @@ export function MepWorkflowSection() {
         <div className="flex w-full max-w-[890px] flex-col items-center gap-5 text-center">
           <div className="flex flex-col items-center gap-3">
             <MepSectionTag label="Service Workflow" centered />
-            <h2 className="max-w-[688px] capitalize text-[#111111]">
-              <span className="text-[48px] font-medium leading-[1.15]">Our Revit MEP BIM </span>
-              <span className="text-[48px] font-light leading-[1.15] text-[#D70416]">Services Workflow</span>
+            <h2 className="mep-section-heading max-w-[688px] capitalize">
+              <span className="font-medium">Our Revit MEP BIM </span>
+              <span className="text-accent font-light">Services Workflow</span>
             </h2>
           </div>
           <p className="max-w-[620px] text-[16px] font-normal capitalize leading-6 text-[#808080]">

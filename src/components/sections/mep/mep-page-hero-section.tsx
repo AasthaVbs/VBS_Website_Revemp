@@ -1,0 +1,155 @@
+import Image from "next/image";
+
+import { PageContainer } from "@/components/layout/page-container";
+import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
+import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
+export type MepPageHeroContent = {
+  tag: string;
+  titleLead: string;
+  titleAccent: string;
+  description: string;
+  ctaLabel: string;
+  imageSrc: string;
+  /** Slightly smaller hero image (MEP BIM modelling page) */
+  imageSize?: "default" | "compact";
+};
+
+const HERO_IMAGE_WIDTH = 1082;
+const HERO_IMAGE_HEIGHT = 753;
+
+/** Fade between copy and image — Figma 217:242 */
+function HeroImageFadeLeft() {
+  return (
+    <div
+      className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[min(45%,240px)] bg-[linear-gradient(90deg,#ffffff_56%,rgba(255,255,255,0)_100%)]"
+      aria-hidden
+    />
+  );
+}
+
+/** Viewport right-edge fade — Figma 217:242 */
+function HeroFadeRightEdge() {
+  return (
+    <div
+      className="pointer-events-none absolute right-0 top-0 z-[2] h-full w-[120px] bg-[linear-gradient(270deg,#ffffff_56%,rgba(255,255,255,0)_100%)] xl:w-[240px]"
+      aria-hidden
+    />
+  );
+}
+
+/** Shared MEP-style hero — Figma 217:242 / prototype 217:181 */
+export function MepPageHeroSection({
+  tag,
+  titleLead,
+  titleAccent,
+  description,
+  ctaLabel,
+  imageSrc,
+  imageSize = "default",
+}: MepPageHeroContent) {
+  const isCompact = imageSize === "compact";
+
+  if (isCompact) {
+    return (
+      <section className="relative w-full overflow-hidden bg-white">
+        <PageContainer className="relative py-10 pt-2 sm:py-12 sm:pt-4 lg:py-14">
+          <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:gap-6 xl:gap-10">
+            {/* Copy — vertically centered beside image on desktop */}
+            <div className="flex w-full shrink-0 flex-col justify-center gap-6 sm:gap-[30px] lg:w-[42%] lg:min-w-[320px] lg:max-w-[679px]">
+              <div className="flex w-full flex-col items-start gap-4 sm:gap-5">
+                <div className="flex flex-col items-start gap-3">
+                  <MepSectionTag label={tag} />
+                  <h1 className="w-full capitalize text-[#111111]">
+                    <span className="text-[32px] font-medium leading-[1.15] sm:text-[40px] lg:text-[48px]">
+                      {titleLead}
+                    </span>
+                    <span className="text-[32px] font-light leading-[1.15] text-[#D70416] sm:text-[40px] lg:text-[48px]">
+                      {titleAccent}
+                    </span>
+                  </h1>
+                </div>
+                <p className="w-full text-[15px] font-normal capitalize leading-6 text-[#808080] sm:text-[16px]">
+                  {description}
+                </p>
+              </div>
+
+              <PrimaryCtaButton
+                fullWidth={false}
+                className="h-auto min-h-[52px] w-full px-5 py-4 capitalize backdrop-blur-[50px] sm:w-auto"
+              >
+                {ctaLabel}
+              </PrimaryCtaButton>
+            </div>
+
+            {/* Image — full asset in column, scales with width (no absolute / no extra scroll) */}
+            <div className="relative min-w-0 flex-1 lg:flex lg:items-center lg:justify-end">
+              <div className="relative w-full">
+                <Image
+                  src={imageSrc}
+                  alt=""
+                  width={HERO_IMAGE_WIDTH}
+                  height={HERO_IMAGE_HEIGHT}
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="block h-auto w-full"
+                />
+                <HeroImageFadeLeft />
+              </div>
+            </div>
+          </div>
+        </PageContainer>
+
+        <HeroFadeRightEdge />
+      </section>
+    );
+  }
+
+  return (
+    <section className="relative w-full overflow-x-hidden bg-white">
+      <div
+        className="pointer-events-none absolute z-0 aspect-[1191/707] max-w-[1191px] max-xl:inset-x-0 max-xl:top-0 max-xl:w-full max-xl:max-w-none lg:right-0 lg:top-0 lg:w-[min(62%,1191px)]"
+        aria-hidden
+      >
+        <Image
+          src={imageSrc}
+          alt=""
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 62vw"
+          className="object-cover object-center"
+        />
+        <HeroImageFadeLeft />
+      </div>
+
+      <HeroFadeRightEdge />
+
+      <PageContainer className="relative z-10 flex min-h-0 flex-col justify-start py-12 max-lg:min-h-[420px] lg:min-h-[680px] lg:py-[150px]">
+        <div className="flex w-full max-w-[779px] flex-col items-start gap-[30px]">
+          <div className="flex w-full flex-col items-start gap-5 self-stretch">
+            <div className="flex flex-col items-start gap-3">
+              <MepSectionTag label={tag} />
+              <h1 className="w-full max-w-[779px] capitalize text-[#111111]">
+                <span className="text-[40px] font-medium leading-[1.1] sm:text-[48px] lg:text-[60px]">
+                  {titleLead}
+                </span>
+                <span className="text-[40px] font-light leading-[1.1] text-[#D70416] sm:text-[48px] lg:text-[60px]">
+                  {titleAccent}
+                </span>
+              </h1>
+            </div>
+            <p className="w-full max-w-[736px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+              {description}
+            </p>
+          </div>
+
+          <PrimaryCtaButton
+            fullWidth={false}
+            className="h-auto min-h-[52px] px-5 py-4 capitalize backdrop-blur-[50px]"
+          >
+            {ctaLabel}
+          </PrimaryCtaButton>
+        </div>
+      </PageContainer>
+    </section>
+  );
+}

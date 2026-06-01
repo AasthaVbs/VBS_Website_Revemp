@@ -6,6 +6,8 @@ export type NavDropdownLink = {
 export type CapabilityCategory = {
   id: string;
   label: string;
+  /** When set, category label links to this page */
+  href?: string;
   services: NavDropdownLink[][];
 };
 
@@ -21,16 +23,15 @@ export const NAV_LINKS = [
 export const MAIN_NAV = [
   { label: "Home", href: "/" },
   { label: "Our Capabilities", href: "#capabilities", hasDropdown: "capabilities" as const },
-  { label: "Engagement Model", href: "#engagement" },
+  { label: "Engagement Model", href: "/engagement-models" },
   { label: "Resources", href: "#resources", hasDropdown: "resources" as const },
   { label: "About", href: "/about", hasDropdown: "about" as const },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Contact Us", href: "/contact" },
 ] as const;
 
 export const ABOUT_DROPDOWN_LINKS: NavDropdownLink[] = [
-  { label: "About Us", href: "/about" },
   { label: "Leadership Team", href: "#leadership" },
-  { label: "Careers", href: "#careers" },
+  { label: "Careers", href: "/careers" },
   { label: "Life at VBS", href: "#life-at-vbs" },
 ];
 
@@ -66,9 +67,10 @@ export const CAPABILITY_CATEGORIES: CapabilityCategory[] = [
   {
     id: "engineering",
     label: "Engineering & Construction",
+    href: "/mep-engineers",
     services: [
       [
-        { label: "MEP BIM Modeling", href: "/mep-engineers" },
+        { label: "MEP BIM Modeling", href: "/mep-bim-modelling" },
         { label: "Clash Detection & Coordination", href: "#" },
         { label: "Fabrication Drawings", href: "#" },
         { label: "Structural BIM Modeling", href: "#" },

@@ -293,6 +293,19 @@
     min-height: 72px;
   }
 
+  /* MEP BIM modelling — card grids: shadow + border on hover only */
+  .mep-interactive-card {
+    border: 1px solid transparent;
+    transition:
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .mep-interactive-card:hover {
+    border-color: #cbcccd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
   .nav-menu-divider {
     width: 1px;
     align-self: stretch;
@@ -386,6 +399,35 @@
     color: #ffffff;
   }
 
+  .primary-cta--wide {
+    isolation: isolate;
+  }
+
+  /* Full-width Submit Now / Apply Now — simple red fill on hover */
+  .primary-cta--striped-long {
+    border-color: #d70416;
+    background-color: #ffffff;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .primary-cta--striped-long:hover,
+  .primary-cta--striped-long:focus-visible {
+    background-color: #d70416;
+    border-color: #d70416;
+  }
+
+  .primary-cta--striped-long .primary-cta-label {
+    color: #d70416;
+    transition: color 0.2s ease;
+  }
+
+  .primary-cta--striped-long:hover .primary-cta-label,
+  .primary-cta--striped-long:focus-visible .primary-cta-label {
+    color: #ffffff;
+  }
+
   /* Evaluate Your Delivery Capacity — Figma 958:32154 */
   .evaluate-delivery-cta-card {
     position: relative;
@@ -432,6 +474,55 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+    }
+  }
+
+  /* MEP split headings — 48px desktop, fluid on tablet/mobile */
+  .mep-section-heading {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: #111111;
+  }
+
+  .mep-section-heading .text-accent {
+    font-weight: 300;
+  }
+
+  /* Mobile / tablet — About, Contact, MEP (desktop lg+ unchanged) */
+  @media (max-width: 1023px) {
+    .text-section {
+      font-size: clamp(1.75rem, 6.5vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .mep-section-heading {
+      font-size: clamp(1.75rem, 6.5vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .text-display {
+      font-size: clamp(2rem, 8vw, 3.75rem);
+      line-height: 1.1;
+    }
+
+    .evaluate-delivery-cta-card {
+      height: auto;
+      min-height: 320px;
+    }
+
+    .evaluate-delivery-cta-panel {
+      position: relative;
+      inset: auto;
+      margin: 24px;
+      padding: 32px 24px;
+      min-height: 272px;
+    }
+
+    .evaluate-delivery-cta-mosaic {
+      top: -420px;
+      width: 120%;
+      max-width: 900px;
     }
   }
 

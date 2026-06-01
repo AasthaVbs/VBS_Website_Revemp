@@ -11,13 +11,9 @@ export function MepTechnicalMethodsSection() {
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={mepTechnicalMethods.tag} />
-            <h2 className="max-w-[834px] capitalize text-[#111111]">
-              <span className="block text-[48px] font-medium leading-[1.15]">
-                {mepTechnicalMethods.titleLine1}
-              </span>
-              <span className="block text-[48px] font-light leading-[1.15] text-[#D70416]">
-                {mepTechnicalMethods.titleLine2}
-              </span>
+            <h2 className="mep-section-heading max-w-[834px] capitalize">
+              <span className="block font-medium">{mepTechnicalMethods.titleLine1}</span>
+              <span className="text-accent block font-light">{mepTechnicalMethods.titleLine2}</span>
             </h2>
           </div>
           <p className="max-w-[739px] text-[16px] font-normal capitalize leading-6 text-[#808080]">

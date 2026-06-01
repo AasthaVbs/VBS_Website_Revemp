@@ -15,13 +15,9 @@ export function MepEngagementProcessSection() {
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={mepEngagementProcessSection.tag} />
-            <h2 className="max-w-[719px] capitalize text-[#111111]">
-              <span className="block text-[48px] font-medium leading-[1.15]">
-                {mepEngagementProcessSection.titleLine1}
-              </span>
-              <span className="block text-[48px] font-light leading-[1.15] text-[#D70416]">
-                {mepEngagementProcessSection.titleLine2}
-              </span>
+            <h2 className="mep-section-heading max-w-[719px] capitalize">
+              <span className="block font-medium">{mepEngagementProcessSection.titleLine1}</span>
+              <span className="text-accent block font-light">{mepEngagementProcessSection.titleLine2}</span>
             </h2>
           </div>
           <p className="max-w-[640px] text-[16px] font-normal capitalize leading-6 text-[#808080]">

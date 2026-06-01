@@ -82,7 +82,13 @@ function EngagementModelCardArticle({ card }: { card: EngagementModelCard }) {
           </div>
         </div>
 
-        <PrimaryCtaButton className={card.ctaHighlighted ? "primary-cta--highlighted" : undefined}>
+        <PrimaryCtaButton
+          fullWidth={false}
+          className={cn(
+            "primary-cta--wide w-full",
+            card.ctaHighlighted && "primary-cta--highlighted",
+          )}
+        >
           {card.cta}
         </PrimaryCtaButton>
       </div>
@@ -120,7 +126,7 @@ export function EngagementModelsSection({
         </div>
       }
     >
-      <div className="grid w-full gap-5 lg:grid-cols-3">
+      <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {cards.map((card) => (
           <EngagementModelCardArticle key={card.title} card={card} />
         ))}

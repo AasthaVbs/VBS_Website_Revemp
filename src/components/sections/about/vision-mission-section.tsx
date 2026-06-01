@@ -33,7 +33,9 @@ function VisionMissionCard({
             className="h-[46px] w-[46px]"
           />
         </div>
-        <h3 className="text-[36px] font-normal leading-none text-[#111111]">{card.title}</h3>
+        <h3 className="text-[28px] font-normal leading-none text-[#111111] sm:text-[32px] lg:text-[36px]">
+          {card.title}
+        </h3>
       </div>
       <p className="text-[16px] font-normal leading-6 text-[#808080]">{card.description}</p>
       <Image

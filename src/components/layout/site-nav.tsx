@@ -17,6 +17,7 @@ export function SiteNav() {
   const isHome = pathname === "/";
   const isAbout = pathname === "/about";
   const isMepPage = pathname === "/mep-engineers";
+  const isEngagementPage = pathname === "/engagement-models";
 
   return (
     <nav className="hidden items-center gap-[10px] lg:flex">
@@ -57,9 +58,14 @@ export function SiteNav() {
         }
 
         const isActiveHome = item.label === "Home" && isHome;
+        const isActiveEngagement = item.label === "Engagement Model" && isEngagementPage;
 
         return (
-          <Link key={item.label} href={item.href} className={navLinkClass(isActiveHome)}>
+          <Link
+            key={item.label}
+            href={item.href}
+            className={navLinkClass(isActiveHome || isActiveEngagement)}
+          >
             {item.label}
           </Link>
         );

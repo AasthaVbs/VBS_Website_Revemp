@@ -1,0 +1,131 @@
+import Image from "next/image";
+import { Fragment } from "react";
+
+import { PageContainer } from "@/components/layout/page-container";
+import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
+import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
+import {
+  mepBimServiceCoverageGridItems,
+  mepBimServiceCoverageGridSection,
+} from "@/constants/mep-bim-modelling-content";
+
+const BENEFIT_ICON_COLORED = "/images/mep/key-benefits/icon-benefit-colored.svg";
+const BENEFIT_ICON_MUTED = "/images/mep/key-benefits/icon-benefit-muted.svg";
+
+function VerticalDivider() {
+  return (
+    <div
+      className="hidden w-px shrink-0 self-stretch bg-gradient-to-b from-transparent via-[#CBCCCD] to-transparent lg:block"
+      aria-hidden
+    />
+  );
+}
+
+function HorizontalDivider() {
+  return (
+    <div
+      className="h-px w-full shrink-0 bg-gradient-to-r from-transparent via-[#CBCCCD] to-transparent"
+      aria-hidden
+    />
+  );
+}
+
+/** Figma node 221:13618 — Service Coverage grid */
+export function MepBimServiceCoverageGridSection() {
+  const { tag, titleLine1, titleLine2, description, ctaLabel } = mepBimServiceCoverageGridSection;
+  const rowOne = mepBimServiceCoverageGridItems.slice(0, 3);
+  const rowTwo = mepBimServiceCoverageGridItems.slice(3, 6);
+
+  return (
+    <section
+      id="mep-bim-service-coverage"
+      aria-labelledby="mep-bim-service-coverage-heading"
+      className="scroll-mt-[120px] bg-white py-16 lg:scroll-mt-[148px] lg:py-[100px]"
+    >
+      <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
+        <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
+          <div className="flex w-full flex-col gap-3">
+            <div className="flex w-full justify-center">
+              <MepSectionTag label={tag} centered />
+            </div>
+            <h2 id="mep-bim-service-coverage-heading" className="mep-section-heading max-w-[659px] capitalize">
+              <span className="font-medium">{titleLine1} </span>
+              <span className="text-accent font-light">{titleLine2}</span>
+            </h2>
+          </div>
+          <p className="max-w-[536px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+            {description}
+          </p>
+        </div>
+
+        <div className="flex w-full max-w-[1440px] flex-col items-center gap-10 lg:gap-[40px]">
+          <CoverageRow items={rowOne} />
+          <HorizontalDivider />
+          <CoverageRow items={rowTwo} />
+        </div>
+
+        <PrimaryCtaButton
+          fullWidth={false}
+          className="h-auto min-h-[52px] w-[164px] px-5 py-4 capitalize backdrop-blur-[50px]"
+        >
+          {ctaLabel}
+        </PrimaryCtaButton>
+      </PageContainer>
+    </section>
+  );
+}
+
+function CoverageRow({ items }: { items: (typeof mepBimServiceCoverageGridItems)[number][] }) {
+  return (
+    <div className="flex w-full flex-col gap-5 lg:flex-row lg:items-stretch">
+      {items.map((item, index) => (
+        <Fragment key={item.title}>
+          {index > 0 ? <VerticalDivider /> : null}
+          <CoverageCard item={item} />
+        </Fragment>
+      ))}
+    </div>
+  );
+}
+
+function CoverageCard({ item }: { item: (typeof mepBimServiceCoverageGridItems)[number] }) {
+  return (
+    <article className="group mep-interactive-card flex min-w-0 flex-1 flex-col gap-5 bg-white p-2.5">
+      <div className="flex flex-col gap-2.5">
+        <div className="relative flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-[10px]">
+          {item.featured ? (
+            <Image
+              src={BENEFIT_ICON_COLORED}
+              alt=""
+              width={56}
+              height={56}
+              className="h-14 w-14"
+              aria-hidden
+            />
+          ) : (
+            <>
+              <Image
+                src={BENEFIT_ICON_MUTED}
+                alt=""
+                width={56}
+                height={56}
+                className="h-14 w-14 transition-opacity duration-200 group-hover:opacity-0"
+                aria-hidden
+              />
+              <Image
+                src={BENEFIT_ICON_COLORED}
+                alt=""
+                width={56}
+                height={56}
+                className="absolute h-14 w-14 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                aria-hidden
+              />
+            </>
+          )}
+        </div>
+        <h3 className="text-[24px] font-normal leading-[1.35] text-[#111111]">{item.title}</h3>
+      </div>
+      <p className="text-[16px] font-normal leading-6 text-[#808080]">{item.description}</p>
+    </article>
+  );
+}

@@ -38,13 +38,9 @@ export function MepKeyBenefitsSection() {
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={mepKeyBenefitsSection.tag} />
-            <h2 className="max-w-[659px] capitalize text-[#111111]">
-              <span className="text-[48px] font-medium leading-[1.15]">
-                {mepKeyBenefitsSection.titleLine1}{" "}
-              </span>
-              <span className="text-[48px] font-light leading-[1.15] text-[#D70416]">
-                {mepKeyBenefitsSection.titleLine2}
-              </span>
+            <h2 className="mep-section-heading max-w-[659px] capitalize">
+              <span className="font-medium">{mepKeyBenefitsSection.titleLine1} </span>
+              <span className="text-accent font-light">{mepKeyBenefitsSection.titleLine2}</span>
             </h2>
           </div>
           <p className="max-w-[581px] text-[16px] font-normal capitalize leading-6 text-[#808080]">

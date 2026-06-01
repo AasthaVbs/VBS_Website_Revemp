@@ -22,8 +22,8 @@ export function FounderSection() {
   return (
     <section className="bg-white py-12 lg:py-[100px]">
       <PageContainer>
-        <div className="flex flex-col items-stretch gap-10 lg:flex-row lg:gap-10">
-          <div className="flex w-full min-w-0 max-w-[680px] flex-1 flex-col items-start gap-5">
+        <div className="flex flex-col items-stretch gap-10 lg:flex-row lg:items-start lg:gap-10">
+          <div className="order-2 flex w-full min-w-0 max-w-[680px] flex-1 flex-col items-start gap-5 lg:order-1">
             <div className="flex flex-col items-start gap-3">
               <SectionTag label={tag} />
               <h2 className="text-section max-w-[585px] capitalize">
@@ -80,7 +80,7 @@ export function FounderSection() {
             </Link>
           </div>
 
-          <div className="relative mx-auto aspect-[717/534] w-full max-w-[717px] shrink-0 lg:mx-0">
+          <div className="relative order-1 mx-auto aspect-[717/534] w-full max-w-[717px] shrink-0 lg:order-2 lg:mx-0">
             <div className="absolute left-[21.34%] top-0 h-full w-[78.66%] overflow-hidden rounded-[10px]">
               <div className="absolute left-[-0.18%] top-[-3.18%] h-[106.37%] w-[100.71%]">
                 <Image

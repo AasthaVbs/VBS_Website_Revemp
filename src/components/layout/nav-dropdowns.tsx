@@ -82,20 +82,35 @@ export function CapabilitiesMegaMenu() {
 
       <NavMenuDivider id="capabilities-mega-divider-1" />
 
-      <div className="flex w-[236px] shrink-0 flex-col gap-5 px-[30px]">
+      <div className="flex w-[min(360px,42vw)] shrink-0 flex-col gap-5 px-[30px]">
         {CAPABILITY_CATEGORIES.map((category) => {
           const isActive = category.id === activeCategoryId;
+          const className = cn(
+            "block w-full whitespace-nowrap border-b pb-1.5 text-left text-[16px] font-medium leading-snug transition-colors",
+            isActive
+              ? "border-vbs-red text-[#111111]"
+              : "border-transparent text-[#808080] hover:text-[#111111]",
+          );
+
+          if (category.href) {
+            return (
+              <Link
+                key={category.id}
+                href={category.href}
+                onMouseEnter={() => setActiveCategoryId(category.id)}
+                className={className}
+              >
+                {category.label}
+              </Link>
+            );
+          }
+
           return (
             <button
               key={category.id}
               type="button"
               onMouseEnter={() => setActiveCategoryId(category.id)}
-              className={cn(
-                "w-full border-b pb-1.5 text-left text-[16px] font-medium leading-snug transition-colors",
-                isActive
-                  ? "border-vbs-red text-[#111111]"
-                  : "border-transparent text-[#808080] hover:text-[#111111]",
-              )}
+              className={className}
             >
               {category.label}
             </button>

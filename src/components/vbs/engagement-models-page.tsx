@@ -17,7 +17,7 @@ export function EngagementModelsPage() {
       <main className="relative z-0">
         <EngagementModelsSection
           id="engagement"
-          sectionClassName="bg-[#FAFAFA] pt-24 lg:pt-[120px]"
+          sectionClassName="bg-[#FAFAFA] pt-2 lg:pt-8"
         />
         <EngagementModelFinderSection />
         <EngagementModelsCompareSection />

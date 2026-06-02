@@ -15,7 +15,7 @@ import {
 export function SiteNav() {
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const isAbout = pathname === "/about";
+  const isAbout = pathname === "/about" || pathname === "/leadership";
   const isMepPage = pathname === "/mep-engineers";
   const isEngagementPage = pathname === "/engagement-models";
 

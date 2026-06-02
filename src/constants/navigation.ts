@@ -30,9 +30,10 @@ export const MAIN_NAV = [
 ] as const;
 
 export const ABOUT_DROPDOWN_LINKS: NavDropdownLink[] = [
-  { label: "Leadership Team", href: "#leadership" },
+  { label: "About VBS", href: "/about" },
+  { label: "Leadership Team", href: "/leadership" },
   { label: "Careers", href: "/careers" },
-  { label: "Life at VBS", href: "#life-at-vbs" },
+  { label: "Life at VBS", href: "/about" },
 ];
 
 export const RESOURCES_DROPDOWN_LINKS: NavDropdownLink[] = [

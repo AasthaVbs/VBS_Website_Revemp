@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
 import {
@@ -37,12 +39,25 @@ export function CareersOpeningsSection() {
 }
 
 function JobRow({ job }: { job: JobOpening }) {
+  const rowClassName = `flex min-h-[96px] flex-col justify-center gap-4 border-b border-[#CBCCCD] px-5 py-5 sm:flex-row sm:items-center sm:justify-between ${
+    job.highlighted ? "bg-[#FAFAFA]" : "bg-white"
+  }`;
+
+  if (job.id === "senior-ai-engineer") {
+    return (
+      <Link href="/careers/careers-detailed-page" className={`${rowClassName} transition-opacity hover:opacity-90`}>
+        <h3 className="text-[24px] font-normal text-[#111111]">{job.title}</h3>
+        <div className="flex flex-wrap items-center gap-2.5">
+          <JobTag label={job.experience} />
+          <JobTag label={job.department} />
+          <JobTag label={job.openings} />
+        </div>
+      </Link>
+    );
+  }
+
   return (
-    <div
-      className={`flex min-h-[96px] flex-col justify-center gap-4 border-b border-[#CBCCCD] px-5 py-5 sm:flex-row sm:items-center sm:justify-between ${
-        job.highlighted ? "bg-[#FAFAFA]" : "bg-white"
-      }`}
-    >
+    <div className={rowClassName}>
       <h3 className="text-[24px] font-normal text-[#111111]">{job.title}</h3>
       <div className="flex flex-wrap items-center gap-2.5">
         <JobTag label={job.experience} />

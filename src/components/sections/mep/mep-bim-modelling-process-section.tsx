@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
@@ -12,24 +12,38 @@ import {
 import { cn } from "@/lib/utils";
 
 const STEP_INTERVAL_MS = 2800;
+const LAST_STEP_INDEX = mepBimModellingProcessSteps.length - 1;
+
+function subscribePrefersReducedMotion(onStoreChange: () => void) {
+  const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mediaQuery.addEventListener("change", onStoreChange);
+  return () => mediaQuery.removeEventListener("change", onStoreChange);
+}
+
+function getPrefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
 
 /** Figma node 221:14688 — Center timeline with alternating content */
 export function MepBimModellingProcessSection() {
   const { tag, titleLead, titleAccent, description } = mepBimModellingProcessSection;
+  const prefersReducedMotion = useSyncExternalStore(
+    subscribePrefersReducedMotion,
+    getPrefersReducedMotion,
+    () => false,
+  );
   /** Highest step index that has turned red (0 = step 01). Red badges stay; animation stops after 06. */
   const [highlightedUpTo, setHighlightedUpTo] = useState(0);
+  const activeHighlightedUpTo = prefersReducedMotion ? LAST_STEP_INDEX : highlightedUpTo;
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
-      setHighlightedUpTo(mepBimModellingProcessSteps.length - 1);
       return;
     }
 
-    const lastIndex = mepBimModellingProcessSteps.length - 1;
     const interval = window.setInterval(() => {
       setHighlightedUpTo((current) => {
-        if (current >= lastIndex) {
+        if (current >= LAST_STEP_INDEX) {
           window.clearInterval(interval);
           return current;
         }
@@ -38,7 +52,7 @@ export function MepBimModellingProcessSection() {
     }, STEP_INTERVAL_MS);
 
     return () => window.clearInterval(interval);
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
     <section className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-[100px]">
@@ -58,7 +72,7 @@ export function MepBimModellingProcessSection() {
 
         <div className="relative w-full max-w-[1440px] px-0 lg:px-[165px]">
           <div
-            className="pointer-events-none absolute left-1/2 top-10 bottom-10 hidden w-px -translate-x-1/2 border-l border-dashed border-[#CBCCCD] lg:block"
+            className="pointer-events-none absolute left-1/2 top-[38px] bottom-[38px] hidden w-[2px] -translate-x-1/2 bg-[repeating-linear-gradient(to_bottom,#CBCCCD_0_10px,transparent_10px_20px)] lg:block"
             aria-hidden
           />
 
@@ -68,7 +82,7 @@ export function MepBimModellingProcessSection() {
                 key={step.number}
                 step={step}
                 index={index}
-                highlightedUpTo={highlightedUpTo}
+                highlightedUpTo={activeHighlightedUpTo}
               />
             ))}
           </ol>

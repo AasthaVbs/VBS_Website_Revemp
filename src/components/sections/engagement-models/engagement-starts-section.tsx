@@ -28,7 +28,7 @@ export function EngagementStartsSection() {
         <div className="relative w-full max-w-[940px] px-2 sm:px-0">
           {/* Dashed line through badge centers — Figma */}
           <div
-            className="pointer-events-none absolute left-[36px] right-[36px] top-[30px] z-0 border-t border-dashed border-[#CBCCCD] sm:left-[40px] sm:right-[40px] sm:top-[35px]"
+            className="pointer-events-none absolute left-[36px] right-[36px] top-[30px] z-0 hidden h-[2px] bg-[repeating-linear-gradient(to_right,#CBCCCD_0_18px,transparent_18px_30px)] sm:left-[40px] sm:right-[40px] sm:top-[35px] min-[360px]:block"
             aria-hidden
           />
 

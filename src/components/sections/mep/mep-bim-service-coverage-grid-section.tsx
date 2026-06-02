@@ -45,8 +45,8 @@ export function MepBimServiceCoverageGridSection() {
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
         <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
           <div className="flex w-full flex-col gap-3">
-            <div className="flex w-full justify-center">
-              <MepSectionTag label={tag} centered />
+            <div className="flex w-full justify-start">
+              <MepSectionTag label={tag} />
             </div>
             <h2 id="mep-bim-service-coverage-heading" className="mep-section-heading max-w-[659px] capitalize">
               <span className="font-medium">{titleLine1} </span>

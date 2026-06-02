@@ -77,6 +77,7 @@ function DeliverableCard({
         )}
       >
         {/* Native img so SVG deliverable icons update reliably in dev */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={card.icon}
           alt=""

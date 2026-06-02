@@ -75,31 +75,26 @@ export function MepPageHeroSection({
 
               <PrimaryCtaButton
                 fullWidth={false}
-                className="h-auto min-h-[52px] w-full px-5 py-4 capitalize backdrop-blur-[50px] sm:w-auto"
+                className="h-auto min-h-[52px] self-start px-5 py-4 capitalize backdrop-blur-[50px]"
               >
                 {ctaLabel}
               </PrimaryCtaButton>
             </div>
 
-            {/* Image — full asset in column, scales with width (no absolute / no extra scroll) */}
+            {/* Image — natural size in column */}
             <div className="relative min-w-0 flex-1 lg:flex lg:items-center lg:justify-end">
-              <div className="relative w-full">
-                <Image
-                  src={imageSrc}
-                  alt=""
-                  width={HERO_IMAGE_WIDTH}
-                  height={HERO_IMAGE_HEIGHT}
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="block h-auto w-full"
-                />
-                <HeroImageFadeLeft />
-              </div>
+              <Image
+                src={imageSrc}
+                alt=""
+                width={HERO_IMAGE_WIDTH}
+                height={HERO_IMAGE_HEIGHT}
+                priority
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="block h-auto w-full max-w-full"
+              />
             </div>
           </div>
         </PageContainer>
-
-        <HeroFadeRightEdge />
       </section>
     );
   }

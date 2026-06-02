@@ -3,7 +3,6 @@ import Image from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { mepBimUseCaseCards, mepBimUseCasesSection } from "@/constants/mep-bim-modelling-content";
-import { cn } from "@/lib/utils";
 
 const rowOne = mepBimUseCaseCards.slice(0, 2);
 const rowTwo = mepBimUseCaseCards.slice(2, 4);

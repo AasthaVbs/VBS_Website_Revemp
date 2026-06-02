@@ -1,40 +1,65 @@
+import Image from "next/image";
+import { Fragment } from "react";
+
 import { PageContainer } from "@/components/layout/page-container";
 import { mepBimModellingTrustedBy } from "@/constants/mep-bim-modelling-content";
 
-/** Figma node 265:49905 — Trusted By strip (5 equal columns) */
+function TrustedDivider() {
+  return (
+    <div
+      className="h-[70px] w-px shrink-0 bg-gradient-to-b from-transparent via-[#CBCCCD] to-transparent"
+      aria-hidden
+    />
+  );
+}
+
+/** Figma node 265:49905 — Trusted By strip */
 export function MepTrustedByStripSection() {
   const { titleAccent, titleLead, items } = mepBimModellingTrustedBy;
 
   return (
-    <section className="bg-white py-8 sm:py-[50px]">
+    <section className="bg-white py-[50px]">
       <PageContainer>
-        <div className="flex flex-col items-stretch gap-6 sm:gap-5 lg:flex-row lg:items-center">
-          <div className="flex min-w-0 flex-col items-start justify-center lg:flex-1">
-            <p className="text-[20px] capitalize leading-tight sm:text-[24px]">
+        <div className="flex items-center gap-5 overflow-x-auto">
+          <div className="flex min-w-[100px] flex-1 shrink-0 flex-col justify-center">
+            <p className="text-[24px] capitalize leading-tight">
               <span className="font-light text-[#D70416]">{titleAccent}</span>
               <span className="font-medium text-[#111111]">{titleLead}</span>
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 lg:flex lg:flex-1 lg:gap-5">
-          {items.map((item) => (
-            <div
-              key={item.label}
-              className="flex min-w-0 items-center justify-start gap-2.5 sm:flex-1 sm:gap-[10px]"
-            >
-              <span
-                className="shrink-0 text-[24px] font-medium leading-none"
-                style={{ color: item.dashColor }}
-                aria-hidden
-              >
-                -
-              </span>
-              <span className="text-[16px] font-normal leading-normal text-[#808080]">
-                {item.label}
-              </span>
-            </div>
+          <TrustedDivider />
+
+          {items.map((item, index) => (
+            <Fragment key={item.label}>
+              <div className="flex min-w-[160px] flex-1 items-center justify-center">
+                <div className="flex items-center gap-2.5">
+                  {"icon" in item && item.icon ? (
+                    <Image
+                      src={item.icon}
+                      alt=""
+                      width={28}
+                      height={28}
+                      className="h-7 w-7 shrink-0"
+                      aria-hidden
+                    />
+                  ) : (
+                    <span
+                      className="shrink-0 text-[24px] font-medium leading-none"
+                      style={{ color: item.dashColor }}
+                      aria-hidden
+                    >
+                      -
+                    </span>
+                  )}
+                  <span className="whitespace-nowrap text-[16px] font-normal text-[#808080]">
+                    {item.label}
+                  </span>
+                </div>
+              </div>
+              {index < items.length - 1 ? <TrustedDivider /> : null}
+            </Fragment>
           ))}
-          </div>
         </div>
       </PageContainer>
     </section>

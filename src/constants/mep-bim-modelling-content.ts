@@ -12,10 +12,22 @@ export const mepBimModellingTrustedBy = {
   titleAccent: "Trusted",
   titleLead: " By",
   items: [
-    { dashColor: "#D70416", label: "General Contractors" },
-    { dashColor: "#42AA32", label: "Sub Contractors" },
-    { dashColor: "#2299D6", label: "MEP Engineers" },
-    { dashColor: "#F0B300", label: "MEP Consultants" },
+    {
+      icon: "/images/mep/trusted-by/icon-general-contractors.svg",
+      label: "General Contractors",
+    },
+    {
+      icon: "/images/mep/trusted-by/icon-sub-contractors.svg",
+      label: "Sub Contractors",
+    },
+    {
+      icon: "/images/mep/trusted-by/icon-mep-engineers.svg",
+      label: "MEP Engineers",
+    },
+    {
+      dashColor: "#F0B300",
+      label: "MEP Consultants",
+    },
   ],
 } as const;
 

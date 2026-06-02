@@ -24,7 +24,7 @@ export const MAIN_NAV = [
   { label: "Home", href: "/" },
   { label: "Our Capabilities", href: "#capabilities", hasDropdown: "capabilities" as const },
   { label: "Engagement Model", href: "/engagement-models" },
-  { label: "Resources", href: "#resources", hasDropdown: "resources" as const },
+  { label: "Resources", href: "/resources", hasDropdown: "resources" as const },
   { label: "About", href: "/about", hasDropdown: "about" as const },
   { label: "Contact Us", href: "/contact" },
 ] as const;
@@ -37,14 +37,14 @@ export const ABOUT_DROPDOWN_LINKS: NavDropdownLink[] = [
 ];
 
 export const RESOURCES_DROPDOWN_LINKS: NavDropdownLink[] = [
-  { label: "Resources", href: "#resources" },
-  { label: "Blog", href: "#blog" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Whitepapers", href: "#whitepapers" },
-  { label: "Webinar", href: "#webinar" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "News & Updates", href: "#news" },
+  { label: "Resources", href: "/resources" },
+  { label: "Blog", href: "/resources" },
+  { label: "Case Studies", href: "/resources" },
+  { label: "Whitepapers", href: "/resources" },
+  { label: "Webinar", href: "/resources" },
+  { label: "Testimonials", href: "/resources" },
+  { label: "Portfolio", href: "/resources" },
+  { label: "News & Updates", href: "/resources" },
 ];
 
 export const CAPABILITY_CATEGORIES: CapabilityCategory[] = [

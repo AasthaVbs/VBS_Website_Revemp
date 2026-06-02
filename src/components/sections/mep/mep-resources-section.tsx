@@ -52,7 +52,7 @@ export function MepResourcesSection() {
                 </button>
               ))}
             </div>
-            <a href="#" className="inline-flex items-center gap-1.5 text-[16px] font-normal text-vbs-blue">
+            <a href="/resources" className="inline-flex items-center gap-1.5 text-[16px] font-normal text-vbs-blue">
               View All
               <ChevronRight className="h-5 w-5" />
             </a>

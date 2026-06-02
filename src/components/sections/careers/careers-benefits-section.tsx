@@ -77,24 +77,24 @@ function BenefitsRow({ benefits }: { benefits: CareerBenefit[] }) {
 }
 
 function BenefitCard({ benefit }: { benefit: CareerBenefit }) {
-  const iconSrc = benefit.featured ? BENEFIT_ICON_COLORED : BENEFIT_ICON_MUTED;
-
   return (
-    <article
-      className={`flex min-w-0 flex-1 flex-col gap-5 p-2.5 ${
-        benefit.featured
-          ? "rounded-[10px] bg-white shadow-[0_4px_10px_rgba(0,0,0,0.15)]"
-          : "bg-transparent"
-      }`}
-    >
+    <article className="group flex min-w-0 flex-1 flex-col gap-5 rounded-[10px] bg-transparent p-2.5 transition-all duration-200 hover:bg-white hover:shadow-[0_4px_10px_rgba(0,0,0,0.15)]">
       <div className="flex flex-col gap-2.5">
-        <div className="flex h-[60px] w-[60px] items-center justify-center rounded-[10px] p-[15px]">
+        <div className="relative flex h-[60px] w-[60px] items-center justify-center rounded-[10px] p-[15px]">
           <Image
-            src={iconSrc}
+            src={BENEFIT_ICON_MUTED}
             alt=""
             width={46}
             height={46}
-            className="h-[46px] w-[46px]"
+            className="h-[46px] w-[46px] transition-opacity duration-200 group-hover:opacity-0"
+            aria-hidden
+          />
+          <Image
+            src={BENEFIT_ICON_COLORED}
+            alt=""
+            width={46}
+            height={46}
+            className="absolute h-[46px] w-[46px] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
             aria-hidden
           />
         </div>

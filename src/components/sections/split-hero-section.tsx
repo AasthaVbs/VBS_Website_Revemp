@@ -38,6 +38,9 @@ export function SplitHeroSection({
   ctaLabel = "Contact Us",
   ctaHref,
 }: SplitHeroSectionProps) {
+  const resolvedCtaHref =
+    ctaHref ?? (ctaLabel.trim().toLowerCase() === "contact us" ? "/contact" : undefined);
+
   const ctaClassName = cn(
     "primary-cta relative inline-flex h-[52px] w-auto shrink-0 items-center justify-center overflow-hidden rounded-[10px] border-[1.5px] border-[#D70416] bg-white/10 px-5 py-0 text-[16px] font-medium capitalize leading-none text-[#D70416] shadow-none backdrop-blur-[100px] transition-colors",
   );
@@ -58,8 +61,8 @@ export function SplitHeroSection({
                 {description}
               </p>
             </div>
-            {showCta && ctaHref ? (
-              <Link href={ctaHref} className={ctaClassName}>
+            {showCta && resolvedCtaHref ? (
+              <Link href={resolvedCtaHref} className={ctaClassName}>
                 <span className="primary-cta-blobs" aria-hidden>
                   <span className="primary-cta-blob primary-cta-blob--yellow" />
                   <span className="primary-cta-blob primary-cta-blob--blue" />

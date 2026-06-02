@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -9,6 +10,7 @@ type PrimaryCtaButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   fullWidth?: boolean;
   /** Full-width Submit Now / Apply Now — white + red text; hover solid red + white text */
   stripedLong?: boolean;
+  href?: string;
 };
 
 function PrimaryCtaBlobs() {
@@ -27,27 +29,44 @@ export function PrimaryCtaButton({
   className,
   fullWidth = true,
   stripedLong = false,
+  href,
   type = "button",
   ...props
 }: PrimaryCtaButtonProps) {
-  return (
-    <button
-      type={type}
-      className={cn(
-        "primary-cta relative inline-flex h-[52px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] border-[1.5px] border-[#D70416] px-5 py-0 text-[16px] font-medium leading-none shadow-none",
-        stripedLong
-          ? "primary-cta--striped-long text-[#D70416]"
-          : "bg-white/10 text-[#D70416] backdrop-blur-[100px]",
-        fullWidth && "primary-cta--wide w-full",
-        !fullWidth && "w-auto",
-        className,
-      )}
-      {...props}
-    >
+  const classes = cn(
+    "primary-cta relative inline-flex h-[52px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] border-[1.5px] border-[#D70416] px-5 py-0 text-[16px] font-medium leading-none shadow-none",
+    stripedLong
+      ? "primary-cta--striped-long text-[#D70416]"
+      : "bg-white/10 text-[#D70416] backdrop-blur-[100px]",
+    fullWidth && "primary-cta--wide w-full",
+    !fullWidth && "w-auto",
+    className,
+  );
+
+  const content = (
+    <>
       {!stripedLong && !fullWidth ? <PrimaryCtaBlobs /> : null}
       <span className="primary-cta-label relative z-10 inline-flex items-center gap-1.5 capitalize">
         {children}
       </span>
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button
+      type={type}
+      className={classes}
+      {...props}
+    >
+      {content}
     </button>
   );
 }

@@ -45,16 +45,11 @@ export function LeadershipTeamSection() {
           ))}
         </div>
 
-        <div className="grid w-full gap-[30px] xl:grid-cols-3">
-          {[first, second, third].map((member) =>
+        <div className="grid w-full gap-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-[30px]">
+          {[first, second, third, fourth].map((member) =>
             member ? <LeadershipMemberCard key={member.name} member={member} /> : null,
           )}
         </div>
-        {fourth ? (
-          <div className="grid w-full gap-[30px] xl:grid-cols-3">
-            <LeadershipMemberCard member={fourth} />
-          </div>
-        ) : null}
       </PageContainer>
     </section>
   );
@@ -62,17 +57,17 @@ export function LeadershipTeamSection() {
 
 function LeadershipMemberCard({ member }: { member: LeadershipMember }) {
   return (
-    <article
-      className={`overflow-hidden rounded-[10px] border border-[#CBCCCD] bg-white ${
-        member.featured ? "shadow-[0_4px_15px_rgba(0,0,0,0.20)]" : ""
-      }`}
-    >
+    <article className="group overflow-hidden rounded-[10px] border border-[#CBCCCD] bg-white transition-shadow duration-200 hover:shadow-[0_4px_15px_rgba(0,0,0,0.20)]">
       <div className="relative h-[330px] overflow-hidden bg-[#FAFAFA]">
-        <div className="absolute left-5 top-5 z-10 grid grid-cols-2 gap-0">
-          <span className="h-[30px] w-[29px] bg-[#F0B300]" />
-          <span className="h-[30px] w-[29px] bg-[#2299D6]" />
-          <span className="h-[30px] w-[29px] bg-[#42AA32]" />
-          <span className="h-[30px] w-[29px] bg-[#D70416]" />
+        <div className="absolute left-5 top-5 z-10 flex h-16 w-16 items-center justify-center p-2.5">
+          <Image
+            src="/images/mep/key-benefits/icon-benefit-colored.svg"
+            alt=""
+            width={46}
+            height={46}
+            className="h-[46px] w-[46px]"
+            aria-hidden
+          />
         </div>
         <Image src={member.image} alt={member.name} fill className="object-cover object-top" />
       </div>

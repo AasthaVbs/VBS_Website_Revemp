@@ -7,6 +7,7 @@ import { engagementModelAdvisorCta } from "@/constants/engagement-models-page-co
 /** Figma node 960:33558 — Not Sure Which Engagement Model Fits Your Business? */
 export function EngagementModelAdvisorCtaSection() {
   const { titleLead, titleAccent, description, ctaLabel } = engagementModelAdvisorCta;
+  const ctaHref = ctaLabel.trim().toLowerCase() === "contact us" ? "/contact" : undefined;
 
   return (
     <section className="bg-white py-12 sm:py-16 lg:py-[100px]">
@@ -31,7 +32,7 @@ export function EngagementModelAdvisorCtaSection() {
                 {description}
               </p>
             </div>
-            <PrimaryCtaButton fullWidth className="shrink-0 sm:w-auto">
+            <PrimaryCtaButton fullWidth href={ctaHref} className="shrink-0 sm:w-auto">
               {ctaLabel}
               <ChevronRight className="h-2.5 w-2.5" strokeWidth={1.5} />
             </PrimaryCtaButton>

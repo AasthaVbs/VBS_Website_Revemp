@@ -7,6 +7,9 @@ import { leadershipHeroCopy, leadershipHeroImages } from "@/constants/leadership
 
 /** Figma node 897:15373 — Leadership hero (same media frame as About) */
 export function LeadershipHeroSection() {
+  const ctaHref =
+    leadershipHeroCopy.ctaLabel.trim().toLowerCase() === "contact us" ? "/contact" : undefined;
+
   return (
     <section className="overflow-hidden bg-white py-12 md:py-16 lg:py-[150px]">
       <PageContainer>
@@ -32,7 +35,9 @@ export function LeadershipHeroSection() {
                 </p>
               </div>
             </div>
-            <PrimaryCtaButton fullWidth={false}>{leadershipHeroCopy.ctaLabel}</PrimaryCtaButton>
+            <PrimaryCtaButton fullWidth={false} href={ctaHref}>
+              {leadershipHeroCopy.ctaLabel}
+            </PrimaryCtaButton>
           </div>
 
           <div className="relative mx-auto aspect-[717/534] w-full max-w-[717px] shrink-0 lg:mx-0">

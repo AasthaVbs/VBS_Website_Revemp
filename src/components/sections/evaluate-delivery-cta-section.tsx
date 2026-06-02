@@ -33,6 +33,7 @@ export function EvaluateDeliveryCtaSection({
   contentAlign = "start",
 }: EvaluateDeliveryCtaSectionProps) {
   const isCentered = contentAlign === "center";
+  const ctaHref = ctaLabel.trim().toLowerCase() === "contact us" ? "/contact" : undefined;
   return (
     <section className="bg-white py-12 lg:py-[100px]">
       <PageContainer>
@@ -68,7 +69,11 @@ export function EvaluateDeliveryCtaSection({
                 {description}
               </p>
             </div>
-            <PrimaryCtaButton fullWidth={false} className={cn("shrink-0", isCentered && "self-center")}>
+            <PrimaryCtaButton
+              fullWidth={false}
+              href={ctaHref}
+              className={cn("shrink-0", isCentered && "self-center")}
+            >
               {ctaLabel}
               <ChevronRight className="h-2.5 w-2.5" strokeWidth={1.5} />
             </PrimaryCtaButton>

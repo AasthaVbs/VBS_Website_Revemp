@@ -14,8 +14,15 @@ import { useMemo, useState } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
+import { blogsBrowseIntro } from "@/constants/blogs-page-content";
 import {
-  figmaBlogListingItems,
+  figmaWebinarListingItems,
+  webinarTypeFilters,
+  webinarsBrowseIntro,
+  type WebinarDelivery,
+} from "@/constants/webinar-page-content";
+import { blogListingItems } from "@/constants/blog-posts/listing";
+import {
   resourcePaginationPages,
   resourceServiceFilters,
   resourcesBrowseIntro,
@@ -29,6 +36,8 @@ import {
   type ResourceType,
 } from "@/constants/resources-page-content";
 import { cn } from "@/lib/utils";
+
+export type ResourcesBrowseVariant = "resources" | "blogs" | "webinars";
 
 const ITEMS_PER_PAGE = 8;
 
@@ -112,22 +121,38 @@ function chunkItems<T>(items: T[], size: number): T[][] {
   return rows;
 }
 
-/** Figma node 337:37659 — Resources filters + grid */
-export function ResourcesBrowseSection() {
+/** Figma 337:37659 (resources) / 405:73063 (blogs) / 405:74005 (webinars) — filters + grid */
+export function ResourcesBrowseSection({
+  variant = "resources",
+}: {
+  variant?: ResourcesBrowseVariant;
+}) {
+  const isBlogsPage = variant === "blogs";
+  const isWebinarsPage = variant === "webinars";
+  const intro = isBlogsPage
+    ? blogsBrowseIntro
+    : isWebinarsPage
+      ? webinarsBrowseIntro
+      : resourcesBrowseIntro;
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedType, setSelectedType] = useState<ResourceType>("Blog");
+  const [selectedWebinarType, setSelectedWebinarType] = useState<WebinarDelivery>("On Demand");
   const [selectedSort, setSelectedSort] = useState<ResourceSort>("New to Old");
   const [selectedService, setSelectedService] = useState<ResourceService>("MEP Engineering Firms");
   const [currentPage, setCurrentPage] = useState(1);
 
   const filteredItems = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
-    const baseItems =
-      selectedType === "Blog"
-        ? figmaBlogListingItems
-        : selectedType === "Whitepapers"
-          ? whitepaperListingItems
-          : [];
+    const baseItems = isWebinarsPage
+      ? figmaWebinarListingItems.filter((item) => item.delivery === selectedWebinarType)
+      : isBlogsPage
+        ? blogListingItems
+        : selectedType === "Blog"
+          ? blogListingItems
+          : selectedType === "Whitepapers"
+            ? whitepaperListingItems
+            : [];
 
     let items = [...baseItems];
 
@@ -144,7 +169,7 @@ export function ResourcesBrowseSection() {
     );
 
     return items;
-  }, [searchQuery, selectedType, selectedSort]);
+  }, [isBlogsPage, isWebinarsPage, searchQuery, selectedType, selectedSort, selectedWebinarType]);
 
   const totalPages = Math.max(1, Math.ceil(filteredItems.length / ITEMS_PER_PAGE));
   const pageItems = filteredItems.slice(
@@ -163,14 +188,14 @@ export function ResourcesBrowseSection() {
       <PageContainer className="flex flex-col items-start gap-10 lg:gap-[60px]">
         <div className="flex w-full flex-col gap-5">
           <div className="flex flex-col gap-3">
-            <SectionTag label={resourcesBrowseIntro.tag} />
+            <SectionTag label={intro.tag} />
             <h2 className="text-section max-w-[672px] capitalize">
-              <span className="font-medium text-[#111111]">{resourcesBrowseIntro.titleLead}</span>
-              <span className="font-light text-[#D70416]">{resourcesBrowseIntro.titleAccent}</span>
+              <span className="font-medium text-[#111111]">{intro.titleLead}</span>
+              <span className="font-light text-[#D70416]">{intro.titleAccent}</span>
             </h2>
           </div>
           <p className="max-w-[751px] text-[16px] capitalize leading-6 text-[#808080]">
-            {resourcesBrowseIntro.description}
+            {intro.description}
           </p>
         </div>
 
@@ -195,16 +220,32 @@ export function ResourcesBrowseSection() {
                 <h3 className="text-[24px] font-normal text-[#111111]">Refine results</h3>
               </div>
 
-              <FilterGroup title="Type of Resources">
-                {resourceTypeFilters.map((type) => (
-                  <FilterOption
-                    key={type}
-                    label={type}
-                    checked={selectedType === type}
-                    onChange={() => handleTypeChange(type)}
-                  />
-                ))}
-              </FilterGroup>
+              {isWebinarsPage ? (
+                <FilterGroup title="Type of Webinars">
+                  {webinarTypeFilters.map((type) => (
+                    <FilterOption
+                      key={type}
+                      label={type}
+                      checked={selectedWebinarType === type}
+                      onChange={() => {
+                        setSelectedWebinarType(type);
+                        setCurrentPage(1);
+                      }}
+                    />
+                  ))}
+                </FilterGroup>
+              ) : !isBlogsPage ? (
+                <FilterGroup title="Type of Resources">
+                  {resourceTypeFilters.map((type) => (
+                    <FilterOption
+                      key={type}
+                      label={type}
+                      checked={selectedType === type}
+                      onChange={() => handleTypeChange(type)}
+                    />
+                  ))}
+                </FilterGroup>
+              ) : null}
 
               <FilterGroup title="Sort By">
                 {resourceSortFilters.map((sort) => (
@@ -253,7 +294,11 @@ export function ResourcesBrowseSection() {
               ))
             ) : (
               <p className="rounded-[10px] border border-[#CBCCCD] bg-[#FAFAFA] p-8 text-center text-[16px] text-[#808080]">
-                No resources match your filters. Try another type or search term.
+                {isWebinarsPage
+                  ? "No webinars match your filters. Try another type or search term."
+                  : isBlogsPage
+                    ? "No blogs match your filters. Try another search term."
+                    : "No resources match your filters. Try another type or search term."}
               </p>
             )}
           </div>
@@ -261,7 +306,13 @@ export function ResourcesBrowseSection() {
 
         <nav
           className="flex w-full flex-wrap items-center justify-end gap-5"
-          aria-label="Resources pagination"
+          aria-label={
+            isWebinarsPage
+              ? "Webinars pagination"
+              : isBlogsPage
+                ? "Blogs pagination"
+                : "Resources pagination"
+          }
         >
           <PaginationButton
             aria-label="First page"

@@ -1,0 +1,147 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+
+import { PageContainer } from "@/components/layout/page-container";
+import { SectionTag } from "@/components/sections/section-primitives";
+import type { ResourceListingItem } from "@/constants/resources-page-content";
+
+type RelatedArticlesSectionProps = {
+  tag?: string;
+  titleLead: string;
+  titleAccent: string;
+  description: string;
+  items: ResourceListingItem[];
+  viewAllHref?: string;
+};
+
+/** Home “Latest thoughts” layout — configurable title/description (Figma 1438:19806) */
+export function RelatedArticlesSection({
+  tag = "Resources",
+  titleLead,
+  titleAccent,
+  description,
+  items,
+  viewAllHref = "/blogs",
+}: RelatedArticlesSectionProps) {
+  const featured = items[0];
+  const sideCards = items.slice(1, 4);
+
+  if (!featured) {
+    return null;
+  }
+
+  const badgeClass = (type: string) => {
+    switch (type) {
+      case "Blog":
+        return "border-vbs-red bg-vbs-red text-white";
+      case "Case Study":
+        return "border-vbs-green bg-vbs-green text-white";
+      case "Whitepapers":
+      case "White Paper":
+        return "border-vbs-blue bg-vbs-blue text-white";
+      default:
+        return "border-vbs-yellow bg-vbs-yellow text-[#FBF9F9]";
+    }
+  };
+
+  return (
+    <section className="bg-white py-12 lg:py-20">
+      <PageContainer className="space-y-10 lg:space-y-[60px]">
+        <div className="flex w-full flex-col items-start gap-5">
+          <div className="flex flex-col items-start gap-3">
+            <SectionTag label={tag} />
+            <h2 className="text-section capitalize">
+              <span className="font-medium text-[#111111]">{titleLead}</span>
+              <span className="font-light text-[#D70416]">{titleAccent}</span>
+            </h2>
+          </div>
+          <p className="max-w-[413px] text-[16px] leading-6 text-[#808080] normal-case">
+            {description}
+          </p>
+        </div>
+
+        <div className="space-y-5">
+          <div className="flex flex-wrap items-center justify-end gap-4">
+            <Link
+              href={viewAllHref}
+              className="inline-flex items-center gap-1.5 text-[16px] text-vbs-blue transition-opacity hover:opacity-80"
+            >
+              View All
+              <ChevronRight className="h-5 w-5" />
+            </Link>
+          </div>
+
+          <div className="grid items-start gap-5 lg:grid-cols-2">
+            <article className="inline-flex flex-col gap-[30px] overflow-hidden">
+              <div className="relative h-[280px] overflow-hidden rounded-[10px] sm:h-[360px]">
+                <Image
+                  src={featured.image}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <span
+                  className={`absolute bottom-4 right-4 inline-flex rounded-[10px] border px-2.5 py-1 text-[13px] ${badgeClass(featured.type)}`}
+                >
+                  {featured.badgeLabel ?? featured.type}
+                </span>
+              </div>
+              <div className="flex flex-col items-start gap-[15px]">
+                <div className="flex flex-col items-start gap-4">
+                  <h3 className="text-[24px] font-normal leading-[1.2] text-[#111111] sm:text-[36px]">
+                    {featured.title}
+                  </h3>
+                  <p className="text-[16px] leading-6 text-[#808080] normal-case">
+                    {featured.excerpt}
+                  </p>
+                </div>
+                <Link
+                  href={featured.href}
+                  className="inline-flex items-center gap-1.5 text-[16px] text-vbs-blue transition-opacity hover:opacity-80"
+                >
+                  Learn More
+                  <ChevronRight className="h-5 w-5" />
+                </Link>
+              </div>
+            </article>
+
+            <div className="inline-flex w-full flex-col gap-5">
+              {sideCards.map((item) => (
+                <article key={item.id} className="grid gap-5 sm:grid-cols-2">
+                  <div className="relative h-[193px] overflow-hidden rounded-[10px]">
+                    <Image
+                      src={item.image}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, 240px"
+                    />
+                    <span
+                      className={`absolute bottom-4 right-4 inline-flex rounded-[10px] border px-2.5 py-1 text-[13px] ${badgeClass(item.type)}`}
+                    >
+                      {item.badgeLabel ?? item.type}
+                    </span>
+                  </div>
+                  <div className="flex min-h-[193px] flex-col justify-between gap-4">
+                    <h3 className="text-[20px] font-normal leading-[1.3] text-[#111111] sm:text-[24px]">
+                      {item.title}
+                    </h3>
+                    <Link
+                      href={item.href}
+                      className="inline-flex items-center gap-1.5 text-[16px] text-vbs-blue"
+                    >
+                      Learn More
+                      <ChevronRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </PageContainer>
+    </section>
+  );
+}

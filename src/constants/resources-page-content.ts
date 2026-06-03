@@ -75,6 +75,10 @@ export type ResourceListingItem = {
 };
 
 /** Figma 337:37659 — default blog grid (8 cards) */
+function blogDetailHref(id: string) {
+  return `/blogs/${id}`;
+}
+
 export const figmaBlogListingItems: ResourceListingItem[] = [
   {
     id: "revit-family",
@@ -82,7 +86,7 @@ export const figmaBlogListingItems: ResourceListingItem[] = [
     excerpt: FIGMA_RESOURCE_EXCERPT,
     type: "Blog",
     service: "MEP Engineering Firms",
-    href: "#",
+    href: blogDetailHref("revit-family"),
     image: FIGMA_RESOURCE_IMAGES[0],
     sortOrder: 1,
     badgeLabel: "Blog",
@@ -93,7 +97,7 @@ export const figmaBlogListingItems: ResourceListingItem[] = [
     excerpt: FIGMA_RESOURCE_EXCERPT,
     type: "Blog",
     service: "Architecture Firms",
-    href: "#",
+    href: blogDetailHref("architectural-bim"),
     image: FIGMA_RESOURCE_IMAGES[1],
     sortOrder: 2,
     badgeLabel: "Blog",
@@ -104,7 +108,7 @@ export const figmaBlogListingItems: ResourceListingItem[] = [
     excerpt: FIGMA_RESOURCE_EXCERPT,
     type: "Blog",
     service: "MEP Engineering Firms",
-    href: "#",
+    href: blogDetailHref("autocad-bim"),
     image: FIGMA_RESOURCE_IMAGES[2],
     sortOrder: 3,
     badgeLabel: "Blog",
@@ -115,7 +119,7 @@ export const figmaBlogListingItems: ResourceListingItem[] = [
     excerpt: FIGMA_RESOURCE_EXCERPT,
     type: "Blog",
     service: "Architecture Firms",
-    href: "#",
+    href: blogDetailHref("residential-drafting"),
     image: FIGMA_RESOURCE_IMAGES[0],
     sortOrder: 4,
     badgeLabel: "Blog",
@@ -126,7 +130,7 @@ export const figmaBlogListingItems: ResourceListingItem[] = [
     excerpt: FIGMA_RESOURCE_EXCERPT,
     type: "Blog",
     service: "Architecture Firms",
-    href: "#",
+    href: blogDetailHref("in-house-vs-outsource"),
     image: FIGMA_RESOURCE_IMAGES[1],
     sortOrder: 5,
     badgeLabel: "Blog",
@@ -137,7 +141,7 @@ export const figmaBlogListingItems: ResourceListingItem[] = [
     excerpt: FIGMA_RESOURCE_EXCERPT,
     type: "Blog",
     service: "Architecture Firms",
-    href: "#",
+    href: blogDetailHref("outsourced-drafting"),
     image: FIGMA_RESOURCE_IMAGES[2],
     sortOrder: 6,
     badgeLabel: "Blog",
@@ -148,7 +152,7 @@ export const figmaBlogListingItems: ResourceListingItem[] = [
     excerpt: FIGMA_RESOURCE_EXCERPT,
     type: "Blog",
     service: "MEP Engineering Firms",
-    href: "#",
+    href: blogDetailHref("bim-maturity"),
     image: FIGMA_RESOURCE_IMAGES[0],
     sortOrder: 7,
     badgeLabel: "Blog",
@@ -159,7 +163,7 @@ export const figmaBlogListingItems: ResourceListingItem[] = [
     excerpt: FIGMA_RESOURCE_EXCERPT,
     type: "Blog",
     service: "MEP Engineering Firms",
-    href: "#",
+    href: blogDetailHref("bim-infrastructure"),
     image: FIGMA_RESOURCE_IMAGES[1],
     sortOrder: 8,
     badgeLabel: "Blog",

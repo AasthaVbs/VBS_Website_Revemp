@@ -3,11 +3,11 @@ import Image from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
-import { resourcesPageHero } from "@/constants/resources-page-content";
+import { portfolioPageHero } from "@/constants/portfolio-page-content";
 
-/** Figma node 337:36551 — Resources hero */
-export function ResourcesHeroSection() {
-  const { tag, titleLead, titleAccent, description, ctaLabel, image, imageAlt } = resourcesPageHero;
+/** Figma node 943:16079 — Portfolio hero */
+export function PortfolioHeroSection() {
+  const { tag, titleLead, titleAccent, description, ctaLabel, image, imageAlt } = portfolioPageHero;
 
   return (
     <section className="overflow-hidden bg-white py-12 lg:py-[100px]">
@@ -22,7 +22,7 @@ export function ResourcesHeroSection() {
                   <span className="font-light text-[#D70416]">{titleAccent}</span>
                 </h1>
               </div>
-              <p className="w-full max-w-[597px] text-[16px] font-normal capitalize leading-6 text-[#808080] max-lg:max-w-none">
+              <p className="w-full max-w-[583px] text-[16px] font-normal capitalize leading-6 text-[#808080] max-lg:max-w-none">
                 {description}
               </p>
             </div>

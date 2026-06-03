@@ -38,12 +38,12 @@ export const ABOUT_DROPDOWN_LINKS: NavDropdownLink[] = [
 
 export const RESOURCES_DROPDOWN_LINKS: NavDropdownLink[] = [
   { label: "Resources", href: "/resources" },
-  { label: "Blog", href: "/resources" },
+  { label: "Blog", href: "/blogs" },
   { label: "Case Studies", href: "/resources" },
   { label: "Whitepapers", href: "/resources" },
-  { label: "Webinar", href: "/resources" },
-  { label: "Testimonials", href: "/resources" },
-  { label: "Portfolio", href: "/resources" },
+  { label: "Webinar", href: "/webinar" },
+  { label: "Testimonials", href: "/testimonials" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "News & Updates", href: "/resources" },
 ];
 

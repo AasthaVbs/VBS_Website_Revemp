@@ -219,6 +219,56 @@
     display: none;
   }
 
+  .portfolio-project-list-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .portfolio-project-list-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Portfolio Our Projects — list max-height only (no extra section runway) */
+  @media (min-width: 1024px) {
+    .portfolio-projects-section {
+      overflow: visible;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .portfolio-projects-list {
+      max-height: min(
+        calc(100dvh - var(--vbs-header-offset, 132px) - 200px),
+        100%
+      );
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+  }
+
+  /* All Projects — viewport panel; scrollable card column */
+  @media (min-width: 1024px) {
+    .all-projects-section {
+      box-sizing: border-box;
+
+      overflow: hidden;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .all-projects-layout {
+      height: 100%;
+      min-height: 0;
+    }
+
+    .all-projects-list {
+      height: 100%;
+      min-height: 0;
+      max-height: 100%;
+      overflow-y: auto;
+    }
+  }
+
   /* Build Your Team — no clipped height; hide scrollbar chrome when page scrolls */
   .build-your-team-page {
     overflow-x: clip;
@@ -233,13 +283,18 @@
     display: none;
   }
 
-  .testimonial-marquee-track {
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 16px;
-    min-width: max-content;
-    animation: testimonial-scroll 34s linear infinite;
-    will-change: transform;
+  .client-success-cards-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x proximity;
+  }
+
+  .client-success-cards-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .client-success-cards-scroll > article {
+    scroll-snap-align: start;
   }
 
   .hero-media-column {
@@ -488,6 +543,23 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+    }
+  }
+
+  .evaluate-delivery-cta-card--compact {
+    height: auto;
+    min-height: 280px;
+  }
+
+  .evaluate-delivery-cta-card--compact .evaluate-delivery-cta-panel {
+    inset: 20px;
+    padding: 60px 50px;
+  }
+
+  @media (max-width: 1023px) {
+    .evaluate-delivery-cta-card--compact .evaluate-delivery-cta-panel {
+      margin: 20px;
+      padding: 32px 24px;
     }
   }
 

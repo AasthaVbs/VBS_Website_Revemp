@@ -84,6 +84,7 @@ function EngagementModelCardArticle({ card }: { card: EngagementModelCard }) {
 
         <PrimaryCtaButton
           fullWidth={false}
+          href={"ctaHref" in card ? card.ctaHref : undefined}
           className={cn(
             "primary-cta--wide w-full",
             card.ctaHighlighted && "primary-cta--highlighted",

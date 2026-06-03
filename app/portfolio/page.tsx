@@ -18,9 +18,9 @@ export const metadata: Metadata = {
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="min-h-screen bg-white">
       <SiteHeader />
-      <main>
+      <main className="overflow-visible">
         <PortfolioHeroSection />
         <StatsStripSection stats={defaultStatsStrip} />
         <PortfolioProjectsSection />

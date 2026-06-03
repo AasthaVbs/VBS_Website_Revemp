@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useRef } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { PortfolioProjectCard } from "@/components/sections/portfolio/portfolio-project-card";
@@ -12,39 +9,17 @@ import {
   portfolioProjectItems,
 } from "@/constants/portfolio-page-content";
 
-/** Figma 948:26341 — map + intro left; scrollable project cards right */
+/** Figma 948:26341 — flex two-column layout; sticky left; all cards in document flow */
 export function AllProjectsSection() {
   const { tag, titleLead, titleAccent, description, mapImage, mapAlt } = allProjectsIntro;
-  const listRef = useRef<HTMLDivElement>(null);
-
-  const handleWheel = useCallback((event: React.WheelEvent<HTMLDivElement>) => {
-    if (typeof window === "undefined" || window.innerWidth < 1024) return;
-
-    const list = listRef.current;
-    if (!list) return;
-
-    const { scrollTop, scrollHeight, clientHeight } = list;
-    const maxScroll = scrollHeight - clientHeight;
-    if (maxScroll <= 0) return;
-
-    const atTop = scrollTop <= 0;
-    const atBottom = scrollTop >= maxScroll - 1;
-
-    if ((event.deltaY > 0 && atBottom) || (event.deltaY < 0 && atTop)) {
-      return;
-    }
-
-    event.preventDefault();
-    list.scrollTop += event.deltaY;
-  }, []);
 
   return (
-    <section className="all-projects-section overflow-hidden bg-white py-12 lg:py-[100px]">
-      <PageContainer className="flex h-full min-h-0 flex-col">
-        <div
-          className="all-projects-layout flex min-h-0 flex-1 flex-col gap-10 lg:flex-row lg:gap-[60px]"
-          onWheel={handleWheel}
-        >
+    <section
+      id="all-projects"
+      className="all-projects-section bg-white py-12 lg:py-[100px]"
+    >
+      <PageContainer>
+        <div className="all-projects-layout flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-[60px]">
           <aside className="all-projects-aside flex w-full min-w-0 flex-col items-start justify-start gap-[60px] bg-white lg:max-w-[710px] lg:shrink-0">
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-3">
@@ -72,8 +47,8 @@ export function AllProjectsSection() {
           </aside>
 
           <div
-            ref={listRef}
-            className="all-projects-list portfolio-project-list-scroll flex w-full min-w-0 flex-1 flex-col gap-[30px] lg:min-h-0"
+            id="all-projects-list"
+            className="flex w-full min-w-0 flex-1 flex-col gap-[30px] lg:max-w-[632px]"
           >
             {portfolioProjectItems.map((project) => (
               <Link key={project.id} href={project.href} className="block w-full max-w-[632px]">

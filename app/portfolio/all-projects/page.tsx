@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 
 export default function AllProjectsPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="min-h-screen bg-white">
       <SiteHeader />
-      <main>
+      <main className="overflow-visible">
         <AllProjectsSection />
         <CertificationAwardsSection />
         <ClientSuccessStoriesSection />

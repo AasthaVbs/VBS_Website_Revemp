@@ -228,45 +228,41 @@
     display: none;
   }
 
-  /* Portfolio Our Projects — list max-height only (no extra section runway) */
-  @media (min-width: 1024px) {
-    .portfolio-projects-section {
-      overflow: visible;
-      padding-top: 100px;
-      padding-bottom: 100px;
-    }
+  /* Portfolio Our Projects — page scroll; sticky left only; height from card column */
+  .portfolio-projects-section,
+  .portfolio-projects-layout {
+    overflow: visible;
+  }
 
-    .portfolio-projects-list {
-      max-height: min(
-        calc(100dvh - var(--vbs-header-offset, 132px) - 200px),
-        100%
-      );
-      overflow-y: auto;
-      overscroll-behavior: contain;
+  @media (min-width: 1024px) {
+    .portfolio-projects-aside {
+      position: sticky;
+      top: 132px;
+      align-self: flex-start;
     }
   }
 
-  /* All Projects — viewport panel; scrollable card column */
+  /* overflow-x: hidden on html/body breaks sticky; clip preserves page scroll */
+  /* All Projects — page scroll; sticky left only; height from card column */
+  .all-projects-section,
+  .all-projects-layout {
+    overflow: visible;
+  }
+
   @media (min-width: 1024px) {
-    .all-projects-section {
-      box-sizing: border-box;
-
-      overflow: hidden;
-      padding-top: 100px;
-      padding-bottom: 100px;
+    .all-projects-aside {
+      position: sticky;
+      top: 132px;
+      align-self: flex-start;
     }
+  }
 
-    .all-projects-layout {
-      height: 100%;
-      min-height: 0;
-    }
-
-    .all-projects-list {
-      height: 100%;
-      min-height: 0;
-      max-height: 100%;
-      overflow-y: auto;
-    }
+  html:has(.portfolio-projects-section),
+  html:has(.all-projects-section),
+  html:has(.portfolio-projects-section) body,
+  html:has(.all-projects-section) body {
+    overflow-x: clip;
+    overflow-y: visible;
   }
 
   /* Build Your Team — no clipped height; hide scrollbar chrome when page scrolls */

@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import getInTouchImg from "@/assets/images/image 56.png";
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionIntro } from "@/components/sections/section-primitives";
-import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
+import { ClientOnlyZohoContactForm } from "@/components/zoho/client-only-zoho-contact-form";
 
 export function GetInTouchSection({
   description = "Let's discuss your requirements and see how our expertise can help on your next project.",
@@ -14,76 +14,24 @@ export function GetInTouchSection({
   sectionId?: string;
 }) {
   return (
-    <section id={sectionId} className="bg-[#FAFAFA] py-12 lg:py-[100px]">
+    <section id={sectionId} className="vbs-get-in-touch-section bg-[#FAFAFA] py-12 lg:py-[100px]">
       <PageContainer className="grid items-start gap-8 lg:grid-cols-2 lg:gap-[30px]">
         <div className="flex min-w-0 flex-col gap-6 lg:gap-[30px]">
           <SectionIntro
             tag="Contact Us"
             title={
               <>
-                Get in <span className="text-accent">Touch</span>
+                Get in <span className="text-accent font-light">Touch</span>
               </>
             }
             description={description}
             titleClassName="text-section max-w-[528px] normal-case"
+            descriptionClassName="max-w-[435px] capitalize text-[#808080]"
           />
 
-          <form className="flex flex-col gap-4">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <label className="flex flex-col gap-2">
-                <span className="text-[16px] font-light text-[#111111]">
-                  First Name<span className="font-light text-[#D70416]">*</span>
-                </span>
-                <input
-                  type="text"
-                  className="h-[50px] rounded-[10px] border border-[#CBCCCD] bg-white px-3 text-[16px] font-normal normal-case text-[#111111] placeholder:text-[#808080]"
-                  placeholder="Enter First Name"
-                />
-              </label>
-              <label className="flex flex-col gap-2">
-                <span className="text-[16px] font-light text-[#111111]">
-                  Last Name<span className="font-light text-[#D70416]">*</span>
-                </span>
-                <input
-                  type="text"
-                  className="h-[50px] rounded-[10px] border border-[#CBCCCD] bg-white px-3 text-[16px] font-normal normal-case text-[#111111] placeholder:text-[#808080]"
-                  placeholder="Enter Last Name"
-                />
-              </label>
-            </div>
-            <div className="grid gap-5 sm:grid-cols-2">
-              <label className="flex flex-col gap-2">
-                <span className="text-[16px] font-light text-[#111111]">
-                  Number<span className="font-light text-[#D70416]">*</span>
-                </span>
-                <input
-                  type="tel"
-                  className="h-[50px] rounded-[10px] border border-[#CBCCCD] bg-white px-3 text-[16px] font-normal normal-case text-[#111111] placeholder:text-[#808080]"
-                  placeholder="Enter Number"
-                />
-              </label>
-              <label className="flex flex-col gap-2">
-                <span className="text-[16px] font-light text-[#111111]">
-                  Email ID<span className="font-light text-[#D70416]">*</span>
-                </span>
-                <input
-                  type="email"
-                  className="h-[50px] rounded-[10px] border border-[#CBCCCD] bg-white px-3 text-[16px] font-normal normal-case text-[#111111] placeholder:text-[#808080]"
-                  placeholder="Enter Email ID"
-                />
-              </label>
-            </div>
-            <label className="flex flex-col gap-2">
-              <span className="text-[16px] font-light text-[#111111]">Message</span>
-              <textarea
-                className="h-[100px] w-full resize-none rounded-[10px] border border-[#CBCCCD] bg-white px-3 py-2 text-[16px] font-normal normal-case text-[#111111] placeholder:text-[#808080]"
-                placeholder="Write a Description"
-              />
-            </label>
-            <PrimaryCtaButton type="submit" stripedLong>
-              Submit Now
-            </PrimaryCtaButton>
-          </form>
+          <div className="vbs-contact-zoho-wrap w-full">
+            <ClientOnlyZohoContactForm />
+          </div>
         </div>
 
         <div className="relative min-h-[320px] overflow-hidden rounded-[20px] bg-[#111111] shadow-[0_4px_10px_rgba(0,0,0,0.15)] sm:min-h-[420px] lg:min-h-[602px]">

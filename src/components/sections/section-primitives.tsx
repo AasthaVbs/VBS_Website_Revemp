@@ -37,11 +37,13 @@ export function SectionIntro({
   title,
   description,
   titleClassName = "text-section",
+  descriptionClassName = "max-w-[536px] text-body",
 }: {
   tag: string;
   title: ReactNode;
   description?: string;
   titleClassName?: string;
+  descriptionClassName?: string;
 }) {
   return (
     <div className="flex w-full flex-col items-start gap-5">
@@ -50,7 +52,7 @@ export function SectionIntro({
         <h2 className={titleClassName}>{title}</h2>
       </div>
       {description ? (
-        <p className="max-w-[536px] text-body">{description}</p>
+        <p className={descriptionClassName}>{description}</p>
       ) : null}
     </div>
   );

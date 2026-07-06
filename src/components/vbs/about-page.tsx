@@ -13,7 +13,7 @@ import { aboutStatsStrip } from "@/constants/shared-sections";
 
 export function VbsAboutPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
 
       <AboutHeroSection />

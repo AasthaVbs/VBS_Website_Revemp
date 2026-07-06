@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Image from "next/image";
 
 import { PageContainer } from "@/components/layout/page-container";

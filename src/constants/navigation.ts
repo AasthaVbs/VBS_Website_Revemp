@@ -1,100 +1,183 @@
 export type NavDropdownLink = {
   label: string;
   href: string;
+  external?: boolean;
 };
 
 export type CapabilityCategory = {
   id: string;
   label: string;
-  /** When set, category label links to this page */
   href?: string;
   services: NavDropdownLink[][];
 };
 
-/** @deprecated Use MAIN_NAV — kept for legacy Navbar component */
-export const NAV_LINKS = [
-  { label: "What We Do", href: "#" },
-  { label: "Success Stories", href: "#" },
-  { label: "Resources", href: "#" },
-  { label: "About Us", href: "#" },
-  { label: "Contact Us", href: "#" },
-];
+/** Next.js route map — aligned with Gatsby URLs via redirects in next.config.ts */
+export const ROUTES = {
+  home: "/",
+  capabilities: "/#capabilities",
+  engagement: "/engagement-models",
+  resources: "/resources",
+  about: "/about",
+  contact: "/contact",
+  blog: "/blogs",
+  webinar: "/webinar",
+  leadership: "/leadership",
+  careers: "/careers",
+  lifeAtVbs: "/careers",
+  testimonials: "/testimonials",
+  projects: "/portfolio",
+  successStories: "/portfolio",
+  mepServices: "/mep-engineers",
+  mepModeling: "/mep-bim-modelling",
+  scanToBimServices: "/scan-to-bim-services",
+  architectureServices: "/architecture-services",
+  dedicatedResource: "/build-your-team",
+  dedicatedTeam: "/build-your-team",
+  bimModeling: "/bim-modeling-services",
+  cadToBim: "/bim-modeling-services/cad-to-bim",
+  revitFamilies: "/bim-modeling-services/revit-family-creation",
+  architecturalBim: "/bim-modeling-services/architectural-bim-services",
+  fourDBimScheduling: "/bim-modeling-services",
+  structuralBim: "/bim-modeling-services",
+  shopDrawings: "/bim-modeling-services/shop-fabrication-drawings",
+  cadDrafting: "/cad-drafting-services",
+  twoDDrafting: "/cad-drafting-services/2d-drafting-services",
+  pdfToCad: "/cad-drafting-services/pdf-to-cad-conversion-services",
+  architecturalDrafting: "/architectural-drafting-services",
+  visualization: "/3d-visualization-services",
+  mepCadDrafting: "/cad-drafting-services",
+  mepShopDrawings: "/bim-modeling-services/shop-fabrication-drawings",
+  mepSpoolDrawings: "/bim-modeling-services/shop-fabrication-drawings",
+  mepClashDetection: "/bim-modeling-services/coordination-clash-detection-services",
+  mepCoordination: "/bim-modeling-services/coordination-clash-detection-services",
+  mepRevitFamily: "/bim-modeling-services/revit-family-creation",
+  mepBom: "/mep-engineers",
+  mepPreBid: "/mep-engineers",
+  fiveDBimCost: "/mep-engineers",
+  mepDataCenter: "/mep-bim-services/mep-data-center-services",
+  pointCloudToBim: "/bim-modeling-services/laser-scan-to-bim",
+  scanToCad: "/bim-modeling-services/scan-to-cad-services",
+  asBuiltModeling: "/bim-modeling-services/laser-scan-to-bim",
+  laserScanning: "/bim-modeling-services/laser-scan-to-bim",
+  whitepaper: "/whitepaper",
+  whitepaperMepDc: "/whitepaper/mep-coordination-data-centers-bim-workflows",
+  aiaConference: "/aia-conference-events",
+  sixtyMinutesTeam: "/60-minutes-team",
+  privacy: "/privacy-policy",
+  terms: "/terms-of-use",
+  cookies: "/cookie-policy",
+  scanToBimPointCloud: "https://www.scantobim.online/point-cloud-to-bim-services/",
+  scanToBimAsBuilt: "https://www.scantobim.online/as-built-modeling-services/",
+  scanToBimArchitectural: "https://www.scantobim.online/architectural-scan-to-bim-services/",
+  scanToBimMepf: "https://www.scantobim.online/mepf-scan-to-bim-services/",
+} as const;
 
 export const MAIN_NAV = [
-  { label: "Home", href: "/" },
-  { label: "Our Capabilities", href: "#capabilities", hasDropdown: "capabilities" as const },
-  { label: "Engagement Model", href: "/engagement-models" },
-  { label: "Resources", href: "/resources", hasDropdown: "resources" as const },
-  { label: "About", href: "/about", hasDropdown: "about" as const },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Our Capabilities", href: ROUTES.capabilities, hasDropdown: "capabilities" as const },
+  { label: "Engagement Model", href: ROUTES.engagement },
+  { label: "Resources", href: ROUTES.resources, hasDropdown: "resources" as const },
+  { label: "About", href: ROUTES.about, hasDropdown: "about" as const },
+  { label: "Contact Us", href: ROUTES.contact },
 ] as const;
 
 export const ABOUT_DROPDOWN_LINKS: NavDropdownLink[] = [
-  { label: "About VBS", href: "/about" },
-  { label: "Leadership Team", href: "/leadership" },
-  { label: "Careers", href: "/careers" },
-  { label: "Life at VBS", href: "/about" },
+  { label: "About VBS", href: ROUTES.about },
+  { label: "Leadership Team", href: ROUTES.leadership },
+  { label: "Careers", href: ROUTES.careers },
+  { label: "Life at VBS", href: ROUTES.lifeAtVbs },
 ];
 
 export const RESOURCES_DROPDOWN_LINKS: NavDropdownLink[] = [
-  { label: "Resources", href: "/resources" },
-  { label: "Blog", href: "/blogs" },
-  { label: "Case Studies", href: "/resources" },
-  { label: "Whitepapers", href: "/resources" },
-  { label: "Webinar", href: "/webinar" },
-  { label: "Testimonials", href: "/testimonials" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "News & Updates", href: "/resources" },
+  { label: "Blog", href: ROUTES.blog },
+  { label: "Case Studies", href: ROUTES.projects },
+  { label: "White Paper", href: ROUTES.whitepaper },
+  { label: "Webinar", href: ROUTES.webinar },
+  { label: "Testimonials", href: ROUTES.testimonials },
+  { label: "Portfolio", href: ROUTES.projects },
 ];
 
 export const CAPABILITY_CATEGORIES: CapabilityCategory[] = [
   {
     id: "architecture",
     label: "Architecture & Structure",
+    href: ROUTES.architectureServices,
     services: [
       [
-        { label: "Architectural BIM Modeling", href: "#" },
-        { label: "Construction Documentation", href: "#" },
-        { label: "Revit Family Creation", href: "#" },
-        { label: "CAD Drafting", href: "#" },
-        { label: "Permit Drawings", href: "#" },
+        { label: "BIM Modeling Services", href: ROUTES.bimModeling },
+        { label: "Architecture BIM Services", href: ROUTES.architecturalBim },
+        { label: "Architecture Drafting", href: ROUTES.architecturalDrafting },
+        { label: "CAD Drafting", href: ROUTES.cadDrafting },
+        { label: "2D Drafting", href: ROUTES.twoDDrafting },
       ],
       [
-        { label: "2D To 3D Floor Plans", href: "#" },
-        { label: "3D Visualization", href: "#" },
+        { label: "PDF to CAD", href: ROUTES.pdfToCad },
+        { label: "CAD to BIM", href: ROUTES.cadToBim },
+        { label: "Revit Family Creation", href: ROUTES.revitFamilies },
+        { label: "3D Visualization", href: ROUTES.visualization },
       ],
     ],
   },
   {
     id: "engineering",
     label: "Engineering & Construction",
-    href: "/mep-engineers",
+    href: ROUTES.mepServices,
     services: [
       [
-        { label: "MEP BIM Modeling", href: "/mep-bim-modelling" },
-        { label: "Clash Detection & Coordination", href: "#" },
-        { label: "Fabrication Drawings", href: "#" },
-        { label: "Structural BIM Modeling", href: "#" },
+        { label: "MEP BIM Modeling Services", href: ROUTES.mepModeling },
+        { label: "MEP Revit Family Creation Services", href: ROUTES.mepRevitFamily },
+        { label: "MEP Shop Drawing Services", href: ROUTES.mepShopDrawings },
       ],
       [
-        { label: "Shop Drawings", href: "#" },
-        { label: "As-Built Modeling", href: "#" },
+        { label: "MEP Clash Detection Services", href: ROUTES.mepClashDetection },
+        { label: "MEP Coordination Services", href: ROUTES.mepCoordination },
+        { label: "MEP Data Center Services", href: ROUTES.mepDataCenter },
       ],
     ],
   },
   {
     id: "reality-capture",
     label: "Reality Capture & Survey Companies",
+    href: ROUTES.scanToBimServices,
     services: [
       [
-        { label: "Scan to BIM", href: "#" },
-        { label: "Point Cloud Processing", href: "#" },
-        { label: "As-Built Documentation", href: "#" },
+        { label: "Point Cloud to BIM", href: ROUTES.scanToBimPointCloud, external: true },
+        { label: "As-Built Modeling", href: ROUTES.scanToBimAsBuilt, external: true },
+        {
+          label: "Architectural Scan to BIM",
+          href: ROUTES.scanToBimArchitectural,
+          external: true,
+        },
       ],
-      [
-        { label: "Survey to BIM", href: "#" },
-        { label: "LOD Modeling", href: "#" },
-      ],
+      [{ label: "MEP Scan to BIM", href: ROUTES.scanToBimMepf, external: true }],
     ],
   },
+];
+
+export const VBS_FOOTER_URLS = {
+  capabilities: ROUTES.capabilities,
+  aboutUs: ROUTES.about,
+  contactUs: ROUTES.contact,
+  blog: ROUTES.blog,
+  webinar: ROUTES.webinar,
+  leadershipTeam: ROUTES.leadership,
+  careers: ROUTES.careers,
+  lifeAtVbs: ROUTES.lifeAtVbs,
+  dedicatedTeam: ROUTES.engagement,
+  projects: ROUTES.projects,
+  successStories: ROUTES.successStories,
+  testimonials: ROUTES.testimonials,
+  bimResources: ROUTES.resources,
+  whitepaper: ROUTES.whitepaper,
+  privacyPolicy: ROUTES.privacy,
+  termsOfUse: ROUTES.terms,
+  cookiePolicy: ROUTES.cookies,
+};
+
+/** @deprecated Use MAIN_NAV */
+export const NAV_LINKS = [
+  { label: "What We Do", href: ROUTES.capabilities },
+  { label: "Success Stories", href: ROUTES.successStories },
+  { label: "Resources", href: ROUTES.resources },
+  { label: "About Us", href: ROUTES.about },
+  { label: "Contact Us", href: ROUTES.contact },
 ];

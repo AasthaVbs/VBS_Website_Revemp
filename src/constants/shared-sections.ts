@@ -4,6 +4,19 @@ export type StatItem = {
   label: string;
 };
 
+/** Architecture + Reality Capture service pages — shared resources block */
+export const ACS_RESOURCES_SERVICE_FILTER = "Architecture Firms";
+
+export const acsServicePagesResourcesSection = {
+  tag: "Resources",
+  titleLine1: "Latest Insights on ",
+  titleLine2: "Production, Governance, and Scale",
+  description:
+    "Explore technical thought leadership and actionable strategies designed to optimize your production workflows and scale without compromising standards.",
+  viewAllHref: "/resources",
+  serviceFilter: ACS_RESOURCES_SERVICE_FILTER,
+};
+
 export const defaultStatsStrip: StatItem[] = [
   { value: "11+", color: "text-vbs-red", label: "Years Embedded Inside U.S. AEC Delivery" },
   { value: "2000+", color: "text-vbs-green", label: "Production professionals across delivery centers" },

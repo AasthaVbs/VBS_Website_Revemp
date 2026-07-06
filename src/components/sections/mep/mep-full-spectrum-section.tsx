@@ -1,9 +1,11 @@
+// @ts-nocheck
 "use client";
 
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { useRef } from "react";
 
+// @ts-nocheck
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";

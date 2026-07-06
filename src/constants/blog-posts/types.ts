@@ -60,5 +60,8 @@ export type BlogPostDetail = {
   };
   tableOfContents: BlogTocItem[];
   sections: BlogContentBlock[];
+  /** Sanity portable text body — rendered when `source` is `sanity`. */
+  portableBody?: unknown[];
+  source?: "sanity" | "static";
   faqs: BlogFaqItem[];
 };

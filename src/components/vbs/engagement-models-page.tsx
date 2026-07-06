@@ -11,7 +11,7 @@ import { engagementPageTestimonialsDescription } from "@/constants/engagement-mo
 
 export function EngagementModelsPage() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page relative min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
 
       <main className="relative z-0">

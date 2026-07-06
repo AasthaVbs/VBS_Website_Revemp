@@ -1,0 +1,130 @@
+/**
+ * 1200px migrated pages — vertical section rhythm + Bootstrap margin reset.
+ * Horizontal inset: .vbs-page-container only (see vbs-redesign-overrides.scss).
+ */
+
+.vbs-redesign-page {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  article {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* Section vertical padding (same px as main repo — not scaled down) */
+
+.vbs-redesign-page section.py-20 {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+.vbs-redesign-page section.py-\[100px\] {
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+}
+
+.vbs-redesign-page section.pb-\[100px\] {
+  padding-bottom: 100px !important;
+}
+
+.vbs-redesign-page section.pt-0 {
+  padding-top: 0 !important;
+}
+
+.vbs-redesign-page section.py-12 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.vbs-redesign-page section.py-\[60px\] {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+.vbs-redesign-page section.py-16 {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+@media (min-width: 640px) {
+  .vbs-redesign-page section.sm\:py-16 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .vbs-redesign-page section.md\:py-16 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .vbs-redesign-page section.lg\:py-\[100px\],
+  .vbs-redesign-page section.py-12.lg\:py-\[100px\],
+  .vbs-redesign-page section.py-12.sm\:py-16.lg\:py-\[100px\],
+  .vbs-redesign-page section.md\:py-16.lg\:py-\[100px\],
+  .vbs-redesign-page section.py-16.lg\:py-\[100px\] {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+  }
+
+  .vbs-redesign-page section.lg\:py-\[150px\],
+  .vbs-redesign-page section.md\:py-16.lg\:py-\[150px\] {
+    padding-top: 150px !important;
+    padding-bottom: 150px !important;
+  }
+}
+
+/* FAQ / card stacks — Bootstrap breaks space-y and card padding */
+
+.vbs-redesign-page .space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1.25rem !important;
+}
+
+.vbs-redesign-page .space-y-\[60px\] > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 60px !important;
+}
+
+.vbs-redesign-page .p-5 {
+  padding: 1.25rem !important;
+}
+
+.vbs-redesign-page .mt-5 {
+  margin-top: 1.25rem !important;
+}
+
+/* Header nav — no Bootstrap full-width underline; active uses .nav-link-label::after */
+.vbs-site-header .vbs-header-nav-desktop a,
+.vbs-site-header .vbs-header-top-inner a,
+.vbs-site-header .vbs-nav-dropdown-panel a,
+.vbs-site-header .vbs-header-logo a,
+.vbs-site-header .nav-link,
+.vbs-site-header .nav-link:hover,
+.vbs-site-header .nav-link:focus,
+.vbs-site-header .nav-link:focus-visible,
+.vbs-site-header .nav-link:active,
+.vbs-site-header .nav-link:visited,
+.vbs-site-header .nav-link-active,
+.vbs-site-header .nav-link-active:hover,
+.vbs-site-header .nav-link-active:focus,
+.vbs-site-header .nav-link-active:focus-visible,
+.vbs-site-header .nav-link-active:active {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  -webkit-text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.vbs-site-header .vbs-mobile-nav-link,
+.vbs-site-header .vbs-mobile-nav-sublink {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+}

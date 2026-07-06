@@ -14,7 +14,6 @@ import {
 
 export function SiteNav() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
   const isAbout = pathname === "/about" || pathname === "/leadership";
   const isMepPage = pathname === "/mep-engineers";
   const isEngagementPage = pathname === "/engagement-models";
@@ -57,14 +56,13 @@ export function SiteNav() {
           );
         }
 
-        const isActiveHome = item.label === "Home" && isHome;
         const isActiveEngagement = item.label === "Engagement Model" && isEngagementPage;
 
         return (
           <Link
             key={item.label}
             href={item.href}
-            className={navLinkClass(isActiveHome || isActiveEngagement)}
+            className={navLinkClass(isActiveEngagement)}
           >
             {item.label}
           </Link>

@@ -1,6 +1,7 @@
-import Image from "next/image";
+"use client";
 
 import type { PortfolioProjectItem } from "@/constants/portfolio-page-content";
+import { ResourceFeedPhoto } from "@/components/ui/resource-feed-photo";
 
 function ProjectMetaRow({ label, value }: { label: string; value: string }) {
   return (
@@ -16,6 +17,10 @@ type PortfolioProjectCardProps = {
   variant?: "featured" | "listing";
 };
 
+function ProjectImage({ src, className }: { src: string; className: string }) {
+  return <ResourceFeedPhoto src={src} className={className} />;
+}
+
 /** Figma project card — featured (portfolio) or listing (all projects) */
 export function PortfolioProjectCard({ project, variant = "featured" }: PortfolioProjectCardProps) {
   if (variant === "listing") {
@@ -29,13 +34,7 @@ export function PortfolioProjectCard({ project, variant = "featured" }: Portfoli
         </div>
 
         <div className="relative h-[360px] w-full overflow-hidden rounded-[10px]">
-          <Image
-            src={project.image}
-            alt=""
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 632px"
-          />
+          <ProjectImage src={project.image} className="h-full w-full object-cover" />
         </div>
 
         <div className="flex w-full flex-col gap-2.5">
@@ -59,13 +58,7 @@ export function PortfolioProjectCard({ project, variant = "featured" }: Portfoli
       </div>
 
       <div className="relative h-[220px] w-full overflow-hidden rounded-[10px] sm:h-[300px] lg:h-[360px]">
-        <Image
-          src={project.image}
-          alt=""
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 632px"
-        />
+        <ProjectImage src={project.image} className="h-full w-full object-cover" />
       </div>
 
       <div className="flex w-full flex-col gap-2.5">

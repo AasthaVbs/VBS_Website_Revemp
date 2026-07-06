@@ -1,0 +1,825 @@
+/**
+ * Contact / About sections — layout tuned to Figma (1240px inner → 1200px PageContainer).
+ * Node refs: Get in Touch 5:23807, Our Locations 1:8104.
+ */
+
+/* ----- About / split hero (50% copy + 50% image, single asset) ----- */
+
+.vbs-split-hero__row--balanced {
+  @media (min-width: 1024px) {
+    gap: 30px !important;
+    align-items: center !important;
+  }
+}
+
+.vbs-split-hero__copy {
+  @media (min-width: 1024px) {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+/* Mobile — hero CTAs centered (not left-aligned) */
+@media (max-width: 767px) {
+  .vbs-split-hero__cta-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .vbs-split-hero__row--balanced>div:first-child,
+  .vbs-split-hero__copy {
+    >.vbs-split-hero__cta-wrap {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      align-self: stretch;
+    }
+
+    >a.primary-cta,
+    >a[class*="primary-cta"],
+    >button.primary-cta,
+    >.primary-cta {
+      align-self: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+
+  /* About, Leadership, Careers, Blog/Whitepaper/Webinar — hide hero CTA on mobile */
+  .about-section-page>section.about-hero-section:first-of-type .vbs-split-hero__cta-wrap,
+  .careers-section-page .careers-hero-section .vbs-split-hero__cta-wrap,
+  .resources-listing-page .resources-listing-hero .vbs-split-hero__cta-wrap {
+    display: none !important;
+  }
+
+  .about-section-page>section.about-hero-section:first-of-type .vbs-split-hero__copy>a.primary-cta,
+  .about-section-page>section.about-hero-section:first-of-type .vbs-split-hero__copy>button.primary-cta,
+  .careers-section-page .careers-hero-section .vbs-split-hero__copy>a.primary-cta,
+  .careers-section-page .careers-hero-section .vbs-split-hero__copy>button.primary-cta,
+  .resources-listing-page .resources-listing-hero .vbs-split-hero__copy>a.primary-cta,
+  .resources-listing-page .resources-listing-hero .vbs-split-hero__copy>button.primary-cta {
+    display: none !important;
+  }
+}
+
+.vbs-split-hero__media--single {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 717 / 534;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+
+  @media (min-width: 1024px) {
+    flex: 1 1 0;
+    max-width: 717px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.vbs-split-hero__media--single img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ----- Get in Touch (Figma 5-23598: image left, form right) ----- */
+
+/* Footer / bottom-of-page contact block — padding on every page (legacy + redesign) */
+.vbs-get-in-touch-section {
+  background-color: #fafafa;
+  scroll-margin-top: var(--vbs-header-offset, 92px);
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  @media (max-width: 767px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    scroll-margin-top: 132px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+/* Legacy pages (Contact footer) — ensure Get in Touch stays in 1200px shell */
+.vbs-page-container.vbs-get-in-touch__layout {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vbs-get-in-touch__layout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+    align-items: start;
+    gap: 0;
+    column-gap: 0;
+    width: 100%;
+  }
+}
+
+.vbs-get-in-touch__form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  width: 100%;
+  border-radius: 20px;
+  overflow: visible;
+
+  @media (min-width: 1024px) {
+    grid-column: 2;
+    grid-row: 1;
+    max-width: none;
+    width: 100%;
+    align-self: stretch;
+    gap: 30px;
+  }
+}
+
+.vbs-get-in-touch__visual-slot {
+  width: 100%;
+  min-width: 0;
+  min-height: 320px;
+
+  @media (min-width: 640px) {
+    min-height: 420px;
+  }
+
+  @media (min-width: 1024px) {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    height: auto;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+}
+
+.vbs-contact-zoho-wrap {
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+
+.vbs-get-in-touch__form-col .vbs-contact-zoho-wrap {
+  padding-left: 0;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod,
+.vbs-contact-zoho-wrap .vbs-zoho-prod #crmWebToEntityForm,
+.vbs-contact-zoho-wrap .vbs-zoho-prod form {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.vbs-get-in-touch__intro {
+  padding-left: 24px;
+
+  @media (min-width: 1024px) {
+    padding-left: 48px;
+  }
+}
+
+.vbs-get-in-touch__intro .text-body,
+.vbs-get-in-touch__intro p {
+  max-width: 100% !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  color: #808080 !important;
+  text-transform: capitalize;
+}
+
+.vbs-get-in-touch__visual {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #111111;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  @media (min-width: 640px) {
+    min-height: 420px;
+  }
+
+  @media (min-width: 1024px) {
+    flex: none;
+    width: 100%;
+    height: 660px;
+    min-height: 0;
+    max-height: 660px;
+    aspect-ratio: unset;
+  }
+}
+
+.vbs-get-in-touch__visual-img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 72% 35%;
+
+  @media (min-width: 1024px) {
+    object-position: 58% center;
+  }
+}
+
+.vbs-get-in-touch__visual-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 17, 0.2) 0%,
+    rgba(17, 17, 17, 0.85) 55%,
+    #111111 100%
+  );
+  pointer-events: none;
+
+  @media (min-width: 1024px) {
+    background: linear-gradient(
+      90deg,
+      #111111 0%,
+      #111111 35%,
+      rgba(17, 17, 17, 0.55) 55%,
+      rgba(17, 17, 17, 0.15) 100%
+    );
+  }
+}
+
+.vbs-get-in-touch__visual-contacts {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 389px;
+  color: #ffffff;
+}
+
+.vbs-get-in-touch__visual-contact {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.85;
+    text-decoration: underline;
+  }
+}
+
+.vbs-get-in-touch__visual-contacts span {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: none;
+  line-height: 1.4;
+}
+
+.vbs-get-in-touch__address-line1,
+.vbs-get-in-touch__address-line2 {
+  display: block;
+}
+
+/* ----- Contact us page — equal vertical padding on all 3 sections ----- */
+.vbs-redesign-page.contact-us-page .contact-section-page {
+  >section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  @media (max-width: 767px) {
+    >section {
+      padding-top: 40px !important;
+      padding-bottom: 40px !important;
+    }
+  }
+}
+
+/* ----- Contact us page — spacing aligned with about-section-page + mobile tweaks ----- */
+.contact-us-page .contact-section-page {
+  .vbs-get-in-touch__layout {
+    @media (min-width: 1024px) {
+      gap: 0 !important;
+      column-gap: 0 !important;
+      row-gap: 0 !important;
+    }
+
+    @media (max-width: 767px) {
+      gap: 20px !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    >section.contact-hero-section:first-of-type {
+      padding-top: 24px !important;
+    }
+
+    .contact-hero-section {
+
+      .vbs-split-hero__row--balanced {
+        gap: 12px !important;
+      }
+
+      .vbs-split-hero__copy {
+        gap: 16px !important;
+
+        >div:first-child {
+          gap: 10px !important;
+
+          >div:first-child {
+            gap: 6px !important;
+          }
+        }
+      }
+
+      .vbs-split-hero__media--single {
+        margin-top: 0 !important;
+      }
+    }
+
+    .vbs-get-in-touch__layout {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 20px !important;
+    }
+
+    .vbs-get-in-touch__visual-slot {
+      order: 2 !important;
+      min-height: 320px !important;
+    }
+
+    .vbs-get-in-touch__form-col {
+      order: 1 !important;
+    }
+
+    .vbs-get-in-touch__visual-gradient {
+      background: linear-gradient(0deg,
+          rgba(17, 17, 17, 0.95) 0%,
+          rgba(17, 17, 17, 0.72) 32%,
+          rgba(17, 17, 17, 0.15) 58%,
+          rgba(17, 17, 17, 0) 72%) !important;
+    }
+
+    .vbs-get-in-touch__visual-contacts {
+      left: 16px !important;
+      right: auto !important;
+      bottom: 16px !important;
+      top: auto !important;
+      max-width: calc(100% - 32px) !important;
+      gap: 14px !important;
+      align-items: flex-start !important;
+    }
+
+    .vbs-get-in-touch__visual-contacts .vbs-get-in-touch__visual-contact {
+      justify-content: flex-start !important;
+      text-align: left !important;
+    }
+
+    .vbs-get-in-touch__visual-contacts span {
+      font-size: 14px !important;
+      line-height: 1.35 !important;
+    }
+
+    .vbs-our-locations__cards {
+      gap: 16px !important;
+    }
+
+    section>.vbs-page-container.flex.flex-col {
+      gap: 32px !important;
+    }
+  }
+}
+
+/* Zoho form — Figma field styles (node 5:23807) */
+
+/* Hide Zoho default form title ("Contact Us" / CRM form heading) */
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_title,
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_heading {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod #crmWebToEntityForm.zcwf_lblLeft {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: inherit !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod form {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_lblLeft .zcwf_col_lab,
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_lblLeft .zcwf_col_fld {
+  width: 100% !important;
+  float: none !important;
+  text-align: left !important;
+  padding: 0 !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_col_help,
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_button[name="reset"] {
+  display: none !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_col_fld input[type="text"]:focus,
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_col_fld textarea:focus {
+  border-color: #cbcccd !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .vbs-zoho-row-2 {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 16px !important;
+  margin: 0 !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .vbs-zoho-row-full {
+  margin: 0 !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .vbs-zoho-row-full+.vbs-zoho-row-2,
+.vbs-contact-zoho-wrap .vbs-zoho-prod .vbs-zoho-row-2+.vbs-zoho-row-2,
+.vbs-contact-zoho-wrap .vbs-zoho-prod .vbs-zoho-row-2+.vbs-zoho-row-full {
+  margin-top: 16px !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_row {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  margin: 0 !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_col_lab {
+  margin: 0 !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_col_lab label {
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  color: #111111 !important;
+  font-family: inherit !important;
+  line-height: 1.4 !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_col_lab label span,
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_col_lab label [style*="color: red"] {
+  color: #d70416 !important;
+  font-weight: 300 !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_col_fld input[type="text"],
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_col_fld textarea {
+  height: 50px !important;
+  min-height: 50px !important;
+  padding: 10px !important;
+  background: #ffffff !important;
+  border: 1px solid #cbcccd !important;
+  border-radius: 10px !important;
+  color: #111111 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  font-family: inherit !important;
+  box-sizing: border-box !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_col_fld textarea {
+  min-height: 88px !important;
+  height: 88px !important;
+  resize: none !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_col_fld input::placeholder,
+.vbs-contact-zoho-wrap .vbs-zoho-prod .zcwf_col_fld textarea::placeholder {
+  color: #808080 !important;
+  opacity: 1 !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .vbs-zoho-actions {
+  margin: 16px 0 0 !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .vbs-zoho-actions .zcwf_col_fld {
+  width: 100% !important;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .formsubmit.zcwf_button {
+  width: 100% !important;
+  height: auto !important;
+  padding: 16px 20px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1.5px solid #d70416 !important;
+  border-radius: 10px !important;
+  backdrop-filter: blur(50px);
+  color: #d70416 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  text-transform: capitalize !important;
+  line-height: 1.3 !important;
+  cursor: pointer;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .formsubmit.zcwf_button:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+@media (max-width: 767px) {
+  .vbs-contact-zoho-wrap .vbs-zoho-prod .vbs-zoho-row-2 {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .vbs-get-in-touch-section {
+    --vbs-zoho-iframe-header-crop: 180px;
+  }
+
+  .vbs-contact-zoho-wrap {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.vbs-get-in-touch-section {
+  --vbs-zoho-iframe-header-crop: 200px;
+  --vbs-zoho-iframe-full-height: 680px;
+  --vbs-zoho-iframe-visible-height: 720px;
+}
+
+.vbs-contact-zoho-wrap {
+  --vbs-zoho-iframe-header-crop: var(--vbs-zoho-iframe-header-crop, 142px);
+  --vbs-zoho-iframe-full-height: var(--vbs-zoho-iframe-full-height, 680px);
+  --vbs-zoho-iframe-visible-height: var(--vbs-zoho-iframe-visible-height, 540px);
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-iframe-form {
+  position: relative;
+  width: 100%;
+  height: var(--vbs-zoho-iframe-visible-height);
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+/* Transform wrapper avoids iOS/Android touch bugs from negative margin on iframe */
+.vbs-contact-zoho-wrap .vbs-zoho-iframe-form__shift {
+  transform: translate3d(0, calc(-1 * var(--vbs-zoho-iframe-header-crop)), 0);
+  will-change: transform;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-iframe-form__frame {
+  display: block;
+  width: 100%;
+  border: none;
+  margin-top: 0;
+  height: var(--vbs-zoho-iframe-full-height) !important;
+  transition: opacity 0.2s ease, height 0.25s ease;
+  touch-action: manipulation;
+  pointer-events: auto;
+}
+
+
+.vbs-contact-zoho-wrap .vbs-zoho-iframe-form.is-submitting .vbs-zoho-iframe-form__frame {
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-iframe-form__status {
+  margin: 12px 0 0;
+  padding: 0;
+  color: #d70416;
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  animation: vbs-zoho-submit-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes vbs-zoho-submit-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod .formsubmit.zcwf_button:disabled {
+  opacity: 0.85;
+  cursor: wait;
+}
+
+/* ----- Our Locations (node 1:8104) ----- */
+
+.vbs-our-locations__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  min-width: 0;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.vbs-our-locations__card {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: #cbcccd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.vbs-our-locations__card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vbs-our-locations__card-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #111111;
+  margin: 0;
+}
+
+.vbs-our-locations__meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}
+
+.vbs-our-locations__address {
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+  flex: 0 1 auto;
+  max-width: none;
+  color: #111111;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+}
+
+.vbs-our-locations__address p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #111111;
+  text-transform: none;
+  margin: 0;
+}
+
+.vbs-our-locations__address-line1,
+.vbs-our-locations__address-line2 {
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .vbs-our-locations__address-line1 {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .vbs-our-locations__address-line2 {
+    margin-top: 4px;
+  }
+
+  .vbs-get-in-touch__address-line2 {
+    margin-top: 4px;
+  }
+}
+
+.vbs-our-locations__phone {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+
+  @media (min-width: 640px) {
+    margin-left: auto;
+    justify-content: flex-end;
+    text-align: right;
+  }
+}
+
+.vbs-our-locations__email {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vbs-our-locations__map {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #e8e8e8;
+}
+
+.vbs-our-locations__map-embed {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.vbs-our-locations__map-open {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: #2299d6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #1a7aad;
+    text-decoration: none;
+  }
+}

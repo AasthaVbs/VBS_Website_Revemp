@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 451.94 258.71">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-6 {
+        stroke: url(#linear-gradient);
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-6, .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-8 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-7 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-size: 21.1px;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-10 {
+        stroke-width: 0px;
+      }
+
+      .cls-10, .cls-11 {
+        fill: #d50f25;
+      }
+
+      .cls-12 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11 {
+        font-family: SegoeUI-Bold, 'Segoe UI';
+        font-size: 26.67px;
+        font-weight: 700;
+      }
+
+      .cls-13 {
+        letter-spacing: 0em;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="451.94" y1="180.71" x2="67.24" y2="180.71" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d50f25"/>
+      <stop offset="1" stop-color="#870a17"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <rect class="cls-10" width="384.06" height="206.82"/>
+      <rect class="cls-6" x="69.24" y="104.71" width="380.71" height="152"/>
+      <text class="cls-7" transform="translate(16.5 69.45)"><tspan x="0" y="0">USP Like La</tspan><tspan class="cls-9" x="99.73" y="0">r</tspan><tspan x="106.46" y="0">ge </tspan><tspan class="cls-13" x="133.3" y="0">A</tspan><tspan class="cls-2" x="146.15" y="0">r</tspan><tspan x="152.84" y="0">ea / </tspan><tspan class="cls-1" x="189.77" y="0">L</tspan><tspan x="198.91" y="0">OD / </tspan><tspan class="cls-5" x="243.69" y="0">L</tspan><tspan x="253.35" y="0">oc</tspan><tspan class="cls-4" x="274.39" y="0">a</tspan><tspan x="284.48" y="0">tion e</tspan><tspan class="cls-12" x="334.75" y="0">t</tspan><tspan x="341.6" y="0">c</tspan></text>
+      <text class="cls-11" transform="translate(202.8 186.3)"><tspan x="0" y="0"> </tspan><tspan class="cls-8" x="7.36" y="0">L</tspan><tspan class="cls-3" x="20.33" y="0">OD 400</tspan></text>
+    </g>
+  </g>
+</svg>

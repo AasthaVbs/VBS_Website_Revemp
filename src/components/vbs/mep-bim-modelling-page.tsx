@@ -12,6 +12,7 @@ import { MepBimTechnologyStackSection } from "@/components/sections/mep/mep-bim-
 import { MepFaqSection } from "@/components/sections/mep/mep-faq-section";
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
 import { MepResourcesSection } from "@/components/sections/mep/mep-resources-section";
+import { mepResourcesSection } from "@/constants/mep-engineers-content";
 import { MepTrustedByStripSection } from "@/components/sections/mep/mep-trusted-by-strip-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { mepBimModellingHero } from "@/constants/mep-bim-modelling-content";
@@ -19,7 +20,7 @@ import { mepFaqDescription } from "@/constants/mep-engineers-content";
 
 export function MepBimModellingPage() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page relative min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
 
       <main className="relative z-0">
@@ -34,7 +35,7 @@ export function MepBimModellingPage() {
         <MepBimModellingProcessSection />
         <MepBimUseCasesSection />
         <MepBimMeasurableResultsSection />
-        <MepResourcesSection />
+        <MepResourcesSection section={mepResourcesSection} />
         <MepFaqSection />
         <GetInTouchSection description={mepFaqDescription} />
       </main>

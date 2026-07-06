@@ -1,5 +1,14 @@
 import type { StatItem } from "@/constants/shared-sections";
 
+import { ROUTES } from "@/constants/navigation";
+import {
+  WHY_CHOOSE_ICON_AI_POWERED_WORKFLOWS,
+  WHY_CHOOSE_ICON_DEDICATED_TEAM_READY,
+  WHY_CHOOSE_ICON_FLEXIBLE_ENGAGEMENT,
+  WHY_CHOOSE_ICON_TOP_BIM_EXPERTS,
+  WHY_CHOOSE_ICON_US_CODE_COMPLIANT,
+} from "@/constants/service-why-choose-icons";
+
 export const mepStatsStrip: StatItem[] = [
   { value: "2000+", color: "text-vbs-red", label: "Projects Delivered" },
   { value: "300+", color: "text-vbs-green", label: "Global Clients" },
@@ -7,12 +16,32 @@ export const mepStatsStrip: StatItem[] = [
   { value: "200+", color: "text-vbs-yellow", label: "Licensed Engineers" },
 ];
 
+export const mepEngineersHero = {
+  tag: "MEP Engineering Firms",
+  titleLead: "MEP BIM Services That Reduce Rework & ",
+  titleAccent: "Improve Project Coordination",
+  description:
+    "From pre-bid estimation to clash-free coordination and as-built models we help contractors and AEC firms deliver projects faster and more efficiently.",
+  ctaLabel: "View All Service",
+  imageSrc: "/images/mep/mep-hero-bg-68e547.png",
+};
+
 export const mepIntroPoints = [
   "Top 1% Vetted MEP Experts",
   "US Code-Compliant Models",
   "Fast Turnaround",
   "3-Day Onboarding",
-] as const;
+];
+
+export const mepIntroCopy = {
+  tag: "Overview",
+  titleLead: "Construction-Ready MEP BIM Services for ",
+  titleAccent: "Seamless Project Execution",
+  description:
+    "We are MEP BIM service providers in the USA supporting AEC firms and contractors across the project lifecycle. We handle everything from pre-bid estimation to clash-free coordination and drawings to support efficient project execution. Our specialists create code-compliant models in Revit and Navisworks for as-built deliverables with accuracy.",
+  mainImage: encodeURI("/icons/image 35.png"),
+  overlayImage: "/image/vbs-banner.gif",
+};
 
 export const mepWhatYouGetSection = {
   tag: "What You Get",
@@ -23,7 +52,7 @@ export const mepWhatYouGetSection = {
   resultLabel: "Result",
   resultText:
     "Faster coordination, fewer site conflicts, and improved project delivery timelines across all MEPF trades.",
-} as const;
+};
 
 export const mepWhatYouGetCards = [
   {
@@ -59,24 +88,118 @@ export const mepWhatYouGetCards = [
       "4D scheduling and 5D cost estimation",
     ],
   },
-] as const;
+];
 
-/** @deprecated use mepWhatYouGetCards — kept for existing imports */
-export const mepServiceCards = mepWhatYouGetCards;
+export const mepFullSpectrumSection = {
+  tag: "Services",
+  titleLine1: "Our Full-Spectrum ",
+  titleLine2: "MEP Services",
+  description:
+    "We deliver accurate 3D MEPF models (LOD 200–500) that ensure seamless clash detection, coordinated shop drawings, and constructible BIM models across every stage from pre-bid to as-built handover.",
+  ctaLabel: "Let's Talk",
+  ctaHref: "#mep-page-contact",
+  wideCards: true,
+};
 
-export const mepDisciplinesIntro =
-  "Each discipline in MEP BIM Services demands a distinct technical approach. Virtual Building Studio models every system with code-accurate detail and full coordination across trades." as const;
-
-export const mepDisciplineTabs = [
+/** Figma 5-12911 — horizontal service cards with image crop offsets. */
+export const mepFullSpectrumCards = [
   {
-    id: "mechanical",
-    label: "Mechanical BIM",
+    title: "MEP BIM Modeling Services",
+    text: "We deliver data-rich 3D MEPF models (LOD 300–500) that ensure seamless integration with architectural and structural systems. Our models comply with ASHRAE, NEC, IPC, and NFPA standards to enhance coordination, reduce rework, and support design validation and facility management.",
+    image: "/image/MEP BIM Modeling-1.jpeg",
+    imageCrop: { width: 522, height: 292, left: -31, top: -4.88 },
+    href: "/mep-bim-services/mep-bim-modeling-services/",
+  },
+  {
+    title: "MEP Revit Family Creation Services",
+    text: "We Deliver custom, parametric Revit families for MEP components like valves, fixtures, and panels, built to project standards. Each family is performance-tested for accuracy, flexibility, and interoperability within the Revit platform, ensuring consistent documentation and scheduling.",
+    image: "/image/MEP Revit Family Creation-2.jpeg",
+    imageCrop: { width: 502, height: 280, left: -21, top: 0 },
+    elevated: false,
+    href: "/bim-modeling-services/revit-family-creation/",
+  },
+  {
+    title: "MEP Shop Drawing Services",
+    text: "Our installation-ready MEP shop drawings include detailed plans, sections, and assemblies for HVAC, piping, and electrical systems. We also provide sleeve layouts, hanger details, and dimensioned drawings that align with contractor and fabrication requirements.",
+    image: "/image/MEP-BIM-Modeling-Services-2.jpg",
+    imageCrop: { width: 532, height: 280, left: -36, top: 0 },
+    elevated: false,
+    href: "/bim-modeling-services/shop-fabrication-drawings/",
+  },
+  {
+    title: "Bill of Material (BOM) Services",
+    text: "Using BIM models, we extract accurate quantities and generate detailed BOQs for all MEP systems. Our automated QTO services reduce manual errors and offer reliable cost estimation for budgeting, resource planning, and project control.",
+    image: "/image/Bill-of-Material-(BOM)-Services.jpg",
+    imageCrop: { width: 532, height: 280, left: -30, top: 0 },
+    elevated: false,
+    href: "#",
+  },
+  {
+    title: "Pre-Bid Estimation Services",
+    text: "We deliver accurate pre-bid estimates using advanced BIM tools and industry-standard software, covering material takeoffs, labor costs, and equipment pricing. Our fast turnarounds and precise reports help contractors bid confidently, reduce cost overruns, and win more profitable projects.",
+    image: "/image/Pre-Bid-Estimation-Services-1.jpg",
+    imageCrop: { width: 532, height: 280, left: -25, top: 0 },
+    elevated: false,
+    href: "#",
+  },
+  {
+    title: "MEP Spool Drawing Services",
+    text: "We create fabrication-ready spool drawings for MEP systems, complete with dimensions, IDs, joint locations, and material specifications. These detailed drawings streamline off-site prefabrication, reduce site installation errors, and support efficient construction sequencing.",
+    image: "/image/MEP-Spool-Drawing-Services-1.jpg",
+    imageCrop: { width: 532, height: 280, left: -36, top: 0 },
+    elevated: false,
+    href: "#",
+  },
+  {
+    title: "MEP Clash Detection & Coordination Services",
+    text: "Our expert BIM team performs clash detection using Navisworks and BIM 360 to identify and resolve conflicts between MEP, architectural, and structural systems. Our coordination process ensures constructability through issue tracking, clash reports, and collaborative resolution sessions with project stakeholders.",
+    image: "/image/MEP Clash Detection & Coordination-2.png",
+    imageCrop: { width: 501, height: 280, left: -21, top: 0 },
+    elevated: false,
+    titleMinHeight: 30,
+    href: "/bim-modeling-services/coordination-clash-detection-services/",
+  },
+  {
+    title: "Scan to BIM Services for MEP Systems",
+    text: "We convert point cloud data into detailed MEP as-built models for renovation and facility management projects. These models represent real-world conditions and help with accurate planning, coordination, advanced clash detection, improved decision-making, and lifecycle documentation, ensuring higher efficiency across all project stages.",
+    image: "/image/Scan to BIM Services for MEP Systems.jpeg",
+    imageCrop: { width: 502, height: 280, left: -21, top: 0 },
+    elevated: false,
+    titleMinHeight: 30,
+    href: "#",
+  },
+];
+
+export const mepDisciplinesSection = {
+  tag: "MEP Disciplines",
+  titleLine1: "Core ",
+  titleLine2: "MEP Disciplines ",
+  titleLine3: "Modeled with BIM Expertise",
+  titleMaxWidth: 800,
+  descriptionMaxWidth: 800,
+  description:
+    "Each discipline in MEP BIM Services demands a distinct technical approach. Virtual Building Studio models every system with code-accurate detail and full coordination across trades.",
+};
+
+/** Figma 5-13018 — tabbed discipline panels. */
+export const mepDisciplinePanels = [
+  {
+    id: "mech",
+    tabLabel: "Mechanical BIM",
     title: "Mechanical BIM Services",
     description:
       "Our Mechanical BIM Services deliver full 3D models of ductwork, AHU placements, piping systems, and plant rooms, sized to SMACNA standards with precise coordination across structure and services. Models support design validation, fabrication, and site installation, with coordinated schedules ready for contractor review and shop drawing generation.",
-    standardsApplied: "SMACNA Ductwork, ASHRAE 90.1, ASHRAE 62.1",
-    keySystemsModeled: "Supply/Return Ductwork, AHUs, VAV Boxes, ERUs, FCUs, Plant Rooms",
-    lodCapability: "LOD 300 Design → LOD 400 Fabrication → LOD 500 As-Built",
+    meta: [
+      { label: "Standards Applied", value: "SMACNA Ductwork, ASHRAE 90.1, ASHRAE 62.1" },
+      {
+        label: "Key Systems Modeled",
+        value: "Supply/Return Ductwork, AHUs, VAV Boxes, ERUs, FCUs, Plant Rooms",
+      },
+      {
+        label: "LOD Capability",
+        value: "LOD 300 Design → LOD 400 Fabrication → LOD 500 As-Built",
+      },
+    ],
     deliverablesTitle: "Mechanical BIM Deliverables",
     deliverables: [
       "Coordinated duct routing models with SMACNA sheet metal gauges and fittings",
@@ -89,14 +212,22 @@ export const mepDisciplineTabs = [
     ],
   },
   {
-    id: "electrical",
-    label: "Electrical BIM",
+    id: "elec",
+    tabLabel: "Electrical BIM",
     title: "Electrical BIM Services",
     description:
       "Electrical BIM models cover power distribution, lighting layouts, panel schedules, and conduit routing with NEC-compliant parameters. We coordinate cable trays and equipment clearances with structural and MEP trades for clash-free installation paths.",
-    standardsApplied: "NEC, NFPA 70, IEEE, IES Lighting Standards",
-    keySystemsModeled: "Panelboards, Transformers, Cable Trays, Conduit, Lighting Fixtures",
-    lodCapability: "LOD 300 Design → LOD 400 Fabrication → LOD 500 As-Built",
+    meta: [
+      { label: "Standards Applied", value: "NEC, NFPA 70, IEEE, IES Lighting Standards" },
+      {
+        label: "Key Systems Modeled",
+        value: "Panelboards, Transformers, Cable Trays, Conduit, Lighting Fixtures",
+      },
+      {
+        label: "LOD Capability",
+        value: "LOD 300 Design → LOD 400 Fabrication → LOD 500 As-Built",
+      },
+    ],
     deliverablesTitle: "Electrical BIM Deliverables",
     deliverables: [
       "Coordinated power and lighting models with NEC-compliant routing",
@@ -109,14 +240,22 @@ export const mepDisciplineTabs = [
     ],
   },
   {
-    id: "plumbing",
-    label: "Plumbing BIM",
+    id: "plmb",
+    tabLabel: "Plumbing BIM",
     title: "Plumbing BIM Services",
     description:
       "Plumbing BIM includes domestic water, sanitary waste, vent systems, and storm drainage modeled to IPC standards. We produce coordinated layouts with slope verification, pipe sizing, and fixture connections ready for submittal and fabrication.",
-    standardsApplied: "IPC, UPC, ASPE, Local AHJ Requirements",
-    keySystemsModeled: "Domestic Water, Sanitary Waste, Vent Systems, Storm Drainage",
-    lodCapability: "LOD 300 Design → LOD 400 Fabrication → LOD 500 As-Built",
+    meta: [
+      { label: "Standards Applied", value: "IPC, UPC, ASPE, Local AHJ Requirements" },
+      {
+        label: "Key Systems Modeled",
+        value: "Domestic Water, Sanitary Waste, Vent Systems, Storm Drainage",
+      },
+      {
+        label: "LOD Capability",
+        value: "LOD 300 Design → LOD 400 Fabrication → LOD 500 As-Built",
+      },
+    ],
     deliverablesTitle: "Plumbing BIM Deliverables",
     deliverables: [
       "Coordinated plumbing layouts with verified slopes and pipe sizing",
@@ -130,13 +269,21 @@ export const mepDisciplineTabs = [
   },
   {
     id: "fire",
-    label: "Fire Protection BIM",
+    tabLabel: "Fire Protection BIM",
     title: "Fire Protection BIM Services",
     description:
       "Fire protection BIM covers sprinkler systems, standpipes, and fire alarm device placement per NFPA standards. Models integrate with architectural ceilings and structural framing for accurate hydraulic calculations and installation planning.",
-    standardsApplied: "NFPA 13, NFPA 72, NFPA 101, Local Fire Codes",
-    keySystemsModeled: "Sprinkler Systems, Standpipes, Fire Alarm Devices, Fire Pumps",
-    lodCapability: "LOD 300 Design → LOD 400 Fabrication → LOD 500 As-Built",
+    meta: [
+      { label: "Standards Applied", value: "NFPA 13, NFPA 72, NFPA 101, Local Fire Codes" },
+      {
+        label: "Key Systems Modeled",
+        value: "Sprinkler Systems, Standpipes, Fire Alarm Devices, Fire Pumps",
+      },
+      {
+        label: "LOD Capability",
+        value: "LOD 300 Design → LOD 400 Fabrication → LOD 500 As-Built",
+      },
+    ],
     deliverablesTitle: "Fire Protection BIM Deliverables",
     deliverables: [
       "Sprinkler layout models coordinated with ceiling and structure",
@@ -148,269 +295,201 @@ export const mepDisciplineTabs = [
       "As-built fire protection models for facility handover",
     ],
   },
-] as const;
+];
 
-export const mepFullSpectrumIntro =
-  "We deliver accurate 3D MEPF models (LOD 200–500) that ensure seamless clash detection, coordinated shop drawings, and constructible BIM models across every stage from pre-bid to as-built handover." as const;
+export const mepWorkflowSection = {
+  tag: "Service Workflow",
+  titleLine1: "Our Revit MEP BIM ",
+  titleLine2: "Services\u00a0Workflow",
+  description:
+    "Comprehensive MEP Modeling Services Integrating HVAC, Electrical, Mechanical Piping, Plumbing, and Fire Protection Workflows",
+};
 
-export const mepFullSpectrumServices = [
-  {
-    title: "MEP BIM Modeling Services",
-    image: "/images/mep/full-spectrum/mep-bim-modeling.png",
-    highlighted: true,
-    description:
-      "We deliver data-rich 3D MEPF models (LOD 300–500) that ensure seamless integration with architectural and structural systems. Our models comply with ASHRAE, NEC, IPC, and NFPA standards to enhance coordination, reduce rework, and support design validation and facility management.",
-  },
-  {
-    title: "MEP Revit Family Creation Services",
-    image: "/images/mep/full-spectrum/mep-revit-family.png",
-    highlighted: false,
-    description:
-      "We Deliver custom, parametric Revit families for MEP components like valves, fixtures, and panels, built to project standards. Each family is performance-tested for accuracy, flexibility, and interoperability within the Revit platform, ensuring consistent documentation and scheduling.",
-  },
-  {
-    title: "MEP Shop Drawing Services",
-    image: "/images/mep/full-spectrum/mep-shop-drawing.png",
-    highlighted: false,
-    description:
-      "Our installation-ready MEP shop drawings include detailed plans, sections, and assemblies for HVAC, piping, and electrical systems. We also provide sleeve layouts, hanger details, and dimensioned drawings that align with contractor and fabrication requirements.",
-  },
-  {
-    title: "Bill of Material (BOM) Services",
-    image: "/images/mep/full-spectrum/mep-bom.png",
-    highlighted: false,
-    description:
-      "Using BIM models, we extract accurate quantities and generate detailed BOQs for all MEP systems. Our automated QTO services reduce manual errors and offer reliable cost estimation for budgeting, resource planning, and project control.",
-  },
-  {
-    title: "Pre-Bid Estimation Services",
-    image: "/images/mep/full-spectrum/mep-pre-bid.png",
-    highlighted: false,
-    description:
-      "We deliver accurate pre-bid estimates using advanced BIM tools and industry-standard software, covering material takeoffs, labor costs, and equipment pricing. Our fast turnarounds and precise reports help contractors bid confidently, reduce cost overruns, and win more profitable projects.",
-  },
-  {
-    title: "MEP Spool Drawing Services",
-    image: "/images/mep/full-spectrum/mep-spool-drawing.png",
-    highlighted: false,
-    description:
-      "We create fabrication-ready spool drawings for MEP systems, complete with dimensions, IDs, joint locations, and material specifications. These detailed drawings streamline off-site prefabrication, reduce site installation errors, and support efficient construction sequencing.",
-  },
-  {
-    title: "MEP Clash Detection & Coordination Services",
-    image: "/images/mep/full-spectrum/mep-clash-detection.png",
-    highlighted: false,
-    description:
-      "Our expert BIM team performs clash detection using Navisworks and BIM 360 to identify and resolve conflicts between MEP, architectural, and structural systems. Our coordination process ensures constructability through issue tracking, clash reports, and collaborative resolution sessions with project stakeholders.",
-  },
-  {
-    title: "Scan to BIM Services for MEP Systems",
-    image: "/images/mep/full-spectrum/mep-scan-to-bim.png",
-    highlighted: false,
-    description:
-      "We convert point cloud data into detailed MEP as-built models for renovation and facility management projects. These models represent real-world conditions and help with accurate planning, coordination, advanced clash detection, improved decision-making, and lifecycle documentation, ensuring higher efficiency across all project stages.",
-  },
-] as const;
-
+/** Figma 5-13078 — zigzag workflow steps. */
 export const mepWorkflowSteps = [
   {
     number: "01",
     title: "Project Initiation & BEP Setup",
-    description:
-      "We receive architectural models, MEP design drawings, and project specifications from your team. We establish the BEP, define LOD requirements, and configure file-sharing protocols in Autodesk BIM 360. Coordinate references and shared parameters get verified before modeling starts.",
-    highlight: true,
+    text: "We receive architectural models, MEP design drawings, and project specifications from your team. We establish the BEP, define LOD requirements, and configure file-sharing protocols in Autodesk BIM 360. Coordinate references and shared parameters get verified before modeling starts.",
   },
   {
     number: "02",
     title: "Discipline MEP BIM Modeling",
-    description:
-      "We model each MEPF discipline separately like mechanical, electrical, plumbing, and fire protection in Revit MEP. System families, connector parameters, and LOD-appropriate content populate each discipline model. Modeling follows project-specific drafting standards and code requirements for each trade.",
-    highlight: false,
+    text: "We model each MEPF discipline separately like mechanical, electrical, plumbing, and fire protection in Revit MEP. System families, connector parameters, and LOD-appropriate content populate each discipline model. Modeling follows project-specific drafting standards and code requirements for each trade.",
   },
   {
     number: "03",
     title: "Clash Detection & Coordination",
-    description:
-      "We link discipline models and run hard, soft, and clearance clash tests in Navisworks Manage. Clash reports document conflicts with annotated screenshots and location references. Coordination meetings address clashes with trade representatives, and model updates reflect resolved items.",
-    highlight: false,
+    text: "We link discipline models and run hard, soft, and clearance clash tests in Navisworks Manage. Clash reports document conflicts with annotated screenshots and location references. Coordination meetings address clashes with trade representatives, and model updates reflect resolved items.",
   },
   {
     number: "04",
     title: "Construction Documentation",
-    description:
-      "We extract MEP shop drawings, spool drawings, reflected ceiling plans, and section views from the coordinated model. All documentation meets contractor, fabricator, and AHJ submission standards for each project jurisdiction. Installation Details accompany every shop drawing package.",
-    highlight: false,
+    text: "We extract MEP shop drawings, spool drawings, reflected ceiling plans, and section views from the coordinated model. All documentation meets contractor, fabricator, and AHJ submission standards for each project jurisdiction. Installation Details accompany every shop drawing package.",
   },
   {
     number: "05",
     title: "QTO & BOQ Extraction",
-    description:
-      "We generate automated material take-offs directly from the coordinated Revit MEP model. Accurate BOQs cover ductwork, piping, conduit, fittings, and equipment for each MEPF trade. These schedules support procurement, cost estimation, and change order documentation with model-verified quantities.",
-    highlight: false,
+    text: "We generate automated material take-offs directly from the coordinated Revit MEP model. Accurate BOQs cover ductwork, piping, conduit, fittings, and equipment for each MEPF trade. These schedules support procurement, cost estimation, and change order documentation with model-verified quantities.",
   },
   {
     number: "06",
     title: "As-Built & FM Handover",
-    description:
-      "We update models to reflect site conditions and issued-for-construction revisions throughout the build phase. LOD 500 as-built models and COBie-compliant data exports support facility management and owner operations. Final deliverables cover RVT, IFC, DWG, and NWD formats for complete project compatibility.",
-    highlight: false,
+    text: "We update models to reflect site conditions and issued-for-construction revisions throughout the build phase. LOD 500 as-built models and COBie-compliant data exports support facility management and owner operations. Final deliverables cover RVT, IFC, DWG, and NWD formats for complete project compatibility.",
   },
-] as const;
+];
 
-export const mepTechnicalMethods = {
-  tag: "Name Tag",
-  titleLine1: "Our Technical Methods for",
+export const mepQualityAssuranceSection = {
+  tag: "Quality Assurance",
+  titleLine1: "Our Technical Methods for ",
   titleLine2: "Inter-Disciplinary Conflict Resolution",
   description:
     "MEP BIM Services at Virtual Building Studio apply a two-stage clash detection process that catches conflicts early and resolves them before construction begins - reducing RFIs and cutting change order volume at the project site.",
-  phases: [
-    {
-      prefix: "0",
-      prefixColor: "text-[#42AA32]",
-      number: "1",
-      title: "In-Model Coordination",
-      description:
-        "Each trade model receives internal coordination checks using Revit's interference checking tools. Our BIM engineers review spatial conflicts between ducts, pipes, conduits, and structural elements within the linked model environment catching issues at the design stage",
-      highlighted: true,
-    },
-    {
-      prefix: "0",
-      prefixColor: "text-[#2299D6]",
-      number: "2",
-      title: "Navisworks Federation",
-      description:
-        "We federate all trade models architectural, structural, mechanical, electrical, plumbing, and fire protection within Navisworks. We run rule-based clash tests for hard clashes, soft clashes (clearance violations), and workflow clashes (sequencing conflicts). Clash reports categorize each conflict by severity, trade, and grid reference.",
-      highlighted: false,
-    },
-  ],
-  stats: [
-    {
-      value: "2x",
-      valueClass: "text-[#D70416]",
-      label: "Clash detection stages on every project",
-      labelClass: "max-w-[227px]",
-    },
-    {
-      value: "LOD 400",
-      valueClass: "text-[#42AA32]",
-      label: "Fabrication-level resolution for shop drawings",
-      labelClass: "",
-    },
-    {
-      value: "6 Trades",
-      valueClass: "text-[#2299D6]",
-      label: "Arch + Struct + MEP + FP federated coordination",
-      labelClass: "",
-    },
-    {
-      value: "Weekly",
-      valueClass: "text-[#F0B300]",
-      label: "Coordination meetings with all stakeholders",
-      labelClass: "",
-    },
-  ],
   quote:
     '"Prevention costs less than correction. Our two-stage process catches conflicts at the design phase - eliminating costly site modifications and delivering clash-free models that construction teams can trust."',
-  attribution: "-VBS BIM Coordination Approach",
-} as const;
+  quoteAttribution: "-VBS BIM Coordination Approach",
+};
 
-export const mepKeyBenefitsSection = {
-  tag: "Name Tag",
-  titleLine1: "Key Benefits of Adopting",
+/** Figma 5-13130 — two-stage clash resolution cards. */
+export const mepQualityAssuranceStages = [
+  {
+    prefix: "0",
+    suffix: "1",
+    prefixColor: "#42AA32",
+    title: "In-Model Coordination",
+    text: "Each trade model receives internal coordination checks using Revit's interference checking tools. Our BIM engineers review spatial conflicts between ducts, pipes, conduits, and structural elements within the linked model environment catching issues at the design stage",
+    elevated: true,
+  },
+  {
+    prefix: "0",
+    suffix: "2",
+    prefixColor: "#2299D6",
+    title: "Navisworks Federation",
+    text: "We federate all trade models architectural, structural, mechanical, electrical, plumbing, and fire protection within Navisworks. We run rule-based clash tests for hard clashes, soft clashes (clearance violations), and workflow clashes (sequencing conflicts). Clash reports categorize each conflict by severity, trade, and grid reference.",
+    elevated: false,
+  },
+];
+
+/** Figma 5-13130 — QA stats strip. */
+export const mepQualityAssuranceStats = [
+  { value: "2x", valueColor: "#D70416", label: "Clash detection stages on every project" },
+  { value: "LOD 400", valueColor: "#42AA32", label: "Fabrication-level resolution for shop drawings" },
+  { value: "6 Trades", valueColor: "#2299D6", label: "Arch + Struct + MEP + FP federated coordination" },
+  { value: "Weekly", valueColor: "#F0B300", label: "Coordination meetings with all stakeholders" },
+];
+
+export const mepServiceBenefitsSection = {
+  tag: "Service benefits",
+  titleLine1: "Key Benefits of Adopting ",
   titleLine2: "MEP BIM Services",
+  titleMaxWidth: 700,
   description:
     "MEP BIM Services transform every phase of your project from design to facility management. Virtual Building Studio delivers measurable outcomes across coordination, cost, and construction efficiency.",
-} as const;
+  ctaLabel: "Let's Talk",
+  ctaHref: "#mep-page-contact",
+};
 
-export const mepKeyBenefits = [
+const MEP_BENEFIT_ICON_COLORED = "/images/mep/key-benefits/icon-benefit-colored.svg";
+const MEP_BENEFIT_ICON_MUTED = "/images/mep/key-benefits/icon-benefit-muted.svg";
+
+/** Figma — 3×2 service benefits grid. */
+export const mepServiceBenefitsCards = [
   {
     title: "Improved Design Accuracy",
-    description:
-      "MEP BIM Services produce precise MEPF layouts that meet spatial and project requirements with fewer revisions. Accurate parametric models reduce design errors and cut coordination cycles across all trades.",
-    featured: true,
+    text: "MEP BIM Services produce precise MEPF layouts that meet spatial and project requirements with fewer revisions. Accurate parametric models reduce design errors and cut coordination cycles across all trades.",
+    icon: MEP_BENEFIT_ICON_MUTED,
+    iconHover: MEP_BENEFIT_ICON_COLORED,
+    textMaxWidth: 433,
   },
   {
     title: "Smarter Facility Management",
-    description:
-      "BIM models enriched with COBie and asset data act as digital twins for long-term building operations. Facility managers efficiently track maintenance schedules, assets, and system upgrades directly from the model data.",
-    featured: false,
+    text: "BIM models enriched with COBie and asset data act as digital twins for long-term building operations. Facility managers efficiently track maintenance schedules, assets, and system upgrades directly from the model data.",
+    icon: MEP_BENEFIT_ICON_MUTED,
+    iconHover: MEP_BENEFIT_ICON_COLORED,
   },
   {
     title: "Enhanced Visualization & Planning",
-    description:
-      "High-resolution 3D MEPF models give all project stakeholders complete visibility into system layouts and design intent. Teams assess constructability, identify conflicts, and make informed decisions before construction begins.",
-    featured: false,
+    text: "High-resolution 3D MEPF models give all project stakeholders complete visibility into system layouts and design intent. Teams assess constructability, identify conflicts, and make informed decisions before construction begins.",
+    icon: MEP_BENEFIT_ICON_MUTED,
+    iconHover: MEP_BENEFIT_ICON_COLORED,
   },
   {
     title: "Optimized Project Scheduling & Costing",
-    description:
-      "4D and 5D BIM dimensions allow accurate construction sequencing and reliable cost forecasting. Quantity take-offs and cost estimates come directly from the coordinated model, improving planning and financial control.",
-    featured: false,
+    text: "4D and 5D BIM dimensions allow accurate construction sequencing and reliable cost forecasting. Quantity take-offs and cost estimates come directly from the coordinated model, improving planning and financial control.",
+    icon: MEP_BENEFIT_ICON_MUTED,
+    iconHover: MEP_BENEFIT_ICON_COLORED,
+    textMaxWidth: 433,
   },
   {
     title: "Faster Prefabrication & Modular Construction",
-    description:
-      "Clash-free MEPF models support generation of accurate spool and shop drawings for off-site fabrication. Coordinated models accelerate installation timelines, reduce material waste, and improve quality through construction.",
-    featured: false,
+    text: "Clash-free MEPF models support generation of accurate spool and shop drawings for off-site fabrication. Coordinated models accelerate installation timelines, reduce material waste, and improve quality through construction.",
+    icon: MEP_BENEFIT_ICON_MUTED,
+    iconHover: MEP_BENEFIT_ICON_COLORED,
   },
   {
     title: "Seamless Multidisciplinary Coordination",
-    description:
-      "Integrated BIM workflows foster seamless, real-time collaboration among all project disciplines. Early-stage coordination catches design clashes before construction, eliminating costly change orders and project delays.",
-    featured: false,
+    text: "Integrated BIM workflows foster seamless, real-time collaboration among all project disciplines. Early-stage coordination catches design clashes before construction, eliminating costly change orders and project delays.",
+    icon: MEP_BENEFIT_ICON_MUTED,
+    iconHover: MEP_BENEFIT_ICON_COLORED,
   },
-] as const;
+];
 
 export const mepWhyChooseSection = {
-  tag: "Name Tag",
-  titleLine1: "Why Leading Firms Choose",
-  titleLine2: "Our MEP BIM Services",
+  tag: "Why Choose Us",
+  titleLine1: "Why Leading Firms Choose ",
+  titleAccentLead: "Our",
+  titleAccentRest: "MEP BIM Services",
   description:
     "Work with a BIM partner that delivers accuracy, speed, and results across every stage of your project from pre-bid to as-built handover.",
-} as const;
+  ctaLabel: "Build Your Team",
+  ctaHref: ROUTES.contact,
+};
 
-export const mepWhyChooseCards = [
+/** Figma 5-13264 — 3 + 2 why choose grid. */
+export const mepWhyChooseItems = [
   {
     title: "Top 1% BIM Experts",
     description:
       "Highly experienced MEP BIM professionals trained on global standards and complex US projects worldwide.",
-    icon: "/images/mep/why-choose/icon-top-bim-experts.svg",
-    highlighted: true,
-    wide: false,
+    icon: WHY_CHOOSE_ICON_TOP_BIM_EXPERTS,
   },
   {
     title: "US Code-Compliant Delivery",
     description:
       "Models align with ASHRAE, NFPA, IPC, SMACNA, NEC, and regional AHJ compliance requirements.",
-    icon: "/images/mep/why-choose/icon-us-code-compliant.svg",
-    highlighted: false,
-    wide: false,
+    icon: WHY_CHOOSE_ICON_US_CODE_COMPLIANT,
   },
   {
     title: "Fast Turnaround Cycles",
     description:
       "Accelerate project timelines with efficient BIM workflows and quick delivery cycles tuned for US contractor schedules.",
-    icon: "/images/mep/why-choose/icon-fast-turnaround.svg",
-    highlighted: false,
-    wide: false,
+    icon: WHY_CHOOSE_ICON_DEDICATED_TEAM_READY,
   },
   {
     title: "Flexible Engagement Models",
     description:
       "Scale your BIM team with dedicated resources, task support, or full project teams with zero long-term lock-in.",
-    icon: "/images/mep/why-choose/icon-flexible-engagement.svg",
-    highlighted: false,
-    wide: true,
+    icon: WHY_CHOOSE_ICON_FLEXIBLE_ENGAGEMENT,
   },
   {
     title: "End-to-End BIM Support",
     description:
       "From pre-bid modeling to as-built documentation complete MEP project lifecycle support under one roof.",
-    icon: "/images/mep/why-choose/icon-end-to-end.svg",
-    highlighted: false,
-    wide: true,
+    icon: WHY_CHOOSE_ICON_AI_POWERED_WORKFLOWS,
   },
-] as const;
+];
+
+export const mepProjectCta = {
+  titleLine1: "Start Your Next Project with ",
+  titleLine2: "MEP BIM Services That Deliver",
+  description:
+    "From pre-bid modeling to as-built documentation Virtual Building Studio delivers end-to-end BIM MEP Services that drive accuracy, coordination, and efficiency across every project phase.",
+  cta: "Book a call",
+  ctaHref: ROUTES.contact,
+};
+
+export const mepTestimonialsDescription =
+  "Hear how architects and firm owners scaled production, reclaimed time, and grew revenue with dedicated BIM support.";
 
 export const mepEngagementProcessSection = {
   tag: "Engagement Model",
@@ -419,9 +498,9 @@ export const mepEngagementProcessSection = {
   description:
     "Whether you need a dedicated MEP BIM expert or a full project team, our flexible engagement models adapt to your scope, timeline, and project requirements.",
   cta: "Inquire Now",
-} as const;
+  ctaHref: "#mep-page-contact",
+};
 
-/** Figma node 265:67484 — step numbers use colored 0 + black digit */
 export const mepEngagementProcessSteps = [
   {
     prefix: "0",
@@ -447,27 +526,216 @@ export const mepEngagementProcessSteps = [
     description:
       "Start quickly, collaborate efficiently, and scale your BIM team as your project grows. Our engagement model carries zero commitments and a one-month risk-free trial.",
   },
-] as const;
+];
 
-export const mepIndustries = [
-  { title: "Commercial & Mixed-Use", image: "/images/figma/industry-1.png" },
-  { title: "Healthcare", image: "/images/figma/industry-2.png" },
-  { title: "Educational", image: "/images/figma/industry-3.png" },
-  { title: "Mission Critical", image: "/images/figma/industry-4.png" },
-  { title: "Hospitality & Residential", image: "/images/figma/industry-5.png" },
-  { title: "Industrial & Manufacturing", image: "/images/figma/industry-6.png" },
-] as const;
+/** @deprecated use mepEngagementProcessSection */
+export const mepEngagementBenefitsSection = {
+  tag: mepEngagementProcessSection.tag,
+  titleLine1: `${mepEngagementProcessSection.titleLine1} `,
+  titleLine2: mepEngagementProcessSection.titleLine2,
+  description: mepEngagementProcessSection.description,
+  ctaLabel: mepEngagementProcessSection.cta,
+  ctaHref: mepEngagementProcessSection.ctaHref,
+};
 
-export const mepProjectCta = {
-  titleLine1: "Start Your Next Project with",
-  titleLine2: "MEP BIM Services That Deliver",
-  description:
-    "From pre-bid modeling to as-built documentation Virtual Building Studio delivers end-to-end BIM MEP Services that drive accuracy, coordination, and efficiency across every project phase.",
-  cta: "Book a call",
-} as const;
+/** @deprecated use mepEngagementProcessSteps */
+export const mepEngagementBenefitsItems = [
+  {
+    id: "01",
+    color: "text-vbs-green",
+    title: mepEngagementProcessSteps[0].title,
+    description: mepEngagementProcessSteps[0].description,
+  },
+  {
+    id: "02",
+    color: "text-vbs-blue",
+    title: mepEngagementProcessSteps[1].title,
+    description: mepEngagementProcessSteps[1].description,
+  },
+  {
+    id: "03",
+    color: "text-vbs-yellow",
+    title: mepEngagementProcessSteps[2].title,
+    description: mepEngagementProcessSteps[2].description,
+  },
+];
 
 export const mepFaqDescription =
-  "We offer two flexible engagement models that work best for our clients. Each year, we carefully select the leading certifications that validate our delivery quality and team expertise.";
+  "Everything you need to know before getting started.";
 
-export const mepTestimonialsDescription =
-  "We offer two flexible engagement models that work best for our clients.";
+export const mepFaqSection = {
+  tag: "FAQs",
+  description: mepFaqDescription,
+};
+
+export const mepFaqs = [
+  {
+    q: "How do you ensure compliance with US building codes and standards?",
+    a: "We use your company templates and work exclusively in Imperial units. Our modelers are trained in NFPA, NEC, and IPC standards, ensuring all 3D production meets local US regulatory requirements and project-specific BEP guidelines.",
+  },
+  {
+    q: "What is the difference between your LOD 300 and LOD 400 MEP models?",
+    a: "LOD 300 focuses on design intent and high-level spatial validation. LOD 400 adds fabrication-level detail, including hangers, supports, and manufacturer-specific metadata. We can scale the model's complexity as your project moves from design to the field.",
+  },
+  {
+    q: "How do we handle communication and time zone differences?",
+    a: "We turn time zones into a 24-hour production cycle. While your US team finishes the day, our dedicated modelers handle the 3D authoring overnight, providing updated Revit files for your morning review via Slack, Teams, or BIM 360.",
+  },
+  {
+    q: "Can your dedicated modelers work directly within our BIM 360 / ACC environment?",
+    a: "Yes. We function as a virtual extension of your office. By working directly in your Autodesk Construction Cloud (ACC) hub, we enable real-time collaboration on central models, ensuring data security and eliminating file-transfer delays.",
+  },
+  {
+    q: "Can you help with Point Cloud to BIM for renovation projects?",
+    a: "Absolutely. We specialize in Post-Construction As-Built Capture. We transform raw laser scan data into precise, field-verified Revit models, providing a true-to-site digital foundation when original 2D drawings are missing or inaccurate.",
+  },
+];
+
+export const mepFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: mepFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
+export const mepResourcesSection = {
+  tag: "Resources",
+  titleLine1: "Latest Insights on ",
+  titleLine2: "Production, Governance, and Scale",
+  description:
+    "Explore technical thought leadership and actionable strategies designed to optimize your production workflows and scale without compromising standards.",
+  viewAllHref: "/bim-resources/",
+  serviceFilter: "MEP Engineering Firms",
+};
+
+export const mepResourcesFilters = [
+  "All",
+  "Blogs",
+  "Webinar",
+  "Case Study",
+  "White Paper",
+];
+
+export const mepResourceBadgeStyles = {
+  Webinar: { bg: "#F0B300", color: "#FBF9F9", border: "#F0B300" },
+  Blog: { bg: "#D70416", color: "#FFFFFF", border: "#D70416" },
+  "Case Study": { bg: "#42AA32", color: "#FFFFFF", border: "#42AA32" },
+  "White Paper": { bg: "#2299D6", color: "#FFFFFF", border: "#2299D6" },
+};
+
+const MEP_RESOURCE_TITLE =
+  "Why AutoCAD to BIM Conversion is Essential for Modern Construction";
+
+const MEP_RESOURCE_EXCERPT =
+  "Whether you're launching a new product or entering a new segment, we design the GTM motion that lands and scales.";
+
+export const mepResourcesFeatured = {
+  type: "Webinar",
+  title: MEP_RESOURCE_TITLE,
+  excerpt: MEP_RESOURCE_EXCERPT,
+  image: "/image/webinar-with-lance-img.jpg",
+  // imageCrop: { width: 710, height: 450, left: 0, top: 0 },
+  href: "/webinar/",
+};
+
+export const mepResourcesListItems = [
+  {
+    type: "Blog",
+    title: MEP_RESOURCE_TITLE,
+    date: "12 Jan 2026",
+    image: "/images/figma/resource-1.png",
+    imageCrop: { width: 345, height: 219, left: 0, top: 0 },
+    href: "/blog/autocad-bim/",
+  },
+  {
+    type: "Case Study",
+    title: MEP_RESOURCE_TITLE,
+    date: "12 Jan 2026",
+    image: "/images/figma/resource-2.png",
+    imageCrop: { width: 345, height: 219, left: 0, top: 0 },
+    href: "/case-study/",
+  },
+  {
+    type: "White Paper",
+    title: MEP_RESOURCE_TITLE,
+    date: "12 Jan 2026",
+    image: "/images/figma/resource-3.png",
+    imageCrop: { width: 345, height: 219, left: 0, top: 0 },
+    href: "/whitepaper/hidden-cost-of-late-stage-mep-coordination-failures/",
+  },
+];
+
+export const mepIndustriesSection = {
+  tag: "Industries",
+  titleLine1: "Industries We Support with Our ",
+  titleLine2: "MEP BIM Expertise",
+  titleMaxWidth: 850,
+  description:
+    "Delivering precision-driven MEP BIM solutions tailored to the unique requirements of every construction sector.",
+};
+
+const mepIndustryImg = (file: string) => encodeURI(`/image/${file}`);
+
+export const mepIndustriesCards = [
+  {
+    img: mepIndustryImg("Commercial & MIxed Use.png"),
+    title: "Commercial & Mixed-Use",
+    imageCrop: { width: 330, height: 330, left: 0, top: 0 },
+    titleWidth: 210,
+  },
+  {
+    img: mepIndustryImg("Healthcare.png"),
+    title: "Healthcare",
+    imageCrop: { width: 330, height: 330, left: 0, top: 0 },
+  },
+  {
+    img: mepIndustryImg("Educational.png"),
+    title: "Educational",
+    imageCrop: { width: 330, height: 330, left: 0, top: 0 },
+  },
+  {
+    img: mepIndustryImg("Mission Critical.png"),
+    title: "Mission Critical",
+    imageCrop: { width: 330, height: 330, left: 0, top: 0 },
+  },
+  {
+    img: mepIndustryImg("Hospitality & Residential.png"),
+    title: "Hospitality & Residential",
+    imageCrop: { width: 330, height: 330, left: 0, top: 0 },
+  },
+  {
+    img: mepIndustryImg("Industrial & Manufacturing.png"),
+    title: "Industrial & Manufacturing",
+    imageCrop: { width: 330, height: 330, left: 0, top: 0 },
+    titleWidth: 184,
+  },
+  {
+    img: mepIndustryImg("Civic & Government Infrastructure.png"),
+    title: "Civic & Government Infrastructure",
+    imageCrop: { width: 330, height: 330, left: 0, top: 0 },
+    titleWidth: 228,
+  },
+  {
+    img: mepIndustryImg("Heritage, Religious & Cultural Spaces.png"),
+    title: "Heritage, Religious & Cultural Spaces",
+    imageCrop: { width: 330, height: 330, left: 0, top: 0 },
+    titleWidth: 228,
+  },
+];
+
+export const resourcesPageHero = {
+  tag: "Resources",
+  titleLead: "BIM ",
+  titleAccent: "Resource Hub",
+  description:
+    "Since 2015, we've been the trusted partner for Architecture and Engineering firms, helping them rapidly scale their BIM teams and deliver award-winning projects every time.",
+  ctaLabel: "Contact Us",
+  image: "/image/blog-banner.png",
+  imageAlt: "Virtual Building Studio resources",
+};

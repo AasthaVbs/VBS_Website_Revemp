@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/sections/site-footer";
 
 export function VbsContactPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
 
       <ContactHeroSection />

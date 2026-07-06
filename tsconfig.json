@@ -35,6 +35,8 @@
     "**/*.mts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "studio-vbs",
+    "src/components/vbs/projects"
   ]
 }

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function AllProjectsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="vbs-redesign-page min-h-screen bg-white">
       <SiteHeader />
       <main className="overflow-visible">
         <AllProjectsSection />

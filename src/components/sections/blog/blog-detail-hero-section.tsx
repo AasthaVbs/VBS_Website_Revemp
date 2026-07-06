@@ -2,15 +2,17 @@ import Image from "next/image";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { BlogDetailAside } from "@/components/sections/blog/blog-detail-aside";
+import { SanityPortableText } from "@/components/sections/blog/sanity-portable-text";
 import { BlogDetailContent } from "@/components/sections/blog/blog-detail-content";
 import { BlogDetailSidebar } from "@/components/sections/blog/blog-detail-sidebar";
 import type { BlogPostDetail } from "@/constants/blog-posts/types";
 
 type BlogDetailHeroSectionProps = {
   post: BlogPostDetail;
+  previewMode?: boolean;
 };
 
-export function BlogDetailHeroSection({ post }: BlogDetailHeroSectionProps) {
+export function BlogDetailHeroSection({ post, previewMode }: BlogDetailHeroSectionProps) {
   return (
     <section className="bg-white py-12 lg:py-[100px]">
       <PageContainer>
@@ -33,7 +35,10 @@ export function BlogDetailHeroSection({ post }: BlogDetailHeroSectionProps) {
                 {post.title}
               </h1>
             </div>
-            <BlogDetailContent blocks={post.sections} />
+            {post.source !== "sanity" ? <BlogDetailContent blocks={post.sections} /> : null}
+            {post.source === "sanity" && post.portableBody?.length ? (
+              <SanityPortableText value={post.portableBody as unknown[]} previewMode={previewMode} />
+            ) : null}
           </div>
 
           <BlogDetailAside author={post.author} meta={post.meta} />

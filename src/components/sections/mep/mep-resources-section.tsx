@@ -1,114 +1,282 @@
-import Image from "next/image";
-import { ChevronRight } from "lucide-react";
+// @ts-nocheck
+"use client";
+
+import Link from "next/link";
+import { useMemo, useState } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
-import { SectionTag } from "@/components/sections/section-primitives";
-import { resources } from "@/constants/home-content";
+import { ResourceFeedPhoto } from "@/components/ui/resource-feed-photo";
+import {
+  homeResourceBadgeStyles,
+  homeResourcesFilters,
+} from "@/constants/home-content";
+import { mepResourcesSection } from "@/constants/mep-engineers-content";
+import { useMepResourcesAllItems } from "@/hooks/useMepResourcesAllItems";
+import { matchesResourceServiceFilter } from "@/lib/resource-listing";
+import { buildResourcesSectionView } from "@/lib/resources-section-view";
+import { cn } from "@/lib/utils";
 
-const resourceCards = [
-  { tag: "Blog", tagClass: "border-vbs-red bg-vbs-red text-white", image: "/images/figma/resource-2.png" },
-  {
-    tag: "Case Study",
-    tagClass: "border-vbs-green bg-vbs-green text-white",
-    image: "/images/figma/resource-3.png",
-  },
-  {
-    tag: "White Paper",
-    tagClass: "border-vbs-blue bg-vbs-blue text-white",
-    image: "/images/figma/resource-1.png",
-  },
-] as const;
+function ResourcePageLink({ href, className, children, ariaLabel }) {
+  if (!href) return null;
 
-export function MepResourcesSection() {
+  if (
+    href.startsWith("mailto:") ||
+    href.startsWith("tel:") ||
+    href.startsWith("http://") ||
+    href.startsWith("https://")
+  ) {
+    return (
+      <a href={href} className={className} aria-label={ariaLabel}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <section className="bg-white py-16 lg:py-[100px]">
-      <PageContainer className="space-y-[60px]">
-        <div className="flex w-full flex-col items-start gap-5">
-          <div className="flex flex-col items-start gap-3">
-            <SectionTag label="Resources" />
-            <h2 className="text-section">
-              Latest thoughts, <span className="text-accent">Ideas & Plan.</span>
-            </h2>
+    <Link href={href} className={className} aria-label={ariaLabel}>
+      {children}
+    </Link>
+  );
+}
+
+function ChevronLink({ href, label, className }) {
+  return (
+    <ResourcePageLink href={href} className={cn("mep-figma-resources__link", className)}>
+      {label}
+      <svg className="mep-figma-resources__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <path
+          d="M9 6l6 6-6 6"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </ResourcePageLink>
+  );
+}
+
+function ResourceBadge({ type, badgeStyles }) {
+  const style = badgeStyles[type] || badgeStyles.Blog;
+
+  return (
+    <span
+      className="mep-figma-resources__badge"
+      style={{
+        background: style.bg,
+        color: style.color,
+        borderColor: style.border,
+      }}
+    >
+      {type}
+    </span>
+  );
+}
+
+function FeaturedCard({ item, badgeStyles }) {
+  return (
+    <ResourcePageLink
+      href={item.href}
+      className="mep-figma-resources__featured"
+      ariaLabel={`Read ${item.title}`}
+    >
+      <div className="mep-figma-resources__featured-media">
+        <ResourceFeedPhoto
+          src={item.image}
+          className="mep-figma-resources__featured-photo"
+        />
+        <ResourceBadge type={item.type} badgeStyles={badgeStyles} />
+      </div>
+      <div className="mep-figma-resources__featured-body">
+        <div className="mep-figma-resources__featured-copy">
+          <p className="mep-figma-resources__featured-title">{item.title}</p>
+          <p className="mep-figma-resources__featured-excerpt">{item.excerpt}</p>
+        </div>
+        <span className="mep-figma-resources__link">
+          Learn More
+          <svg className="mep-figma-resources__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path
+              d="M9 6l6 6-6 6"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+      </div>
+    </ResourcePageLink>
+  );
+}
+
+function CompactResourceRow({ item, badgeStyles }) {
+  return (
+    <ResourcePageLink
+      href={item.href}
+      className="mep-figma-resources__compact-row"
+      ariaLabel={`Read ${item.title}`}
+    >
+      <div className="mep-figma-resources__compact-media">
+        <ResourceFeedPhoto
+          src={item.image}
+          className="mep-figma-resources__compact-photo"
+        />
+        <ResourceBadge type={item.type} badgeStyles={badgeStyles} />
+      </div>
+      <div className="mep-figma-resources__compact-body">
+        <p className="mep-figma-resources__compact-title">{item.title}</p>
+        {item.date ? <p className="mep-figma-resources__compact-date">{item.date}</p> : null}
+      </div>
+    </ResourcePageLink>
+  );
+}
+
+function SoloResourceCard({ item, badgeStyles }) {
+  return (
+    <article className="mep-figma-resources__solo-card">
+      <ResourcePageLink
+        href={item.href}
+        className="mep-figma-resources__solo-row"
+        ariaLabel={`Read ${item.title}`}
+      >
+        <div className="mep-figma-resources__solo-media">
+          <ResourceFeedPhoto src={item.image} className="mep-figma-resources__solo-photo" />
+          <ResourceBadge type={item.type} badgeStyles={badgeStyles} />
+        </div>
+        <div className="mep-figma-resources__solo-body">
+          <p className="mep-figma-resources__solo-title">{item.title}</p>
+          {item.excerpt ? <p className="mep-figma-resources__solo-excerpt">{item.excerpt}</p> : null}
+          <span className="mep-figma-resources__link">
+            Learn More
+            <svg className="mep-figma-resources__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path
+                d="M9 6l6 6-6 6"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        </div>
+      </ResourcePageLink>
+    </article>
+  );
+}
+
+export function MepResourcesSection({
+  section = mepResourcesSection,
+  filters = homeResourcesFilters,
+  allItems: allItemsProp,
+  serviceFilter: serviceFilterProp,
+  badgeStyles = homeResourceBadgeStyles,
+  sectionId = "resources",
+  sectionClassName = "mep-figma-resources",
+}: {
+  section?: {
+    tag: string;
+    titleLine1: string;
+    titleLine2: string;
+    description: string;
+    viewAllHref: string;
+    serviceFilter?: string;
+  };
+  filters?: typeof homeResourcesFilters;
+  allItems?: unknown[];
+  serviceFilter?: string;
+  badgeStyles?: typeof homeResourceBadgeStyles;
+  sectionId?: string;
+  sectionClassName?: string;
+} = {}) {
+  const [activeFilter, setActiveFilter] = useState("All");
+  const queriedAllItems = useMepResourcesAllItems();
+  const serviceFilter = serviceFilterProp ?? section.serviceFilter;
+
+  const allItems = useMemo(() => {
+    const source = allItemsProp ?? queriedAllItems;
+    if (!serviceFilter) return source;
+    return source.filter((item) => matchesResourceServiceFilter(item, serviceFilter));
+  }, [allItemsProp, queriedAllItems, serviceFilter]);
+
+  const { featuredItem, listRows, soloItem } = useMemo(
+    () => buildResourcesSectionView(allItems, activeFilter),
+    [activeFilter, allItems],
+  );
+
+  return (
+    <section id={sectionId} className={sectionClassName}>
+      <PageContainer className="mep-figma-resources__container">
+        <div className="mep-figma-resources__header-row">
+          <div className="mep-figma-resources__head-copy">
+            <div className="mep-figma-resources__head-top">
+              <span className="mep-figma-resources__tag">{section.tag}</span>
+              <p className="mep-figma-resources__title">
+                <span className="mep-figma-resources__title-dark">{section.titleLine1}</span>
+                <span className="mep-figma-resources__title-accent">{section.titleLine2}</span>
+              </p>
+            </div>
+            <p className="mep-figma-resources__section-desc">{section.description}</p>
           </div>
-          <p className="max-w-[413px] text-body normal-case">
-            We offer two flexible engagement models that work best for our clients.
-          </p>
+          <ChevronLink href={section.viewAllHref} label="View All" className="mep-figma-resources__view-all" />
         </div>
 
-        <div className="space-y-5">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center gap-2.5">
-              {["All", "Blogs", "Webinar", "Case Study", "White Paper"].map((tab, index) => (
+        <div className="mep-figma-resources__body">
+          <div className="mep-figma-resources__filters">
+            {filters.map((filter) => {
+              const isActive = filter === activeFilter;
+              return (
                 <button
-                  key={tab}
+                  key={filter}
                   type="button"
-                  className={`rounded-[10px] px-5 py-3 text-[16px] backdrop-blur-[50px] ${
-                    index === 0
-                      ? "bg-vbs-red font-semibold text-white"
-                      : "bg-[#FAFAFA] font-normal text-[#111111]"
-                  }`}
+                  onClick={() => setActiveFilter(filter)}
+                  className={cn(
+                    "mep-figma-resources__filter",
+                    isActive && "mep-figma-resources__filter--active",
+                    filter === "White Paper" && "mep-figma-resources__filter--white-paper",
+                  )}
                 >
-                  {tab}
+                  {filter}
                 </button>
-              ))}
-            </div>
-            <a href="/resources" className="inline-flex items-center gap-1.5 text-[16px] font-normal text-vbs-blue">
-              View All
-              <ChevronRight className="h-5 w-5" />
-            </a>
+              );
+            })}
           </div>
 
-          <div className="grid items-start gap-5 lg:grid-cols-2">
-            <article className="inline-flex flex-col gap-[30px] overflow-hidden">
-              <div className="relative h-[360px] overflow-hidden rounded-[10px]">
-                <Image
-                  src="/images/figma/resource-1.png"
-                  alt="Featured resource"
-                  fill
-                  className="object-cover"
+          {(featuredItem || listRows.length > 0 || soloItem) && (
+            <div
+              className={cn(
+                "mep-figma-resources__content",
+                featuredItem && listRows.length === 0 && !soloItem && "mep-figma-resources__content--single",
+                soloItem && "mep-figma-resources__content--solo",
+                activeFilter !== "All" && sectionClassName.includes("vbs-home-resources") && "vbs-home-resources__content--filtered",
+              )}
+            >
+              {soloItem ? (
+                <SoloResourceCard
+                  key={`${soloItem.type}-${soloItem.href}`}
+                  item={soloItem}
+                  badgeStyles={badgeStyles}
                 />
-                <span className="absolute bottom-4 right-4 inline-flex rounded-[10px] border border-vbs-yellow bg-vbs-yellow px-2.5 py-1 text-[13px] font-normal text-[#FBF9F9]">
-                  Webinar
-                </span>
-              </div>
-              <div className="flex flex-col items-start gap-[15px]">
-                <div className="flex flex-col items-start gap-4">
-                  <h3 className="text-[36px] font-normal leading-[1.2] text-[#111111]">
-                    Why AutoCAD to BIM Conversion is Essential for Modern Construction
-                  </h3>
-                  <p className="text-body normal-case">
-                    Whether you&apos;re launching a new product or entering a new segment, we design
-                    the GTM motion that lands and scales.
-                  </p>
+              ) : null}
+              {featuredItem ? (
+                <FeaturedCard
+                  key={`${featuredItem.type}-${featuredItem.href}`}
+                  item={featuredItem}
+                  badgeStyles={badgeStyles}
+                />
+              ) : null}
+              {listRows.length > 0 ? (
+                <div className="mep-figma-resources__list">
+                  {listRows.map((item) => (
+                    <CompactResourceRow
+                      key={`${item.type}-${item.href}-${item.title}`}
+                      item={item}
+                      badgeStyles={badgeStyles}
+                    />
+                  ))}
                 </div>
-                <a href="#" className="inline-flex items-center gap-1.5 text-[16px] font-normal text-vbs-blue">
-                  Learn More
-                  <ChevronRight className="h-5 w-5" />
-                </a>
-              </div>
-            </article>
-
-            <div className="inline-flex w-full flex-col gap-5">
-              {resourceCards.map((item, index) => (
-                <article key={`${item.tag}-${index}`} className="grid gap-5 sm:grid-cols-2">
-                  <div className="relative h-[193px] overflow-hidden rounded-[10px]">
-                    <Image src={item.image} alt={item.tag} fill className="object-cover" />
-                    <span
-                      className={`absolute bottom-4 right-4 inline-flex rounded-[10px] border px-2.5 py-1 text-[13px] font-normal ${item.tagClass}`}
-                    >
-                      {item.tag}
-                    </span>
-                  </div>
-                  <div className="flex h-[193px] flex-col justify-between">
-                    <h3 className="text-[24px] font-normal leading-[1.3] text-[#111111]">
-                      Why AutoCAD to BIM Conversion is Essential for Modern Construction
-                    </h3>
-                    <p className="text-body normal-case">{resources[0]?.date ?? "12 Jan 2026"}</p>
-                  </div>
-                </article>
-              ))}
+              ) : null}
             </div>
-          </div>
+          )}
         </div>
       </PageContainer>
     </section>

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function WebinarPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
       <main>
         <WebinarHeroSection />

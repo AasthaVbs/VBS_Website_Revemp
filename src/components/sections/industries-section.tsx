@@ -2,31 +2,52 @@ import Image from "next/image";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
+import { cn } from "@/lib/utils";
 import {
   industriesMarqueeTrack,
   industriesSectionIntro,
 } from "@/constants/industries-content";
 
-/** Industries marquee — shared with home page */
-export function IndustriesSection() {
+type IndustriesSectionProps = {
+  intro?: string;
+  titleLine1?: string;
+  titleLine2?: string;
+  titleMaxWidth?: number;
+  marqueeTrack?: typeof industriesMarqueeTrack;
+  className?: string;
+};
+
+/** Industries marquee — shared with home and service pages */
+export function IndustriesSection({
+  intro = industriesSectionIntro,
+  titleLine1 = "Industries ",
+  titleLine2 = "We Serve",
+  titleMaxWidth,
+  marqueeTrack = industriesMarqueeTrack,
+  className,
+}: IndustriesSectionProps) {
   return (
-    <section className="bg-white py-20">
+    <section className={cn("bg-[#FAFAFA] py-20", className)}>
       <PageContainer className="space-y-10">
-        <div className="flex flex-col items-start gap-5">
-          <div className="flex flex-col items-start gap-3">
+        <div className="flex flex-col items-start gap-2 md:gap-5">
+          <div className="flex flex-col items-start gap-2 md:gap-3">
             <SectionTag label="Industries" />
-            <h2 className="text-section">
-              Industries <span className="text-accent">We Serve</span>
+            <h2
+              className="text-section capitalize"
+              style={titleMaxWidth ? { maxWidth: `${titleMaxWidth}px` } : undefined}
+            >
+              <span className="font-medium text-[#111111]">{titleLine1}</span>
+              <span className="font-light text-accent">{titleLine2}</span>
             </h2>
           </div>
-          <p className="max-w-[536px] text-[16px] font-normal leading-6 text-[#808080]">
-            {industriesSectionIntro}
+          <p className="max-w-[536px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+            {intro}
           </p>
         </div>
 
         <div className="relative overflow-hidden">
           <div className="industries-marquee-track">
-            {industriesMarqueeTrack.map((item, idx) => (
+            {marqueeTrack.map((item, idx) => (
               <div
                 key={`${item.img}-${idx}`}
                 className="relative h-[330px] w-[330px] shrink-0 overflow-hidden rounded-[10px] border border-[#CBCCCD]"

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function BuildYourTeamPage() {
   return (
-    <div className="build-your-team-page overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page build-your-team-page overflow-x-hidden bg-white">
       <SiteHeader />
       <main>
         <BuildYourTeamImmersive />

@@ -1,0 +1,356 @@
+/**
+ * VBS redesign — typography + layout (migrated pages only).
+ * Section padding/gap: see vbs-redesign-spacing.scss (loaded after this file).
+ */
+
+html:has(.vbs-redesign-page) {
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.vbs-redesign-page {
+  /* 1200px canvas — gutters scaled to ~94% content width (same ratio as 1440px + 40px in main) */
+  --vbs-page-max: 1440px;
+  --vbs-page-gutter: 24px;
+  --vbs-page-gutter-md: 32px;
+  --vbs-content-width: calc(var(--vbs-page-max) - (2 * var(--vbs-page-gutter-md)));
+
+  --font-inter: "Inter", "Inter Fallback", system-ui, sans-serif;
+  font-family: var(--font-inter);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #111111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  background-color: #ffffff;
+
+  /* clip horizontal bleed — except service pages with scroll-pinned carousel (clip kills sticky) */
+  &:not(.mep-bim-services-page):not(.scan-to-bim-services-page):not(.architecture-services-page) {
+    overflow-x: clip;
+  }
+}
+
+/* PageContainer — 1200px centered column on every page (redesign + legacy Contact footer) */
+.vbs-page-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  @media (min-width: 768px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Redesign pages — same shell via design tokens (header uses .vbs-site-header override) */
+.vbs-redesign-page .vbs-page-container {
+  max-width: var(--vbs-page-max);
+  padding-left: var(--vbs-page-gutter);
+  padding-right: var(--vbs-page-gutter);
+}
+
+@media (min-width: 768px) {
+  .vbs-redesign-page .vbs-page-container {
+    padding-left: var(--vbs-page-gutter-md);
+    padding-right: var(--vbs-page-gutter-md);
+  }
+}
+
+/* ── Typography — override Bootstrap / legacy style.scss ── */
+.vbs-redesign-page h1,
+.vbs-redesign-page .h1,
+.vbs-redesign-page .text-display {
+  font-family: var(--font-inter);
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #111111;
+  margin-bottom: 0;
+}
+
+.vbs-redesign-page h2,
+.vbs-redesign-page .h2,
+.vbs-redesign-page .text-section {
+  font-family: var(--font-inter);
+  font-size: 48px;
+  font-weight: 500 !important;
+  line-height: 1.15 !important;
+  color: #111111;
+  margin-bottom: 0;
+}
+
+.vbs-redesign-page h3,
+.vbs-redesign-page .h3,
+.vbs-redesign-page .text-card-title {
+  font-family: var(--font-inter);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #111111;
+  margin-bottom: 0;
+}
+
+.vbs-redesign-page h4,
+.vbs-redesign-page .h4 {
+  font-family: var(--font-inter);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #111111;
+  margin-bottom: 0;
+}
+
+.vbs-redesign-page h5,
+.vbs-redesign-page h6 {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  color: #111111;
+}
+
+.vbs-redesign-page p {
+  font-family: var(--font-inter);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #808080;
+}
+
+.vbs-redesign-page .text-accent {
+  font-weight: 300 !important;
+  color: #d70416;
+}
+
+.vbs-redesign-page .text-display-accent {
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 1.1;
+  color: #d70416;
+}
+
+.vbs-redesign-page .text-tag {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.vbs-redesign-page .text-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #808080;
+}
+
+.vbs-redesign-page .text-body-emphasis {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #111111;
+}
+
+.vbs-redesign-page .text-stat {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.vbs-redesign-page .mep-section-heading {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: #111111;
+}
+
+.vbs-redesign-page .mep-section-heading .text-accent {
+  font-weight: 300;
+}
+
+@media (max-width: 1023px) {
+
+  .vbs-redesign-page h2,
+  .vbs-redesign-page .h2,
+  .vbs-redesign-page .text-section,
+  .vbs-redesign-page .mep-section-heading {
+    font-size: clamp(1.75rem, 6.5vw, 3rem);
+    line-height: 1.2 !important;
+  }
+
+  .vbs-redesign-page .text-display,
+  .vbs-redesign-page h1,
+  .vbs-redesign-page .h1 {
+    font-size: clamp(2rem, 8vw, 3.75rem);
+    line-height: 1.1;
+  }
+}
+
+.vbs-redesign-page button,
+.vbs-redesign-page input,
+.vbs-redesign-page select,
+.vbs-redesign-page textarea {
+  font-family: var(--font-inter);
+}
+
+.vbs-redesign-page .btn {
+  font-family: var(--font-inter);
+}
+
+.vbs-redesign-page a:not(.primary-cta) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.vbs-site-header .vbs-header-nav-desktop a,
+.vbs-site-header .vbs-header-top-inner a,
+.vbs-site-header .vbs-nav-dropdown-panel a,
+.vbs-site-header .nav-link,
+.vbs-site-header .nav-link-active {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  -webkit-text-decoration: none !important;
+}
+
+.vbs-site-header .vbs-header-nav-desktop .nav-link,
+.vbs-site-header .vbs-header-nav-desktop .nav-link-active {
+  border-bottom: none !important;
+}
+
+/* Main-repo 1440px shells → cap at 1200px content column (do not stretch past canvas) */
+.vbs-redesign-page .max-w-\[1440px\],
+.vbs-redesign-page .max-w-\[1111px\] {
+  max-width: var(--vbs-page-max) !important;
+  width: 100%;
+}
+
+/* Figma inner columns (710px, 884px, etc.) stay as-is; they fit inside --vbs-content-width */
+
+.vbs-contact-zoho-wrap .vbs-zoho-prod {
+  width: 100%;
+}
+
+.vbs-redesign-page>.container,
+.vbs-redesign-page main .container:not(.vbs-allow-bootstrap) {
+  max-width: var(--vbs-page-max);
+  padding-left: var(--vbs-page-gutter);
+  padding-right: var(--vbs-page-gutter);
+
+  @media (min-width: 768px) {
+    padding-left: var(--vbs-page-gutter-md);
+    padding-right: var(--vbs-page-gutter-md);
+  }
+}
+
+/* Evaluate CTA mosaic: full width of 1200 column, not fixed 1440px asset width */
+.vbs-redesign-page .evaluate-delivery-cta-mosaic {
+
+  max-width: var(--vbs-page-max) !important;
+}
+
+.vbs-redesign-page .vbs-life-at-vbs-gallery__bleed {
+  width: 100vw !important;
+  max-width: 100vw !important;
+}
+
+.vbs-redesign-page .vbs-life-at-vbs-gallery__viewport {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 1023px) {
+  .vbs-redesign-page .evaluate-delivery-cta-mosaic {
+    max-width: 100% !important;
+  }
+}
+
+.vbs-redesign-page [class*="build-your-team_barInner"],
+.vbs-redesign-page [class*="build-your-team_screenInner"] {
+  max-width: var(--vbs-page-max) !important;
+  padding-left: var(--vbs-page-gutter) !important;
+  padding-right: var(--vbs-page-gutter) !important;
+}
+
+@media (min-width: 768px) {
+
+  .vbs-redesign-page [class*="build-your-team_barInner"],
+  .vbs-redesign-page [class*="build-your-team_screenInner"] {
+    padding-left: var(--vbs-page-gutter-md) !important;
+    padding-right: var(--vbs-page-gutter-md) !important;
+  }
+}
+
+
+/* Client Success Stories — horizontal track within page shell */
+.vbs-redesign-page .client-success-cards-scroll {
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .vbs-redesign-page .vbs-client-success-stories__quote {
+    max-width: 100% !important;
+  }
+
+  .vbs-redesign-page .vbs-client-success-stories__name {
+    font-size: 18px;
+  }
+}
+
+html:has(.vbs-redesign-page.build-your-team-page) {
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+html:has(.vbs-redesign-page.build-your-team-page)::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Service hub hero — shared 55/45 layout on all three pages ── */
+.vbs-redesign-page.mep-bim-services-page .mep-page-hero__media,
+.vbs-redesign-page.architecture-services-page .mep-page-hero__media,
+.vbs-redesign-page.scan-to-bim-services-page .mep-page-hero__media {
+  @media (min-width: 768px) {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.vbs-redesign-page .mep-section-heading {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.15;
+}
+
+.vbs-redesign-page .mep-figma-workflow__head-title,
+.vbs-redesign-page .mep-figma-workflow__head-desc {
+  max-width: min(100%, var(--vbs-content-width, 1136px));
+}
+
+.vbs-redesign-page .mep-figma-qa__title,
+.vbs-redesign-page .mep-figma-qa__desc,
+.vbs-redesign-page .mep-figma-benefits__desc,
+.vbs-redesign-page .mep-figma-why-choose__desc,
+.vbs-redesign-page .mep-figma-resources__head-desc,
+.vbs-redesign-page .mep-figma-disciplines__body {
+  max-width: min(100%, var(--vbs-content-width, 1136px));
+}
+
+.vbs-redesign-page .mep-figma-disciplines__deliverables {
+  max-width: min(591px, 48%);
+}
+
+@media (max-width: 1023px) {
+  .vbs-redesign-page .mep-figma-disciplines__deliverables {
+    max-width: 100%;
+  }
+}
+
+.vbs-redesign-page .certification-logo-img--lg {
+  width: 118%;
+  height: 118%;
+  max-width: none;
+  max-height: none;
+}

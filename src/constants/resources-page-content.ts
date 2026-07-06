@@ -26,13 +26,23 @@ export const resourceTypeFilters = [
   "News",
 ] as const;
 
-export const resourceSortFilters = ["New to Old", "Old to New"] as const;
+export const resourceAllTypesLabel = "All Resources";
+export const resourceAllServicesLabel = "All Services";
+
+export const resourceTypeFilterOptions = [resourceAllTypesLabel, ...resourceTypeFilters] as const;
 
 export const resourceServiceFilters = [
   "Architecture Firms",
   "MEP Engineering Firms",
   "Reality Capture & Survey Companies",
 ] as const;
+
+export const resourceServiceFilterOptions = [
+  resourceAllServicesLabel,
+  ...resourceServiceFilters,
+] as const;
+
+export const resourceSortFilters = ["New to Old", "Old to New"] as const;
 
 export const resourceSubServiceFilters = [
   "MEP BIM Modeling",
@@ -49,14 +59,9 @@ export const resourceSubServiceFilters = [
   "5D BIM Cost Estimation",
 ] as const;
 
-export const FIGMA_RESOURCE_IMAGES = [
-  "/images/figma/resource-1.png",
-  "/images/figma/resource-2.png",
-  "/images/figma/resource-3.png",
-] as const;
+import { FIGMA_RESOURCE_EXCERPT, FIGMA_RESOURCE_IMAGES } from "@/constants/resource-figma-assets";
 
-export const FIGMA_RESOURCE_EXCERPT =
-  "Whether you're launching a new product or entering a new segment, we design the GTM motion that lands and scales.";
+export { FIGMA_RESOURCE_EXCERPT, FIGMA_RESOURCE_IMAGES };
 
 export type ResourceType = (typeof resourceTypeFilters)[number];
 export type ResourceSort = (typeof resourceSortFilters)[number];
@@ -170,20 +175,28 @@ export const figmaBlogListingItems: ResourceListingItem[] = [
   },
 ];
 
-export const whitepaperListingItems: ResourceListingItem[] = [
-  {
-    id: "mep-data-center-whitepaper",
-    title: "MEP Coordination for Data Centers: BIM Workflows for Mission-Critical Facilities",
-    excerpt:
-      "Specialized data center MEP BIM coordination strategies that improve constructability, fabrication readiness, and installation efficiency.",
-    type: "Whitepapers",
-    service: "MEP Engineering Firms",
-    href: "/whitepaper/mep-coordination-data-centers-bim-workflows",
-    image: FIGMA_RESOURCE_IMAGES[2],
-    sortOrder: 1,
-    badgeLabel: "Whitepaper",
-  },
-];
+import {
+  extendedWhitepaperListingItems,
+  caseStudyListingItems,
+  portfolioListingItems,
+  testimonialListingItems,
+} from "@/constants/resource-catalog-content";
+
+export type ExtendedWhitepaperListingItem = ResourceListingItem & {
+  services?: ResourceService[];
+  publishedTimestamp?: number;
+  category?: string;
+};
+
+export {
+  extendedWhitepaperListingItems,
+  caseStudyListingItems,
+  portfolioListingItems,
+  testimonialListingItems,
+};
+
+export const whitepaperListingItems =
+  extendedWhitepaperListingItems as unknown as ResourceListingItem[];
 
 export const resourceListingItems: ResourceListingItem[] = [
   ...figmaBlogListingItems,

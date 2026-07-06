@@ -14,50 +14,54 @@ export function GetInTouchSection({
   sectionId?: string;
 }) {
   return (
-    <section id={sectionId} className="vbs-get-in-touch-section bg-[#FAFAFA] py-12 lg:py-[100px]">
-      <PageContainer className="grid items-start gap-8 lg:grid-cols-2 lg:gap-[30px]">
-        <div className="flex min-w-0 flex-col gap-6 lg:gap-[30px]">
-          <SectionIntro
-            tag="Contact Us"
-            title={
-              <>
-                Get in <span className="text-accent font-light">Touch</span>
-              </>
-            }
-            description={description}
-            titleClassName="text-section max-w-[528px] normal-case"
-            descriptionClassName="max-w-[435px] capitalize text-[#808080]"
-          />
-
-          <div className="vbs-contact-zoho-wrap w-full">
-            <ClientOnlyZohoContactForm />
+    <section id={sectionId} className="vbs-get-in-touch-section bg-[#FAFAFA]">
+      <PageContainer className="vbs-get-in-touch__layout">
+        <div className="vbs-get-in-touch__visual-slot">
+          <div className="vbs-get-in-touch__visual">
+            <Image
+              src={getInTouchImg}
+              alt="Contact support representative"
+              fill
+              className="vbs-get-in-touch__visual-img"
+              sizes="(max-width: 1024px) 100vw, 420px"
+            />
+            <div className="vbs-get-in-touch__visual-gradient" aria-hidden />
+            <div className="vbs-get-in-touch__visual-contacts">
+              <div className="vbs-get-in-touch__visual-contact">
+                <Phone className="h-5 w-5 shrink-0" aria-hidden />
+                <span>+1 (409) 800-6601</span>
+              </div>
+              <div className="vbs-get-in-touch__visual-contact">
+                <Mail className="h-5 w-5 shrink-0" aria-hidden />
+                <span>contact@virtualbuildingstudio.com</span>
+              </div>
+              <div className="vbs-get-in-touch__visual-contact">
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0" aria-hidden />
+                <span className="lowercase">
+                  712 wilcrest drive 1097 houston, tx 77042 us
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="relative min-h-[320px] overflow-hidden rounded-[20px] bg-[#111111] shadow-[0_4px_10px_rgba(0,0,0,0.15)] sm:min-h-[420px] lg:min-h-[602px]">
-          <Image
-            src={getInTouchImg}
-            alt="Contact support representative"
-            fill
-            className="object-cover object-center lg:object-[72%_35%]"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,17,17,0.2)_0%,rgba(17,17,17,0.85)_55%,#111111_100%)] lg:bg-[linear-gradient(90deg,#111111_0%,#111111_35%,rgba(17,17,17,0.55)_55%,rgba(17,17,17,0.15)_100%)]" />
-          <div className="absolute bottom-6 left-6 right-6 z-10 flex max-w-[320px] flex-col gap-5 text-white sm:bottom-10 sm:left-10 sm:gap-8">
-            <div className="inline-flex items-center gap-2.5">
-              <Phone className="h-5 w-5 shrink-0" />
-              <span className="text-[16px] font-normal">+1 (409) 800-6601</span>
-            </div>
-            <div className="inline-flex items-center gap-2.5">
-              <Mail className="h-5 w-5 shrink-0" />
-              <span className="text-[16px] font-normal">contact@virtualbuildingstudio.com</span>
-            </div>
-            <div className="inline-flex items-start gap-2.5">
-              <MapPin className="mt-0.5 h-5 w-5 shrink-0" />
-              <span className="text-[16px] font-normal lowercase">
-                712 wilcrest drive 1097 houston, tx 77042 us
-              </span>
-            </div>
+        <div className="vbs-get-in-touch__form-col">
+          <div className="vbs-get-in-touch__intro">
+            <SectionIntro
+              tag="Contact Us"
+              title={
+                <>
+                  Get in <span className="text-accent font-light">Touch</span>
+                </>
+              }
+              description={description}
+              titleClassName="text-section max-w-[528px] normal-case"
+              descriptionClassName="max-w-[435px] capitalize text-[#808080]"
+            />
+          </div>
+
+          <div className="vbs-contact-zoho-wrap w-full">
+            <ClientOnlyZohoContactForm />
           </div>
         </div>
       </PageContainer>

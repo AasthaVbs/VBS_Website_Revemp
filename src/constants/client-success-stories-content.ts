@@ -10,43 +10,41 @@ export type ClientSuccessStory = {
 };
 
 export const clientSuccessStoriesDefaultDescription =
-  "We offer two flexible engagement models that work best for our clients.";
+  "Hear how architects and firm owners scaled production, reclaimed time, and grew revenue with dedicated BIM support.";
 
-export const clientSuccessStoryQuote =
-  "Whether you're launching a new product or entering a new segment, we design the GTM motion that lands and scales. Whether you're launching a new product or entering a new segment, we design the GTM motion that lands and scales.";
-
-/** Figma 1398:16053 — PMPC, Lexent Design, Whitten Architects video testimonials */
+/** Figma 1982:24723 — Whitten Architects, Lexent Design, PMPC */
 export const clientSuccessStories: ClientSuccessStory[] = [
-
-  {
-    id: "lexent",
-    name: "Marvin McKinney",
-    role: "CEO at Oceanmtech",
-    quote: clientSuccessStoryQuote,
-    avatar: "/icons/Alec Whitten  1.png",
-    thumbnail: "/images/Image 1-thumbnial.png",
-    thumbnailAlt: "Lexent Design founder video testimonial for Virtual Building Studio",
-    youtubeVideoId: "uyaBPQrNhW0",
-  },
   {
     id: "whitten",
-    name: "Marvin McKinney",
-    role: "CEO at Oceanmtech",
-    quote: clientSuccessStoryQuote,
-    avatar: "/icons/Lexent Design  1.png",
-    
-    thumbnail: "/images/Image-1-youtube-thumbnail.png",
+    name: "Alec Whitten",
+    role: "Founder of Whitten Architects",
+    quote:
+      "From absorbing full production workloads to building a true right-hand partner. A Los Angeles architecture firm streamlined production with one dedicated resource—cutting delivery time by 75% and improving operational efficiency.",
+    avatar: "/icons/Alec Whitten  1.png",
+    thumbnail: "/image/alex-whitten-youtube-1.jpg",
     thumbnailAlt: "Alec Whitten video testimonial for Virtual Building Studio",
     youtubeVideoId: "2NsLtpdtMto",
   },
   {
+    id: "lexent",
+    name: "Alexandra Culcier",
+    role: "Founder of Lexent Design",
+    quote:
+      "From late-night deadlines and unreliable contractors to dependable 1–2-day turnarounds. This Columbus-based architect achieved 3–4X productivity, improved profitability, and gained the capacity to take on more projects without burnout.",
+    avatar: "/icons/Lexent Design  1.png",
+    thumbnail: "/image/lexent-desing-youtube-2.jpg",
+    thumbnailAlt: "Alexandra Culcier video testimonial for Virtual Building Studio",
+    youtubeVideoId: "uyaBPQrNhW0",
+  },
+  {
     id: "pmpc",
-    name: "Alec Whitten",
-    role: "Founder, Whitten Architects",
-    quote: clientSuccessStoryQuote,
-    avatar: "/images/figma/testimonial-1.png",
+    name: "Prashanth Mahakali",
+    role: "Principal Architect at PMPC",
+    quote:
+      "From constant production pressure to scalable growth—this Chicago-based firm improved turnaround times and supported $1M+ annual revenue with a more efficient delivery model.",
+    avatar: "/icons/Pmpc 1.png",
     thumbnail: "/images/Image-2-yt-thumbnail.png",
-    thumbnailAlt: "PMPC Architects video testimonial for Virtual Building Studio",
+    thumbnailAlt: "Prashanth Mahakali video testimonial for Virtual Building Studio",
     youtubeVideoId: "nHNRCMkaGAk",
   },
 ];

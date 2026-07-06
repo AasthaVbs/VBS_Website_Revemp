@@ -1,7 +1,9 @@
-import { blogListingItems } from "@/constants/blog-posts/listing";
 import { revitFamilyCreationPost } from "@/constants/blog-posts/posts/revit-family-creation";
 import type { BlogPostDetail } from "@/constants/blog-posts/types";
 import type { ResourceListingItem } from "@/constants/resources-page-content";
+import { mapSanityPostToBlogDetail } from "@/lib/sanity-blog";
+import { fetchSanityPostBySlug, fetchSanityPostSlugs, fetchSanityResourceListing } from "@/lib/sanity-fetch";
+import { mapSanityPostsToListing } from "@/lib/sanity-listing";
 
 const fullPosts: Record<string, BlogPostDetail> = {
   [revitFamilyCreationPost.slug]: revitFamilyCreationPost,
@@ -78,28 +80,44 @@ function stubPostFromListing(item: ResourceListingItem): BlogPostDetail {
         bio: revitFamilyCreationPost.author.bio,
       },
     ],
+    source: "static",
     faqs: revitFamilyCreationPost.faqs,
   };
 }
 
-export function getAllBlogSlugs(): string[] {
-  return blogListingItems.map((item) => item.id);
+async function getBlogListingItems(): Promise<ResourceListingItem[]> {
+  const { posts } = await fetchSanityResourceListing();
+  return mapSanityPostsToListing(posts) as ResourceListingItem[];
 }
 
-export function getBlogPostBySlug(slug: string): BlogPostDetail | undefined {
+export async function getAllBlogSlugs(): Promise<string[]> {
+  const sanitySlugs = await fetchSanityPostSlugs();
+  if (sanitySlugs.length) return sanitySlugs;
+  return (await getBlogListingItems()).map((item) => item.id);
+}
+
+export async function getBlogPostBySlug(slug: string): Promise<BlogPostDetail | undefined> {
   if (fullPosts[slug]) {
     return fullPosts[slug];
   }
-  const listing = blogListingItems.find((item) => item.id === slug);
+
+  const sanityPost = await fetchSanityPostBySlug(slug);
+  if (sanityPost) {
+    const mapped = mapSanityPostToBlogDetail(sanityPost);
+    if (mapped) return mapped;
+  }
+
+  const listing = (await getBlogListingItems()).find((item) => item.id === slug);
   if (!listing) {
     return undefined;
   }
   return stubPostFromListing(listing);
 }
 
-export function getRelatedBlogPosts(
+export async function getRelatedBlogPosts(
   currentSlug: string,
   limit = 4,
-): ResourceListingItem[] {
-  return blogListingItems.filter((item) => item.id !== currentSlug).slice(0, limit);
+): Promise<ResourceListingItem[]> {
+  const listing = await getBlogListingItems();
+  return listing.filter((item) => item.id !== currentSlug).slice(0, limit);
 }

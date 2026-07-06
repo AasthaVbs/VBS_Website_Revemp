@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function ThankYouPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
 
       <section className="py-16 lg:py-24" aria-labelledby="thank-you-title">

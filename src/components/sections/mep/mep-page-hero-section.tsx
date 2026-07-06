@@ -10,8 +10,8 @@ export type MepPageHeroContent = {
   description: string;
   ctaLabel: string;
   imageSrc: string;
-  /** Slightly smaller hero image (MEP BIM modelling page) */
   imageSize?: "default" | "compact";
+  ctaHref?: string;
 };
 
 const HERO_IMAGE_WIDTH = 1082;
@@ -46,6 +46,7 @@ export function MepPageHeroSection({
   ctaLabel,
   imageSrc,
   imageSize = "default",
+  ctaHref = "#services",
 }: MepPageHeroContent) {
   const isCompact = imageSize === "compact";
 
@@ -75,6 +76,7 @@ export function MepPageHeroSection({
 
               <PrimaryCtaButton
                 fullWidth={false}
+                href={ctaHref}
                 className="h-auto min-h-[52px] self-start px-5 py-4 capitalize backdrop-blur-[50px]"
               >
                 {ctaLabel}
@@ -139,6 +141,7 @@ export function MepPageHeroSection({
 
           <PrimaryCtaButton
             fullWidth={false}
+            href={ctaHref}
             className="h-auto min-h-[52px] px-5 py-4 capitalize backdrop-blur-[50px]"
           >
             {ctaLabel}

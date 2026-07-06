@@ -65,7 +65,7 @@ export function EvaluateDeliveryCtaCard({
             className={cn(
               compact
                 ? "max-w-[373px] text-[24px] font-medium capitalize leading-[34px] text-[#111111]"
-                : "text-section max-w-[530px]",
+                : "text-section max-w-[530px] capitalize",
               titleClassName,
             )}
           >
@@ -74,7 +74,7 @@ export function EvaluateDeliveryCtaCard({
           {description ? (
             <p
               className={cn(
-                "max-w-[478px] text-[16px] font-normal capitalize leading-6 text-[#808080]",
+                "max-w-[478px] text-[16px] font-normal leading-6 text-[#808080]",
                 descriptionClassName,
               )}
             >

@@ -1,0 +1,44 @@
+/**
+ * Migrated redesign pages — 1440px content shell (Next.js).
+ * Gatsby uses 1200px; this project standard is 1440px via PageContainer.
+ */
+
+.vbs-redesign-page {
+  --vbs-page-max: 1440px;
+
+  .vbs-page-container,
+  .vbs-site-footer__container,
+  > .container,
+  main .container:not(.vbs-allow-bootstrap),
+  .max-w-\[1440px\],
+  .max-w-\[1111px\] {
+    max-width: 1440px !important;
+  }
+}
+
+html:not(:has(.vbs-redesign-page:not(.vbs-redesign-page--contact-embed))) {
+  --vbs-legacy-shell-max: 1440px;
+  --vbs-legacy-shell-gutter: 24px;
+  --vbs-legacy-shell-gutter-md: 40px;
+
+  @media (min-width: 768px) {
+    --vbs-legacy-shell-gutter: var(--vbs-legacy-shell-gutter-md);
+  }
+
+  .vbs-site-header .vbs-page-container,
+  .vbs-site-footer .vbs-page-container,
+  .vbs-site-footer > .vbs-page-container {
+    max-width: var(--vbs-legacy-shell-max) !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--vbs-legacy-shell-gutter) !important;
+    padding-right: var(--vbs-legacy-shell-gutter) !important;
+  }
+
+  .container:not(.container-fluid):not(.vbs-allow-bootstrap) {
+    max-width: var(--vbs-legacy-shell-max) !important;
+    padding-left: var(--vbs-legacy-shell-gutter) !important;
+    padding-right: var(--vbs-legacy-shell-gutter) !important;
+  }
+}

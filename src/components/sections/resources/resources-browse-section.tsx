@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import {
   ChevronLeft,
@@ -10,36 +9,55 @@ import {
   Search,
 } from "lucide-react";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
+import { ResourceFeedPhoto } from "@/components/ui/resource-feed-photo";
 import { blogsBrowseIntro } from "@/constants/blogs-page-content";
 import {
-  figmaWebinarListingItems,
-  webinarTypeFilters,
+  resourceAllServicesLabel,
+  resourceAllTypesLabel,
+  resourceServiceFilterOptions,
+  resourcesBrowseIntro,
+  resourceSortFilters,
+  resourceTypeFilterOptions,
+  type ResourceSort,
+} from "@/constants/resources-page-content";
+import {
+  webinarAllTypesLabel,
+  webinarTypeFilterOptions,
   webinarsBrowseIntro,
   type WebinarDelivery,
 } from "@/constants/webinar-page-content";
-import { blogListingItems } from "@/constants/blog-posts/listing";
+import { whitepapersBrowseIntro } from "@/constants/whitepapers-page-content";
+import { buildResourceCatalog, type ResourceCatalogItem } from "@/lib/resource-catalog";
 import {
-  resourcePaginationPages,
-  resourceServiceFilters,
-  resourcesBrowseIntro,
-  resourceSortFilters,
-  resourceSubServiceFilters,
-  resourceTypeFilters,
-  whitepaperListingItems,
-  type ResourceListingItem,
-  type ResourceService,
-  type ResourceSort,
-  type ResourceType,
-} from "@/constants/resources-page-content";
+  isAllResourceServicesFilter,
+  matchesResourceServiceFilter,
+  type ResourceServiceFilterInput,
+} from "@/lib/resource-listing";
 import { cn } from "@/lib/utils";
 
-export type ResourcesBrowseVariant = "resources" | "blogs" | "webinars";
+export type ResourcesBrowseVariant = "resources" | "blogs" | "webinars" | "whitepapers";
 
 const ITEMS_PER_PAGE = 8;
+
+type CatalogItem = ResourceCatalogItem;
+
+function toServiceFilterItem(item: CatalogItem): ResourceServiceFilterInput {
+  const type =
+    item.type === "Whitepapers"
+      ? "White Paper"
+      : item.type === "Case Studies"
+        ? "Case Study"
+        : item.type;
+
+  return {
+    ...item,
+    type,
+  };
+}
 
 function FilterOption({
   label,
@@ -79,37 +97,48 @@ function FilterOption({
   );
 }
 
-function ResourceCard({ item }: { item: ResourceListingItem }) {
+function ResourceCard({ item }: { item: CatalogItem }) {
+  const metaPrimary =
+    item.publishedAt ||
+    ("location" in item ? item.location : null) ||
+    ("delivery" in item ? item.delivery : null) ||
+    null;
+  const metaSecondary = item.category || item.badgeLabel || item.type || null;
+
   return (
-    <article className="flex h-full flex-col items-center gap-[30px] overflow-hidden rounded-[10px] bg-white p-2.5 shadow-[0_4px_10px_rgba(0,0,0,0.15)]">
+    <Link
+      href={item.href}
+      className="resources-browse-card flex h-full flex-col items-center gap-[30px] overflow-hidden rounded-[10px] bg-white p-2.5 shadow-[0_4px_10px_rgba(0,0,0,0.15)] no-underline transition-[box-shadow,transform] duration-250 hover:-translate-y-1 hover:shadow-[0_10px_24px_rgba(0,0,0,0.12)]"
+      aria-label={`Learn more about ${item.title}`}
+    >
       <div className="relative h-[220px] w-full overflow-hidden rounded-[10px] sm:h-[280px] lg:h-[322px]">
-        <Image
+        <ResourceFeedPhoto
           src={item.image}
-          alt=""
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 508px"
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <span className="absolute bottom-3 right-3 rounded-[10px] border border-[#D70416] bg-[#D70416] px-2.5 py-1 text-[13px] text-white">
-          {item.badgeLabel ?? "Blog"}
+          {item.badgeLabel || item.type || "Resource"}
         </span>
       </div>
       <div className="flex w-full flex-col gap-[15px] px-2.5 pb-2.5">
         <div className="flex flex-col gap-[19px]">
+          {metaPrimary || metaSecondary ? (
+            <div className="flex flex-wrap items-center justify-between gap-2 text-[14px] text-[#808080]">
+              <span>{metaPrimary || ""}</span>
+              {metaSecondary ? <span>{metaSecondary}</span> : null}
+            </div>
+          ) : null}
           <h3 className="text-[20px] font-normal leading-[1.35] text-[#111111] sm:text-[24px]">
             {item.title}
           </h3>
           <p className="text-[16px] leading-6 text-[#808080]">{item.excerpt}</p>
         </div>
-        <Link
-          href={item.href}
-          className="inline-flex items-center gap-1.5 text-[16px] text-[#2299D6] transition-opacity hover:opacity-80"
-        >
+        <span className="inline-flex items-center gap-1.5 text-[16px] text-[#2299D6]">
           Learn More
           <ChevronRight className="h-5 w-5" strokeWidth={1.5} />
-        </Link>
+        </span>
       </div>
-    </article>
+    </Link>
   );
 }
 
@@ -129,62 +158,112 @@ export function ResourcesBrowseSection({
 }) {
   const isBlogsPage = variant === "blogs";
   const isWebinarsPage = variant === "webinars";
+  const isWhitepapersPage = variant === "whitepapers";
   const intro = isBlogsPage
     ? blogsBrowseIntro
     : isWebinarsPage
       ? webinarsBrowseIntro
-      : resourcesBrowseIntro;
+      : isWhitepapersPage
+        ? whitepapersBrowseIntro
+        : resourcesBrowseIntro;
 
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedType, setSelectedType] = useState<ResourceType>("Blog");
-  const [selectedWebinarType, setSelectedWebinarType] = useState<WebinarDelivery>("On Demand");
+  const [selectedType, setSelectedType] = useState<string>(resourceAllTypesLabel);
+  const [selectedWebinarType, setSelectedWebinarType] = useState<string>(webinarAllTypesLabel);
   const [selectedSort, setSelectedSort] = useState<ResourceSort>("New to Old");
-  const [selectedService, setSelectedService] = useState<ResourceService>("MEP Engineering Firms");
+  const [selectedService, setSelectedService] = useState<string>(resourceAllServicesLabel);
   const [currentPage, setCurrentPage] = useState(1);
+
+  const resourceCatalog = useMemo(() => buildResourceCatalog(), []);
 
   const filteredItems = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
-    const baseItems = isWebinarsPage
-      ? figmaWebinarListingItems.filter((item) => item.delivery === selectedWebinarType)
-      : isBlogsPage
-        ? blogListingItems
-        : selectedType === "Blog"
-          ? blogListingItems
-          : selectedType === "Whitepapers"
-            ? whitepaperListingItems
-            : [];
+
+    let baseItems: CatalogItem[] = [];
+
+    if (isWebinarsPage) {
+      baseItems =
+        selectedWebinarType === webinarAllTypesLabel
+          ? resourceCatalog.byType.Webinar
+          : resourceCatalog.byType.Webinar.filter((item) => item.delivery === selectedWebinarType);
+    } else if (isBlogsPage) {
+      baseItems = resourceCatalog.byType.Blog;
+    } else if (isWhitepapersPage) {
+      baseItems = resourceCatalog.byType.Whitepapers;
+    } else if (selectedType === resourceAllTypesLabel) {
+      baseItems = resourceCatalog.allItems;
+    } else {
+      baseItems = resourceCatalog.byType[selectedType as keyof typeof resourceCatalog.byType] || [];
+    }
 
     let items = [...baseItems];
 
-    if (query) {
-      items = items.filter(
-        (item) =>
-          item.title.toLowerCase().includes(query) ||
-          item.excerpt.toLowerCase().includes(query),
+    if (!isAllResourceServicesFilter(selectedService)) {
+      items = items.filter((item) =>
+        matchesResourceServiceFilter(toServiceFilterItem(item), selectedService),
       );
     }
 
-    items.sort((a, b) =>
-      selectedSort === "New to Old" ? a.sortOrder - b.sortOrder : b.sortOrder - a.sortOrder,
-    );
+    if (query) {
+      items = items.filter((item) => {
+        const searchable = [
+          item.title,
+          item.excerpt,
+          item.category,
+          item.type,
+          "location" in item ? item.location : null,
+          item.badgeLabel,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+
+        return searchable.includes(query);
+      });
+    }
+
+    items.sort((a, b) => {
+      const left = a.publishedTimestamp ?? a.sortOrder ?? 0;
+      const right = b.publishedTimestamp ?? b.sortOrder ?? 0;
+      return selectedSort === "New to Old" ? right - left : left - right;
+    });
 
     return items;
-  }, [isBlogsPage, isWebinarsPage, searchQuery, selectedType, selectedSort, selectedWebinarType]);
+  }, [
+    isBlogsPage,
+    isWebinarsPage,
+    isWhitepapersPage,
+    searchQuery,
+    selectedType,
+    selectedSort,
+    selectedService,
+    selectedWebinarType,
+    resourceCatalog,
+  ]);
 
   const totalPages = Math.max(1, Math.ceil(filteredItems.length / ITEMS_PER_PAGE));
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+
+  useEffect(() => {
+    if (currentPage !== safeCurrentPage) {
+      setCurrentPage(safeCurrentPage);
+    }
+  }, [currentPage, safeCurrentPage]);
+
   const pageItems = filteredItems.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE,
+    (safeCurrentPage - 1) * ITEMS_PER_PAGE,
+    safeCurrentPage * ITEMS_PER_PAGE,
   );
   const cardRows = chunkItems(pageItems, 2);
 
-  const handleTypeChange = (type: ResourceType) => {
+  const handleTypeChange = (type: string) => {
     setSelectedType(type);
+    setSelectedService(resourceAllServicesLabel);
     setCurrentPage(1);
   };
 
   return (
-    <section className="bg-white py-12 lg:py-[100px]">
+    <section className="resource-browse-anchor bg-white py-12 lg:py-[100px]">
       <PageContainer className="flex flex-col items-start gap-10 lg:gap-[60px]">
         <div className="flex w-full flex-col gap-5">
           <div className="flex flex-col gap-3">
@@ -222,7 +301,7 @@ export function ResourcesBrowseSection({
 
               {isWebinarsPage ? (
                 <FilterGroup title="Type of Webinars">
-                  {webinarTypeFilters.map((type) => (
+                  {webinarTypeFilterOptions.map((type) => (
                     <FilterOption
                       key={type}
                       label={type}
@@ -234,9 +313,9 @@ export function ResourcesBrowseSection({
                     />
                   ))}
                 </FilterGroup>
-              ) : !isBlogsPage ? (
+              ) : !isBlogsPage && !isWhitepapersPage ? (
                 <FilterGroup title="Type of Resources">
-                  {resourceTypeFilters.map((type) => (
+                  {resourceTypeFilterOptions.map((type) => (
                     <FilterOption
                       key={type}
                       label={type}
@@ -261,25 +340,21 @@ export function ResourcesBrowseSection({
                 ))}
               </FilterGroup>
 
-              <FilterGroup title="Service">
-                {resourceServiceFilters.map((service) => (
-                  <FilterOption
-                    key={service}
-                    label={service}
-                    checked={selectedService === service}
-                    onChange={() => {
-                      setSelectedService(service);
-                      setCurrentPage(1);
-                    }}
-                  />
-                ))}
-              </FilterGroup>
-
-              <FilterGroup title="Sub Service (Selected Service)">
-                {resourceSubServiceFilters.map((sub) => (
-                  <FilterOption key={sub} label={sub} checked={false} onChange={() => undefined} />
-                ))}
-              </FilterGroup>
+              {isBlogsPage || !isWebinarsPage ? (
+                <FilterGroup title="Service">
+                  {resourceServiceFilterOptions.map((service) => (
+                    <FilterOption
+                      key={service}
+                      label={service}
+                      checked={selectedService === service}
+                      onChange={() => {
+                        setSelectedService(service);
+                        setCurrentPage(1);
+                      }}
+                    />
+                  ))}
+                </FilterGroup>
+              ) : null}
             </div>
           </aside>
 
@@ -288,85 +363,92 @@ export function ResourcesBrowseSection({
               cardRows.map((row, rowIndex) => (
                 <div key={rowIndex} className="grid grid-cols-1 gap-5 md:grid-cols-2">
                   {row.map((item) => (
-                    <ResourceCard key={item.id} item={item} />
+                    <ResourceCard key={`${item.type}-${item.id}`} item={item} />
                   ))}
                 </div>
               ))
             ) : (
               <p className="rounded-[10px] border border-[#CBCCCD] bg-[#FAFAFA] p-8 text-center text-[16px] text-[#808080]">
                 {isWebinarsPage
-                  ? "No webinars match your filters. Try another type or search term."
+                  ? resourceCatalog.byType.Webinar.length === 0
+                    ? "No webinars are available yet. Check back soon."
+                    : "No webinars match your filters. Try another type or search term."
                   : isBlogsPage
-                    ? "No blogs match your filters. Try another search term."
-                    : "No resources match your filters. Try another type or search term."}
+                    ? resourceCatalog.byType.Blog.length === 0
+                      ? "No blog posts are available yet. Check back soon."
+                      : "No blogs match your filters. Try another service or search term."
+                    : isWhitepapersPage
+                      ? resourceCatalog.byType.Whitepapers.length === 0
+                        ? "No white papers are available yet. Check back soon."
+                        : "No white papers match your filters. Try another search term."
+                      : `No ${selectedType === resourceAllTypesLabel ? "resources" : selectedType.toLowerCase()} match your filters. Try another type or search term.`}
               </p>
             )}
           </div>
         </div>
 
-        <nav
-          className="flex w-full flex-wrap items-center justify-end gap-5"
-          aria-label={
-            isWebinarsPage
-              ? "Webinars pagination"
-              : isBlogsPage
-                ? "Blogs pagination"
-                : "Resources pagination"
-          }
-        >
-          <PaginationButton
-            aria-label="First page"
-            disabled={currentPage === 1}
-            onClick={() => setCurrentPage(1)}
+        {filteredItems.length > 0 ? (
+          <nav
+            className="flex w-full flex-wrap items-center justify-end gap-5"
+            aria-label={
+              isWebinarsPage
+                ? "Webinars pagination"
+                : isBlogsPage
+                  ? "Blogs pagination"
+                  : isWhitepapersPage
+                    ? "White papers pagination"
+                    : "Resources pagination"
+            }
           >
-            <ChevronsLeft className="h-5 w-5 text-[#808080]" strokeWidth={1.5} />
-          </PaginationButton>
-          <PaginationButton
-            aria-label="Previous page"
-            disabled={currentPage === 1}
-            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-          >
-            <ChevronLeft className="h-5 w-5 text-[#808080]" strokeWidth={1.5} />
-          </PaginationButton>
+            <PaginationButton
+              aria-label="First page"
+              disabled={safeCurrentPage === 1}
+              onClick={() => setCurrentPage(1)}
+            >
+              <ChevronsLeft className="h-5 w-5 text-[#808080]" strokeWidth={1.5} />
+            </PaginationButton>
+            <PaginationButton
+              aria-label="Previous page"
+              disabled={safeCurrentPage === 1}
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            >
+              <ChevronLeft className="h-5 w-5 text-[#808080]" strokeWidth={1.5} />
+            </PaginationButton>
 
-          <div className="flex flex-wrap items-center gap-2.5">
-            {resourcePaginationPages.map((page) => (
-              <button
-                key={page}
-                type="button"
-                disabled={page === "..."}
-                onClick={() => {
-                  if (page !== "...") setCurrentPage(Number(page));
-                }}
-                className={cn(
-                  "rounded-[10px] px-[18px] py-2.5 text-[16px] capitalize backdrop-blur-[50px] transition-colors",
-                  page === "..."
-                    ? "cursor-default text-[#808080]"
-                    : page === String(currentPage).padStart(2, "0")
+            <div className="flex flex-wrap items-center gap-2.5">
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                <button
+                  key={page}
+                  type="button"
+                  onClick={() => setCurrentPage(page)}
+                  className={cn(
+                    "rounded-[10px] px-[18px] py-2.5 text-[16px] capitalize backdrop-blur-[50px] transition-colors",
+                    page === safeCurrentPage
                       ? "font-normal text-[#111111]"
                       : "text-[#808080] hover:text-[#111111]",
-                )}
-              >
-                {page}
-              </button>
-            ))}
-          </div>
+                  )}
+                >
+                  {String(page).padStart(2, "0")}
+                </button>
+              ))}
+            </div>
 
-          <PaginationButton
-            aria-label="Next page"
-            disabled={currentPage >= totalPages}
-            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-          >
-            <ChevronRight className="h-5 w-5 text-[#808080]" strokeWidth={1.5} />
-          </PaginationButton>
-          <PaginationButton
-            aria-label="Last page"
-            disabled={currentPage >= totalPages}
-            onClick={() => setCurrentPage(totalPages)}
-          >
-            <ChevronsRight className="h-5 w-5 text-[#808080]" strokeWidth={1.5} />
-          </PaginationButton>
-        </nav>
+            <PaginationButton
+              aria-label="Next page"
+              disabled={safeCurrentPage >= totalPages}
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            >
+              <ChevronRight className="h-5 w-5 text-[#808080]" strokeWidth={1.5} />
+            </PaginationButton>
+            <PaginationButton
+              aria-label="Last page"
+              disabled={safeCurrentPage >= totalPages}
+              onClick={() => setCurrentPage(totalPages)}
+            >
+              <ChevronsRight className="h-5 w-5 text-[#808080]" strokeWidth={1.5} />
+            </PaginationButton>
+          </nav>
+        ) : null}
       </PageContainer>
     </section>
   );

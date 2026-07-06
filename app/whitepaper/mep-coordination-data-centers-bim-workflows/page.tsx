@@ -145,7 +145,7 @@ const whoWeHelpRows = [whoWeHelpCards.slice(0, 3), whoWeHelpCards.slice(3, 5)] a
 
 export default function MepCoordinationDataCentersWhitepaperPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
 
       <main className="bg-white">

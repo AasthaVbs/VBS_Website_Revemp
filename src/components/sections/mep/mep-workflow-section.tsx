@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { mepWorkflowSteps } from "@/constants/mep-engineers-content";

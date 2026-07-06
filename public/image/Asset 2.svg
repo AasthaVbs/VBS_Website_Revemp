@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 89.35 29.08">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: url(#linear-gradient-3);
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 2.08px;
+      }
+
+      .cls-2 {
+        stroke: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        stroke: url(#linear-gradient-2);
+        stroke-dasharray: 0 0 7.97 3.98;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="27.05" x2="89.35" y2="27.05" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d50f25"/>
+      <stop offset="1" stop-color="#870a17"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0" y1="14.57" x2="89.35" y2="14.57" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0" y1="1.11" x2="89.35" y2="1.11" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path class="cls-2" d="m.25,26.68s1.53.37,4.1.73"/>
+      <path class="cls-3" d="m8.3,27.83c9.94.77,27.04-.08,39.28-12.32C59.23,3.86,74.66,1.46,83.09,1.1"/>
+      <path class="cls-1" d="m85.09,1.04c2.6-.03,4.16.13,4.16.13"/>
+    </g>
+  </g>
+</svg>

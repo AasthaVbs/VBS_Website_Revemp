@@ -1,7 +1,5 @@
-import type { ReactNode } from "react";
-
-import { EngagementSectionShell } from "@/components/sections/engagement-section-shell";
-import { SectionTag } from "@/components/sections/section-primitives";
+import { PageContainer } from "@/components/layout/page-container";
+import { EngagementModelIcon } from "@/components/sections/engagement-models/engagement-model-icons";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import {
   defaultEngagementModelsHeader,
@@ -15,78 +13,67 @@ export type { EngagementModelCard };
 export type EngagementModelsSectionProps = {
   id?: string;
   tag?: string;
-  title?: ReactNode;
+  titleLine1?: string;
+  titleAccent?: string;
   description?: string;
   cards?: readonly EngagementModelCard[];
   sectionClassName?: string;
 };
 
-function BulletList({
-  items,
-  className = "leading-6",
-}: {
-  items: readonly string[];
-  className?: string;
-}) {
-  return (
-    <ul className={`flex flex-col gap-2 ${className}`}>
-      {items.map((item) => (
-        <li key={item} className="inline-flex items-center gap-2.5">
-          <span className="text-body shrink-0">•</span>
-          <span className="text-body">{item}</span>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 function EngagementModelCardArticle({ card }: { card: EngagementModelCard }) {
   return (
     <article
       className={cn(
-        "relative flex min-w-0 flex-col items-start gap-5 rounded-[10px] border bg-white p-5",
-        card.shadow && "shadow-[0_0_14px_rgba(0,0,0,0.20)]",
+        "vbs-engagement-models-section__card",
+        card.shadow && "vbs-engagement-models-section__card--shadow",
+        card.featured && "vbs-engagement-models-section__card--featured",
       )}
-      style={{ borderColor: card.borderColor }}
     >
       {"badge" in card && card.badge ? (
-        <div className="absolute -top-4 right-5 inline-flex h-8 items-center justify-center rounded-[10px] bg-[#2299D6] px-3 py-1.5">
-          <span className="text-[14px] font-normal text-white">{card.badge}</span>
-        </div>
+        <div className="vbs-engagement-models-section__badge">{card.badge}</div>
       ) : null}
 
-      <div
-        className="flex items-center justify-center rounded-[10px] border p-2.5"
-        style={{ backgroundColor: card.iconBg, borderColor: card.iconBorder }}
-      >
-        <span className="text-[40px] font-normal leading-none text-[#111111]">{card.icon}</span>
+      <div className="vbs-engagement-models-section__icon-wrap">
+        <EngagementModelIcon name={card.icon} />
       </div>
 
-      <p className="text-[16px] font-medium leading-6 text-[#D70416]">{card.audience}</p>
+      <p className="vbs-engagement-models-section__audience">{card.audience}</p>
 
-      <div className="flex w-full flex-1 flex-col items-end gap-5">
-        <div className="flex w-full flex-col gap-5">
-          <div className="flex flex-col gap-2.5">
-            <h3 className="text-card-title">{card.title}</h3>
-            <p className="text-[16px] font-medium leading-6 text-[#808080]">{card.description}</p>
+      <div className="vbs-engagement-models-section__card-body">
+        <div className="vbs-engagement-models-section__card-content">
+          <div className="vbs-engagement-models-section__card-intro">
+            <h3 className="vbs-engagement-models-section__card-title">{card.title}</h3>
+            <p className="vbs-engagement-models-section__card-description">{card.description}</p>
           </div>
 
-          <div className="flex flex-col gap-2.5">
-            <p className="text-[16px] font-medium leading-6 text-[#808080]">Key Benefits</p>
-            <BulletList items={card.keyBenefits} />
+          <div className="vbs-engagement-models-section__block">
+            <p className="vbs-engagement-models-section__block-label">Key Benefits</p>
+            <ul className="vbs-engagement-models-section__list">
+              {card.keyBenefits.map((item) => (
+                <li key={item} className="vbs-engagement-models-section__list-item">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div className="flex flex-col gap-2.5">
-            <p className="text-[16px] font-medium leading-6 text-[#808080]">Best Suited For</p>
-            <BulletList items={card.bestSuitedFor} className="leading-[26px]" />
+          <div className="vbs-engagement-models-section__block">
+            <p className="vbs-engagement-models-section__block-label">Best Suited For</p>
+            <ul className="vbs-engagement-models-section__list">
+              {card.bestSuitedFor.map((item) => (
+                <li key={item} className="vbs-engagement-models-section__list-item">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         <PrimaryCtaButton
-          fullWidth={false}
-          href={"ctaHref" in card ? card.ctaHref : undefined}
+          fullWidth
+          href={card.ctaHref}
           className={cn(
-            "primary-cta--wide w-full",
+            "vbs-engagement-models-section__cta",
             card.ctaHighlighted && "primary-cta--highlighted",
           )}
         >
@@ -97,41 +84,35 @@ function EngagementModelCardArticle({ card }: { card: EngagementModelCard }) {
   );
 }
 
-/** Shared engagement models grid — used on home and MEP pages. */
-const defaultTitle = (
-  <>
-    {defaultEngagementModelsHeader.titleLine1}{" "}
-    <span className="text-accent">{defaultEngagementModelsHeader.titleAccent}</span>
-  </>
-);
-
 export function EngagementModelsSection({
   id = "engagement",
   tag = defaultEngagementModelsHeader.tag,
-  title = defaultTitle,
+  titleLine1 = defaultEngagementModelsHeader.titleLine1,
+  titleAccent = defaultEngagementModelsHeader.titleAccent,
   description = defaultEngagementModelsHeader.description,
   cards = engagementModelCards,
   sectionClassName,
 }: EngagementModelsSectionProps) {
   return (
-    <EngagementSectionShell
-      id={id}
-      className={sectionClassName}
-      header={
-        <div className="flex w-full flex-col items-start gap-5">
-          <div className="flex flex-col items-start gap-3">
-            <SectionTag label={tag} />
-            <h2 className="max-w-[884px] text-section">{title}</h2>
+    <section id={id} className={cn("vbs-engagement-models-section", sectionClassName)}>
+      <PageContainer className="vbs-engagement-models-section__container">
+        <header className="vbs-engagement-models-section__header">
+          <div className="vbs-engagement-models-section__title-block">
+            <span className="vbs-engagement-models-section__tag">{tag}</span>
+            <h2 className="vbs-engagement-models-section__title">
+              <span className="vbs-engagement-models-section__title-dark">{titleLine1} </span>
+              <span className="vbs-engagement-models-section__title-accent">{titleAccent}</span>
+            </h2>
           </div>
-          <p className="max-w-[750px] text-body">{description}</p>
+          <p className="vbs-engagement-models-section__description">{description}</p>
+        </header>
+
+        <div className="vbs-engagement-models-section__cards">
+          {cards.map((card) => (
+            <EngagementModelCardArticle key={card.title} card={card} />
+          ))}
         </div>
-      }
-    >
-      <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {cards.map((card) => (
-          <EngagementModelCardArticle key={card.title} card={card} />
-        ))}
-      </div>
-    </EngagementSectionShell>
+      </PageContainer>
+    </section>
   );
 }

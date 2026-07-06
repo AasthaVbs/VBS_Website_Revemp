@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="vbs-redesign-page min-h-screen bg-white">
       <SiteHeader />
       <main className="overflow-visible">
         <PortfolioHeroSection />

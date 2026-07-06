@@ -12,18 +12,33 @@ import {
   getBlogPostBySlug,
   getRelatedBlogPosts,
 } from "@/constants/blog-posts";
+import { sanityPostSeo } from "@/lib/sanity-blog";
+import { fetchSanityPostBySlug } from "@/lib/sanity-fetch";
+
+export const revalidate = 60;
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export function generateStaticParams() {
-  return getAllBlogSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const slugs = await getAllBlogSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const sanityPost = await fetchSanityPostBySlug(slug);
+  if (sanityPost) {
+    const seo = sanityPostSeo(sanityPost);
+    return {
+      title: `${seo.title} | Virtual Building Studio`,
+      description: seo.description,
+      openGraph: seo.image ? { images: [{ url: seo.image }] } : undefined,
+    };
+  }
+
+  const post = await getBlogPostBySlug(slug);
   if (!post) {
     return { title: "Blog | Virtual Building Studio" };
   }
@@ -35,20 +50,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function BlogDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();
   }
 
-  const relatedItems = getRelatedBlogPosts(slug, 4);
+  const relatedItems = await getRelatedBlogPosts(slug, 4);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
       <main>
         <BlogDetailHeroSection post={post} />
-        <BlogDetailFaqSection items={post.faqs} />
+        {post.faqs.length > 0 ? <BlogDetailFaqSection items={post.faqs} /> : null}
         <RelatedArticlesSection
           titleLead="Related "
           titleAccent="Articles"

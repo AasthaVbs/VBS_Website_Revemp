@@ -45,18 +45,33 @@ function NavMenuDivider({ id }: { id: string }) {
   );
 }
 
+function NavDropdownAnchor({
+  link,
+  className = "text-[16px] font-normal leading-snug text-[#111111] transition-colors hover:text-vbs-red",
+}: {
+  link: NavDropdownLink;
+  className?: string;
+}) {
+  if (link.external) {
+    return (
+      <a href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
+        {link.label}
+      </a>
+    );
+  }
+  return (
+    <Link href={link.href} className={className}>
+      {link.label}
+    </Link>
+  );
+}
+
 function SimpleNavDropdown({ links }: { links: NavDropdownLink[] }) {
   return (
     <div className="inline-flex rounded-[10px] bg-white p-5 shadow-[0_2px_10px_rgba(0,0,0,0.20)]">
       <div className="flex w-[226px] flex-col gap-5">
         {links.map((link) => (
-          <Link
-            key={link.label}
-            href={link.href}
-            className="text-[16px] font-normal leading-none text-[#111111] transition-colors hover:text-vbs-red"
-          >
-            {link.label}
-          </Link>
+          <NavDropdownAnchor key={link.label} link={link} className="text-[16px] font-normal leading-none text-[#111111] transition-colors hover:text-vbs-red" />
         ))}
       </div>
     </div>
@@ -124,13 +139,7 @@ export function CapabilitiesMegaMenu() {
         {activeCategory.services.map((column, colIndex) => (
           <div key={colIndex} className="flex w-[211px] flex-col gap-5">
             {column.map((service) => (
-              <Link
-                key={service.label}
-                href={service.href}
-                className="text-[16px] font-normal leading-snug text-[#111111] transition-colors hover:text-vbs-red"
-              >
-                {service.label}
-              </Link>
+              <NavDropdownAnchor key={service.label} link={service} />
             ))}
           </div>
         ))}

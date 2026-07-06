@@ -6,8 +6,8 @@ import { PortfolioProjectCard } from "@/components/sections/portfolio/portfolio-
 import { SectionTag } from "@/components/sections/section-primitives";
 import {
   allProjectsIntro,
-  portfolioProjectItems,
 } from "@/constants/portfolio-page-content";
+import { allPortfolioProjectCards } from "@/lib/portfolio-catalog";
 
 /** Figma 948:26341 — flex two-column layout; sticky left; all cards in document flow */
 export function AllProjectsSection() {
@@ -50,7 +50,7 @@ export function AllProjectsSection() {
             id="all-projects-list"
             className="flex w-full min-w-0 flex-1 flex-col gap-[30px] lg:max-w-[632px]"
           >
-            {portfolioProjectItems.map((project) => (
+            {allPortfolioProjectCards.map((project) => (
               <Link key={project.id} href={project.href} className="block w-full max-w-[632px]">
                 <PortfolioProjectCard project={project} variant="listing" />
               </Link>

@@ -64,7 +64,7 @@ export function FounderSection() {
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                "primary-cta relative inline-flex h-[52px] w-auto shrink-0 items-center justify-center overflow-hidden rounded-[10px] border-[1.5px] border-[#D70416] bg-white/10 px-5 py-0 text-[16px] font-medium capitalize leading-none text-[#D70416] backdrop-blur-[100px]",
+                "primary-cta no-underline relative inline-flex h-[52px] w-auto shrink-0 items-center justify-center overflow-hidden rounded-[10px] border-[1.5px] border-[#D70416] bg-white/10 px-5 py-0 text-[16px] font-medium capitalize leading-none text-[#D70416] backdrop-blur-[100px]",
               )}
             >
               <span className="primary-cta-blobs" aria-hidden>

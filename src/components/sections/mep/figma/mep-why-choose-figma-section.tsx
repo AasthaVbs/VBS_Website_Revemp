@@ -7,6 +7,11 @@ import {
   mepWhyChooseSection,
 } from "@/constants/mep-engineers-content";
 
+function resolveImageSrc(icon) {
+  if (!icon) return "";
+  return typeof icon === "string" ? icon : icon.src;
+}
+
 function WhyChooseCard({ item }) {
   return (
     <article
@@ -17,7 +22,7 @@ function WhyChooseCard({ item }) {
     >
       <div className="mep-figma-why-choose__icon-wrap">
         <img
-          src={item.icon}
+          src={resolveImageSrc(item.icon)}
           alt=""
           className="mep-figma-why-choose__icon"
           aria-hidden

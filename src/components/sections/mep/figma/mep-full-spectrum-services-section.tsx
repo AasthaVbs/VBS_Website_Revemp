@@ -162,6 +162,7 @@ export function MepFullSpectrumServicesSection({
       enabled: useHorizontalCarousel,
       pinZoneRef: cardsOnlyPin ? pinZoneRef : null,
       touchScrollViewportRef: cardsOnlyPin ? viewportRef : null,
+      carouselViewportRef: viewportRef,
       cardsOnlyPin,
     },
   );

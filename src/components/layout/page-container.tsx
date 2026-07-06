@@ -7,12 +7,12 @@ type PageContainerProps = {
   className?: string;
 };
 
-/** Matches site header width: max 1440px, 24px / 40px horizontal padding */
+/** Matches site header width: max 1400px, 28px / 37px horizontal padding */
 export function PageContainer({ children, className }: PageContainerProps) {
   return (
     <div
       className={cn(
-        "vbs-page-container mx-auto box-border w-full max-w-[1440px] px-6 md:px-10",
+        "vbs-page-container mx-auto box-border w-full max-w-[1400px] px-7 md:px-[37px]",
         className,
       )}
     >

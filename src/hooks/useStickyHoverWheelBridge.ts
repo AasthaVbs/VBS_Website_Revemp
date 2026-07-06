@@ -44,7 +44,7 @@ function getPinState(pinTarget, sticky) {
 }
 
 /** Amplify wheel deltas so one scroll gesture advances the carousel further. */
-const WHEEL_SCROLL_MULTIPLIER = 1.4;
+const WHEEL_SCROLL_MULTIPLIER = 1.15;
 
 function canScrollPage(delta) {
   const pageMax = document.documentElement.scrollHeight - window.innerHeight;

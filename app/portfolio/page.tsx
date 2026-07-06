@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/layout/site-header";
-import { CertificationAwardsSection } from "@/components/sections/certification-awards-section";
-import { ClientSuccessStoriesSection } from "@/components/sections/client-success-stories-section";
-import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { PortfolioHeroSection } from "@/components/sections/portfolio/portfolio-hero-section";
-import { PortfolioProjectsSection } from "@/components/sections/portfolio/portfolio-projects-section";
 import { StatsStripSection } from "@/components/sections/stats-strip-section";
-import { SiteFooter } from "@/components/sections/site-footer";
 import { defaultStatsStrip } from "@/constants/shared-sections";
+import {
+  DeferredCertificationAwardsSection,
+  DeferredClientSuccessStoriesSection,
+  DeferredGetInTouchSection,
+  DeferredPortfolioProjectsSection,
+  DeferredSiteFooter,
+} from "@/lib/lazy-page-sections";
 
 export const metadata: Metadata = {
   title: "Portfolio | Virtual Building Studio",
@@ -23,12 +25,12 @@ export default function PortfolioPage() {
       <main className="overflow-visible">
         <PortfolioHeroSection />
         <StatsStripSection stats={defaultStatsStrip} />
-        <PortfolioProjectsSection />
-        <CertificationAwardsSection />
-        <ClientSuccessStoriesSection />
-        <GetInTouchSection />
+        <DeferredPortfolioProjectsSection />
+        <DeferredCertificationAwardsSection />
+        <DeferredClientSuccessStoriesSection />
+        <DeferredGetInTouchSection />
       </main>
-      <SiteFooter />
+      <DeferredSiteFooter />
     </div>
   );
 }

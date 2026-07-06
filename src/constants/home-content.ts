@@ -1,3 +1,5 @@
+import { ROUTES } from "@/constants/navigation";
+
 export const navLinks = [
   "What We Do",
   "Success Stories",
@@ -91,7 +93,7 @@ export const homeCapabilityCards: HomeCapabilityCard[] = [
   {
     image: engineeringConstructionImg.src,
     title: "Engineering & Construction",
-    href: "/mep-engineers",
+    href: ROUTES.mepServices,
     summary: "MEP, Structural, And Construction Documentation Support",
     description:
       "Clash detection, coordination, and constructability reviews with fabrication-ready MEP modeling aligned to your engineering workflows.",

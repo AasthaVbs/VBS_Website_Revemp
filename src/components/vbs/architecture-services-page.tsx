@@ -1,22 +1,8 @@
 // @ts-nocheck
 import { SiteHeader } from "@/components/layout/site-header";
-import { ClientSuccessStoriesSection } from "@/components/sections/client-success-stories-section";
-import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-delivery-cta-section";
-import { FaqSection } from "@/components/sections/faq-section";
-import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
-import { IndustriesSection } from "@/components/sections/industries-section";
-import { MepDisciplinesSection } from "@/components/sections/mep/figma/mep-disciplines-figma-section";
-import { MepEngagementProcessSection } from "@/components/sections/mep/figma/mep-engagement-process-figma-section";
-import { MepFullSpectrumServicesSection } from "@/components/sections/mep/figma/mep-full-spectrum-services-section";
 import { MepIntroSection } from "@/components/sections/mep/figma/mep-intro-figma-section";
-import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
-import { MepQualityAssuranceSection } from "@/components/sections/mep/figma/mep-quality-assurance-section";
-import { MepResourcesSection } from "@/components/sections/mep/mep-resources-section";
-import { MepServiceBenefitsSection } from "@/components/sections/mep/figma/mep-service-benefits-section";
 import { MepWhatYouGetSection } from "@/components/sections/mep/figma/mep-what-you-get-section";
-import { MepWhyChooseSection } from "@/components/sections/mep/figma/mep-why-choose-figma-section";
-import { MepWorkflowSection } from "@/components/sections/mep/figma/mep-workflow-figma-section";
-import { SiteFooter } from "@/components/sections/site-footer";
+import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
 import { StatsStripSection } from "@/components/sections/stats-strip-section";
 import {
   architectureDisciplinePanels,
@@ -48,6 +34,22 @@ import {
   architectureWorkflowSection,
   architectureWorkflowSteps,
 } from "@/constants/architecture-services-content";
+import {
+  DeferredClientSuccessStoriesSection,
+  DeferredEvaluateDeliveryCtaSection,
+  DeferredFaqSection,
+  DeferredGetInTouchSection,
+  DeferredIndustriesSection,
+  DeferredMepDisciplinesSection,
+  DeferredMepEngagementProcessSection,
+  DeferredMepFullSpectrumServicesSection,
+  DeferredMepQualityAssuranceSection,
+  DeferredMepResourcesSection,
+  DeferredMepServiceBenefitsSection,
+  DeferredMepWhyChooseSection,
+  DeferredMepWorkflowSection,
+  DeferredSiteFooter,
+} from "@/lib/lazy-page-sections";
 
 export function ArchitectureServicesPage() {
   return (
@@ -61,39 +63,45 @@ export function ArchitectureServicesPage() {
           section={architectureWhatYouGetSection}
           cards={architectureWhatYouGetCards}
         />
-        <MepFullSpectrumServicesSection
+        <DeferredMepFullSpectrumServicesSection
           section={architectureFullSpectrumSection}
           cards={architectureFullSpectrumCards}
           scrollInteraction="hover"
         />
-        <MepDisciplinesSection
+        <DeferredMepDisciplinesSection
           section={architectureDisciplinesSection}
           panels={architectureDisciplinePanels}
           tabsAriaLabel="Architectural and structural disciplines"
         />
-        <MepWorkflowSection section={architectureWorkflowSection} steps={architectureWorkflowSteps} />
-        <MepQualityAssuranceSection
+        <DeferredMepWorkflowSection
+          section={architectureWorkflowSection}
+          steps={architectureWorkflowSteps}
+        />
+        <DeferredMepQualityAssuranceSection
           section={architectureQualityAssuranceSection}
           stages={architectureQualityAssuranceStages}
           stats={architectureQualityAssuranceStats}
         />
-        <MepServiceBenefitsSection
+        <DeferredMepServiceBenefitsSection
           section={architectureServiceBenefitsSection}
           cards={architectureServiceBenefitsCards}
         />
-        <MepWhyChooseSection section={architectureWhyChooseSection} items={architectureWhyChooseItems} />
-        <MepResourcesSection section={architectureResourcesSection} />
-        <IndustriesSection
+        <DeferredMepWhyChooseSection
+          section={architectureWhyChooseSection}
+          items={architectureWhyChooseItems}
+        />
+        <DeferredMepResourcesSection section={architectureResourcesSection} />
+        <DeferredIndustriesSection
           intro={architectureIndustriesIntro.description}
           titleLine1={architectureIndustriesIntro.titleLine1}
           titleLine2={architectureIndustriesIntro.titleLine2}
           titleMaxWidth={architectureIndustriesIntro.titleMaxWidth}
         />
-        <MepEngagementProcessSection
+        <DeferredMepEngagementProcessSection
           section={architectureEngagementProcessSection}
           steps={architectureEngagementProcessSteps}
         />
-        <EvaluateDeliveryCtaSection
+        <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={
             <>
@@ -107,16 +115,19 @@ export function ArchitectureServicesPage() {
           titleClassName="max-w-[800px]"
           descriptionClassName="max-w-[720px]"
         />
-        <ClientSuccessStoriesSection description={architectureTestimonialsDescription} />
-        <FaqSection
+        <DeferredClientSuccessStoriesSection description={architectureTestimonialsDescription} />
+        <DeferredFaqSection
           variant="mep"
           tag={architectureFaqSection.tag}
           description={architectureFaqSection.description}
           items={architectureFaqs}
         />
-        <GetInTouchSection sectionId="architecture-page-contact" description={architectureFaqDescription} />
+        <DeferredGetInTouchSection
+          sectionId="architecture-page-contact"
+          description={architectureFaqDescription}
+        />
       </main>
-      <SiteFooter />
+      <DeferredSiteFooter />
     </div>
   );
 }

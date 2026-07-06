@@ -24,6 +24,7 @@ export function GetInTouchSection({
               fill
               className="vbs-get-in-touch__visual-img"
               sizes="(max-width: 1024px) 100vw, 420px"
+              loading="lazy"
             />
             <div className="vbs-get-in-touch__visual-gradient" aria-hidden />
             <div className="vbs-get-in-touch__visual-contacts">

@@ -18,10 +18,10 @@ const COMPACT_VIEWPORT_MAX = 820;
 const CARD_HEIGHT_MAX = 560;
 const CARD_HEIGHT_MIN = 300;
 /** More horizontal travel per vertical scroll â€” shorter pin runway */
-const HOVER_SCROLL_RATIO = 3;
-const CARDS_ONLY_SCROLL_RATIO = 3;
+const HOVER_SCROLL_RATIO = 1.25;
+const CARDS_ONLY_SCROLL_RATIO = 1.5;
 const CARDS_ONLY_SMOOTHING = 0.42;
-const HOVER_SCROLL_SMOOTHING = 0.38;
+const HOVER_SCROLL_SMOOTHING = 0.28;
 
 function measureTrackCardHeight(track) {
   if (!track) return CARD_HEIGHT_MIN;
@@ -90,6 +90,7 @@ export function useStickyServicesCarousel(
     enabled = true,
     pinZoneRef = null,
     touchScrollViewportRef = null,
+    carouselViewportRef = null,
     cardsOnlyPin = false,
   } = {},
 ) {
@@ -256,8 +257,8 @@ export function useStickyServicesCarousel(
       const scrolled = getScrolledFromPin(pinTop);
       const stickyH = stableStickyH > 0 ? stableStickyH : getStickyHeight(sticky);
 
-      // Page scroll (up or down) maps 1:1 to carousel position at the same ratio.
-      setTargetScroll(scrolled, { immediate: true });
+      // Page scroll maps to carousel position; smooth interpolation on hover-scroll layouts.
+      setTargetScroll(scrolled, { immediate: !useSmoothScroll });
       applyScrollPin(pinTop, stickyH);
     };
 
@@ -265,6 +266,17 @@ export function useStickyServicesCarousel(
       if (!scrollRaf) {
         scrollRaf = requestAnimationFrame(runScrollUpdate);
       }
+    };
+
+    const getViewportWidth = () => {
+      const viewport =
+        carouselViewportRef?.current ??
+        touchScrollViewportRef?.current ??
+        track.parentElement;
+      if (viewport) {
+        return viewport.getBoundingClientRect().width;
+      }
+      return window.innerWidth;
     };
 
     const measure = () => {
@@ -281,11 +293,8 @@ export function useStickyServicesCarousel(
         updateStickyCardSizing(section, sticky, headerOffset, track);
       }
 
-      const trackPad = getTrackPad(section);
-      const nextMaxScroll = Math.max(
-        0,
-        track.scrollWidth - window.innerWidth - trackPad,
-      );
+      const viewportWidth = getViewportWidth();
+      const nextMaxScroll = Math.max(0, track.scrollWidth - viewportWidth);
 
       if (inActivePin) {
         maxScroll = Math.max(maxScroll, nextMaxScroll);
@@ -337,6 +346,9 @@ export function useStickyServicesCarousel(
     const pinZone = pinZoneRef?.current;
     if (pinZone && !cardsOnlyPin) resizeObserver.observe(pinZone);
 
+    const viewportEl = carouselViewportRef?.current ?? touchScrollViewportRef?.current;
+    if (viewportEl) resizeObserver.observe(viewportEl);
+
     track.querySelectorAll("img").forEach((img) => {
       if (!img.complete) img.addEventListener("load", scheduleMeasure, { once: true });
     });
@@ -384,6 +396,7 @@ export function useStickyServicesCarousel(
     spacerRef,
     pinZoneRef,
     touchScrollViewportRef,
+    carouselViewportRef,
   ]);
 
   return activeIndex;

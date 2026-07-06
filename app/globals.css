@@ -125,6 +125,17 @@
     line-height: 1;
   }
 
+  /* Lazy-loaded sections — reserve space and skip off-screen paint work */
+  .deferred-section-skeleton {
+    width: 100%;
+    pointer-events: none;
+  }
+
+  .deferred-section-host section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 480px;
+  }
+
   .nav-link {
     display: inline-flex;
     align-self: stretch;
@@ -395,6 +406,25 @@
   /* Right: scroll down (upar se niche) — prototype opposite direction */
   .hero-col-down {
     animation-name: hero-col-down;
+  }
+
+  .primary-cta,
+  a.primary-cta,
+  button.primary-cta {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+  }
+
+  .primary-cta:hover,
+  .primary-cta:focus,
+  .primary-cta:focus-visible,
+  .primary-cta:active,
+  a.primary-cta:hover,
+  a.primary-cta:focus,
+  a.primary-cta:focus-visible,
+  a.primary-cta:active {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
   }
 
   .primary-cta .primary-cta-blobs {

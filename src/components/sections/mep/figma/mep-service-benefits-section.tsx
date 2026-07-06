@@ -11,6 +11,11 @@ import {
   mepServiceBenefitsSection,
 } from "@/constants/mep-engineers-content";
 
+function resolveImageSrc(icon) {
+  if (!icon) return "";
+  return typeof icon === "string" ? icon : icon.src;
+}
+
 function BenefitCard({ card, index, activeIndex }) {
   const [isHovered, setIsHovered] = useState(false);
   const highlighted = index <= activeIndex;
@@ -32,7 +37,7 @@ function BenefitCard({ card, index, activeIndex }) {
       <div className="flex w-full flex-col items-start gap-2.5">
         <div className="mep-figma-benefits__icon-wrap">
           <img
-            src={showColoredIcon ? card.iconHover : card.icon}
+            src={resolveImageSrc(showColoredIcon ? card.iconHover : card.icon)}
             alt=""
             className="mep-figma-benefits__icon"
             aria-hidden

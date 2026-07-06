@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/layout/site-header";
-import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
-import { SiteFooter } from "@/components/sections/site-footer";
-import { WhitepapersBrowseSection } from "@/components/sections/whitepapers/whitepapers-browse-section";
 import { WhitepapersHeroSection } from "@/components/sections/whitepapers/whitepapers-hero-section";
+import {
+  DeferredGetInTouchSection,
+  DeferredSiteFooter,
+  DeferredWhitepapersBrowseSection,
+} from "@/lib/lazy-page-sections";
 
 export const metadata: Metadata = {
   title: "White Papers | Virtual Building Studio",
@@ -18,10 +20,10 @@ export default function WhitepaperPage() {
       <SiteHeader />
       <main>
         <WhitepapersHeroSection />
-        <WhitepapersBrowseSection />
-        <GetInTouchSection />
+        <DeferredWhitepapersBrowseSection />
+        <DeferredGetInTouchSection />
       </main>
-      <SiteFooter />
+      <DeferredSiteFooter />
     </div>
   );
 }

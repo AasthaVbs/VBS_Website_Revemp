@@ -1,4 +1,4 @@
-﻿// @ts-nocheck
+// @ts-nocheck
 import { Fragment } from "react";
 import { PageContainer } from "@/components/layout/page-container";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
@@ -9,7 +9,7 @@ import {
   mepEngagementProcessSteps,
 } from "@/constants/mep-engineers-content";
 
-/** Engagement model — Next /mep-engineers (Figma 265:67484). */
+/** Engagement model — /mep-bim-services (Figma 265:67484). */
 export function MepEngagementProcessSection({
   section = mepEngagementProcessSection,
   steps = mepEngagementProcessSteps,

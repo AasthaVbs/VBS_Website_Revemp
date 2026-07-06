@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/layout/site-header";
-import { BuildYourTeamImmersive } from "@/components/sections/build-your-team/build-your-team-immersive";
-import { SiteFooter } from "@/components/sections/site-footer";
+import {
+  DeferredBuildYourTeamImmersive,
+  DeferredSiteFooter,
+} from "@/lib/lazy-page-sections";
 
 export const metadata: Metadata = {
   title: "Build Your Team | Virtual Building Studio",
@@ -15,9 +17,9 @@ export default function BuildYourTeamPage() {
     <div className="vbs-redesign-page build-your-team-page overflow-x-hidden bg-white">
       <SiteHeader />
       <main>
-        <BuildYourTeamImmersive />
+        <DeferredBuildYourTeamImmersive />
       </main>
-      <SiteFooter />
+      <DeferredSiteFooter />
     </div>
   );
 }

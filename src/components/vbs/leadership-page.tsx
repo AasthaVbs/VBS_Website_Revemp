@@ -1,12 +1,14 @@
 import { SiteHeader } from "@/components/layout/site-header";
-import { CertificationAwardsSection } from "@/components/sections/certification-awards-section";
-import { ClientSuccessStoriesSection } from "@/components/sections/client-success-stories-section";
-import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-delivery-cta-section";
 import { LeadershipHeroSection } from "@/components/sections/leadership/leadership-hero-section";
-import { LeadershipTeamSection } from "@/components/sections/leadership/leadership-team-section";
-import { SiteFooter } from "@/components/sections/site-footer";
 import { StatsStripSection } from "@/components/sections/stats-strip-section";
 import { leadershipJoinTeamCopy, leadershipStats } from "@/constants/leadership-content";
+import {
+  DeferredCertificationAwardsSection,
+  DeferredClientSuccessStoriesSection,
+  DeferredEvaluateDeliveryCtaSection,
+  DeferredLeadershipTeamSection,
+  DeferredSiteFooter,
+} from "@/lib/lazy-page-sections";
 
 export function VbsLeadershipPage() {
   return (
@@ -15,10 +17,10 @@ export function VbsLeadershipPage() {
 
       <LeadershipHeroSection />
       <StatsStripSection stats={leadershipStats} className="bg-white pb-[30px] pt-0" />
-      <LeadershipTeamSection />
-      <CertificationAwardsSection />
-      <ClientSuccessStoriesSection />
-      <EvaluateDeliveryCtaSection
+      <DeferredLeadershipTeamSection />
+      <DeferredCertificationAwardsSection />
+      <DeferredClientSuccessStoriesSection />
+      <DeferredEvaluateDeliveryCtaSection
         title={
           <>
             {leadershipJoinTeamCopy.titleLine1}
@@ -29,7 +31,7 @@ export function VbsLeadershipPage() {
         ctaLabel={leadershipJoinTeamCopy.ctaLabel}
       />
 
-      <SiteFooter />
+      <DeferredSiteFooter />
     </div>
   );
 }

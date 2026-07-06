@@ -1,14 +1,14 @@
 import { PageContainer } from "@/components/layout/page-container";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
+import { LazyImg } from "@/components/ui/lazy-img";
 import { homeHeroMediaLeft, homeHeroMediaRight, homeHeroTrustStats } from "@/constants/home-content";
 import { TrustStripItems } from "@/components/sections/trust-strip-section";
 
-function HeroMediaCard({ src }: { src: string }) {
+function HeroMediaCard({ src, priority = false }: { src: string; priority?: boolean }) {
   return (
     <div className="vbs-home-hero__media-card">
       <div className="vbs-home-hero__media-card-inner">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={src} alt="" className="vbs-home-hero__media-photo" loading="eager" decoding="async" />
+        <LazyImg src={src} alt="" className="vbs-home-hero__media-photo" priority={priority} />
       </div>
       <div className="vbs-home-hero__media-frame" aria-hidden />
     </div>
@@ -29,7 +29,11 @@ function HeroMediaSet({
   return (
     <div className="vbs-home-hero__media-set">
       {images.map((src, index) => (
-        <HeroMediaCard key={`${columnId}-${setIndex}-${index}`} src={src} />
+        <HeroMediaCard
+          key={`${columnId}-${setIndex}-${index}`}
+          src={src}
+          priority={setIndex === 0 && index === 0}
+        />
       ))}
       {showSpacer ? <div className="vbs-home-hero__media-spacer" aria-hidden /> : null}
     </div>

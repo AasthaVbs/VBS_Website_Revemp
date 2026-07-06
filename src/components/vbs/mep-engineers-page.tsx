@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { SiteHeader } from "@/components/layout/site-header";
 import { ClientSuccessStoriesSection } from "@/components/sections/client-success-stories-section";
 import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-delivery-cta-section";
@@ -17,7 +16,7 @@ import { MepWorkflowSection } from "@/components/sections/mep/figma/mep-workflow
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
 import { MepResourcesSection } from "@/components/sections/mep/mep-resources-section";
 import { SiteFooter } from "@/components/sections/site-footer";
-import { StatsStripSection } from "@/components/sections/stats-strip-section";
+import { TrustStripSection } from "@/components/sections/trust-strip-section";
 import {
   mepDisciplinePanels,
   mepDisciplinesSection,
@@ -31,7 +30,7 @@ import {
   mepFullSpectrumSection,
   mepIndustriesSection,
   mepIntroCopy,
-  mepIntroPoints,
+  mepIntroFeatures,
   mepProjectCta,
   mepQualityAssuranceSection,
   mepQualityAssuranceStages,
@@ -52,12 +51,12 @@ import {
 /** MEP BIM Services — same layout as architecture and scan-to-bim service pages. */
 export function MepEngineersPage() {
   return (
-    <div className="vbs-redesign-page mep-bim-services-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page mep-bim-services-page">
       <SiteHeader />
       <main>
         <MepPageHeroSection {...mepEngineersHero} ctaHref="#services" />
-        <StatsStripSection stats={mepStatsStrip} className="vbs-mep-stats-strip bg-white" />
-        <MepIntroSection copy={mepIntroCopy} points={mepIntroPoints} />
+        <TrustStripSection stats={mepStatsStrip} className="vbs-mep-stats-strip bg-white" />
+        <MepIntroSection copy={mepIntroCopy} features={mepIntroFeatures} />
         <MepWhatYouGetSection section={mepWhatYouGetSection} cards={mepWhatYouGetCards} />
         <MepFullSpectrumServicesSection
           section={mepFullSpectrumSection}
@@ -85,7 +84,7 @@ export function MepEngineersPage() {
           intro={mepIndustriesSection.description}
           titleLine1={mepIndustriesSection.titleLine1}
           titleLine2={mepIndustriesSection.titleLine2}
-          titleMaxWidth={mepIndustriesSection.titleMaxWidth}
+          titleMaxWidth={933}
         />
         <MepEngagementProcessSection
           section={mepEngagementProcessSection}
@@ -96,14 +95,14 @@ export function MepEngineersPage() {
           title={
             <>
               {mepProjectCta.titleLine1}
-              <span className="font-light text-accent">{mepProjectCta.titleLine2}</span>
+              <span className="text-accent font-light">{mepProjectCta.titleLine2}</span>
             </>
           }
           description={mepProjectCta.description}
           ctaLabel={mepProjectCta.cta}
           ctaHref="#mep-page-contact"
-          titleClassName="max-w-[800px]"
-          descriptionClassName="max-w-[720px]"
+          titleClassName="max-w-[933px]"
+          descriptionClassName="max-w-[840px]"
         />
         <ClientSuccessStoriesSection description={mepTestimonialsDescription} />
         <FaqSection

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/layout/site-header";
-import { AllProjectsSection } from "@/components/sections/portfolio/all-projects-section";
-import { CertificationAwardsSection } from "@/components/sections/certification-awards-section";
-import { ClientSuccessStoriesSection } from "@/components/sections/client-success-stories-section";
-import { JoinTeamCtaSection } from "@/components/sections/join-team-cta-section";
-import { SiteFooter } from "@/components/sections/site-footer";
+import {
+  DeferredAllProjectsSection,
+  DeferredCertificationAwardsSection,
+  DeferredClientSuccessStoriesSection,
+  DeferredJoinTeamCtaSection,
+  DeferredSiteFooter,
+} from "@/lib/lazy-page-sections";
 
 export const metadata: Metadata = {
   title: "All Projects | Virtual Building Studio",
@@ -18,12 +20,12 @@ export default function AllProjectsPage() {
     <div className="vbs-redesign-page min-h-screen bg-white">
       <SiteHeader />
       <main className="overflow-visible">
-        <AllProjectsSection />
-        <CertificationAwardsSection />
-        <ClientSuccessStoriesSection />
-        <JoinTeamCtaSection />
+        <DeferredAllProjectsSection />
+        <DeferredCertificationAwardsSection />
+        <DeferredClientSuccessStoriesSection />
+        <DeferredJoinTeamCtaSection />
       </main>
-      <SiteFooter />
+      <DeferredSiteFooter />
     </div>
   );
 }

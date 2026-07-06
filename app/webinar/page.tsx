@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/layout/site-header";
-import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
-import { WebinarBrowseSection } from "@/components/sections/webinar/webinar-browse-section";
 import { WebinarHeroSection } from "@/components/sections/webinar/webinar-hero-section";
-import { SiteFooter } from "@/components/sections/site-footer";
+import {
+  DeferredGetInTouchSection,
+  DeferredSiteFooter,
+  DeferredWebinarBrowseSection,
+} from "@/lib/lazy-page-sections";
 
 export const metadata: Metadata = {
   title: "Webinars | Virtual Building Studio",
@@ -18,10 +20,10 @@ export default function WebinarPage() {
       <SiteHeader />
       <main>
         <WebinarHeroSection />
-        <WebinarBrowseSection />
-        <GetInTouchSection />
+        <DeferredWebinarBrowseSection />
+        <DeferredGetInTouchSection />
       </main>
-      <SiteFooter />
+      <DeferredSiteFooter />
     </div>
   );
 }

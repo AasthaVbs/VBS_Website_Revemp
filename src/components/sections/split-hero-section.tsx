@@ -42,7 +42,7 @@ export function SplitHeroSection({
     ctaHref ?? (ctaLabel.trim().toLowerCase() === "contact us" ? "/contact" : undefined);
 
   const ctaClassName = cn(
-    "primary-cta relative inline-flex h-[52px] w-auto shrink-0 items-center justify-center overflow-hidden rounded-[10px] border-[1.5px] border-[#D70416] bg-white/10 px-5 py-0 text-[16px] font-medium capitalize leading-none text-[#D70416] shadow-none backdrop-blur-[100px] transition-colors",
+    "primary-cta no-underline relative inline-flex h-[52px] w-auto shrink-0 items-center justify-center overflow-hidden rounded-[10px] border-[1.5px] border-[#D70416] bg-white/10 px-5 py-0 text-[16px] font-medium capitalize leading-none text-[#D70416] shadow-none backdrop-blur-[100px] transition-colors",
   );
   return (
     <section className="overflow-hidden bg-white py-12 md:py-16 lg:py-[150px]">

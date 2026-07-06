@@ -1,12 +1,18 @@
 import type { StatItem } from "@/constants/shared-sections";
 
+import mepBimServiceBanner from "@/assets/images/mep-bim-service-banner.jpg";
+import mepBimServicesForProject from "@/assets/images/mep-bim-services-for-project.jpg";
+import threeDayOnboardingIcon from "@/assets/images/3-day-onboarding.svg";
+import endToEndBimSupportIcon from "@/assets/images/end-to=end-bim-support-icon.svg";
+import fastTurnaroundCycleIcon from "@/assets/images/fast-turnaround-cycle-icon.svg";
+import fastTurnaroundIcon from "@/assets/images/fast-turnaround.svg";
+import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models-icon.svg";
+import logoIcon from "@/assets/images/logo-icon.svg";
+import usCodeCompliantDeliveryIcon from "@/assets/images/us-code-complinat-delivery-icon.svg";
+import usCodeCompliantModelsIcon from "@/assets/images/us-code-complaints-models.svg";
 import { ROUTES } from "@/constants/navigation";
 import {
-  WHY_CHOOSE_ICON_AI_POWERED_WORKFLOWS,
-  WHY_CHOOSE_ICON_DEDICATED_TEAM_READY,
-  WHY_CHOOSE_ICON_FLEXIBLE_ENGAGEMENT,
   WHY_CHOOSE_ICON_TOP_BIM_EXPERTS,
-  WHY_CHOOSE_ICON_US_CODE_COMPLIANT,
 } from "@/constants/service-why-choose-icons";
 
 export const mepStatsStrip: StatItem[] = [
@@ -23,7 +29,7 @@ export const mepEngineersHero = {
   description:
     "From pre-bid estimation to clash-free coordination and as-built models we help contractors and AEC firms deliver projects faster and more efficiently.",
   ctaLabel: "View All Service",
-  imageSrc: "/images/mep/mep-hero-bg-68e547.png",
+  imageSrc: mepBimServiceBanner,
 };
 
 export const mepIntroPoints = [
@@ -33,20 +39,34 @@ export const mepIntroPoints = [
   "3-Day Onboarding",
 ];
 
+export const mepIntroFeatures = [
+  { label: "US Code-Compliant Models", icon: usCodeCompliantModelsIcon },
+  { label: "Top 1% Vetted MEP Experts", icon: WHY_CHOOSE_ICON_TOP_BIM_EXPERTS },
+  { label: "Fast Turnaround", icon: fastTurnaroundIcon },
+  { label: "3-Day Onboarding", icon: threeDayOnboardingIcon },
+];
+
 export const mepIntroCopy = {
   tag: "Overview",
   titleLead: "Construction-Ready MEP BIM Services for ",
   titleAccent: "Seamless Project Execution",
   description:
     "We are MEP BIM service providers in the USA supporting AEC firms and contractors across the project lifecycle. We handle everything from pre-bid estimation to clash-free coordination and drawings to support efficient project execution. Our specialists create code-compliant models in Revit and Navisworks for as-built deliverables with accuracy.",
-  mainImage: encodeURI("/icons/image 35.png"),
-  overlayImage: "/image/vbs-banner.gif",
+  mainImage: mepBimServicesForProject,
 };
 
 export const mepWhatYouGetSection = {
   tag: "What You Get",
   titleLine1: "What You Get with",
   titleLine2: "Our MEP Services",
+  titleParts: [
+    { text: "What ", className: "text-section font-medium text-[#111111]" },
+    { text: "Y", className: "text-section font-medium lowercase text-[#111111]" },
+    { text: "ou Get ", className: "text-section font-medium text-[#111111]" },
+    { text: "w", className: "text-section font-medium lowercase text-[#111111]" },
+    { text: "ith ", className: "text-section font-medium text-[#111111]" },
+    { text: "Our MEP Services", className: "text-section text-accent font-light" },
+  ],
   description:
     "Our MEP BIM services support accurate modeling, clash coordination, and construction-ready documentation to improve project efficiency and reduce site conflicts across all MEPF trades.",
   resultLabel: "Result",
@@ -390,46 +410,46 @@ export const mepServiceBenefitsSection = {
 };
 
 const MEP_BENEFIT_ICON_COLORED = "/images/mep/key-benefits/icon-benefit-colored.svg";
-const MEP_BENEFIT_ICON_MUTED = "/images/mep/key-benefits/icon-benefit-muted.svg";
+const MEP_BENEFIT_ICON_DEFAULT = logoIcon;
 
 /** Figma — 3×2 service benefits grid. */
 export const mepServiceBenefitsCards = [
   {
     title: "Improved Design Accuracy",
     text: "MEP BIM Services produce precise MEPF layouts that meet spatial and project requirements with fewer revisions. Accurate parametric models reduce design errors and cut coordination cycles across all trades.",
-    icon: MEP_BENEFIT_ICON_MUTED,
+    icon: MEP_BENEFIT_ICON_DEFAULT,
     iconHover: MEP_BENEFIT_ICON_COLORED,
     textMaxWidth: 433,
   },
   {
     title: "Smarter Facility Management",
     text: "BIM models enriched with COBie and asset data act as digital twins for long-term building operations. Facility managers efficiently track maintenance schedules, assets, and system upgrades directly from the model data.",
-    icon: MEP_BENEFIT_ICON_MUTED,
+    icon: MEP_BENEFIT_ICON_DEFAULT,
     iconHover: MEP_BENEFIT_ICON_COLORED,
   },
   {
     title: "Enhanced Visualization & Planning",
     text: "High-resolution 3D MEPF models give all project stakeholders complete visibility into system layouts and design intent. Teams assess constructability, identify conflicts, and make informed decisions before construction begins.",
-    icon: MEP_BENEFIT_ICON_MUTED,
+    icon: MEP_BENEFIT_ICON_DEFAULT,
     iconHover: MEP_BENEFIT_ICON_COLORED,
   },
   {
     title: "Optimized Project Scheduling & Costing",
     text: "4D and 5D BIM dimensions allow accurate construction sequencing and reliable cost forecasting. Quantity take-offs and cost estimates come directly from the coordinated model, improving planning and financial control.",
-    icon: MEP_BENEFIT_ICON_MUTED,
+    icon: MEP_BENEFIT_ICON_DEFAULT,
     iconHover: MEP_BENEFIT_ICON_COLORED,
     textMaxWidth: 433,
   },
   {
     title: "Faster Prefabrication & Modular Construction",
     text: "Clash-free MEPF models support generation of accurate spool and shop drawings for off-site fabrication. Coordinated models accelerate installation timelines, reduce material waste, and improve quality through construction.",
-    icon: MEP_BENEFIT_ICON_MUTED,
+    icon: MEP_BENEFIT_ICON_DEFAULT,
     iconHover: MEP_BENEFIT_ICON_COLORED,
   },
   {
     title: "Seamless Multidisciplinary Coordination",
     text: "Integrated BIM workflows foster seamless, real-time collaboration among all project disciplines. Early-stage coordination catches design clashes before construction, eliminating costly change orders and project delays.",
-    icon: MEP_BENEFIT_ICON_MUTED,
+    icon: MEP_BENEFIT_ICON_DEFAULT,
     iconHover: MEP_BENEFIT_ICON_COLORED,
   },
 ];
@@ -457,25 +477,25 @@ export const mepWhyChooseItems = [
     title: "US Code-Compliant Delivery",
     description:
       "Models align with ASHRAE, NFPA, IPC, SMACNA, NEC, and regional AHJ compliance requirements.",
-    icon: WHY_CHOOSE_ICON_US_CODE_COMPLIANT,
+    icon: usCodeCompliantDeliveryIcon,
   },
   {
     title: "Fast Turnaround Cycles",
     description:
       "Accelerate project timelines with efficient BIM workflows and quick delivery cycles tuned for US contractor schedules.",
-    icon: WHY_CHOOSE_ICON_DEDICATED_TEAM_READY,
+    icon: fastTurnaroundCycleIcon,
   },
   {
     title: "Flexible Engagement Models",
     description:
       "Scale your BIM team with dedicated resources, task support, or full project teams with zero long-term lock-in.",
-    icon: WHY_CHOOSE_ICON_FLEXIBLE_ENGAGEMENT,
+    icon: flexibleEngagementModelsIcon,
   },
   {
     title: "End-to-End BIM Support",
     description:
       "From pre-bid modeling to as-built documentation complete MEP project lifecycle support under one roof.",
-    icon: WHY_CHOOSE_ICON_AI_POWERED_WORKFLOWS,
+    icon: endToEndBimSupportIcon,
   },
 ];
 

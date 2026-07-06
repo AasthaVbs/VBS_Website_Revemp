@@ -1,13 +1,15 @@
 import { SiteHeader } from "@/components/layout/site-header";
-import { ClientSuccessStoriesSection } from "@/components/sections/client-success-stories-section";
 import { EngagementModelsSection } from "@/components/sections/engagement-models-section";
-import { EngagementModelAdvisorCtaSection } from "@/components/sections/engagement-models/engagement-model-advisor-cta-section";
-import { EngagementModelFinderSection } from "@/components/sections/engagement-models/engagement-model-finder-section";
-import { EngagementModelsCompareSection } from "@/components/sections/engagement-models/engagement-models-compare-section";
-import { EngagementStartsSection } from "@/components/sections/engagement-models/engagement-starts-section";
-import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
-import { SiteFooter } from "@/components/sections/site-footer";
 import { engagementPageTestimonialsDescription } from "@/constants/engagement-models-page-content";
+import {
+  DeferredClientSuccessStoriesSection,
+  DeferredEngagementModelAdvisorCtaSection,
+  DeferredEngagementModelFinderSection,
+  DeferredEngagementModelsCompareSection,
+  DeferredEngagementStartsSection,
+  DeferredGetInTouchSection,
+  DeferredSiteFooter,
+} from "@/lib/lazy-page-sections";
 
 export function EngagementModelsPage() {
   return (
@@ -19,15 +21,15 @@ export function EngagementModelsPage() {
           id="engagement"
           sectionClassName="bg-[#FAFAFA] pt-2 lg:pt-8"
         />
-        <EngagementModelFinderSection />
-        <EngagementModelsCompareSection />
-        <EngagementStartsSection />
-        <EngagementModelAdvisorCtaSection />
-        <ClientSuccessStoriesSection description={engagementPageTestimonialsDescription} />
-        <GetInTouchSection />
+        <DeferredEngagementModelFinderSection />
+        <DeferredEngagementModelsCompareSection />
+        <DeferredEngagementStartsSection />
+        <DeferredEngagementModelAdvisorCtaSection />
+        <DeferredClientSuccessStoriesSection description={engagementPageTestimonialsDescription} />
+        <DeferredGetInTouchSection />
       </main>
 
-      <SiteFooter />
+      <DeferredSiteFooter />
     </div>
   );
 }

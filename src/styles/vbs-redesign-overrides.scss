@@ -11,10 +11,10 @@ html:has(.vbs-redesign-page) {
 }
 
 .vbs-redesign-page {
-  /* 1200px canvas — gutters scaled to ~94% content width (same ratio as 1440px + 40px in main) */
-  --vbs-page-max: 1440px;
-  --vbs-page-gutter: 24px;
-  --vbs-page-gutter-md: 32px;
+  /* 1400px canvas — gutters scaled from Gatsby 1200px shell (×7/6) */
+  --vbs-page-max: 1400px;
+  --vbs-page-gutter: 28px;
+  --vbs-page-gutter-md: 37px;
   --vbs-content-width: calc(var(--vbs-page-max) - (2 * var(--vbs-page-gutter-md)));
 
   --font-inter: "Inter", "Inter Fallback", system-ui, sans-serif;
@@ -34,19 +34,19 @@ html:has(.vbs-redesign-page) {
   }
 }
 
-/* PageContainer — 1200px centered column on every page (redesign + legacy Contact footer) */
+/* PageContainer — 1400px centered column on every page (redesign + legacy Contact footer) */
 .vbs-page-container {
   box-sizing: border-box;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 28px;
+  padding-right: 28px;
 
   @media (min-width: 768px) {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 37px;
+    padding-right: 37px;
   }
 }
 
@@ -206,6 +206,21 @@ html:has(.vbs-redesign-page) {
   text-decoration: none;
 }
 
+.vbs-redesign-page a.primary-cta,
+.vbs-redesign-page .primary-cta,
+.vbs-redesign-page button.primary-cta {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+}
+
+.vbs-redesign-page .primary-cta-label {
+  text-decoration: none !important;
+}
+
+.vbs-redesign-page button {
+  text-decoration: none;
+}
+
 .vbs-site-header .vbs-header-nav-desktop a,
 .vbs-site-header .vbs-header-top-inner a,
 .vbs-site-header .vbs-nav-dropdown-panel a,
@@ -221,7 +236,8 @@ html:has(.vbs-redesign-page) {
   border-bottom: none !important;
 }
 
-/* Main-repo 1440px shells → cap at 1200px content column (do not stretch past canvas) */
+/* Main-repo shells → cap at 1400px content column (do not stretch past canvas) */
+.vbs-redesign-page .max-w-\[1400px\],
 .vbs-redesign-page .max-w-\[1440px\],
 .vbs-redesign-page .max-w-\[1111px\] {
   max-width: var(--vbs-page-max) !important;
@@ -246,7 +262,7 @@ html:has(.vbs-redesign-page) {
   }
 }
 
-/* Evaluate CTA mosaic: full width of 1200 column, not fixed 1440px asset width */
+/* Evaluate CTA mosaic: full width of page column, not fixed asset width */
 .vbs-redesign-page .evaluate-delivery-cta-mosaic {
 
   max-width: var(--vbs-page-max) !important;
@@ -326,7 +342,7 @@ html:has(.vbs-redesign-page.build-your-team-page)::-webkit-scrollbar {
 
 .vbs-redesign-page .mep-figma-workflow__head-title,
 .vbs-redesign-page .mep-figma-workflow__head-desc {
-  max-width: min(100%, var(--vbs-content-width, 1136px));
+  max-width: min(100%, var(--vbs-content-width, 1326px));
 }
 
 .vbs-redesign-page .mep-figma-qa__title,
@@ -335,11 +351,11 @@ html:has(.vbs-redesign-page.build-your-team-page)::-webkit-scrollbar {
 .vbs-redesign-page .mep-figma-why-choose__desc,
 .vbs-redesign-page .mep-figma-resources__head-desc,
 .vbs-redesign-page .mep-figma-disciplines__body {
-  max-width: min(100%, var(--vbs-content-width, 1136px));
+  max-width: min(100%, var(--vbs-content-width, 1326px));
 }
 
 .vbs-redesign-page .mep-figma-disciplines__deliverables {
-  max-width: min(591px, 48%);
+  max-width: min(690px, 48%);
 }
 
 @media (max-width: 1023px) {

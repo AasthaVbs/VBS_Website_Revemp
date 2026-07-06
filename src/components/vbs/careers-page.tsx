@@ -1,11 +1,13 @@
 import { SiteHeader } from "@/components/layout/site-header";
-import { CareersBenefitsSection } from "@/components/sections/careers/careers-benefits-section";
-import { CareersCareerFormSection } from "@/components/sections/careers/careers-career-form-section";
 import { CareersHeroSection } from "@/components/sections/careers/careers-hero-section";
-import { CareersOpeningsSection } from "@/components/sections/careers/careers-openings-section";
-import { CareersWhyWorkSection } from "@/components/sections/careers/careers-why-work-section";
-import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-delivery-cta-section";
-import { SiteFooter } from "@/components/sections/site-footer";
+import {
+  DeferredCareersBenefitsSection,
+  DeferredCareersCareerFormSection,
+  DeferredCareersOpeningsSection,
+  DeferredCareersWhyWorkSection,
+  DeferredEvaluateDeliveryCtaSection,
+  DeferredSiteFooter,
+} from "@/lib/lazy-page-sections";
 
 export function VbsCareersPage() {
   return (
@@ -13,12 +15,12 @@ export function VbsCareersPage() {
       <SiteHeader />
 
       <CareersHeroSection />
-      <CareersWhyWorkSection />
-      <CareersBenefitsSection />
-      <CareersOpeningsSection />
-      <EvaluateDeliveryCtaSection />
-      <CareersCareerFormSection />
-      <SiteFooter />
+      <DeferredCareersWhyWorkSection />
+      <DeferredCareersBenefitsSection />
+      <DeferredCareersOpeningsSection />
+      <DeferredEvaluateDeliveryCtaSection />
+      <DeferredCareersCareerFormSection />
+      <DeferredSiteFooter />
     </div>
   );
 }

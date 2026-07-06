@@ -34,7 +34,7 @@ export function PrimaryCtaButton({
   ...props
 }: PrimaryCtaButtonProps) {
   const classes = cn(
-    "primary-cta relative inline-flex h-[52px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] border-[1.5px] border-[#D70416] px-5 py-0 text-[16px] font-medium leading-none shadow-none",
+    "primary-cta no-underline relative inline-flex h-[52px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] border-[1.5px] border-[#D70416] px-5 py-0 text-[16px] font-medium leading-none shadow-none",
     stripedLong
       ? "primary-cta--striped-long text-[#D70416]"
       : "bg-white/10 text-[#D70416] backdrop-blur-[100px]",

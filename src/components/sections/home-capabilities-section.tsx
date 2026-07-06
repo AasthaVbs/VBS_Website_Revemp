@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/page-container";
+import { LazyImg } from "@/components/ui/lazy-img";
 import { homeCapabilityCards, type HomeCapabilityCard } from "@/constants/home-content";
 
 function ChevronRightIcon() {
@@ -21,7 +22,7 @@ function CapabilityCard({ image, title, summary, description, href = "/#capabili
   return (
     <article className="capability-card vbs-capability-card group relative overflow-hidden rounded-[10px] bg-white">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={image} alt={title} className="absolute inset-0 h-full w-full object-cover" />
+      <LazyImg src={image} alt={title} className="absolute inset-0 h-full w-full object-cover" />
       <div className="capability-card__gradient pointer-events-none absolute inset-0" aria-hidden />
       <div className="vbs-capability-card__panel absolute inset-x-0 bottom-0 flex flex-col items-end justify-end p-5">
         <div className="vbs-capability-card__content flex w-full flex-col items-start">

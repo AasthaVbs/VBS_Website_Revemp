@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/layout/site-header";
-import { BlogsBrowseSection } from "@/components/sections/blogs/blogs-browse-section";
 import { BlogsHeroSection } from "@/components/sections/blogs/blogs-hero-section";
-import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
-import { SiteFooter } from "@/components/sections/site-footer";
+import {
+  DeferredBlogsBrowseSection,
+  DeferredGetInTouchSection,
+  DeferredSiteFooter,
+} from "@/lib/lazy-page-sections";
 
 export const metadata: Metadata = {
   title: "Blogs | Virtual Building Studio",
@@ -18,10 +20,10 @@ export default function BlogsPage() {
       <SiteHeader />
       <main>
         <BlogsHeroSection />
-        <BlogsBrowseSection />
-        <GetInTouchSection />
+        <DeferredBlogsBrowseSection />
+        <DeferredGetInTouchSection />
       </main>
-      <SiteFooter />
+      <DeferredSiteFooter />
     </div>
   );
 }

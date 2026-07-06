@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/layout/site-header";
-import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
-import { ResourcesBrowseSection } from "@/components/sections/resources/resources-browse-section";
 import { ResourcesHeroSection } from "@/components/sections/resources/resources-hero-section";
-import { SiteFooter } from "@/components/sections/site-footer";
+import {
+  DeferredGetInTouchSection,
+  DeferredResourcesBrowseSection,
+  DeferredSiteFooter,
+} from "@/lib/lazy-page-sections";
 
 export const metadata: Metadata = {
   title: "Resources | Virtual Building Studio",
@@ -18,10 +20,10 @@ export default function ResourcesPage() {
       <SiteHeader />
       <main>
         <ResourcesHeroSection />
-        <ResourcesBrowseSection />
-        <GetInTouchSection />
+        <DeferredResourcesBrowseSection />
+        <DeferredGetInTouchSection />
       </main>
-      <SiteFooter />
+      <DeferredSiteFooter />
     </div>
   );
 }

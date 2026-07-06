@@ -53,7 +53,7 @@ export function MepQualityAssuranceSection({
       id="technical-methods"
       className="mep-figma-qa bg-[#FAFAFA] py-[100px]"
     >
-      <PageContainer className="mep-figma-qa__container flex flex-col gap-2">
+      <PageContainer className="mep-figma-qa__container flex flex-col">
         <header className="mep-figma-qa__head">
           <div className="mep-figma-qa__head-top">
             <span className="mep-figma-qa__tag">{section.tag}</span>
@@ -65,7 +65,7 @@ export function MepQualityAssuranceSection({
           <p className="mep-figma-qa__section-desc">{section.description}</p>
         </header>
 
-        <div className="mep-figma-qa__stages flex w-full items-stretch gap-1 self-stretch">
+        <div className="mep-figma-qa__stages flex w-full items-stretch self-stretch">
           {stages.map((stage, index) => (
             <Fragment key={stage.title}>
               {index > 0 ? <div className="mep-figma-qa__stage-divider" aria-hidden /> : null}

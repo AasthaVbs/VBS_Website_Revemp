@@ -63,65 +63,48 @@
   }
 }
 
-/* ── Overview (node 5-12782) ── */
+/* ── Overview (node 265-67101) ── */
 .vbs-redesign-page .mep-figma-overview {
   h2 .text-section {
     display: inline;
-    font-size: 38px;
+    font-size: 48px;
     line-height: 1.15;
     text-transform: capitalize;
   }
 
-  /* Image crop — narrower frame, taller crop per Figma overview */
+  h2 .text-accent {
+    font-size: 48px;
+    line-height: 1.15;
+    text-transform: capitalize;
+  }
+
   .mep-figma-overview__frame {
-    width: 500px;
-    height: 500px;
-  }
-
-  .mep-figma-overview__stage {
-    left: -157px;
-    top: 0;
-    width: 702px;
-    height: 500px;
-  }
-
-  .mep-figma-overview__flip {
-    transform: scaleY(-1) rotate(180deg);
-    width: 702px;
-    height: 500px;
-  }
-
-  .mep-figma-overview__asset {
-    width: 702px;
-    height: 500px;
+    width: min(614px, 100%);
+    height: auto;
+    aspect-ratio: 614 / 502;
   }
 
   .mep-figma-overview__photo {
-    position: absolute;
-    left: 0.04%;
-    top: 0.03%;
-    width: 99.92%;
-    height: 99.9%;
+    position: relative;
+    width: 100%;
+    height: 100%;
     max-width: none;
+    object-fit: cover;
+  }
+
+  .mep-figma-overview__chip {
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   @media (max-width: 1024px) {
     .mep-figma-overview__frame {
-      width: min(480px, 100%);
-      height: auto;
-      aspect-ratio: 480 / 500;
+      width: 100% !important;
+      max-width: 100% !important;
     }
 
-    .mep-figma-overview__stage {
-      left: -32.73%;
-      width: 146.27%;
-      height: 100.76%;
-    }
-
-    .mep-figma-overview__flip,
-    .mep-figma-overview__asset {
-      width: 100%;
-      height: 100%;
+    .mep-figma-overview__layout {
+      gap: 40px !important;
     }
   }
 
@@ -135,6 +118,10 @@
 
     h2 {
       line-height: 1.05;
+    }
+
+    .mep-figma-overview__chip {
+      width: 100%;
     }
   }
 }
@@ -250,7 +237,7 @@
 
   &__inner {
     width: 100%;
-    max-width: var(--vbs-page-max, 1440px);
+    max-width: var(--vbs-page-max, 1400px);
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
@@ -287,9 +274,11 @@
 
   &--h-scroll &__cta-wrap {
     width: 100%;
-    max-width: var(--vbs-page-max, 1440px);
+    max-width: var(--vbs-page-max, 1400px);
     margin-left: auto;
     margin-right: auto;
+    padding-left: 54px;
+    padding-right: 54px;
     box-sizing: border-box;
   }
 
@@ -327,6 +316,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    padding-left: 54px;
+    padding-right: 54px;
+    box-sizing: border-box;
   }
 
   &__header {
@@ -1203,6 +1195,7 @@
 .vbs-redesign-page .mep-figma-qa {
   &__container {
     width: 100%;
+    gap: 48px;
   }
 
   &__head {
@@ -1279,12 +1272,14 @@
 
   &__stages {
     align-items: stretch;
+    gap: 16px;
   }
 
   &__stage-divider {
     width: 1px;
     flex-shrink: 0;
     align-self: stretch;
+    margin: 0 4px;
     background: linear-gradient(to bottom,
         transparent 0%,
         #cbcccd 18%,
@@ -1340,7 +1335,8 @@
     display: flex;
     width: 100%;
     align-items: stretch;
-    gap: 0;
+    gap: 16px;
+    margin-top: 8px;
   }
 
   &__stat {
@@ -1356,6 +1352,7 @@
     width: 1px !important;
     flex-shrink: 0 !important;
     align-self: stretch !important;
+    margin: 0 4px !important;
     background: linear-gradient(to bottom,
         transparent 0%,
         #cbcccd 18%,
@@ -1382,7 +1379,7 @@
   }
 
   &__quote {
-    margin: 0;
+    margin: 8px 0 0;
   }
 
   &__quote-text {
@@ -1596,13 +1593,14 @@
   }
 
   &__grid {
-    gap: 20px;
+    gap: 32px;
   }
 
   &__row {
     align-items: stretch;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 16px;
     box-sizing: border-box;
   }
 
@@ -1638,6 +1636,7 @@
     width: 1px;
     flex-shrink: 0;
     align-self: stretch;
+    margin: 0 12px;
     background: linear-gradient(to bottom,
         transparent 0%,
         #cbcccd 18%,
@@ -1649,6 +1648,7 @@
     width: 100%;
     height: 1px;
     flex-shrink: 0;
+    margin: 4px 0;
     background: linear-gradient(to right,
         transparent 0%,
         #cbcccd 18%,
@@ -2254,7 +2254,7 @@
     position: relative !important;
     display: block !important;
     width: 100% !important;
-    height: 300px !important;
+    height: 350px !important;
     flex-shrink: 0 !important;
     overflow: hidden !important;
     border-radius: 10px !important;
@@ -2329,7 +2329,7 @@
   &__compact-row {
     display: flex !important;
     width: 100% !important;
-    height: 160px !important;
+    height: 178px !important;
     align-items: stretch !important;
     justify-content: flex-start !important;
     gap: 20px !important;
@@ -2343,11 +2343,10 @@
     position: relative !important;
     flex: 0 0 300px !important;
     width: 300px !important;
- 
+    min-height: 178px !important;
     align-self: stretch !important;
     overflow: hidden !important;
     border-radius: 10px !important;
-
     text-decoration: none !important;
   }
 
@@ -2610,11 +2609,20 @@
   }
 
   &__intro {
-    gap: 8px;
+    gap: 20px;
   }
 
   &__intro-heading {
     gap: 12px;
+  }
+
+  &__section-desc {
+    margin: 8px 0 24px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #808080;
+    text-transform: capitalize;
   }
 
   &__tab {
@@ -2637,15 +2645,6 @@
     display: inline;
     font-size: 48px;
     line-height: 1.15;
-    text-transform: capitalize;
-  }
-
-  &__section-desc {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #808080;
     text-transform: capitalize;
   }
 
@@ -2953,7 +2952,7 @@
   }
 }
 
-/* ── What You Get (node 5-12802) ── */
+/* ── What You Get (node 265-67102) ── */
 .vbs-redesign-page .mep-figma-what-you-get {
   h2 .text-section {
     display: inline;
@@ -2962,8 +2961,13 @@
     text-transform: capitalize;
   }
 
+  h2 .text-section.lowercase {
+    text-transform: lowercase;
+  }
+
   &__lines {
     margin: 0;
+    padding-left: 1.25rem;
 
     li::marker {
       color: #808080;
@@ -2974,24 +2978,6 @@
     border: 1px solid #cbcccd !important;
     box-shadow: none !important;
     transition: box-shadow 0.25s ease !important;
-
-    &:hover {
-      box-shadow: 0 0 14px rgba(0, 0, 0, 0.2) !important;
-    }
-  }
-
-  @media (min-width: 768px) {
-    &__card {
-      flex-direction: column;
-    }
-
-    &__card-icon {
-      order: 1;
-    }
-
-    &__card-body {
-      order: 2;
-    }
   }
 
   &__card--elevated {
@@ -3000,6 +2986,9 @@
 
   &__result {
     align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
   }
 
   @media (max-width: 767px) {
@@ -3008,13 +2997,16 @@
       line-height: 1.05;
     }
 
-    &__card {
+    &__cards {
       gap: 16px !important;
-      padding: 14px !important;
+    }
+
+    &__card {
+      gap: 20px !important;
+      padding: 16px !important;
     }
 
     &__card-icon {
-      order: 2;
       width: 52px !important;
       height: 52px !important;
       padding: 10px !important;
@@ -3025,23 +3017,17 @@
       }
     }
 
-    &__card-body {
-      order: 1;
-    }
-
     &__card-body h3 {
       font-size: 18px !important;
     }
 
-    &__card .mep-figma-what-you-get__lines {
+    &__lines {
       font-size: 14px !important;
       line-height: 20px !important;
-      gap: 4px !important;
     }
 
     &__result {
       padding: 12px !important;
-      font-size: 14px !important;
 
       span {
         font-size: 14px !important;
@@ -3051,7 +3037,8 @@
   }
 
   @media (max-width: 768px) {
-    h2 .text-section {
+    h2 .text-section,
+    h2 .text-accent {
       font-size: clamp(24px, 6vw, 40px);
       line-height: 1.2;
     }
@@ -3064,18 +3051,20 @@
 .scan-to-bim-services-page {
   --vbs-mep-section-pad-y: 64px;
 
-  main>section:not(.mep-page-hero):not(.mep-figma-services--h-scroll):not(.vbs-mep-stats-strip) {
+  main>section:not(.mep-page-hero):not(.mep-figma-services--h-scroll):not(.vbs-mep-stats-strip):not(.mep-figma-what-you-get):not(.mep-figma-overview) {
     padding-top: var(--vbs-mep-section-pad-y) !important;
     padding-bottom: var(--vbs-mep-section-pad-y) !important;
   }
 
   main>.vbs-mep-stats-strip {
-    padding-top: 40px !important;
-    padding-bottom: 16px !important;
+    margin-top: 2px !important;
+    margin-bottom: 16px !important;
+    padding-top: 0px !important;
+    padding-bottom: 20px !important;
   }
 
   .vbs-mep-stats-strip .vbs-home-hero-trust {
-    padding-top: 24px !important;
+    padding-top: 0px !important;
     padding-bottom: 20px !important;
   }
 
@@ -3113,8 +3102,8 @@
     align-items: center;
     padding-top: 48px !important;
     padding-bottom: 40px !important;
-    padding-left: var(--vbs-page-gutter-md, 24px);
-    padding-right: var(--vbs-page-gutter-md, 24px);
+    padding-left: var(--vbs-page-gutter-md, 37px);
+    padding-right: var(--vbs-page-gutter-md, 37px);
     isolation: isolate;
   }
 
@@ -3134,8 +3123,8 @@
   .mep-page-hero__cta {
     display: flex;
     align-items: flex-start;
-    padding-left: var(--vbs-page-gutter-md, 24px);
-    padding-right: var(--vbs-page-gutter-md, 24px);
+    padding-left: var(--vbs-page-gutter-md, 37px);
+    padding-right: var(--vbs-page-gutter-md, 37px);
   }
 
   .mep-page-hero__title,
@@ -3158,6 +3147,44 @@
     aspect-ratio: 1191 / 707;
     pointer-events: none;
     isolation: isolate;
+  }
+
+  /* Overlay hero (MepPageHeroSection) — image beside copy, not grid layout */
+  .mep-page-hero--overlay {
+    position: relative !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+
+    .mep-page-hero__media {
+      display: block !important;
+      position: absolute !important;
+      z-index: 0 !important;
+      top: 0 !important;
+      right: 0 !important;
+      left: auto !important;
+      width: min(62%, 1191px) !important;
+      max-width: 1191px !important;
+      aspect-ratio: 1024 / 607 !important;
+      overflow: visible !important;
+      pointer-events: none !important;
+      margin: 0 !important;
+    }
+
+    .mep-page-hero__media::before,
+    .mep-page-hero__media::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    .mep-page-hero__copy-wrap {
+      position: relative !important;
+      z-index: 10 !important;
+    }
+
+    @media (min-width: 1024px) {
+      min-height: calc(min(62vw, 1191px) * 607 / 1024) !important;
+      padding-bottom: 24px !important;
+    }
   }
 
   .mep-page-hero__photo {
@@ -3193,9 +3220,9 @@
       align-items: center;
       padding-top: 40px !important;
       padding-bottom: 0 !important;
-      padding-right: 28px;
-      padding-left: max(var(--vbs-page-gutter-md, 24px),
-          calc((100vw - var(--vbs-page-max, 1440px)) / 2 + var(--vbs-page-gutter-md, 24px)));
+      padding-right: 33px;
+      padding-left: max(var(--vbs-page-gutter-md, 37px),
+          calc((100vw - var(--vbs-page-max, 1400px)) / 2 + var(--vbs-page-gutter-md, 37px)));
     }
 
     .mep-page-hero__cta {
@@ -3203,9 +3230,9 @@
       grid-row: 2;
       padding-top: 30px;
       padding-bottom: 36px !important;
-      padding-right: 28px;
-      padding-left: max(var(--vbs-page-gutter-md, 24px),
-          calc((100vw - var(--vbs-page-max, 1440px)) / 2 + var(--vbs-page-gutter-md, 24px)));
+      padding-right: 33px;
+      padding-left: max(var(--vbs-page-gutter-md, 37px),
+          calc((100vw - var(--vbs-page-max, 1400px)) / 2 + var(--vbs-page-gutter-md, 37px)));
     }
 
     .mep-page-hero__copy-inner {
@@ -3228,6 +3255,20 @@
       overflow: hidden;
     }
 
+    .mep-page-hero--overlay .mep-page-hero__media {
+      position: absolute !important;
+      grid-column: auto !important;
+      grid-row: auto !important;
+      top: 0 !important;
+      right: 0 !important;
+      left: auto !important;
+      width: min(62%, 1191px) !important;
+      max-width: 1191px !important;
+      min-height: 0 !important;
+      aspect-ratio: 1024 / 607 !important;
+      overflow: visible !important;
+    }
+
     .mep-page-hero__photo {
       position: absolute;
       top: calc(-1 * var(--mep-hero-img-bleed-top));
@@ -3244,7 +3285,7 @@
 
   @media (min-width: 1024px) {
 
-    /* Edge-only melt on hero image — desktop side-by-side layout only */
+    /* Edge-only melt on hero image — grid layout only (not overlay hero) */
     .mep-page-hero__media::before,
     .mep-page-hero__media::after {
       content: "";
@@ -3252,6 +3293,12 @@
       position: absolute;
       z-index: 2;
       pointer-events: none;
+    }
+
+    .mep-page-hero--overlay .mep-page-hero__media::before,
+    .mep-page-hero--overlay .mep-page-hero__media::after {
+      display: none !important;
+      content: none !important;
     }
 
     .mep-page-hero__media::before {
@@ -3293,11 +3340,11 @@
     .mep-page-hero__copy {
       padding-top: 48px !important;
       padding-bottom: 0 !important;
-      padding-right: 32px;
+      padding-right: 37px;
     }
 
     .mep-page-hero__cta {
-      padding-right: 32px;
+      padding-right: 37px;
       padding-bottom: 40px !important;
     }
 
@@ -3326,12 +3373,14 @@
     --vbs-mep-section-pad-y: 40px;
 
     main>.vbs-mep-stats-strip {
-      padding-top: 28px !important;
+      margin-top: 12px !important;
+      margin-bottom: 12px !important;
+      padding-top: 16px !important;
       padding-bottom: 16px !important;
     }
 
     .vbs-mep-stats-strip .vbs-home-hero-trust {
-      padding-top: 20px !important;
+      padding-top: 16px !important;
       padding-bottom: 16px !important;
     }
 
@@ -3360,14 +3409,22 @@
     .mep-page-hero__media {
       order: 2;
       display: block !important;
+      position: relative !important;
       width: 100% !important;
       max-height: 220px !important;
       aspect-ratio: 16 / 10 !important;
-      margin-left: var(--vbs-page-gutter-md, 24px);
-      margin-right: var(--vbs-page-gutter-md, 24px);
-      width: calc(100% - (2 * var(--vbs-page-gutter-md, 24px))) !important;
+      margin-left: var(--vbs-page-gutter-md, 37px);
+      margin-right: var(--vbs-page-gutter-md, 37px);
+      width: calc(100% - (2 * var(--vbs-page-gutter-md, 37px))) !important;
       border-radius: 10px;
       overflow: hidden;
+    }
+
+    .mep-page-hero--overlay .mep-page-hero__media {
+      max-height: none !important;
+      aspect-ratio: 1024 / 607 !important;
+      overflow: visible !important;
+      border-radius: 0 !important;
     }
 
     .mep-page-hero__media::before,
@@ -3391,8 +3448,8 @@
 
     .mep-page-hero__cta {
       order: 3;
-      padding-left: var(--vbs-page-gutter-md, 24px);
-      padding-right: var(--vbs-page-gutter-md, 24px);
+      padding-left: var(--vbs-page-gutter-md, 37px);
+      padding-right: var(--vbs-page-gutter-md, 37px);
       padding-bottom: 8px !important;
     }
 
@@ -3477,16 +3534,14 @@
       width: 100% !important;
       max-width: 100% !important;
       height: auto !important;
-      max-height: 220px !important;
-      aspect-ratio: 16 / 10 !important;
+      max-height: none !important;
+      aspect-ratio: 614 / 502 !important;
     }
 
-    .mep-figma-overview__stage,
-    .mep-figma-overview__flip,
-    .mep-figma-overview__asset {
+    .mep-figma-overview__photo {
       width: 100% !important;
       height: 100% !important;
-      left: 0 !important;
+      object-fit: cover !important;
     }
 
     .mep-figma-services {
@@ -3711,6 +3766,195 @@
   @media (max-width: 1023px) {
     .vbs-home-faq__title {
       font-size: clamp(32px, 6vw, 48px) !important;
+    }
+  }
+
+  /* ── Responsive — tablet & mobile (all MEP hub sections) ── */
+  @media (max-width: 1279px) {
+    .mep-figma-resources__content {
+      flex-direction: column !important;
+      gap: 24px !important;
+    }
+
+    .mep-figma-resources__list {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .mep-figma-disciplines__panel {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 20px !important;
+    }
+
+    .mep-figma-disciplines__body,
+    .mep-figma-disciplines__deliverables {
+      flex: 1 1 auto !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    --vbs-mep-section-pad-y: 56px;
+
+    .mep-figma-overview,
+    .mep-figma-what-you-get,
+    .mep-figma-disciplines,
+    .mep-figma-qa,
+    .mep-figma-benefits,
+    .mep-figma-why-choose,
+    .mep-figma-resources,
+    .mep-engagement-process {
+      padding-top: 64px !important;
+      padding-bottom: 64px !important;
+    }
+
+    .mep-page-hero {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .mep-page-hero__media {
+      position: relative !important;
+      inset: auto !important;
+      right: auto !important;
+      top: auto !important;
+      left: auto !important;
+      order: 2 !important;
+      display: block !important;
+      width: calc(100% - 2 * var(--vbs-page-gutter-md, 37px)) !important;
+      max-width: 100% !important;
+      margin: 16px auto 0 !important;
+      aspect-ratio: 1024 / 607 !important;
+      overflow: visible !important;
+      pointer-events: auto !important;
+    }
+
+    .mep-page-hero__fade-right {
+      display: none !important;
+    }
+
+    .mep-page-hero__copy-wrap {
+      order: 1 !important;
+      width: 100% !important;
+    }
+
+    .mep-figma-services__cta-wrap {
+      padding-left: var(--vbs-page-gutter-md, 37px) !important;
+      padding-right: var(--vbs-page-gutter-md, 37px) !important;
+    }
+
+    .mep-figma-resources__compact-row {
+      height: 178px !important;
+      min-height: 178px !important;
+    }
+
+    .mep-figma-resources__compact-media {
+      flex: 0 0 min(300px, 40%) !important;
+      width: min(300px, 40%) !important;
+      min-width: 110px !important;
+      max-width: 300px !important;
+      min-height: 178px !important;
+      height: 178px !important;
+    }
+
+    .mep-figma-overview__layout {
+      gap: 40px !important;
+    }
+
+    .mep-figma-what-you-get__stack {
+      gap: 40px !important;
+    }
+
+    .mep-figma-what-you-get__cards {
+      flex-direction: column !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    --vbs-mep-section-pad-y: 40px;
+
+    .mep-figma-overview,
+    .mep-figma-what-you-get,
+    .mep-figma-disciplines,
+    .mep-figma-qa,
+    .mep-figma-benefits,
+    .mep-figma-why-choose,
+    .mep-figma-resources,
+    .mep-engagement-process {
+      padding-top: 48px !important;
+      padding-bottom: 48px !important;
+    }
+
+    .mep-page-hero__copy-wrap {
+      padding-top: 24px !important;
+      padding-bottom: 12px !important;
+    }
+
+    .mep-page-hero__media {
+      width: calc(100% - 2 * var(--vbs-page-gutter-md, 24px)) !important;
+      margin-top: 12px !important;
+      aspect-ratio: 1024 / 607 !important;
+      max-height: none !important;
+      overflow: visible !important;
+    }
+
+    .mep-figma-overview__features {
+      max-width: 100% !important;
+    }
+
+    .mep-figma-overview__chip {
+      width: 100% !important;
+    }
+
+    .mep-figma-resources__compact-row {
+      height: auto !important;
+      min-height: 120px !important;
+      flex-direction: row !important;
+    }
+
+    .mep-figma-resources__compact-media {
+      flex: 0 0 120px !important;
+      width: 120px !important;
+      min-width: 120px !important;
+      max-width: 120px !important;
+      height: 120px !important;
+      min-height: 120px !important;
+      max-height: 120px !important;
+    }
+
+    .mep-figma-resources__featured-media {
+      height: 220px !important;
+    }
+
+    .mep-figma-services__cta-wrap {
+      padding-left: var(--vbs-page-gutter-md, 24px) !important;
+      padding-right: var(--vbs-page-gutter-md, 24px) !important;
+    }
+
+    .vbs-home-hero-trust {
+      flex-direction: column !important;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .mep-figma-resources__compact-row {
+      height: 178px !important;
+      min-height: 178px !important;
+    }
+
+    .mep-figma-resources__compact-media {
+      flex: 0 0 200px !important;
+      width: 200px !important;
+      min-width: 200px !important;
+      max-width: 200px !important;
+      min-height: 178px !important;
+      height: 178px !important;
     }
   }
 

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/layout/site-header";
-import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
-import { JoinTeamCtaSection } from "@/components/sections/join-team-cta-section";
 import { TestimonialsHeroSection } from "@/components/sections/testimonials/testimonials-hero-section";
-import { TestimonialsReviewsSection } from "@/components/sections/testimonials/testimonials-reviews-section";
-import { SiteFooter } from "@/components/sections/site-footer";
+import {
+  DeferredGetInTouchSection,
+  DeferredJoinTeamCtaSection,
+  DeferredSiteFooter,
+  DeferredTestimonialsReviewsSection,
+} from "@/lib/lazy-page-sections";
 
 export const metadata: Metadata = {
   title: "Testimonials | Virtual Building Studio",
@@ -19,11 +21,11 @@ export default function TestimonialsPage() {
       <SiteHeader />
       <main>
         <TestimonialsHeroSection />
-        <TestimonialsReviewsSection />
-        <JoinTeamCtaSection />
-        <GetInTouchSection />
+        <DeferredTestimonialsReviewsSection />
+        <DeferredJoinTeamCtaSection />
+        <DeferredGetInTouchSection />
       </main>
-      <SiteFooter />
+      <DeferredSiteFooter />
     </div>
   );
 }

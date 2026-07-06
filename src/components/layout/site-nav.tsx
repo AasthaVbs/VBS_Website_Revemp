@@ -4,18 +4,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { navLinkClass } from "@/components/layout/nav-link-styles";
-import { MAIN_NAV } from "@/constants/navigation";
+import { MAIN_NAV, ROUTES } from "@/constants/navigation";
 import {
   AboutNavDropdown,
   CapabilitiesMegaMenu,
   NavDropdownTrigger,
   ResourcesNavDropdown,
 } from "@/components/layout/nav-dropdowns";
+import { isNavPathActive, normalizePath } from "@/utils/nav-path";
 
 export function SiteNav() {
   const pathname = usePathname();
+  const path = normalizePath(pathname);
   const isAbout = pathname === "/about" || pathname === "/leadership";
-  const isMepPage = pathname === "/mep-engineers";
+  const isMepPage = isNavPathActive(path, ROUTES.mepServices);
   const isEngagementPage = pathname === "/engagement-models";
 
   return (

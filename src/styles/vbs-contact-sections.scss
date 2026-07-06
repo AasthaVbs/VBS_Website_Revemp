@@ -111,11 +111,21 @@
   }
 }
 
-/* Legacy pages (Contact footer) — ensure Get in Touch stays in 1200px shell */
+/* Legacy pages (Contact footer) — ensure Get in Touch stays in legacy shell */
 .vbs-page-container.vbs-get-in-touch__layout {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.vbs-redesign-page .vbs-page-container.vbs-get-in-touch__layout {
+  max-width: var(--vbs-page-max, 1400px) !important;
+}
+
+.vbs-redesign-page .vbs-get-in-touch__layout {
+  @media (min-width: 1024px) {
+    grid-template-columns: minmax(0, 560px) minmax(0, 1fr);
+  }
 }
 
 .vbs-get-in-touch__layout {

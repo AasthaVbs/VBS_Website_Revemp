@@ -3162,8 +3162,8 @@
       top: 0 !important;
       right: 0 !important;
       left: auto !important;
-      width: min(62%, 1191px) !important;
-      max-width: 1191px !important;
+      width: min(56%, 1080px) !important;
+      max-width: 1080px !important;
       aspect-ratio: 1024 / 607 !important;
       overflow: visible !important;
       pointer-events: none !important;
@@ -3182,7 +3182,7 @@
     }
 
     @media (min-width: 1024px) {
-      min-height: calc(min(62vw, 1191px) * 607 / 1024) !important;
+      min-height: calc(min(56vw, 1080px) * 607 / 1024) !important;
       padding-bottom: 24px !important;
     }
   }
@@ -3262,8 +3262,8 @@
       top: 0 !important;
       right: 0 !important;
       left: auto !important;
-      width: min(62%, 1191px) !important;
-      max-width: 1191px !important;
+      width: min(56%, 1080px) !important;
+      max-width: 1080px !important;
       min-height: 0 !important;
       aspect-ratio: 1024 / 607 !important;
       overflow: visible !important;

@@ -1,6 +1,7 @@
 ﻿// @ts-nocheck
 "use client";
 
+import { Fragment, useRef, useState } from "react";
 import { PageContainer } from "@/components/layout/page-container";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { cn } from "@/lib/utils";
@@ -54,10 +55,10 @@ function BenefitRow({ cards, startIndex, activeIndex }) {
   return (
     <div className="mep-figma-benefits__row flex w-full items-stretch self-stretch">
       {cards.map((card, index) => (
-        <React.Fragment key={card.title}>
+        <Fragment key={card.title}>
           {index > 0 ? <div className="mep-figma-benefits__divider" aria-hidden /> : null}
           <BenefitCard card={card} index={startIndex + index} activeIndex={activeIndex} />
-        </React.Fragment>
+        </Fragment>
       ))}
     </div>
   );

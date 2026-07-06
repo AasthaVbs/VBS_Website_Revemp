@@ -1,6 +1,7 @@
 ﻿// @ts-nocheck
 "use client";
 
+import { useRef } from "react";
 import { PageContainer } from "@/components/layout/page-container";
 import { cn } from "@/lib/utils";
 import { useWorkflowScrollProgress } from "@/hooks/useWorkflowScrollProgress";

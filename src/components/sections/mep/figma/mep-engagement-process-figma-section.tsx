@@ -1,4 +1,5 @@
 ﻿// @ts-nocheck
+import { Fragment } from "react";
 import { PageContainer } from "@/components/layout/page-container";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
@@ -33,7 +34,7 @@ export function MepEngagementProcessSection({
 
         <div className="mep-engagement-process__steps flex w-full flex-col items-stretch lg:flex-row">
           {steps.map((step, index) => (
-            <React.Fragment key={step.title}>
+            <Fragment key={step.title}>
               {index > 0 ? <div className="mep-engagement-process__divider" aria-hidden /> : null}
               <article className="mep-engagement-process__card flex min-w-0 flex-1 flex-col items-start gap-3 self-stretch overflow-hidden px-2.5 lg:px-[10px]">
                 <div className="flex flex-col items-start gap-2.5">
@@ -56,7 +57,7 @@ export function MepEngagementProcessSection({
                   {step.description}
                 </p>
               </article>
-            </React.Fragment>
+            </Fragment>
           ))}
         </div>
 

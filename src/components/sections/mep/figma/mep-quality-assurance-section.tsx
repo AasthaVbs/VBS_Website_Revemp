@@ -1,4 +1,5 @@
 ﻿// @ts-nocheck
+import { Fragment } from "react";
 import { PageContainer } from "@/components/layout/page-container";
 import { cn } from "@/lib/utils";
 import {
@@ -66,16 +67,16 @@ export function MepQualityAssuranceSection({
 
         <div className="mep-figma-qa__stages flex w-full items-stretch gap-1 self-stretch">
           {stages.map((stage, index) => (
-            <React.Fragment key={stage.title}>
+            <Fragment key={stage.title}>
               {index > 0 ? <div className="mep-figma-qa__stage-divider" aria-hidden /> : null}
               <StageCard stage={stage} />
-            </React.Fragment>
+            </Fragment>
           ))}
         </div>
 
         <div className="mep-figma-qa__stats w-full self-stretch rounded-[10px] py-5">
           {stats.map((stat, index) => (
-            <React.Fragment key={stat.value}>
+            <Fragment key={stat.value}>
               {index > 0 ? <div className="mep-figma-qa__stat-divider" aria-hidden /> : null}
               <div className="mep-figma-qa__stat flex min-w-0 flex-1 flex-col items-center gap-3 self-stretch overflow-hidden rounded-[10px] p-2.5 text-center">
                 <p
@@ -86,7 +87,7 @@ export function MepQualityAssuranceSection({
                 </p>
                 <p className="mep-figma-qa__stat-label">{stat.label}</p>
               </div>
-            </React.Fragment>
+            </Fragment>
           ))}
         </div>
 

@@ -14,6 +14,8 @@ export type MepPageHeroContent = {
   imageSrc: string | StaticImageData;
   imageSize?: "default" | "compact";
   ctaHref?: string;
+  copyMaxWidth?: number;
+  descriptionMaxWidth?: number;
 };
 
 const HERO_IMAGE_WIDTH = 1082;
@@ -49,6 +51,8 @@ export function MepPageHeroSection({
   imageSrc,
   imageSize = "default",
   ctaHref = "#services",
+  copyMaxWidth = 779,
+  descriptionMaxWidth = 736,
 }: MepPageHeroContent) {
   const isCompact = imageSize === "compact";
 
@@ -123,11 +127,14 @@ export function MepPageHeroSection({
       <HeroFadeRightEdge />
 
       <PageContainer className="mep-page-hero__copy-wrap relative z-10 flex min-h-0 flex-col justify-start py-8 pt-6 max-lg:min-h-0 sm:py-10 sm:pt-8 lg:min-h-0 lg:pt-[80px] lg:pb-6">
-        <div className="flex w-full max-w-[779px] flex-col items-start gap-[30px]">
+        <div
+          className="flex w-full flex-col items-start gap-[30px]"
+          style={{ maxWidth: copyMaxWidth }}
+        >
           <div className="flex w-full flex-col items-start gap-5 self-stretch">
             <div className="flex flex-col items-start gap-3">
               <MepSectionTag label={tag} />
-              <h1 className="w-full max-w-[779px] capitalize text-[#111111]">
+              <h1 className="w-full capitalize text-[#111111]" style={{ maxWidth: copyMaxWidth }}>
                 <span className="text-[28px] font-medium leading-[1.15] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[60px]">
                   {titleLead}
                 </span>
@@ -136,7 +143,10 @@ export function MepPageHeroSection({
                 </span>
               </h1>
             </div>
-            <p className="w-full max-w-[736px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+            <p
+              className="w-full text-[16px] font-normal capitalize leading-6 text-[#808080]"
+              style={{ maxWidth: descriptionMaxWidth }}
+            >
               {description}
             </p>
           </div>

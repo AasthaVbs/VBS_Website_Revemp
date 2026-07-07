@@ -17,14 +17,21 @@ const ZohoContactUsIframeForm = dynamic(
   },
 );
 
-type ClientOnlyZohoContactFormProps = ComponentProps<typeof ZohoContactUsIframeForm>;
+type ClientOnlyZohoContactFormProps = ComponentProps<typeof ZohoContactUsIframeForm> & {
+  /** Load immediately instead of waiting for scroll into view. */
+  eager?: boolean;
+};
 
-export function ClientOnlyZohoContactForm(props: ClientOnlyZohoContactFormProps) {
+export function ClientOnlyZohoContactForm({
+  eager = false,
+  ...props
+}: ClientOnlyZohoContactFormProps) {
   const { ref, inView } = useInView({ rootMargin: "240px 0px", triggerOnce: true });
+  const shouldRender = eager || inView;
 
   return (
-    <div ref={ref}>
-      {inView ? (
+    <div ref={eager ? undefined : ref}>
+      {shouldRender ? (
         <ZohoContactUsIframeForm {...props} />
       ) : (
         <SectionSkeleton minHeight={100} ariaHidden={false} />

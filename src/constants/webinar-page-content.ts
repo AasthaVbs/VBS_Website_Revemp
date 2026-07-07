@@ -11,15 +11,7 @@ export const webinarPageHero = {
   description:
     "Since 2015, we've been the trusted partner for Architecture and Engineering firms, helping them rapidly scale their BIM teams and deliver award-winning projects every time.",
   ctaLabel: "Contact Us",
-  image: "/images/figma/resource-3.png",
-  imageAlt: "Virtual Building Studio webinars",
-} as const;
-
-export const webinarsBrowseIntro = {
-  tag: "Webinars",
-  titleLead: "Webinars ",
-  titleAccent: "Virtual Building Studio (VBS) Resource",
-  description: webinarPageHero.description,
+  imageAlt: "Virtual Building Studio webinar session",
 } as const;
 
 export const webinarTypeFilters = ["On Demand", "Upcoming"] as const;
@@ -34,6 +26,11 @@ export const WEBINAR_SERVICE_ARCHITECTURE = "Architecture Firms";
 export const WEBINAR_SERVICE_MEP = "MEP Engineering Firms";
 
 export const webinarMepSlugs = new Set(["productized-mepf-design-for-scalable-ai-data-centers"]);
+
+/** Fallback YouTube URLs when snapshot data is incomplete (live Sanity is preferred). */
+export const webinarYoutubeVideoUrlBySlug: Record<string, string> = {
+  "productized-mepf-design-for-scalable-ai-data-centers": "https://www.youtube.com/watch?v=0tLjNCh-uOc",
+};
 
 export const webinarArchitectureSlugs = new Set([
   "architects-delegate-for-success",

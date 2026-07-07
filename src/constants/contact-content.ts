@@ -16,6 +16,15 @@ export const contactHeroCopy = {
 export const contactGetInTouchDescription =
   "Let's discuss your requirements and see how our expertise can help on your next project.";
 
+export const contactGetInTouchDetails = {
+  phone: "+1 (409) 800-6601",
+  phoneHref: "tel:+14098006601",
+  email: "contact@virtualbuildingstudio.com",
+  emailHref: "mailto:contact@virtualbuildingstudio.com",
+  addressLine1: "1004, 5605 N MacArthur Blvd #1000",
+  addressLine2: "Irving, TX 75038, USA",
+} as const;
+
 export const ourLocationsSectionCopy = {
   tag: "Name Tag",
   titleLead: "Our",

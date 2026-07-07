@@ -1,14 +1,17 @@
 import { hasSanityCredentials } from "@/lib/sanity-env";
-import { publishedSanityClient, previewSanityClient, sanityClient } from "@/lib/sanity-client";
+import { publishedSanityClient, publicSanityClient, sanityClient } from "@/lib/sanity-client";
 import {
   SANITY_POST_BY_SLUG_QUERY,
   SANITY_POST_LISTING_QUERY,
   SANITY_PREVIEW_BY_ID_QUERY,
   SANITY_PREVIEW_BY_SLUG_QUERY,
   SANITY_REDIRECTS_QUERY,
+  SANITY_WEBINAR_BY_SLUG_QUERY,
   SANITY_WEBINAR_LISTING_QUERY,
+  SANITY_WEBINAR_SLUGS_QUERY,
 } from "@/lib/sanity-queries";
 import type { SanityPostRecord } from "@/lib/sanity-blog";
+import type { SanityWebinarRecord } from "@/lib/sanity-webinar";
 import sanitySnapshot from "@/data/sanity-resources-snapshot.json";
 
 export type SanityListingSnapshot = {
@@ -52,6 +55,33 @@ export async function fetchSanityPostBySlug(slug: string): Promise<SanityPostRec
 export async function fetchSanityPostSlugs(): Promise<string[]> {
   const listing = await fetchSanityResourceListing();
   return listing.posts.map((post) => post.slug).filter(Boolean);
+}
+
+export async function fetchSanityWebinarBySlug(slug: string): Promise<SanityWebinarRecord | null> {
+  const cleanSlug = slug.replace(/^\/+|\/+$/g, "").toLowerCase();
+  const params = { slug: cleanSlug, slugWithSlash: `${cleanSlug}/` };
+
+  try {
+    if (hasSanityCredentials()) {
+      return await publishedSanityClient.fetch<SanityWebinarRecord | null>(SANITY_WEBINAR_BY_SLUG_QUERY, params);
+    }
+
+    return await publicSanityClient.fetch<SanityWebinarRecord | null>(SANITY_WEBINAR_BY_SLUG_QUERY, params);
+  } catch (error) {
+    console.error("[sanity] webinar fetch failed:", error);
+    return null;
+  }
+}
+
+export async function fetchSanityWebinarSlugs(): Promise<string[]> {
+  if (!hasSanityCredentials()) return [];
+  try {
+    const rows = await publishedSanityClient.fetch<Array<{ slug?: string }>>(SANITY_WEBINAR_SLUGS_QUERY);
+    return rows.map((row) => row.slug).filter(Boolean) as string[];
+  } catch (error) {
+    console.error("[sanity] webinar slugs fetch failed:", error);
+    return [];
+  }
 }
 
 export async function fetchSanityPreviewPost(options: {

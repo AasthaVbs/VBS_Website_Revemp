@@ -67,6 +67,64 @@ export const SANITY_WEBINAR_LISTING_QUERY = `*[_type == "webinar" && defined(slu
   upcomingImage { asset->{ url } }
 }`;
 
+export const SANITY_WEBINAR_BODY_PROJECTION = `"_rawBody": body[]{
+  ...,
+  _type == "image" => { "asset": asset-> },
+  _type == "downloadBlock" => {
+    buttonText,
+    downloadUrl,
+    modalHeading,
+    storageKey,
+    fileUpload { asset-> }
+  },
+  _type == "table" => {
+    className,
+    columnWidths,
+    rows[]{ _key, cells[] }
+  },
+  _type == "readMore" => {
+    label,
+    url,
+    linkText
+  },
+  _type == "cta" => {
+    title,
+    buttonText,
+    buttonUrl
+  }
+}`;
+
+export const SANITY_WEBINAR_DETAIL_PROJECTION = `{
+  _id,
+  metaTitle,
+  metaDescription,
+  eventDate,
+  location,
+  eventNote,
+  youtubeVideoUrl,
+  upcomingImageUrl,
+  "slug": slug.current,
+  "_rawTitle": title,
+  ${SANITY_WEBINAR_BODY_PROJECTION},
+  bannerImage { asset->{ url } },
+  youtubeThumbnail { asset->{ url } },
+  upcomingImage { asset->{ url } },
+  speaker->{
+    name,
+    "_rawDescription": description,
+    image { asset->{ url } }
+  },
+  ctaButton {
+    buttonText,
+    buttonUrl,
+    openInNewTab
+  }
+}`;
+
+export const SANITY_WEBINAR_BY_SLUG_QUERY = `*[_type == "webinar" && (slug.current == $slug || slug.current == $slugWithSlash)][0] ${SANITY_WEBINAR_DETAIL_PROJECTION}`;
+
+export const SANITY_WEBINAR_SLUGS_QUERY = `*[_type == "webinar" && defined(slug.current)]{ "slug": slug.current }`;
+
 export const SANITY_POST_BY_SLUG_QUERY = `*[_type == "post" && slug.current == $slug][0] ${SANITY_POST_DETAIL_PROJECTION}`;
 
 export const SANITY_PREVIEW_BY_ID_QUERY = `*[_id in [$id, $draftId]][0] ${SANITY_POST_DETAIL_PROJECTION}`;

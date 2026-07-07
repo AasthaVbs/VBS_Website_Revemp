@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import portfolioBannerImg from "@/assets/images/portfolio-banner.jpg";
 import { PageContainer } from "@/components/layout/page-container";
 import { PortfolioProjectCard } from "@/components/sections/portfolio/portfolio-project-card";
 import { SectionTag } from "@/components/sections/section-primitives";
@@ -11,7 +12,7 @@ import { allPortfolioProjectCards } from "@/lib/portfolio-catalog";
 
 /** Figma 948:26341 — flex two-column layout; sticky left; all cards in document flow */
 export function AllProjectsSection() {
-  const { tag, titleLead, titleAccent, description, mapImage, mapAlt } = allProjectsIntro;
+  const { tag, titleLead, titleAccent, description, mapAlt } = allProjectsIntro;
 
   return (
     <section
@@ -34,13 +35,13 @@ export function AllProjectsSection() {
               </p>
             </div>
 
-            <div className="relative aspect-[710/473] w-full max-w-[710px] shrink-0 overflow-hidden">
+            <div className="relative aspect-[589/480] w-full max-w-[589px] shrink-0 overflow-hidden rounded-[9px]">
               <Image
-                src={mapImage}
+                src={portfolioBannerImg}
                 alt={mapAlt}
                 fill
-                className="object-contain object-left"
-                sizes="(max-width: 1024px) 100vw, 710px"
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 589px"
                 priority
               />
             </div>

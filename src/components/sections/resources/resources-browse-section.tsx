@@ -12,14 +12,11 @@ import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { useEffect, useMemo, useState } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
-import { SectionTag } from "@/components/sections/section-primitives";
 import { ResourceFeedPhoto } from "@/components/ui/resource-feed-photo";
-import { blogsBrowseIntro } from "@/constants/blogs-page-content";
 import {
   resourceAllServicesLabel,
   resourceAllTypesLabel,
   resourceServiceFilterOptions,
-  resourcesBrowseIntro,
   resourceSortFilters,
   resourceTypeFilterOptions,
   type ResourceSort,
@@ -27,10 +24,8 @@ import {
 import {
   webinarAllTypesLabel,
   webinarTypeFilterOptions,
-  webinarsBrowseIntro,
   type WebinarDelivery,
 } from "@/constants/webinar-page-content";
-import { whitepapersBrowseIntro } from "@/constants/whitepapers-page-content";
 import { buildResourceCatalog, type ResourceCatalogItem } from "@/lib/resource-catalog";
 import {
   isAllResourceServicesFilter,
@@ -108,15 +103,15 @@ function ResourceCard({ item }: { item: CatalogItem }) {
   return (
     <Link
       href={item.href}
-      className="resources-browse-card flex h-full flex-col items-center gap-[30px] overflow-hidden rounded-[10px] bg-white p-2.5 shadow-[0_4px_10px_rgba(0,0,0,0.15)] no-underline transition-[box-shadow,transform] duration-250 hover:-translate-y-1 hover:shadow-[0_10px_24px_rgba(0,0,0,0.12)]"
+      className="resources-browse-card flex h-full flex-col items-center gap-[10px] overflow-hidden rounded-[10px] bg-white p-2.5 shadow-[0_4px_10px_rgba(0,0,0,0.15)] no-underline transition-[box-shadow,transform] duration-250 hover:-translate-y-1 hover:shadow-[0_10px_24px_rgba(0,0,0,0.12)]"
       aria-label={`Learn more about ${item.title}`}
     >
-      <div className="relative h-[220px] w-full overflow-hidden rounded-[10px] sm:h-[280px] lg:h-[322px]">
+      <div className="resources-browse-card__media relative h-[170px] w-full overflow-hidden rounded-[10px] min-[800px]:h-[200px] min-[1280px]:h-[240px]">
         <ResourceFeedPhoto
           src={item.image}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <span className="absolute bottom-3 right-3 rounded-[10px] border border-[#D70416] bg-[#D70416] px-2.5 py-1 text-[13px] text-white">
+        <span className="absolute bottom-3 right-3 rounded-[10px]  bg-[#D70416] px-3.5 py-1 text-[13px] text-white">
           {item.badgeLabel || item.type || "Resource"}
         </span>
       </div>
@@ -150,6 +145,47 @@ function chunkItems<T>(items: T[], size: number): T[][] {
   return rows;
 }
 
+type PaginationItem = number | "ellipsis";
+
+/** Figma pagination — 01, 02, 03, …, 09, 10 with ellipsis for large page counts */
+function getPaginationItems(currentPage: number, totalPages: number): PaginationItem[] {
+  if (totalPages <= 6) {
+    return Array.from({ length: totalPages }, (_, index) => index + 1);
+  }
+
+  const pageSet = new Set<number>([1, totalPages, currentPage]);
+
+  if (currentPage <= 3) {
+    pageSet.add(2);
+    pageSet.add(3);
+    pageSet.add(totalPages - 1);
+  } else if (currentPage >= totalPages - 2) {
+    pageSet.add(2);
+    pageSet.add(totalPages - 2);
+    pageSet.add(totalPages - 1);
+  } else {
+    pageSet.add(currentPage - 1);
+    pageSet.add(currentPage + 1);
+  }
+
+  const sortedPages = [...pageSet]
+    .filter((page) => page >= 1 && page <= totalPages)
+    .sort((left, right) => left - right);
+
+  const result: PaginationItem[] = [];
+  let previousPage = 0;
+
+  for (const page of sortedPages) {
+    if (previousPage && page - previousPage > 1) {
+      result.push("ellipsis");
+    }
+    result.push(page);
+    previousPage = page;
+  }
+
+  return result;
+}
+
 /** Figma 337:37659 (resources) / 405:73063 (blogs) / 405:74005 (webinars) — filters + grid */
 export function ResourcesBrowseSection({
   variant = "resources",
@@ -159,13 +195,7 @@ export function ResourcesBrowseSection({
   const isBlogsPage = variant === "blogs";
   const isWebinarsPage = variant === "webinars";
   const isWhitepapersPage = variant === "whitepapers";
-  const intro = isBlogsPage
-    ? blogsBrowseIntro
-    : isWebinarsPage
-      ? webinarsBrowseIntro
-      : isWhitepapersPage
-        ? whitepapersBrowseIntro
-        : resourcesBrowseIntro;
+  const hasPageHero = isBlogsPage || isWebinarsPage || isWhitepapersPage || variant === "resources";
 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedType, setSelectedType] = useState<string>(resourceAllTypesLabel);
@@ -255,6 +285,7 @@ export function ResourcesBrowseSection({
     safeCurrentPage * ITEMS_PER_PAGE,
   );
   const cardRows = chunkItems(pageItems, 2);
+  const paginationItems = getPaginationItems(safeCurrentPage, totalPages);
 
   const handleTypeChange = (type: string) => {
     setSelectedType(type);
@@ -263,23 +294,15 @@ export function ResourcesBrowseSection({
   };
 
   return (
-    <section className="resource-browse-anchor bg-white py-12 lg:py-[100px]">
-      <PageContainer className="flex flex-col items-start gap-10 lg:gap-[60px]">
-        <div className="flex w-full flex-col gap-5">
-          <div className="flex flex-col gap-3">
-            <SectionTag label={intro.tag} />
-            <h2 className="text-section max-w-[672px] capitalize">
-              <span className="font-medium text-[#111111]">{intro.titleLead}</span>
-              <span className="font-light text-[#D70416]">{intro.titleAccent}</span>
-            </h2>
-          </div>
-          <p className="max-w-[751px] text-[16px] capitalize leading-6 text-[#808080]">
-            {intro.description}
-          </p>
-        </div>
-
-        <div className="flex w-full flex-col gap-5 xl:flex-row xl:items-start">
-          <aside className="w-full shrink-0 rounded-[10px] bg-white p-5 shadow-[0_4px_10px_rgba(0,0,0,0.15)] xl:w-[344px]">
+    <section
+      className={cn(
+        "resource-browse-anchor bg-white",
+        hasPageHero ? "pb-12 pt-0 lg:pb-[100px]" : "py-12 lg:py-[100px]",
+      )}
+    >
+      <PageContainer className="flex flex-col items-start gap-10">
+        <div className="resource-browse-anchor__layout flex w-full flex-col gap-5 min-[800px]:flex-row min-[800px]:items-start">
+          <aside className="resource-browse-anchor__aside w-full shrink-0 rounded-[10px] bg-white p-5 shadow-[0_4px_10px_rgba(0,0,0,0.15)] min-[800px]:w-[344px] min-[800px]:max-w-[344px]">
             <div className="flex flex-col gap-5">
               <label className="flex h-[50px] items-center justify-between gap-3 rounded-[10px] border border-[#CBCCCD] bg-[#FAFAFA] px-5 py-3 backdrop-blur-[50px]">
                 <input
@@ -361,7 +384,7 @@ export function ResourcesBrowseSection({
           <div className="flex min-w-0 flex-1 flex-col gap-5">
             {cardRows.length > 0 ? (
               cardRows.map((row, rowIndex) => (
-                <div key={rowIndex} className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                <div key={rowIndex} className="grid grid-cols-1 gap-5 min-[800px]:grid-cols-2">
                   {row.map((item) => (
                     <ResourceCard key={`${item.type}-${item.id}`} item={item} />
                   ))}
@@ -416,21 +439,32 @@ export function ResourcesBrowseSection({
             </PaginationButton>
 
             <div className="flex flex-wrap items-center gap-2.5">
-              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-                <button
-                  key={page}
-                  type="button"
-                  onClick={() => setCurrentPage(page)}
-                  className={cn(
-                    "rounded-[10px] px-[18px] py-2.5 text-[16px] capitalize backdrop-blur-[50px] transition-colors",
-                    page === safeCurrentPage
-                      ? "font-normal text-[#111111]"
-                      : "text-[#808080] hover:text-[#111111]",
-                  )}
-                >
-                  {String(page).padStart(2, "0")}
-                </button>
-              ))}
+              {paginationItems.map((item, index) =>
+                item === "ellipsis" ? (
+                  <span
+                    key={`ellipsis-${index}`}
+                    className="rounded-[10px] px-[18px] py-2.5 text-[16px] text-[#808080] backdrop-blur-[50px]"
+                    aria-hidden
+                  >
+                    ...
+                  </span>
+                ) : (
+                  <button
+                    key={item}
+                    type="button"
+                    onClick={() => setCurrentPage(item)}
+                    aria-current={item === safeCurrentPage ? "page" : undefined}
+                    className={cn(
+                      "rounded-[10px] px-[18px] py-2.5 text-[16px] capitalize backdrop-blur-[50px] transition-colors",
+                      item === safeCurrentPage
+                        ? "font-normal text-[#111111]"
+                        : "text-[#808080] hover:text-[#111111]",
+                    )}
+                  >
+                    {String(item).padStart(2, "0")}
+                  </button>
+                ),
+              )}
             </div>
 
             <PaginationButton

@@ -61,12 +61,26 @@ export const testimonialListingItems = clientSuccessStories.map((story, index) =
 
 export const extendedWhitepaperListingItems = [
   {
+    id: "mep-coordination-data-centers",
+    title: "MEP Coordination in Data Centers: Solving High-Density Challenges with Advanced BIM Workflows",
+    excerpt:
+      "Learn how advanced BIM coordination reduces clashes, minimizes rework, and improves operational reliability in mission-critical data center environments.",
+    href: "/whitepaper/mep-coordination-data-centers-bim-workflows/",
+    image: "/image/WP-Book-Cover-Mockup-Website.jpg",
+    service: "MEP Engineering Firms",
+    services: [
+      "MEP Engineering Firms",
+      "Architecture Firms",
+      "Reality Capture & Survey Companies",
+    ],
+  },
+  {
     id: "hidden-cost-mep-coordination",
     title: "The Hidden Cost of Late-Stage MEP Coordination Failures",
     excerpt:
       "Understand the real cost impact of late-stage MEP coordination and how early BIM workflows deliver 5:1 to 10:1 ROI.",
-    href: "/whitepaper/hidden-cost-of-late-stage-mep-coordination-failures",
-    image: encodeURI("/images/image 57.png"),
+    href: "/whitepaper/hidden-cost-of-late-stage-mep-coordination-failures/",
+    image: encodeURI("/image/WP-Book-Cover-Mockup.jpg"),
     service: "MEP Engineering Firms",
     services: [
       "MEP Engineering Firms",

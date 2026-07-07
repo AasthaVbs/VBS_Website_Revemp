@@ -5,8 +5,7 @@ export const portfolioPageHero = {
   description:
     "Since 2015, we've been the trusted partner for Architecture and Engineering firms, helping them rapidly scale their BIM teams and deliver award-winning projects every time.",
   ctaLabel: "Contact Us",
-  image: "/image/meet-our-company.png",
-  imageAlt: "Virtual Building Studio portfolio",
+  imageAlt: "Team reviewing architectural case study model",
 } as const;
 
 export const portfolioProjectsIntro = {
@@ -28,8 +27,7 @@ export const allProjectsIntro = {
   titleAccent: "MEP BIM Modeling Services",
   description:
     "Explore coordinated BIM, MEP, and visualization work delivered for architecture and engineering firms across the United States.",
-  mapImage: "/image/meet-our-company.png",
-  mapAlt: "United States project coverage map",
+  mapAlt: "BIM project dashboard and delivery metrics",
 } as const;
 
 export type PortfolioProjectItem = {

@@ -90,112 +90,373 @@
   object-position: center;
 }
 
-/* ----- Get in Touch (Figma 5-23598: image left, form right) ----- */
+/* ----- Get in Touch (Figma 2573:28324 — info left, tabbed form right) ----- */
 
 /* Footer / bottom-of-page contact block — padding on every page (legacy + redesign) */
 .vbs-get-in-touch-section {
+  --vbs-get-in-touch-form-width: 880px;
+  --vbs-get-in-touch-embed-height: 520px;
+  --vbs-get-in-touch-zoho-header-crop: 143px;
+  --vbs-zoho-iframe-header-crop: var(--vbs-get-in-touch-zoho-header-crop);
+  --vbs-zoho-iframe-full-height: 680px;
+  --vbs-zoho-iframe-visible-height: var(--vbs-get-in-touch-embed-height);
+  --vbs-nimbus-booking-height: var(--vbs-get-in-touch-embed-height);
+
   background-color: #fafafa;
   scroll-margin-top: var(--vbs-header-offset, 92px);
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 40px;
+  padding-bottom: 32px;
 
   @media (max-width: 767px) {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    --vbs-get-in-touch-embed-height: auto;
+    --vbs-get-in-touch-zoho-header-crop: 194px;
+    --vbs-zoho-iframe-header-crop: var(--vbs-get-in-touch-zoho-header-crop);
+    --vbs-nimbus-booking-height: 700px;
+
+    padding-top: 24px;
+    padding-bottom: 12px;
   }
 
   @media (min-width: 1024px) {
     scroll-margin-top: 132px;
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 48px;
   }
-}
-
-/* Legacy pages (Contact footer) — ensure Get in Touch stays in legacy shell */
-.vbs-page-container.vbs-get-in-touch__layout {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .vbs-redesign-page .vbs-page-container.vbs-get-in-touch__layout {
   max-width: var(--vbs-page-max, 1400px) !important;
 }
 
-.vbs-redesign-page .vbs-get-in-touch__layout {
-  @media (min-width: 1024px) {
-    grid-template-columns: minmax(0, 560px) minmax(0, 1fr);
-  }
-}
-
 .vbs-get-in-touch__layout {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 30px;
+  gap: 40px;
   width: 100%;
 
   @media (min-width: 1024px) {
     display: grid;
-    grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
-    align-items: start;
-    gap: 0;
-    column-gap: 0;
+    grid-template-columns: minmax(0, 1fr) var(--vbs-get-in-touch-form-width);
+    align-items: end;
+    gap: 30px;
     width: 100%;
   }
+}
+
+.vbs-get-in-touch__info-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  min-width: 0;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    align-self: start;
+    justify-content: flex-start;
+    gap: 40px;
+    max-width: 560px;
+    border-radius: 20px;
+  }
+}
+
+.vbs-get-in-touch__info-head {
+  width: 100%;
+  margin-top: 40px;
+
+  > .flex {
+    gap: 12px !important;
+
+    > .flex {
+      gap: 8px !important;
+    }
+  }
+}
+
+.vbs-get-in-touch__info-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 34px;
+  width: 100%;
+  max-width: 329px;
+}
+
+.vbs-get-in-touch__info-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #111111;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+
+  &--address {
+    align-items: flex-start;
+
+    &:hover {
+      text-decoration: none;
+      opacity: 1;
+    }
+  }
+}
+
+.vbs-get-in-touch__address-line1,
+.vbs-get-in-touch__address-line2 {
+  display: block;
+}
+
+.vbs-get-in-touch__address-line2 {
+  text-transform: capitalize;
 }
 
 .vbs-get-in-touch__form-col {
   display: flex;
   flex-direction: column;
-  gap: 14px;
   min-width: 0;
   width: 100%;
-  border-radius: 20px;
   overflow: visible;
 
   @media (min-width: 1024px) {
-    grid-column: 2;
-    grid-row: 1;
-    max-width: none;
-    width: 100%;
-    align-self: stretch;
-    gap: 30px;
+    width: var(--vbs-get-in-touch-form-width);
+    max-width: var(--vbs-get-in-touch-form-width);
+    min-width: var(--vbs-get-in-touch-form-width);
+    flex-shrink: 0;
+    justify-self: end;
   }
 }
 
-.vbs-get-in-touch__visual-slot {
+.vbs-get-in-touch__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   width: 100%;
   min-width: 0;
-  min-height: 320px;
+}
 
-  @media (min-width: 640px) {
-    min-height: 420px;
+.vbs-get-in-touch__tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+  padding-left: 0;
+
+  @media (min-width: 768px) {
+    padding-left: 52px;
+  }
+}
+
+@media (max-width: 767px) {
+  .vbs-get-in-touch__layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
   }
 
-  @media (min-width: 1024px) {
-    grid-column: 1;
-    grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    align-self: start;
-    width: 100%;
+  .vbs-get-in-touch__info-col {
+    order: 1;
+    gap: 16px !important;
+  }
+
+  .vbs-get-in-touch__info-head {
+    .text-section {
+      font-size: clamp(1.75rem, 8vw, 2.5rem);
+      line-height: 1.15;
+    }
+  }
+
+  .vbs-get-in-touch__info-contacts {
+    gap: 12px !important;
     max-width: none;
-    min-height: 0;
-    height: auto;
-    padding-right: 0;
-    box-sizing: border-box;
   }
+
+  .vbs-get-in-touch__form-col {
+    order: 2;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  .vbs-get-in-touch__panel {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .vbs-get-in-touch__tabs {
+    order: 1;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch;
+    padding-left: 0 !important;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .vbs-get-in-touch__tab {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+
+  .vbs-get-in-touch__tab-panels {
+    order: 2;
+    min-height: 0;
+  }
+
+  .vbs-get-in-touch__tab-panel {
+    min-height: 0;
+  }
+
+  .vbs-get-in-touch__embed-slot,
+  .vbs-contact-zoho-wrap {
+    min-height: 0 !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .vbs-contact-zoho-wrap {
+    margin-left: calc(-1 * var(--vbs-page-gutter, 28px));
+    margin-right: calc(-1 * var(--vbs-page-gutter, 28px));
+    width: calc(100% + (2 * var(--vbs-page-gutter, 28px)));
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .vbs-contact-zoho-wrap .vbs-zoho-iframe-form {
+    height: var(--vbs-zoho-iframe-visible-height) !important;
+    min-height: var(--vbs-zoho-iframe-visible-height) !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .vbs-nimbus-booking-embed,
+  .vbs-nimbus-booking-embed__frame {
+    min-height: var(--vbs-nimbus-booking-height) !important;
+    max-height: var(--vbs-nimbus-booking-height) !important;
+    height: var(--vbs-nimbus-booking-height) !important;
+  }
+}
+
+.vbs-get-in-touch__tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #eeeeee;
+  color: #111111;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &--active {
+    background: #d70416;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #2299d6;
+    outline-offset: 2px;
+  }
+}
+
+.vbs-get-in-touch__tab-panels {
+  width: 100%;
+  min-width: 0;
+
+  @media (min-width: 768px) {
+    min-height: var(--vbs-get-in-touch-embed-height);
+  }
+}
+
+.vbs-get-in-touch__tab-panel {
+  width: 100%;
+  min-width: 0;
+
+  @media (min-width: 768px) {
+    min-height: var(--vbs-get-in-touch-embed-height);
+  }
+
+  &[hidden] {
+    display: none !important;
+  }
+}
+
+.vbs-get-in-touch__embed-slot {
+  width: 100%;
+  min-width: 0;
+
+  @media (max-width: 767px) {
+    overflow: visible;
+  }
+
+  @media (min-width: 768px) {
+    height: var(--vbs-get-in-touch-embed-height);
+    min-height: var(--vbs-get-in-touch-embed-height);
+    max-height: var(--vbs-get-in-touch-embed-height);
+    overflow: hidden;
+  }
+}
+
+.vbs-nimbus-booking-embed {
+  width: 100%;
+  height: var(--vbs-nimbus-booking-height);
+  min-height: var(--vbs-nimbus-booking-height);
+  max-height: var(--vbs-nimbus-booking-height);
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #cbcccd;
+}
+
+.vbs-nimbus-booking-embed__frame {
+  display: block;
+  width: 100%;
+  height: var(--vbs-nimbus-booking-height);
+  min-height: var(--vbs-nimbus-booking-height);
+  max-height: var(--vbs-nimbus-booking-height);
+  border: none;
+  background: #ffffff;
 }
 
 .vbs-contact-zoho-wrap {
   width: 100%;
   min-width: 0;
-  overflow: visible;
-}
 
-.vbs-get-in-touch__form-col .vbs-contact-zoho-wrap {
-  padding-left: 0;
+  @media (max-width: 767px) {
+    overflow: visible;
+  }
+
+  @media (min-width: 768px) {
+    height: var(--vbs-get-in-touch-embed-height);
+    min-height: var(--vbs-get-in-touch-embed-height);
+    max-height: var(--vbs-get-in-touch-embed-height);
+    overflow: hidden;
+  }
 }
 
 .vbs-contact-zoho-wrap .vbs-zoho-prod,
@@ -207,119 +468,23 @@
   max-height: none !important;
 }
 
-.vbs-get-in-touch__intro {
-  padding-left: 24px;
-
-  @media (min-width: 1024px) {
-    padding-left: 48px;
-  }
-}
-
-.vbs-get-in-touch__intro .text-body,
-.vbs-get-in-touch__intro p {
+.vbs-get-in-touch__info-head .text-body,
+.vbs-get-in-touch__info-head p {
   max-width: 100% !important;
   font-size: 16px !important;
   font-weight: 400 !important;
   line-height: 24px !important;
   color: #808080 !important;
-  text-transform: capitalize;
-}
-
-.vbs-get-in-touch__visual {
-  position: relative;
-  width: 100%;
-  min-height: 320px;
-  overflow: hidden;
-  border-radius: 20px;
-  background: #111111;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-
-  @media (min-width: 640px) {
-    min-height: 420px;
-  }
-
-  @media (min-width: 1024px) {
-    flex: none;
-    width: 100%;
-    height: 660px;
-    min-height: 0;
-    max-height: 660px;
-    aspect-ratio: unset;
-  }
-}
-
-.vbs-get-in-touch__visual-img {
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  width: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: 72% 35%;
-
-  @media (min-width: 1024px) {
-    object-position: 58% center;
-  }
-}
-
-.vbs-get-in-touch__visual-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(17, 17, 17, 0.2) 0%,
-    rgba(17, 17, 17, 0.85) 55%,
-    #111111 100%
-  );
-  pointer-events: none;
-
-  @media (min-width: 1024px) {
-    background: linear-gradient(
-      90deg,
-      #111111 0%,
-      #111111 35%,
-      rgba(17, 17, 17, 0.55) 55%,
-      rgba(17, 17, 17, 0.15) 100%
-    );
-  }
-}
-
-.vbs-get-in-touch__visual-contacts {
-  position: absolute;
-  left: 40px;
-  bottom: 40px;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-width: 389px;
-  color: #ffffff;
-}
-
-.vbs-get-in-touch__visual-contact {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 10px;
-  color: #ffffff;
-  text-decoration: none;
-  transition: opacity 0.15s ease;
-
-  &:hover {
-    opacity: 0.85;
-    text-decoration: underline;
-  }
-}
-
-.vbs-get-in-touch__visual-contacts span {
-  font-size: 16px;
-  font-weight: 400;
   text-transform: none;
-  line-height: 1.4;
 }
 
-.vbs-get-in-touch__address-line1,
-.vbs-get-in-touch__address-line2 {
-  display: block;
+/* ----- Contact us page — same fixed embed size as footer sections ----- */
+.vbs-contact-page-get-in-touch {
+  @media (min-width: 1024px) {
+    .vbs-get-in-touch__layout {
+      align-items: start;
+    }
+  }
 }
 
 /* ----- Contact us page — equal vertical padding on all 3 sections ----- */
@@ -329,10 +494,19 @@
     padding-bottom: 60px !important;
   }
 
+  >section.vbs-get-in-touch-section {
+    padding-bottom: 32px !important;
+  }
+
   @media (max-width: 767px) {
     >section {
       padding-top: 40px !important;
       padding-bottom: 40px !important;
+    }
+
+    >section.vbs-get-in-touch-section {
+      padding-top: 24px !important;
+      padding-bottom: 12px !important;
     }
   }
 }
@@ -341,13 +515,11 @@
 .contact-us-page .contact-section-page {
   .vbs-get-in-touch__layout {
     @media (min-width: 1024px) {
-      gap: 0 !important;
-      column-gap: 0 !important;
-      row-gap: 0 !important;
+      gap: 30px !important;
     }
 
     @media (max-width: 767px) {
-      gap: 20px !important;
+      gap: 32px !important;
     }
   }
 
@@ -383,43 +555,6 @@
       display: flex !important;
       flex-direction: column !important;
       gap: 20px !important;
-    }
-
-    .vbs-get-in-touch__visual-slot {
-      order: 2 !important;
-      min-height: 320px !important;
-    }
-
-    .vbs-get-in-touch__form-col {
-      order: 1 !important;
-    }
-
-    .vbs-get-in-touch__visual-gradient {
-      background: linear-gradient(0deg,
-          rgba(17, 17, 17, 0.95) 0%,
-          rgba(17, 17, 17, 0.72) 32%,
-          rgba(17, 17, 17, 0.15) 58%,
-          rgba(17, 17, 17, 0) 72%) !important;
-    }
-
-    .vbs-get-in-touch__visual-contacts {
-      left: 16px !important;
-      right: auto !important;
-      bottom: 16px !important;
-      top: auto !important;
-      max-width: calc(100% - 32px) !important;
-      gap: 14px !important;
-      align-items: flex-start !important;
-    }
-
-    .vbs-get-in-touch__visual-contacts .vbs-get-in-touch__visual-contact {
-      justify-content: flex-start !important;
-      text-align: left !important;
-    }
-
-    .vbs-get-in-touch__visual-contacts span {
-      font-size: 14px !important;
-      line-height: 1.35 !important;
     }
 
     .vbs-our-locations__cards {
@@ -486,7 +621,7 @@
 .vbs-contact-zoho-wrap .vbs-zoho-prod .vbs-zoho-row-2 {
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-  gap: 16px !important;
+  gap: 10px !important;
   margin: 0 !important;
 }
 
@@ -584,52 +719,95 @@
 @media (max-width: 767px) {
   .vbs-contact-zoho-wrap .vbs-zoho-prod .vbs-zoho-row-2 {
     grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-
-  .vbs-get-in-touch-section {
-    --vbs-zoho-iframe-header-crop: 180px;
+    gap: 10px !important;
   }
 
   .vbs-contact-zoho-wrap {
     position: relative;
     z-index: 2;
   }
+
+  .vbs-contact-zoho-wrap .vbs-zoho-iframe-form {
+    position: relative;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: var(--vbs-zoho-iframe-visible-height) !important;
+    min-height: var(--vbs-zoho-iframe-visible-height) !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    touch-action: manipulation;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
-.vbs-get-in-touch-section {
-  --vbs-zoho-iframe-header-crop: 200px;
-  --vbs-zoho-iframe-full-height: 680px;
-  --vbs-zoho-iframe-visible-height: 720px;
+@media (min-width: 768px) {
+  .vbs-contact-zoho-wrap .vbs-zoho-iframe-form {
+    position: relative;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: var(--vbs-get-in-touch-embed-height) !important;
+    min-height: var(--vbs-get-in-touch-embed-height) !important;
+    max-height: var(--vbs-get-in-touch-embed-height) !important;
+    overflow: hidden;
+    touch-action: manipulation;
+  }
 }
 
-.vbs-contact-zoho-wrap {
-  --vbs-zoho-iframe-header-crop: var(--vbs-zoho-iframe-header-crop, 142px);
-  --vbs-zoho-iframe-full-height: var(--vbs-zoho-iframe-full-height, 680px);
-  --vbs-zoho-iframe-visible-height: var(--vbs-zoho-iframe-visible-height, 540px);
-}
+@media (max-width: 767px) {
+  .vbs-get-in-touch-section {
+    .vbs-get-in-touch__embed-slot,
+    .vbs-contact-zoho-wrap {
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: none !important;
+      overflow: visible !important;
+    }
 
-.vbs-contact-zoho-wrap .vbs-zoho-iframe-form {
-  position: relative;
-  width: 100%;
-  height: var(--vbs-zoho-iframe-visible-height);
-  overflow: hidden;
-  touch-action: manipulation;
+    .vbs-contact-zoho-wrap .vbs-zoho-iframe-form {
+      position: relative;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: var(--vbs-zoho-iframe-visible-height) !important;
+      min-height: var(--vbs-zoho-iframe-visible-height) !important;
+      max-height: none !important;
+      overflow: hidden !important;
+      touch-action: manipulation;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .vbs-contact-zoho-wrap {
+      margin-left: calc(-1 * var(--vbs-page-gutter, 28px));
+      margin-right: calc(-1 * var(--vbs-page-gutter, 28px));
+      width: calc(100% + (2 * var(--vbs-page-gutter, 28px)));
+      max-width: none !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .vbs-get-in-touch__tab-panels,
+    .vbs-get-in-touch__tab-panel {
+      min-height: 0 !important;
+    }
+  }
 }
 
 /* Transform wrapper avoids iOS/Android touch bugs from negative margin on iframe */
+.vbs-get-in-touch-section .vbs-zoho-iframe-form__shift,
 .vbs-contact-zoho-wrap .vbs-zoho-iframe-form__shift {
-  transform: translate3d(0, calc(-1 * var(--vbs-zoho-iframe-header-crop)), 0);
+  transform: translate3d(0, calc(-1 * var(--vbs-get-in-touch-zoho-header-crop, var(--vbs-zoho-iframe-header-crop))), 0) !important;
   will-change: transform;
 }
 
 .vbs-contact-zoho-wrap .vbs-zoho-iframe-form__frame {
   display: block;
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
   border: none;
   margin-top: 0;
   height: var(--vbs-zoho-iframe-full-height) !important;
-  transition: opacity 0.2s ease, height 0.25s ease;
+  transition: opacity 0.2s ease;
   touch-action: manipulation;
   pointer-events: auto;
 }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import blogBannerImg from "@/assets/images/blog-banner.jpg";
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
@@ -7,22 +8,22 @@ import { blogsPageHero } from "@/constants/blogs-page-content";
 
 /** Figma node 405:73045 — Blogs hero */
 export function BlogsHeroSection() {
-  const { tag, titleLead, titleAccent, description, ctaLabel, image, imageAlt } = blogsPageHero;
+  const { tag, titleLead, titleAccent, description, ctaLabel, imageAlt } = blogsPageHero;
 
   return (
-    <section className="overflow-hidden bg-white py-12 lg:py-[100px]">
+    <section className="blogs-hero-section overflow-hidden bg-white py-12 pb-8 lg:py-[100px] lg:pb-12">
       <PageContainer>
-        <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center lg:gap-8 xl:gap-12">
+        <div className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-center lg:gap-8 xl:gap-12">
           <div className="flex w-full min-w-0 flex-1 flex-col items-start gap-[30px]">
             <div className="flex flex-col items-start gap-5">
               <div className="flex flex-col items-start gap-3">
                 <SectionTag label={tag} />
-                <h1 className="text-section w-full max-w-[597px] capitalize max-lg:max-w-none">
+                <h1 className="text-section w-full max-w-[497px] capitalize max-lg:max-w-none">
                   <span className="font-medium text-[#111111]">{titleLead}</span>
                   <span className="font-light text-[#D70416]">{titleAccent}</span>
                 </h1>
               </div>
-              <p className="w-full max-w-[583px] text-[16px] font-normal capitalize leading-6 text-[#808080] max-lg:max-w-none">
+              <p className="w-full max-w-[568px] text-[16px] font-normal leading-6 text-[#808080] max-lg:max-w-none">
                 {description}
               </p>
             </div>
@@ -31,13 +32,13 @@ export function BlogsHeroSection() {
             </PrimaryCtaButton>
           </div>
 
-          <div className="relative mx-auto aspect-[650/530] w-full max-w-[650px] shrink-0 overflow-hidden rounded-[10px] bg-white lg:mx-0">
+          <div className="relative mx-auto aspect-[589/480] w-full max-w-[589px] shrink-0 overflow-hidden rounded-[9px] bg-white lg:mx-0">
             <Image
-              src={image}
+              src={blogBannerImg}
               alt={imageAlt}
               fill
               className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 650px"
+              sizes="(max-width: 1024px) 100vw, 589px"
               priority
             />
           </div>

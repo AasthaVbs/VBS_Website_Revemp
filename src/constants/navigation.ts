@@ -61,6 +61,7 @@ export const ROUTES = {
   laserScanning: "/bim-modeling-services/laser-scan-to-bim",
   whitepaper: "/whitepaper",
   whitepaperMepDc: "/whitepaper/mep-coordination-data-centers-bim-workflows",
+  whitepaperHiddenCost: "/whitepaper/hidden-cost-of-late-stage-mep-coordination-failures",
   aiaConference: "/aia-conference-events",
   sixtyMinutesTeam: "/60-minutes-team",
   privacy: "/privacy-policy",

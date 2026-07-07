@@ -1,4 +1,4 @@
-﻿// @ts-nocheck
+// @ts-nocheck
 "use client";
 
 import { Fragment, useRef, useState } from "react";
@@ -82,6 +82,7 @@ export function MepServiceBenefitsSection({
   const rowOne = cards.slice(0, 3);
   const rowTwo = cards.slice(3, 6);
   const hasThreePartTitle = section.titleBefore || section.titleAfter;
+  const hasTitleParts = section.titleParts?.length > 0;
 
   return (
     <section id={id} className="mep-figma-benefits bg-white py-[100px]">
@@ -90,14 +91,23 @@ export function MepServiceBenefitsSection({
           <div className="mep-figma-benefits__head-top">
             <span className="mep-figma-benefits__tag">{section.tag}</span>
             <p
-              className="mep-figma-benefits__title"
+              className={cn(
+                "mep-figma-benefits__title",
+                hasTitleParts && "mep-figma-benefits__title--parts",
+              )}
               style={
                 section.titleMaxWidth
                   ? { "--benefits-title-max-w": `${section.titleMaxWidth}px` }
                   : undefined
               }
             >
-              {hasThreePartTitle ? (
+              {hasTitleParts ? (
+                section.titleParts.map((part) => (
+                  <span key={part.text} className={part.className}>
+                    {part.text}
+                  </span>
+                ))
+              ) : hasThreePartTitle ? (
                 <>
                   {section.titleBefore ? (
                     <span className="mep-figma-benefits__title-dark">{section.titleBefore}</span>
@@ -115,7 +125,16 @@ export function MepServiceBenefitsSection({
               )}
             </p>
           </div>
-          <p className="mep-figma-benefits__section-desc">{section.description}</p>
+          <p
+            className="mep-figma-benefits__section-desc"
+            style={
+              section.descriptionMaxWidth
+                ? { maxWidth: `${section.descriptionMaxWidth}px` }
+                : undefined
+            }
+          >
+            {section.description}
+          </p>
         </header>
 
         <div

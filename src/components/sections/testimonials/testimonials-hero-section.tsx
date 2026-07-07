@@ -1,31 +1,49 @@
-import { SplitHeroSection } from "@/components/sections/split-hero-section";
+import Image from "next/image";
+
+import testimonialsBannerImg from "@/assets/images/testimonials-banner.jpg";
+import { PageContainer } from "@/components/layout/page-container";
+import { SectionTag } from "@/components/sections/section-primitives";
+import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { testimonialsPageHero } from "@/constants/testimonials-page-content";
 
-/** Figma 948:29895 — same hero imagery as About Us */
+/** Figma 948:29895 — Testimonials hero */
 export function TestimonialsHeroSection() {
-  const {
-    tag,
-    titleLead,
-    titleAccent,
-    description,
-    ctaLabel,
-    images,
-    mainImageAlt,
-    overlayImageAlt,
-  } = testimonialsPageHero;
+  const { tag, titleLead, titleAccent, description, ctaLabel, imageAlt } = testimonialsPageHero;
 
   return (
-    <SplitHeroSection
-      tag={tag}
-      titleLead={titleLead}
-      titleAccent={titleAccent}
-      description={description}
-      images={images}
-      mainImageAlt={mainImageAlt}
-      overlayImageAlt={overlayImageAlt}
-      showCta
-      ctaLabel={ctaLabel}
-      ctaHref="/contact"
-    />
+    <section className="overflow-hidden bg-white py-12 lg:py-[100px]">
+      <PageContainer>
+        <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center lg:gap-8 xl:gap-12">
+          <div className="flex w-full min-w-0 flex-1 flex-col items-start gap-[30px]">
+            <div className="flex flex-col items-start gap-5">
+              <div className="flex flex-col items-start gap-3">
+                <SectionTag label={tag} />
+                <h1 className="text-section w-full max-w-[497px] capitalize max-lg:max-w-none">
+                  <span className="font-medium text-[#111111]">{titleLead}</span>
+                  <span className="font-light text-[#D70416]">{titleAccent}</span>
+                </h1>
+              </div>
+              <p className="w-full max-w-[497px] text-[16px] font-normal capitalize leading-6 text-[#808080] max-lg:max-w-none">
+                {description}
+              </p>
+            </div>
+            <PrimaryCtaButton fullWidth={false} href="/contact" className="shrink-0 px-5 py-4 capitalize">
+              {ctaLabel}
+            </PrimaryCtaButton>
+          </div>
+
+          <div className="relative mx-auto aspect-[589/480] w-full max-w-[589px] shrink-0 overflow-hidden rounded-[9px] bg-white lg:mx-0">
+            <Image
+              src={testimonialsBannerImg}
+              alt={imageAlt}
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 589px"
+              priority
+            />
+          </div>
+        </div>
+      </PageContainer>
+    </section>
   );
 }

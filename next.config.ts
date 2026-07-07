@@ -40,8 +40,16 @@ const nextConfig: NextConfig = {
       { source: "/case-study/:path*", destination: "/portfolio/:path*", permanent: true },
       { source: "/dedicated-team", destination: "/build-your-team", permanent: true },
       { source: "/dedicated-resource", destination: "/build-your-team", permanent: true },
-      { source: "/whitepaper/hidden-cost-of-late-stage-mep-coordination-failures", destination: "/whitepaper/mep-coordination-data-centers-bim-workflows", permanent: true },
-      { source: "/whitepaper/hidden-cost-of-late-stage-mep-coordination-failures/:path*", destination: "/whitepaper/mep-coordination-data-centers-bim-workflows", permanent: true },
+      {
+        source: "/webinar-common-mistakes-to-avoid-when-creating-permit-sets",
+        destination: "/webinar/webinar-common-mistakes-to-avoid-when-creating-permit-sets",
+        permanent: true,
+      },
+      {
+        source: "/webinar-common-mistakes-to-avoid-when-creating-permit-sets/:path*",
+        destination: "/webinar/webinar-common-mistakes-to-avoid-when-creating-permit-sets",
+        permanent: true,
+      },
     ];
 
     let sanityRedirects: { source: string; destination: string; permanent: boolean }[] = [];

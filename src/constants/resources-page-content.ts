@@ -5,15 +5,7 @@ export const resourcesPageHero = {
   description:
     "Since 2015, we've been the trusted partner for Architecture and Engineering firms, helping them rapidly scale their BIM teams and deliver award-winning projects every time.",
   ctaLabel: "Contact Us",
-  image: "/images/figma/resource-1.png",
-  imageAlt: "Virtual Building Studio resources",
-} as const;
-
-export const resourcesBrowseIntro = {
-  tag: "Resources",
-  titleLead: "About ",
-  titleAccent: "Virtual Building Studio (VBS) Resource",
-  description: resourcesPageHero.description,
+  imageAlt: "Virtual Building Studio resources and industry insights",
 } as const;
 
 export const resourceTypeFilters = [

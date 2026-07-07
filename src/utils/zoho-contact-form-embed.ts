@@ -39,11 +39,108 @@ export const ZOHO_CONTACT_THANK_YOU_PATH = "/thank-you/";
 export const ZOHO_CONTACT_THANK_YOU_URL =
   "https://www.virtualbuildingstudio.com/thank-you/";
 
+/** MEP data center whitepaper download form — /whitepaper/mep-coordination-data-centers-bim-workflows/ */
+export const ZOHO_MEP_DC_WP_IFRAME_ID = "ziframe_629176";
+
+export const ZOHO_MEP_DC_WP_IFRAME_SRC =
+  "https://forms.zohopublic.com/virtualbuildingstudio1/form/MEPWPDownloadFormMEPCoordinationinDataCentersSolvi/formperma/MDYUvaMw1OhjWWasp6DdDQhy7Bz_uoeu0MkTjeOVIqc";
+
+/** Hidden cost MEP whitepaper download form — /whitepaper/hidden-cost-of-late-stage-mep-coordination-failures/ */
+export const ZOHO_HIDDEN_COST_WP_IFRAME_ID = "ziframe_578736";
+
+export const ZOHO_HIDDEN_COST_WP_IFRAME_SRC =
+  "https://forms.zohopublic.com/virtualbuildingstudio1/form/MEPWhitepaperDownloadForm1/formperma/CyS7nBbqlnBzivGQrHsMAlorWr8G_LkvmtV4JY-Zlas";
+
+/** Fixed visible iframe area for hidden-cost whitepaper — taller than data center form. */
+export const ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_PX = 500;
+
+/** Hide duplicate Zoho title — hidden-cost whitepaper only. */
+export const ZOHO_HIDDEN_COST_WP_HEADER_CROP_PX = 210;
+
+export const ZOHO_HIDDEN_COST_WP_HEADER_CROP_MOBILE_PX = 210;
+
+export function getZohoHiddenCostWpHeaderCropPx() {
+  if (typeof window === "undefined") {
+    return ZOHO_HIDDEN_COST_WP_HEADER_CROP_PX;
+  }
+
+  return window.matchMedia("(max-width: 767px)").matches
+    ? ZOHO_HIDDEN_COST_WP_HEADER_CROP_MOBILE_PX
+    : ZOHO_HIDDEN_COST_WP_HEADER_CROP_PX;
+}
+
+/** Shared Zoho whitepaper embed crops — data center whitepaper only. */
+export const ZOHO_MEP_DC_WP_HEADER_CROP_PX = 240;
+
+/** Taller Zoho header stack on narrow viewports. */
+export const ZOHO_MEP_DC_WP_HEADER_CROP_MOBILE_PX = 280;
+
+/** Fallback full iframe height until Zoho posts its auto-resize message. */
+export const ZOHO_MEP_DC_WP_IFRAME_INITIAL_HEIGHT_PX = 720;
+
+/** Fixed visible iframe area — lockHeight uses this as the viewport height. */
+export const ZOHO_MEP_DC_WP_VISIBLE_HEIGHT_PX = 480;
+
+/** Trim empty space below the MEP DC whitepaper form fields. */
+export const ZOHO_MEP_DC_WP_FOOTER_CROP_PX = 148;
+
+export const ZOHO_MEP_DC_WP_FOOTER_CROP_MOBILE_PX = 120;
+
+export function getZohoMepDcWpMinVisibleHeightPx() {
+  return ZOHO_MEP_DC_WP_VISIBLE_HEIGHT_PX;
+}
+
+export function getZohoMepDcWpFooterCropPx() {
+  if (typeof window === "undefined") {
+    return ZOHO_MEP_DC_WP_FOOTER_CROP_PX;
+  }
+
+  return window.matchMedia("(max-width: 767px)").matches
+    ? ZOHO_MEP_DC_WP_FOOTER_CROP_MOBILE_PX
+    : ZOHO_MEP_DC_WP_FOOTER_CROP_PX;
+}
+
+export function getZohoMepDcWpHeaderCropPx() {
+  if (typeof window === "undefined") {
+    return ZOHO_MEP_DC_WP_HEADER_CROP_PX;
+  }
+
+  return window.matchMedia("(max-width: 767px)").matches
+    ? ZOHO_MEP_DC_WP_HEADER_CROP_MOBILE_PX
+    : ZOHO_MEP_DC_WP_HEADER_CROP_PX;
+}
+
+/** MEP webinar video gate form — on-demand MEP webinar recordings only. */
+export const ZOHO_MEP_WEBINAR_VIDEO_FORM_IFRAME_ID = "ziframe_777506";
+
+export const ZOHO_MEP_WEBINAR_VIDEO_FORM_IFRAME_SRC =
+  "https://forms.zohopublic.com/virtualbuildingstudio1/form/MEPWebinarcontactusForm/formperma/lAPhPSILiNvMOJ2NV54JJ0UX0FD6uwY45UPFBz38a58";
+
+/** Full iframe render height — wrapper clips the bottom empty area. */
+export const ZOHO_MEP_WEBINAR_VIDEO_FORM_IFRAME_HEIGHT_PX = 530;
+
+/** Visible clipped height of the form popup (no bottom gap / scrollbar). */
+export const ZOHO_MEP_WEBINAR_VIDEO_FORM_VISIBLE_HEIGHT_PX = 455;
+
+/** Trim Zoho embed padding from the top of the iframe. */
+export const ZOHO_MEP_WEBINAR_VIDEO_FORM_TOP_CROP_PX = 20;
+
+/** Trim Zoho embed padding from each side of the iframe. */
+export const ZOHO_MEP_WEBINAR_VIDEO_FORM_SIDE_CROP_PX = 14;
+
+/** Trim Zoho embed padding from the bottom of the iframe. */
+export const ZOHO_MEP_WEBINAR_VIDEO_FORM_BOTTOM_CROP_PX = 16;
+
+/** Popup dialog width for the MEP webinar video gate form. */
+export const ZOHO_MEP_WEBINAR_VIDEO_FORM_MODAL_MAX_WIDTH_PX = 680;
+
+export const ZOHO_MEP_WEBINAR_VIDEO_FORM_SUBMITTED_KEY = "vbs_mep_webinar_video_zoho_form_submitted";
+
 /** Crop Zoho formHeaderDiv (duplicate title + description inside iframe). */
-export const ZOHO_IFRAME_HEADER_CROP_PX = 142;
+export const ZOHO_IFRAME_HEADER_CROP_PX = 195;
 
 /** Mobile Zoho header stack is taller in narrow layout. */
-export const ZOHO_IFRAME_HEADER_CROP_MOBILE_PX = 180;
+export const ZOHO_IFRAME_HEADER_CROP_MOBILE_PX = 183;
 
 export function getZohoIframeHeaderCropPx() {
   if (typeof window === "undefined") {
@@ -55,8 +152,54 @@ export function getZohoIframeHeaderCropPx() {
     : ZOHO_IFRAME_HEADER_CROP_PX;
 }
 
+/** Get in Touch embed — tuned top crop for footer/contact form iframe. */
+export const GET_IN_TOUCH_ZOHO_HEADER_CROP_DESKTOP_PX = 143;
+export const GET_IN_TOUCH_ZOHO_HEADER_CROP_MOBILE_PX = 194;
+
+/** Extra space below the form on mobile — captcha, submit, and Zoho resize lag. */
+export const GET_IN_TOUCH_ZOHO_MOBILE_BOTTOM_BUFFER_PX = 120;
+
+/** Minimum clipped viewport on mobile — Zoho often under-reports stacked field height. */
+export const GET_IN_TOUCH_ZOHO_MOBILE_MIN_VISIBLE_HEIGHT_PX = 800;
+
+export function getGetInTouchZohoMobileBottomBufferPx() {
+  if (typeof window === "undefined") {
+    return 0;
+  }
+
+  return window.matchMedia("(max-width: 767px)").matches
+    ? GET_IN_TOUCH_ZOHO_MOBILE_BOTTOM_BUFFER_PX
+    : 0;
+}
+
+export function getGetInTouchZohoHeaderCropPx() {
+  if (typeof window === "undefined") {
+    return GET_IN_TOUCH_ZOHO_HEADER_CROP_DESKTOP_PX;
+  }
+
+  return window.matchMedia("(max-width: 767px)").matches
+    ? GET_IN_TOUCH_ZOHO_HEADER_CROP_MOBILE_PX
+    : GET_IN_TOUCH_ZOHO_HEADER_CROP_DESKTOP_PX;
+}
+
 /** Fallback until Zoho posts its auto-resize message. */
 export const ZOHO_IFRAME_INITIAL_HEIGHT_PX = 680;
+
+/** Get in Touch embed — Figma 2573:28324 fixed panel size (all pages). */
+export const GET_IN_TOUCH_FORM_WIDTH_PX = 880;
+export const GET_IN_TOUCH_EMBED_HEIGHT_DESKTOP_PX = 520;
+export const GET_IN_TOUCH_EMBED_HEIGHT_MOBILE_PX = 980;
+export const GET_IN_TOUCH_ZOHO_VISIBLE_HEIGHT_CAP_PX = GET_IN_TOUCH_EMBED_HEIGHT_DESKTOP_PX;
+
+export function getGetInTouchZohoVisibleHeightCapPx(): number | null {
+  if (typeof window === "undefined") {
+    return GET_IN_TOUCH_ZOHO_VISIBLE_HEIGHT_CAP_PX;
+  }
+
+  return window.matchMedia("(max-width: 767px)").matches
+    ? null
+    : GET_IN_TOUCH_ZOHO_VISIBLE_HEIGHT_CAP_PX;
+}
 
 /** Visible viewport caps — Zoho reports full doc height incl. hidden fields. */
 export const ZOHO_IFRAME_VISIBLE_CAP_DESKTOP_PX = 720;
@@ -126,10 +269,15 @@ export function shouldRedirectAfterZohoSubmit(iframe: HTMLIFrameElement | null) 
 
 export function getZohoIframeVisibleHeight(
   reportedFullHeight: number,
-  options?: { cap?: number | null },
+  options?: {
+    cap?: number | null;
+    headerCropPx?: number;
+    bottomBufferPx?: number;
+  },
 ) {
-  const crop = getZohoIframeHeaderCropPx();
-  const uncapped = Math.max(320, reportedFullHeight - crop);
+  const crop = options?.headerCropPx ?? getZohoIframeHeaderCropPx();
+  const bottomBuffer = options?.bottomBufferPx ?? 0;
+  const uncapped = Math.max(320, reportedFullHeight - crop + bottomBuffer);
 
   if (options?.cap === null) {
     return uncapped;

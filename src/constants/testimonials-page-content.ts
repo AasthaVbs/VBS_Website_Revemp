@@ -1,4 +1,3 @@
-import { aboutHeroImages } from "@/constants/about-content";
 import { testimonialQuote } from "@/constants/shared-sections";
 
 export const testimonialsPageHero = {
@@ -8,9 +7,7 @@ export const testimonialsPageHero = {
   description:
     "As a specialized MEP BIM modeling service provider in the USA, we ensure your building systems are clash-free and fabrication-ready.",
   ctaLabel: "Contact Us",
-  images: aboutHeroImages,
-  mainImageAlt: "Virtual Building Studio team",
-  overlayImageAlt: "Virtual Building Studio workplace",
+  imageAlt: "Client testimonials on Virtual Building Studio BIM services",
 } as const;
 
 export const testimonialsReviewsIntro = {

@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import webinarBannerImg from "@/assets/images/webinar-banner.jpg";
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
@@ -7,10 +8,10 @@ import { webinarPageHero } from "@/constants/webinar-page-content";
 
 /** Figma node 405:73954 — Webinars hero */
 export function WebinarHeroSection() {
-  const { tag, titleLead, titleAccent, description, ctaLabel, image, imageAlt } = webinarPageHero;
+  const { tag, titleLead, titleAccent, description, ctaLabel, imageAlt } = webinarPageHero;
 
   return (
-    <section className="overflow-hidden bg-white py-12 lg:py-[100px]">
+    <section className="overflow-hidden bg-white py-12 pb-8 lg:py-[100px] lg:pb-12">
       <PageContainer>
         <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center lg:gap-8 xl:gap-12">
           <div className="flex w-full min-w-0 flex-1 flex-col items-start gap-[30px]">
@@ -31,13 +32,13 @@ export function WebinarHeroSection() {
             </PrimaryCtaButton>
           </div>
 
-          <div className="relative mx-auto aspect-[650/530] w-full max-w-[650px] shrink-0 overflow-hidden rounded-[10px] bg-white lg:mx-0">
+          <div className="relative mx-auto aspect-[589/480] w-full max-w-[589px] shrink-0 overflow-hidden rounded-[9px] bg-white lg:mx-0">
             <Image
-              src={image}
+              src={webinarBannerImg}
               alt={imageAlt}
               fill
               className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 650px"
+              sizes="(max-width: 1024px) 100vw, 589px"
               priority
             />
           </div>

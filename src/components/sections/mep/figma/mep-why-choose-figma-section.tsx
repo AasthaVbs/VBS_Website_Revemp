@@ -1,4 +1,4 @@
-﻿// @ts-nocheck
+// @ts-nocheck
 import { PageContainer } from "@/components/layout/page-container";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { cn } from "@/lib/utils";
@@ -47,6 +47,7 @@ export function MepWhyChooseSection({
   const gridRows = section.gridRows ?? [3, 2];
   const rowOne = items.slice(0, gridRows[0]);
   const rowTwo = items.slice(gridRows[0], gridRows[0] + gridRows[1]);
+  const hasTitleParts = section.titleParts?.length > 0;
 
   return (
     <section id="why-choose-us" className="mep-figma-why-choose">
@@ -54,20 +55,49 @@ export function MepWhyChooseSection({
         <header className="mep-figma-why-choose__head">
           <div className="mep-figma-why-choose__head-top">
             <span className="mep-figma-why-choose__tag">{section.tag}</span>
-            <p className="mep-figma-why-choose__title">
-              <span className="mep-figma-why-choose__title-dark">{section.titleLine1}</span>
-              <span className="mep-figma-why-choose__title-accent">
-                {section.titleAccentLead ? (
-                  <>
-                    {section.titleAccentLead}
-                    <br />
-                  </>
-                ) : null}
-                {section.titleAccentRest}
-              </span>
+            <p
+              className={cn(
+                "mep-figma-why-choose__title",
+                hasTitleParts && "mep-figma-why-choose__title--parts",
+              )}
+              style={
+                section.titleMaxWidth
+                  ? { maxWidth: `${section.titleMaxWidth}px` }
+                  : undefined
+              }
+            >
+              {hasTitleParts ? (
+                section.titleParts.map((part) => (
+                  <span key={part.text} className={part.className}>
+                    {part.text}
+                  </span>
+                ))
+              ) : (
+                <>
+                  <span className="mep-figma-why-choose__title-dark">{section.titleLine1}</span>
+                  <span className="mep-figma-why-choose__title-accent">
+                    {section.titleAccentLead ? (
+                      <>
+                        {section.titleAccentLead}
+                        <br />
+                      </>
+                    ) : null}
+                    {section.titleAccentRest}
+                  </span>
+                </>
+              )}
             </p>
           </div>
-          <p className="mep-figma-why-choose__section-desc">{section.description}</p>
+          <p
+            className="mep-figma-why-choose__section-desc"
+            style={
+              section.descriptionMaxWidth
+                ? { maxWidth: `${section.descriptionMaxWidth}px` }
+                : undefined
+            }
+          >
+            {section.description}
+          </p>
         </header>
 
         <div className="mep-figma-why-choose__grid">

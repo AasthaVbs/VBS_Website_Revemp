@@ -8,14 +8,16 @@ import {
 
 export function VbsContactPage() {
   return (
-    <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page contact-us-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
 
-      <ContactHeroSection />
+      <main className="contact-section-page">
+        <ContactHeroSection />
 
-      <DeferredContactGetInTouchSection />
+        <DeferredContactGetInTouchSection />
 
-      <DeferredOurLocationsSection />
+        <DeferredOurLocationsSection />
+      </main>
 
       <DeferredSiteFooter />
     </div>

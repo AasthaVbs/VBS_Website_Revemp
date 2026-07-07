@@ -811,96 +811,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ----- Zoho contact iframe (synced from virtual-building-studio) ----- */
-
-.vbs-get-in-touch-section {
-  --vbs-zoho-iframe-header-crop: 200px;
-  --vbs-zoho-iframe-full-height: 730px;
-  --vbs-zoho-iframe-visible-height: 730px;
-}
-
-.vbs-contact-page-get-in-touch {
-  --vbs-zoho-iframe-full-height: 830px;
-  --vbs-zoho-iframe-visible-height: 830px;
-}
-
-.vbs-contact-page-zoho-wrap .vbs-zoho-iframe-form {
-  overflow: visible;
-  height: var(--vbs-zoho-iframe-visible-height);
-}
-
-.vbs-contact-page-zoho-wrap .vbs-zoho-iframe-form__frame {
-  overflow: hidden;
-}
-
-@media (max-width: 767px) {
-  .vbs-get-in-touch-section {
-    --vbs-zoho-iframe-header-crop: 180px;
-  }
-}
-
-.vbs-contact-zoho-wrap {
-  width: 100%;
-  min-width: 0;
-  overflow: visible;
-  --vbs-zoho-iframe-header-crop: var(--vbs-zoho-iframe-header-crop, 142px);
-  --vbs-zoho-iframe-full-height: var(--vbs-zoho-iframe-full-height, 680px);
-  --vbs-zoho-iframe-visible-height: var(--vbs-zoho-iframe-visible-height, 540px);
-}
+/* ----- Zoho contact iframe — sizes driven by .vbs-get-in-touch-section in vbs-contact-sections.scss ----- */
 
 @media (max-width: 767px) {
   .vbs-contact-zoho-wrap {
     position: relative;
     z-index: 2;
-  }
-}
-
-.vbs-contact-zoho-wrap .vbs-zoho-iframe-form {
-  position: relative;
-  width: 100%;
-  height: var(--vbs-zoho-iframe-visible-height);
-  overflow: hidden;
-  touch-action: manipulation;
-}
-
-.vbs-contact-zoho-wrap .vbs-zoho-iframe-form__shift {
-  transform: translate3d(0, calc(-1 * var(--vbs-zoho-iframe-header-crop)), 0);
-  will-change: transform;
-}
-
-.vbs-contact-zoho-wrap .vbs-zoho-iframe-form__frame {
-  display: block;
-  width: 100%;
-  border: none;
-  margin-top: 0;
-  height: var(--vbs-zoho-iframe-full-height) !important;
-  transition: opacity 0.2s ease, height 0.25s ease;
-  touch-action: manipulation;
-  pointer-events: auto;
-}
-
-.vbs-contact-zoho-wrap .vbs-zoho-iframe-form.is-submitting .vbs-zoho-iframe-form__frame {
-  opacity: 0.72;
-  pointer-events: none;
-}
-
-.vbs-contact-zoho-wrap .vbs-zoho-iframe-form__status {
-  margin: 12px 0 0;
-  padding: 0;
-  color: #d70416;
-  font-family: var(--font-inter), Inter, system-ui, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.4;
-  animation: vbs-zoho-submit-pulse 1.2s ease-in-out infinite;
-}
-
-@keyframes vbs-zoho-submit-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.55;
   }
 }

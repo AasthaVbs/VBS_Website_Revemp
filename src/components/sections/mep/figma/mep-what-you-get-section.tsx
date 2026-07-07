@@ -1,4 +1,4 @@
-﻿// @ts-nocheck
+// @ts-nocheck
 import Image from "next/image";
 
 import { PageContainer } from "@/components/layout/page-container";
@@ -22,7 +22,9 @@ export function MepWhatYouGetSection({
           <div className="flex w-full flex-col items-start gap-5">
             <div className="flex flex-col items-start gap-3">
               <MepSectionTag label={section.tag} />
-              <h2 className="mep-figma-what-you-get__title w-full">
+              <h2
+                className={`mep-figma-what-you-get__title w-full${section.titleParts?.length ? " mep-figma-what-you-get__title--parts" : ""}`}
+              >
                 {section.titleParts?.length ? (
                   section.titleParts.map((part) => (
                     <span key={part.text} className={part.className}>

@@ -37,8 +37,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={inter.className}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
         {children}
         <Script id="zoho-utm-lead-tracking" strategy="afterInteractive">
           {ZOHO_UTM_LEAD_TRACKING_SCRIPT}

@@ -1,19 +1,11 @@
 export const blogsPageHero = {
   tag: "Blogs",
-  titleLead: "Blogs ",
-  titleAccent: "Virtual Building Studio (VBS) Resource",
+  titleLead: "Insights That Build ",
+  titleAccent: "Better Projects",
   description:
-    "Since 2015, we've been the trusted partner for Architecture and Engineering firms, helping them rapidly scale their BIM teams and deliver award-winning projects every time.",
+    "Explore in-depth articles, practical guidance, and innovative solutions shaping the future of BIM, Scan to BIM, and digital construction.",
   ctaLabel: "Contact Us",
-  image: "/images/figma/resource-2.png",
-  imageAlt: "Virtual Building Studio blogs",
-} as const;
-
-export const blogsBrowseIntro = {
-  tag: "Blogs",
-  titleLead: "Blogs ",
-  titleAccent: "Virtual Building Studio (VBS) Resource",
-  description: blogsPageHero.description,
+  imageAlt: "Architect workspace with BIM plans and building model",
 } as const;
 
 /** Maps blog sidebar service filters to Sanity category titles. */

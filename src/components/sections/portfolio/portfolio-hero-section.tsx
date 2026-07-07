@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import caseStudyBannerImg from "@/assets/images/case-study-banner.jpg";
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
@@ -7,7 +8,7 @@ import { portfolioPageHero } from "@/constants/portfolio-page-content";
 
 /** Figma node 943:16079 — Portfolio hero */
 export function PortfolioHeroSection() {
-  const { tag, titleLead, titleAccent, description, ctaLabel, image, imageAlt } = portfolioPageHero;
+  const { tag, titleLead, titleAccent, description, ctaLabel, imageAlt } = portfolioPageHero;
 
   return (
     <section className="overflow-hidden bg-white py-12 lg:py-[100px]">
@@ -31,13 +32,13 @@ export function PortfolioHeroSection() {
             </PrimaryCtaButton>
           </div>
 
-          <div className="relative mx-auto aspect-[650/530] w-full max-w-[650px] shrink-0 overflow-hidden rounded-[10px] bg-white lg:mx-0">
+          <div className="relative mx-auto aspect-[589/480] w-full max-w-[589px] shrink-0 overflow-hidden rounded-[9px] bg-white lg:mx-0">
             <Image
-              src={image}
+              src={caseStudyBannerImg}
               alt={imageAlt}
               fill
               className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 650px"
+              sizes="(max-width: 1024px) 100vw, 589px"
               priority
             />
           </div>

@@ -1,9 +1,21 @@
-// @ts-nocheck
 import { SiteHeader } from "@/components/layout/site-header";
+import { ClientSuccessStoriesSection } from "@/components/sections/client-success-stories-section";
+import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-delivery-cta-section";
+import { FaqSection } from "@/components/sections/faq-section";
+import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
+import { IndustriesSection } from "@/components/sections/industries-section";
+import { MepDisciplinesSection } from "@/components/sections/mep/figma/mep-disciplines-figma-section";
+import { MepEngagementProcessSection } from "@/components/sections/mep/figma/mep-engagement-process-figma-section";
+import { MepFullSpectrumServicesSection } from "@/components/sections/mep/figma/mep-full-spectrum-services-section";
 import { MepIntroSection } from "@/components/sections/mep/figma/mep-intro-figma-section";
+import { MepServiceBenefitsSection } from "@/components/sections/mep/figma/mep-service-benefits-section";
 import { MepWhatYouGetSection } from "@/components/sections/mep/figma/mep-what-you-get-section";
+import { MepWhyChooseSection } from "@/components/sections/mep/figma/mep-why-choose-figma-section";
+import { MepWorkflowSection } from "@/components/sections/mep/figma/mep-workflow-figma-section";
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
-import { StatsStripSection } from "@/components/sections/stats-strip-section";
+import { MepResourcesSection } from "@/components/sections/mep/mep-resources-section";
+import { SiteFooter } from "@/components/sections/site-footer";
+import { TrustStripSection } from "@/components/sections/trust-strip-section";
 import {
   scanToBimDisciplinePanels,
   scanToBimDisciplinesSection,
@@ -17,7 +29,7 @@ import {
   scanToBimHero,
   scanToBimIndustriesIntro,
   scanToBimIntroCopy,
-  scanToBimIntroPoints,
+  scanToBimIntroFeatures,
   scanToBimProjectCta,
   scanToBimResourcesSection,
   scanToBimServiceBenefitsCards,
@@ -31,82 +43,75 @@ import {
   scanToBimWorkflowSection,
   scanToBimWorkflowSteps,
 } from "@/constants/scan-to-bim-content";
-import {
-  DeferredClientSuccessStoriesSection,
-  DeferredEvaluateDeliveryCtaSection,
-  DeferredFaqSection,
-  DeferredGetInTouchSection,
-  DeferredIndustriesSection,
-  DeferredMepDisciplinesSection,
-  DeferredMepEngagementProcessSection,
-  DeferredMepFullSpectrumServicesSection,
-  DeferredMepResourcesSection,
-  DeferredMepServiceBenefitsSection,
-  DeferredMepWhyChooseSection,
-  DeferredMepWorkflowSection,
-  DeferredSiteFooter,
-} from "@/lib/lazy-page-sections";
 
+/** Scan to BIM Services — same layout as /mep-bim-services/. */
 export function ScanToBimServicesPage() {
   return (
-    <div className="vbs-redesign-page scan-to-bim-services-page mep-bim-services-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page scan-to-bim-services-page mep-bim-services-page">
       <SiteHeader />
       <main>
         <MepPageHeroSection {...scanToBimHero} ctaHref="#services" />
-        <StatsStripSection stats={scanToBimStatsStrip} className="vbs-mep-stats-strip bg-white" />
-        <MepIntroSection copy={scanToBimIntroCopy} points={scanToBimIntroPoints} />
+        <TrustStripSection stats={scanToBimStatsStrip} className="vbs-mep-stats-strip bg-white" />
+        <MepIntroSection
+          copy={scanToBimIntroCopy}
+          features={scanToBimIntroFeatures}
+          variant="scan-to-bim"
+        />
         <MepWhatYouGetSection section={scanToBimWhatYouGetSection} cards={scanToBimWhatYouGetCards} />
-        <DeferredMepFullSpectrumServicesSection
+        <MepFullSpectrumServicesSection
           section={scanToBimFullSpectrumSection}
           cards={scanToBimFullSpectrumCards}
           scrollInteraction="hover"
         />
-        <DeferredMepDisciplinesSection
+        <MepDisciplinesSection
           section={scanToBimDisciplinesSection}
           panels={scanToBimDisciplinePanels}
           tabsAriaLabel="Scan to BIM disciplines"
         />
-        <DeferredMepWorkflowSection section={scanToBimWorkflowSection} steps={scanToBimWorkflowSteps} />
-        <DeferredMepServiceBenefitsSection
+        <MepWorkflowSection section={scanToBimWorkflowSection} steps={scanToBimWorkflowSteps} />
+        <MepServiceBenefitsSection
           section={scanToBimServiceBenefitsSection}
           cards={scanToBimServiceBenefitsCards}
         />
-        <DeferredMepWhyChooseSection section={scanToBimWhyChooseSection} items={scanToBimWhyChooseItems} />
-        <DeferredMepResourcesSection section={scanToBimResourcesSection} />
-        <DeferredIndustriesSection
+        <MepWhyChooseSection section={scanToBimWhyChooseSection} items={scanToBimWhyChooseItems} />
+        <MepResourcesSection section={scanToBimResourcesSection} />
+        <IndustriesSection
           intro={scanToBimIndustriesIntro.description}
           titleLine1={scanToBimIndustriesIntro.titleLine1}
           titleLine2={scanToBimIndustriesIntro.titleLine2}
-          titleMaxWidth={scanToBimIndustriesIntro.titleMaxWidth}
+          titleMaxWidth={933}
         />
-        <DeferredMepEngagementProcessSection
+        <MepEngagementProcessSection
           section={scanToBimEngagementProcessSection}
           steps={scanToBimEngagementProcessSteps}
         />
-        <DeferredEvaluateDeliveryCtaSection
+        <EvaluateDeliveryCtaSection
           cardOnMobile
           title={
             <>
-              {scanToBimProjectCta.titleLine1}
-              <span className="font-light text-accent">{scanToBimProjectCta.titleLine2}</span>
+              {scanToBimProjectCta.titleParts.map((part) => (
+                <span key={part.text} className={part.className}>
+                  {part.text}
+                </span>
+              ))}
             </>
           }
           description={scanToBimProjectCta.description}
           ctaLabel={scanToBimProjectCta.cta}
           ctaHref="#scan-page-contact"
-          titleClassName="max-w-[800px]"
-          descriptionClassName="max-w-[720px]"
+          titleClassName="max-w-[791px] !text-[#111111] scan-to-bim-project-cta__title"
+          descriptionClassName="max-w-[799px]"
         />
-        <DeferredClientSuccessStoriesSection description={scanToBimTestimonialsDescription} />
-        <DeferredFaqSection
+        <ClientSuccessStoriesSection description={scanToBimTestimonialsDescription} />
+        <FaqSection
           variant="mep"
           tag={scanToBimFaqSection.tag}
           description={scanToBimFaqSection.description}
           items={scanToBimFaqs}
         />
-        <DeferredGetInTouchSection sectionId="scan-page-contact" description={scanToBimFaqDescription} />
+        <GetInTouchSection sectionId="scan-page-contact" description={scanToBimFaqDescription} />
       </main>
-      <DeferredSiteFooter />
+      <SiteFooter />
     </div>
   );
 }

@@ -1,73 +1,60 @@
-import { Mail, MapPin, Phone } from "lucide-react";
-
-import { PageContainer } from "@/components/layout/page-container";
 import { GetInTouchFormPanel } from "@/components/sections/get-in-touch/get-in-touch-form-panel";
+import { GetInTouchInfoContacts } from "@/components/sections/get-in-touch/get-in-touch-info-contacts";
+import { GetInTouchSectionLayout } from "@/components/sections/get-in-touch/get-in-touch-section-layout";
 import { SectionIntro } from "@/components/sections/section-primitives";
-import {
-  contactGetInTouchDescription,
-  contactGetInTouchDetails,
-} from "@/constants/contact-content";
+import { contactGetInTouchDescription } from "@/constants/contact-content";
 import { cn } from "@/lib/utils";
 
+const defaultDescription =
+  "Let's discuss your requirements and see how our expertise can help on your next project.";
+
 export function GetInTouchSection({
-  description = contactGetInTouchDescription,
+  description = contactGetInTouchDescription ?? defaultDescription,
   sectionId = "contact",
+  sectionClassName = "",
   className,
+  tag = "Contact Us",
+  titleLead = "Get in ",
+  titleAccent = "Touch",
+  titleClassName = "text-section max-w-[528px] normal-case",
+  descriptionClassName = "max-w-[435px] capitalize text-[#808080]",
 }: {
   description?: string;
   sectionId?: string;
+  sectionClassName?: string;
   className?: string;
+  tag?: string;
+  titleLead?: string;
+  titleAccent?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
 }) {
-  const { phone, phoneHref, email, emailHref, addressLine1, addressLine2 } =
-    contactGetInTouchDetails;
+  const sectionClasses = cn("vbs-get-in-touch-section", sectionClassName, className);
 
   return (
-    <section
-      id={sectionId}
-      className={cn("vbs-get-in-touch-section bg-[#FAFAFA]", className)}
-    >
-      <PageContainer className="vbs-get-in-touch__layout">
-        <div className="vbs-get-in-touch__info-col">
-          <div className="vbs-get-in-touch__info-head">
-            <SectionIntro
-              tag="Contact Us"
-              title={
-                <>
-                  <span className="font-medium text-[#111111]">Get </span>
-                  <span className="font-medium lowercase text-[#111111]">i</span>
-                  <span className="font-medium text-[#111111]">n </span>
-                  <span className="text-accent font-light">Touch</span>
-                </>
-              }
-              description={description}
-              titleClassName="text-section max-w-[528px] normal-case"
-              descriptionClassName="max-w-[435px] text-[16px] font-normal leading-6 text-[#808080]"
-            />
-          </div>
-
-          <div className="vbs-get-in-touch__info-contacts">
-            <a href={phoneHref} className="vbs-get-in-touch__info-contact">
-              <Phone className="h-5 w-5 shrink-0" aria-hidden />
-              <span className="lowercase">{phone}</span>
-            </a>
-            <a href={emailHref} className="vbs-get-in-touch__info-contact">
-              <Mail className="h-5 w-5 shrink-0" aria-hidden />
-              <span className="lowercase">{email}</span>
-            </a>
-            <div className="vbs-get-in-touch__info-contact vbs-get-in-touch__info-contact--address">
-              <MapPin className="mt-0.5 h-5 w-5 shrink-0" aria-hidden />
-              <span>
-                <span className="vbs-get-in-touch__address-line1">{addressLine1}</span>
-                <span className="vbs-get-in-touch__address-line2">{addressLine2}</span>
-              </span>
+    <section id={sectionId} className={sectionClasses}>
+      <GetInTouchSectionLayout
+        info={
+          <>
+            <div className="vbs-get-in-touch__info-head">
+              <SectionIntro
+                tag={tag}
+                title={
+                  <>
+                    {titleLead}
+                    <strong className="text-accent font-light">{titleAccent}</strong>
+                  </>
+                }
+                description={description}
+                titleClassName={titleClassName}
+                descriptionClassName={descriptionClassName}
+              />
             </div>
-          </div>
-        </div>
-
-        <div className="vbs-get-in-touch__form-col">
-          <GetInTouchFormPanel />
-        </div>
-      </PageContainer>
+            <GetInTouchInfoContacts />
+          </>
+        }
+        form={<GetInTouchFormPanel />}
+      />
     </section>
   );
 }

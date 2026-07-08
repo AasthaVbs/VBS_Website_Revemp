@@ -1,106 +1,122 @@
-import Image from "next/image";
-import { Fragment } from "react";
+"use client";
+
+import { Fragment, useRef, useState } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
-import { SectionTag } from "@/components/sections/section-primitives";
+import { cn } from "@/lib/utils";
+import { useScrollRevealProgress } from "@/hooks/useScrollRevealProgress";
 import {
   careersBenefits,
   careersBenefitsSectionCopy,
   type CareerBenefit,
 } from "@/constants/careers-content";
 
-const BENEFIT_ICON_COLORED = "/images/mep/key-benefits/icon-benefit-colored.svg";
-const BENEFIT_ICON_MUTED = "/images/mep/key-benefits/icon-benefit-muted.svg";
-
-function VerticalDivider() {
-  return (
-    <div
-      className="hidden w-px shrink-0 self-stretch bg-gradient-to-b from-transparent via-[#CBCCCD] to-transparent lg:block"
-      aria-hidden
-    />
-  );
+function resolveImageSrc(icon: string | { src: string }) {
+  if (!icon) return "";
+  return typeof icon === "string" ? icon : icon.src;
 }
 
-function HorizontalDivider() {
-  return (
-    <div
-      className="h-px w-full shrink-0 bg-gradient-to-r from-transparent via-[#CBCCCD] to-transparent"
-      aria-hidden
-    />
-  );
-}
+function BenefitCard({
+  benefit,
+  index,
+  activeIndex,
+}: {
+  benefit: CareerBenefit;
+  index: number;
+  activeIndex: number;
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+  const highlighted = index <= activeIndex;
+  const showColoredIcon = highlighted || isHovered;
 
-/** Figma node 679:16518 — Benefits (same pattern as MEP Key Benefits) */
-export function CareersBenefitsSection() {
-  const rowOne = careersBenefits.slice(0, 3);
-  const rowTwo = careersBenefits.slice(3, 6);
-
   return (
-    <section className="bg-[#FAFAFA] py-12 lg:py-[100px]">
-      <PageContainer className="flex flex-col items-stretch gap-10 lg:gap-[60px]">
-        <div className="flex w-full flex-col items-start gap-5">
-          <div className="flex flex-col items-start gap-3">
-            <SectionTag label={careersBenefitsSectionCopy.tag} />
-            <h2 className="text-section max-w-[659px] capitalize">
-              <span className="font-medium">{careersBenefitsSectionCopy.titleLead}</span>
-              <span className="text-accent font-light">
-                {careersBenefitsSectionCopy.titleAccent}
-              </span>
-            </h2>
-          </div>
-          <p className="max-w-[581px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
-            {careersBenefitsSectionCopy.description}
-          </p>
+    <article
+      data-scroll-reveal={index}
+      className={cn(
+        "mep-figma-benefits__card flex min-w-0 flex-1 flex-col items-start gap-5 self-stretch overflow-hidden bg-white",
+        highlighted && "mep-figma-benefits__card--highlighted",
+        isHovered && "mep-figma-benefits__card--hovered",
+      )}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setIsHovered(true)}
+      onBlur={() => setIsHovered(false)}
+    >
+      <div className="flex w-full flex-col items-start gap-2.5">
+        <div className="mep-figma-benefits__icon-wrap">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={resolveImageSrc(showColoredIcon ? benefit.iconHover : benefit.icon)}
+            alt=""
+            className="mep-figma-benefits__icon"
+            aria-hidden
+            decoding="async"
+          />
         </div>
-
-        <div className="flex w-full flex-col items-center gap-10 lg:gap-10">
-          <BenefitsRow benefits={rowOne} />
-          <HorizontalDivider />
-          <BenefitsRow benefits={rowTwo} />
-        </div>
-      </PageContainer>
-    </section>
+        <p className="mep-figma-benefits__card-title w-full">{benefit.title}</p>
+      </div>
+      <p className="mep-figma-benefits__card-text w-full">{benefit.description}</p>
+    </article>
   );
 }
 
-function BenefitsRow({ benefits }: { benefits: CareerBenefit[] }) {
+function BenefitRow({
+  benefits,
+  startIndex,
+  activeIndex,
+}: {
+  benefits: CareerBenefit[];
+  startIndex: number;
+  activeIndex: number;
+}) {
   return (
-    <div className="flex w-full flex-col gap-5 lg:flex-row lg:items-stretch">
+    <div className="mep-figma-benefits__row flex w-full items-stretch self-stretch">
       {benefits.map((benefit, index) => (
         <Fragment key={benefit.title}>
-          {index > 0 ? <VerticalDivider /> : null}
-          <BenefitCard benefit={benefit} />
+          {index > 0 ? <div className="mep-figma-benefits__divider" aria-hidden /> : null}
+          <BenefitCard benefit={benefit} index={startIndex + index} activeIndex={activeIndex} />
         </Fragment>
       ))}
     </div>
   );
 }
 
-function BenefitCard({ benefit }: { benefit: CareerBenefit }) {
+/** Figma node 679:16518 — Benefits (same pattern as MEP Key Benefits) */
+export function CareersBenefitsSection() {
+  const copy = careersBenefitsSectionCopy;
+  const gridRef = useRef<HTMLDivElement>(null);
+  const activeIndex = useScrollRevealProgress(
+    gridRef,
+    careersBenefits.length,
+    "[data-scroll-reveal]",
+    0.55,
+  );
+  const rowOne = careersBenefits.slice(0, 3);
+  const rowTwo = careersBenefits.slice(3, 6);
+
   return (
-    <article className="group flex min-w-0 flex-1 flex-col gap-5 rounded-[10px] bg-transparent p-2.5 transition-all duration-200 hover:bg-white hover:shadow-[0_4px_10px_rgba(0,0,0,0.15)]">
-      <div className="flex flex-col gap-2.5">
-        <div className="relative flex h-[60px] w-[60px] items-center justify-center rounded-[10px] p-[15px]">
-          <Image
-            src={BENEFIT_ICON_MUTED}
-            alt=""
-            width={46}
-            height={46}
-            className="h-[46px] w-[46px] transition-opacity duration-200 group-hover:opacity-0"
-            aria-hidden
-          />
-          <Image
-            src={BENEFIT_ICON_COLORED}
-            alt=""
-            width={46}
-            height={46}
-            className="absolute h-[46px] w-[46px] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-            aria-hidden
-          />
+    <section className="mep-figma-benefits vbs-careers-benefits bg-white pt-0 pb-[72px] md:pb-[100px] lg:pb-[120px]">
+      <PageContainer className="mep-figma-benefits__container flex flex-col items-center gap-[60px]">
+        <header className="mep-figma-benefits__head">
+          <div className="mep-figma-benefits__head-top">
+            <span className="mep-figma-benefits__tag">{copy.tag}</span>
+            <p className="mep-figma-benefits__title">
+              <span className="mep-figma-benefits__title-dark">{copy.titleLead}</span>
+              <span className="mep-figma-benefits__title-accent">{copy.titleAccent}</span>
+            </p>
+          </div>
+          <p className="mep-figma-benefits__section-desc">{copy.description}</p>
+        </header>
+
+        <div
+          ref={gridRef}
+          className="mep-figma-benefits__grid flex w-full flex-col items-center self-stretch"
+        >
+          <BenefitRow benefits={rowOne} startIndex={0} activeIndex={activeIndex} />
+          <div className="mep-figma-benefits__row-divider" aria-hidden />
+          <BenefitRow benefits={rowTwo} startIndex={3} activeIndex={activeIndex} />
         </div>
-        <h3 className="text-[24px] font-normal leading-[1.35] text-[#111111]">{benefit.title}</h3>
-      </div>
-      <p className="text-[16px] font-normal leading-6 text-[#808080]">{benefit.description}</p>
-    </article>
+      </PageContainer>
+    </section>
   );
 }

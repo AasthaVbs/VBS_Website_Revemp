@@ -1,23 +1,26 @@
-import { aboutHeroImages } from "@/constants/about-content";
+import careersBanner from "@/assets/images/carrer-banner.jpg";
+import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 
-export const careersHeroImages = aboutHeroImages;
+export const careersHeroImages = {
+  main: careersBanner.src,
+};
 
 export const careersHeroCopy = {
   tag: "Careers",
-  titleLead: "Careers ",
-  titleAccent: "Virtual Building Studio (VBS)",
+  titleLead: "Create. Innovate. ",
+  titleAccent: "Grow.",
   description:
-    "Since 2015, we've been the trusted partner for Architecture and Engineering firms, helping them rapidly scale.",
+    "Be part of a culture that values learning, collaboration, and innovation while empowering you to make a meaningful impact every day.",
   ctaLabel: "Current Openings",
   ctaHref: "#current-openings",
 } as const;
 
 export const whyWorkVbsSectionCopy = {
-  tag: "Name Tag",
-  titleLead: "Why Work ",
-  titleAccent: "VBS",
+  tag: "Why We",
+  titleLead: "Why Join the ",
+  titleAccent: "Team VBS",
   description:
-    "Delivering accuracy driven BIM solutions tailored to the unique requirements of every construction sector we serve.",
+    "At Virtual Building Studio, you will work with supportive teammates, take on exciting challenges, and build a career that grows with you.",
 } as const;
 
 export type WhyWorkPillar = {
@@ -31,71 +34,87 @@ export const whyWorkVbsPillars: WhyWorkPillar[] = [
   {
     number: "01",
     numberColor: "#42AA32",
-    title: "Collaborate & Create & Have Fun",
+    title: "Grow With Every Project",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
+      "Work on diverse BIM and digital construction projects that challenge you, sharpen your skills, and keep learning exciting.",
   },
   {
     number: "02",
     numberColor: "#2299D6",
-    title: "Learn & Grow & Leveling",
+    title: "People First, Always",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
+      "Be part of a workplace where collaboration, respect, and open communication help everyone do their best work every day.",
   },
   {
     number: "03",
     numberColor: "#F0B300",
-    title: "Balanced Work Culture Yes",
+    title: "Make Your Work Matter",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
+      "Your ideas, expertise, and contributions directly support projects that help clients make smarter building decisions worldwide.",
   },
 ];
 
+const CAREERS_BENEFIT_ICON_MUTED = benefitIconMuted;
+const CAREERS_BENEFIT_ICON_COLORED = benefitIconColored;
+
 export const careersBenefitsSectionCopy = {
-  tag: "Name Tag",
+  tag: "Benefits",
   titleLead: "Benefits of Working at ",
-  titleAccent: "VBS",
+  titleAccent: "Virtual Building Studio",
   description:
-    "MEP BIM Services transform every phase of your project from design to facility management. Virtual Building Studio delivers measurable outcomes across coordination, cost, and construction efficiency.",
+    "We believe great work starts with a great workplace, supported by benefits that help you thrive professionally and personally.",
 } as const;
 
 export type CareerBenefit = {
   title: string;
   description: string;
+  icon: string | { src: string };
+  iconHover: string;
   featured?: boolean;
 };
 
 export const careersBenefits: CareerBenefit[] = [
   {
-    title: "Comprehensive Health Coverage",
+    title: "Health and Wellness Support",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
-    featured: true,
-  },
-  {
-    title: "Competitive & Transparent Pay",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
-  },
-  {
-    title: "Learning & Upskilling Support",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
-  },
-  {
-    title: "Team Activities & Knowledge Sessions",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
+      "We offer comprehensive health benefits that help you stay focused on your work while taking care of yourself and your family.",
+    icon: CAREERS_BENEFIT_ICON_MUTED,
+    iconHover: CAREERS_BENEFIT_ICON_COLORED,
   },
   {
     title: "Flexible Leave Policies",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
+      "Take the time you need to recharge, manage personal commitments, and maintain a healthy balance between work and life.",
+    icon: CAREERS_BENEFIT_ICON_MUTED,
+    iconHover: CAREERS_BENEFIT_ICON_COLORED,
   },
   {
-    title: "Team Retreats & Outings",
+    title: "Learning and Upskilling Programs",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
+      "From technical training to professional development programs, we invest in helping you build skills that move your career forward.",
+    icon: CAREERS_BENEFIT_ICON_MUTED,
+    iconHover: CAREERS_BENEFIT_ICON_COLORED,
+  },
+  {
+    title: "Team Events and Knowledge Sharing",
+    description:
+      "Regular activities, workshops, and knowledge sessions create opportunities to connect, learn, and grow together as a team.",
+    icon: CAREERS_BENEFIT_ICON_MUTED,
+    iconHover: CAREERS_BENEFIT_ICON_COLORED,
+  },
+  {
+    title: "Fair and Competitive Compensation",
+    description:
+      "Your hard work deserves recognition, which is why we provide competitive pay and a transparent approach to career growth.",
+    icon: CAREERS_BENEFIT_ICON_MUTED,
+    iconHover: CAREERS_BENEFIT_ICON_COLORED,
+  },
+  {
+    title: "Celebrations, Retreats and Outings",
+    description:
+      "We believe strong teams are built beyond project deadlines, with memorable outings, celebrations, and shared experiences.",
+    icon: CAREERS_BENEFIT_ICON_MUTED,
+    iconHover: CAREERS_BENEFIT_ICON_COLORED,
   },
 ];
 
@@ -109,11 +128,11 @@ export type JobOpening = {
 };
 
 export const currentOpeningsSectionCopy = {
-  tag: "Name Tag",
+  tag: "Openings",
   titleLead: "Current ",
   titleAccent: "Openings",
   description:
-    "MEP BIM Services transform every phase of your project from design to facility management.",
+    "We're looking for passionate professionals who are ready to solve complex challenges and build the future with us.",
 } as const;
 
 export const jobOpenings: JobOpening[] = [
@@ -147,6 +166,14 @@ export const jobOpenings: JobOpening[] = [
     openings: "2 Openings",
   },
 ];
+
+export const careersJoinTeamCtaCopy = {
+  titleLine1: "Join the ",
+  titleAccent: "Team",
+  description:
+    "Join our team 150+ Architecture from the across the globe and contribute to groundbreaking projects with top-tier architects and engineers.",
+  ctaLabel: "Contact Us",
+} as const;
 
 export const careersFormSectionCopy = {
   tag: "Career Form",

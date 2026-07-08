@@ -1,7 +1,9 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { LeadershipHeroSection } from "@/components/sections/leadership/leadership-hero-section";
-import { StatsStripSection } from "@/components/sections/stats-strip-section";
-import { leadershipJoinTeamCopy, leadershipStats } from "@/constants/leadership-content";
+import { TrustStripSection } from "@/components/sections/trust-strip-section";
+import { lifeAtVbsStatsStrip } from "@/constants/life-at-vbs-content";
+import { leadershipJoinTeamCopy } from "@/constants/leadership-content";
+import { ROUTES } from "@/constants/navigation";
 import {
   DeferredCertificationAwardsSection,
   DeferredClientSuccessStoriesSection,
@@ -12,15 +14,16 @@ import {
 
 export function VbsLeadershipPage() {
   return (
-    <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page about-section-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
 
       <LeadershipHeroSection />
-      <StatsStripSection stats={leadershipStats} className="bg-white pb-[30px] pt-0" />
+      <TrustStripSection stats={lifeAtVbsStatsStrip} className="vbs-trust-strip-section bg-white" />
       <DeferredLeadershipTeamSection />
       <DeferredCertificationAwardsSection />
       <DeferredClientSuccessStoriesSection />
       <DeferredEvaluateDeliveryCtaSection
+        cardOnMobile
         title={
           <>
             {leadershipJoinTeamCopy.titleLine1}
@@ -29,6 +32,7 @@ export function VbsLeadershipPage() {
         }
         description={leadershipJoinTeamCopy.description}
         ctaLabel={leadershipJoinTeamCopy.ctaLabel}
+        ctaHref={ROUTES.careers}
       />
 
       <DeferredSiteFooter />

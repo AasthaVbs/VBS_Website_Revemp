@@ -92,7 +92,9 @@ export function isAboutSectionPath(path: string) {
     path === "/about" ||
     path === "/leadership" ||
     path === "/careers" ||
-    path.startsWith("/careers/")
+    path.startsWith("/careers/") ||
+    path === "/life-at-vbs" ||
+    path.startsWith("/life-at-vbs")
   );
 }
 

@@ -2130,19 +2130,31 @@
     width: 100% !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 20px !important;
+    gap: 12px !important;
     align-self: stretch !important;
   }
 
   &__filters {
-    display: inline-flex !important;
-    flex-wrap: wrap !important;
-    align-items: flex-end !important;
-    gap: 10px !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
   }
 
   &__filter {
-    padding: 12px 20px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 8px 16px !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     line-height: normal !important;
@@ -2445,11 +2457,13 @@
     }
 
     &__solo-media {
-      flex: 0 0 140px !important;
-      width: 140px !important;
-      min-width: 140px !important;
-      max-width: 140px !important;
-      min-height: 140px !important;
+      flex: 0 0 230px !important;
+      width: 230px !important;
+      min-width: 230px !important;
+      max-width: 230px !important;
+      min-height: 132px !important;
+      height: 132px !important;
+      max-height: 132px !important;
     }
 
     &__solo-card {
@@ -2467,20 +2481,20 @@
     }
 
     &__compact-media {
-      flex: 0 0 120px !important;
-      width: 120px !important;
-      min-width: 120px !important;
-      max-width: 120px !important;
-      height: 120px !important;
-      min-height: 120px !important;
-      max-height: 120px !important;
+      flex: 0 0 230px !important;
+      width: 230px !important;
+      min-width: 230px !important;
+      max-width: 230px !important;
+      height: 132px !important;
+      min-height: 132px !important;
+      max-height: 132px !important;
     }
 
     &__compact-body,
     &__compact-row,
     &__solo-row {
       height: auto !important;
-      min-height: 120px !important;
+      min-height: 132px !important;
     }
   }
 
@@ -3654,6 +3668,10 @@
       gap: 12px !important;
     }
 
+    .mep-figma-resources__body {
+      gap: 10px !important;
+    }
+
     .mep-figma-resources__title {
       width: 100% !important;
       max-width: 100% !important;
@@ -3664,11 +3682,15 @@
     .mep-figma-resources__filters {
       display: flex !important;
       flex-wrap: nowrap !important;
-      gap: 8px !important;
+      gap: 6px !important;
       width: 100% !important;
+      max-width: 100% !important;
       overflow-x: auto !important;
+      overflow-y: visible !important;
       -webkit-overflow-scrolling: touch !important;
       scrollbar-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
 
     .mep-figma-resources__filters::-webkit-scrollbar {
@@ -3677,8 +3699,8 @@
 
     .mep-figma-resources__filter {
       flex-shrink: 0 !important;
-      padding: 10px 14px !important;
-      font-size: 14px !important;
+      padding: 8px 12px !important;
+      font-size: 13px !important;
       white-space: nowrap !important;
     }
 
@@ -3694,7 +3716,7 @@
 
     .mep-figma-resources__compact-row {
       height: auto !important;
-      min-height: 120px !important;
+      min-height: 132px !important;
     }
 
     .mep-figma-resources__compact-title {
@@ -3712,16 +3734,6 @@
 
     .mep-engagement-process__card h3 {
       font-size: 20px !important;
-    }
-
-    .vbs-evaluate-cta__desktop {
-      display: none !important;
-    }
-
-    .vbs-evaluate-cta__mobile {
-      display: block !important;
-      position: relative !important;
-      width: 100% !important;
     }
 
     .vbs-client-success-card {
@@ -3779,6 +3791,15 @@
     .mep-figma-why-choose__title,
     .mep-section-heading {
       font-size: clamp(26px, 8vw, 32px) !important;
+    }
+
+    .mep-figma-resources__filter {
+      padding: 7px 10px !important;
+      font-size: 12px !important;
+    }
+
+    .mep-figma-resources__filters {
+      gap: 5px !important;
     }
   }
 
@@ -3950,18 +3971,18 @@
 
     .mep-figma-resources__compact-row {
       height: auto !important;
-      min-height: 120px !important;
+      min-height: 132px !important;
       flex-direction: row !important;
     }
 
     .mep-figma-resources__compact-media {
-      flex: 0 0 120px !important;
-      width: 120px !important;
-      min-width: 120px !important;
-      max-width: 120px !important;
-      height: 120px !important;
-      min-height: 120px !important;
-      max-height: 120px !important;
+      flex: 0 0 230px !important;
+      width: 230px !important;
+      min-width: 230px !important;
+      max-width: 230px !important;
+      height: 132px !important;
+      min-height: 132px !important;
+      max-height: 132px !important;
     }
 
     .mep-figma-resources__featured-media {

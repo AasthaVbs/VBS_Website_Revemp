@@ -5,44 +5,47 @@ import {
   whyWorkVbsSectionCopy,
 } from "@/constants/careers-content";
 
+const NUMBER_ACCENT_CLASS: Record<string, string> = {
+  "#42AA32": "vbs-careers-why__number-digit--green",
+  "#2299D6": "vbs-careers-why__number-digit--blue",
+  "#F0B300": "vbs-careers-why__number-digit--yellow",
+};
+
 /** Figma node 679:16489 — Why Work VBS */
 export function CareersWhyWorkSection() {
-  return (
-    <section className="bg-white py-12 lg:py-[100px]">
-      <PageContainer className="flex flex-col items-stretch gap-10 lg:gap-[60px]">
-        <div className="flex w-full flex-col items-start gap-5">
-          <div className="flex flex-col items-start gap-3">
-            <SectionTag label={whyWorkVbsSectionCopy.tag} />
-            <h2 className="text-section max-w-[659px] capitalize">
-              <span className="font-medium">{whyWorkVbsSectionCopy.titleLead}</span>
-              <span className="text-accent font-light">{whyWorkVbsSectionCopy.titleAccent}</span>
-            </h2>
-          </div>
-          <p className="max-w-[536px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
-            {whyWorkVbsSectionCopy.description}
-          </p>
-        </div>
+  const copy = whyWorkVbsSectionCopy;
 
-        <div className="grid w-full gap-5 lg:grid-cols-3 lg:gap-5">
-          {whyWorkVbsPillars.map((pillar) => (
-            <article
-              key={pillar.number}
-              className="flex flex-col gap-5 bg-white px-2.5 py-0 lg:gap-5"
-            >
-              <div className="flex flex-col gap-2.5">
-                <p className="text-[36px] font-normal leading-none">
-                  <span style={{ color: pillar.numberColor }}>0</span>
-                  <span className="text-[#111111]">{pillar.number.slice(1)}</span>
-                </p>
-                <h3 className="text-[24px] font-normal leading-[1.35] text-[#111111]">
-                  {pillar.title}
-                </h3>
-              </div>
-              <p className="text-[16px] font-normal leading-6 text-[#808080]">
-                {pillar.description}
-              </p>
-            </article>
-          ))}
+  return (
+    <section className="vbs-careers-why bg-white py-[60px] lg:py-[100px]">
+      <PageContainer>
+        <div className="vbs-careers-section__inner">
+          <header className="vbs-careers-section__header">
+            <div className="vbs-careers-section__title-block">
+              <SectionTag label={copy.tag} />
+              <h2 className="vbs-careers-section__title text-section capitalize">
+                <span className="font-medium">{copy.titleLead}</span>
+                <span className="text-accent font-light">{copy.titleAccent}</span>
+              </h2>
+            </div>
+            <p className="vbs-careers-section__desc">{copy.description}</p>
+          </header>
+
+          <div className="vbs-careers-why__grid">
+            {whyWorkVbsPillars.map((pillar) => (
+              <article key={pillar.number} className="vbs-careers-why__card">
+                <div className="vbs-careers-why__card-head">
+                  <p className="vbs-careers-why__number">
+                    <span className={NUMBER_ACCENT_CLASS[pillar.numberColor]}>0</span>
+                    <span className="vbs-careers-why__number-digit--base">
+                      {pillar.number.slice(1)}
+                    </span>
+                  </p>
+                  <h3 className="vbs-careers-why__card-title">{pillar.title}</h3>
+                </div>
+                <p className="vbs-careers-why__card-desc">{pillar.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </PageContainer>
     </section>

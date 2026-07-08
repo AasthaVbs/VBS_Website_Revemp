@@ -1,8 +1,15 @@
 import type { ReactNode } from "react";
 
-export function SectionTag({ label }: { label: string }) {
+import { cn } from "@/lib/utils";
+
+export function SectionTag({ label, className }: { label: string; className?: string }) {
   return (
-    <span className="text-tag inline-flex w-fit self-start rounded-[10px] border border-vbs-blue bg-vbs-blue/10 px-3 py-1.5 text-vbs-blue">
+    <span
+      className={cn(
+        "text-tag inline-flex w-fit self-start rounded-[10px] border border-vbs-blue bg-vbs-blue/10 px-3 py-1.5 text-vbs-blue",
+        className,
+      )}
+    >
       {label}
     </span>
   );

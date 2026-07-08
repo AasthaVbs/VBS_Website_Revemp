@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 import {
@@ -324,8 +325,8 @@ export const architectureServiceBenefitsSection = {
   ctaHref: "#architecture-page-contact",
 };
 
-const ARCH_BENEFIT_ICON_COLORED = "/images/mep/key-benefits/icon-benefit-colored.svg";
-const ARCH_BENEFIT_ICON_MUTED = "/images/mep/key-benefits/icon-benefit-muted.svg";
+const ARCH_BENEFIT_ICON_COLORED = benefitIconColored;
+const ARCH_BENEFIT_ICON_MUTED = benefitIconMuted;
 
 export const architectureServiceBenefitsCards = [
   {

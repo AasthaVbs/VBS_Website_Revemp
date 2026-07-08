@@ -1,5 +1,5 @@
 import { hasSanityCredentials } from "@/lib/sanity-env";
-import { publishedSanityClient, publicSanityClient, sanityClient } from "@/lib/sanity-client";
+import { previewSanityClient, publishedSanityClient, publicSanityClient } from "@/lib/sanity-client";
 import {
   SANITY_POST_BY_SLUG_QUERY,
   SANITY_POST_LISTING_QUERY,
@@ -13,32 +13,52 @@ import {
 import type { SanityPostRecord } from "@/lib/sanity-blog";
 import type { SanityWebinarRecord } from "@/lib/sanity-webinar";
 import sanitySnapshot from "@/data/sanity-resources-snapshot.json";
+import { filterPublishedSanityPosts, filterPublishedSanityWebinars } from "@/lib/sanity-listing";
 
 export type SanityListingSnapshot = {
   posts: typeof sanitySnapshot.posts;
   webinars: typeof sanitySnapshot.webinars;
 };
 
+async function fetchPublishedListing<T>(query: string): Promise<T | null> {
+  if (!hasSanityCredentials()) return null;
+  try {
+    return await publishedSanityClient.fetch<T>(query);
+  } catch (error) {
+    console.error("[sanity] published listing fetch failed:", error);
+    return null;
+  }
+}
+
 async function fetchFromSanity<T>(query: string, params: Record<string, unknown> = {}): Promise<T | null> {
   if (!hasSanityCredentials()) return null;
   try {
-    return await sanityClient.fetch<T>(query, params);
+    return await publishedSanityClient.fetch<T>(query, params);
   } catch (error) {
     console.error("[sanity] fetch failed:", error);
     return null;
   }
 }
 
-/** Posts + webinars for resource listings — live Sanity with JSON snapshot fallback. */
+function snapshotListing(): SanityListingSnapshot {
+  return {
+    posts: filterPublishedSanityPosts(sanitySnapshot.posts),
+    webinars: filterPublishedSanityWebinars(sanitySnapshot.webinars),
+  };
+}
+
+/** Posts + webinars for resource listings — published Sanity only, JSON snapshot fallback. */
 export async function fetchSanityResourceListing(): Promise<SanityListingSnapshot> {
   const [posts, webinars] = await Promise.all([
-    fetchFromSanity<typeof sanitySnapshot.posts>(SANITY_POST_LISTING_QUERY),
-    fetchFromSanity<typeof sanitySnapshot.webinars>(SANITY_WEBINAR_LISTING_QUERY),
+    fetchPublishedListing<typeof sanitySnapshot.posts>(SANITY_POST_LISTING_QUERY),
+    fetchPublishedListing<typeof sanitySnapshot.webinars>(SANITY_WEBINAR_LISTING_QUERY),
   ]);
 
+  const fallback = snapshotListing();
+
   return {
-    posts: posts?.length ? posts : sanitySnapshot.posts,
-    webinars: webinars?.length ? webinars : sanitySnapshot.webinars,
+    posts: posts?.length ? posts : fallback.posts,
+    webinars: webinars?.length ? webinars : fallback.webinars,
   };
 }
 

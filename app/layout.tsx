@@ -15,6 +15,7 @@ import "@/styles/vbs-about-sections.scss";
 import "@/styles/vbs-contact-sections.scss";
 import "@/styles/vbs-careers-sections.scss";
 import "@/styles/vbs-leadership-sections.scss";
+import "@/styles/vbs-life-at-vbs.scss";
 import "@/styles/vbs-engagement-models-section.scss";
 import "@/styles/vbs-engagement-model-page-sections.scss";
 import "@/styles/mep-figma-page.scss";

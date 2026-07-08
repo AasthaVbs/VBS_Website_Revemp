@@ -76,7 +76,7 @@ if (!projectId || !token) {
 }
 
 const query = encodeURIComponent(`{
-  "posts": *[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
+  "posts": *[_type == "post" && defined(slug.current) && !(_id in path("drafts.**"))] | order(publishedAt desc) {
     "_id": _id,
     title,
     publishedAt,
@@ -91,7 +91,7 @@ const query = encodeURIComponent(`{
     },
     "body": body
   },
-  "webinars": *[_type == "webinar" && defined(slug.current)] | order(eventDate desc) {
+  "webinars": *[_type == "webinar" && defined(slug.current) && !(_id in path("drafts.**"))] | order(eventDate desc) {
     "_id": _id,
     "slug": slug.current,
     eventDate,

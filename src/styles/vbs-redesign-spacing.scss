@@ -33,6 +33,26 @@
   padding-bottom: 100px !important;
 }
 
+.vbs-redesign-page section.pb-\[72px\] {
+  padding-bottom: 72px !important;
+}
+
+.vbs-redesign-page section.pb-\[120px\] {
+  padding-bottom: 120px !important;
+}
+
+@media (min-width: 768px) {
+  .vbs-redesign-page section.md\:pb-\[100px\] {
+    padding-bottom: 100px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .vbs-redesign-page section.lg\:pb-\[120px\] {
+    padding-bottom: 120px !important;
+  }
+}
+
 .vbs-redesign-page section.pt-0 {
   padding-top: 0 !important;
 }

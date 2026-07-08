@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ChevronRight, Mail, MapPin, Phone } from "lucide-react";
+import { ChevronRight, MapPin } from "lucide-react";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
@@ -8,65 +8,103 @@ import {
   ourLocationsSectionCopy,
   type OfficeLocation,
 } from "@/constants/contact-content";
-import { cn } from "@/lib/utils";
+
+function IndiaFlagIcon() {
+  return (
+    <svg
+      width="30"
+      height="30"
+      viewBox="0 0 30 30"
+      fill="none"
+      aria-hidden
+      className="h-[30px] w-[30px] shrink-0 rounded-full"
+    >
+      <circle cx="15" cy="15" r="15" fill="#FFFFFF" />
+      <rect x="0" y="0" width="30" height="10" fill="#FF9933" />
+      <rect x="0" y="20" width="30" height="10" fill="#138808" />
+      <circle cx="15" cy="15" r="4" fill="#000080" opacity="0.9" />
+      <circle cx="15" cy="15" r="3.2" fill="none" stroke="#FFFFFF" strokeWidth="0.6" />
+    </svg>
+  );
+}
+
+function LocationFlag({ location }: { location: OfficeLocation }) {
+  if (location.flagIcon === "india") {
+    return <IndiaFlagIcon />;
+  }
+
+  if (location.flagIcon) {
+    return (
+      <Image
+        src={location.flagIcon}
+        alt=""
+        width={30}
+        height={30}
+        className="h-[30px] w-[30px] shrink-0 rounded-full object-cover"
+        aria-hidden
+      />
+    );
+  }
+
+  return null;
+}
+
+function LocationMap({ location }: { location: OfficeLocation }) {
+  if (location.mapEmbedUrl) {
+    return (
+      <iframe
+        title={`Map showing ${location.name} office`}
+        src={location.mapEmbedUrl}
+        className="vbs-our-locations__map-embed"
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        allowFullScreen
+      />
+    );
+  }
+
+  return (
+    <div
+      className="absolute left-0 w-full"
+      style={{ top: location.mapImageOffsetY, height: "144.89%" }}
+    >
+      <div className="relative h-full min-h-[580px] w-full">
+        <Image
+          src={location.mapImage || ""}
+          alt={`Map showing ${location.name} office`}
+          fill
+          className="object-cover object-center"
+          sizes="(max-width: 1024px) 100vw, 427px"
+        />
+      </div>
+    </div>
+  );
+}
 
 function LocationCard({ location }: { location: OfficeLocation }) {
   return (
-    <article
-      className={cn(
-        "flex w-full min-w-0 max-w-[710px] flex-col items-stretch gap-5 rounded-[10px] bg-white p-5 xl:shrink-0",
-        location.showCardBorder && "border border-[#CBCCCD] shadow-[0_4px_10px_rgba(0,0,0,0.15)]",
-      )}
-    >
-      <div className="flex flex-col gap-5">
-        <h3 className="text-[24px] font-medium text-[#111111]">{location.name}</h3>
-
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between lg:gap-4">
-          <div className="flex min-w-0 gap-2.5 lg:max-w-[303px]">
-            <MapPin className="mt-0.5 h-6 w-6 shrink-0 stroke-[#111111]" strokeWidth={1.5} />
-            <p className="text-[16px] font-normal lowercase leading-6 text-[#111111]">
-              {location.address}
-            </p>
-          </div>
-          <div className="flex shrink-0 items-center gap-2.5">
-            <Phone className="h-6 w-6 shrink-0 stroke-[#111111]" strokeWidth={1.5} />
-            <a
-              href={`tel:${location.phone.replace(/\D/g, "")}`}
-              className="text-[16px] font-normal lowercase leading-6 text-[#111111] hover:underline"
-            >
-              {location.phone}
-            </a>
-          </div>
+    <article className="vbs-our-locations__card">
+      <div className="vbs-our-locations__card-header">
+        <div className="vbs-our-locations__card-title-row">
+          <LocationFlag location={location} />
+          <h3 className="vbs-our-locations__card-title">{location.name}</h3>
         </div>
 
-        <div className="flex items-center gap-2.5">
-          <Mail className="h-6 w-6 shrink-0 stroke-[#111111]" strokeWidth={1.5} />
-          <a
-            href={`mailto:${location.email}`}
-            className="text-[16px] font-normal lowercase leading-6 text-[#111111] hover:underline"
-          >
-            {location.email}
-          </a>
+        <div className="vbs-our-locations__address">
+          <MapPin className="mt-0.5 h-6 w-6 shrink-0 stroke-[#111111]" strokeWidth={1.5} />
+          <p>
+            <span className="vbs-our-locations__address-line1">{location.addressLine1}</span>
+            {location.addressLine2 ? (
+              <span className="vbs-our-locations__address-line2">{location.addressLine2}</span>
+            ) : null}
+          </p>
         </div>
       </div>
 
-      <div className="relative h-[min(400px,60vw)] min-h-[240px] w-full overflow-hidden rounded-[10px] bg-[#E8E8E8] sm:h-[400px]">
-        <div
-          className="absolute left-0 w-full"
-          style={{ top: location.mapImageOffsetY, height: "144.89%" }}
-        >
-          <div className="relative h-full w-full min-h-[580px]">
-            <Image
-              src={location.mapImage}
-              alt={`Map showing ${location.name} office`}
-              fill
-              className="object-cover object-center"
-              sizes="710px"
-            />
-          </div>
-        </div>
+      <div className="vbs-our-locations__map">
+        <LocationMap location={location} />
 
-        {location.id === "new-jersey" ? (
+        {location.mapLabel ? (
           <div className="pointer-events-none absolute left-[19.5%] top-[47.9%] z-10 flex flex-col items-center">
             <div className="rounded-[9px] bg-[rgba(15,15,20,0.88)] px-3 py-1.5">
               <p className="max-w-[280px] text-center text-[12px] font-medium leading-snug text-white">
@@ -85,7 +123,7 @@ function LocationCard({ location }: { location: OfficeLocation }) {
           href={location.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-4 right-4 z-20 inline-flex items-center gap-1.5 rounded-[10px] bg-white px-3 py-2.5 text-[16px] font-normal text-[#2299D6] shadow-[0_4px_10px_rgba(0,0,0,0.2)] transition-colors hover:text-[#1a7aad]"
+          className="vbs-our-locations__map-open"
         >
           Open In Maps
           <ChevronRight className="h-5 w-5 -rotate-90" strokeWidth={1.5} />
@@ -95,24 +133,25 @@ function LocationCard({ location }: { location: OfficeLocation }) {
   );
 }
 
-/** Figma node 372:69005 — Our Locations */
+/** Figma node 1985:20498 — Our Locations */
 export function OurLocationsSection() {
-  const { tag, titleLead, titleAccent } = ourLocationsSectionCopy;
+  const { tag, titleLead, titleAccent, description } = ourLocationsSectionCopy;
 
   return (
-    <section className="overflow-hidden bg-white py-12 lg:py-[100px]">
-      <PageContainer className="flex flex-col gap-10 lg:gap-[60px]">
-        <div className="flex max-w-[522px] flex-col gap-5">
-          <div className="flex flex-col gap-3">
+    <section className="vbs-our-locations-section overflow-hidden bg-white py-12 lg:py-[100px]">
+      <PageContainer className="vbs-our-locations-section__inner">
+        <div className="vbs-our-locations-section__header">
+          <div className="vbs-our-locations-section__title-block">
             <SectionTag label={tag} />
             <h2 className="text-section max-w-[497px] capitalize">
               {titleLead}
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>
           </div>
+          <p className="vbs-our-locations-section__desc">{description}</p>
         </div>
 
-        <div className="flex w-full flex-col gap-5 xl:flex-row xl:items-start xl:gap-5">
+        <div className="vbs-our-locations__cards">
           {officeLocations.map((location) => (
             <LocationCard key={location.id} location={location} />
           ))}

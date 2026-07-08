@@ -7,6 +7,7 @@ export function JoinTeamCtaSection() {
 
   return (
     <EvaluateDeliveryCtaSection
+      cardOnMobile
       title={
         <>
           {titleLine1} <span className="text-accent">{titleAccent}</span>

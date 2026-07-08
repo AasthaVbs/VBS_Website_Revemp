@@ -1,7 +1,9 @@
-import { aboutHeroImages } from "@/constants/about-content";
+import leadershipBanner from "@/assets/images/leadership-banner.jpg";
 import type { StatItem } from "@/constants/shared-sections";
 
-export const leadershipHeroImages = aboutHeroImages;
+export const leadershipHeroImages = {
+  main: leadershipBanner.src,
+} as const;
 
 export const leadershipHeroCopy = {
   tag: "Name Tag",

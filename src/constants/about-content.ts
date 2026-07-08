@@ -1,9 +1,10 @@
+import aboutUsBanner from "@/assets/images/about-us-banner.jpg";
+
 export const aboutHeroImages = {
-  main: "/images/about/about-hero-main-3ea8dd.png",
-  overlay: "/images/about/about-hero-overlay.png",
+  main: aboutUsBanner.src,
 } as const;
 
-export const aboutVisionImage = "/images/about/about-vision-main.png";
+export const aboutVisionImage = "/image/about-vision-main.jpg";
 
 export const visionMissionCards = [
   {
@@ -19,15 +20,26 @@ export const visionMissionCards = [
   },
 ] as const;
 
-export const coreValuesSectionCopy = {
-  tag: "Core Values",
-  titleLead: "Complete Coverage for ",
-  titleAccent: "MEP BIM Modeling Services",
+export const visionMissionSectionCopy = {
+  tag: "Our Vision",
+  titleLead: "Company's ",
+  titleAccent: "Vision & Mission",
   description:
-    "Comprehensive MEP Modeling Services Integrating HVAC, Electrical, Mechanical Piping, Plumbing, and Fire Protection Workflows",
+    "Guiding the future of construction through digital innovation, scalable solutions, and a commitment to transforming how buildings are designed, delivered, and managed.",
 } as const;
 
-/** Figma 332:29736 — alternating columns: even = box above label, odd = label above box */
+export const coreValuesChartDesktop = "/image/Core%20Values.png";
+export const coreValuesChartMobile = "/image/Core%20Values%201.png";
+
+export const coreValuesSectionCopy = {
+  tag: "Core Values",
+  titleLead: "Driven by Purpose, Guided by ",
+  titleAccent: "Values",
+  description:
+    "Our commitment to integrity, innovation, and excellence forms the foundation of every project and client relationship.",
+} as const;
+
+/** @deprecated Chart image used instead of zigzag layout */
 export const coreValues = [
   { letter: "C", label: "Client First Thinking", labelWidth: 140, labelFirst: false },
   { letter: "H", label: "High Performance Mindset", labelWidth: 152, labelFirst: true },
@@ -41,15 +53,15 @@ export const coreValues = [
 ] as const;
 
 export const founderSectionCopy = {
-  tag: "Name Tag",
+  tag: "About CEO",
   titleLead: "Meet the Founder & CEO ",
   titleAccent: "Ar. Ankit Kansara",
   linkedinLabel: "Linkedin",
-  linkedinHref: "https://www.linkedin.com/company/virtual-building-studio",
+  linkedinHref: "https://www.linkedin.com/in/ankitkumarkansara/",
 } as const;
 
 export const founderImages = {
-  main: "/images/about/founder-main.png",
+  main: "/image/Ankit-Kansara-About-Us.jpg",
   overlayBg: "/images/about/founder-overlay-bg.png",
   book: "/images/about/founder-book-df6def.png",
 } as const;

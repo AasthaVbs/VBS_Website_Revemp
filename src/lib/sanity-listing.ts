@@ -22,11 +22,46 @@ export type SanityPostNode = (typeof sanitySnapshot.posts)[number];
 export type SanityWebinarNode = (typeof sanitySnapshot.webinars)[number];
 
 export function getSanityResourcePosts() {
-  return sanitySnapshot.posts;
+  return filterPublishedSanityPosts(sanitySnapshot.posts);
 }
 
 export function getSanityResourceWebinars() {
-  return sanitySnapshot.webinars;
+  return filterPublishedSanityWebinars(sanitySnapshot.webinars);
+}
+
+/** Exclude Sanity draft documents — Gatsby production only indexes published posts. */
+export function isPublishedSanityId(id?: string | null) {
+  return Boolean(id) && !String(id).startsWith("drafts.");
+}
+
+export function filterPublishedSanityPosts<T extends { _id?: string; slug?: string | null }>(
+  posts: T[],
+) {
+  const seenSlugs = new Set<string>();
+
+  return posts.filter((post) => {
+    if (!isPublishedSanityId(post._id)) return false;
+    const slug = post.slug?.trim();
+    if (!slug) return false;
+    if (seenSlugs.has(slug)) return false;
+    seenSlugs.add(slug);
+    return true;
+  });
+}
+
+export function filterPublishedSanityWebinars<T extends { _id?: string; slug?: string | null }>(
+  webinars: T[],
+) {
+  const seenSlugs = new Set<string>();
+
+  return webinars.filter((webinar) => {
+    if (!isPublishedSanityId(webinar._id)) return false;
+    const slug = webinar.slug?.trim();
+    if (!slug) return false;
+    if (seenSlugs.has(slug)) return false;
+    seenSlugs.add(slug);
+    return true;
+  });
 }
 
 export function portableTextToPlainText(blocks: unknown) {
@@ -187,10 +222,10 @@ function mergeWebinarListingItem(
   );
 }
 
-export function mapSanityPostsToListing(posts: SanityPostNode[] = sanitySnapshot.posts) {
+export function mapSanityPostsToListing(posts: SanityPostNode[] = getSanityResourcePosts()) {
   if (!posts?.length) return [];
 
-  return posts
+  return filterPublishedSanityPosts(posts)
     .filter((post) => post.slug)
     .map((post, index) => {
       const slug = post.slug;
@@ -225,14 +260,14 @@ export function mapSanityPostsToListing(posts: SanityPostNode[] = sanitySnapshot
 }
 
 export function mapSanityWebinarsToListing(
-  webinars: SanityWebinarNode[] = sanitySnapshot.webinars,
+  webinars: SanityWebinarNode[] = getSanityResourceWebinars(),
   referenceDate: Date = new Date(),
 ) {
   if (!webinars?.length) return [];
 
   const supplementalBySlug = getSupplementalWebinarBySlug();
 
-  return webinars
+  return filterPublishedSanityWebinars(webinars)
     .filter((webinar) => webinar.slug)
     .map((webinar, index) => {
       const slug = normalizeWebinarSlug(webinar.slug);

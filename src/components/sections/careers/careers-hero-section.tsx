@@ -4,7 +4,7 @@ import {
   careersHeroImages,
 } from "@/constants/careers-content";
 
-/** Figma node 636:9312 — Careers hero (same layout as About) */
+/** Figma node 636:9312 — Careers hero */
 export function CareersHeroSection() {
   return (
     <SplitHeroSection
@@ -14,10 +14,10 @@ export function CareersHeroSection() {
       description={careersHeroCopy.description}
       images={careersHeroImages}
       mainImageAlt="Virtual Building Studio careers"
-      overlayImageAlt="Team at Virtual Building Studio"
       showCta
       ctaLabel={careersHeroCopy.ctaLabel}
       ctaHref={careersHeroCopy.ctaHref}
+      sectionClassName="about-hero-section careers-hero-section vbs-careers-hero py-0 md:py-0 lg:py-0"
     />
   );
 }

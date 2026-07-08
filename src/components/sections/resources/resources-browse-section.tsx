@@ -106,7 +106,7 @@ function ResourceCard({ item }: { item: CatalogItem }) {
       className="resources-browse-card flex h-full flex-col items-center gap-[10px] overflow-hidden rounded-[10px] bg-white p-2.5 shadow-[0_4px_10px_rgba(0,0,0,0.15)] no-underline transition-[box-shadow,transform] duration-250 hover:-translate-y-1 hover:shadow-[0_10px_24px_rgba(0,0,0,0.12)]"
       aria-label={`Learn more about ${item.title}`}
     >
-      <div className="resources-browse-card__media relative h-[170px] w-full overflow-hidden rounded-[10px] min-[800px]:h-[200px] min-[1280px]:h-[240px]">
+      <div className="resources-browse-card__media relative h-[198px] w-full overflow-hidden rounded-[10px] min-[800px]:h-[225px] min-[1280px]:h-[260px]">
         <ResourceFeedPhoto
           src={item.image}
           className="absolute inset-0 h-full w-full object-cover"

@@ -1,7 +1,7 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { AboutHeroSection } from "@/components/sections/about/about-hero-section";
-import { StatsStripSection } from "@/components/sections/stats-strip-section";
-import { aboutStatsStrip } from "@/constants/shared-sections";
+import { TrustStripSection } from "@/components/sections/trust-strip-section";
+import { lifeAtVbsStatsStrip } from "@/constants/life-at-vbs-content";
 import {
   DeferredCertificationAwardsSection,
   DeferredClientSuccessStoriesSection,
@@ -15,13 +15,11 @@ import {
 
 export function VbsAboutPage() {
   return (
-    <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page about-section-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
 
       <AboutHeroSection />
-
-      <StatsStripSection stats={aboutStatsStrip} className="bg-white pb-[30px] pt-0" />
-
+      <TrustStripSection stats={lifeAtVbsStatsStrip} className="vbs-trust-strip-section bg-white" />
       <DeferredVisionMissionSection />
       <DeferredCoreValuesSection />
       <DeferredFounderSection />

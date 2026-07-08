@@ -2,9 +2,15 @@
 
 .vbs-redesign-page .careers-section-page {
   .careers-hero-section .vbs-split-hero__copy h1,
-  .vbs-get-in-touch__intro h2 {
+  .vbs-get-in-touch__info-head h2:not(.vbs-careers-career-form__title) {
     width: 100% !important;
     max-width: 497px !important;
+  }
+
+  .vbs-careers-career-form__title {
+    width: auto !important;
+    max-width: none !important;
+    white-space: nowrap !important;
   }
 
   .mep-figma-benefits__head,
@@ -22,25 +28,63 @@
     --vbs-about-section-gap: 80px;
   }
 
-  > section.careers-hero-section:first-of-type {
-    padding-bottom: 40px !important;
+  > section.vbs-trust-strip-section:has(.vbs-home-hero-trust) {
+    padding-top: 72px !important;
+    margin-top: 0 !important;
+
+    @media (min-width: 768px) {
+      padding-top: 96px !important;
+    }
 
     @media (min-width: 1024px) {
-      padding-bottom: 60px !important;
+      padding-top: 120px !important;
+    }
+
+    .vbs-home-hero-trust {
+      margin-top: 0 !important;
     }
   }
 
-  > section.vbs-careers-why,
-  > section.mep-figma-benefits,
-  > section.vbs-careers-openings {
+  > section.careers-hero-section:first-of-type {
+    padding-bottom: 56px !important;
+
+    @media (min-width: 768px) {
+      padding-bottom: 72px !important;
+    }
+
+    @media (min-width: 1024px) {
+      padding-bottom: 96px !important;
+    }
+  }
+
+  section.mep-figma-benefits,
+  section.vbs-careers-openings {
     padding-top: 72px !important;
+    padding-bottom: 72px !important;
 
     @media (min-width: 768px) {
       padding-top: 90px !important;
+      padding-bottom: 90px !important;
     }
 
     @media (min-width: 1024px) {
       padding-top: 90px !important;
+      padding-bottom: 90px !important;
+    }
+  }
+
+  section.vbs-careers-why {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+
+    @media (min-width: 768px) {
+      padding-top: 80px !important;
+      padding-bottom: 80px !important;
+    }
+
+    @media (min-width: 1024px) {
+      padding-top: 100px !important;
+      padding-bottom: 100px !important;
     }
   }
 }
@@ -57,17 +101,31 @@
     }
 
     > section.careers-hero-section:first-of-type {
-      padding-bottom: 32px !important;
+      padding-bottom: 48px !important;
+    }
+
+    > section.vbs-trust-strip-section:has(.vbs-home-hero-trust) {
+      padding-top: 64px !important;
+    }
+
+    .vbs-careers-career-form__title {
+      font-size: clamp(24px, 6.8vw, 36px) !important;
+      letter-spacing: -0.01em;
     }
 
     > section:not(:first-of-type) {
       padding-top: 40px !important;
     }
 
-    > section.vbs-careers-why,
-    > section.mep-figma-benefits,
-    > section.vbs-careers-openings {
+    section.mep-figma-benefits,
+    section.vbs-careers-openings {
       padding-top: 56px !important;
+      padding-bottom: 56px !important;
+    }
+
+    section.vbs-careers-why {
+      padding-top: 60px !important;
+      padding-bottom: 60px !important;
     }
 
     .careers-hero-section {
@@ -196,6 +254,16 @@
 
   @media (min-width: 1024px) {
     position: relative;
+    padding-left: 28px;
+    padding-right: 28px;
+
+    &:first-child {
+      padding-left: 10px;
+    }
+
+    &:last-child {
+      padding-right: 10px;
+    }
 
     &:not(:first-child)::before {
       content: "";
@@ -352,5 +420,92 @@
 
   .vbs-careers-openings__tags {
     justify-content: flex-start;
+  }
+}
+
+/* Why We — force vertical rhythm (overrides about-section-page padding-bottom: 0) */
+.vbs-redesign-page .about-section-page.careers-section-page > section.vbs-careers-why,
+.vbs-redesign-page .about-section-page.careers-section-page .deferred-section-host section.vbs-careers-why {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+
+  @media (min-width: 768px) {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+  }
+}
+
+/* Hero → Trust strip — override about-section-page zero padding */
+.vbs-redesign-page .about-section-page.careers-section-page > section.vbs-careers-hero.careers-hero-section {
+  padding-bottom: 56px !important;
+
+  @media (min-width: 768px) {
+    padding-bottom: 72px !important;
+  }
+
+  @media (min-width: 1024px) {
+    padding-bottom: 96px !important;
+  }
+}
+
+.vbs-redesign-page .about-section-page.careers-section-page > section.vbs-careers-trust-strip.vbs-trust-strip-section {
+  padding-top: 72px !important;
+  margin-top: 0 !important;
+
+  @media (min-width: 768px) {
+    padding-top: 96px !important;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 120px !important;
+  }
+
+  .vbs-home-hero-trust {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .vbs-redesign-page .about-section-page.careers-section-page > section.vbs-careers-hero.careers-hero-section {
+    padding-bottom: 48px !important;
+  }
+
+  .vbs-redesign-page .about-section-page.careers-section-page > section.vbs-careers-trust-strip.vbs-trust-strip-section {
+    padding-top: 64px !important;
+  }
+}
+
+/* Benefits — bottom padding (override about-section-page + py-0) */
+.vbs-redesign-page .about-section-page.careers-section-page > section.vbs-careers-benefits.mep-figma-benefits,
+.vbs-redesign-page .about-section-page.careers-section-page .deferred-section-host section.vbs-careers-benefits.mep-figma-benefits {
+  padding-top: 72px !important;
+  padding-bottom: 72px !important;
+
+  @media (min-width: 768px) {
+    padding-top: 90px !important;
+    padding-bottom: 100px !important;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 90px !important;
+    padding-bottom: 120px !important;
+  }
+
+  .mep-figma-benefits__container {
+    padding-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .vbs-redesign-page .about-section-page.careers-section-page > section.vbs-careers-benefits.mep-figma-benefits,
+  .vbs-redesign-page .about-section-page.careers-section-page .deferred-section-host section.vbs-careers-benefits.mep-figma-benefits {
+    padding-top: 56px !important;
+    padding-bottom: 72px !important;
   }
 }

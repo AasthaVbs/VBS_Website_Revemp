@@ -15,7 +15,7 @@ import fasterStakeholderIcon from "@/assets/images/faster-stakeholder-icon.png";
 import lod200To500Icon from "@/assets/images/lod200-500.svg";
 import lowerOperationalIcon from "@/assets/images/lower-operational-icon.png";
 import reductionInFieldReworkIcon from "@/assets/images/reduction-in-field-rework-icon.png";
-import logoIcon from "@/assets/images/logo-icon.svg";
+import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { mepStatsStrip } from "@/constants/mep-engineers-content";
 import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
@@ -413,44 +413,45 @@ export const scanToBimServiceBenefitsSection = {
   ctaHref: "#scan-page-contact",
 };
 
-const SCAN_BENEFIT_ICON_COLORED = "/images/mep/key-benefits/icon-benefit-colored.svg";
+const SCAN_BENEFIT_ICON_COLORED = benefitIconColored;
+const SCAN_BENEFIT_ICON_DEFAULT = benefitIconMuted;
 
 export const scanToBimServiceBenefitsCards = [
   {
     title: "Improved Decision-Making",
     text: "Accurate BIM models provide architects, engineers and contractors with real picture of existing conditions. With good information from the outset, teams can analyze design choices, recognize constraints and improve project decisions.",
-    icon: logoIcon,
+    icon: SCAN_BENEFIT_ICON_DEFAULT,
     iconHover: SCAN_BENEFIT_ICON_COLORED,
   },
   {
     title: "Reduced Rework",
     text: "Reality capture data provides design and construction teams with the actual condition of the site before they begin work. This reduces assumptions, prevents unnecessary design changes and minimizes costly modifications during later project phases.",
-    icon: logoIcon,
+    icon: SCAN_BENEFIT_ICON_DEFAULT,
     iconHover: SCAN_BENEFIT_ICON_COLORED,
   },
   {
     title: "Faster Project Planning",
     text: "Having verified as-built BIM models available up front reduces the number of site visits and measurements needed. Design development, coordination and documentation are more efficient.",
-    icon: logoIcon,
+    icon: SCAN_BENEFIT_ICON_DEFAULT,
     iconHover: SCAN_BENEFIT_ICON_COLORED,
   },
   {
     title: "Better Renovation & Retrofit Outcomes",
     text: "Detailed BIM models accurately represent existing building geometry and system layouts. Teams can assess existing conditions more effectively and develop renovation strategies with fewer unforeseen challenges.",
-    icon: logoIcon,
+    icon: SCAN_BENEFIT_ICON_DEFAULT,
     iconHover: SCAN_BENEFIT_ICON_COLORED,
     textMaxWidth: 433,
   },
   {
     title: "Enhanced Coordination",
     text: "Architectural, structural and MEPF models are created from the same reality capture dataset. This improves alignment across disciplines, simplifies coordination efforts and reduces conflicts during project execution.",
-    icon: logoIcon,
+    icon: SCAN_BENEFIT_ICON_DEFAULT,
     iconHover: SCAN_BENEFIT_ICON_COLORED,
   },
   {
     title: "Long-Term Asset Value",
     text: "The value of a BIM model goes well beyond design and construction. Building owners and facilities managers can leverage it to help with maintenance planning, space management, future renovations and day-to-day operations.",
-    icon: logoIcon,
+    icon: SCAN_BENEFIT_ICON_DEFAULT,
     iconHover: SCAN_BENEFIT_ICON_COLORED,
   },
 ];

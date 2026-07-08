@@ -4,13 +4,14 @@ import { Fragment } from "react";
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
+import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import {
   mepBimServiceCoverageGridItems,
   mepBimServiceCoverageGridSection,
 } from "@/constants/mep-bim-modelling-content";
 
-const BENEFIT_ICON_COLORED = "/images/mep/key-benefits/icon-benefit-colored.svg";
-const BENEFIT_ICON_MUTED = "/images/mep/key-benefits/icon-benefit-muted.svg";
+const BENEFIT_ICON_COLORED = benefitIconColored;
+const BENEFIT_ICON_MUTED = benefitIconMuted;
 
 function VerticalDivider() {
   return (

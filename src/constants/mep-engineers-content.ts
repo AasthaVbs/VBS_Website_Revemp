@@ -7,7 +7,7 @@ import endToEndBimSupportIcon from "@/assets/images/end-to=end-bim-support-icon.
 import fastTurnaroundCycleIcon from "@/assets/images/fast-turnaround-cycle-icon.svg";
 import fastTurnaroundIcon from "@/assets/images/fast-turnaround.svg";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models-icon.svg";
-import logoIcon from "@/assets/images/logo-icon.svg";
+import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import usCodeCompliantDeliveryIcon from "@/assets/images/us-code-complinat-delivery-icon.svg";
 import usCodeCompliantModelsIcon from "@/assets/images/us-code-complaints-models.svg";
 import { ROUTES } from "@/constants/navigation";
@@ -409,8 +409,8 @@ export const mepServiceBenefitsSection = {
   ctaHref: "#mep-page-contact",
 };
 
-const MEP_BENEFIT_ICON_COLORED = "/images/mep/key-benefits/icon-benefit-colored.svg";
-const MEP_BENEFIT_ICON_DEFAULT = logoIcon;
+const MEP_BENEFIT_ICON_COLORED = benefitIconColored;
+const MEP_BENEFIT_ICON_DEFAULT = benefitIconMuted;
 
 /** Figma — 3×2 service benefits grid. */
 export const mepServiceBenefitsCards = [

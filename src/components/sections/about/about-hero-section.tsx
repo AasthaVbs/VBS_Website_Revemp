@@ -8,7 +8,6 @@ const aboutHeroCopy = {
   description:
     "Since 2015, we've been the trusted partner for Architecture and Engineering firms, helping them rapidly scale their BIM teams and deliver award-winning projects every time.",
   mainImageAlt: "Virtual Building Studio team collaboration",
-  overlayImageAlt: "BIM building systems visualization",
 } as const;
 
 /** Figma node 325:20127 — About page hero */
@@ -19,6 +18,7 @@ export function AboutHeroSection() {
       images={aboutHeroImages}
       showCta
       ctaLabel="Contact Us"
+      sectionClassName="about-hero-section py-0 md:py-0 lg:py-0"
     />
   );
 }

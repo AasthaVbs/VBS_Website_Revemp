@@ -1,6 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import type { ReactNode } from "react";
 
+import { EvaluateDeliveryCtaMosaic } from "@/components/ui/evaluate-delivery-cta-mosaic";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { cn } from "@/lib/utils";
 
@@ -40,15 +41,7 @@ export function EvaluateDeliveryCtaCard({
         className,
       )}
     >
-      <div className="evaluate-delivery-cta-mosaic" aria-hidden>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/figma/evaluate-cta-mosaic.svg"
-          alt=""
-          width={1440}
-          height={1467}
-        />
-      </div>
+      <EvaluateDeliveryCtaMosaic />
       <div
         className={cn(
           "evaluate-delivery-cta-panel",

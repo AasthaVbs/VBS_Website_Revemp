@@ -90,6 +90,52 @@
   object-position: center;
 }
 
+.contact-us-page .contact-hero-section {
+  .vbs-split-hero__row--contact {
+    @media (min-width: 1024px) {
+      justify-content: space-between;
+      align-items: center;
+      gap: 0;
+    }
+  }
+
+  .vbs-split-hero__copy {
+    @media (min-width: 1024px) {
+      flex: 0 0 auto;
+      max-width: 497px;
+    }
+
+    > div:first-child {
+      gap: 20px;
+
+      > div:first-child {
+        gap: 12px;
+      }
+    }
+  }
+
+  .vbs-split-hero__copy h1 {
+    max-width: 497px;
+  }
+
+  .vbs-split-hero__copy p {
+    max-width: 497px;
+  }
+
+  .vbs-split-hero__media--single {
+    aspect-ratio: 589 / 480;
+    border-radius: 9.06px;
+    box-shadow: none;
+    background: #ffffff;
+
+    @media (min-width: 1024px) {
+      flex: 0 0 auto;
+      width: 589px;
+      max-width: 589px;
+    }
+  }
+}
+
 /* ----- Get in Touch (Figma 2573:28324 — info left, tabbed form right) ----- */
 
 /* Footer / bottom-of-page contact block — padding on every page (legacy + redesign) */
@@ -124,6 +170,175 @@
   }
 }
 
+/* Figma layout — form + visual panel (About, Careers, Home, Contact) */
+.vbs-get-in-touch-section--figma {
+  @media (min-width: 1024px) {
+    padding-bottom: 100px;
+  }
+
+  .vbs-get-in-touch__layout {
+    gap: 30px;
+
+    @media (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+      align-items: start;
+      gap: 0 !important;
+      column-gap: 0 !important;
+      row-gap: 0 !important;
+    }
+  }
+
+  .vbs-get-in-touch__form-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+    width: 100%;
+    border-radius: 20px;
+    overflow: visible;
+
+    @media (min-width: 1024px) {
+      grid-column: 2;
+      grid-row: 1;
+      max-width: none;
+      width: 100%;
+      min-width: 0;
+      align-self: stretch;
+      justify-self: stretch;
+    }
+  }
+
+  .vbs-get-in-touch__visual-slot {
+    width: 100%;
+    min-width: 0;
+
+    @media (min-width: 1024px) {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      align-self: start;
+      max-width: 420px;
+      justify-self: start;
+      height: 700px;
+      max-height: 700px;
+    }
+
+    @media (max-width: 1023px) {
+      display: none !important;
+    }
+  }
+
+  .vbs-contact-zoho-wrap {
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+  }
+
+  .vbs-get-in-touch__intro {
+    padding-left: 30px;
+
+    @media (min-width: 1024px) {
+      padding-left: 60px;
+    }
+  }
+
+  .vbs-get-in-touch__tabs {
+    padding-left: 30px;
+
+    @media (min-width: 1024px) {
+      padding-left: 60px;
+    }
+  }
+
+  .vbs-get-in-touch__intro .text-body,
+  .vbs-get-in-touch__intro p {
+    max-width: 435px !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: #808080 !important;
+    text-transform: capitalize;
+  }
+
+  .vbs-get-in-touch__visual {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 17.63px;
+    box-shadow: 0 3.53px 8.82px rgba(0, 0, 0, 0.15);
+
+    @media (min-width: 1024px) {
+      flex: none;
+      aspect-ratio: unset;
+      width: 100%;
+      height: 650px;
+      max-height: 650px;
+      min-height: 0;
+    }
+  }
+
+  .vbs-get-in-touch__visual-img {
+    position: absolute;
+    top: 0;
+    left: -28.59%;
+    height: 100%;
+    width: 156.81%;
+    max-width: none;
+    object-fit: contain;
+    object-position: center;
+
+    @media (min-width: 1024px) {
+      left: 0;
+      width: 100%;
+      object-fit: cover;
+      object-position: 58% center;
+    }
+  }
+
+  .vbs-get-in-touch__visual-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(222deg, rgba(17, 17, 17, 0) 0%, #111111 75%);
+    pointer-events: none;
+  }
+
+  .vbs-get-in-touch__visual-contacts {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 389px;
+    color: #ffffff;
+  }
+
+  .vbs-get-in-touch__visual-contact {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+
+    &:hover {
+      opacity: 0.85;
+      text-decoration: underline;
+    }
+  }
+
+  .vbs-get-in-touch__visual-contacts span {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: none;
+    line-height: 1.4;
+  }
+}
+
 .vbs-redesign-page .vbs-page-container.vbs-get-in-touch__layout {
   max-width: var(--vbs-page-max, 1400px) !important;
 }
@@ -138,7 +353,7 @@
   @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: minmax(0, 1fr) var(--vbs-get-in-touch-form-width);
-    align-items: end;
+    align-items: start;
     gap: 30px;
     width: 100%;
   }
@@ -163,7 +378,11 @@
 
 .vbs-get-in-touch__info-head {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 0;
+
+  @media (max-width: 767px) {
+    margin-top: 40px;
+  }
 
   > .flex {
     gap: 12px !important;
@@ -561,7 +780,8 @@
       gap: 16px !important;
     }
 
-    section>.vbs-page-container.flex.flex-col {
+    section>.vbs-page-container.flex.flex-col,
+    .vbs-our-locations-section__inner {
       gap: 32px !important;
     }
   }
@@ -846,7 +1066,39 @@
   cursor: wait;
 }
 
-/* ----- Our Locations (node 1:8104) ----- */
+/* ----- Our Locations (node 1985:20498) ----- */
+
+.vbs-our-locations-section__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media (min-width: 1024px) {
+    gap: 60px;
+  }
+}
+
+.vbs-our-locations-section__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 522px;
+}
+
+.vbs-our-locations-section__title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vbs-our-locations-section__desc {
+  margin: 0;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #808080;
+}
 
 .vbs-our-locations__cards {
   display: flex;
@@ -868,14 +1120,14 @@
   flex-direction: column;
   gap: 20px;
   padding: 20px;
+  overflow: hidden;
   border-radius: 10px;
   background: #ffffff;
-  border: 1px solid transparent;
+  border: 1px solid #cbcccd;
   box-shadow: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
 
   &:hover {
-    border-color: #cbcccd;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
 }
@@ -883,6 +1135,14 @@
 .vbs-our-locations__card-header {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.vbs-our-locations__card-title-row {
+  display: flex;
+  align-items: center;
   gap: 20px;
 }
 
@@ -894,24 +1154,15 @@
 }
 
 .vbs-our-locations__meta-row {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-  @media (min-width: 640px) {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 16px;
-  }
+  display: none;
 }
 
 .vbs-our-locations__address {
   display: flex;
+  align-items: flex-start;
   gap: 10px;
+  width: 100%;
   min-width: 0;
-  flex: 0 1 auto;
-  max-width: none;
   color: #111111;
   text-decoration: none;
   transition: opacity 0.15s ease;
@@ -923,12 +1174,17 @@
 }
 
 .vbs-our-locations__address p {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   color: #111111;
   text-transform: none;
-  margin: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
 }
 
 .vbs-our-locations__address-line1,
@@ -936,17 +1192,7 @@
   display: block;
 }
 
-@media (min-width: 640px) {
-  .vbs-our-locations__address-line1 {
-    white-space: nowrap;
-  }
-}
-
 @media (max-width: 767px) {
-  .vbs-our-locations__address-line2 {
-    margin-top: 4px;
-  }
-
   .vbs-get-in-touch__address-line2 {
     margin-top: 4px;
   }
@@ -984,6 +1230,7 @@
   display: block;
   width: 100%;
   height: 100%;
+  min-height: 400px;
   border: 0;
 }
 

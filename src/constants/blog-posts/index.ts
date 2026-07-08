@@ -19,7 +19,7 @@ function stubPostFromListing(item: ResourceListingItem): BlogPostDetail {
     author: revitFamilyCreationPost.author,
     meta: {
       category: item.service,
-      lastUpdated: "May 29, 2026",
+      lastUpdated: item.publishedAt || "—",
     },
     tableOfContents: [
       { id: "overview", label: item.title, level: "h2" },

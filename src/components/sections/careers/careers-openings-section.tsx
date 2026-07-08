@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
+import { cn } from "@/lib/utils";
 import {
   currentOpeningsSectionCopy,
   jobOpenings,
@@ -9,9 +10,16 @@ import {
 } from "@/constants/careers-content";
 
 /** Figma node 636:10281 — Current Openings list */
-export function CareersOpeningsSection() {
+export function CareersOpeningsSection({ hidden = false }: { hidden?: boolean }) {
   return (
-    <section id="current-openings" className="scroll-mt-24 bg-white py-12 lg:py-[100px]">
+    <section
+      id="current-openings"
+      className={cn(
+        "vbs-careers-openings scroll-mt-24 bg-white py-0",
+        hidden && "vbs-careers-openings--hidden",
+      )}
+      aria-hidden={hidden || undefined}
+    >
       <PageContainer className="flex flex-col items-stretch gap-10 lg:gap-[60px]">
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">

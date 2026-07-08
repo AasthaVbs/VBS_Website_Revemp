@@ -23,7 +23,7 @@ export const ROUTES = {
   webinar: "/webinar",
   leadership: "/leadership",
   careers: "/careers",
-  lifeAtVbs: "/careers",
+  lifeAtVbs: "/life-at-vbs",
   testimonials: "/testimonials",
   projects: "/portfolio",
   successStories: "/portfolio",

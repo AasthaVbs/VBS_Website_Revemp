@@ -44,7 +44,10 @@ export const SANITY_POST_DETAIL_PROJECTION = `{
   }
 }`;
 
-export const SANITY_POST_LISTING_QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
+/** Published documents only — matches Gatsby production (`overlayDrafts: false`). */
+export const SANITY_PUBLISHED_ID_FILTER = `!(_id in path("drafts.**"))`;
+
+export const SANITY_POST_LISTING_QUERY = `*[_type == "post" && defined(slug.current) && ${SANITY_PUBLISHED_ID_FILTER}] | order(publishedAt desc) {
   "_id": _id,
   title,
   publishedAt,
@@ -56,7 +59,7 @@ export const SANITY_POST_LISTING_QUERY = `*[_type == "post" && defined(slug.curr
   }
 }`;
 
-export const SANITY_WEBINAR_LISTING_QUERY = `*[_type == "webinar" && defined(slug.current)] | order(eventDate desc) {
+export const SANITY_WEBINAR_LISTING_QUERY = `*[_type == "webinar" && defined(slug.current) && ${SANITY_PUBLISHED_ID_FILTER}] | order(eventDate desc) {
   "_id": _id,
   "slug": slug.current,
   eventDate,
@@ -123,7 +126,7 @@ export const SANITY_WEBINAR_DETAIL_PROJECTION = `{
 
 export const SANITY_WEBINAR_BY_SLUG_QUERY = `*[_type == "webinar" && (slug.current == $slug || slug.current == $slugWithSlash)][0] ${SANITY_WEBINAR_DETAIL_PROJECTION}`;
 
-export const SANITY_WEBINAR_SLUGS_QUERY = `*[_type == "webinar" && defined(slug.current)]{ "slug": slug.current }`;
+export const SANITY_WEBINAR_SLUGS_QUERY = `*[_type == "webinar" && defined(slug.current) && ${SANITY_PUBLISHED_ID_FILTER}]{ "slug": slug.current }`;
 
 export const SANITY_POST_BY_SLUG_QUERY = `*[_type == "post" && slug.current == $slug][0] ${SANITY_POST_DETAIL_PROJECTION}`;
 

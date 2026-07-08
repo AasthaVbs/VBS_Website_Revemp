@@ -16,7 +16,12 @@ import { isNavPathActive, normalizePath } from "@/utils/nav-path";
 export function SiteNav() {
   const pathname = usePathname();
   const path = normalizePath(pathname);
-  const isAbout = pathname === "/about" || pathname === "/leadership";
+  const isAbout =
+    pathname === "/about" ||
+    pathname === "/leadership" ||
+    pathname === "/careers" ||
+    pathname === "/life-at-vbs" ||
+    pathname.startsWith("/life-at-vbs");
   const isMepPage = isNavPathActive(path, ROUTES.mepServices);
   const isEngagementPage = pathname === "/engagement-models";
 

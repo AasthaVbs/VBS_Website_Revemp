@@ -40,9 +40,37 @@ const dataset =
   env.NEXT_PUBLIC_SANITY_DATASET || env.GATSBY_SANITY_DATASET || "production";
 const token = env.SANITY_READ_TOKEN || env.GATSBY_SANITY_READ_TOKEN;
 
+const outPath = path.join(root, "src", "data", "sanity-resources-snapshot.json");
+
+function readExistingSnapshot() {
+  if (!fs.existsSync(outPath)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(outPath, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function writeSnapshot(snapshot) {
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
+  fs.writeFileSync(outPath, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
+  console.log(
+    `Wrote ${snapshot.posts.length} posts and ${snapshot.webinars.length} webinars to ${path.relative(root, outPath)}`,
+  );
+}
+
 if (!projectId || !token) {
+  const existing = readExistingSnapshot();
+  if (existing?.posts && existing?.webinars) {
+    console.warn(
+      "Sanity credentials missing — using committed snapshot from",
+      existing.fetchedAt ?? "unknown date",
+    );
+    process.exit(0);
+  }
+
   console.error(
-    "Missing Sanity credentials. Set NEXT_PUBLIC_SANITY_PROJECT_ID and SANITY_READ_TOKEN in .env.local",
+    "Missing Sanity credentials. Set NEXT_PUBLIC_SANITY_PROJECT_ID and SANITY_READ_TOKEN in Vercel env, or commit src/data/sanity-resources-snapshot.json",
   );
   process.exit(1);
 }
@@ -84,6 +112,15 @@ const response = await fetch(url, {
 });
 
 if (!response.ok) {
+  const existing = readExistingSnapshot();
+  if (existing?.posts && existing?.webinars) {
+    console.warn(
+      `Sanity fetch failed (${response.status}) — using committed snapshot from`,
+      existing.fetchedAt ?? "unknown date",
+    );
+    process.exit(0);
+  }
+
   console.error("Sanity fetch failed:", response.status, await response.text());
   process.exit(1);
 }
@@ -95,10 +132,4 @@ const snapshot = {
   webinars: payload.result?.webinars ?? [],
 };
 
-const outPath = path.join(root, "src", "data", "sanity-resources-snapshot.json");
-fs.mkdirSync(path.dirname(outPath), { recursive: true });
-fs.writeFileSync(outPath, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
-
-console.log(
-  `Wrote ${snapshot.posts.length} posts and ${snapshot.webinars.length} webinars to ${path.relative(root, outPath)}`,
-);
+writeSnapshot(snapshot);

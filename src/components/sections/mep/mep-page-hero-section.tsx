@@ -62,11 +62,11 @@ export function MepPageHeroSection({
         <PageContainer className="relative py-10 pt-2 sm:py-12 sm:pt-4 lg:py-14">
           <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:gap-6 xl:gap-10">
             {/* Copy — vertically centered beside image on desktop */}
-            <div className="flex w-full shrink-0 flex-col justify-center gap-6 sm:gap-[30px] lg:w-[42%] lg:min-w-[320px] lg:max-w-[679px]">
+            <div className="flex w-full shrink-0 flex-col justify-center gap-6 sm:gap-[30px] lg:w-[42%] lg:min-w-[320px] lg:max-w-[699px]">
               <div className="flex w-full flex-col items-start gap-4 sm:gap-5">
                 <div className="flex flex-col items-start gap-3">
                   <MepSectionTag label={tag} />
-                  <h1 className="w-full capitalize text-[#111111]">
+                  <h1 className="w-full max-w-[614px] capitalize text-[#111111]">
                     <span className="text-[32px] font-medium leading-[1.15] sm:text-[40px] lg:text-[48px]">
                       {titleLead}
                     </span>
@@ -75,7 +75,10 @@ export function MepPageHeroSection({
                     </span>
                   </h1>
                 </div>
-                <p className="w-full text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]">
+                <p
+                  className="w-full text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]"
+                  style={{ maxWidth: descriptionMaxWidth }}
+                >
                   {description}
                 </p>
               </div>
@@ -91,15 +94,17 @@ export function MepPageHeroSection({
 
             {/* Image — natural size in column */}
             <div className="relative min-w-0 flex-1 lg:flex lg:items-center lg:justify-end">
-              <Image
-                src={imageSrc}
-                alt=""
-                width={HERO_IMAGE_WIDTH}
-                height={HERO_IMAGE_HEIGHT}
-                priority
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                className="block h-auto w-full max-w-full"
-              />
+              <div className="relative ml-auto w-full max-w-[650px] overflow-hidden rounded-[10px] bg-white shadow-[0_0_16.8px_rgba(0,0,0,0.15)]">
+                <Image
+                  src={imageSrc}
+                  alt=""
+                  width={650}
+                  height={530}
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 650px"
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </PageContainer>

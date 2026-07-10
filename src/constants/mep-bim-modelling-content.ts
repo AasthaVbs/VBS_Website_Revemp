@@ -3,9 +3,11 @@ export const mepBimModellingHero = {
   titleLead: "Code-Compliant MEP BIM Modeling Services that ",
   titleAccent: "Reduce Costly Rework",
   description:
-    "Our US-trained BIM experts deliver LOD 200–450 Revit MEP 3D modeling services, ensuring accurate coordination and seamless collaboration for clash-free project execution.",
+    "Our pre-vetted BIM professionals help you with LOD 200 to LOD 450 Revit MEP 3D Modeling Services. They create accurate models to enable coordination, collaboration and clash free project delivery.",
   ctaLabel: "Get A Free Quote",
   imageSrc: "/images/mep/mep-bim-modeling-hero.png",
+  copyMaxWidth: 699,
+  descriptionMaxWidth: 585,
 } as const;
 
 export const mepBimModellingTrustedBy = {
@@ -31,26 +33,26 @@ export const mepBimModellingTrustedBy = {
   ],
 } as const;
 
+import mepBimModelingOverview from "@/assets/images/mep-bim-modeling-overview.png";
+
 export const mepBimModellingIntro = {
-  tag: "Who We Are",
+  tag: "Overview",
   titleLead: "High Fidelity MEP Modeling Services for ",
-  titleAccent: "US Construction Standards",
+  titleAccent: "Global Construction Standards",
   paragraph1:
-    "Field-level rework and uncoordinated submittals frequently derail project timelines and inflate budgets. Virtual Building Studio functions as a technical extension of your team, providing access to a team of ",
-  paragraph1Bold: "200+ dedicated remote BIM modelers.",
+    "Field-level rework and uncoordinated submittals frequently derail project timelines and inflate budgets. Virtual Building Studio functions as a technical extension of your team, providing access to a team of",
+  paragraph1Bold: " 150+ dedicated remote BIM modelers.",
   paragraph2:
-    "As a specialized MEP BIM modeling service provider in the USA, we ensure your building systems are clash-free and fabrication-ready.",
-  mainImage: "/images/mep/about-main.png",
-  overlayImage: "/images/mep/about-overlay.png",
+    "As a specialized MEP BIM modeling service provider based in Houston, TX, we ensure your building systems are clash-free and fabrication-ready.",
+  mainImage: mepBimModelingOverview.src,
 } as const;
 
 export const mepBimServiceFeaturesSection = {
-  tag: "Service Features",
-  titleLead: "What You Get with Our ",
-  titleAccent: "Revit MEP Modeling",
-  titleEnd: " Services",
+  tag: "What You Get",
+  titleLead: "What to Expect from Our ",
+  titleAccent: "MEP Revit Modeling Services",
   description:
-    "Your Dedicated MEP BIM Modeling Company Delivering High-Fidelity Data for US Projects",
+    "Your on-demand MEP BIM Modeling Company Delivering Highly Reliable Data for US Projects.",
   ctaLabel: "Get A Free Quote",
 } as const;
 
@@ -62,61 +64,61 @@ export type MepBimFeatureCard = {
 
 export const mepBimServiceFeatureCards: MepBimFeatureCard[] = [
   {
-    title: "Parametric Revit Families",
+    title: "Parametric Families in Revit",
     description:
-      "Custom-built, intelligent MEP components with manufacturer-specific metadata for accurate scheduling and procurement.",
+      "Our team develops intelligent Revit families with manufacturer-specific information. These families support accurate scheduling, procurement, and future model updates.",
     icon: "/images/mep/service-features/icon-parametric-revit-families.svg",
   },
   {
-    title: "Fully Coordinated MEPF Systems",
+    title: "Fully Integrated MEPF Systems",
     description:
-      "Clash-free HVAC, Electrical, Plumbing & Fire Protection integration, optimized using Navisworks for automated interference checking.",
+      "Integrated HVAC, Electrical, Plumbing and Fire Protection systems optimized in Navisworks, automated for interference checking and clash-free.",
     icon: "/images/mep/service-features/icon-fully-coordinated-mepf.svg",
   },
   {
-    title: "Detailed Fabrication & Spool Drawings",
+    title: "Spool Drawings and Fabrication",
     description:
-      "Installation-ready shop drawings derived from the model, including precise cut lengths, sleeve locations, and hanger placements.",
+      "Shop drawings from the model for installation showing exact cut lengths, sleeve locations and hanger placements.",
     icon: "/images/mep/service-features/icon-fabrication-spool-drawings.svg",
   },
   {
-    title: "Code-Compliant Design Validation",
+    title: "Code Compliance Design Verification",
     description:
-      "Engineering layouts cross-verified against NFPA, NEC, and IPC to ensure submittal approval on the first pass.",
+      "Engineering layouts cross referenced with US standards such as NFPA, NEC and IPC to assure first pass submittal approval.",
     icon: "/images/mep/service-features/icon-code-compliant-validation.svg",
   },
   {
-    title: "Point Cloud to BIM Integration",
+    title: "BIM Integration from Point Cloud",
     description:
-      "Precise as-built modeling from high-definition laser scans, capturing existing site conditions with sub-inch accuracy for renovation projects.",
+      "High definition laser scans for accurate as-built modeling of existing site conditions to sub-inch accuracy for renovation projects.",
     icon: "/images/mep/service-features/icon-point-cloud-bim.svg",
   },
   {
-    title: "Advanced Scheduling & BoQ Generation",
+    title: "Advanced Scheduling and Generation of Bills of Quantities",
     description:
-      "Automated, data-driven Bill of Quantities (BoQ) and material schedules extracted directly from the Revit model to prevent procurement errors.",
+      "Revit model based automated data oriented Bill of Quantities (BoQ) and material schedules to avoid procurement errors.",
     icon: "/images/mep/service-features/icon-scheduling-boq.svg",
+  },
+  {
+    title: "Compliance with the Standardized BIM Execution Plan (BEP)",
+    description:
+      "Models built strictly to project-specific BIM Execution Plans and US National BIM Standards (NBIMS).",
+    icon: "/images/mep/service-features/icon-bep-adherence.svg",
   },
   {
     title: "Constructability Review & Value Engineering",
     description:
-      "Proactive identification of design inefficiencies to optimize routing, reduce material waste, and improve system performance without compromising design intent.",
+      "We review routing, system layouts and installation requirements before construction begins. This process helps project teams to mitigate material waste while keeping the original design intent",
     icon: "/images/mep/service-features/icon-constructability-review.svg",
-  },
-  {
-    title: "Standardized BIM Execution (BEP) Adherence",
-    description:
-      "Models structured strictly according to project-specific BIM Execution Plans and US National BIM Standards (NBIMS).",
-    icon: "/images/mep/service-features/icon-bep-adherence.svg",
   },
 ];
 
 export const mepBimLodSection = {
   tag: "Level of Development",
-  titleLead: "Defining Level of Development ",
-  titleAccent: "(LOD 300–500)",
-  titleEnd: "in MEP Modeling Services",
-  description: "We offer two flexible engagement models that work best for our clients.",
+  titleLead: "Level of Development ",
+  titleAccent: "(LOD 300 to LOD 450) in MEP Modeling Services",
+  description:
+    "Understand how each LOD stage incrementally increases model accuracy, coordination, fabrication readiness and as-built documentation.",
 } as const;
 
 export type MepBimLodCard = {
@@ -130,33 +132,33 @@ export const mepBimLodCards: MepBimLodCard[] = [
   {
     title: "LOD 200 - Schematic Design",
     description:
-      "Approximate geometry and system placeholders for initial spatial planning and routing.",
+      "During early stage planning, teams use rough geometry and system placeholders for space planning, initial coordination and routing studies.",
     image: "/images/mep/lod/lod-200-56586a.png",
+    highlighted: true,
   },
   {
     title: "LOD 300 - Detailed Design",
     description:
-      "Accurate 3D geometry and system layouts representing specific size, shape, and location.",
+      "The model includes accurate system geometry, dimensions, locations and orientations. Engineers can validate the design intent before coordination begins.",
     image: "/images/mep/lod/lod-300-233d41.png",
   },
   {
     title: "LOD 350 - Coordination",
     description:
-      "Cross-discipline coordination, including supports, hangers, and maintenance clearances to ensure a clash-free environment.",
+      "The model includes supports, hangers and maintenance clearances. This level guides project teams to coordinate across disciplines and resolve conflicts before installation process starts.",
     image: "/images/mep/lod/lod-350-14d2ff.png",
   },
   {
     title: "LOD 400 - Fabrication-Ready Detailing",
     description:
-      "High-fidelity models with manufacturer-specific data, bolt-level detailing, and assembly requirements for shop production.",
+      "The model contains fabrication-level details, manufacturer specific information and assembly requirements. Fabricators can generate shop drawings directly from the model.",
     image: "/images/mep/lod/lod-400-699eb7.png",
   },
   {
     title: "LOD 450 - As-Built/Installation",
     description:
-      "Field-verified models incorporating site-specific changes and final sub-assembly details for accurate facility management.",
+      "The final model includes the installed equipment and the as-built site conditions. Facility teams can use this information for operations and for future maintenance.",
     image: "/images/mep/lod/lod-450-63dc76.png",
-    highlighted: true,
   },
 ];
 

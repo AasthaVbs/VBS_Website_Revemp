@@ -8,6 +8,6 @@ export const metadata: Metadata = {
     "Code-compliant MEP BIM modeling services with LOD 200–450 Revit deliverables for clash-free, fabrication-ready building systems across the USA.",
 };
 
-export default function MepBimModellingRoute() {
+export default function MepBimModelingServicesRoute() {
   return <MepBimModellingPage />;
 }

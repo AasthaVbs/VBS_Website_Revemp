@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
+import linkedinColoredIcon from "@/assets/images/Social Media-colored.svg";
 import linkedinDefaultIcon from "@/assets/images/Social Media.svg";
 import {
   leadershipMembersByTab,
@@ -17,6 +18,13 @@ import { cn } from "@/lib/utils";
 
 const TEAM_ROW_SIZE = 3;
 const TEAM_FIRST_ROW_SIZE = 2;
+
+function resolveIconSrc(icon: string | { src: string }) {
+  return typeof icon === "string" ? icon : icon.src;
+}
+
+const LINKEDIN_ICON_DEFAULT = resolveIconSrc(linkedinDefaultIcon);
+const LINKEDIN_ICON_COLORED = resolveIconSrc(linkedinColoredIcon);
 
 function chunkTeamMembers(members: LeadershipMember[]): LeadershipMember[][] {
   if (members.length === 0) return [];
@@ -93,6 +101,51 @@ export function LeadershipTeamSection() {
   );
 }
 
+function LeadershipLinkedInIcon({ href, label }: { href?: string; label: string }) {
+  const icon = (
+    <>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={LINKEDIN_ICON_DEFAULT}
+        alt=""
+        className="vbs-leadership-team__linkedin-icon vbs-leadership-team__linkedin-icon--default"
+        width={34}
+        height={34}
+        aria-hidden
+      />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={LINKEDIN_ICON_COLORED}
+        alt=""
+        className="vbs-leadership-team__linkedin-icon vbs-leadership-team__linkedin-icon--hover"
+        width={34}
+        height={34}
+        aria-hidden
+      />
+    </>
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="vbs-leadership-team__linkedin"
+        aria-label={`${label} on LinkedIn`}
+      >
+        {icon}
+      </a>
+    );
+  }
+
+  return (
+    <span className="vbs-leadership-team__linkedin" aria-hidden>
+      {icon}
+    </span>
+  );
+}
+
 function LeadershipMemberCard({ member }: { member: LeadershipMember }) {
   return (
     <article
@@ -124,46 +177,7 @@ function LeadershipMemberCard({ member }: { member: LeadershipMember }) {
               <ChevronRight className="vbs-leadership-team__view-more-chevron" strokeWidth={1.5} aria-hidden />
             </button>
 
-            {member.linkedinHref ? (
-              <a
-                href={member.linkedinHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="vbs-leadership-team__linkedin"
-                aria-label={`${member.name} on LinkedIn`}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={linkedinDefaultIcon.src}
-                  alt=""
-                  className="vbs-leadership-team__linkedin-icon vbs-leadership-team__linkedin-icon--default"
-                  width={34}
-                  height={34}
-                  aria-hidden
-                />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/icon/linkedin.png"
-                  alt=""
-                  className="vbs-leadership-team__linkedin-icon vbs-leadership-team__linkedin-icon--hover"
-                  width={34}
-                  height={34}
-                  aria-hidden
-                />
-              </a>
-            ) : (
-              <span className="vbs-leadership-team__linkedin" aria-hidden>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={linkedinDefaultIcon.src}
-                  alt=""
-                  className="vbs-leadership-team__linkedin-icon"
-                  width={34}
-                  height={34}
-                  aria-hidden
-                />
-              </span>
-            )}
+            <LeadershipLinkedInIcon href={member.linkedinHref} label={member.name} />
           </div>
         </div>
       </div>

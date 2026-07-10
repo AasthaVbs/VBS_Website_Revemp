@@ -67,7 +67,7 @@ export const revitFamilyCreationPost: BlogPostDetail = {
         {
           text: "That role matters because modern delivery has moved beyond drawings alone. A single BIM model now supports coordination, quantity takeoff, documentation, analysis, and lifecycle handover. The same family can influence multiple outcomes at once. If a wall family carries the wrong layer structure or an equipment family misses key parameters, the problem spreads into schedules, cost reports, and coordination views. ",
         },
-        { text: "Revit BIM modeling services", underline: true, href: "/mep-bim-modelling" },
+        { text: "Revit BIM modeling services", underline: true, href: "/mep-bim-services/mep-bim-modeling-services" },
         {
           text: " now depend on content governance as much as geometry creation.",
         },

@@ -128,7 +128,7 @@ export const mepFullSpectrumCards = [
     text: "We deliver data-rich 3D MEPF models (LOD 300–500) that ensure seamless integration with architectural and structural systems. Our models comply with ASHRAE, NEC, IPC, and NFPA standards to enhance coordination, reduce rework, and support design validation and facility management.",
     image: "/image/MEP BIM Modeling-1.jpeg",
     imageCrop: { width: 522, height: 292, left: -31, top: -4.88 },
-    href: "/mep-bim-services/mep-bim-modeling-services/",
+    href: "/mep-bim-services/mep-bim-modeling-services",
   },
   {
     title: "MEP Revit Family Creation Services",

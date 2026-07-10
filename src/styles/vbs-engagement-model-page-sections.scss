@@ -603,11 +603,11 @@
   overflow-x: clip;
 
   .vbs-engagement-models-section {
-    padding-top: 24px !important;
+    padding-top: 12px !important;
     padding-bottom: 40px !important;
 
     @media (min-width: 1024px) {
-      padding-top: 40px !important;
+      padding-top: 24px !important;
       padding-bottom: 60px !important;
     }
   }
@@ -648,7 +648,7 @@
 
   .vbs-engagement-models-section {
     @media (max-width: 767px) {
-      padding: 24px 0 40px !important;
+      padding: 12px 0 40px !important;
 
       &__container {
         gap: 32px !important;

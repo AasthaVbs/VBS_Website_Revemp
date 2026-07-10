@@ -13,13 +13,13 @@ import {
 
 export function EngagementModelsPage() {
   return (
-    <div className="vbs-redesign-page relative min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page engagement-model-page relative min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
 
       <main className="relative z-0">
         <EngagementModelsSection
           id="engagement"
-          sectionClassName="bg-[#FAFAFA] pt-2 lg:pt-8"
+          sectionClassName="bg-[#FAFAFA]"
         />
         <DeferredEngagementModelFinderSection />
         <DeferredEngagementModelsCompareSection />

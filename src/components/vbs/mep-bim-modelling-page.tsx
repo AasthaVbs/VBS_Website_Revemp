@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
+import "@/styles/mep-figma-page.scss";
 import { mepResourcesSection } from "@/constants/mep-engineers-content";
 import { mepBimModellingHero } from "@/constants/mep-bim-modelling-content";
 import { mepFaqDescription } from "@/constants/mep-engineers-content";
@@ -22,11 +23,11 @@ import {
 
 export function MepBimModellingPage() {
   return (
-    <div className="vbs-redesign-page relative min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page mep-bim-modeling-services-page mep-bim-services-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
 
       <main className="relative z-0">
-        <MepPageHeroSection {...mepBimModellingHero} imageSize="compact" />
+        <MepPageHeroSection {...mepBimModellingHero} imageSize="compact" ctaHref="#services" />
         <DeferredMepTrustedByStripSection />
         <DeferredMepBimModellingIntroSection />
         <DeferredMepBimServiceFeaturesSection />

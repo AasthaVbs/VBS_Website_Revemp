@@ -15,8 +15,7 @@ const rowThree = mepBimServiceFeatureCards.slice(6, 8);
 
 /** Figma node 217:9292 — Service Features grid */
 export function MepBimServiceFeaturesSection() {
-  const { tag, titleLead, titleAccent, titleEnd, description, ctaLabel } =
-    mepBimServiceFeaturesSection;
+  const { tag, titleLead, titleAccent, description, ctaLabel } = mepBimServiceFeaturesSection;
 
   return (
     <section className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
@@ -27,10 +26,9 @@ export function MepBimServiceFeaturesSection() {
             <h2 className="mep-section-heading max-w-[716px] capitalize">
               <span className="font-medium">{titleLead}</span>
               <span className="text-accent font-light">{titleAccent}</span>
-              <span className="font-medium">{titleEnd}</span>
             </h2>
           </div>
-          <p className="max-w-[836px] text-[16px] font-normal leading-6 text-[#808080]">
+          <p className="max-w-[705px] text-[16px] font-normal leading-6 text-[#808080]">
             {description}
           </p>
         </div>
@@ -79,9 +77,7 @@ function FeatureCard({
   className?: string;
 }) {
   return (
-    <article
-      className={cn("mep-interactive-card flex flex-col gap-[15px] bg-white p-5", className)}
-    >
+    <article className={cn("mep-interactive-card flex flex-col gap-[15px] bg-white p-5", className)}>
       <div className="flex flex-col gap-2.5">
         <div className="flex h-[70px] w-[70px] shrink-0 items-center justify-center rounded-[10px] border border-[#CBCCCD] bg-[#FBF9F9] p-[15px]">
           <Image

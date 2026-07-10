@@ -299,15 +299,21 @@
   object-fit: contain;
 }
 
+.vbs-leadership-team__linkedin-icon--default,
 .vbs-leadership-team__linkedin-icon--hover {
   position: absolute;
   inset: 0;
-  opacity: 0;
   transition: opacity 0.2s ease;
 }
 
 .vbs-leadership-team__linkedin-icon--default {
-  transition: opacity 0.2s ease;
+  opacity: 1;
+  z-index: 1;
+}
+
+.vbs-leadership-team__linkedin-icon--hover {
+  opacity: 0;
+  z-index: 2;
 }
 
 .vbs-leadership-team__card:hover .vbs-leadership-team__linkedin-icon--default,

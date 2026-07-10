@@ -126,6 +126,18 @@
   }
 }
 
+/* Figma 217:8162 — MEP BIM Modeling overview */
+.vbs-redesign-page .mep-figma-overview--mep-bim-modeling {
+  .mep-figma-overview__frame {
+    width: min(650px, 100%);
+    aspect-ratio: 650 / 530;
+  }
+
+  .mep-figma-overview__content {
+    gap: 20px;
+  }
+}
+
 /* ── Full-Spectrum Services (node 265-67257) ── */
 .vbs-redesign-page .mep-figma-services {
   --services-track-pad: max(var(--vbs-page-gutter-md),
@@ -4026,12 +4038,15 @@
 
 /* 1) Redesign wrapper + page containers must not clip or transform */
 .vbs-redesign-page.mep-bim-services-page,
+.vbs-redesign-page.mep-bim-modeling-services-page,
 .vbs-redesign-page.scan-to-bim-services-page,
 .vbs-redesign-page.architecture-services-page,
 .vbs-redesign-page.mep-bim-services-page main,
+.vbs-redesign-page.mep-bim-modeling-services-page main,
 .vbs-redesign-page.scan-to-bim-services-page main,
 .vbs-redesign-page.architecture-services-page main,
 .mep-bim-services-page,
+.mep-bim-modeling-services-page,
 .scan-to-bim-services-page,
 .architecture-services-page {
   overflow: visible !important;
@@ -4290,6 +4305,131 @@
     .mep-figma-root [style*="width: 1240"] {
       width: 100% !important;
       max-width: 100% !important;
+    }
+  }
+}
+
+/* ── MEP BIM Modeling — LOD carousel uses architecture-style sticky h-scroll ── */
+.vbs-redesign-page .mep-figma-services--lod-carousel {
+  background: #fafafa !important;
+
+  &.mep-figma-services--wide-cards {
+    --services-card-image-h: 280px;
+    --services-card-min-h: 440px;
+  }
+
+  .mep-figma-services__sticky {
+    background: #fafafa !important;
+  }
+
+  .mep-figma-services__section-desc.mep-bim-lod-carousel__desc {
+    max-width: 588px !important;
+    text-transform: none !important;
+  }
+
+  .mep-bim-lod-carousel__track {
+    gap: 20px !important;
+  }
+
+  .mep-bim-lod-carousel__viewport {
+    position: relative;
+  }
+
+  .mep-bim-lod-carousel__fade {
+    position: absolute;
+    top: 0;
+    width: min(240px, 18vw);
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .mep-bim-lod-carousel__fade--right {
+    right: 0;
+    background: linear-gradient(270deg, #fafafa 56%, rgba(250, 250, 250, 0) 100%);
+  }
+
+  .mep-bim-lod-carousel__fade--left {
+    left: 0;
+    background: linear-gradient(90deg, #fafafa 56%, rgba(250, 250, 250, 0) 100%);
+  }
+
+  .mep-bim-lod-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 460px !important;
+    min-width: 460px !important;
+    max-width: 460px !important;
+    flex: 0 0 460px !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+  }
+
+  .mep-bim-lod-card--highlighted {
+    background: #f7f7f7 !important;
+  }
+
+  .mep-bim-lod-card__image {
+    position: relative !important;
+    width: 100% !important;
+    height: 280px !important;
+    min-height: 280px !important;
+    max-height: 280px !important;
+    flex-shrink: 0 !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    background: #f6f6f6 !important;
+  }
+
+  .mep-bim-lod-card__body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 20px !important;
+  }
+
+  .mep-bim-lod-card__title {
+    margin: 0 !important;
+    font-size: 22px !important;
+    font-weight: 400 !important;
+    line-height: 1.35 !important;
+    color: #111111 !important;
+  }
+
+  .mep-bim-lod-card__text {
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: #808080 !important;
+  }
+
+  &.mep-figma-services--mobile-stack .mep-figma-services__mobile-cards {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mep-bim-lod-card {
+      width: min(460px, 85vw) !important;
+      min-width: min(460px, 85vw) !important;
+      max-width: min(460px, 85vw) !important;
+      flex: 0 0 min(460px, 85vw) !important;
+    }
+
+    .mep-bim-lod-carousel__fade {
+      width: 80px;
     }
   }
 }

@@ -29,8 +29,13 @@ const nextConfig: NextConfig = {
       { source: "/leadership-team", destination: "/leadership", permanent: true },
       { source: "/leadership-team/:path*", destination: "/leadership", permanent: true },
       {
-        source: "/mep-bim-services/mep-bim-modeling-services",
-        destination: "/mep-bim-modelling",
+        source: "/mep-bim-modelling",
+        destination: "/mep-bim-services/mep-bim-modeling-services",
+        permanent: true,
+      },
+      {
+        source: "/mep-bim-modelling/:path*",
+        destination: "/mep-bim-services/mep-bim-modeling-services",
         permanent: true,
       },
       { source: "/projects", destination: "/portfolio", permanent: true },

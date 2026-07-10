@@ -1,88 +1,164 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
-
-import { PageContainer } from "@/components/layout/page-container";
-import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
+import { useRef, type RefObject } from "react";
 import { mepBimLodCards, mepBimLodSection } from "@/constants/mep-bim-modelling-content";
-import { useHorizontalCarouselWheel } from "@/hooks/use-horizontal-carousel-wheel";
+import { useShortLaptopLayout } from "@/hooks/useShortLaptopLayout";
+import { useMobileLayout } from "@/hooks/useMobileLayout";
+import { useStickyHoverWheelBridge } from "@/hooks/useStickyHoverWheelBridge";
+import { useStickyServicesCarousel } from "@/hooks/useStickyServicesCarousel";
 import { cn } from "@/lib/utils";
 
-/** Figma node 221:9409 — LOD horizontal carousel */
-export function MepBimLodCarouselSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const carouselRef = useRef<HTMLDivElement>(null);
-  useHorizontalCarouselWheel(sectionRef, carouselRef);
-
-  const { tag, titleLead, titleAccent, titleEnd, description } = mepBimLodSection;
+function LodSectionHeader() {
+  const { tag, titleLead, titleAccent, description } = mepBimLodSection;
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative bg-[#FAFAFA] py-16 lg:scroll-mt-[148px] lg:py-[100px]"
+    <header className="mep-figma-services__header">
+      <div className="mep-figma-services__head-top">
+        <span className="mep-figma-services__tag">{tag}</span>
+        <h2 className="mep-figma-services__title mep-section-heading max-w-[1028px] capitalize">
+          <span className="mep-figma-services__title-dark font-medium">{titleLead}</span>
+          <span className="mep-figma-services__title-accent text-accent font-light">{titleAccent}</span>
+        </h2>
+      </div>
+      <p className="mep-figma-services__section-desc mep-bim-lod-carousel__desc">{description}</p>
+    </header>
+  );
+}
+
+function LodCard({ card, isActive }: { card: (typeof mepBimLodCards)[number]; isActive: boolean }) {
+  return (
+    <article
+      className={cn(
+        "mep-figma-services__card mep-bim-lod-card",
+        isActive && "mep-figma-services__card--active",
+        card.highlighted && "mep-bim-lod-card--highlighted",
+      )}
     >
-      <PageContainer className="flex flex-col items-stretch gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
-          <div className="flex flex-col items-start gap-3">
-            <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading max-w-[1108px] capitalize">
-              <span className="font-medium">{titleLead}</span>
-              <span className="text-accent font-light">{titleAccent}</span>
-              <br className="hidden lg:block" />
-              <span className="font-medium">{titleEnd}</span>
-            </h2>
-          </div>
-          <p className="max-w-[588px] text-[16px] font-normal leading-6 text-[#808080]">
-            {description}
-          </p>
+      <div className="mep-bim-lod-card__image">
+        <Image
+          src={card.image}
+          alt={card.title}
+          fill
+          className="object-cover object-center"
+          sizes="460px"
+        />
+      </div>
+      <div className="mep-bim-lod-card__body">
+        <h3 className="mep-bim-lod-card__title">{card.title}</h3>
+        <p className="mep-bim-lod-card__text">{card.description}</p>
+      </div>
+    </article>
+  );
+}
+
+function LodCardTrack({
+  trackRef,
+  viewportRef,
+  activeIndex,
+}: {
+  trackRef: RefObject<HTMLDivElement | null>;
+  viewportRef: RefObject<HTMLDivElement | null>;
+  activeIndex: number;
+}) {
+  return (
+    <div
+      ref={viewportRef}
+      className="mep-figma-services__carousel-viewport mep-bim-lod-carousel__viewport"
+      aria-label="Level of development offerings"
+    >
+      <div ref={trackRef} className="mep-figma-services__track mep-bim-lod-carousel__track">
+        {mepBimLodCards.map((card, index) => (
+          <LodCard key={card.title} card={card} isActive={index === activeIndex} />
+        ))}
+      </div>
+      <div className="mep-bim-lod-carousel__fade mep-bim-lod-carousel__fade--left" aria-hidden />
+      <div className="mep-bim-lod-carousel__fade mep-bim-lod-carousel__fade--right" aria-hidden />
+    </div>
+  );
+}
+
+/** Figma node 221:9409 — LOD horizontal carousel with architecture-style sticky scroll */
+export function MepBimLodCarouselSection() {
+  const isHoverScroll = true;
+  const { isMobile, ready: layoutReady } = useMobileLayout();
+  const shortLaptopLayout = useShortLaptopLayout();
+  const cardsOnlyPin = layoutReady && isHoverScroll && shortLaptopLayout && !isMobile;
+  const useHorizontalCarousel = layoutReady && !isMobile;
+
+  const sectionRef = useRef<HTMLElement>(null);
+  const pinZoneRef = useRef<HTMLDivElement>(null);
+  const spacerRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
+
+  const activeIndex = useStickyServicesCarousel(sectionRef, stickyRef, trackRef, spacerRef, {
+    enabled: useHorizontalCarousel,
+    pinZoneRef: cardsOnlyPin ? pinZoneRef : null,
+    touchScrollViewportRef: cardsOnlyPin ? viewportRef : null,
+    carouselViewportRef: viewportRef,
+    cardsOnlyPin,
+  });
+
+  useStickyHoverWheelBridge(sectionRef, cardsOnlyPin ? pinZoneRef : null, {
+    enabled: isHoverScroll && useHorizontalCarousel,
+  });
+
+  const sectionClassName = cn(
+    "mep-figma-services",
+    "mep-figma-services--h-scroll",
+    "mep-figma-services--hover-scroll",
+    "mep-figma-services--lod-carousel",
+    "mep-figma-services--wide-cards",
+    cardsOnlyPin && "mep-figma-services--short-laptop",
+    isMobile && "mep-figma-services--mobile-stack",
+  );
+
+  if (layoutReady && isMobile) {
+    return (
+      <section ref={sectionRef} id="services" className={sectionClassName}>
+        <div className="mep-figma-services__intro vbs-page-container">
+          <LodSectionHeader />
         </div>
 
-        <div className="relative w-full min-w-0">
+        <div className="mep-figma-services__mobile-cards">
+          <LodCardTrack trackRef={trackRef} viewportRef={viewportRef} activeIndex={0} />
+        </div>
+      </section>
+    );
+  }
+
+  if (cardsOnlyPin) {
+    return (
+      <section ref={sectionRef} id="services" className={sectionClassName}>
+        <div className="mep-figma-services__intro vbs-page-container">
+          <LodSectionHeader />
+        </div>
+
+        <div ref={pinZoneRef} className="mep-figma-services__pin-zone">
+          <div ref={spacerRef} className="mep-figma-services__pin-spacer" aria-hidden />
           <div
-            ref={carouselRef}
-            className="mep-services-scroll flex w-full flex-nowrap items-stretch gap-5 overflow-x-auto overscroll-x-contain pb-2 lg:gap-5"
-            role="list"
+            ref={stickyRef}
+            className="mep-figma-services__sticky mep-figma-services__sticky--cards-only"
           >
-            {mepBimLodCards.map((card) => (
-              <article
-                key={card.title}
-                role="listitem"
-                className={cn(
-                  "flex w-[min(460px,85vw)] shrink-0 flex-col gap-5 overflow-hidden rounded-[10px]",
-                  card.highlighted ? "bg-[#F7F7F7]" : "bg-transparent",
-                )}
-              >
-                <div
-                  className={cn(
-                    "relative h-[280px] w-full shrink-0 overflow-hidden rounded-[10px]",
-                    card.highlighted ? "bg-[#F7F7F7]" : "bg-[#F6F6F6]",
-                  )}
-                >
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className={cn(
-                      "object-center",
-                      card.highlighted ? "object-cover" : "object-contain p-11",
-                    )}
-                    sizes="460px"
-                  />
-                </div>
-                <div className="flex flex-col gap-5 px-5 pb-5">
-                  <h3 className="text-[22px] font-normal leading-[1.35] text-[#111111]">
-                    {card.title}
-                  </h3>
-                  <p className="text-[16px] font-normal leading-6 text-[#808080]">
-                    {card.description}
-                  </p>
-                </div>
-              </article>
-            ))}
+            <LodCardTrack trackRef={trackRef} viewportRef={viewportRef} activeIndex={activeIndex} />
           </div>
         </div>
-      </PageContainer>
+      </section>
+    );
+  }
+
+  return (
+    <section ref={sectionRef} id="services" className={sectionClassName}>
+      <div ref={spacerRef} className="mep-figma-services__pin-spacer" aria-hidden />
+      <div ref={stickyRef} className="mep-figma-services__sticky">
+        <div className="mep-figma-services__inner vbs-page-container">
+          <LodSectionHeader />
+        </div>
+
+        <LodCardTrack trackRef={trackRef} viewportRef={viewportRef} activeIndex={activeIndex} />
+      </div>
     </section>
   );
 }

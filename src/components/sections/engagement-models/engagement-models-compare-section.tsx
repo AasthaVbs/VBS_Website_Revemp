@@ -24,7 +24,7 @@ export function EngagementModelsCompareSection() {
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>
           </div>
-          <p className="max-w-[584px] text-[15px] font-normal capitalize leading-6 text-[#808080] sm:text-[16px]">
+          <p className="max-w-[584px] text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]">
             {description}
           </p>
         </div>

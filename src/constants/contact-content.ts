@@ -51,8 +51,8 @@ export const officeLocations: OfficeLocation[] = [
   {
     id: "texas",
     name: "Texas",
-    addressLine1: "1004, 5605 N MacArthur Blvd #1000, Irving, TX 75038,",
-    addressLine2: "United States",
+    addressLine1: "1004, 5605 N MacArthur Blvd #1000,",
+    addressLine2: "Irving, TX 75038, United states",
     mapImage: "/images/contact/map-texas.png",
     mapImageOffsetY: "-28.25%",
     mapsUrl:
@@ -62,8 +62,8 @@ export const officeLocations: OfficeLocation[] = [
   {
     id: "new-jersey",
     name: "New Jersey",
-    addressLine1: "111 Montross Ave Apartment E, Rutherford, NJ 07070,",
-    addressLine2: "United States",
+    addressLine1: "111 Montross Ave Apartment E, Rutherford,",
+    addressLine2: "NJ 07070, United states",
     mapImage: "/images/contact/map-new-jersey.png",
     mapImageOffsetY: "-22.57%",
     mapsUrl:
@@ -74,8 +74,8 @@ export const officeLocations: OfficeLocation[] = [
   {
     id: "india",
     name: "India",
-    addressLine1: "Siddhi Vinayak Towers, B 603-604, S G Highway,",
-    addressLine2: "Makarba, Ahmedabad, Gujarat 380051",
+    addressLine1:
+      "Siddhi Vinayak Towers, B 603-604, S G Highway, Makarba, Ahmedabad, Gujarat 380051",
     mapEmbedUrl:
       "https://maps.google.com/maps?q=Siddhi+Vinayak+Towers,+B+603-604,+SG+Highway,+Makarba,+Ahmedabad,+Gujarat+380051&z=15&output=embed",
     mapsUrl:

@@ -30,7 +30,7 @@ export function AllProjectsSection() {
                   <span className="font-light text-[#D70416]">{titleAccent}</span>
                 </h1>
               </div>
-              <p className="max-w-[620px] text-[16px] capitalize leading-6 text-[#808080]">
+              <p className="max-w-[620px] text-[16px] leading-6 text-[#808080]">
                 {description}
               </p>
             </div>

@@ -32,7 +32,7 @@ export function BlogDetailFaqSection({ items }: BlogDetailFaqSectionProps) {
               <span className="font-light text-[#D70416]">Questions</span>
             </h2>
           </div>
-          <p className="max-w-[563px] text-[16px] capitalize leading-6 text-[#808080]">
+          <p className="max-w-[563px] text-[16px] leading-6 text-[#808080]">
             {faqIntro}
           </p>
         </div>

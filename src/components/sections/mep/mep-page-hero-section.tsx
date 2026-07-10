@@ -75,7 +75,7 @@ export function MepPageHeroSection({
                     </span>
                   </h1>
                 </div>
-                <p className="w-full text-[15px] font-normal capitalize leading-6 text-[#808080] sm:text-[16px]">
+                <p className="w-full text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]">
                   {description}
                 </p>
               </div>
@@ -144,7 +144,7 @@ export function MepPageHeroSection({
               </h1>
             </div>
             <p
-              className="w-full text-[16px] font-normal capitalize leading-6 text-[#808080]"
+              className="w-full text-[16px] font-normal leading-6 text-[#808080]"
               style={{ maxWidth: descriptionMaxWidth }}
             >
               {description}

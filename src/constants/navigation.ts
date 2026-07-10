@@ -89,12 +89,10 @@ export const ABOUT_DROPDOWN_LINKS: NavDropdownLink[] = [
 ];
 
 export const RESOURCES_DROPDOWN_LINKS: NavDropdownLink[] = [
-  { label: "Blog", href: ROUTES.blog },
   { label: "Case Studies", href: ROUTES.projects },
+  { label: "Blog", href: ROUTES.blog },
   { label: "White Paper", href: ROUTES.whitepaper },
   { label: "Webinar", href: ROUTES.webinar },
-  { label: "Testimonials", href: ROUTES.testimonials },
-  { label: "Portfolio", href: ROUTES.projects },
 ];
 
 export const CAPABILITY_CATEGORIES: CapabilityCategory[] = [

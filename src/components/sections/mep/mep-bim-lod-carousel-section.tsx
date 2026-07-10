@@ -33,7 +33,7 @@ export function MepBimLodCarouselSection() {
               <span className="font-medium">{titleEnd}</span>
             </h2>
           </div>
-          <p className="max-w-[588px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+          <p className="max-w-[588px] text-[16px] font-normal leading-6 text-[#808080]">
             {description}
           </p>
         </div>

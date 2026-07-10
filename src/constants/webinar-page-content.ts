@@ -6,10 +6,10 @@ import {
 
 export const webinarPageHero = {
   tag: "Webinar",
-  titleLead: "Webinars ",
-  titleAccent: "Virtual Building Studio (VBS) Resource",
+  titleLead: "Expert-Led BIM & ",
+  titleAccent: "Construction Webinars",
   description:
-    "Since 2015, we've been the trusted partner for Architecture and Engineering firms, helping them rapidly scale their BIM teams and deliver award-winning projects every time.",
+    "Join industry experts as they share insights, best practices, and emerging trends in BIM, Scan to BIM, MEP engineering, and digital construction.",
   ctaLabel: "Contact Us",
   imageAlt: "Virtual Building Studio webinar session",
 } as const;

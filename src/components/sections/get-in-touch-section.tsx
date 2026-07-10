@@ -17,7 +17,7 @@ export function GetInTouchSection({
   titleLead = "Get in ",
   titleAccent = "Touch",
   titleClassName = "text-section max-w-[528px] normal-case",
-  descriptionClassName = "max-w-[435px] capitalize text-[#808080]",
+  descriptionClassName = "max-w-[435px] text-[#808080]",
 }: {
   description?: string;
   sectionId?: string;

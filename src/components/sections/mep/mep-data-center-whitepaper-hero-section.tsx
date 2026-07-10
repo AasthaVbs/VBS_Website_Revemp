@@ -49,7 +49,7 @@ function HeroContactForm({ className }: { className?: string }) {
           <h2 className="max-w-[528px] text-[24px] capitalize leading-8 text-[#111111]">
             Get in <span className="font-light text-[#D70416]">Touch</span>
           </h2>
-          <p className="max-w-[480px] text-[16px] capitalize leading-6 text-[#808080]">
+          <p className="max-w-[480px] text-[16px] leading-6 text-[#808080]">
             Let&apos;s discuss your requirements and see how our expertise can help on your next
             project.
           </p>
@@ -121,7 +121,7 @@ export function MepDataCenterWhitepaperHeroSection() {
                 </span>
               </h1>
             </div>
-            <p className="max-w-[618px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+            <p className="max-w-[618px] text-[16px] font-normal leading-6 text-[#808080]">
               Our pre-vetted BIM team helps contractors, consultants, and developers deliver
               mission-critical facilities with coordinated MEP models built for construction,
               fabrication, and long-term operations.

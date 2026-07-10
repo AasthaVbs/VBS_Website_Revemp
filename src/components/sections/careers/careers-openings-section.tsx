@@ -31,7 +31,7 @@ export function CareersOpeningsSection({ hidden = false }: { hidden?: boolean })
               </span>
             </h2>
           </div>
-          <p className="max-w-[447px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+          <p className="max-w-[447px] text-[16px] font-normal leading-6 text-[#808080]">
             {currentOpeningsSectionCopy.description}
           </p>
         </div>

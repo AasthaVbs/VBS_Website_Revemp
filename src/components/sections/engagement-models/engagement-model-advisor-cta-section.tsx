@@ -16,7 +16,7 @@ export function EngagementModelAdvisorCtaSection() {
       }
       titleClassName="mep-section-heading w-full max-w-[787px] capitalize"
       description={description}
-      descriptionClassName="w-full max-w-[582px] text-[15px] font-normal capitalize leading-6 text-[#808080] sm:text-[16px]"
+      descriptionClassName="w-full max-w-[582px] text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]"
       ctaLabel={ctaLabel}
       ctaHref={ctaHref}
     />

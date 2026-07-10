@@ -311,6 +311,10 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
   }
 
+  .vbs-nav-dropdown-links {
+    gap: 12px;
+  }
+
   .vbs-capabilities-mega-menu {
     width: max-content;
     max-width: calc(100vw - (2 * var(--vbs-dropdown-gutter)));
@@ -638,6 +642,10 @@
   .vbs-mobile-nav-submenu {
     background: #f9fafb;
     border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px 0 8px;
   }
 
   .vbs-mobile-nav-item.is-nested {
@@ -655,6 +663,8 @@
     .vbs-mobile-nav-submenu {
       background: #f3f4f6;
       border-bottom: none;
+      gap: 0;
+      padding: 0;
     }
 
     .vbs-mobile-nav-sublink {

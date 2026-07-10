@@ -141,7 +141,7 @@ function buildPortableTextComponents(previewMode?: boolean): PortableTextCompone
         <h3 className="scroll-mt-28 text-[20px] font-medium capitalize text-[#111111]">{children}</h3>
       ),
       normal: ({ children }) => (
-        <p className="text-[16px] capitalize leading-6 text-[#808080]">{children}</p>
+        <p className="text-[16px] leading-6 text-[#808080]">{children}</p>
       ),
     },
     marks: {

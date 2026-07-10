@@ -36,7 +36,7 @@ export function MepDisciplinesSection() {
               <span className="font-medium">Modeled with BIM Expertise</span>
             </h2>
           </div>
-          <p className="max-w-[730px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+          <p className="max-w-[730px] text-[16px] font-normal leading-6 text-[#808080]">
             {mepDisciplinesIntro}
           </p>
         </div>

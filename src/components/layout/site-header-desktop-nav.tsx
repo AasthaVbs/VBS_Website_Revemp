@@ -64,7 +64,7 @@ function SimpleNavDropdown({ links }: { links: typeof ABOUT_DROPDOWN_LINKS }) {
 
   return (
     <div className="vbs-nav-dropdown-menu vbs-nav-dropdown-menu--simple">
-      <div className="flex w-full min-w-[200px] max-w-[226px] flex-col gap-3">
+      <div className="vbs-nav-dropdown-links flex w-full min-w-[200px] max-w-[226px] flex-col gap-5">
         {links.map((link) => {
           const isActive = isNavPathActive(path, link.href);
           return (

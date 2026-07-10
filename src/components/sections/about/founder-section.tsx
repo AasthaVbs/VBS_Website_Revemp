@@ -80,7 +80,7 @@ export function FounderSection() {
               alt="Ar. Ankit Kansara, Founder and CEO"
               width={717}
               height={606}
-              className="h-full w-full object-contain object-center"
+              className="h-full w-full object-cover object-center"
             />
           </div>
         </div>

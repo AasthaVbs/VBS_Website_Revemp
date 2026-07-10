@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 function RichText({ spans }: { spans: BlogTextSpan[] }) {
   return (
-    <p className="text-[16px] capitalize leading-6 text-[#808080]">
+    <p className="text-[16px] leading-6 text-[#808080]">
       {spans.map((span, index) => {
         const className = cn(
           span.underline && "text-[#111111] underline",
@@ -88,7 +88,7 @@ export function BlogDetailContent({ blocks }: { blocks: BlogContentBlock[] }) {
             return (
               <p
                 key={index}
-                className="text-[16px] capitalize leading-6 text-[#808080]"
+                className="text-[16px] leading-6 text-[#808080]"
               >
                 {block.text}
               </p>
@@ -110,10 +110,10 @@ export function BlogDetailContent({ blocks }: { blocks: BlogContentBlock[] }) {
               <div key={index} className="flex flex-col gap-4 px-0 sm:px-[30px]">
                 {block.items.map((item) => (
                   <div key={item.title} className="flex flex-col gap-2.5">
-                    <p className="text-[16px] capitalize leading-6 text-[#111111]">
+                    <p className="text-[16px] leading-6 text-[#111111]">
                       {item.title}
                     </p>
-                    <p className="text-[16px] capitalize leading-6 text-[#808080]">
+                    <p className="text-[16px] leading-6 text-[#808080]">
                       {item.body}
                     </p>
                   </div>
@@ -149,7 +149,7 @@ export function BlogDetailContent({ blocks }: { blocks: BlogContentBlock[] }) {
                 key={index}
                 className="flex flex-wrap items-center justify-center gap-2.5 rounded-[10px] border border-[#D70416] bg-[#FFF8F8] p-5"
               >
-                <span className="text-[16px] capitalize leading-6 text-[#111111]">
+                <span className="text-[16px] leading-6 text-[#111111]">
                   {block.label}
                 </span>
                 <Link

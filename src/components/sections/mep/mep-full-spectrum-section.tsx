@@ -33,7 +33,7 @@ export function MepFullSpectrumSection() {
               <span className="text-accent font-light">MEP Services</span>
             </h2>
           </div>
-          <p className="max-w-[833px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+          <p className="max-w-[833px] text-[16px] font-normal leading-6 text-[#808080]">
             {mepFullSpectrumIntro}
           </p>
         </div>

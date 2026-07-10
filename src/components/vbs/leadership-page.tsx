@@ -14,7 +14,7 @@ import {
 
 export function VbsLeadershipPage() {
   return (
-    <div className="vbs-redesign-page about-section-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page about-section-page vbs-leadership-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
 
       <LeadershipHeroSection />

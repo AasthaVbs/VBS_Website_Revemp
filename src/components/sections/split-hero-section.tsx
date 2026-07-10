@@ -85,7 +85,7 @@ export function SplitHeroSection({
   ctaHref,
   accentOnNewLine = false,
   sectionClassName = "py-12 md:py-16 lg:py-[150px]",
-  descriptionClassName = "w-full max-w-[497px] text-[16px] font-normal capitalize leading-6 text-[#808080] max-lg:max-w-none",
+  descriptionClassName = "w-full max-w-[497px] text-[16px] font-normal leading-6 text-[#808080] max-lg:max-w-none",
   rowClassName,
 }: SplitHeroSectionProps) {
   const resolvedCtaHref =

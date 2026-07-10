@@ -27,7 +27,7 @@ export function MepDataCenterWhyChooseSection() {
               <span className="font-medium text-[#111111]">{titleLead}</span>
             </h2>
           </div>
-          <p className="max-w-[636px] text-[16px] capitalize leading-6 text-[#808080]">{description}</p>
+          <p className="max-w-[636px] text-[16px] leading-6 text-[#808080]">{description}</p>
         </div>
 
         <div className="flex w-full max-w-[1440px] flex-col gap-[30px]">

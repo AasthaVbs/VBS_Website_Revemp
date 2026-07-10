@@ -54,7 +54,7 @@ export function MepWorkflowSection() {
               <span className="text-accent font-light">Services Workflow</span>
             </h2>
           </div>
-          <p className="max-w-[620px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+          <p className="max-w-[620px] text-[16px] font-normal leading-6 text-[#808080]">
             {MEP_WORKFLOW_INTRO}
           </p>
         </div>

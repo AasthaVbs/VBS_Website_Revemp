@@ -27,7 +27,7 @@ export function MepEngagementProcessSection({
               <span className="text-accent block font-light">{titleLine2}</span>
             </h2>
           </div>
-          <p className="max-w-[640px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+          <p className="max-w-[640px] text-[16px] font-normal leading-6 text-[#808080]">
             {description}
           </p>
         </div>

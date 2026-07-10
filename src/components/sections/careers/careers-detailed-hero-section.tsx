@@ -48,17 +48,17 @@ export function CareersDetailedHeroSection() {
             <div className="flex flex-col gap-5">
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <div className="flex flex-col gap-2.5">
-                  <p className="text-[16px] font-normal capitalize leading-6 text-[#808080]">Job Title:</p>
+                  <p className="text-[16px] font-normal leading-6 text-[#808080]">Job Title:</p>
                   <p className="text-[16px] font-normal capitalize leading-6 text-[#111111]">{card.title}</p>
                 </div>
                 <div className="flex flex-col gap-2.5">
-                  <p className="text-[16px] font-normal capitalize leading-6 text-[#808080]">Date:</p>
+                  <p className="text-[16px] font-normal leading-6 text-[#808080]">Date:</p>
                   <p className="text-[16px] font-normal capitalize leading-6 text-[#111111]">{card.date}</p>
                 </div>
               </div>
 
               <div className="flex flex-col gap-2.5">
-                <p className="text-[16px] font-normal capitalize leading-6 text-[#808080]">Designation:</p>
+                <p className="text-[16px] font-normal leading-6 text-[#808080]">Designation:</p>
                 <p className="text-[16px] font-normal capitalize leading-6 text-[#111111]">
                   {card.designation}
                 </p>
@@ -95,10 +95,10 @@ export function CareersDetailedHeroSection() {
             <div className="flex w-full flex-col gap-4">
               {growthBlocks.map((block) => (
                 <div key={block.title} className="flex w-full flex-col gap-1">
-                  <h3 className="text-[16px] font-medium capitalize leading-6 text-[#808080]">
+                  <h3 className="text-[16px] font-medium leading-6 text-[#808080]">
                     {block.title}
                   </h3>
-                  <p className="text-[16px] font-normal capitalize leading-6 text-[#808080]">
+                  <p className="text-[16px] font-normal leading-6 text-[#808080]">
                     {block.content}
                   </p>
                 </div>
@@ -119,14 +119,14 @@ function DetailBlock({ section, className }: { section: DetailSection; className
     <article className={`flex flex-col items-start gap-2.5 ${className ?? ""}`}>
       <h2 className="w-full text-[16px] font-medium capitalize leading-6 text-[#111111]">{section.title}</h2>
       {paragraphs?.map((paragraph) => (
-        <p key={paragraph} className="w-full text-[16px] font-normal capitalize leading-6 text-[#808080]">
+        <p key={paragraph} className="w-full text-[16px] font-normal leading-6 text-[#808080]">
           {paragraph}
         </p>
       ))}
       {bullets ? (
         <div className="flex w-full flex-col gap-0">
           {bullets.map((item) => (
-            <p key={item} className="w-full text-[16px] font-normal capitalize leading-6 text-[#808080]">
+            <p key={item} className="w-full text-[16px] font-normal leading-6 text-[#808080]">
               {item}
             </p>
           ))}

@@ -22,7 +22,7 @@ export function WhitepapersHeroSection() {
                   <span className="font-light text-[#D70416]">{titleAccent}</span>
                 </h1>
               </div>
-              <p className="w-full max-w-[583px] text-[16px] font-normal capitalize leading-6 text-[#808080] max-lg:max-w-none">
+              <p className="w-full max-w-[583px] text-[16px] font-normal leading-6 text-[#808080] max-lg:max-w-none">
                 {description}
               </p>
             </div>

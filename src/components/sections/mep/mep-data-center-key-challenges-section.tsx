@@ -21,7 +21,7 @@ export function MepDataCenterKeyChallengesSection() {
               <span className="font-light text-[#D70416]">{titleAccent}</span>
             </h2>
           </div>
-          <p className="max-w-[744px] text-[16px] capitalize leading-6 text-[#808080]">{description}</p>
+          <p className="max-w-[744px] text-[16px] leading-6 text-[#808080]">{description}</p>
         </div>
 
         <div className="w-full overflow-hidden rounded-[10px] border border-[#CBCCCD]">

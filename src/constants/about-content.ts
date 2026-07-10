@@ -9,7 +9,7 @@ export const aboutVisionImage = "/image/about-vision-main.jpg";
 export const visionMissionCards = [
   {
     title: "Vision",
-    description: "To digitally transform how the World builds.",
+    description: "To digitally transform how the world builds.",
     iconSrc: "/images/about/icon-vision.svg",
   },
   {
@@ -21,7 +21,7 @@ export const visionMissionCards = [
 ] as const;
 
 export const visionMissionSectionCopy = {
-  tag: "Our Vision",
+  tag: "Our Vision & Mission",
   titleLead: "Company's ",
   titleAccent: "Vision & Mission",
   description:

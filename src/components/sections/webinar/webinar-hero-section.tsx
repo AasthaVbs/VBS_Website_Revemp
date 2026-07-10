@@ -18,12 +18,12 @@ export function WebinarHeroSection() {
             <div className="flex flex-col items-start gap-5">
               <div className="flex flex-col items-start gap-3">
                 <SectionTag label={tag} />
-                <h1 className="text-section w-full max-w-[597px] capitalize max-lg:max-w-none">
+                <h1 className="text-section w-full max-w-[566px] capitalize max-lg:max-w-none">
                   <span className="font-medium text-[#111111]">{titleLead}</span>
                   <span className="font-light text-[#D70416]">{titleAccent}</span>
                 </h1>
               </div>
-              <p className="w-full max-w-[583px] text-[16px] font-normal capitalize leading-6 text-[#808080] max-lg:max-w-none">
+              <p className="w-full max-w-[583px] text-[16px] font-normal leading-6 text-[#808080] max-lg:max-w-none">
                 {description}
               </p>
             </div>

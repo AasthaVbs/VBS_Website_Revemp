@@ -17,7 +17,7 @@ export function MepTechnicalMethodsSection() {
               <span className="text-accent block font-light">{mepTechnicalMethods.titleLine2}</span>
             </h2>
           </div>
-          <p className="max-w-[739px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+          <p className="max-w-[739px] text-[16px] font-normal leading-6 text-[#808080]">
             {mepTechnicalMethods.description}
           </p>
         </div>

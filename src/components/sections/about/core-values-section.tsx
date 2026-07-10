@@ -23,7 +23,7 @@ export function CoreValuesSection() {
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>
           </div>
-          <p className="vbs-core-values__desc max-w-[620px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+          <p className="vbs-core-values__desc max-w-[620px] text-[16px] font-normal leading-6 text-[#808080]">
             {description}
           </p>
         </div>

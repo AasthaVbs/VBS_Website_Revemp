@@ -23,7 +23,7 @@ export function MepWhyChooseSection() {
               <span className="text-accent font-light">{mepWhyChooseSection.titleLine2}</span>
             </h2>
           </div>
-          <p className="max-w-[587px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+          <p className="max-w-[587px] text-[16px] font-normal leading-6 text-[#808080]">
             {mepWhyChooseSection.description}
           </p>
         </div>

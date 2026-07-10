@@ -22,7 +22,7 @@ export function MepBimUseCasesSection() {
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>
           </div>
-          <p className="max-w-[536px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+          <p className="max-w-[536px] text-[16px] font-normal leading-6 text-[#808080]">
             {description}
           </p>
         </div>

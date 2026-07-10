@@ -24,7 +24,7 @@ export function MepDataCenterBimWorkflowSection() {
               <span className="font-light text-[#D70416]">{titleAccent}</span>
             </h2>
           </div>
-          <p className="max-w-[790px] text-[16px] capitalize leading-6 text-[#808080]">{description}</p>
+          <p className="max-w-[790px] text-[16px] leading-6 text-[#808080]">{description}</p>
         </div>
 
         <div className="relative w-full max-w-[1440px] px-0 sm:px-4 lg:px-[165px]">

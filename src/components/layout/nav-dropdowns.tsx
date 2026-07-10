@@ -69,7 +69,7 @@ function NavDropdownAnchor({
 function SimpleNavDropdown({ links }: { links: NavDropdownLink[] }) {
   return (
     <div className="inline-flex rounded-[10px] bg-white p-5 shadow-[0_2px_10px_rgba(0,0,0,0.20)]">
-      <div className="flex w-[226px] flex-col gap-5">
+      <div className="vbs-nav-dropdown-links flex w-[226px] flex-col gap-3">
         {links.map((link) => (
           <NavDropdownAnchor key={link.label} link={link} className="text-[16px] font-normal leading-none text-[#111111] transition-colors hover:text-vbs-red" />
         ))}

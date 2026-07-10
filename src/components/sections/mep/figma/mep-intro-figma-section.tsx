@@ -81,7 +81,7 @@ export function MepIntroSection({
                 {points.map((point) => (
                   <li
                     key={point}
-                    className="ms-1 list-disc text-[16px] font-normal capitalize leading-6 text-[#808080]"
+                    className="ms-1 list-disc text-[16px] font-normal leading-6 text-[#808080]"
                   >
                     {point}
                   </li>

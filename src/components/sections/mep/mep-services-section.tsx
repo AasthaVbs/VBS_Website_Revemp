@@ -18,7 +18,7 @@ export function MepServicesSection() {
               <span className="text-accent font-light">{mepWhatYouGetSection.titleLine2}</span>
             </h2>
           </div>
-          <p className="max-w-[836px] text-[16px] font-normal capitalize leading-6 text-[#808080]">
+          <p className="max-w-[836px] text-[16px] font-normal leading-6 text-[#808080]">
             {mepWhatYouGetSection.description}
           </p>
         </div>

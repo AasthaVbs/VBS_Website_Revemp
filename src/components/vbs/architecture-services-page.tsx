@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { SiteHeader } from "@/components/layout/site-header";
+import { MepFullSpectrumServicesSection } from "@/components/sections/mep/figma/mep-full-spectrum-services-section";
 import { MepIntroSection } from "@/components/sections/mep/figma/mep-intro-figma-section";
 import { MepWhatYouGetSection } from "@/components/sections/mep/figma/mep-what-you-get-section";
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
@@ -42,7 +43,6 @@ import {
   DeferredIndustriesSection,
   DeferredMepDisciplinesSection,
   DeferredMepEngagementProcessSection,
-  DeferredMepFullSpectrumServicesSection,
   DeferredMepQualityAssuranceSection,
   DeferredMepResourcesSection,
   DeferredMepServiceBenefitsSection,
@@ -53,7 +53,7 @@ import {
 
 export function ArchitectureServicesPage() {
   return (
-    <div className="vbs-redesign-page architecture-services-page mep-bim-services-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page architecture-services-page mep-bim-services-page">
       <SiteHeader />
       <main>
         <MepPageHeroSection {...architectureHero} ctaHref="#services" />
@@ -63,7 +63,7 @@ export function ArchitectureServicesPage() {
           section={architectureWhatYouGetSection}
           cards={architectureWhatYouGetCards}
         />
-        <DeferredMepFullSpectrumServicesSection
+        <MepFullSpectrumServicesSection
           section={architectureFullSpectrumSection}
           cards={architectureFullSpectrumCards}
           scrollInteraction="hover"

@@ -1,21 +1,28 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
-import "@/styles/mep-figma-page.scss";
-import { mepResourcesSection } from "@/constants/mep-engineers-content";
-import { mepBimModellingHero } from "@/constants/mep-bim-modelling-content";
+import { MepBimLodCarouselSection } from "@/components/sections/mep/mep-bim-lod-carousel-section";
+import { MepBimModellingProcessSection } from "@/components/sections/mep/mep-bim-modelling-process-section";
+import {
+  mepBimLodStickyCards,
+  mepBimLodStickySection,
+  mepBimModellingFaqSection,
+  mepBimModellingFaqs,
+  mepBimModellingHero,
+  mepBimModellingProjectCta,
+  mepBimModellingResourcesSection,
+} from "@/constants/mep-bim-modelling-content";
 import { mepFaqDescription } from "@/constants/mep-engineers-content";
 import {
+  DeferredEvaluateDeliveryCtaSection,
+  DeferredFaqSection,
   DeferredGetInTouchSection,
   DeferredMepBimDeliverablesSection,
-  DeferredMepBimLodCarouselSection,
   DeferredMepBimMeasurableResultsSection,
   DeferredMepBimModellingIntroSection,
-  DeferredMepBimModellingProcessSection,
   DeferredMepBimServiceCoverageGridSection,
   DeferredMepBimServiceFeaturesSection,
   DeferredMepBimTechnologyStackSection,
   DeferredMepBimUseCasesSection,
-  DeferredMepFaqSection,
   DeferredMepResourcesSection,
   DeferredMepTrustedByStripSection,
   DeferredSiteFooter,
@@ -23,23 +30,45 @@ import {
 
 export function MepBimModellingPage() {
   return (
-    <div className="vbs-redesign-page mep-bim-modeling-services-page mep-bim-services-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page mep-bim-modeling-services-page mep-bim-services-page">
       <SiteHeader />
 
-      <main className="relative z-0">
+      <main>
         <MepPageHeroSection {...mepBimModellingHero} imageSize="compact" ctaHref="#services" />
         <DeferredMepTrustedByStripSection />
         <DeferredMepBimModellingIntroSection />
         <DeferredMepBimServiceFeaturesSection />
-        <DeferredMepBimLodCarouselSection />
         <DeferredMepBimServiceCoverageGridSection />
-        <DeferredMepBimTechnologyStackSection />
+        <MepBimLodCarouselSection
+          section={mepBimLodStickySection}
+          cards={mepBimLodStickyCards}
+        />
         <DeferredMepBimDeliverablesSection />
-        <DeferredMepBimModellingProcessSection />
+        <DeferredMepBimTechnologyStackSection />
+        <MepBimModellingProcessSection />
         <DeferredMepBimUseCasesSection />
         <DeferredMepBimMeasurableResultsSection />
-        <DeferredMepResourcesSection section={mepResourcesSection} />
-        <DeferredMepFaqSection />
+        <DeferredMepResourcesSection section={mepBimModellingResourcesSection} />
+        <DeferredEvaluateDeliveryCtaSection
+          cardOnMobile
+          title={
+            <>
+              <span className="font-medium">{mepBimModellingProjectCta.titleLine1}</span>
+              <span className="font-light">{mepBimModellingProjectCta.titleLine2}</span>
+            </>
+          }
+          description={mepBimModellingProjectCta.description}
+          ctaLabel={mepBimModellingProjectCta.cta}
+          ctaHref={mepBimModellingProjectCta.ctaHref}
+          titleClassName="max-w-[835px] !text-[#111111]"
+          descriptionClassName="max-w-[552px]"
+        />
+        <DeferredFaqSection
+          variant="mep"
+          tag={mepBimModellingFaqSection.tag}
+          description={mepBimModellingFaqSection.description}
+          items={mepBimModellingFaqs}
+        />
         <DeferredGetInTouchSection description={mepFaqDescription} />
       </main>
 

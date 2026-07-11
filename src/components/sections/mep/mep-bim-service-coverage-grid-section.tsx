@@ -44,17 +44,19 @@ export function MepBimServiceCoverageGridSection() {
       className="scroll-mt-[120px] bg-white py-16 lg:scroll-mt-[148px] lg:py-[100px]"
     >
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
-          <div className="flex w-full flex-col gap-3">
-            <div className="flex w-full justify-start">
-              <MepSectionTag label={tag} />
-            </div>
-            <h2 id="mep-bim-service-coverage-heading" className="mep-section-heading max-w-[659px] capitalize">
-              <span className="font-medium">{titleLine1} </span>
+        <div className="flex w-full max-w-[1440px] flex-col items-center gap-5">
+          <div className="flex w-full flex-col items-center gap-3">
+            <MepSectionTag label={tag} />
+            <h2
+              id="mep-bim-service-coverage-heading"
+              className="mep-section-heading max-w-[659px] capitalize text-center"
+            >
+              <span className="font-medium">{titleLine1}</span>
+              <br />
               <span className="text-accent font-light">{titleLine2}</span>
             </h2>
           </div>
-          <p className="max-w-[536px] text-[16px] font-normal leading-6 text-[#808080]">
+          <p className="max-w-[536px] text-center text-[16px] font-normal leading-6 text-[#808080]">
             {description}
           </p>
         </div>
@@ -93,36 +95,23 @@ function CoverageCard({ item }: { item: (typeof mepBimServiceCoverageGridItems)[
   return (
     <article className="group mep-interactive-card flex min-w-0 flex-1 flex-col gap-5 bg-white p-2.5">
       <div className="flex flex-col gap-2.5">
-        <div className="relative flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-[10px]">
-          {item.featured ? (
-            <Image
-              src={BENEFIT_ICON_COLORED}
-              alt=""
-              width={56}
-              height={56}
-              className="h-14 w-14"
-              aria-hidden
-            />
-          ) : (
-            <>
-              <Image
-                src={BENEFIT_ICON_MUTED}
-                alt=""
-                width={56}
-                height={56}
-                className="h-14 w-14 transition-opacity duration-200 group-hover:opacity-0"
-                aria-hidden
-              />
-              <Image
-                src={BENEFIT_ICON_COLORED}
-                alt=""
-                width={56}
-                height={56}
-                className="absolute h-14 w-14 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-                aria-hidden
-              />
-            </>
-          )}
+        <div className="relative flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[10px]">
+          <Image
+            src={BENEFIT_ICON_MUTED}
+            alt=""
+            width={46}
+            height={46}
+            className="h-[46px] w-[46px] object-contain transition-opacity duration-200 group-hover:opacity-0"
+            aria-hidden
+          />
+          <Image
+            src={BENEFIT_ICON_COLORED}
+            alt=""
+            width={46}
+            height={46}
+            className="absolute left-1/2 top-1/2 h-[46px] w-[46px] -translate-x-1/2 -translate-y-1/2 object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+            aria-hidden
+          />
         </div>
         <h3 className="text-[24px] font-normal leading-[1.35] text-[#111111]">{item.title}</h3>
       </div>

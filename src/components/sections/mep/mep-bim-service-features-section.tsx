@@ -6,16 +6,36 @@ import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import {
   mepBimServiceFeatureCards,
   mepBimServiceFeaturesSection,
+  type MepBimFeatureCard,
 } from "@/constants/mep-bim-modelling-content";
 import { cn } from "@/lib/utils";
 
-const rowOne = mepBimServiceFeatureCards.slice(0, 3);
-const rowTwo = mepBimServiceFeatureCards.slice(3, 6);
-const rowThree = mepBimServiceFeatureCards.slice(6, 8);
+function chunkCards<T>(cards: T[], size: number): T[][] {
+  const rows: T[][] = [];
+  for (let index = 0; index < cards.length; index += size) {
+    rows.push(cards.slice(index, index + size));
+  }
+  return rows;
+}
 
 /** Figma node 217:9292 — Service Features grid */
-export function MepBimServiceFeaturesSection() {
-  const { tag, titleLead, titleAccent, description, ctaLabel } = mepBimServiceFeaturesSection;
+export function MepBimServiceFeaturesSection({
+  section = mepBimServiceFeaturesSection,
+  cards = mepBimServiceFeatureCards,
+  ctaHref,
+}: {
+  section?: {
+    tag: string;
+    titleLead: string;
+    titleAccent: string;
+    description: string;
+    ctaLabel: string;
+  };
+  cards?: MepBimFeatureCard[];
+  ctaHref?: string;
+} = {}) {
+  const { tag, titleLead, titleAccent, description, ctaLabel } = section;
+  const rows = chunkCards(cards, 3);
 
   return (
     <section className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
@@ -34,17 +54,14 @@ export function MepBimServiceFeaturesSection() {
         </div>
 
         <div className="flex w-full flex-col gap-[30px]">
-          <FeatureRow cards={rowOne} />
-          <FeatureRow cards={rowTwo} />
-          <div className="flex flex-col gap-[30px] lg:flex-row lg:justify-center lg:gap-[30px]">
-            {rowThree.map((card) => (
-              <FeatureCard key={card.title} card={card} className="w-full lg:w-[460px]" />
-            ))}
-          </div>
+          {rows.map((row, index) => (
+            <FeatureRow key={`feature-row-${index}`} cards={row} />
+          ))}
         </div>
 
         <PrimaryCtaButton
           fullWidth={false}
+          href={ctaHref}
           className="h-auto min-h-[52px] self-center px-5 py-4 capitalize backdrop-blur-[50px]"
         >
           {ctaLabel}
@@ -54,16 +71,22 @@ export function MepBimServiceFeaturesSection() {
   );
 }
 
-function FeatureRow({ cards }: { cards: typeof rowOne }) {
+function FeatureRow({ cards }: { cards: MepBimFeatureCard[] }) {
   const colClass =
     cards.length === 2
-      ? "grid-cols-1 md:grid-cols-2"
-      : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+      ? "grid-cols-1 md:grid-cols-2 lg:justify-center"
+      : cards.length === 1
+        ? "grid-cols-1 lg:justify-center"
+        : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
 
   return (
     <div className={cn("grid gap-[30px]", colClass)}>
       {cards.map((card) => (
-        <FeatureCard key={card.title} card={card} className="min-h-[290px]" />
+        <FeatureCard
+          key={card.title}
+          card={card}
+          className={cn("min-h-[290px]", cards.length === 1 && "w-full lg:w-[460px]")}
+        />
       ))}
     </div>
   );
@@ -73,7 +96,7 @@ function FeatureCard({
   card,
   className,
 }: {
-  card: (typeof mepBimServiceFeatureCards)[number];
+  card: MepBimFeatureCard;
   className?: string;
 }) {
   return (

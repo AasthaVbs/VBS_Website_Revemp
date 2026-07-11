@@ -38,6 +38,26 @@ const nextConfig: NextConfig = {
         destination: "/mep-bim-services/mep-bim-modeling-services",
         permanent: true,
       },
+      {
+        source: "/bim-modeling-services/coordination-clash-detection-services",
+        destination: "/mep-bim-services/mep-coordination-services",
+        permanent: true,
+      },
+      {
+        source: "/bim-modeling-services/coordination-clash-detection-services/:path*",
+        destination: "/mep-bim-services/mep-coordination-services",
+        permanent: true,
+      },
+      {
+        source: "/bim-services/coordination-clash-detection-services",
+        destination: "/mep-bim-services/mep-coordination-services",
+        permanent: true,
+      },
+      {
+        source: "/bim-services/coordination-clash-detection-services/:path*",
+        destination: "/mep-bim-services/mep-coordination-services",
+        permanent: true,
+      },
       { source: "/projects", destination: "/portfolio", permanent: true },
       { source: "/projects/:path*", destination: "/portfolio/:path*", permanent: true },
       { source: "/success-stories", destination: "/portfolio", permanent: true },
@@ -53,6 +73,16 @@ const nextConfig: NextConfig = {
       {
         source: "/webinar-common-mistakes-to-avoid-when-creating-permit-sets/:path*",
         destination: "/webinar/webinar-common-mistakes-to-avoid-when-creating-permit-sets",
+        permanent: true,
+      },
+      {
+        source: "/terms-and-conditions",
+        destination: "/terms-of-use",
+        permanent: true,
+      },
+      {
+        source: "/terms-and-conditions/:path*",
+        destination: "/terms-of-use",
         permanent: true,
       },
     ];

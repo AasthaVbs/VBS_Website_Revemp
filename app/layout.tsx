@@ -19,6 +19,8 @@ import "@/styles/vbs-life-at-vbs.scss";
 import "@/styles/vbs-engagement-models-section.scss";
 import "@/styles/vbs-engagement-model-page-sections.scss";
 import "@/styles/mep-figma-page.scss";
+import "@/styles/vbs-legal-page.scss";
+import "@/styles/vbs-thank-you-page.scss";
 
 const inter = Inter({
   subsets: ["latin"],

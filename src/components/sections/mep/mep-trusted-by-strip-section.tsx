@@ -2,7 +2,10 @@ import Image from "next/image";
 import { Fragment } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
-import { mepBimModellingTrustedBy } from "@/constants/mep-bim-modelling-content";
+import {
+  mepBimModellingTrustedBy,
+  type MepTrustedByContent,
+} from "@/constants/mep-bim-modelling-content";
 
 function TrustedDivider() {
   return (
@@ -14,8 +17,12 @@ function TrustedDivider() {
 }
 
 /** Figma node 265:49905 — Trusted By strip */
-export function MepTrustedByStripSection() {
-  const { titleAccent, titleLead, items } = mepBimModellingTrustedBy;
+export function MepTrustedByStripSection({
+  trustedBy = mepBimModellingTrustedBy,
+}: {
+  trustedBy?: MepTrustedByContent;
+} = {}) {
+  const { titleAccent, titleLead, items } = trustedBy;
 
   return (
     <section className="bg-white py-[50px]">

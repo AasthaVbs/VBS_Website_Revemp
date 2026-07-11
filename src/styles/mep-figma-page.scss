@@ -782,6 +782,32 @@
   }
 }
 
+/* MEP Coordination — larger service card images (Figma 460×280) */
+.vbs-redesign-page .mep-figma-services--coordination-services.mep-figma-services--wide-cards {
+  --services-card-image-h: 280px;
+  --services-card-min-h: 460px;
+
+  .mep-figma-services__card {
+    width: 460px !important;
+    min-width: 460px !important;
+    max-width: 460px !important;
+    flex: 0 0 460px !important;
+  }
+
+  .mep-figma-services__card-image {
+    height: var(--services-card-image-h) !important;
+    min-height: var(--services-card-image-h) !important;
+    max-height: var(--services-card-image-h) !important;
+  }
+
+  &.mep-figma-services--mobile-stack .mep-figma-services__card {
+    width: min(460px, 85vw) !important;
+    min-width: min(460px, 85vw) !important;
+    max-width: min(460px, 85vw) !important;
+    flex: 0 0 min(460px, 85vw) !important;
+  }
+}
+
 /* Short laptop viewport — fit full card inside sticky pin (JS sets --services-card-h) */
 .vbs-redesign-page .mep-figma-services--compact-sticky {
   &.mep-figma-services--h-scroll .mep-figma-services__sticky .mep-figma-services__header {
@@ -2083,7 +2109,7 @@
   }
 
   &__title {
-    width: 704px !important;
+    width: 804px !important;
     max-width: 100% !important;
     margin: 0 !important;
     font-size: 48px !important;
@@ -4039,14 +4065,17 @@
 /* 1) Redesign wrapper + page containers must not clip or transform */
 .vbs-redesign-page.mep-bim-services-page,
 .vbs-redesign-page.mep-bim-modeling-services-page,
+.vbs-redesign-page.mep-bim-coordination-services-page,
 .vbs-redesign-page.scan-to-bim-services-page,
 .vbs-redesign-page.architecture-services-page,
 .vbs-redesign-page.mep-bim-services-page main,
 .vbs-redesign-page.mep-bim-modeling-services-page main,
+.vbs-redesign-page.mep-bim-coordination-services-page main,
 .vbs-redesign-page.scan-to-bim-services-page main,
 .vbs-redesign-page.architecture-services-page main,
 .mep-bim-services-page,
 .mep-bim-modeling-services-page,
+.mep-bim-coordination-services-page,
 .scan-to-bim-services-page,
 .architecture-services-page {
   overflow: visible !important;
@@ -4062,6 +4091,17 @@
 .vbs-redesign-page .mep-figma-services--h-scroll .mep-figma-services__sticky {
   box-sizing: border-box !important;
   overflow: visible !important;
+}
+
+/* Deferred lazy sections must not clip position:fixed / sticky pin targets */
+.mep-bim-services-page .deferred-section-host,
+.architecture-services-page .deferred-section-host,
+.scan-to-bim-services-page .deferred-section-host,
+.mep-bim-modeling-services-page .deferred-section-host,
+.mep-bim-coordination-services-page .deferred-section-host {
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
 }
 
 /* 3) If a parent uses transform for animations, neutralise on the flagged ancestor:

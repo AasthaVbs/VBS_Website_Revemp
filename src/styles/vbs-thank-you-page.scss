@@ -1,0 +1,128 @@
+.vbs-redesign-page.thank-you-page {
+  .thank-you-page__section {
+    padding: 40px 0 64px;
+
+    @media (min-width: 1024px) {
+      padding: 60px 0 100px;
+    }
+  }
+
+  .thank-you-page__container {
+    max-width: 1440px;
+  }
+
+  .thank-you-page__content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .thank-you-page__header {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .thank-you-page__title {
+    margin: 0;
+    max-width: 497px;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #111111;
+    text-transform: capitalize;
+  }
+
+  .thank-you-page__text,
+  .thank-you-page__follow-label {
+    margin: 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #808080;
+  }
+
+  .thank-you-page__follow-label {
+    text-transform: capitalize;
+  }
+
+  .thank-you-page__link {
+    color: #111111;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  .thank-you-page__social-block {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .thank-you-page__socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .thank-you-page__social-link {
+    display: inline-flex;
+    height: 34px;
+    width: 34px;
+    shrink: 0;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 9999px;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .thank-you-page__cta {
+    display: inline-flex;
+    min-height: 52px;
+    width: 288px;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #d70416;
+    border-radius: 10px;
+    background: #d70416;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.92;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .vbs-redesign-page.thank-you-page {
+    .thank-you-page__title {
+      font-size: 36px;
+    }
+  }
+}

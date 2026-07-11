@@ -5,6 +5,8 @@ import type { StaticImageData } from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
+import { cn } from "@/lib/utils";
+
 export type MepPageHeroContent = {
   tag: string;
   titleLead: string;
@@ -62,17 +64,29 @@ export function MepPageHeroSection({
         <PageContainer className="relative py-10 pt-2 sm:py-12 sm:pt-4 lg:py-14">
           <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:gap-6 xl:gap-10">
             {/* Copy — vertically centered beside image on desktop */}
-            <div className="flex w-full shrink-0 flex-col justify-center gap-6 sm:gap-[30px] lg:w-[42%] lg:min-w-[320px] lg:max-w-[699px]">
+            <div
+              className="flex w-full shrink-0 flex-col justify-center gap-6 sm:gap-[30px] lg:min-w-[360px] lg:flex-[1.1_1_0%]"
+              style={{ maxWidth: copyMaxWidth }}
+            >
               <div className="flex w-full flex-col items-start gap-4 sm:gap-5">
                 <div className="flex flex-col items-start gap-3">
                   <MepSectionTag label={tag} />
-                  <h1 className="w-full max-w-[614px] capitalize text-[#111111]">
-                    <span className="text-[32px] font-medium leading-[1.15] sm:text-[40px] lg:text-[48px]">
-                      {titleLead}
-                    </span>
-                    <span className="text-[32px] font-light leading-[1.15] text-[#D70416] sm:text-[40px] lg:text-[48px]">
-                      {titleAccent}
-                    </span>
+                  <h1 className="w-full capitalize text-[#111111]" style={{ maxWidth: copyMaxWidth }}>
+                    {titleLead.split("\n").map((line, index, lines) => (
+                      <span
+                        key={`${line}-${index}`}
+                        className={cn(
+                          "block text-[32px] font-medium leading-[1.15] sm:text-[40px] lg:text-[48px]",
+                          index === 0 && "lg:whitespace-nowrap",
+                          index === lines.length - 1 && "lg:whitespace-nowrap",
+                        )}
+                      >
+                        {line}
+                        {index === lines.length - 1 ? (
+                          <span className="font-light text-[#D70416]">{titleAccent}</span>
+                        ) : null}
+                      </span>
+                    ))}
                   </h1>
                 </div>
                 <p

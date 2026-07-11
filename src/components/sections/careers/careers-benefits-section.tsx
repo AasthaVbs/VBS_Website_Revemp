@@ -27,7 +27,7 @@ function BenefitCard({
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const highlighted = index <= activeIndex;
-  const showColoredIcon = highlighted || isHovered;
+  const showColoredIcon = isHovered;
 
   return (
     <article

@@ -82,6 +82,13 @@ export const DeferredSiteFooter = createDeferredSection(
   { minHeight: 360, rootMargin: "480px 0px" },
 );
 
+export const DeferredStickyHorizontalServicesSection = createDeferredSection(
+  () => import("@/components/sections/sticky-horizontal-services-section"),
+  "StickyHorizontalServicesSection",
+  { minHeight: 560 },
+);
+
+/** @deprecated Use DeferredStickyHorizontalServicesSection — kept for existing imports. */
 export const DeferredMepFullSpectrumServicesSection = createDeferredSection(
   () => import("@/components/sections/mep/figma/mep-full-spectrum-services-section"),
   "MepFullSpectrumServicesSection",

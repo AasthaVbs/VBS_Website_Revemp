@@ -19,7 +19,7 @@ function resolveImageSrc(icon) {
 function BenefitCard({ card, index, activeIndex }) {
   const [isHovered, setIsHovered] = useState(false);
   const highlighted = index <= activeIndex;
-  const showColoredIcon = highlighted || isHovered;
+  const showColoredIcon = isHovered;
 
   return (
     <article
@@ -76,11 +76,13 @@ export function MepServiceBenefitsSection({
   id = "benefits",
   section = mepServiceBenefitsSection,
   cards = mepServiceBenefitsCards,
+  showCta = true,
 }) {
   const gridRef = useRef(null);
   const activeIndex = useScrollRevealProgress(gridRef, cards.length, "[data-scroll-reveal]", 0.55);
-  const rowOne = cards.slice(0, 3);
-  const rowTwo = cards.slice(3, 6);
+  const rowSplit = cards.length === 4 ? 2 : 3;
+  const rowOne = cards.slice(0, rowSplit);
+  const rowTwo = cards.slice(rowSplit);
   const hasThreePartTitle = section.titleBefore || section.titleAfter;
   const hasTitleParts = section.titleParts?.length > 0;
 
@@ -143,11 +145,13 @@ export function MepServiceBenefitsSection({
         >
           <BenefitRow cards={rowOne} startIndex={0} activeIndex={activeIndex} />
           <div className="mep-figma-benefits__row-divider" aria-hidden />
-          <BenefitRow cards={rowTwo} startIndex={3} activeIndex={activeIndex} />
+          <BenefitRow cards={rowTwo} startIndex={rowSplit} activeIndex={activeIndex} />
         </div>
-        <PrimaryCtaButton fullWidth={false} href={section.ctaHref}>
-          {section.ctaLabel}
-        </PrimaryCtaButton>
+        {showCta && section.ctaLabel ? (
+          <PrimaryCtaButton fullWidth={false} href={section.ctaHref}>
+            {section.ctaLabel}
+          </PrimaryCtaButton>
+        ) : null}
       </PageContainer>
     </section>
   );

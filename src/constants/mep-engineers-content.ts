@@ -177,7 +177,7 @@ export const mepFullSpectrumCards = [
     imageCrop: { width: 501, height: 280, left: -21, top: 0 },
     elevated: false,
     titleMinHeight: 30,
-    href: "/bim-modeling-services/coordination-clash-detection-services/",
+    href: "/mep-bim-services/mep-coordination-services",
   },
   {
     title: "Scan to BIM Services for MEP Systems",

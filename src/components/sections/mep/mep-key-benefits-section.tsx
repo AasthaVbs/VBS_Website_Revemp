@@ -85,13 +85,26 @@ function BenefitsRow({
 }
 
 function BenefitCard({ benefit }: { benefit: (typeof mepKeyBenefits)[number] }) {
-  const iconSrc = benefit.featured ? BENEFIT_ICON_COLORED : BENEFIT_ICON_MUTED;
-
   return (
-    <article className="flex min-w-0 flex-1 flex-col gap-5 bg-white p-2.5">
+    <article className="group flex min-w-0 flex-1 flex-col gap-5 bg-white p-2.5">
       <div className="flex flex-col gap-2.5">
-        <div className="flex h-[60px] w-[60px] items-center justify-center rounded-[10px] p-[15px]">
-          <Image src={iconSrc} alt="" width={46} height={46} className="h-[46px] w-[46px]" aria-hidden />
+        <div className="relative flex h-[60px] w-[60px] items-center justify-center rounded-[10px]">
+          <Image
+            src={BENEFIT_ICON_MUTED}
+            alt=""
+            width={46}
+            height={46}
+            className="h-[46px] w-[46px] object-contain transition-opacity duration-200 group-hover:opacity-0"
+            aria-hidden
+          />
+          <Image
+            src={BENEFIT_ICON_COLORED}
+            alt=""
+            width={46}
+            height={46}
+            className="absolute left-1/2 top-1/2 h-[46px] w-[46px] -translate-x-1/2 -translate-y-1/2 object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+            aria-hidden
+          />
         </div>
         <h3 className="text-[24px] font-normal leading-[1.35] text-[#111111]">{benefit.title}</h3>
       </div>

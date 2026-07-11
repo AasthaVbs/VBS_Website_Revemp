@@ -33,6 +33,15 @@ export const mepBimModellingTrustedBy = {
   ],
 } as const;
 
+export type MepTrustedByContent = {
+  titleAccent: string;
+  titleLead: string;
+  items: ReadonlyArray<
+    | { icon: string; label: string }
+    | { dashColor: string; label: string }
+  >;
+};
+
 import mepBimModelingOverview from "@/assets/images/mep-bim-modeling-overview.png";
 
 export const mepBimModellingIntro = {
@@ -46,6 +55,20 @@ export const mepBimModellingIntro = {
     "As a specialized MEP BIM modeling service provider based in Houston, TX, we ensure your building systems are clash-free and fabrication-ready.",
   mainImage: mepBimModelingOverview.src,
 } as const;
+
+export type MepOverviewIntroContent = {
+  tag: string;
+  titleLead: string;
+  titleAccent: string;
+  paragraph1: string;
+  paragraph1Bold: string;
+  paragraph2?: string;
+  paragraph2Lead?: string;
+  paragraph2Bold?: string;
+  paragraph2Tail?: string;
+  mainImage: string;
+  imageAlt?: string;
+};
 
 export const mepBimServiceFeaturesSection = {
   tag: "What You Get",
@@ -162,115 +185,115 @@ export const mepBimLodCards: MepBimLodCard[] = [
   },
 ];
 
+/** Sticky carousel section — maps LOD content to StickyHorizontalServicesSection props. */
+export const mepBimLodStickySection = {
+  tag: mepBimLodSection.tag,
+  titleLine1: mepBimLodSection.titleLead,
+  titleLine2: mepBimLodSection.titleAccent,
+  description: mepBimLodSection.description,
+  wideCards: true,
+  titleMaxWidth: 1028,
+};
+
+export const mepBimLodStickyCards = mepBimLodCards.map(({ title, description, image, highlighted }) => ({
+  title,
+  text: description,
+  image,
+  highlighted,
+}));
+
 export const mepBimServiceCoverageGridSection = {
   tag: "Service Coverage",
-  titleLine1: "Complete Coverage for",
-  titleLine2: "MEP BIM Modeling Services",
+  titleLine1: "Full Range of MEP",
+  titleLine2: "BIM Modeling Services",
   description:
-    "Comprehensive MEP Modeling Services Integrating HVAC, Electrical, Mechanical Piping, Plumbing, and Fire Protection Workflows",
+    "End-to-End MEP modeling services integrating HVAC, electrical, mechanical piping, plumbing and fire protection processes",
   ctaLabel: "Let's Talk",
 } as const;
 
 export type MepBimServiceCoverageGridItem = {
   title: string;
   description: string;
-  featured?: boolean;
 };
 
 export const mepBimServiceCoverageGridItems: MepBimServiceCoverageGridItem[] = [
   {
     title: "HVAC BIM Modeling",
     description:
-      "Detailed 3D BIM modeling of complex ductwork, air handling units (AHUs), VAV boxes, and specialized airflow systems tailored to ASHRAE standards.",
-    featured: true,
+      "We develop detailed HVAC models of ductwork, air handling units, VAV boxes and special air distribution systems. All the layouts are tailored to your project requirements and ASHRAE standards.",
   },
   {
-    title: "Mechanical Piping BIM Modeling",
+    title: "BIM Modeling for Mechanical Piping",
     description:
-      "Precision routing for chilled water, hot water, and steam systems, including valves, flanges, and equipment room layouts.",
+      "We build precise models of process piping systems, hot water, chilled water and steam systems. Each model includes valves, flanges, fittings and equipment connections.",
   },
   {
     title: "Plumbing BIM Modeling",
     description:
-      "Comprehensive modeling of domestic water supply, sanitary drainage, vent systems, and specialized gas piping with accurate slope requirements.",
+      "We model domestic water, sanitary drainage, vent piping, stormwater and gas piping systems. Required slopes and routing are maintained throughout the model.",
   },
   {
     title: "Electrical BIM Modeling",
     description:
-      "Accurate layouts for cable trays, conduit runs, lighting fixtures, and power distribution systems, ensuring adequate clearances for NEC compliance.",
+      "We prepare coordinated layouts for conduit runs, cable trays, lighting fixtures, switch gear and power distribution systems. The model preserves the clearances necessary to meet NEC requirements.",
   },
   {
     title: "Fire Protection System Modeling",
     description:
-      "Design-intent modeling for automated sprinklers, standpipes, and fire pumps, coordinated to eliminate interference with structural and MEP elements.",
+      "We model sprinklers, standpipes, fire pumps and related fire protection systems according to the approved design intent. Coordination reduces conflicts with structural and other MEP systems.",
   },
   {
     title: "Integrated MEPF BIM Coordination",
     description:
-      "Multi-disciplinary interference checking and clash resolution to ensure a zero-conflict installation phase.",
+      "Our coordination process combines every discipline into a federated model. Clash detection helps teams in resolving conflicts before fabrication and installation begin.",
   },
 ];
 
 export const mepBimTechnologyStackSection = {
-  tag: "Technology Stack",
-  titleLead: "Tools & Platforms: We Use to Deliver ",
-  titleAccent: "High-Precision MEP BIM Modeling Services",
-  titleEnd: " in the USA",
+  tag: "Tools & Platforms",
+  titleLine1: "We Use to Deliver High-Precision",
+  titleAccent: "MEP BIM Modeling Services",
   description:
-    "Comprehensive MEP Modeling Services Integrating HVAC, Electrical, Mechanical Piping, Plumbing, and Fire Protection Workflows",
+    "We use industry leading BIM software for accurate, coordinated and construction ready MEP models for complex projects.",
 } as const;
 
-export type MepBimTechnologyStackRow = {
-  stage: string;
-  software: string[];
-  purpose: string[];
+export type MepBimTechnologyTool = {
+  name: string;
+  icon: string;
+  iconWidth: number;
+  iconHeight: number;
 };
 
-export const mepBimTechnologyStackRows: MepBimTechnologyStackRow[] = [
+export const mepBimTechnologyStackToolsRowOne: MepBimTechnologyTool[] = [
+  { name: "Autodesk Revit", icon: "/icon/revit.png", iconWidth: 84, iconHeight: 84 },
+  { name: "Lumion", icon: "/icon/lumion.png", iconWidth: 74, iconHeight: 74 },
+  { name: "AutoCAD", icon: "/icon/autocad.png", iconWidth: 84, iconHeight: 84 },
   {
-    stage: "BIM Authoring",
-    software: ["Autodesk Revit", "Graphisoft Archicad"],
-    purpose: [
-      "Generating 3D parametric models",
-      "Developing LOD 200-450 MEP families",
-      "Extracting accurate documentation",
-    ],
+    name: "ReCap Pro",
+    icon: "/image/ReCap-Pro-2023-lockup-Blk-OL-ADSK-No-Year-Stacked-1.jpg",
+    iconWidth: 71,
+    iconHeight: 66,
   },
+  { name: "BIM 360", icon: "/image/bim-360.png", iconWidth: 66, iconHeight: 79 },
+];
+
+export const mepBimTechnologyStackToolsRowTwo: MepBimTechnologyTool[] = [
+  { name: "Navis works", icon: "/icon/navisworks.png", iconWidth: 55, iconHeight: 85 },
+  { name: "Revizto", icon: "/icon/revizto.png", iconWidth: 75, iconHeight: 75 },
   {
-    stage: "Coordination",
-    software: ["Navisworks Manage", "Revizto", "Solibri"],
-    purpose: [
-      "Automating multi-trade clash detection",
-      "Generating interference reports",
-      "Visualizing complex 4D schedules",
-    ],
-  },
-  {
-    stage: "Collaboration",
-    software: ["Autodesk Construction Cloud", "Procore"],
-    purpose: [
-      "Centralizing data in a secure CDE",
-      "Real-time cloud worksharing",
-      "Managing BIM 360 and Forma workflows",
-    ],
-  },
-  {
-    stage: "Interoperability",
-    software: ["IFC & OpenBIM"],
-    purpose: [
-      "Standardizing vendor-neutral data",
-      "Ensuring seamless cross-platform exchange",
-      "Securing data for facility management",
-    ],
+    name: "Bluebeam",
+    icon: "/image/bluebeam-inc-vector-logo-1.jpg",
+    iconWidth: 85,
+    iconHeight: 91,
   },
 ];
 
 export const mepBimDeliverablesSection = {
   tag: "Deliverables",
-  titleLead: "What We Deliver with Our ",
-  titleAccent: "MEP BIM Modeling Services",
+  titleLead: "What Our Revit MEP",
+  titleAccent: "Modeling Services Include",
   description:
-    "High-Precision MEP 3D Modeling Services Designed for Seamless Construction and Fabrication",
+    "High Precision 3D Modeling Services for MEP for Smooth Construction and Fabrication.",
   ctaLabel: "Contact Now",
 } as const;
 
@@ -278,50 +301,56 @@ export type MepBimDeliverableCard = {
   title: string;
   description: string;
   icon: string;
-  iconBordered?: boolean;
 };
 
 export const mepBimDeliverableCards: MepBimDeliverableCard[] = [
   {
-    title: "High-Fidelity Revit Models",
+    title: "High Fidelity Revit Models",
     description:
-      "Intelligent, parametric 3D models (LOD 200-450) with integrated system metadata for architectural and structural synchronization.",
-    iconBordered: true,
+      "Intelligent Revit models from LOD 200 to LOD 450. Each model contains the system parameters that enable architectural and structural coordination.",
     icon: "/images/mep/deliverables/icon-high-fidelity-revit-models.svg",
   },
   {
-    title: "Coordinated MEP Shop Drawings",
+    title: "MEP Shop Drawings Coordination",
     description:
-      "Installation-ready 2D layouts, including spool sheets, sleeve locations, and hanger details extracted directly from the 3D model.",
+      "Drawings ready for installation directly created from the BIM model. Deliverables include spool sheets, sleeve locations, hanger layouts and installation details.",
     icon: "/images/mep/deliverables/icon-coordinated-mep-shop-drawings.svg",
   },
   {
     title: "Navisworks Clash Reports",
     description:
-      "Comprehensive interference audits and resolution logs providing a verified clash-free environment before site mobilization.",
+      "Detailed clash reports document identified conflicts and completed resolutions. Your team receives a verified coordination record before construction begins.",
     icon: "/images/mep/deliverables/icon-navisworks-clash-reports.svg",
   },
   {
     title: "Automated Schedules & Data Outputs",
     description:
-      "Accurate Bill of Materials (BOM), equipment schedules, and quantity take-offs mapped to project parameters for precise procurement",
+      "We generate Bills of Materials (BOM), equipment schedules and quantity take-offs directly from the model. Improved procurement and planning with accurate project data.",
     icon: "/images/mep/deliverables/icon-automated-schedules-data.svg",
   },
   {
     title: "4D Construction Simulations",
     description:
-      "Time-linked BIM data to visualize the installation sequence, helping to optimize labor scheduling and site logistics.",
+      "By linking BIM models to time, project teams can review sequences of installation before any work begins. This process is used to support site coordination and construction planning.",
     icon: "/images/mep/deliverables/icon-4d-construction-simulations.svg",
   },
 ];
 
 export const mepBimModellingProcessSection = {
-  tag: "Service Coverage",
-  titleLead: "Complete Coverage for ",
-  titleAccent: "MEP BIM Modeling Services",
+  tag: "Service Workflow",
+  titleLead: "Our Revit MEP BIM ",
+  titleAccent: "Services Workflow",
   description:
     "Comprehensive MEP Modeling Services Integrating HVAC, Electrical, Mechanical Piping, Plumbing, and Fire Protection Workflows",
 } as const;
+
+/** Scroll-driven workflow — same shape as `mepWorkflowSection` / `mepWorkflowSteps`. */
+export const mepBimModellingWorkflowSection = {
+  tag: mepBimModellingProcessSection.tag,
+  titleLine1: mepBimModellingProcessSection.titleLead,
+  titleLine2: mepBimModellingProcessSection.titleAccent,
+  description: mepBimModellingProcessSection.description,
+};
 
 export type MepBimModellingProcessStep = {
   number: string;
@@ -375,6 +404,14 @@ export const mepBimModellingProcessSteps: MepBimModellingProcessStep[] = [
     align: "left",
   },
 ];
+
+export const mepBimModellingWorkflowSteps = mepBimModellingProcessSteps.map(
+  ({ number, title, description }) => ({
+    number,
+    title,
+    text: description,
+  }),
+);
 
 export const mepBimUseCasesSection = {
   tag: "Use Cases",
@@ -434,30 +471,80 @@ export type MepBimMeasurableResultCard = {
 export const mepBimMeasurableResultCards: MepBimMeasurableResultCard[] = [
   {
     value: "35%",
-    valueColor: "#D70416",
+    valueColor: "#42AA32",
     title: "Reduced Rework",
     description:
-      "Incorporating a dedicated expert focused solely on your project's design validation, spatial conflicts are caught in the model, not on the construction site.",
+      "Incorporating a dedicated expert focused solely on your project's Design Validation, spatial conflicts are caught in the model, not on the construction site.",
   },
   {
     value: "50%",
     valueColor: "#42AA32",
-    title: "Faster Lead Times",
+    title: "Quicker Lead Times",
     description:
-      "Our dedicated workflow accelerates the transition from 2D schematics to 3D Revit models, cutting your Design Development phase in half.",
+      "We have a dedicated process that halves your Design Development (DD) phase and speeds up your transition from 2D schematics to 3D Revit models.",
   },
   {
     value: "99.9%",
-    valueColor: "#2299D6",
-    title: "BEP Adherence",
+    valueColor: "#42AA32",
+    title: "BEP Conformance",
     description:
-      "A dedicated modeler ensures total consistency in naming conventions, parameter data, and families, providing a clean model ready for pre-coordination support.",
+      "A passionate modeler can provide a clean model ready for Pre-Coordination Support by keeping naming conventions, parameter data, and families all consistent.",
   },
   {
     value: "30%",
-    valueColor: "#F0B300",
-    title: "Increase in Profit Margins",
+    valueColor: "#42AA32",
+    title: "Improvement in Profit Margins",
     description:
-      "Lower your production burn rate by utilizing remote dedicated resources for high-volume modeling tasks while keeping senior engineers focused on high-level design.",
+      "To reduce your production burn rate, use remote dedicated resources for high-volume modeling tasks, and keep your senior engineers focused on high-level design.",
   },
 ];
+
+export const mepBimModellingResourcesSection = {
+  tag: "Resources",
+  titleLine1: "Resources on ",
+  titleLine2: "MEP BIM Modeling",
+  description:
+    "Explore technical thought leadership and actionable strategies designed to optimize your production workflows and scale without compromising standards.",
+  viewAllHref: "/bim-resources/",
+  serviceFilter: "MEP Engineering Firms",
+} as const;
+
+export const mepBimModellingProjectCta = {
+  titleLine1: "Your Dedicated MEP Modeling Partner is ",
+  titleLine2: "Just a Click Away",
+  description:
+    "From 2D-to-BIM validation to pre-coordination support, we provide the technical depth you need to succeed in the US construction market.",
+  cta: "Contact Us",
+  ctaHref: "/contact",
+} as const;
+
+export const mepBimModellingFaqDescription =
+  "Explore answers to common questions about our services, workflows, deliverables, timelines, and project collaboration.";
+
+export const mepBimModellingFaqSection = {
+  tag: "FAQs",
+  description: mepBimModellingFaqDescription,
+} as const;
+
+export const mepBimModellingFaqs = [
+  {
+    q: "How do you ensure compliance with US building codes and standards?",
+    a: "We use your company templates and work exclusively in Imperial units. Our modelers are trained in NFPA, NEC and IPC standards ensuring all 3D production meets local US regulatory requirements and project-specific BEP guidelines.",
+  },
+  {
+    q: "What is the difference between your LOD 300 and LOD 400 MEP models?",
+    a: "LOD 300 focuses on design intent and high-level spatial validation. LOD 400 adds fabrication-level detail, including hangers, supports, and manufacturer-specific metadata. We can scale the model's complexity as your project moves from design to the field.",
+  },
+  {
+    q: "How do you handle communication and time zone differences?",
+    a: "We turn time zones into a 24-hour production cycle. While your US team finishes the day, our dedicated modelers handle the 3D authoring overnight, providing updated Revit files for your morning review via Slack, Teams, or BIM 360.",
+  },
+  {
+    q: "Are your dedicated modelers able to work within our BIM 360 / ACC environment?",
+    a: "Yes. We function as a virtual extension of your office. By working directly in your Autodesk Construction Cloud (ACC) hub, we enable real-time collaboration on central models, ensuring data security and eliminating file-transfer delays.",
+  },
+  {
+    q: "Can I get help with Point Cloud to BIM for renovation projects?",
+    a: "Absolutely. We specialize in Post-Construction As-Built Capture. We transform raw laser scan data into precise, field-verified Revit models, providing a true-to-site digital foundation when original 2D drawings are missing or inaccurate.",
+  },
+] as const;

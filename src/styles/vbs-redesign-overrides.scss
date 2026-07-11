@@ -29,7 +29,7 @@ html:has(.vbs-redesign-page) {
   background-color: #ffffff;
 
   /* clip horizontal bleed — except service pages with scroll-pinned carousel (clip kills sticky) */
-  &:not(.mep-bim-services-page):not(.scan-to-bim-services-page):not(.architecture-services-page) {
+  &:not(.mep-bim-services-page):not(.scan-to-bim-services-page):not(.architecture-services-page):not(.mep-bim-modeling-services-page):not(.mep-bim-coordination-services-page) {
     overflow-x: clip;
   }
 }

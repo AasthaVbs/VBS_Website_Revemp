@@ -1,6 +1,6 @@
 import logoIcon from "@/assets/images/logo-icon.svg";
 
-/** Default (muted) icon for benefits cards across careers, MEP, and architecture pages. */
+/** Default (muted) — VBS logo outline icon; colored fill on hover. */
 export const benefitIconMuted = logoIcon;
 
 /** Hover / highlighted state for benefits cards. */

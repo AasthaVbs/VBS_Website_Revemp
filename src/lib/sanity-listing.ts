@@ -85,7 +85,8 @@ function normalizeBlogSlug(slug?: string | null) {
 }
 
 function isMepCategoryTitle(title: string) {
-  return normalizeCategoryTitle(title) === "mep";
+  const normalized = normalizeCategoryTitle(title);
+  return normalized === "mep" || normalized.startsWith("mep ");
 }
 
 function resolveBlogService(
@@ -234,7 +235,7 @@ export function mapSanityPostsToListing(posts: SanityPostNode[] = getSanityResou
         excerptSource.length > 160 ? `${excerptSource.slice(0, 160)}…` : excerptSource;
       const image = resolvePostListingImage(post, index);
       const categoryTitles = (post.categories || [])
-        .map((category) => category.title)
+        .map((category) => (category.title || "").trim())
         .filter(Boolean) as string[];
       const service = resolveBlogService(post.categories || [], slug);
       const publishedAtRaw = post.publishedAt || null;

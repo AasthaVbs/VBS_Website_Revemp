@@ -184,11 +184,14 @@ function ensureMepPinnedWebinars(items: ResourceFeedItem[], referenceDate?: Date
 /** Latest blogs, webinars, portfolio case studies, and white papers for MepResourcesSection. */
 export function buildMepResourcesFeedItems({
   referenceDate,
+  posts,
 }: {
   referenceDate?: Date;
+  /** Live Sanity posts — defaults to committed snapshot when omitted. */
+  posts?: Parameters<typeof mapSanityPostsToListing>[0];
 } = {}): ResourceFeedItem[] {
   const listingReference = referenceDate ?? new Date();
-  const blogSource = mapSanityPostsToListing();
+  const blogSource = mapSanityPostsToListing(posts);
 
   const blogItems = blogSource.map((item, index) =>
     toFeedItem(

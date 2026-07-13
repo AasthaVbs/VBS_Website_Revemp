@@ -87,7 +87,8 @@ function getBlogSlugFromItem(item: { id?: string | null; href?: string | null })
 }
 
 function isMepCategoryTitle(title: string) {
-  return title.trim().toLowerCase() === "mep";
+  const normalized = title.trim().toLowerCase();
+  return normalized === "mep" || normalized.startsWith("mep ");
 }
 
 export function isMepBlogItem(item: { id?: string | null; href?: string | null; categoryTitles?: string[] }) {

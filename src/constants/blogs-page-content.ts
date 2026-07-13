@@ -38,4 +38,9 @@ export const blogMepSlugs = new Set([
   "how-to-ensure-accuracy-mep-bim-models-checklist",
   "clash-detection-in-bim-process-tools-best-practices",
   "bim-mep-as-builts-facility-management",
+  "mep-pre-bid-estimation-with-bim",
+  "high-density-cable-routing-data-center-bim-solutions",
+  "mep-coordination-challenges-in-data-centers",
+  "data-center-construction-bim-reduces-delays",
+  "mep-bim-coordination-team-roles-benefits",
 ]);

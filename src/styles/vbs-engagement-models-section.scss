@@ -311,39 +311,35 @@
     padding-top: 16px;
     padding-bottom: 16px;
 
-    &.primary-cta:not(.primary-cta--highlighted) {
-      &:hover,
-      &:focus-visible {
-        .primary-cta-blobs {
-          transform: translate(-32px, -198px);
-        }
-
-        .primary-cta-label {
-          color: #ffffff !important;
-        }
-      }
-    }
-
-    &.primary-cta--highlighted {
+    /* Filled CTA — same behavior as header Book a Meeting */
+    &--filled.primary-cta {
+      isolation: isolate;
+      overflow: hidden;
       background-color: #d70416 !important;
       border-color: #d70416 !important;
-      transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease;
+      backdrop-filter: blur(50px);
+
+      .primary-cta-blobs {
+        transform: translate(-32px, -198px);
+      }
 
       .primary-cta-label {
-        transition: color 0.2s ease;
+        color: #ffffff !important;
+        transition: color 0.65s ease 0.2s;
       }
 
       &:hover,
       &:focus-visible {
         background-color: #ffffff !important;
         border-color: #d70416 !important;
-      }
 
-      &:hover .primary-cta-label,
-      &:focus-visible .primary-cta-label {
-        color: #d70416 !important;
+        .primary-cta-blobs {
+          transform: translate(-422px, 22px);
+        }
+
+        .primary-cta-label {
+          color: #d70416 !important;
+        }
       }
     }
   }

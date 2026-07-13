@@ -3139,7 +3139,7 @@
 .scan-to-bim-services-page {
   --vbs-mep-section-pad-y: 64px;
 
-  main>section:not(.mep-page-hero):not(.mep-figma-services--h-scroll):not(.vbs-mep-stats-strip):not(.mep-figma-what-you-get):not(.mep-figma-overview) {
+  main>section:not(.mep-page-hero):not(.mep-figma-services--h-scroll):not(.vbs-mep-stats-strip):not(.mep-figma-what-you-get):not(.mep-figma-overview):not(.mep-figma-ai-bim-workflow) {
     padding-top: var(--vbs-mep-section-pad-y) !important;
     padding-bottom: var(--vbs-mep-section-pad-y) !important;
   }
@@ -4114,6 +4114,341 @@
   @media (max-width: 767px) {
     .mep-figma-services--wide-cards .mep-figma-services__sticky {
       gap: 16px !important;
+    }
+  }
+}
+
+/* ── Architecture services hero — larger cover image + home-matching type ── */
+.architecture-services-page {
+  /* Match home page heading scale */
+  h1 {
+    font-size: 54px !important;
+    line-height: 1.15 !important;
+  }
+
+  h2,
+  h2 .text-section,
+  h2 .text-accent {
+    font-size: 48px !important;
+    line-height: 1.15 !important;
+  }
+
+  h3 {
+    font-size: 24px !important;
+    line-height: 1.35 !important;
+  }
+
+  .mep-page-hero--overlay {
+    h1,
+    h1 span {
+      font-size: 54px !important;
+      line-height: 1.15 !important;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    h1,
+    .mep-page-hero--overlay h1,
+    .mep-page-hero--overlay h1 span {
+      font-size: clamp(36px, 8vw, 54px) !important;
+    }
+
+    h2,
+    h2 .text-section,
+    h2 .text-accent {
+      font-size: clamp(32px, 6vw, 48px) !important;
+    }
+
+    h3 {
+      font-size: clamp(18px, 4vw, 24px) !important;
+    }
+  }
+
+  @media (max-width: 479px) {
+    h1,
+    .mep-page-hero--overlay h1,
+    .mep-page-hero--overlay h1 span {
+      font-size: clamp(28px, 9vw, 36px) !important;
+    }
+  }
+
+  main > .vbs-mep-stats-strip {
+    padding-top: 60px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .mep-page-hero {
+    margin-top: 0 !important;
+  }
+
+  .mep-page-hero--overlay {
+    .mep-page-hero__media {
+      width: min(58%, 1100px) !important;
+      max-width: 1100px !important;
+      aspect-ratio: 1024 / 607 !important;
+      top: 0 !important;
+      bottom: 0 !important;
+      height: 100% !important;
+      margin-top: 0 !important;
+
+      img {
+        object-fit: contain !important;
+        object-position: top right !important;
+      }
+    }
+
+    .mep-page-hero__copy-wrap {
+      @media (min-width: 1024px) {
+        padding-top: 100px !important;
+        padding-bottom: 100px !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      min-height: calc(min(58vw, 1100px) * 607 / 1024) !important;
+      padding-bottom: 0 !important;
+    }
+  }
+
+  .mep-figma-overview--features-below {
+    .mep-figma-overview__content {
+      max-width: 786px !important;
+      gap: 18px !important;
+    }
+
+    .mep-figma-overview__features--below {
+      gap: 12px !important;
+    }
+
+    .mep-figma-overview__chip {
+      flex: 1 1 0 !important;
+      min-height: 0 !important;
+      padding: 14px 12px !important;
+      gap: 8px !important;
+
+      > span:first-child {
+        width: 28px !important;
+        height: 28px !important;
+      }
+
+      img {
+        width: 24px !important;
+        height: 24px !important;
+      }
+
+      > span:last-child {
+        font-size: 14px !important;
+        line-height: 20px !important;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      .mep-figma-overview__features--below {
+        flex-direction: column !important;
+      }
+
+      .mep-figma-overview__chip {
+        width: 100% !important;
+        flex: none !important;
+      }
+    }
+  }
+
+  .mep-figma-what-you-get__title {
+    max-width: 786px;
+  }
+
+  .mep-figma-what-you-get p {
+    max-width: 716px;
+  }
+
+  .architecture-ai-bim-workflow {
+    h2 .text-section,
+    h2 .text-accent {
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.15;
+    }
+
+    @media (min-width: 1024px) {
+      padding-bottom: 48px !important;
+    }
+  }
+
+  .mep-figma-disciplines {
+    @media (min-width: 1024px) {
+      padding-top: 48px !important;
+    }
+
+    .mep-figma-disciplines__container {
+      gap: 60px !important;
+    }
+
+    .mep-figma-disciplines__section-desc {
+      margin: 0 !important;
+      text-transform: none !important;
+    }
+
+    .mep-figma-disciplines__tab--inactive {
+      background: #eeeeee !important;
+    }
+
+    .mep-figma-disciplines__panel-title {
+      font-size: 36px !important;
+    }
+
+    .mep-figma-disciplines__meta-label {
+      padding-left: 0 !important;
+      font-size: 24px !important;
+
+      &::before {
+        display: none !important;
+        content: none !important;
+      }
+    }
+
+    .mep-figma-disciplines__deliverables {
+      width: 604px;
+      max-width: min(604px, 100%);
+      flex: 0 0 auto;
+    }
+
+    .mep-figma-disciplines__deliverable-text {
+      text-transform: none !important;
+    }
+  }
+
+  .mep-figma-qa {
+    .mep-figma-qa__container {
+      gap: 60px !important;
+    }
+
+    .mep-figma-qa__title {
+      max-width: min(1100px, 100%) !important;
+    }
+
+    .mep-figma-qa__title-heading {
+      margin: 0;
+    }
+
+    .mep-figma-qa__title-dark,
+    .mep-figma-qa__title-accent {
+      display: inline;
+      font-size: clamp(28px, 4vw, 48px) !important;
+      line-height: 1.15 !important;
+    }
+
+    .mep-figma-qa__title-accent {
+      font-weight: 300 !important;
+    }
+
+    .mep-figma-qa__section-desc {
+      text-transform: none !important;
+    }
+
+    .mep-figma-qa__stages {
+      gap: 0 !important;
+    }
+
+    .mep-figma-qa__stage-divider {
+      display: block !important;
+      width: 1px !important;
+      margin: 0 24px !important;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(203, 204, 205, 0.15) 18%,
+        #cbcccd 38%,
+        #cbcccd 62%,
+        rgba(203, 204, 205, 0.15) 82%,
+        transparent 100%
+      ) !important;
+    }
+
+    .mep-figma-qa__stage-card--elevated {
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .mep-figma-qa__stats {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) !important;
+      column-gap: 40px !important;
+      row-gap: 0 !important;
+      align-items: stretch !important;
+    }
+
+    .mep-figma-qa__stat-divider {
+      display: block !important;
+      width: 1px !important;
+      height: 100% !important;
+      min-height: 72px !important;
+      margin: 0 !important;
+      justify-self: center !important;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(203, 204, 205, 0.15) 18%,
+        #cbcccd 38%,
+        #cbcccd 62%,
+        rgba(203, 204, 205, 0.15) 82%,
+        transparent 100%
+      ) !important;
+    }
+
+    .mep-figma-qa__stat {
+      width: 100% !important;
+      flex: none !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+      gap: 20px !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    @media (max-width: 1023px) {
+      .mep-figma-qa__stats {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+      }
+
+      .mep-figma-qa__stat-divider {
+        display: none !important;
+      }
+    }
+
+    .mep-figma-qa__stat-label {
+      text-transform: none !important;
+    }
+
+    .mep-figma-qa__quote-text {
+      text-transform: none !important;
+      font-style: italic;
+    }
+  }
+
+  .mep-figma-benefits {
+    .mep-figma-benefits__title {
+      max-width: 920px !important;
+    }
+
+    .mep-figma-benefits__section-desc {
+      width: 100% !important;
+      max-width: 850px !important;
+      text-transform: none !important;
+    }
+  }
+
+  .mep-figma-why-choose {
+    .mep-figma-why-choose__title {
+      width: 100% !important;
+      max-width: 1100px !important;
+    }
+
+    .mep-figma-why-choose__section-desc {
+      width: 100% !important;
+      max-width: 900px !important;
+      text-transform: none !important;
     }
   }
 }

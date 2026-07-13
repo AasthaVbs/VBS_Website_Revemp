@@ -1,17 +1,29 @@
 // @ts-nocheck
+import threeDayOnboardingIcon from "@/assets/images/3-day-onboarding.svg";
+import aiPowerWorkflowIcon from "@/assets/images/ai-power-workflow.png";
+import aiPoweredScanIcon from "@/assets/images/ai-owered-scan.svg";
+import architecturalBimModelingImg from "@/assets/images/architectural-bim-modeling.jpg";
+import architecturalStructuralServiceImg from "@/assets/images/architectural-structural-service.png";
+import bimModelingCoordinationIcon from "@/assets/images/bim-modeling-coordination.png";
+import bimSupportSdDdImg from "@/assets/images/bim-support-sd-dd.jpg";
+import cadToBimImg from "@/assets/images/cad-to-bim.jpg";
+import dedicatedTeamReadyIcon from "@/assets/images/dedicated-team-ready.png";
+import designSupportDocumentationIcon from "@/assets/images/design-support-documentation.png";
+import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
+import projectSupportHandoverIcon from "@/assets/images/project-support-handover.png";
+import revitCadDraftingServicesImg from "@/assets/images/revit-cad-drafting-services.jpg";
+import revitFamilyImg from "@/assets/images/revit-family.jpg";
+import riskFreeTrialIcon from "@/assets/images/risk-free-trial.png";
+import schematicDesignImg from "@/assets/images/schemetic-design.jpg";
+import structuralArchitecturalBimServicesImg from "@/assets/images/structural-architectural-bim-services-for-project 1.jpg";
+import structuralBimServicesImg from "@/assets/images/structural-bim-services.jpg";
+import topBimExpertIcon from "@/assets/images/top-bim-expert.png";
+import usCodeCompliantDeliveryIcon from "@/assets/images/us-code-compliant-delivery.png";
+import usCodeCompliantModelsIcon from "@/assets/images/us-code-complaints-models.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
-import {
-  WHY_CHOOSE_ICON_AI_POWERED_WORKFLOWS,
-  WHY_CHOOSE_ICON_DEDICATED_TEAM_READY,
-  WHY_CHOOSE_ICON_FLEXIBLE_ENGAGEMENT,
-  WHY_CHOOSE_ICON_RISK_FREE_TRIAL,
-  WHY_CHOOSE_ICON_TOP_BIM_EXPERTS,
-  WHY_CHOOSE_ICON_US_CODE_COMPLIANT,
-} from "@/constants/service-why-choose-icons";
-
-const archImg = (file) => encodeURI(`/image/${file}`);
+import { WHY_CHOOSE_ICON_TOP_BIM_EXPERTS } from "@/constants/service-why-choose-icons";
 
 export const architectureStatsStrip = [
   { value: "2000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -22,37 +34,54 @@ export const architectureStatsStrip = [
 
 export const architectureHero = {
   tag: "Architecture & Structure",
-  titleLead: "Architectural and Structural Services for ",
-  titleAccent: "Design, Documentation & Construction Delivery",
+  titleLead: "AI-Enhanced Architectural and Structural Services for ",
+  titleAccent: "Faster Project Delivery",
   description:
     "From schematic design to construction documentation, we help AEC firms, architects, structural engineers, and contractors deliver precise, code-compliant BIM models faster.",
   ctaLabel: "View All Service",
-  imageSrc: archImg("Architectural and Structural Services.png"),
+  imageSrc: architecturalStructuralServiceImg,
+  copyMaxWidth: 753,
+  descriptionMaxWidth: 696,
 };
 
-export const architectureIntroPoints = [
-  "Top 1% Vetted Architects & Engineers",
-  "US Code-Compliant Deliverables",
-  "One-Month Risk-free Trial",
-  "Delivery Infrastructure Ready in 3 Days",
+export const architectureIntroFeatures = [
+  { label: "US Code-Compliant Deliverables", icon: usCodeCompliantModelsIcon },
+  { label: "Top 1% Vetted Architects & Engineers", icon: WHY_CHOOSE_ICON_TOP_BIM_EXPERTS },
+  { label: "AI-Assisted BIM Generation", icon: aiPoweredScanIcon },
+  { label: "Delivery Infrastructure Ready in 3 Days", icon: threeDayOnboardingIcon },
 ];
 
 export const architectureIntroCopy = {
   tag: "Overview",
-  titleLead: "Scalable Structural and Architectural BIM Services for ",
-  titleAccent: "Modern Project Teams",
-  description:
-    "We are a Houston-based Architecture Services Company delivering end-to-end Revit Architectural Services across every stage of the project lifecycle. From Schematic Design Services and Design Development to Construction Documentation Services, our pre-vetted US-trained architects and engineers deliver code-compliant, coordination-ready models and drawing sets. As a trusted Structural and Architecture Services Provider in the USA, we ensure every deliverable aligns with IBC, ADA, and local jurisdiction standards.",
-  mainImage: encodeURI(
-    "/icons/Scalable-Structural-and-Architectural-BIM-Services-for-Modern-Project-Teams 2.png",
-  ),
+  titleLead: "AI-driven Workflow Delivering Scalable Structural and ",
+  titleAccent: "Architectural BIM Support",
+  titleParts: [
+    {
+      text: "AI-driven Workflow Delivering ",
+      className: "text-section font-medium text-[#111111]",
+    },
+    {
+      text: "Scalable Structural and ",
+      className: "text-section font-medium text-[#111111] block",
+    },
+    {
+      text: "Architectural BIM Support",
+      className: "text-section text-accent font-light",
+    },
+  ],
+  descriptions: [
+    "We are a Houston-based Architecture Services Company delivering end-to-end Revit Architectural Services across every stage of the project lifecycle. From Schematic Design Services and Design Development to Construction Documentation Services, our pre-vetted US-trained architects and engineers deliver code-compliant, coordination-ready models and drawing sets.",
+    "AI-assisted BIM generation and automation workflows streamline model development and reduce manual drafting effort. The result is faster delivery of accurate, code-compliant architectural and structural documentation.",
+    "As a trusted Structural and Architecture Services Provider in the USA, we ensure every deliverable aligns with IBC, ADA, and local jurisdiction standards.",
+  ],
+  mainImage: structuralArchitecturalBimServicesImg,
 };
 
 export const architectureWhatYouGetSection = {
   tag: "What You Get",
   titleLine1: "What You Get with Our ",
   titleLine2: "Architectural & Structural Services",
-  titleMaxWidth: 800,
+  titleMaxWidth: 786,
   description:
     "Get data-validated, code-compliant Revit models and permit-ready construction documentation tailored exactly to your firm's standards and project timelines.",
   resultLabel: "Result",
@@ -63,21 +92,21 @@ export const architectureWhatYouGetSection = {
 export const architectureWhatYouGetCards = [
   {
     title: "Design Support & Documentation",
-    icon: "/icons/Design support & Documentation 1.png",
+    icon: designSupportDocumentationIcon,
     elevated: false,
     lines: [
       "Schematic Design Services through Construction Documentation",
-      "Design Development drawings with material callouts",
+      "AI-assisted design development drafting with material callouts",
       "Permit-ready drawing sets aligned with AHJ requirements",
       "Coordinated architectural and structural drawing packages",
     ],
   },
   {
     title: "BIM Modeling & Coordination",
-    icon: "/icons/BIM Modeling & Coordination 1.png",
+    icon: bimModelingCoordinationIcon,
     elevated: false,
     lines: [
-      "LOD 200–400 Revit Architectural and Structural Models",
+      "AI-assisted LOD 200–400 BIM model generation",
       "Custom Revit family creation for doors, windows & fixtures",
       "Clash coordination with structural and MEP disciplines",
       "Code-compliant parametric architectural families",
@@ -85,7 +114,7 @@ export const architectureWhatYouGetCards = [
   },
   {
     title: "Project Support & Handover",
-    icon: "/icons/Project Support & Handover 1.png",
+    icon: projectSupportHandoverIcon,
     elevated: false,
     lines: [
       "Full support across design, construction, and handover stages",
@@ -111,54 +140,66 @@ export const architectureFullSpectrumCards = [
   {
     title: "Schematic Design",
     text: "Establish a clear project direction through conceptual layouts, spatial planning, and early-stage design studies. Schematic design deliverables help evaluate design alternatives, assess project feasibility, and align stakeholders before advancing into detailed development.",
-    image: archImg("Schematic design.jpg"),
+    image: schematicDesignImg.src,
     href: "#",
   },
   {
     title: "Design Development",
     text: "Transform approved concepts into coordinated, technically detailed designs ready for documentation and construction planning. Design development workflows refine building systems, material selections, and project requirements while maintaining alignment between architectural intent and structural performance.",
-    image: archImg("Design Development.jpg"),
+    image: bimSupportSdDdImg.src,
     href: "#",
   },
   {
     title: "Construction Documentation",
     text: "Support permitting, bidding, and construction activities with comprehensive documentation packages developed for clarity and accuracy. Detailed plans, elevations, sections, schedules, and construction details help reduce ambiguities, improve communication, and facilitate efficient project delivery.",
-    image: archImg("Construction Documentation.jpg"),
+    image: revitCadDraftingServicesImg.src,
     href: "#",
   },
   {
     title: "Architectural BIM Modeling",
     text: "Improve design accuracy, visualization, and multidisciplinary coordination with intelligent architectural BIM models developed to LOD 200-500 requirements. Supporting new construction, renovation, and expansion projects, these models enable better design validation, streamlined documentation, and a reliable foundation for project execution.",
-    image: "/image/Architectural-BIM-modeling.jpg",
+    image: architecturalBimModelingImg.src,
     href: "/bim-modeling-services/architectural-bim-services/",
   },
   {
     title: "Structural BIM Modeling",
     text: "Gain a coordinated digital representation of structural systems, including steel, concrete, rebar, timber, and foundation elements. Detailed structural BIM models support constructability reviews, clash-free coordination, fabrication planning, and accurate documentation throughout the design and construction process.",
-    image: "/image/Structural-BIM-Modeling.jpg",
+    image: structuralBimServicesImg.src,
     href: "#",
   },
   {
     title: "Revit Family Creation",
     text: "Enhance BIM efficiency and model consistency with custom Revit families developed to project and organizational standards. Parametric architectural, structural, and manufacturer-specific families support standardized modeling workflows, accurate documentation, and long-term BIM library management.",
-    image: "/image/Revit-Family.jpg",
+    image: revitFamilyImg.src,
     href: "/bim-modeling-services/revit-family-creation/",
   },
   {
     title: "CAD to BIM Conversion",
     text: "Convert legacy 2D architectural and structural drawings into coordinated BIM models that support modern project workflows. CAD-to-BIM conversion improves design coordination, enhances visualization, streamlines documentation, and creates data-rich digital assets for future project phases.",
-    image: archImg("CAD to BIM.jpg"),
+    image: cadToBimImg.src,
     href: "/bim-modeling-services/cad-to-bim/",
   },
 ];
+
+export const architectureAiBimWorkflowSection = {
+  tag: "AI-BIM Workflow",
+  titleParts: [
+    { text: "See Our ", className: "text-section font-medium text-[#111111]" },
+    { text: "AI-Powered BIM ", className: "text-section text-accent font-light" },
+    { text: "Generation in Action", className: "text-section font-medium text-[#111111]" },
+  ],
+  description:
+    "Watch how we combine the expertise of our pre-vetted US-trained Architects and Engineers with proprietary AI tools to build flawless, high-LOD models 30% faster.",
+  videoAriaLabel: "Play AI-powered BIM generation video",
+};
 
 export const architectureDisciplinesSection = {
   tag: "Core Pointes",
   titleLine1: "Core Architectural and Structural ",
   titleLine2: "Expertise Delivered Through BIM",
   titleLine3: "",
-  titleMaxWidth: 800,
-  descriptionMaxWidth: 800,
+  titleMaxWidth: 759,
+  descriptionMaxWidth: 780,
   description:
     "Each discipline demands a distinct technical approach. Virtual Building Studio models every system with code-accurate detail and full coordination across structural integrity and architectural form.",
 };
@@ -276,6 +317,17 @@ export const architectureQualityAssuranceSection = {
   tag: "Quality Assurance",
   titleLine1: "Our Quality Assurance Process for ",
   titleLine2: "Every Architectural & Structural Deliverable",
+  titleParts: [
+    {
+      text: "Our Quality Assurance Process for ",
+      className: "mep-figma-qa__title-dark",
+    },
+    {
+      text: "Every Architectural & Structural Deliverable",
+      className: "mep-figma-qa__title-accent",
+    },
+  ],
+  titleMaxWidth: 1100,
   description:
     "Every project deliverable goes through a structured QA process before it reaches your team, ensuring accuracy, coordination, and construction-ready from the first submission.",
   quote:
@@ -290,6 +342,7 @@ export const architectureQualityAssuranceStages = [
     prefixColor: "#42AA32",
     title: "Input Review & Markup Validation",
     text: "All input redlines, markups, and project specifications are reviewed before drafting begins. Ambiguities are flagged and resolved upfront, eliminating rework caused by misread intent.",
+    elevated: false,
   },
   {
     prefix: "0",
@@ -297,6 +350,7 @@ export const architectureQualityAssuranceStages = [
     prefixColor: "#2299D6",
     title: "In-Progress QC & Coordination",
     text: "Internal QC checks are performed at each LOD milestone. Architectural and structural models are cross-checked for dimensional accuracy, annotation consistency, and inter-disciplinary conflicts before advancing.",
+    elevated: false,
   },
   {
     prefix: "0",
@@ -304,21 +358,23 @@ export const architectureQualityAssuranceStages = [
     prefixColor: "#F0B300",
     title: "Pre-Delivery Senior Review",
     text: "Every drawing set undergoes a final review by a senior BIM lead. Deliverables are verified against AHJ requirements and markup intent, ensuring what you receive is submission ready.",
+    elevated: false,
   },
 ];
 
 export const architectureQualityAssuranceStats = [
-  { value: "3 Stages", valueColor: "#D70416", label: "Quality Assurance Checks" },
-  { value: "100%", valueColor: "#42AA32", label: "Senior Review Pre-Delivery" },
-  { value: "LOD 400", valueColor: "#2299D6", label: "Coordination-level accuracy" },
-  { value: "4X", valueColor: "#F0B300", label: "Efficiency Gain" },
+  { value: "3 Step", valueColor: "#D70416", label: "Quality assurance checks" },
+  { value: "100%", valueColor: "#42AA32", label: "Senior review pre-delivery" },
+  { value: "30%", valueColor: "#2299D6", label: "Efficiency gain" },
+  { value: "4X", valueColor: "#F0B300", label: "Cost saving" },
 ];
 
 export const architectureServiceBenefitsSection = {
   tag: "Service benefits",
   titleLine1: "Key Benefits of Outsourcing ",
   titleLine2: "Architectural and Structural Services",
-  titleMaxWidth: 700,
+  titleMaxWidth: 920,
+  descriptionMaxWidth: 850,
   description:
     "Coordinated architectural and structural workflows help project teams improve design quality, streamline documentation, and reduce project risks throughout the building lifecycle.",
   ctaLabel: "Let's Talk",
@@ -373,6 +429,8 @@ export const architectureWhyChooseSection = {
   titleLine1: "Why Leading AEC Firms Choose Our ",
   titleAccentLead: "",
   titleAccentRest: "Architectural & Structural Services",
+  titleMaxWidth: 1100,
+  descriptionMaxWidth: 900,
   description:
     "Partner with a proven architecture and structural services company delivering overnight production speed, strict code compliance, and scalable drafting capacity.",
   ctaLabel: "Build Your Team",
@@ -385,37 +443,37 @@ export const architectureWhyChooseItems = [
     title: "Top 1% BIM Experts",
     description:
       "Vetted Revit architects and BIM coordinators trained on US standards and complex projects.",
-    icon: WHY_CHOOSE_ICON_TOP_BIM_EXPERTS,
+    icon: topBimExpertIcon,
   },
   {
     title: "US Code-Compliant Delivery",
     description:
       "Every drawing set aligns with IBC, ADA, ASHRAE, NFPA 101, and regional AHJ requirements.",
-    icon: WHY_CHOOSE_ICON_US_CODE_COMPLIANT,
+    icon: usCodeCompliantDeliveryIcon,
   },
   {
     title: "Dedicated Team Ready",
     description:
       "Your dedicated team assembled within an hour, working in your workflow and time zone.",
-    icon: WHY_CHOOSE_ICON_DEDICATED_TEAM_READY,
+    icon: dedicatedTeamReadyIcon,
   },
   {
     title: "AI-Powered Workflows",
     description:
       "AI-driven production workflows drive 30% efficiency gains, helping in faster turnaround.",
-    icon: WHY_CHOOSE_ICON_AI_POWERED_WORKFLOWS,
+    icon: aiPowerWorkflowIcon,
   },
   {
     title: "Flexible Engagement Models",
     description:
       "Scale your team with single drafter to full BIM team, with no lock-in, no long-term commitment.",
-    icon: WHY_CHOOSE_ICON_FLEXIBLE_ENGAGEMENT,
+    icon: flexibleEngagementModelsIcon,
   },
   {
     title: "Risk-Free 30-Day Trial",
     description:
       "Start with confidence with a one-month risk-free trial backed by a full money-back guarantee.",
-    icon: WHY_CHOOSE_ICON_RISK_FREE_TRIAL,
+    icon: riskFreeTrialIcon,
   },
 ];
 
@@ -430,11 +488,12 @@ export const architectureIndustriesIntro = {
 };
 
 export const architectureEngagementProcessSection = {
-  tag: "Engagement Model",
+  tag: "How to Start",
   titleLine1: "Get Started with the Right ",
   titleLine2: "BIM Delivery Infrastructure",
   description:
     "Whether you need a dedicated Revit architect, structural engineer, or a full BIM team, our flexible engagement models adapt to your scope, timeline, and project needs.",
+  descriptionMaxWidth: 900,
   cta: "Inquire Now",
   ctaHref: "#architecture-page-contact",
 };

@@ -74,7 +74,7 @@ function EngagementModelCardArticle({ card }: { card: EngagementModelCard }) {
           href={card.ctaHref}
           className={cn(
             "vbs-engagement-models-section__cta",
-            card.ctaHighlighted && "primary-cta--highlighted",
+            card.ctaHighlighted && "primary-cta--highlighted vbs-engagement-models-section__cta--filled",
           )}
         >
           {card.cta}

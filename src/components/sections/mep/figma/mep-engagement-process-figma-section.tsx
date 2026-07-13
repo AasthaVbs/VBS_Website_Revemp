@@ -14,7 +14,7 @@ export function MepEngagementProcessSection({
   section = mepEngagementProcessSection,
   steps = mepEngagementProcessSteps,
 }) {
-  const { tag, titleLine1, titleLine2, description, cta, ctaHref } = section;
+  const { tag, titleLine1, titleLine2, description, descriptionMaxWidth, cta, ctaHref } = section;
 
   return (
     <section id="engagement" className="mep-engagement-process overflow-hidden bg-[#FAFAFA] py-16 lg:py-[100px]">
@@ -27,7 +27,10 @@ export function MepEngagementProcessSection({
               <span className="text-accent block font-light">{titleLine2}</span>
             </h2>
           </div>
-          <p className="max-w-[640px] text-[16px] font-normal leading-6 text-[#808080]">
+          <p
+            className="text-[16px] font-normal leading-6 text-[#808080]"
+            style={{ maxWidth: descriptionMaxWidth ? `${descriptionMaxWidth}px` : 640 }}
+          >
             {description}
           </p>
         </div>

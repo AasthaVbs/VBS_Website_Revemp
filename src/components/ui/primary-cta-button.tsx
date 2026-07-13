@@ -45,7 +45,7 @@ export function PrimaryCtaButton({
 
   const content = (
     <>
-      {!stripedLong && !fullWidth ? <PrimaryCtaBlobs /> : null}
+      {!stripedLong ? <PrimaryCtaBlobs /> : null}
       <span className="primary-cta-label relative z-10 inline-flex items-center gap-1.5 capitalize">
         {children}
       </span>

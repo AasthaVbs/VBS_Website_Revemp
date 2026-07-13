@@ -15,80 +15,106 @@ export function MepIntroSection({
   features,
   points,
   variant = "default",
+  featuresPlacement = "inline",
 }) {
   const showFeatures = features?.length > 0;
   const isScanVariant = variant === "scan-to-bim";
+  const featuresBelow = showFeatures && featuresPlacement === "below";
+  const descriptions = copy.descriptions?.length
+    ? copy.descriptions
+    : copy.description
+      ? [copy.description]
+      : [];
 
   return (
     <section
-      className={`mep-figma-overview bg-white py-[100px]${isScanVariant ? " mep-figma-overview--scan-to-bim" : ""}`}
+      className={`mep-figma-overview bg-white py-[100px]${isScanVariant ? " mep-figma-overview--scan-to-bim" : ""}${featuresBelow ? " mep-figma-overview--features-below" : ""}`}
     >
       <PageContainer>
         <div
-          className={`mep-figma-overview__layout flex flex-col items-start gap-[60px] lg:flex-row lg:items-start${isScanVariant ? " lg:items-center lg:gap-4" : ""}`}
+          className={`mep-figma-overview__stack flex w-full flex-col${featuresBelow ? " gap-[30px]" : ""}`}
         >
-          <div className="mep-figma-overview__frame relative shrink-0 overflow-hidden rounded-[10px] bg-white">
-            <Image
-              src={copy.mainImage}
-              alt="MEP BIM overview"
-              width={isScanVariant ? 564 : 614}
-              height={isScanVariant ? 483 : 502}
-              className="mep-figma-overview__photo block h-full w-full object-cover"
-              sizes={isScanVariant ? "(max-width: 1024px) 100vw, 560px" : "(max-width: 1024px) 100vw, 614px"}
-            />
-          </div>
-
-          <div className="mep-figma-overview__content flex min-w-0 flex-1 flex-col justify-center gap-5 lg:max-w-[766px]">
-            <div className="flex flex-col items-start gap-3">
-              <MepSectionTag label={copy.tag} />
-              <h2
-                className={`mep-figma-overview__title w-full${copy.titleParts?.length ? "" : " capitalize"}`}
-              >
-                {copy.titleParts?.length ? (
-                  copy.titleParts.map((part) => (
-                    <span key={part.text} className={part.className}>
-                      {part.text}
-                    </span>
-                  ))
-                ) : (
-                  <>
-                    <span className="text-section font-medium text-[#111111]">{copy.titleLead}</span>
-                    <span className="text-section text-accent font-light">{copy.titleAccent}</span>
-                  </>
-                )}
-              </h2>
+          <div
+            className={`mep-figma-overview__layout flex flex-col items-start gap-[60px] lg:flex-row lg:items-start${isScanVariant ? " lg:items-center lg:gap-4" : ""}${featuresBelow ? " lg:gap-10" : ""}`}
+          >
+            <div className="mep-figma-overview__frame relative shrink-0 overflow-hidden rounded-[10px] bg-white">
+              <Image
+                src={copy.mainImage}
+                alt="MEP BIM overview"
+                width={isScanVariant ? 564 : 614}
+                height={isScanVariant ? 483 : 502}
+                className="mep-figma-overview__photo block h-full w-full object-cover"
+                sizes={isScanVariant ? "(max-width: 1024px) 100vw, 560px" : "(max-width: 1024px) 100vw, 614px"}
+              />
             </div>
 
-            <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
-              {copy.description}
-            </p>
-
-            {showFeatures ? (
-              <div className="mep-figma-overview__features flex w-full max-w-[622px] flex-col gap-4">
-                <div className="mep-figma-overview__features-row flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-                  {features.slice(0, 2).map((feature) => (
-                    <OverviewFeatureChip key={feature.label} {...feature} />
-                  ))}
-                </div>
-                <div className="mep-figma-overview__features-row flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-                  {features.slice(2).map((feature) => (
-                    <OverviewFeatureChip key={feature.label} {...feature} />
-                  ))}
-                </div>
+            <div className="mep-figma-overview__content flex min-w-0 flex-1 flex-col justify-center gap-5 lg:max-w-[766px]">
+              <div className="flex flex-col items-start gap-3">
+                <MepSectionTag label={copy.tag} />
+                <h2
+                  className={`mep-figma-overview__title w-full${copy.titleParts?.length ? "" : " capitalize"}`}
+                >
+                  {copy.titleParts?.length ? (
+                    copy.titleParts.map((part) => (
+                      <span key={part.text} className={part.className}>
+                        {part.text}
+                      </span>
+                    ))
+                  ) : (
+                    <>
+                      <span className="text-section font-medium text-[#111111]">{copy.titleLead}</span>
+                      <span className="text-section text-accent font-light">{copy.titleAccent}</span>
+                    </>
+                  )}
+                </h2>
               </div>
-            ) : points?.length ? (
-              <ul className="flex flex-col gap-2.5">
-                {points.map((point) => (
-                  <li
-                    key={point}
-                    className="ms-1 list-disc text-[16px] font-normal leading-6 text-[#808080]"
-                  >
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            ) : null}
+
+              {descriptions.map((paragraph) => (
+                <p
+                  key={paragraph.slice(0, 48)}
+                  className="w-full text-[16px] font-normal leading-6 text-[#808080]"
+                >
+                  {paragraph}
+                </p>
+              ))}
+
+              {showFeatures && !featuresBelow ? (
+                <div className="mep-figma-overview__features flex w-full max-w-[622px] flex-col gap-4">
+                  <div className="mep-figma-overview__features-row flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+                    {features.slice(0, 2).map((feature) => (
+                      <OverviewFeatureChip key={feature.label} {...feature} />
+                    ))}
+                  </div>
+                  <div className="mep-figma-overview__features-row flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+                    {features.slice(2).map((feature) => (
+                      <OverviewFeatureChip key={feature.label} {...feature} />
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              {!showFeatures && points?.length ? (
+                <ul className="flex flex-col gap-2.5">
+                  {points.map((point) => (
+                    <li
+                      key={point}
+                      className="ms-1 list-disc text-[16px] font-normal leading-6 text-[#808080]"
+                    >
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
           </div>
+
+          {featuresBelow ? (
+            <div className="mep-figma-overview__features mep-figma-overview__features--below flex w-full flex-col gap-4 sm:flex-row sm:flex-wrap lg:flex-nowrap lg:items-center lg:gap-4">
+              {features.map((feature) => (
+                <OverviewFeatureChip key={feature.label} {...feature} />
+              ))}
+            </div>
+          ) : null}
         </div>
       </PageContainer>
     </section>

@@ -1,11 +1,13 @@
 // @ts-nocheck
 import { SiteHeader } from "@/components/layout/site-header";
+import { ArchitectureAiBimWorkflowSection } from "@/components/sections/architecture/architecture-ai-bim-workflow-section";
 import { MepFullSpectrumServicesSection } from "@/components/sections/mep/figma/mep-full-spectrum-services-section";
 import { MepIntroSection } from "@/components/sections/mep/figma/mep-intro-figma-section";
 import { MepWhatYouGetSection } from "@/components/sections/mep/figma/mep-what-you-get-section";
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
-import { StatsStripSection } from "@/components/sections/stats-strip-section";
+import { TrustStripSection } from "@/components/sections/trust-strip-section";
 import {
+  architectureAiBimWorkflowSection,
   architectureDisciplinePanels,
   architectureDisciplinesSection,
   architectureEngagementProcessSection,
@@ -18,7 +20,7 @@ import {
   architectureHero,
   architectureIndustriesIntro,
   architectureIntroCopy,
-  architectureIntroPoints,
+  architectureIntroFeatures,
   architectureProjectCta,
   architectureQualityAssuranceSection,
   architectureQualityAssuranceStages,
@@ -57,8 +59,15 @@ export function ArchitectureServicesPage() {
       <SiteHeader />
       <main>
         <MepPageHeroSection {...architectureHero} ctaHref="#services" />
-        <StatsStripSection stats={architectureStatsStrip} className="vbs-mep-stats-strip bg-white" />
-        <MepIntroSection copy={architectureIntroCopy} points={architectureIntroPoints} />
+        <TrustStripSection
+          stats={architectureStatsStrip}
+          className="vbs-mep-stats-strip bg-white pb-[30px] pt-[60px]"
+        />
+        <MepIntroSection
+          copy={architectureIntroCopy}
+          features={architectureIntroFeatures}
+          featuresPlacement="below"
+        />
         <MepWhatYouGetSection
           section={architectureWhatYouGetSection}
           cards={architectureWhatYouGetCards}
@@ -68,6 +77,7 @@ export function ArchitectureServicesPage() {
           cards={architectureFullSpectrumCards}
           scrollInteraction="hover"
         />
+        <ArchitectureAiBimWorkflowSection section={architectureAiBimWorkflowSection} />
         <DeferredMepDisciplinesSection
           section={architectureDisciplinesSection}
           panels={architectureDisciplinePanels}
@@ -91,15 +101,15 @@ export function ArchitectureServicesPage() {
           items={architectureWhyChooseItems}
         />
         <DeferredMepResourcesSection section={architectureResourcesSection} />
+        <DeferredMepEngagementProcessSection
+          section={architectureEngagementProcessSection}
+          steps={architectureEngagementProcessSteps}
+        />
         <DeferredIndustriesSection
           intro={architectureIndustriesIntro.description}
           titleLine1={architectureIndustriesIntro.titleLine1}
           titleLine2={architectureIndustriesIntro.titleLine2}
           titleMaxWidth={architectureIndustriesIntro.titleMaxWidth}
-        />
-        <DeferredMepEngagementProcessSection
-          section={architectureEngagementProcessSection}
-          steps={architectureEngagementProcessSteps}
         />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile

@@ -1,4 +1,4 @@
-﻿// @ts-nocheck
+// @ts-nocheck
 import { Fragment } from "react";
 import { PageContainer } from "@/components/layout/page-container";
 import { cn } from "@/lib/utils";
@@ -57,9 +57,24 @@ export function MepQualityAssuranceSection({
         <header className="mep-figma-qa__head">
           <div className="mep-figma-qa__head-top">
             <span className="mep-figma-qa__tag">{section.tag}</span>
-            <div className="mep-figma-qa__title">
-              <p className="mep-figma-qa__title-dark">{section.titleLine1}</p>
-              <p className="mep-figma-qa__title-accent">{section.titleLine2}</p>
+            <div
+              className="mep-figma-qa__title"
+              style={section.titleMaxWidth ? { maxWidth: `${section.titleMaxWidth}px` } : undefined}
+            >
+              {section.titleParts?.length ? (
+                <h2 className="mep-figma-qa__title-heading">
+                  {section.titleParts.map((part) => (
+                    <span key={part.text} className={part.className}>
+                      {part.text}
+                    </span>
+                  ))}
+                </h2>
+              ) : (
+                <>
+                  <p className="mep-figma-qa__title-dark">{section.titleLine1}</p>
+                  <p className="mep-figma-qa__title-accent">{section.titleLine2}</p>
+                </>
+              )}
             </div>
           </div>
           <p className="mep-figma-qa__section-desc">{section.description}</p>

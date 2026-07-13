@@ -167,7 +167,7 @@ export const engagementModelCards = [
     bestSuitedFor: ["Small firms", "Pilot projects", "Short-term BIM needs"],
     cta: "Start a Project",
     ctaHref: "/contact",
-    shadow: true,
+    shadow: false,
     ctaHighlighted: false,
     featured: false,
   },
@@ -186,8 +186,9 @@ export const engagementModelCards = [
     cta: "Build your Team",
     ctaHref: "/build-your-team",
     shadow: false,
-    ctaHighlighted: false,
-    featured: false,
+    badge: "Most Demanding",
+    ctaHighlighted: true,
+    featured: true,
   },
   {
     icon: "global-delivery" as const,
@@ -209,9 +210,8 @@ export const engagementModelCards = [
     cta: "Explore GDC Model",
     ctaHref: "/contact",
     shadow: false,
-    badge: "Most Demanding",
-    ctaHighlighted: true,
-    featured: true,
+    ctaHighlighted: false,
+    featured: false,
   },
 ] as const;
 

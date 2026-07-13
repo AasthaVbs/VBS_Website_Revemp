@@ -31,7 +31,7 @@ export const engagementModelFinderRows: EngagementModelFinderRow[] = [
 
 export const engagementModelsCompareSection = {
   tag: "Comparison",
-  titleLead: "Compare ",
+  titleLead: "Compatibility ",
   titleAccent: "Engagement Models",
   description: "Understand which structure aligns best with your operational goals.",
   tableHeaders: {

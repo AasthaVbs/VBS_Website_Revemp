@@ -35,6 +35,7 @@ export const mepCoordinationHero = {
     "Our BIM experts offer MEP Coordination Services to coordinate all the disciplines ahead of construction to help your team reduce rework, avoid delays, and keep projects on schedule.",
   ctaLabel: "Get a Free Quote",
   imageSrc: mepCoordinationsBanner,
+  imageAlt: "mep-coordinations-banner",
   copyMaxWidth: 920,
   descriptionMaxWidth: 820,
 } as const;
@@ -62,7 +63,7 @@ export const mepCoordinationIntro: MepOverviewIntroContent = {
   paragraph2Tail:
     " according to SMACNA, NEC, ASHRAE, and project specifications. We offer services that allow accurate fabrication, easier installation and successful field coordination.",
   mainImage: mepCoordinationsOverview.src,
-  imageAlt: "MEP BIM coordination overview showing integrated building systems",
+  imageAlt: "mep-coordinations-overview",
 };
 
 export const mepCoordinationServiceFeaturesSection = {

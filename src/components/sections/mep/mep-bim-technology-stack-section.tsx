@@ -8,7 +8,7 @@ import {
   mepBimTechnologyStackToolsRowTwo,
   type MepBimTechnologyTool,
 } from "@/constants/mep-bim-modelling-content";
-import { cn } from "@/lib/utils";
+import { altFromImageSrc, cn } from "@/lib/utils";
 
 /** Figma — Tools & Platforms logo grid */
 export function MepBimTechnologyStackSection({
@@ -32,7 +32,7 @@ export function MepBimTechnologyStackSection({
   const { tag, titleLine1, titleAccent, description } = section;
 
   return (
-    <section className="overflow-hidden bg-white py-16 lg:py-[100px]">
+    <section className="overflow-hidden bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
         <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
           <div className="flex max-w-[898px] flex-col items-start gap-3">
@@ -83,17 +83,19 @@ function TechnologyToolRow({
 
 function TechnologyTool({ tool }: { tool: MepBimTechnologyTool }) {
   return (
-    <div className="flex min-w-[200px] items-center gap-5">
+    <div className="flex min-w-0 max-w-full items-center gap-3 sm:gap-5 lg:min-w-[200px]">
       <Image
         src={tool.icon}
-        alt=""
+        alt={altFromImageSrc(tool.icon)}
         width={tool.iconWidth}
         height={tool.iconHeight}
-        className="shrink-0 object-contain"
-        style={{ width: tool.iconWidth, height: tool.iconHeight, maxWidth: tool.iconWidth }}
-        aria-hidden
+        className="h-auto w-auto max-h-[48px] max-w-[48px] shrink-0 object-contain sm:max-h-[64px] sm:max-w-[64px] lg:max-h-none lg:max-w-none"
+        style={{
+          width: tool.iconWidth,
+          height: tool.iconHeight,
+        }}
       />
-      <span className="text-[24px] font-medium capitalize leading-[1.35] text-[#111111]">
+      <span className="min-w-0 text-[16px] font-medium capitalize leading-[1.35] text-[#111111] sm:text-[20px] lg:text-[24px]">
         {tool.name}
       </span>
     </div>

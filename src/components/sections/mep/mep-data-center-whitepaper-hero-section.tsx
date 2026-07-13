@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
+import { altFromImageSrc } from "@/lib/utils";
 
 const HERO_IMAGE = "/images/image%2057.png";
 
@@ -93,7 +94,7 @@ export function MepDataCenterWhitepaperHeroSection() {
       >
         <Image
           src={HERO_IMAGE}
-          alt=""
+          alt={altFromImageSrc(HERO_IMAGE)}
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 62vw"

@@ -4,7 +4,7 @@
 import { Fragment, useRef, useState } from "react";
 import { PageContainer } from "@/components/layout/page-container";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
-import { cn } from "@/lib/utils";
+import { cn, altFromImageSrc } from "@/lib/utils";
 import { useScrollRevealProgress } from "@/hooks/useScrollRevealProgress";
 import {
   mepServiceBenefitsCards,
@@ -20,6 +20,7 @@ function BenefitCard({ card, index, activeIndex }) {
   const [isHovered, setIsHovered] = useState(false);
   const highlighted = index <= activeIndex;
   const showColoredIcon = isHovered;
+  const activeIcon = showColoredIcon ? card.iconHover : card.icon;
 
   return (
     <article
@@ -37,10 +38,9 @@ function BenefitCard({ card, index, activeIndex }) {
       <div className="flex w-full flex-col items-start gap-2.5">
         <div className="mep-figma-benefits__icon-wrap">
           <img
-            src={resolveImageSrc(showColoredIcon ? card.iconHover : card.icon)}
-            alt=""
+            src={resolveImageSrc(activeIcon)}
+            alt={altFromImageSrc(activeIcon)}
             className="mep-figma-benefits__icon"
-            aria-hidden
             decoding="async"
           />
         </div>
@@ -87,7 +87,7 @@ export function MepServiceBenefitsSection({
   const hasTitleParts = section.titleParts?.length > 0;
 
   return (
-    <section id={id} className="mep-figma-benefits bg-white py-[100px]">
+    <section id={id} className="mep-figma-benefits bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="mep-figma-benefits__container flex flex-col items-center gap-[60px]">
         <header className="mep-figma-benefits__head">
           <div className="mep-figma-benefits__head-top">

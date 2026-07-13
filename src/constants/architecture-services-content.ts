@@ -40,6 +40,7 @@ export const architectureHero = {
     "From schematic design to construction documentation, we help AEC firms, architects, structural engineers, and contractors deliver precise, code-compliant BIM models faster.",
   ctaLabel: "View All Service",
   imageSrc: architecturalStructuralServiceImg,
+  imageAlt: "architectural-structural-service",
   copyMaxWidth: 753,
   descriptionMaxWidth: 696,
 };

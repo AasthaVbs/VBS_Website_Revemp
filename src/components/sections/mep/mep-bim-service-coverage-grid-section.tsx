@@ -9,6 +9,7 @@ import {
   mepBimServiceCoverageGridItems,
   mepBimServiceCoverageGridSection,
 } from "@/constants/mep-bim-modelling-content";
+import { altFromImageSrc } from "@/lib/utils";
 
 const BENEFIT_ICON_COLORED = benefitIconColored;
 const BENEFIT_ICON_MUTED = benefitIconMuted;
@@ -98,19 +99,17 @@ function CoverageCard({ item }: { item: (typeof mepBimServiceCoverageGridItems)[
         <div className="relative flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[10px]">
           <Image
             src={BENEFIT_ICON_MUTED}
-            alt=""
+            alt={altFromImageSrc(BENEFIT_ICON_MUTED)}
             width={46}
             height={46}
             className="h-[46px] w-[46px] object-contain transition-opacity duration-200 group-hover:opacity-0"
-            aria-hidden
           />
           <Image
             src={BENEFIT_ICON_COLORED}
-            alt=""
+            alt={altFromImageSrc(BENEFIT_ICON_COLORED)}
             width={46}
             height={46}
             className="absolute left-1/2 top-1/2 h-[46px] w-[46px] -translate-x-1/2 -translate-y-1/2 object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-            aria-hidden
           />
         </div>
         <h3 className="text-[24px] font-normal leading-[1.35] text-[#111111]">{item.title}</h3>

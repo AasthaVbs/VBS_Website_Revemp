@@ -6,6 +6,7 @@ import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import {
   mepIntroCopy,
 } from "@/constants/mep-engineers-content";
+import { altFromImageSrc } from "@/lib/utils";
 
 /**
  * Overview — Figma VBS-Website node 265-67101.
@@ -28,7 +29,7 @@ export function MepIntroSection({
 
   return (
     <section
-      className={`mep-figma-overview bg-white py-[100px]${isScanVariant ? " mep-figma-overview--scan-to-bim" : ""}${featuresBelow ? " mep-figma-overview--features-below" : ""}`}
+      className={`mep-figma-overview bg-white py-12 sm:py-16 lg:py-[100px]${isScanVariant ? " mep-figma-overview--scan-to-bim" : ""}${featuresBelow ? " mep-figma-overview--features-below" : ""}`}
     >
       <PageContainer>
         <div
@@ -40,7 +41,7 @@ export function MepIntroSection({
             <div className="mep-figma-overview__frame relative shrink-0 overflow-hidden rounded-[10px] bg-white">
               <Image
                 src={copy.mainImage}
-                alt="MEP BIM overview"
+                alt={copy.imageAlt ?? altFromImageSrc(copy.mainImage)}
                 width={isScanVariant ? 564 : 614}
                 height={isScanVariant ? 483 : 502}
                 className="mep-figma-overview__photo block h-full w-full object-cover"
@@ -125,7 +126,13 @@ function OverviewFeatureChip({ label, icon }: { label: string; icon: string | St
   return (
     <div className="mep-figma-overview__chip inline-flex items-center gap-2.5 rounded-[10px] border border-[#CBCCCD] bg-[#FAFAFA] px-3 py-3.5">
       <span className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-[6.67px]">
-        <Image src={icon} alt="" width={40} height={40} className="h-10 w-10 object-contain" />
+        <Image
+          src={icon}
+          alt={altFromImageSrc(icon)}
+          width={40}
+          height={40}
+          className="h-10 w-10 object-contain"
+        />
       </span>
       <span className="text-[15px] font-normal capitalize leading-6 text-[#111111]">{label}</span>
     </div>

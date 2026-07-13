@@ -7,6 +7,7 @@ import {
   mepWhatYouGetCards,
   mepWhatYouGetSection,
 } from "@/constants/mep-engineers-content";
+import { altFromImageSrc } from "@/lib/utils";
 
 /**
  * What You Get — Figma VBS-Website node 265-67102.
@@ -16,7 +17,7 @@ export function MepWhatYouGetSection({
   cards = mepWhatYouGetCards,
 }) {
   return (
-    <section id="what-you-get" className="mep-figma-what-you-get bg-white py-[100px]">
+    <section id="what-you-get" className="mep-figma-what-you-get bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer>
         <div className="mep-figma-what-you-get__stack flex w-full flex-col items-center gap-[60px]">
           <div className="flex w-full flex-col items-start gap-5">
@@ -53,11 +54,10 @@ export function MepWhatYouGetSection({
                 <div className="mep-figma-what-you-get__card-icon flex h-[70px] w-[70px] shrink-0 items-center justify-center rounded-[10px] border border-[#CBCCCD] bg-white p-[15px]">
                   <Image
                     src={card.icon}
-                    alt=""
+                    alt={altFromImageSrc(card.icon)}
                     width={46}
                     height={46}
                     className="h-[46px] w-[46px] object-contain"
-                    aria-hidden
                   />
                 </div>
                 <div className="mep-figma-what-you-get__card-body flex flex-col gap-5">

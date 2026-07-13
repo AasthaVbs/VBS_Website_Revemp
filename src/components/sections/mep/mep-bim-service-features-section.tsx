@@ -8,15 +8,7 @@ import {
   mepBimServiceFeaturesSection,
   type MepBimFeatureCard,
 } from "@/constants/mep-bim-modelling-content";
-import { cn } from "@/lib/utils";
-
-function chunkCards<T>(cards: T[], size: number): T[][] {
-  const rows: T[][] = [];
-  for (let index = 0; index < cards.length; index += size) {
-    rows.push(cards.slice(index, index + size));
-  }
-  return rows;
-}
+import { altFromImageSrc, cn } from "@/lib/utils";
 
 /** Figma node 217:9292 — Service Features grid */
 export function MepBimServiceFeaturesSection({
@@ -35,7 +27,6 @@ export function MepBimServiceFeaturesSection({
   ctaHref?: string;
 } = {}) {
   const { tag, titleLead, titleAccent, description, ctaLabel } = section;
-  const rows = chunkCards(cards, 3);
 
   return (
     <section className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
@@ -53,9 +44,9 @@ export function MepBimServiceFeaturesSection({
           </p>
         </div>
 
-        <div className="flex w-full flex-col gap-[30px]">
-          {rows.map((row, index) => (
-            <FeatureRow key={`feature-row-${index}`} cards={row} />
+        <div className="grid w-full grid-cols-1 gap-[30px] md:grid-cols-2 lg:grid-cols-3">
+          {cards.map((card) => (
+            <FeatureCard key={card.title} card={card} />
           ))}
         </div>
 
@@ -71,27 +62,6 @@ export function MepBimServiceFeaturesSection({
   );
 }
 
-function FeatureRow({ cards }: { cards: MepBimFeatureCard[] }) {
-  const colClass =
-    cards.length === 2
-      ? "grid-cols-1 md:grid-cols-2 lg:justify-center"
-      : cards.length === 1
-        ? "grid-cols-1 lg:justify-center"
-        : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
-
-  return (
-    <div className={cn("grid gap-[30px]", colClass)}>
-      {cards.map((card) => (
-        <FeatureCard
-          key={card.title}
-          card={card}
-          className={cn("min-h-[290px]", cards.length === 1 && "w-full lg:w-[460px]")}
-        />
-      ))}
-    </div>
-  );
-}
-
 function FeatureCard({
   card,
   className,
@@ -100,21 +70,29 @@ function FeatureCard({
   className?: string;
 }) {
   return (
-    <article className={cn("mep-interactive-card flex flex-col gap-[15px] bg-white p-5", className)}>
+    <article
+      className={cn(
+        "mep-interactive-card flex min-h-0 flex-col gap-[15px] bg-white p-5 sm:min-h-[290px]",
+        className,
+      )}
+    >
       <div className="flex flex-col gap-2.5">
         <div className="flex h-[70px] w-[70px] shrink-0 items-center justify-center rounded-[10px] border border-[#CBCCCD] bg-[#FBF9F9] p-[15px]">
           <Image
             src={card.icon}
-            alt=""
+            alt={altFromImageSrc(card.icon)}
             width={46}
             height={46}
             className="h-[46px] w-[46px] object-contain"
-            aria-hidden
           />
         </div>
-        <h3 className="text-[24px] font-normal leading-[1.35] text-[#111111]">{card.title}</h3>
+        <h3 className="text-[22px] font-normal leading-[1.35] text-[#111111] sm:text-[24px]">
+          {card.title}
+        </h3>
       </div>
-      <p className="text-[16px] font-normal leading-6 text-[#808080]">{card.description}</p>
+      <p className="text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]">
+        {card.description}
+      </p>
     </article>
   );
 }

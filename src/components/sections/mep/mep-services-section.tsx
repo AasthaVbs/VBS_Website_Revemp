@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { mepWhatYouGetCards, mepWhatYouGetSection } from "@/constants/mep-engineers-content";
-import { cn } from "@/lib/utils";
+import { altFromImageSrc, cn } from "@/lib/utils";
 
 /** Figma node 286:10032 — What You Get */
 export function MepServicesSection() {
@@ -35,11 +35,10 @@ export function MepServicesSection() {
               <div className="flex h-[70px] w-[70px] shrink-0 items-center justify-center rounded-[10px] border border-[#CBCCCD] bg-white p-[15px]">
                 <Image
                   src={card.icon}
-                  alt=""
+                  alt={altFromImageSrc(card.icon)}
                   width={46}
                   height={46}
                   className="h-[46px] w-[46px] object-contain"
-                  aria-hidden
                 />
               </div>
               <div className="flex flex-col gap-5">

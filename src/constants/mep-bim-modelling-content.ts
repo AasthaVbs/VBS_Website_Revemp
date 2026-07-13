@@ -6,6 +6,7 @@ export const mepBimModellingHero = {
     "Our pre-vetted BIM professionals help you with LOD 200 to LOD 450 Revit MEP 3D Modeling Services. They create accurate models to enable coordination, collaboration and clash free project delivery.",
   ctaLabel: "Get A Free Quote",
   imageSrc: "/images/mep/mep-bim-modeling-hero.png",
+  imageAlt: "mep-bim-modeling-hero",
   copyMaxWidth: 699,
   descriptionMaxWidth: 585,
 } as const;
@@ -54,6 +55,7 @@ export const mepBimModellingIntro = {
   paragraph2:
     "As a specialized MEP BIM modeling service provider based in Houston, TX, we ensure your building systems are clash-free and fabrication-ready.",
   mainImage: mepBimModelingOverview.src,
+  imageAlt: "mep-bim-modeling-overview",
 } as const;
 
 export type MepOverviewIntroContent = {

@@ -222,8 +222,8 @@
 
   @media (max-width: 479px) {
     .vbs-site-footer__link-columns {
-      grid-template-columns: 1fr;
-      row-gap: 20px !important;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      column-gap: 16px;
     }
 
     .vbs-site-footer__column-title {

@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { PageContainer } from "@/components/layout/page-container";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
-import { cn } from "@/lib/utils";
+import { altFromImageSrc, cn } from "@/lib/utils";
 import {
   mepWhyChooseItems,
   mepWhyChooseSection,
@@ -23,9 +23,8 @@ function WhyChooseCard({ item }) {
       <div className="mep-figma-why-choose__icon-wrap">
         <img
           src={resolveImageSrc(item.icon)}
-          alt=""
+          alt={altFromImageSrc(item.icon)}
           className="mep-figma-why-choose__icon"
-          aria-hidden
           decoding="async"
         />
       </div>
@@ -78,8 +77,7 @@ export function MepWhyChooseSection({
                   <span className="mep-figma-why-choose__title-accent">
                     {section.titleAccentLead ? (
                       <>
-                        {section.titleAccentLead}
-                        <br />
+                        {section.titleAccentLead}{" "}
                       </>
                     ) : null}
                     {section.titleAccentRest}

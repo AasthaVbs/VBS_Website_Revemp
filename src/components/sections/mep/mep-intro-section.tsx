@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
 import { mepIntroPoints } from "@/constants/mep-engineers-content";
+import { altFromImageSrc } from "@/lib/utils";
 
 const MEP_INTRO_MAIN = "/images/mep/about-main.png";
 const MEP_INTRO_OVERLAY = "/images/mep/about-overlay.png";
@@ -31,7 +32,7 @@ export function MepIntroSection() {
                 <div className="relative h-full w-full">
                   <Image
                     src={MEP_INTRO_MAIN}
-                    alt="MEP engineering team at work"
+                    alt={altFromImageSrc(MEP_INTRO_MAIN)}
                     fill
                     className="object-contain object-center"
                     sizes="40vw"
@@ -49,7 +50,7 @@ export function MepIntroSection() {
                 <div className="relative h-full w-full">
                   <Image
                     src={MEP_INTRO_OVERLAY}
-                    alt="MEP BIM building systems visualization"
+                    alt={altFromImageSrc(MEP_INTRO_OVERLAY)}
                     fill
                     className="object-contain object-center"
                     sizes="20vw"

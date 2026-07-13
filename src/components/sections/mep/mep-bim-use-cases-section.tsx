@@ -8,15 +8,7 @@ import {
   mepBimUseCasesSection,
   type MepBimUseCaseCard,
 } from "@/constants/mep-bim-modelling-content";
-import { cn } from "@/lib/utils";
-
-function chunkCards<T>(cards: T[], size: number): T[][] {
-  const rows: T[][] = [];
-  for (let index = 0; index < cards.length; index += size) {
-    rows.push(cards.slice(index, index + size));
-  }
-  return rows;
-}
+import { altFromImageSrc, cn } from "@/lib/utils";
 
 /** Figma node 242:16126 — Use Cases / Outsourcing Guide */
 export function MepBimUseCasesSection({
@@ -45,14 +37,13 @@ export function MepBimUseCasesSection({
   columnsPerRow?: 2 | 3;
 } = {}) {
   const { tag, titleLead, titleAccent, description, ctaLabel } = section;
-  const rows = chunkCards(cards, columnsPerRow);
   const gridCols =
     columnsPerRow === 3
       ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-      : "grid-cols-1 lg:grid-cols-2";
+      : "grid-cols-1 md:grid-cols-2";
 
   return (
-    <section id={id} className="bg-[#FAFAFA] py-16 lg:py-[100px]">
+    <section id={id} className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-stretch gap-10 lg:gap-[60px]">
         <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
           <div className="flex max-w-[785px] flex-col items-start gap-3">
@@ -63,20 +54,16 @@ export function MepBimUseCasesSection({
             </h2>
           </div>
           <p
-            className="text-[16px] font-normal leading-6 text-[#808080]"
+            className="text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]"
             style={{ maxWidth: descriptionMaxWidth }}
           >
             {description}
           </p>
         </div>
 
-        <div className="flex w-full max-w-[1440px] flex-col items-stretch gap-[30px]">
-          {rows.map((row, rowIndex) => (
-            <div key={`use-case-row-${rowIndex}`} className={cn("grid gap-[30px]", gridCols)}>
-              {row.map((card) => (
-                <UseCaseCard key={card.title} card={card} iconVariant={iconVariant} />
-              ))}
-            </div>
+        <div className={cn("grid w-full max-w-[1440px] gap-[30px]", gridCols)}>
+          {cards.map((card) => (
+            <UseCaseCard key={card.title} card={card} iconVariant={iconVariant} />
           ))}
         </div>
 
@@ -114,16 +101,19 @@ function UseCaseCard({
         >
           <Image
             src={card.icon}
-            alt=""
+            alt={altFromImageSrc(card.icon)}
             width={42}
             height={42}
             className="h-[42px] w-[42px] object-contain"
-            aria-hidden
           />
         </div>
-        <h3 className="text-[24px] font-normal leading-[1.35] text-[#111111]">{card.title}</h3>
+        <h3 className="text-[22px] font-normal leading-[1.35] text-[#111111] sm:text-[24px]">
+          {card.title}
+        </h3>
       </div>
-      <p className="text-[16px] font-normal leading-[26px] text-[#808080]">{card.description}</p>
+      <p className="text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px] sm:leading-[26px]">
+        {card.description}
+      </p>
     </article>
   );
 }

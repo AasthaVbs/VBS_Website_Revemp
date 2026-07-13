@@ -4,6 +4,7 @@ import videoFillIcon from "@/assets/images/video-fill-icon.svg";
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { architectureAiBimWorkflowSection } from "@/constants/architecture-services-content";
+import { altFromImageSrc } from "@/lib/utils";
 
 type AiBimWorkflowSectionContent = typeof architectureAiBimWorkflowSection & {
   posterSrc?: string;
@@ -24,7 +25,7 @@ export function ArchitectureAiBimWorkflowSection({
       {section.posterSrc ? (
         <Image
           src={section.posterSrc}
-          alt=""
+          alt={altFromImageSrc(section.posterSrc)}
           fill
           className="object-cover"
           sizes="(max-width: 1024px) 100vw, 640px"
@@ -47,7 +48,7 @@ export function ArchitectureAiBimWorkflowSection({
   );
 
   return (
-    <section className="architecture-ai-bim-workflow mep-figma-ai-bim-workflow bg-white py-[100px]">
+    <section className="architecture-ai-bim-workflow mep-figma-ai-bim-workflow bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer>
         <div className="flex w-full flex-col items-center gap-[40px] lg:flex-row lg:items-center lg:gap-[60px]">
           <div className="flex min-w-0 flex-[1.35] flex-col items-start gap-5">

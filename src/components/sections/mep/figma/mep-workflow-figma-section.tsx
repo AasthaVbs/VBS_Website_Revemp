@@ -1,4 +1,4 @@
-﻿// @ts-nocheck
+// @ts-nocheck
 "use client";
 
 import { useRef } from "react";
@@ -116,7 +116,7 @@ export function MepWorkflowSection({
   return (
     <section
       id={id}
-      className="mep-figma-workflow flex flex-col items-center overflow-hidden bg-white py-[100px]"
+      className="mep-figma-workflow flex flex-col items-center overflow-hidden bg-white py-12 sm:py-16 lg:py-[100px]"
     >
       <PageContainer className="mep-figma-workflow__container flex flex-col items-center gap-[60px]">
         <header className="mep-figma-workflow__head">

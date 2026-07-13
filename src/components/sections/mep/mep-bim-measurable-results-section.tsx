@@ -59,7 +59,7 @@ export function MepBimMeasurableResultsSection({
   const useColumnDividers = columnsPerRow === 3;
 
   return (
-    <section id={id} className="bg-white py-16 lg:py-[100px]">
+    <section id={id} className="bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
         <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
@@ -138,14 +138,14 @@ function MeasurableResultCard({
     <article className={cn("flex flex-col gap-5 px-2.5 py-0", className)}>
       <div className="flex flex-col gap-2.5">
         <span
-          className="text-[36px] font-medium leading-none"
+          className="text-[28px] font-medium leading-none sm:text-[36px]"
           style={{ color: card.valueColor }}
         >
           {card.value}
         </span>
-        <h3 className="text-[24px] font-normal leading-[1.35] text-[#111111]">{card.title}</h3>
+        <h3 className="text-[20px] font-normal leading-[1.35] text-[#111111] sm:text-[24px]">{card.title}</h3>
       </div>
-      <p className="text-[16px] font-normal leading-6 text-[#808080]">{card.description}</p>
+      <p className="text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]">{card.description}</p>
     </article>
   );
 }

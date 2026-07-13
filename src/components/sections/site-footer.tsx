@@ -101,8 +101,8 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="vbs-site-footer__link-columns flex w-full flex-col gap-8 sm:flex-row sm:gap-6 lg:contents">
-            <div className="vbs-site-footer__column vbs-site-footer__column--quick-links flex w-full max-w-[160px] flex-col items-start gap-4">
+          <div className="vbs-site-footer__link-columns flex w-full flex-row gap-4 sm:gap-6 lg:contents">
+            <div className="vbs-site-footer__column vbs-site-footer__column--quick-links flex min-w-0 flex-1 flex-col items-start gap-4 sm:max-w-[160px] sm:flex-none">
               <h4 className="vbs-site-footer__column-title text-[24px] font-normal capitalize leading-tight text-[#CBCCCD]">
                 Quick Links
               </h4>
@@ -113,7 +113,7 @@ export function SiteFooter() {
               </ul>
             </div>
 
-            <div className="vbs-site-footer__column vbs-site-footer__column--resources flex w-full max-w-[160px] flex-col items-start gap-4">
+            <div className="vbs-site-footer__column vbs-site-footer__column--resources flex min-w-0 flex-1 flex-col items-start gap-4 sm:max-w-[160px] sm:flex-none">
               <h4 className="vbs-site-footer__column-title w-full text-[24px] font-normal capitalize leading-tight text-[#CBCCCD]">
                 Resources
               </h4>

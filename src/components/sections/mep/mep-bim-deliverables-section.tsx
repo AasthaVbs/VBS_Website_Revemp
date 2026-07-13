@@ -6,7 +6,7 @@ import {
   mepBimDeliverablesSection,
   type MepBimDeliverableCard,
 } from "@/constants/mep-bim-modelling-content";
-import { cn } from "@/lib/utils";
+import { cn, altFromImageSrc } from "@/lib/utils";
 
 type DeliverablesLayout = "three-two" | "two-two";
 
@@ -137,7 +137,7 @@ function DeliverableCard({
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={card.icon}
-            alt=""
+            alt={altFromImageSrc(card.icon)}
             width={isPlain ? 30 : 42}
             height={isPlain ? 30 : 42}
             className={cn(
@@ -146,7 +146,6 @@ function DeliverableCard({
             )}
             loading="lazy"
             decoding="async"
-            aria-hidden
           />
         </div>
         <div className="flex flex-col gap-4">

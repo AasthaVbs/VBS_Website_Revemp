@@ -7,7 +7,7 @@ import {
   dataCenterWhyChooseCards,
   dataCenterWhyChooseSection,
 } from "@/constants/mep-data-center-whitepaper-content";
-import { cn } from "@/lib/utils";
+import { altFromImageSrc, cn } from "@/lib/utils";
 
 const rowOne = dataCenterWhyChooseCards.slice(0, 3);
 const rowTwo = dataCenterWhyChooseCards.slice(3, 5);
@@ -79,11 +79,10 @@ function WhyChooseCard({
       >
         <Image
           src={card.icon}
-          alt=""
+          alt={altFromImageSrc(card.icon)}
           width={42}
           height={42}
           className="h-[42px] w-[42px] object-contain object-left"
-          aria-hidden
         />
       </div>
       <div className="flex w-full flex-col items-start gap-5 text-left">

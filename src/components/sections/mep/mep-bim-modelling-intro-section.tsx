@@ -6,6 +6,7 @@ import {
   mepBimModellingIntro,
   type MepOverviewIntroContent,
 } from "@/constants/mep-bim-modelling-content";
+import { altFromImageSrc } from "@/lib/utils";
 
 /** Figma node 217:8162 — Overview */
 export function MepBimModellingIntroSection({
@@ -41,7 +42,7 @@ export function MepBimModellingIntroSection({
           <div className="mep-figma-overview__frame relative shrink-0 overflow-hidden rounded-[10px] bg-[#F4F4F4]">
             <Image
               src={mainImage}
-              alt={imageAlt ?? "MEP BIM modeling specialist reviewing a coordinated 3D model"}
+              alt={imageAlt ?? altFromImageSrc(mainImage)}
               width={650}
               height={530}
               className="mep-figma-overview__photo block h-full w-full object-cover"

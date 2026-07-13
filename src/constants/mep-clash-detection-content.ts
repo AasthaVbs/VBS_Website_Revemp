@@ -30,6 +30,7 @@ export const mepClashDetectionHero = {
     "Our BIM Experts provide MEP Clash Detection Services in USA. They help teams coordinate mechanical, electrical, plumbing and fire protection systems early.",
   ctaLabel: "Get a Free Quote",
   imageSrc: mepClashDetectionBanner,
+  imageAlt: "mep-clash-detection-banner",
   copyMaxWidth: 730,
   descriptionMaxWidth: 699,
 } as const;
@@ -61,8 +62,7 @@ export const mepClashDetectionIntro: MepOverviewIntroContent = {
   paragraph3Tail:
     " by severity to enable faster coordination and construction decisions.",
   mainImage: mepClashDetectionOverview.src,
-  imageAlt:
-    "MEP BIM clash detection overview showing modeling, clash detection, issue resolution, and faster delivery workflow",
+  imageAlt: "mep-clash-detection-overview",
 };
 
 export const mepClashDetectionServiceFeaturesSection = {

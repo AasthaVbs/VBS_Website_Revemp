@@ -87,7 +87,7 @@ export function MepDisciplinesSection({
   const activePanel = panels.find((panel) => panel.id === activeId) ?? panels[0];
 
   return (
-    <section id="disciplines" className="mep-figma-disciplines bg-white py-[100px]">
+    <section id="disciplines" className="mep-figma-disciplines bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="mep-figma-disciplines__container flex flex-col items-start">
         <div className="mep-figma-disciplines__intro flex w-full flex-col items-start">
           <div className="mep-figma-disciplines__intro-heading flex flex-col items-start">

@@ -1,4 +1,4 @@
-﻿// @ts-nocheck
+// @ts-nocheck
 import { useLayoutEffect, useState } from "react";
 
 const ACTIVE_CLASS = "mep-figma-services__card--active";

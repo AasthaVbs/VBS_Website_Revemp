@@ -60,7 +60,7 @@ export function MepClashDetectionPage() {
         />
         <MepBimModellingIntroSection
           intro={mepClashDetectionIntro}
-          sectionClassName="mep-figma-overview--mep-coordination"
+          sectionClassName="mep-figma-overview--mep-bim-modeling"
         />
         <MepBimServiceFeaturesSection
           section={mepClashDetectionServiceFeaturesSection}

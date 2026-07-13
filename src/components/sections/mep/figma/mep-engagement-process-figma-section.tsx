@@ -65,18 +65,18 @@ export function MepEngagementProcessSection({
               <article className="mep-engagement-process__card flex min-w-0 flex-1 flex-col items-start gap-5 self-stretch overflow-hidden px-2.5 lg:px-[10px]">
                 <div className="flex flex-col items-start gap-2.5">
                   <div className="leading-none">
-                    <span className={cn("text-[36px] font-normal", step.prefixColor)}>
+                    <span className={cn("text-[28px] font-normal sm:text-[36px]", step.prefixColor)}>
                       {step.prefix}
                     </span>
-                    <span className="text-[36px] font-normal text-[#111111]">{step.number}</span>
+                    <span className="text-[28px] font-normal text-[#111111] sm:text-[36px]">{step.number}</span>
                   </div>
-                  <h3 className="text-[24px] font-normal leading-[1.35] text-[#111111]">
+                  <h3 className="text-[20px] font-normal leading-[1.35] text-[#111111] sm:text-[24px]">
                     {step.title}
                   </h3>
                 </div>
                 <p
                   className={cn(
-                    "w-full text-[16px] font-normal leading-6 text-[#808080]",
+                    "w-full text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]",
                     step.descriptionMaxWidth
                       ? undefined
                       : index === 0 && "max-w-[447px]",

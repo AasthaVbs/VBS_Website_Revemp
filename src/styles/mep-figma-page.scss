@@ -1685,11 +1685,16 @@
     flex-shrink: 0;
     align-self: stretch;
     margin: 0 12px;
-    background: linear-gradient(to bottom,
-        transparent 0%,
-        #cbcccd 18%,
-        #cbcccd 82%,
-        transparent 100%);
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 20%,
+      rgba(203, 204, 205, 0.25) 35%,
+      #cbcccd 50%,
+      rgba(203, 204, 205, 0.25) 65%,
+      transparent 80%,
+      transparent 100%
+    );
   }
 
   &__row-divider {
@@ -1697,11 +1702,16 @@
     height: 1px;
     flex-shrink: 0;
     margin: 4px 0;
-    background: linear-gradient(to right,
-        transparent 0%,
-        #cbcccd 18%,
-        #cbcccd 82%,
-        transparent 100%);
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      transparent 20%,
+      rgba(203, 204, 205, 0.25) 35%,
+      #cbcccd 50%,
+      rgba(203, 204, 205, 0.25) 65%,
+      transparent 80%,
+      transparent 100%
+    );
   }
 
   &__card-title {
@@ -1734,11 +1744,16 @@
     &__divider {
       width: 100%;
       height: 1px;
-      background: linear-gradient(to right,
-          transparent 0%,
-          #cbcccd 18%,
-          #cbcccd 82%,
-          transparent 100%);
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 20%,
+        rgba(203, 204, 205, 0.25) 35%,
+        #cbcccd 50%,
+        rgba(203, 204, 205, 0.25) 65%,
+        transparent 80%,
+        transparent 100%
+      );
     }
   }
 
@@ -3010,6 +3025,59 @@
         transparent 100%);
   }
 
+  &--clash-types {
+    .mep-engagement-process__steps {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr) 1px minmax(0, 1fr);
+      column-gap: 30px;
+      align-items: stretch;
+    }
+
+    .mep-engagement-process__card {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .mep-engagement-process__divider {
+      margin: 0;
+      width: 1px;
+      justify-self: center;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 20%,
+        rgba(203, 204, 205, 0.25) 35%,
+        #cbcccd 50%,
+        rgba(203, 204, 205, 0.25) 65%,
+        transparent 80%,
+        transparent 100%
+      );
+    }
+
+    @media (max-width: 1023px) {
+      .mep-engagement-process__steps {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .mep-engagement-process__divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent 0%,
+          transparent 20%,
+          rgba(203, 204, 205, 0.25) 35%,
+          #cbcccd 50%,
+          rgba(203, 204, 205, 0.25) 65%,
+          transparent 80%,
+          transparent 100%
+        );
+      }
+    }
+  }
+
   @media (max-width: 1023px) {
     &__steps {
       gap: 20px;
@@ -3139,7 +3207,7 @@
 .scan-to-bim-services-page {
   --vbs-mep-section-pad-y: 64px;
 
-  main>section:not(.mep-page-hero):not(.mep-figma-services--h-scroll):not(.vbs-mep-stats-strip):not(.mep-figma-what-you-get):not(.mep-figma-overview):not(.mep-figma-ai-bim-workflow) {
+  main>section:not(.mep-page-hero):not(.mep-figma-services--h-scroll):not(.vbs-mep-stats-strip):not(.mep-trusted-by-strip):not(.mep-figma-what-you-get):not(.mep-figma-overview):not(.mep-figma-ai-bim-workflow) {
     padding-top: var(--vbs-mep-section-pad-y) !important;
     padding-bottom: var(--vbs-mep-section-pad-y) !important;
   }

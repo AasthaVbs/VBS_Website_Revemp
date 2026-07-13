@@ -121,7 +121,9 @@ export function MepServiceBenefitsSection({
                 </>
               ) : (
                 <>
-                  <span className="mep-figma-benefits__title-dark">{section.titleLine1}</span>
+                  <span className="mep-figma-benefits__title-dark whitespace-pre-line">
+                    {section.titleLine1}
+                  </span>
                   <span className="mep-figma-benefits__title-accent">{section.titleLine2}</span>
                 </>
               )}

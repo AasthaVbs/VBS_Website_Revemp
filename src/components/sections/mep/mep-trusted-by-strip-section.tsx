@@ -6,6 +6,7 @@ import {
   mepBimModellingTrustedBy,
   type MepTrustedByContent,
 } from "@/constants/mep-bim-modelling-content";
+import { cn } from "@/lib/utils";
 
 function TrustedDivider() {
   return (
@@ -19,13 +20,15 @@ function TrustedDivider() {
 /** Figma node 265:49905 — Trusted By strip */
 export function MepTrustedByStripSection({
   trustedBy = mepBimModellingTrustedBy,
+  className,
 }: {
   trustedBy?: MepTrustedByContent;
+  className?: string;
 } = {}) {
   const { titleAccent, titleLead, items } = trustedBy;
 
   return (
-    <section className="bg-white py-[50px]">
+    <section className={cn("mep-trusted-by-strip bg-white py-[50px]", className)}>
       <PageContainer>
         <div className="flex items-center gap-5 overflow-x-auto">
           <div className="flex min-w-[100px] flex-1 shrink-0 flex-col justify-center">

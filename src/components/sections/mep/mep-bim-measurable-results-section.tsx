@@ -26,6 +26,15 @@ function VerticalDivider() {
   );
 }
 
+function HorizontalDivider() {
+  return (
+    <div
+      className="h-px w-full shrink-0 bg-[linear-gradient(to_right,transparent_0%,#CBCCCD_12%,#CBCCCD_88%,transparent_100%)]"
+      aria-hidden
+    />
+  );
+}
+
 /** Figma node 242:16177 / 2047:18301 — Measurable Results / Outcomes */
 export function MepBimMeasurableResultsSection({
   id,
@@ -47,7 +56,6 @@ export function MepBimMeasurableResultsSection({
 } = {}) {
   const { tag, titleLead, titleAccent, description } = section;
   const rows = chunkCards(cards, columnsPerRow);
-  const rowGapClass = columnsPerRow === 3 ? "gap-12" : "gap-12";
   const useColumnDividers = columnsPerRow === 3;
 
   return (
@@ -74,7 +82,18 @@ export function MepBimMeasurableResultsSection({
           </p>
         </div>
 
-        <div className={cn("flex w-full max-w-[1440px] flex-col", rowGapClass)}>
+        {/* Mobile: stacked cards with faded horizontal dividers between each */}
+        <div className="flex w-full max-w-[1440px] flex-col gap-5 lg:hidden">
+          {cards.map((card, index) => (
+            <Fragment key={card.title}>
+              {index > 0 ? <HorizontalDivider /> : null}
+              <MeasurableResultCard card={card} />
+            </Fragment>
+          ))}
+        </div>
+
+        {/* Desktop: row / grid layout */}
+        <div className="hidden w-full max-w-[1440px] flex-col gap-12 lg:flex">
           {rows.map((row, rowIndex) =>
             useColumnDividers ? (
               <MeasurableResultsRow key={`measurable-row-${rowIndex}`} cards={row} />

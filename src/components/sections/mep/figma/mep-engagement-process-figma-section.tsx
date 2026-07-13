@@ -9,22 +9,45 @@ import {
   mepEngagementProcessSteps,
 } from "@/constants/mep-engineers-content";
 
-/** Engagement model — /mep-bim-services (Figma 265:67484). */
+/** Engagement model — /mep-bim-services (Figma 265:67484). Also used for numbered column layouts. */
 export function MepEngagementProcessSection({
   section = mepEngagementProcessSection,
   steps = mepEngagementProcessSteps,
+  showCta = true,
+  className,
+  titleLayout = "stacked",
+  titleMaxWidth = 719,
 }) {
   const { tag, titleLine1, titleLine2, description, descriptionMaxWidth, cta, ctaHref } = section;
+  const isInlineTitle = titleLayout === "inline";
 
   return (
-    <section id="engagement" className="mep-engagement-process overflow-hidden bg-[#FAFAFA] py-16 lg:py-[100px]">
+    <section
+      id={section.id}
+      className={cn(
+        "mep-engagement-process overflow-hidden py-16 lg:py-[100px]",
+        className ?? "bg-[#FAFAFA]",
+      )}
+    >
       <PageContainer className="flex flex-col items-center gap-5 lg:gap-[50px]">
-        <div className="flex w-full flex-col items-start gap-3">
+        <div className="flex w-full flex-col items-start gap-3 sm:gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading max-w-[719px] capitalize">
-              <span className="block font-medium text-[#111111]">{titleLine1}</span>
-              <span className="text-accent block font-light">{titleLine2}</span>
+            <h2
+              className="mep-section-heading capitalize"
+              style={{ maxWidth: section.titleMaxWidth ?? titleMaxWidth }}
+            >
+              {isInlineTitle ? (
+                <>
+                  <span className="font-medium text-[#111111]">{titleLine1}</span>
+                  <span className="text-accent font-light">{titleLine2}</span>
+                </>
+              ) : (
+                <>
+                  <span className="block font-medium text-[#111111]">{titleLine1}</span>
+                  <span className="text-accent block font-light">{titleLine2}</span>
+                </>
+              )}
             </h2>
           </div>
           <p
@@ -39,7 +62,7 @@ export function MepEngagementProcessSection({
           {steps.map((step, index) => (
             <Fragment key={step.title}>
               {index > 0 ? <div className="mep-engagement-process__divider" aria-hidden /> : null}
-              <article className="mep-engagement-process__card flex min-w-0 flex-1 flex-col items-start gap-3 self-stretch overflow-hidden px-2.5 lg:px-[10px]">
+              <article className="mep-engagement-process__card flex min-w-0 flex-1 flex-col items-start gap-5 self-stretch overflow-hidden px-2.5 lg:px-[10px]">
                 <div className="flex flex-col items-start gap-2.5">
                   <div className="leading-none">
                     <span className={cn("text-[36px] font-normal", step.prefixColor)}>
@@ -54,8 +77,15 @@ export function MepEngagementProcessSection({
                 <p
                   className={cn(
                     "w-full text-[16px] font-normal leading-6 text-[#808080]",
-                    index === 0 && "max-w-[433px]",
+                    step.descriptionMaxWidth
+                      ? undefined
+                      : index === 0 && "max-w-[447px]",
                   )}
+                  style={
+                    step.descriptionMaxWidth
+                      ? { maxWidth: step.descriptionMaxWidth }
+                      : undefined
+                  }
                 >
                   {step.description}
                 </p>
@@ -64,9 +94,11 @@ export function MepEngagementProcessSection({
           ))}
         </div>
 
-        <PrimaryCtaButton fullWidth={false} href={ctaHref}>
-          {cta}
-        </PrimaryCtaButton>
+        {showCta && cta ? (
+          <PrimaryCtaButton fullWidth={false} href={ctaHref}>
+            {cta}
+          </PrimaryCtaButton>
+        ) : null}
       </PageContainer>
     </section>
   );

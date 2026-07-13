@@ -27,6 +27,7 @@ export function MepBimUseCasesSection({
   ctaHref = "/contact",
   iconVariant = "plain",
   descriptionMaxWidth = 536,
+  columnsPerRow = 2,
 }: {
   id?: string;
   section?: {
@@ -41,9 +42,14 @@ export function MepBimUseCasesSection({
   ctaHref?: string;
   iconVariant?: "plain" | "boxed";
   descriptionMaxWidth?: number;
+  columnsPerRow?: 2 | 3;
 } = {}) {
   const { tag, titleLead, titleAccent, description, ctaLabel } = section;
-  const rows = chunkCards(cards, 2);
+  const rows = chunkCards(cards, columnsPerRow);
+  const gridCols =
+    columnsPerRow === 3
+      ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+      : "grid-cols-1 lg:grid-cols-2";
 
   return (
     <section id={id} className="bg-[#FAFAFA] py-16 lg:py-[100px]">
@@ -66,7 +72,7 @@ export function MepBimUseCasesSection({
 
         <div className="flex w-full max-w-[1440px] flex-col items-stretch gap-[30px]">
           {rows.map((row, rowIndex) => (
-            <div key={`use-case-row-${rowIndex}`} className="grid grid-cols-1 gap-[30px] lg:grid-cols-2">
+            <div key={`use-case-row-${rowIndex}`} className={cn("grid gap-[30px]", gridCols)}>
               {row.map((card) => (
                 <UseCaseCard key={card.title} card={card} iconVariant={iconVariant} />
               ))}

@@ -18,6 +18,8 @@ export type MepPageHeroContent = {
   ctaHref?: string;
   copyMaxWidth?: number;
   descriptionMaxWidth?: number;
+  className?: string;
+  containerClassName?: string;
 };
 
 const HERO_IMAGE_WIDTH = 1082;
@@ -55,13 +57,17 @@ export function MepPageHeroSection({
   ctaHref = "#services",
   copyMaxWidth = 779,
   descriptionMaxWidth = 736,
+  className,
+  containerClassName,
 }: MepPageHeroContent) {
   const isCompact = imageSize === "compact";
 
   if (isCompact) {
     return (
-      <section className="relative w-full overflow-hidden bg-white">
-        <PageContainer className="relative py-10 pt-2 sm:py-12 sm:pt-4 lg:py-14">
+      <section className={cn("relative w-full overflow-hidden bg-white", className)}>
+        <PageContainer
+          className={cn("relative py-10 pt-2 sm:py-12 sm:pt-4 lg:py-14", containerClassName)}
+        >
           <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:gap-6 xl:gap-10">
             {/* Copy — vertically centered beside image on desktop */}
             <div

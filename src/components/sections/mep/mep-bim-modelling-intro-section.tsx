@@ -25,6 +25,9 @@ export function MepBimModellingIntroSection({
     paragraph2Lead,
     paragraph2Bold,
     paragraph2Tail,
+    paragraph3Lead,
+    paragraph3Bold,
+    paragraph3Tail,
     mainImage,
     imageAlt,
   } = intro;
@@ -58,7 +61,7 @@ export function MepBimModellingIntroSection({
 
             <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
               {paragraph1}
-              <span className="text-[#111111]">{paragraph1Bold}</span>
+              {paragraph1Bold ? <span className="text-[#111111]">{paragraph1Bold}</span> : null}
             </p>
             {paragraph2 ? (
               <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">{paragraph2}</p>
@@ -70,6 +73,15 @@ export function MepBimModellingIntroSection({
                   <span className="font-medium text-[#111111]">{paragraph2Bold}</span>
                 ) : null}
                 {paragraph2Tail}
+              </p>
+            ) : null}
+            {paragraph3Lead ? (
+              <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
+                {paragraph3Lead}
+                {paragraph3Bold ? (
+                  <span className="font-medium text-[#111111]">{paragraph3Bold}</span>
+                ) : null}
+                {paragraph3Tail}
               </p>
             ) : null}
           </div>

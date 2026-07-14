@@ -7,6 +7,7 @@ import {
   DeferredSiteFooter,
   DeferredWhitepapersBrowseSection,
 } from "@/lib/lazy-page-sections";
+import { buildResourceCatalog } from "@/lib/resource-catalog";
 
 export const metadata: Metadata = {
   title: "White Papers | Virtual Building Studio",
@@ -15,12 +16,14 @@ export const metadata: Metadata = {
 };
 
 export default function WhitepaperPage() {
+  const initialCatalog = buildResourceCatalog(new Date());
+
   return (
     <div className="vbs-redesign-page resources-listing-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
       <main>
         <WhitepapersHeroSection />
-        <DeferredWhitepapersBrowseSection />
+        <DeferredWhitepapersBrowseSection initialCatalog={initialCatalog} />
         <DeferredGetInTouchSection />
       </main>
       <DeferredSiteFooter />

@@ -7,6 +7,7 @@ import {
   DeferredSiteFooter,
   DeferredWebinarBrowseSection,
 } from "@/lib/lazy-page-sections";
+import { buildResourceCatalog } from "@/lib/resource-catalog";
 
 export const metadata: Metadata = {
   title: "Webinars | Virtual Building Studio",
@@ -15,12 +16,14 @@ export const metadata: Metadata = {
 };
 
 export default function WebinarPage() {
+  const initialCatalog = buildResourceCatalog(new Date());
+
   return (
     <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
       <main>
         <WebinarHeroSection />
-        <DeferredWebinarBrowseSection />
+        <DeferredWebinarBrowseSection initialCatalog={initialCatalog} />
         <DeferredGetInTouchSection />
       </main>
       <DeferredSiteFooter />

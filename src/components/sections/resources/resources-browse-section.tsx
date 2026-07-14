@@ -26,7 +26,11 @@ import {
   webinarTypeFilterOptions,
   type WebinarDelivery,
 } from "@/constants/webinar-page-content";
-import { buildResourceCatalog, type ResourceCatalogItem } from "@/lib/resource-catalog";
+import {
+  EMPTY_RESOURCE_CATALOG,
+  type ResourceCatalog,
+  type ResourceCatalogItem,
+} from "@/lib/resource-catalog-types";
 import {
   isAllResourceServicesFilter,
   matchesResourceServiceFilter,
@@ -189,8 +193,11 @@ function getPaginationItems(currentPage: number, totalPages: number): Pagination
 /** Figma 337:37659 (resources) / 405:73063 (blogs) / 405:74005 (webinars) — filters + grid */
 export function ResourcesBrowseSection({
   variant = "resources",
+  initialCatalog,
 }: {
   variant?: ResourcesBrowseVariant;
+  /** Server-built catalog — keeps browse filled before the client API round-trip. */
+  initialCatalog?: ResourceCatalog | null;
 }) {
   const isBlogsPage = variant === "blogs";
   const isWebinarsPage = variant === "webinars";
@@ -203,10 +210,35 @@ export function ResourcesBrowseSection({
   const [selectedSort, setSelectedSort] = useState<ResourceSort>("New to Old");
   const [selectedService, setSelectedService] = useState<string>(resourceAllServicesLabel);
   const [currentPage, setCurrentPage] = useState(1);
+  const [resourceCatalog, setResourceCatalog] = useState<ResourceCatalog>(
+    () => initialCatalog ?? EMPTY_RESOURCE_CATALOG,
+  );
+  const [catalogReady, setCatalogReady] = useState(() => Boolean(initialCatalog?.byType));
 
-  const resourceCatalog = useMemo(() => buildResourceCatalog(), []);
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch("/api/resources-catalog")
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data: ResourceCatalog | null) => {
+        if (cancelled || !data?.byType) {
+          if (!cancelled) setCatalogReady(true);
+          return;
+        }
+        setResourceCatalog(data);
+        setCatalogReady(true);
+      })
+      .catch(() => {
+        if (!cancelled) setCatalogReady(true);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const filteredItems = useMemo(() => {
+    if (!catalogReady) return [];
     const query = searchQuery.trim().toLowerCase();
 
     let baseItems: CatalogItem[] = [];
@@ -260,6 +292,7 @@ export function ResourcesBrowseSection({
 
     return items;
   }, [
+    catalogReady,
     isBlogsPage,
     isWebinarsPage,
     isWhitepapersPage,
@@ -394,19 +427,21 @@ export function ResourcesBrowseSection({
               ))
             ) : (
               <p className="rounded-[10px] border border-[#CBCCCD] bg-[#FAFAFA] p-8 text-center text-[16px] text-[#808080]">
-                {isWebinarsPage
-                  ? resourceCatalog.byType.Webinar.length === 0
-                    ? "No webinars are available yet. Check back soon."
-                    : "No webinars match your filters. Try another type or search term."
-                  : isBlogsPage
-                    ? resourceCatalog.byType.Blog.length === 0
-                      ? "No blog posts are available yet. Check back soon."
-                      : "No blogs match your filters. Try another service or search term."
-                    : isWhitepapersPage
-                      ? resourceCatalog.byType.Whitepapers.length === 0
-                        ? "No white papers are available yet. Check back soon."
-                        : "No white papers match your filters. Try another search term."
-                      : `No ${selectedType === resourceAllTypesLabel ? "resources" : selectedType.toLowerCase()} match your filters. Try another type or search term.`}
+                {!catalogReady
+                  ? "Loading resources…"
+                  : isWebinarsPage
+                    ? resourceCatalog.byType.Webinar.length === 0
+                      ? "No webinars are available yet. Check back soon."
+                      : "No webinars match your filters. Try another type or search term."
+                    : isBlogsPage
+                      ? resourceCatalog.byType.Blog.length === 0
+                        ? "No blog posts are available yet. Check back soon."
+                        : "No blogs match your filters. Try another service or search term."
+                      : isWhitepapersPage
+                        ? resourceCatalog.byType.Whitepapers.length === 0
+                          ? "No white papers are available yet. Check back soon."
+                          : "No white papers match your filters. Try another search term."
+                        : `No ${selectedType === resourceAllTypesLabel ? "resources" : selectedType.toLowerCase()} match your filters. Try another type or search term.`}
               </p>
             )}
           </div>

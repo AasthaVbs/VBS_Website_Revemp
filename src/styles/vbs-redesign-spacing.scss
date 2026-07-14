@@ -57,6 +57,18 @@
   padding-top: 0 !important;
 }
 
+.vbs-redesign-page section.pt-10 {
+  padding-top: 2.5rem !important;
+}
+
+.vbs-redesign-page section.pt-6 {
+  padding-top: 1.5rem !important;
+}
+
+.vbs-redesign-page section.pb-8 {
+  padding-bottom: 2rem !important;
+}
+
 .vbs-redesign-page section.py-12 {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
@@ -84,6 +96,10 @@
     padding-top: 4rem !important;
     padding-bottom: 4rem !important;
   }
+
+  .vbs-redesign-page section.md\:pt-16 {
+    padding-top: 4rem !important;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -94,6 +110,26 @@
   .vbs-redesign-page section.py-16.lg\:py-\[100px\] {
     padding-top: 100px !important;
     padding-bottom: 100px !important;
+  }
+
+  .vbs-redesign-page section.lg\:py-\[100px\].lg\:pb-12,
+  .vbs-redesign-page section.py-12.lg\:py-\[100px\].lg\:pb-12 {
+    padding-bottom: 3rem !important;
+  }
+
+  .vbs-redesign-page section.lg\:pt-\[72px\],
+  .vbs-redesign-page section.leadership-hero-section.lg\:pt-\[72px\] {
+    padding-top: 72px !important;
+  }
+
+  .vbs-redesign-page section.lg\:pt-\[100px\],
+  .vbs-redesign-page section.about-hero-section.lg\:pt-\[100px\] {
+    padding-top: 100px !important;
+  }
+
+  .vbs-redesign-page section.vbs-listing-hero.lg\:pb-12,
+  .vbs-redesign-page section.lg\:pb-12 {
+    padding-bottom: 3rem !important;
   }
 
   .vbs-redesign-page section.lg\:py-\[150px\],

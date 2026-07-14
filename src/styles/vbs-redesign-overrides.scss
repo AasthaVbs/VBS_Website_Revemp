@@ -417,3 +417,68 @@ html:has(.vbs-redesign-page.build-your-team-page)::-webkit-scrollbar {
     text-transform: none !important;
   }
 }
+
+/* Listing heroes (Resources / Blogs / Webinar / Whitepapers / Portfolio / Testimonials) */
+.vbs-listing-hero {
+  .vbs-listing-hero__row {
+    align-items: center;
+  }
+
+  .vbs-listing-hero__copy,
+  .vbs-listing-hero__text,
+  .vbs-listing-hero__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .vbs-listing-hero__tag {
+    align-self: center;
+  }
+
+  .vbs-listing-hero__title,
+  .vbs-listing-hero__description {
+    text-align: center !important;
+  }
+
+  .vbs-listing-hero__cta {
+    align-self: center;
+  }
+
+  .vbs-listing-hero__media {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 1024px) {
+    .vbs-listing-hero__row {
+      align-items: center;
+    }
+
+    .vbs-listing-hero__copy,
+    .vbs-listing-hero__text,
+    .vbs-listing-hero__heading {
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
+
+    .vbs-listing-hero__tag {
+      align-self: flex-start !important;
+    }
+
+    .vbs-listing-hero__title,
+    .vbs-listing-hero__description {
+      text-align: left !important;
+    }
+
+    .vbs-listing-hero__cta {
+      align-self: flex-start !important;
+    }
+
+    .vbs-listing-hero__media {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

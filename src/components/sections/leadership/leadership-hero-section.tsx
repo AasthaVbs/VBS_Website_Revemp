@@ -9,7 +9,7 @@ export function LeadershipHeroSection() {
     leadershipHeroCopy.ctaLabel.trim().toLowerCase() === "contact us" ? "/contact" : undefined;
 
   return (
-    <section className="leadership-hero-section about-hero-section overflow-hidden bg-white max-lg:mt-5">
+    <section className="leadership-hero-section about-hero-section overflow-hidden bg-white pt-9 md:pt-12 lg:pt-[72px]">
       <PageContainer>
         <div className="vbs-split-hero__row--balanced flex flex-col items-center gap-10 lg:flex-row lg:items-center">
           <div className="vbs-split-hero__copy flex w-full min-w-0 max-w-[587px] flex-1 flex-col items-start gap-4 lg:gap-5">

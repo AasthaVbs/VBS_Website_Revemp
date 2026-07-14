@@ -90,19 +90,26 @@
   object-position: center;
 }
 
-.contact-us-page .contact-hero-section {
-  .vbs-split-hero__row--contact {
+.vbs-redesign-page.contact-us-page .contact-hero-section {
+  .vbs-split-hero__row--contact.vbs-split-hero__row--balanced {
     @media (min-width: 1024px) {
-      justify-content: space-between;
-      align-items: center;
-      gap: 0;
+      display: flex !important;
+      width: 100% !important;
+      max-width: none !important;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      gap: 40px !important;
     }
   }
 
   .vbs-split-hero__copy {
     @media (min-width: 1024px) {
-      flex: 0 0 auto;
-      max-width: 497px;
+      flex: 0 1 497px !important;
+      width: 100% !important;
+      max-width: 497px !important;
+      align-self: flex-start !important;
+      /* Slight offset from image top — not vertically centered */
+      padding-top: 80px;
     }
 
     > div:first-child {
@@ -129,9 +136,11 @@
     background: #ffffff;
 
     @media (min-width: 1024px) {
-      flex: 0 0 auto;
-      width: 589px;
-      max-width: 589px;
+      flex: 0 0 auto !important;
+      width: min(589px, calc(100% - 497px - 40px)) !important;
+      max-width: 589px !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
     }
   }
 }
@@ -710,6 +719,12 @@
 .vbs-redesign-page.contact-us-page .contact-section-page {
   >section {
     padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* Hero keeps a bit more top room so copy + image can center */
+  >section.contact-hero-section:first-of-type {
+    padding-top: 30px !important;
     padding-bottom: 60px !important;
   }
 

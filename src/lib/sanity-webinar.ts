@@ -1,7 +1,7 @@
-import sanitySnapshot from "@/data/sanity-resources-snapshot.json";
 import { webinarYoutubeVideoUrlBySlug } from "@/constants/webinar-page-content";
 import { portableTextToPlainText } from "@/lib/sanity-listing";
 import { normalizeWebinarSlug } from "@/lib/resource-listing";
+import { getSanityResourceWebinars } from "@/lib/sanity-snapshot";
 
 export type SanityWebinarRecord = {
   _id?: string;
@@ -104,7 +104,7 @@ export function mapSanityWebinarToDetail(record: SanityWebinarRecord): WebinarDe
 
 function getWebinarFromSnapshot(slug: string): SanityWebinarRecord | null {
   const cleanSlug = normalizeWebinarSlug(slug);
-  const webinar = sanitySnapshot.webinars.find(
+  const webinar = getSanityResourceWebinars().find(
     (item) => normalizeWebinarSlug(item.slug) === cleanSlug,
   );
   if (!webinar) return null;
@@ -148,7 +148,7 @@ export async function getAllWebinarSlugsForBuild(): Promise<string[]> {
 
 function getAllWebinarSlugs(): string[] {
   const slugs = new Set<string>();
-  for (const webinar of sanitySnapshot.webinars) {
+  for (const webinar of getSanityResourceWebinars()) {
     const slug = normalizeWebinarSlug(webinar.slug);
     if (slug) slugs.add(slug);
   }

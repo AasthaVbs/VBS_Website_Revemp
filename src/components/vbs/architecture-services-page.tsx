@@ -52,8 +52,11 @@ import {
   DeferredMepWorkflowSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
+import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
 
-export function ArchitectureServicesPage() {
+export async function ArchitectureServicesPage() {
+  const resourcesFeed = await getMepResourcesFeedItemsLive();
+
   return (
     <div className="vbs-redesign-page architecture-services-page mep-bim-services-page">
       <SiteHeader />
@@ -100,7 +103,7 @@ export function ArchitectureServicesPage() {
           section={architectureWhyChooseSection}
           items={architectureWhyChooseItems}
         />
-        <DeferredMepResourcesSection section={architectureResourcesSection} />
+        <DeferredMepResourcesSection section={architectureResourcesSection} allItems={resourcesFeed} />
         <DeferredMepEngagementProcessSection
           section={architectureEngagementProcessSection}
           steps={architectureEngagementProcessSteps}

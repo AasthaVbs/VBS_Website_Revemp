@@ -7,6 +7,7 @@ import {
   DeferredGetInTouchSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
+import { buildResourceCatalog } from "@/lib/resource-catalog";
 
 export const metadata: Metadata = {
   title: "Blogs | Virtual Building Studio",
@@ -15,12 +16,14 @@ export const metadata: Metadata = {
 };
 
 export default function BlogsPage() {
+  const initialCatalog = buildResourceCatalog(new Date());
+
   return (
     <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
       <main>
         <BlogsHeroSection />
-        <DeferredBlogsBrowseSection />
+        <DeferredBlogsBrowseSection initialCatalog={initialCatalog} />
         <DeferredGetInTouchSection />
       </main>
       <DeferredSiteFooter />

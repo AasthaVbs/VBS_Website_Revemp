@@ -12,12 +12,16 @@ import {
 } from "@/lib/sanity-queries";
 import type { SanityPostRecord } from "@/lib/sanity-blog";
 import type { SanityWebinarRecord } from "@/lib/sanity-webinar";
-import sanitySnapshot from "@/data/sanity-resources-snapshot.json";
-import { filterPublishedSanityPosts, filterPublishedSanityWebinars } from "@/lib/sanity-listing";
+import {
+  getSanityResourcePosts,
+  getSanityResourceWebinars,
+  type SanitySnapshotPost,
+  type SanitySnapshotWebinar,
+} from "@/lib/sanity-snapshot";
 
 export type SanityListingSnapshot = {
-  posts: typeof sanitySnapshot.posts;
-  webinars: typeof sanitySnapshot.webinars;
+  posts: SanitySnapshotPost[];
+  webinars: SanitySnapshotWebinar[];
 };
 
 async function fetchPublishedListing<T>(query: string): Promise<T | null> {
@@ -42,16 +46,16 @@ async function fetchFromSanity<T>(query: string, params: Record<string, unknown>
 
 function snapshotListing(): SanityListingSnapshot {
   return {
-    posts: filterPublishedSanityPosts(sanitySnapshot.posts),
-    webinars: filterPublishedSanityWebinars(sanitySnapshot.webinars),
+    posts: getSanityResourcePosts(),
+    webinars: getSanityResourceWebinars(),
   };
 }
 
 /** Posts + webinars for resource listings — published Sanity only, JSON snapshot fallback. */
 export async function fetchSanityResourceListing(): Promise<SanityListingSnapshot> {
   const [posts, webinars] = await Promise.all([
-    fetchPublishedListing<typeof sanitySnapshot.posts>(SANITY_POST_LISTING_QUERY),
-    fetchPublishedListing<typeof sanitySnapshot.webinars>(SANITY_WEBINAR_LISTING_QUERY),
+    fetchPublishedListing<SanitySnapshotPost[]>(SANITY_POST_LISTING_QUERY),
+    fetchPublishedListing<SanitySnapshotWebinar[]>(SANITY_WEBINAR_LISTING_QUERY),
   ]);
 
   const fallback = snapshotListing();
@@ -74,7 +78,7 @@ export async function fetchSanityPostBySlug(slug: string): Promise<SanityPostRec
 
 export async function fetchSanityPostSlugs(): Promise<string[]> {
   const listing = await fetchSanityResourceListing();
-  return listing.posts.map((post) => post.slug).filter(Boolean);
+  return listing.posts.map((post) => post.slug).filter(Boolean) as string[];
 }
 
 export async function fetchSanityWebinarBySlug(slug: string): Promise<SanityWebinarRecord | null> {

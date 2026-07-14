@@ -300,5 +300,6 @@ export function buildWebinarListingItems(
 
 export function buildAllWebinarListingItems(referenceDate?: Date | string | number) {
   const reference = resolveListingReference(referenceDate);
-  return buildSanityWebinarListingItems(undefined, reference);
+  // Pass [] so client bundles never pull the multi-MB snapshot; server pages/API inject Sanity webinars.
+  return buildSanityWebinarListingItems([], reference);
 }

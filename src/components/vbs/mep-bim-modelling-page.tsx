@@ -27,8 +27,10 @@ import {
   DeferredMepTrustedByStripSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
+import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
 
-export function MepBimModellingPage() {
+export async function MepBimModellingPage() {
+  const resourcesFeed = await getMepResourcesFeedItemsLive();
   return (
     <div className="vbs-redesign-page mep-bim-modeling-services-page mep-bim-services-page">
       <SiteHeader />
@@ -48,7 +50,7 @@ export function MepBimModellingPage() {
         <MepBimModellingProcessSection />
         <DeferredMepBimUseCasesSection />
         <DeferredMepBimMeasurableResultsSection />
-        <DeferredMepResourcesSection section={mepBimModellingResourcesSection} />
+        <DeferredMepResourcesSection section={mepBimModellingResourcesSection} allItems={resourcesFeed} />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

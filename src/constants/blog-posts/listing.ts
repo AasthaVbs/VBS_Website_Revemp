@@ -9,9 +9,9 @@ export function blogPostHref(slug: string) {
   return `/blogs/${slug}`;
 }
 
-/** Listing cards for blogs browse — sourced from Sanity snapshot / live fetch via catalog. */
+/** Listing cards for blogs browse — pass mapped Sanity posts from the server (never load snapshot here). */
 export function buildBlogListingItemsFromSanity(
-  posts = mapSanityPostsToListing(),
+  posts: ReturnType<typeof mapSanityPostsToListing>,
 ): ResourceListingItem[] {
   return posts.map((item) => ({
     id: item.id,
@@ -31,5 +31,5 @@ export function buildBlogListingItemsFromSanity(
   }));
 }
 
-/** @deprecated Use buildBlogListingItemsFromSanity — kept for imports that expect a static array at module load. */
-export const blogListingItems: ResourceListingItem[] = buildBlogListingItemsFromSanity();
+/** Empty placeholder — do not evaluate snapshot at module load (kills client bundles). */
+export const blogListingItems: ResourceListingItem[] = [];

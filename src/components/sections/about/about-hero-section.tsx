@@ -18,7 +18,7 @@ export function AboutHeroSection() {
       images={aboutHeroImages}
       showCta
       ctaLabel="Contact Us"
-      sectionClassName="about-hero-section py-0 md:py-0 lg:py-0"
+      sectionClassName="about-hero-section pt-10 md:pt-16 lg:pt-[100px]"
     />
   );
 }

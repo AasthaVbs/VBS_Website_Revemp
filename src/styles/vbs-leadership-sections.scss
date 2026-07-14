@@ -1,21 +1,17 @@
 /* Leadership hero — spacing (loads after about-section-page rules) */
-.vbs-redesign-page .about-section-page.vbs-leadership-page > section.leadership-hero-section.about-hero-section:first-of-type {
-  padding-top: 48px !important;
+.vbs-redesign-page.about-section-page.vbs-leadership-page
+  > section.leadership-hero-section.about-hero-section:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 72px !important;
   padding-bottom: 20px !important;
 
-  @media (min-width: 1024px) {
-    margin-top: 0 !important;
-  }
-
   @media (max-width: 1023px) {
-    margin-top: 20px !important;
-    padding-top: 28px !important;
+    padding-top: 52px !important;
     padding-bottom: 12px !important;
   }
 
   @media (max-width: 767px) {
-    margin-top: 24px !important;
-    padding-top: 24px !important;
+    padding-top: 36px !important;
     padding-bottom: 8px !important;
   }
 }

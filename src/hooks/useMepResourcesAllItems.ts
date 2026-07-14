@@ -1,27 +1,21 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { buildMepResourcesFeedItems } from "@/lib/mep-resources-feed";
 import type { ResourceFeedItem } from "@/lib/resource-listing";
 
 /** Full dynamic feed for home + MEP resources sections (blogs, webinars, case studies, white papers). */
-export function useHomeResourcesAllItems() {
-  const [referenceDate] = useState(() => new Date());
-
-  const snapshotItems = useMemo(
-    () =>
-      buildMepResourcesFeedItems({
-        referenceDate,
-      }),
-    [referenceDate],
+export function useHomeResourcesAllItems(initialItems?: ResourceFeedItem[]) {
+  const [items, setItems] = useState<ResourceFeedItem[]>(
+    () => initialItems ?? buildMepResourcesFeedItems({ posts: [], webinars: [] }),
   );
 
-  const [items, setItems] = useState<ResourceFeedItem[]>(snapshotItems);
-
   useEffect(() => {
-    setItems(snapshotItems);
-  }, [snapshotItems]);
+    if (initialItems?.length) {
+      setItems(initialItems);
+    }
+  }, [initialItems]);
 
   useEffect(() => {
     let cancelled = false;
@@ -33,7 +27,7 @@ export function useHomeResourcesAllItems() {
         setItems(data);
       })
       .catch(() => {
-        /* Keep snapshot feed if live Sanity is unavailable. */
+        /* Keep server/static fallback if live feed is unavailable. */
       });
 
     return () => {

@@ -1,39 +1,30 @@
-import type { ResourceService } from "@/constants/resources-page-content";
+import "server-only";
+
+import type { BlogCatalogItem } from "@/lib/resource-catalog-types";
 import { mapSanityPostsToListing } from "@/lib/sanity-listing";
+import { getSanityResourcePosts } from "@/lib/sanity-snapshot";
 
-export type BlogCatalogItem = {
-  id: string;
-  title: string;
-  excerpt: string;
-  type: "Blog";
-  service: ResourceService | string | null;
-  href: string;
-  image: string;
-  sortOrder: number;
-  publishedTimestamp: number;
-  publishedAt: string | null;
-  categoryTitles: string[];
-  badgeLabel: string;
-  category: string;
-  author?: string | null;
-  tags?: string[];
-};
+export type { BlogCatalogItem };
 
-export function mapBlogListingToCatalog() {
-  return mapSanityPostsToListing().map((item, index) => ({
-    id: item.id,
-    title: item.title,
-    excerpt: item.excerpt,
-    type: "Blog" as const,
-    service: item.service,
-    href: item.href,
-    image: item.image,
-    sortOrder: item.sortOrder,
-    publishedTimestamp: item.publishedTimestamp ?? item.sortOrder ?? index,
-    publishedAt: item.publishedAt,
-    categoryTitles: item.categoryTitles,
-    badgeLabel: item.badgeLabel ?? "Blog",
-    category: item.category ?? "Blog",
-    tags: item.tags ?? [],
-  })) satisfies BlogCatalogItem[];
+/** Server-safe blog catalog — uses committed Sanity snapshot (not for client bundles). */
+export function mapBlogListingToCatalog(): BlogCatalogItem[] {
+  return mapSanityPostsToListing(getSanityResourcePosts())
+    .filter((item): item is typeof item & { id: string } => Boolean(item.id))
+    .map((item, index) => ({
+      id: item.id,
+      title: item.title,
+      excerpt: item.excerpt,
+      type: "Blog" as const,
+      service: item.service ?? null,
+      href: item.href,
+      image: item.image ?? "",
+      sortOrder: item.sortOrder,
+      publishedTimestamp: item.publishedTimestamp ?? item.sortOrder ?? index,
+      publishedAt: item.publishedAt,
+      categoryTitles: item.categoryTitles,
+      badgeLabel: item.badgeLabel ?? "Blog",
+      category: item.category ?? "Blog",
+      tags: item.tags ?? [],
+    }));
 }
+

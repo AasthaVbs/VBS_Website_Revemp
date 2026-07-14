@@ -17,6 +17,7 @@ import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-sect
 import { MepResourcesSection } from "@/components/sections/mep/mep-resources-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { TrustStripSection } from "@/components/sections/trust-strip-section";
+import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
 import {
   mepDisciplinePanels,
   mepDisciplinesSection,
@@ -49,7 +50,8 @@ import {
 } from "@/constants/mep-engineers-content";
 
 /** MEP BIM Services — same layout as architecture and scan-to-bim service pages. */
-export function MepEngineersPage() {
+export async function MepEngineersPage() {
+  const resourcesFeed = await getMepResourcesFeedItemsLive();
   return (
     <div className="vbs-redesign-page mep-bim-services-page">
       <SiteHeader />
@@ -79,7 +81,7 @@ export function MepEngineersPage() {
           cards={mepServiceBenefitsCards}
         />
         <MepWhyChooseSection section={mepWhyChooseSection} items={mepWhyChooseItems} />
-        <MepResourcesSection section={mepResourcesSection} />
+        <MepResourcesSection section={mepResourcesSection} allItems={resourcesFeed} />
         <IndustriesSection
           intro={mepIndustriesSection.description}
           titleLine1={mepIndustriesSection.titleLine1}

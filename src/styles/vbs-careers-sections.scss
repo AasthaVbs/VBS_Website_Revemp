@@ -22,6 +22,7 @@
     max-width: none !important;
   }
 
+  --vbs-about-hero-pad-top: 64px !important;
   --vbs-about-section-gap: 60px;
 
   @media (min-width: 1024px) {
@@ -46,6 +47,7 @@
   }
 
   > section.careers-hero-section:first-of-type {
+    padding-top: var(--vbs-about-hero-pad-top) !important;
     padding-bottom: 56px !important;
 
     @media (min-width: 768px) {
@@ -92,15 +94,16 @@
 /* Mobile — tighter hero heading spacing */
 @media (max-width: 767px) {
   .vbs-redesign-page .careers-section-page {
-    --vbs-about-hero-pad-top: 20px;
+    --vbs-about-hero-pad-top: 32px;
     --vbs-about-section-gap: 40px;
 
     > section:first-of-type {
-      padding-top: 20px !important;
+      padding-top: 32px !important;
       padding-bottom: 0 !important;
     }
 
     > section.careers-hero-section:first-of-type {
+      padding-top: 32px !important;
       padding-bottom: 48px !important;
     }
 
@@ -443,6 +446,7 @@
 
 /* Hero → Trust strip — override about-section-page zero padding */
 .vbs-redesign-page .about-section-page.careers-section-page > section.vbs-careers-hero.careers-hero-section {
+  padding-top: 64px !important;
   padding-bottom: 56px !important;
 
   @media (min-width: 768px) {
@@ -474,6 +478,7 @@
 
 @media (max-width: 767px) {
   .vbs-redesign-page .about-section-page.careers-section-page > section.vbs-careers-hero.careers-hero-section {
+    padding-top: 32px !important;
     padding-bottom: 48px !important;
   }
 

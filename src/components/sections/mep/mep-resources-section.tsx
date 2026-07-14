@@ -189,7 +189,9 @@ export function MepResourcesSection({
   sectionClassName?: string;
 } = {}) {
   const [activeFilter, setActiveFilter] = useState("All");
-  const queriedAllItems = useMepResourcesAllItems();
+  const queriedAllItems = useMepResourcesAllItems(
+    Array.isArray(allItemsProp) ? allItemsProp : undefined,
+  );
   const serviceFilter = serviceFilterProp ?? section.serviceFilter;
 
   const allItems = useMemo(() => {

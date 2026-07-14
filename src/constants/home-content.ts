@@ -1,5 +1,16 @@
 import { ROUTES } from "@/constants/navigation";
 
+import architectureStructureImg from "@/assets/images/architecture-structure.png";
+import architecturalDraftingImg from "@/assets/images/architectural-drafting.png";
+import bimServicesImg from "@/assets/images/bim-services.png";
+import engineeringConstructionImg from "@/assets/images/engineering-construction.jpg";
+import infrastructureDeliveryAboutImg from "@/assets/images/infrastructure-delivery-model-about-us.jpg";
+import mechanicalBimServicesImg from "@/assets/images/mechanical-bim-services.png";
+import mepServicesImg from "@/assets/images/mep-services.png";
+import pointCloudToBimImg from "@/assets/images/point-cloud-to-bim.png";
+import realityCaptureSurveyImg from "@/assets/images/reality-capture-survey.png";
+import scanToBimImg from "@/assets/images/scan-to-bim.png";
+
 export const navLinks = [
   "What We Do",
   "Success Stories",
@@ -37,7 +48,7 @@ export const homeAboutSection = {
   paragraph1Emphasis: "200+ dedicated remote BIM modelers.",
   paragraph2:
     "As a specialized MEP BIM modeling service provider in the USA, we ensure your building systems are clash-free and fabrication-ready.",
-  videoImage: encodeURI("/image/Home About us Image.jpg"),
+  videoImage: infrastructureDeliveryAboutImg.src,
   youtubeVideoId: "uyaBPQrNhW0",
 };
 
@@ -68,10 +79,6 @@ export const homeAboutBadges = [
     iconSrc: "/icons/Capa_1about-usicon.png",
   },
 ];
-
-import architectureStructureImg from "@/assets/images/architecture-structure.png";
-import engineeringConstructionImg from "@/assets/images/engineering-construction.png";
-import realityCaptureSurveyImg from "@/assets/images/reality-capture-survey.png";
 
 export type HomeCapabilityCard = {
   image: string;
@@ -108,13 +115,17 @@ export const homeCapabilityCards: HomeCapabilityCard[] = [
   },
 ];
 
-/** Home hero scrolling media — left column from capabilities, right from service tiles. */
-export const homeHeroMediaLeft = homeCapabilityCards.map((card) => card.image);
+/** Home hero scrolling media — left column (3) / right column (3), no duplicates. */
+export const homeHeroMediaLeft = [
+  architecturalDraftingImg.src,
+  bimServicesImg.src,
+  mechanicalBimServicesImg.src,
+] as const;
 
 export const homeHeroMediaRight = [
-  encodeURI("/image/MEP Services.png"),
-  encodeURI("/image/Point Cloud to BIM.png"),
-  encodeURI("/image/Scan to BIM.png"),
+  mepServicesImg.src,
+  pointCloudToBimImg.src,
+  scanToBimImg.src,
 ] as const;
 
 /** Figma 1-2925 — Our Clients marquee. */

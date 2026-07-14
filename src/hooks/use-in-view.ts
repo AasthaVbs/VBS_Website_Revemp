@@ -9,7 +9,7 @@ type UseInViewOptions = {
 };
 
 export function useInView({
-  rootMargin = "320px 0px",
+  rootMargin = "720px 0px",
   threshold = 0,
   triggerOnce = true,
 }: UseInViewOptions = {}) {

@@ -37,7 +37,13 @@ export function VbsLink({ to, href, children, className, onClick, onMouseEnter }
   }
 
   return (
-    <Link href={target} className={cn(className)} onClick={onClick} onMouseEnter={onMouseEnter}>
+    <Link
+      href={target}
+      prefetch
+      className={cn(className)}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+    >
       {children}
     </Link>
   );

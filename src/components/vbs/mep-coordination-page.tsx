@@ -41,8 +41,10 @@ import {
   DeferredMepResourcesSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
+import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
 
-export function MepCoordinationPage() {
+export async function MepCoordinationPage() {
+  const resourcesFeed = await getMepResourcesFeedItemsLive();
   return (
     <div className="vbs-redesign-page mep-bim-coordination-services-page mep-bim-modeling-services-page mep-bim-services-page">
       <SiteHeader />
@@ -104,7 +106,7 @@ export function MepCoordinationPage() {
           columnsPerRow={3}
           descriptionMaxWidth={683}
         />
-        <DeferredMepResourcesSection section={mepCoordinationResourcesSection} />
+        <DeferredMepResourcesSection section={mepCoordinationResourcesSection} allItems={resourcesFeed} />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

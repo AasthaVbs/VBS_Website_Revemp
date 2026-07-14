@@ -209,11 +209,13 @@
   }
 
   &__media-track--up {
+    /* Content moves up → images travel bottom → top */
     animation-name: vbs-home-hero-col-scroll !important;
     animation-direction: normal !important;
   }
 
   &__media-track--down {
+    /* Content moves down → images travel top → bottom */
     animation-name: vbs-home-hero-col-scroll !important;
     animation-direction: reverse !important;
   }

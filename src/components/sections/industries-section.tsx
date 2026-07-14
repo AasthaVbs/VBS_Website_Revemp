@@ -49,10 +49,10 @@ export function IndustriesSection({
           <div className="industries-marquee-track">
             {marqueeTrack.map((item, idx) => (
               <div
-                key={`${item.img}-${idx}`}
+                key={`${item.title}-${idx}`}
                 className="relative h-[330px] w-[330px] shrink-0 overflow-hidden rounded-[10px] border border-[#CBCCCD]"
               >
-                <Image src={`/images/figma/${item.img}`} alt={item.title} fill className="object-cover" />
+                <Image src={item.src} alt={item.alt} fill className="object-cover" sizes="330px" />
                 <div className="absolute bottom-0 left-0 h-[160px] w-full bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,#000_100%)]" />
                 <div className="absolute bottom-8 left-1/2 w-[228px] -translate-x-1/2 text-center text-[24px] font-normal leading-[1.2] text-white">
                   {item.title}

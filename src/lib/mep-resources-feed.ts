@@ -11,7 +11,12 @@ import {
   normalizeWebinarSlug,
   type ResourceFeedItem,
 } from "@/lib/resource-listing";
-import { mapSanityPostsToListing } from "@/lib/sanity-listing";
+import {
+  buildSanityWebinarListingItems,
+  mapSanityPostsToListing,
+  type SanityPostNode,
+  type SanityWebinarNode,
+} from "@/lib/sanity-listing";
 
 const UPCOMING_WEBINAR_SORT_BOOST = 5_000_000_000_000;
 
@@ -185,13 +190,16 @@ function ensureMepPinnedWebinars(items: ResourceFeedItem[], referenceDate?: Date
 export function buildMepResourcesFeedItems({
   referenceDate,
   posts,
+  webinars,
 }: {
   referenceDate?: Date;
-  /** Live Sanity posts — defaults to committed snapshot when omitted. */
-  posts?: Parameters<typeof mapSanityPostsToListing>[0];
+  /** Live/snapshot Sanity posts — omit on the client to avoid the multi-MB snapshot. */
+  posts?: SanityPostNode[];
+  /** Live/snapshot Sanity webinars — omit on the client (supplemental webinars still included). */
+  webinars?: SanityWebinarNode[];
 } = {}): ResourceFeedItem[] {
   const listingReference = referenceDate ?? new Date();
-  const blogSource = mapSanityPostsToListing(posts);
+  const blogSource = mapSanityPostsToListing(posts ?? []);
 
   const blogItems = blogSource.map((item, index) =>
     toFeedItem(
@@ -204,7 +212,9 @@ export function buildMepResourcesFeedItems({
     ),
   );
 
-  const webinarSource = buildAllWebinarListingItems(listingReference);
+  const webinarSource = webinars?.length
+    ? buildSanityWebinarListingItems(webinars, listingReference)
+    : buildAllWebinarListingItems(listingReference);
 
   const webinarItems = webinarSource.map((item, index) =>
     toFeedItem(

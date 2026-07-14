@@ -8,7 +8,6 @@ import {
   WEBINAR_SERVICE_ARCHITECTURE,
   WEBINAR_SERVICE_MEP,
 } from "@/constants/webinar-page-content";
-import sanitySnapshot from "@/data/sanity-resources-snapshot.json";
 import {
   buildBlogHref,
   buildWebinarHref,
@@ -18,16 +17,29 @@ import {
 
 const FALLBACK_IMAGE = FIGMA_RESOURCE_IMAGES[0];
 
-export type SanityPostNode = (typeof sanitySnapshot.posts)[number];
-export type SanityWebinarNode = (typeof sanitySnapshot.webinars)[number];
+/** Shared listing shape — keep free of the multi-MB snapshot JSON for client bundles. */
+export type SanityPostNode = {
+  _id?: string;
+  slug?: string | null;
+  title?: string | null;
+  body?: unknown;
+  publishedAt?: string | null;
+  categories?: Array<{ title?: string | null } | null> | null;
+  tags?: string[] | null;
+  mainImage?: { asset?: { url?: string | null } | null } | null;
+  bannerImage?: { asset?: { url?: string | null } | null } | null;
+};
 
-export function getSanityResourcePosts() {
-  return filterPublishedSanityPosts(sanitySnapshot.posts);
-}
-
-export function getSanityResourceWebinars() {
-  return filterPublishedSanityWebinars(sanitySnapshot.webinars);
-}
+export type SanityWebinarNode = {
+  _id?: string;
+  slug?: string | null;
+  title?: string | unknown;
+  body?: unknown;
+  eventDate?: string | null;
+  youtubeThumbnail?: { asset?: { url?: string | null } | null } | null;
+  upcomingImage?: { asset?: { url?: string | null } | null } | null;
+  bannerImage?: { asset?: { url?: string | null } | null } | null;
+};
 
 /** Exclude Sanity draft documents — Gatsby production only indexes published posts. */
 export function isPublishedSanityId(id?: string | null) {
@@ -223,7 +235,7 @@ function mergeWebinarListingItem(
   );
 }
 
-export function mapSanityPostsToListing(posts: SanityPostNode[] = getSanityResourcePosts()) {
+export function mapSanityPostsToListing(posts: SanityPostNode[] = []) {
   if (!posts?.length) return [];
 
   return filterPublishedSanityPosts(posts)
@@ -261,7 +273,7 @@ export function mapSanityPostsToListing(posts: SanityPostNode[] = getSanityResou
 }
 
 export function mapSanityWebinarsToListing(
-  webinars: SanityWebinarNode[] = getSanityResourceWebinars(),
+  webinars: SanityWebinarNode[] = [],
   referenceDate: Date = new Date(),
 ) {
   if (!webinars?.length) return [];
@@ -323,7 +335,7 @@ export function mapSanityWebinarsToListing(
 
 /** Sanity webinars plus static-only webinar pages (deduped by slug). */
 export function buildSanityWebinarListingItems(
-  webinars: SanityWebinarNode[] = sanitySnapshot.webinars,
+  webinars: SanityWebinarNode[] = [],
   referenceDate: Date = new Date(),
 ) {
   const supplementalBySlug = getSupplementalWebinarBySlug();

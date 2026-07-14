@@ -1,52 +1,27 @@
+import "server-only";
+
 import {
   caseStudyListingItems,
   extendedWhitepaperListingItems,
   portfolioListingItems,
   testimonialListingItems,
 } from "@/constants/resource-catalog-content";
-import { mapBlogListingToCatalog, type BlogCatalogItem } from "@/lib/map-blog-listing";
-import { buildAllWebinarListingItems } from "@/lib/resource-listing";
+import { mapBlogListingToCatalog } from "@/lib/map-blog-listing";
+import type {
+  BlogCatalogItem,
+  CatalogListingItem,
+  ResourceCatalog,
+  ResourceCatalogItem,
+} from "@/lib/resource-catalog-types";
+import { buildSanityWebinarListingItems } from "@/lib/sanity-listing";
+import { getSanityResourceWebinars } from "@/lib/sanity-snapshot";
 
-export type ResourceCatalogItem = BlogCatalogItem | CatalogListingItem;
-
-export type CatalogListingItem = {
-  id: string;
-  title: string;
-  excerpt: string;
-  type:
-    | "Webinar"
-    | "Whitepapers"
-    | "Case Studies"
-    | "Portfolio"
-    | "Testimonials"
-    | "News";
-  service?: string | null;
-  services?: string[] | null;
-  href: string;
-  image: string;
-  sortOrder: number;
-  publishedTimestamp: number;
-  publishedAt?: string | null;
-  category?: string | null;
-  location?: string | null;
-  badgeLabel?: string;
-  delivery?: string | null;
-  categoryTitles?: string[];
-  tags?: string[];
-};
-
-export type ResourceCatalog = {
-  allItems: ResourceCatalogItem[];
-  byType: {
-    Blog: BlogCatalogItem[];
-    Webinar: CatalogListingItem[];
-    Whitepapers: CatalogListingItem[];
-    "Case Studies": CatalogListingItem[];
-    Portfolio: CatalogListingItem[];
-    Testimonials: CatalogListingItem[];
-    News: CatalogListingItem[];
-  };
-};
+export type {
+  BlogCatalogItem,
+  CatalogListingItem,
+  ResourceCatalog,
+  ResourceCatalogItem,
+} from "@/lib/resource-catalog-types";
 
 function isNewsItem(item: { tags?: string[]; categoryTitles?: string[] }) {
   const tags = (item.tags || []).map((tag) => String(tag).toLowerCase());
@@ -69,7 +44,10 @@ function toNewsListingItem<T extends Record<string, unknown>>(item: T) {
 
 export function buildResourceCatalog(referenceDate?: Date): ResourceCatalog {
   const blogItems = mapBlogListingToCatalog();
-  const webinarItems = buildAllWebinarListingItems(referenceDate).map((item) => ({
+  const webinarItems = buildSanityWebinarListingItems(
+    getSanityResourceWebinars(),
+    referenceDate ?? new Date(),
+  ).map((item) => ({
     ...item,
     type: "Webinar" as const,
     badgeLabel: "Webinar",

@@ -21,8 +21,11 @@ import {
   DeferredOurClientsSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
+import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
 
-export function VbsHomePage() {
+export async function VbsHomePage() {
+  const resourcesFeed = await getMepResourcesFeedItemsLive();
+
   return (
     <div className="vbs-home-page vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
       <SiteHeader />
@@ -41,6 +44,7 @@ export function VbsHomePage() {
       <DeferredIndustriesSection />
       <DeferredMepResourcesSection
         section={homeResourcesSection}
+        allItems={resourcesFeed}
         sectionClassName="mep-figma-resources vbs-home-resources"
       />
       <DeferredCertificationSection />

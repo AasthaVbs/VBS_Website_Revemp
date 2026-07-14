@@ -1,11 +1,11 @@
-import { buildMepResourcesFeedItems } from "@/lib/mep-resources-feed";
 import { matchesResourceServiceFilter, type ResourceFeedItem } from "@/lib/resource-listing";
+import { buildMepResourcesFeedItems } from "@/lib/mep-resources-feed";
 import { fetchSanityResourceListing } from "@/lib/sanity-fetch";
 
 export type { ResourceFeedItem };
 
 export function getMepResourcesFeedItems(serviceFilter?: string | null): ResourceFeedItem[] {
-  const allItems = buildMepResourcesFeedItems();
+  const allItems = buildMepResourcesFeedItems({ posts: [], webinars: [] });
   if (!serviceFilter) return allItems;
   return allItems.filter((item) => matchesResourceServiceFilter(item, serviceFilter));
 }
@@ -14,8 +14,8 @@ export function getMepResourcesFeedItems(serviceFilter?: string | null): Resourc
 export async function getMepResourcesFeedItemsLive(
   serviceFilter?: string | null,
 ): Promise<ResourceFeedItem[]> {
-  const { posts } = await fetchSanityResourceListing();
-  const allItems = buildMepResourcesFeedItems({ posts });
+  const { posts, webinars } = await fetchSanityResourceListing();
+  const allItems = buildMepResourcesFeedItems({ posts, webinars });
   if (!serviceFilter) return allItems;
   return allItems.filter((item) => matchesResourceServiceFilter(item, serviceFilter));
 }

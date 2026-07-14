@@ -28,6 +28,7 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
   display: "swap",
   variable: "--font-inter",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className={inter.className} suppressHydrationWarning>
         {children}
-        <Script id="zoho-utm-lead-tracking" strategy="afterInteractive">
+        <Script id="zoho-utm-lead-tracking" strategy="lazyOnload">
           {ZOHO_UTM_LEAD_TRACKING_SCRIPT}
         </Script>
       </body>

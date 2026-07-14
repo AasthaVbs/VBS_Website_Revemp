@@ -1,7 +1,11 @@
+import { getSanityResourcePosts, getSanityResourceWebinars } from "../src/lib/sanity-snapshot";
 import { buildMepResourcesFeedItems } from "../src/lib/mep-resources-feed";
 import { buildResourcesSectionView } from "../src/lib/resources-section-view";
 
-const items = buildMepResourcesFeedItems();
+const items = buildMepResourcesFeedItems({
+  posts: getSanityResourcePosts(),
+  webinars: getSanityResourceWebinars(),
+});
 const count = (t: string) => items.filter((i) => i.type === t).length;
 
 console.log("counts", {

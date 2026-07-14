@@ -307,12 +307,18 @@
 
   .vbs-nav-dropdown-menu--simple {
     display: inline-flex;
-    padding: 20px;
+    padding: 12px 16px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
   }
 
   .vbs-nav-dropdown-links {
-    gap: 12px;
+    gap: 8px !important;
+  }
+
+  .vbs-nav-dropdown-menu--simple .vbs-nav-dropdown-links a {
+    display: block;
+    line-height: 1.25 !important;
+    padding: 2px 0;
   }
 
   .vbs-capabilities-mega-menu {

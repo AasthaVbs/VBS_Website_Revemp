@@ -8,7 +8,11 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
   images: {
+    formats: ["image/avif", "image/webp"],
     unoptimized: process.env.NODE_ENV === "development",
     remotePatterns: [
       { protocol: "https", hostname: "cdn.sanity.io", pathname: "/**" },

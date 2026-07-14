@@ -1,14 +1,61 @@
 import { PageContainer } from "@/components/layout/page-container";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { LazyImg } from "@/components/ui/lazy-img";
-import { homeHeroMediaLeft, homeHeroMediaRight, homeHeroTrustStats } from "@/constants/home-content";
+import { homeHeroTrustStats } from "@/constants/home-content";
 import { TrustStripItems } from "@/components/sections/trust-strip-section";
 
-function HeroMediaCard({ src, priority = false }: { src: string; priority?: boolean }) {
+import architecturalDraftingImg from "@/assets/images/architectural-drafting.png";
+import bimServicesImg from "@/assets/images/bim-services.png";
+import mechanicalBimServicesImg from "@/assets/images/mechanical-bim-services.png";
+import mepServicesImg from "@/assets/images/mep-services.png";
+import pointCloudToBimImg from "@/assets/images/point-cloud-to-bim.png";
+import scanToBimImg from "@/assets/images/scan-to-bim.png";
+
+/** Left track — 3 unique images (set is repeated only for seamless loop). */
+const HOME_HERO_MEDIA_LEFT = [
+  {
+    src: architecturalDraftingImg.src,
+    alt: "Architect working on BIM software for architectural drafting",
+  },
+  {
+    src: bimServicesImg.src,
+    alt: "Professional reviewing a 3D structural BIM model on desktop monitors",
+  },
+  {
+    src: mechanicalBimServicesImg.src,
+    alt: "Color-coded mechanical BIM model with MEP ductwork and piping",
+  },
+] as const;
+
+/** Right track — 3 unique images (set is repeated only for seamless loop). */
+const HOME_HERO_MEDIA_RIGHT = [
+  {
+    src: mepServicesImg.src,
+    alt: "Multi-story building cutaway showing coordinated MEP BIM systems",
+  },
+  {
+    src: pointCloudToBimImg.src,
+    alt: "Point cloud to BIM overlay of interior structural and piping systems",
+  },
+  {
+    src: scanToBimImg.src,
+    alt: "Scan to BIM comparison of point cloud data and finished building model",
+  },
+] as const;
+
+function HeroMediaCard({
+  src,
+  alt,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  priority?: boolean;
+}) {
   return (
     <div className="vbs-home-hero__media-card">
       <div className="vbs-home-hero__media-card-inner">
-        <LazyImg src={src} alt="" className="vbs-home-hero__media-photo" priority={priority} />
+        <LazyImg src={src} alt={alt} className="vbs-home-hero__media-photo" priority={priority} />
       </div>
       <div className="vbs-home-hero__media-frame" aria-hidden />
     </div>
@@ -19,23 +66,21 @@ function HeroMediaSet({
   images,
   setIndex,
   columnId,
-  showSpacer = false,
 }: {
-  images: string[];
+  images: readonly { src: string; alt: string }[];
   setIndex: number;
   columnId: string;
-  showSpacer?: boolean;
 }) {
   return (
-    <div className="vbs-home-hero__media-set">
-      {images.map((src, index) => (
+    <div className="vbs-home-hero__media-set" aria-hidden={setIndex > 0 || undefined}>
+      {images.map((image, index) => (
         <HeroMediaCard
           key={`${columnId}-${setIndex}-${index}`}
-          src={src}
-          priority={setIndex === 0 && index === 0}
+          src={image.src}
+          alt={setIndex === 0 ? image.alt : ""}
+          priority={setIndex === 0 && columnId === "left" && index === 0}
         />
       ))}
-      {showSpacer ? <div className="vbs-home-hero__media-spacer" aria-hidden /> : null}
     </div>
   );
 }
@@ -44,20 +89,22 @@ function HeroMediaTrack({
   images,
   direction,
   columnId,
-  showSpacer = false,
 }: {
-  images: string[];
-  direction: "up" | "down";
+  images: readonly { src: string; alt: string }[];
+  /** left: top → bottom, right: bottom → top */
+  direction: "top-to-bottom" | "bottom-to-top";
   columnId: string;
-  showSpacer?: boolean;
 }) {
   const trackClass =
-    direction === "up" ? "vbs-home-hero__media-track--up" : "vbs-home-hero__media-track--down";
+    direction === "top-to-bottom"
+      ? "vbs-home-hero__media-track--down"
+      : "vbs-home-hero__media-track--up";
 
   return (
     <div className={`vbs-home-hero__media-track ${trackClass}`}>
-      <HeroMediaSet images={images} setIndex={0} columnId={columnId} showSpacer={showSpacer} />
-      <HeroMediaSet images={images} setIndex={1} columnId={columnId} showSpacer={showSpacer} />
+      {/* Second set is the same 3 images — required for seamless one-direction loop */}
+      <HeroMediaSet images={images} setIndex={0} columnId={columnId} />
+      <HeroMediaSet images={images} setIndex={1} columnId={columnId} />
     </div>
   );
 }
@@ -92,10 +139,18 @@ export function HomeHeroSection() {
 
           <div className="vbs-home-hero__media">
             <div className="vbs-home-hero__media-col vbs-home-hero__media-col--left">
-              <HeroMediaTrack images={homeHeroMediaLeft} direction="up" columnId="left" />
+              <HeroMediaTrack
+                images={HOME_HERO_MEDIA_LEFT}
+                direction="top-to-bottom"
+                columnId="left"
+              />
             </div>
             <div className="vbs-home-hero__media-col vbs-home-hero__media-col--right">
-              <HeroMediaTrack images={[...homeHeroMediaRight]} direction="down" columnId="right" />
+              <HeroMediaTrack
+                images={HOME_HERO_MEDIA_RIGHT}
+                direction="bottom-to-top"
+                columnId="right"
+              />
             </div>
           </div>
         </div>

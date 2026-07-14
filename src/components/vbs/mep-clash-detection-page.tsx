@@ -41,8 +41,10 @@ import {
   DeferredMepResourcesSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
+import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
 
-export function MepClashDetectionPage() {
+export async function MepClashDetectionPage() {
+  const resourcesFeed = await getMepResourcesFeedItemsLive();
   return (
     <div className="vbs-redesign-page mep-bim-clash-detection-services-page mep-bim-modeling-services-page mep-bim-services-page">
       <SiteHeader />
@@ -110,7 +112,7 @@ export function MepClashDetectionPage() {
           columnsPerRow={3}
           descriptionMaxWidth={683}
         />
-        <DeferredMepResourcesSection section={mepClashDetectionResourcesSection} />
+        <DeferredMepResourcesSection section={mepClashDetectionResourcesSection} allItems={resourcesFeed} />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

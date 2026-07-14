@@ -48,69 +48,92 @@
 }
 
 /* About page — space between hero and trust strip */
-.vbs-redesign-page .vbs-about-page {
+.vbs-redesign-page.about-section-page.vbs-about-page {
+  --vbs-about-hero-pad-top: 100px;
+
+  @media (max-width: 1023px) {
+    --vbs-about-hero-pad-top: 64px;
+  }
+
+  @media (max-width: 767px) {
+    --vbs-about-hero-pad-top: 40px;
+  }
+
   > section.about-hero-section:first-of-type {
-    padding-bottom: 56px !important;
+    margin-top: 0 !important;
+    padding-top: 100px !important;
+    padding-bottom: 24px !important;
 
     @media (min-width: 768px) {
-      padding-bottom: 72px !important;
+      padding-bottom: 28px !important;
     }
 
     @media (min-width: 1024px) {
-      padding-bottom: 96px !important;
+      padding-top: 100px !important;
+      padding-bottom: 32px !important;
+    }
+
+    @media (max-width: 1023px) {
+      padding-top: 64px !important;
+    }
+
+    @media (max-width: 767px) {
+      padding-top: 40px !important;
+      padding-bottom: 16px !important;
     }
   }
 
   > section.vbs-trust-strip-section:has(.vbs-home-hero-trust) {
-    padding-top: 72px !important;
+    padding-top: 16px !important;
+    padding-bottom: 24px !important;
     margin-top: 0 !important;
 
     @media (min-width: 768px) {
-      padding-top: 96px !important;
+      padding-top: 20px !important;
+      padding-bottom: 28px !important;
     }
 
     @media (min-width: 1024px) {
-      padding-top: 120px !important;
+      padding-top: 24px !important;
+      padding-bottom: 32px !important;
     }
 
     .vbs-home-hero-trust {
       margin-top: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
     }
   }
 }
 
 @media (max-width: 767px) {
-  .vbs-redesign-page .vbs-about-page {
+  .vbs-redesign-page.about-section-page.vbs-about-page {
     > section.about-hero-section:first-of-type {
-      padding-bottom: 48px !important;
+      padding-top: 40px !important;
+      padding-bottom: 16px !important;
     }
 
     > section.vbs-trust-strip-section:has(.vbs-home-hero-trust) {
-      padding-top: 24px !important;
+      padding-top: 12px !important;
       padding-bottom: 12px !important;
     }
   }
 }
 
-/* Leadership page — tighter hero top + trust strip spacing */
-.vbs-redesign-page .about-section-page.vbs-leadership-page {
+/* Leadership page — hero top spacing (slightly less than About) */
+.vbs-redesign-page.about-section-page.vbs-leadership-page {
   > section.leadership-hero-section.about-hero-section:first-of-type {
-    padding-top: 48px !important;
+    margin-top: 0 !important;
+    padding-top: 72px !important;
     padding-bottom: 20px !important;
 
-    @media (min-width: 1024px) {
-      margin-top: 0 !important;
-    }
-
     @media (max-width: 1023px) {
-      margin-top: 20px !important;
-      padding-top: 28px !important;
+      padding-top: 52px !important;
       padding-bottom: 12px !important;
     }
 
     @media (max-width: 767px) {
-      margin-top: 24px !important;
-      padding-top: 24px !important;
+      padding-top: 36px !important;
       padding-bottom: 8px !important;
     }
   }
@@ -134,20 +157,20 @@
 }
 
 @media (max-width: 1023px) {
-  .vbs-redesign-page .about-section-page.vbs-leadership-page {
+  .vbs-redesign-page.about-section-page.vbs-leadership-page {
     > section.leadership-hero-section.about-hero-section:first-of-type {
-      margin-top: 20px !important;
-      padding-top: 28px !important;
+      margin-top: 0 !important;
+      padding-top: 52px !important;
       padding-bottom: 12px !important;
     }
   }
 }
 
 @media (max-width: 767px) {
-  .vbs-redesign-page .about-section-page.vbs-leadership-page {
+  .vbs-redesign-page.about-section-page.vbs-leadership-page {
     > section.leadership-hero-section.about-hero-section:first-of-type {
-      margin-top: 24px !important;
-      padding-top: 24px !important;
+      margin-top: 0 !important;
+      padding-top: 36px !important;
       padding-bottom: 8px !important;
     }
 
@@ -165,7 +188,8 @@
 .vbs-redesign-page .about-section-page,
 .vbs-redesign-page .contact-section-page,
 .vbs-redesign-page .vbs-career-job-detail-page {
-  .vbs-split-hero__row--balanced {
+  /* Contact hero centers copy vs image — exclude that row */
+  .vbs-split-hero__row--balanced:not(.vbs-split-hero__row--contact) {
     align-items: flex-start !important;
     gap: 16px !important;
 
@@ -212,7 +236,7 @@
     --vbs-about-hero-pad-top: 24px;
 
     >section.about-hero-section:first-of-type:not(.careers-hero-section):not(.leadership-hero-section) {
-      padding-top: 24px !important;
+      padding-top: 40px !important;
     }
 
     h1.text-section {

@@ -9,19 +9,19 @@ export function LeadershipHeroSection() {
     leadershipHeroCopy.ctaLabel.trim().toLowerCase() === "contact us" ? "/contact" : undefined;
 
   return (
-    <section className="leadership-hero-section mt-20  about-hero-section overflow-hidden bg-white">
+    <section className="leadership-hero-section about-hero-section overflow-hidden bg-white max-lg:mt-5">
       <PageContainer>
         <div className="vbs-split-hero__row--balanced flex flex-col items-center gap-10 lg:flex-row lg:items-center">
-          <div className="vbs-split-hero__copy flex w-full min-w-0 max-w-[587px] flex-1 flex-col items-start gap-5">
-            <div className="flex flex-col items-start gap-5">
-              <div className="flex flex-col items-start gap-3">
+          <div className="vbs-split-hero__copy flex w-full min-w-0 max-w-[587px] flex-1 flex-col items-start gap-4 lg:gap-5">
+            <div className="flex flex-col items-start gap-2.5 lg:gap-5">
+              <div className="flex flex-col items-start gap-2 lg:gap-3">
                 <SectionTag label={leadershipHeroCopy.tag} />
                 <h1 className="text-section w-full capitalize max-lg:max-w-none">
                   {leadershipHeroCopy.titleLead}
                   <span className="text-accent font-light">{leadershipHeroCopy.titleAccent}</span>
                 </h1>
               </div>
-              <div className="flex w-full flex-col items-start gap-4">
+              <div className="flex w-full flex-col items-start gap-3 lg:gap-4">
                 <p className="text-[16px] font-normal leading-6 text-[#808080]">
                   {leadershipHeroCopy.descriptionLead}{" "}
                   <span className="font-medium text-[#111111]">

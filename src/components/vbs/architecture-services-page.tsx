@@ -61,7 +61,7 @@ export function ArchitectureServicesPage() {
         <MepPageHeroSection {...architectureHero} ctaHref="#services" />
         <TrustStripSection
           stats={architectureStatsStrip}
-          className="vbs-mep-stats-strip bg-white pb-[30px] pt-[60px]"
+          className="vbs-mep-stats-strip bg-white"
         />
         <MepIntroSection
           copy={architectureIntroCopy}

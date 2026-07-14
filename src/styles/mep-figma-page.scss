@@ -3652,15 +3652,15 @@
     --vbs-mep-section-pad-y: 40px;
 
     main>.vbs-mep-stats-strip {
-      margin-top: 12px !important;
-      margin-bottom: 12px !important;
-      padding-top: 16px !important;
-      padding-bottom: 16px !important;
+      margin-top: 8px !important;
+      margin-bottom: 8px !important;
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
     }
 
     .vbs-mep-stats-strip .vbs-home-hero-trust {
-      padding-top: 16px !important;
-      padding-bottom: 16px !important;
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
     }
 
     .mep-page-hero {
@@ -4238,11 +4238,11 @@
 
     &.architecture-services-page {
       .mep-figma-overview--features-below {
-        padding-bottom: 4px !important;
+        padding-bottom: 28px !important;
       }
 
       .mep-figma-overview--features-below + .mep-figma-what-you-get {
-        padding-top: 4px !important;
+        padding-top: 28px !important;
       }
     }
 
@@ -4449,6 +4449,20 @@
   main > .vbs-mep-stats-strip {
     padding-top: 60px !important;
     padding-bottom: 30px !important;
+
+    @media (max-width: 767px) {
+      margin-top: 8px !important;
+      margin-bottom: 8px !important;
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .vbs-mep-stats-strip .vbs-home-hero-trust {
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+    }
   }
 
   .mep-page-hero {
@@ -4591,11 +4605,11 @@
 
   @media (max-width: 767px) {
     main > .mep-figma-overview--features-below {
-      padding-bottom: 4px !important;
+      padding-bottom: 28px !important;
     }
 
     main > .mep-figma-overview--features-below + .mep-figma-what-you-get {
-      padding-top: 4px !important;
+      padding-top: 28px !important;
     }
   }
 
@@ -4727,16 +4741,24 @@
         gap: 12px !important;
       }
 
+      /* Keep Architectural + Structural tabs on one row */
       .mep-figma-disciplines__tabs {
-        flex-direction: column !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
         align-items: stretch !important;
+        gap: 8px !important;
+        width: 100% !important;
       }
 
       .mep-figma-disciplines__tab {
-        width: 100% !important;
-        flex: none !important;
-        padding: 10px 14px !important;
-        font-size: 14px !important;
+        flex: 1 1 0 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        padding: 10px 8px !important;
+        font-size: 13px !important;
+        line-height: 1.25 !important;
+        white-space: nowrap !important;
+        text-align: center !important;
       }
 
       .mep-figma-disciplines__panel-title {
@@ -4846,11 +4868,45 @@
       .mep-figma-qa__stats {
         display: grid !important;
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 16px !important;
+        gap: 0 !important;
+        position: relative !important;
+        padding: 8px 0 !important;
+        background-color: transparent !important;
+        /* Faded cross: vertical + horizontal dividers */
+        background-image:
+          linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(203, 204, 205, 0.2) 18%,
+            #cbcccd 42%,
+            #cbcccd 58%,
+            rgba(203, 204, 205, 0.2) 82%,
+            transparent 100%
+          ),
+          linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(203, 204, 205, 0.2) 18%,
+            #cbcccd 42%,
+            #cbcccd 58%,
+            rgba(203, 204, 205, 0.2) 82%,
+            transparent 100%
+          ) !important;
+        background-size: 1px 78%, 78% 1px !important;
+        background-position: center center, center center !important;
+        background-repeat: no-repeat !important;
       }
 
       .mep-figma-qa__stat-divider {
         display: none !important;
+      }
+
+      .mep-figma-qa__stat {
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        padding: 18px 12px !important;
       }
     }
 
@@ -4886,6 +4942,49 @@
       width: 100% !important;
       max-width: 900px !important;
       text-transform: none !important;
+    }
+  }
+
+  /* Mobile: unify all section heading sizes to match Quality Assurance */
+  @media (max-width: 767px) {
+    h2,
+    h2 .text-section,
+    h2 .text-accent,
+    .mep-figma-overview h2 .text-section,
+    .mep-figma-overview h2 .text-accent,
+    .mep-figma-what-you-get h2 .text-section,
+    .mep-figma-what-you-get h2 .text-accent,
+    .mep-figma-services__title,
+    .mep-figma-services__title-dark,
+    .mep-figma-services__title-accent,
+    .mep-figma-disciplines h2 .text-section,
+    .mep-figma-disciplines h2 .text-accent,
+    .mep-figma-workflow__title,
+    .mep-figma-workflow__title-dark,
+    .mep-figma-workflow__title-accent,
+    .mep-figma-qa__title-dark,
+    .mep-figma-qa__title-accent,
+    .mep-figma-qa__title-heading,
+    .mep-figma-qa__title-heading .text-section,
+    .mep-figma-qa__title-heading .text-accent,
+    .mep-figma-qa__title-heading span,
+    .mep-figma-benefits__title,
+    .mep-figma-benefits__title-dark,
+    .mep-figma-benefits__title-accent,
+    .mep-figma-why-choose__title,
+    .mep-figma-why-choose__title-dark,
+    .mep-figma-why-choose__title-accent,
+    .mep-figma-resources__title,
+    .mep-figma-resources__title-dark,
+    .mep-figma-resources__title-accent,
+    .architecture-ai-bim-workflow h2 .text-section,
+    .architecture-ai-bim-workflow h2 .text-accent,
+    .mep-section-heading,
+    .mep-section-heading .text-section,
+    .mep-section-heading .text-accent,
+    .text-section {
+      font-size: clamp(28px, 4vw, 48px) !important;
+      line-height: 1.15 !important;
     }
   }
 }
@@ -5034,6 +5133,29 @@
     &:hover {
       background: transparent !important;
       box-shadow: none !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .mep-engagement-process__steps {
+      flex-direction: column !important;
+      gap: 0 !important;
+    }
+
+    .mep-engagement-process__divider {
+      width: 100% !important;
+      height: 1px !important;
+      margin-top: 20px !important;
+      margin-bottom: 20px !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        #cbcccd 18%,
+        #cbcccd 82%,
+        transparent 100%
+      ) !important;
     }
   }
 

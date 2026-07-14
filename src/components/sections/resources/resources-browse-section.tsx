@@ -297,14 +297,14 @@ export function ResourcesBrowseSection({
     <section
       className={cn(
         "resource-browse-anchor bg-white",
-        hasPageHero ? "pb-12 pt-0 lg:pb-[100px]" : "py-12 lg:py-[100px]",
+        hasPageHero ? "pb-5 pt-0 lg:pb-[100px]" : "py-5 lg:py-[100px]",
       )}
     >
-      <PageContainer className="flex flex-col items-start gap-10">
-        <div className="resource-browse-anchor__layout flex w-full flex-col gap-5 min-[800px]:flex-row min-[800px]:items-start">
-          <aside className="resource-browse-anchor__aside w-full shrink-0 rounded-[10px] bg-white p-5 shadow-[0_4px_10px_rgba(0,0,0,0.15)] min-[800px]:w-[344px] min-[800px]:max-w-[344px]">
-            <div className="flex flex-col gap-5">
-              <label className="flex h-[50px] items-center justify-between gap-3 rounded-[10px] border border-[#CBCCCD] bg-[#FAFAFA] px-5 py-3 backdrop-blur-[50px]">
+      <PageContainer className="flex flex-col items-start gap-5 min-[800px]:gap-10">
+        <div className="resource-browse-anchor__layout flex w-full flex-col gap-3 min-[800px]:flex-row min-[800px]:items-start min-[800px]:gap-5">
+          <aside className="resource-browse-anchor__aside w-full shrink-0 rounded-[10px] bg-white p-3 shadow-[0_4px_10px_rgba(0,0,0,0.15)] min-[800px]:w-[344px] min-[800px]:max-w-[344px] min-[800px]:p-5">
+            <div className="flex flex-col gap-3 min-[800px]:gap-5">
+              <label className="flex h-[44px] items-center justify-between gap-3 rounded-[10px] border border-[#CBCCCD] bg-[#FAFAFA] px-4 py-2.5 backdrop-blur-[50px] min-[800px]:h-[50px] min-[800px]:px-5 min-[800px]:py-3">
                 <input
                   type="search"
                   value={searchQuery}
@@ -318,8 +318,10 @@ export function ResourcesBrowseSection({
                 <Search className="h-5 w-5 shrink-0 text-[#808080]" strokeWidth={1.2} aria-hidden />
               </label>
 
-              <div className="flex flex-col gap-[15px]">
-                <h3 className="text-[24px] font-normal text-[#111111]">Refine results</h3>
+              <div className="flex flex-col gap-2 min-[800px]:gap-[15px]">
+                <h3 className="text-[20px] font-normal text-[#111111] min-[800px]:text-[24px]">
+                  Refine results
+                </h3>
               </div>
 
               {isWebinarsPage ? (
@@ -412,7 +414,7 @@ export function ResourcesBrowseSection({
 
         {filteredItems.length > 0 ? (
           <nav
-            className="flex w-full flex-wrap items-center justify-end gap-5"
+            className="flex w-full flex-nowrap items-center justify-between gap-2 sm:justify-end sm:gap-5"
             aria-label={
               isWebinarsPage
                 ? "Webinars pagination"
@@ -423,27 +425,29 @@ export function ResourcesBrowseSection({
                     : "Resources pagination"
             }
           >
-            <PaginationButton
-              aria-label="First page"
-              disabled={safeCurrentPage === 1}
-              onClick={() => setCurrentPage(1)}
-            >
-              <ChevronsLeft className="h-5 w-5 text-[#808080]" strokeWidth={1.5} />
-            </PaginationButton>
-            <PaginationButton
-              aria-label="Previous page"
-              disabled={safeCurrentPage === 1}
-              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-            >
-              <ChevronLeft className="h-5 w-5 text-[#808080]" strokeWidth={1.5} />
-            </PaginationButton>
+            <div className="flex shrink-0 items-center gap-1.5 sm:gap-5">
+              <PaginationButton
+                aria-label="First page"
+                disabled={safeCurrentPage === 1}
+                onClick={() => setCurrentPage(1)}
+              >
+                <ChevronsLeft className="h-4 w-4 text-[#808080] sm:h-5 sm:w-5" strokeWidth={1.5} />
+              </PaginationButton>
+              <PaginationButton
+                aria-label="Previous page"
+                disabled={safeCurrentPage === 1}
+                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              >
+                <ChevronLeft className="h-4 w-4 text-[#808080] sm:h-5 sm:w-5" strokeWidth={1.5} />
+              </PaginationButton>
+            </div>
 
-            <div className="flex flex-wrap items-center gap-2.5">
+            <div className="flex min-w-0 flex-1 items-center justify-center gap-0.5 overflow-x-auto [scrollbar-width:none] sm:flex-none sm:justify-start sm:gap-2.5 sm:overflow-visible [&::-webkit-scrollbar]:hidden">
               {paginationItems.map((item, index) =>
                 item === "ellipsis" ? (
                   <span
                     key={`ellipsis-${index}`}
-                    className="rounded-[10px] px-[18px] py-2.5 text-[16px] text-[#808080] backdrop-blur-[50px]"
+                    className="shrink-0 rounded-[10px] px-1.5 py-2 text-[14px] text-[#808080] backdrop-blur-[50px] sm:px-[18px] sm:py-2.5 sm:text-[16px]"
                     aria-hidden
                   >
                     ...
@@ -455,7 +459,7 @@ export function ResourcesBrowseSection({
                     onClick={() => setCurrentPage(item)}
                     aria-current={item === safeCurrentPage ? "page" : undefined}
                     className={cn(
-                      "rounded-[10px] px-[18px] py-2.5 text-[16px] capitalize backdrop-blur-[50px] transition-colors",
+                      "shrink-0 rounded-[10px] px-1.5 py-2 text-[14px] capitalize backdrop-blur-[50px] transition-colors sm:px-[18px] sm:py-2.5 sm:text-[16px]",
                       item === safeCurrentPage
                         ? "font-normal text-[#111111]"
                         : "text-[#808080] hover:text-[#111111]",
@@ -467,20 +471,22 @@ export function ResourcesBrowseSection({
               )}
             </div>
 
-            <PaginationButton
-              aria-label="Next page"
-              disabled={safeCurrentPage >= totalPages}
-              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-            >
-              <ChevronRight className="h-5 w-5 text-[#808080]" strokeWidth={1.5} />
-            </PaginationButton>
-            <PaginationButton
-              aria-label="Last page"
-              disabled={safeCurrentPage >= totalPages}
-              onClick={() => setCurrentPage(totalPages)}
-            >
-              <ChevronsRight className="h-5 w-5 text-[#808080]" strokeWidth={1.5} />
-            </PaginationButton>
+            <div className="flex shrink-0 items-center gap-1.5 sm:gap-5">
+              <PaginationButton
+                aria-label="Next page"
+                disabled={safeCurrentPage >= totalPages}
+                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              >
+                <ChevronRight className="h-4 w-4 text-[#808080] sm:h-5 sm:w-5" strokeWidth={1.5} />
+              </PaginationButton>
+              <PaginationButton
+                aria-label="Last page"
+                disabled={safeCurrentPage >= totalPages}
+                onClick={() => setCurrentPage(totalPages)}
+              >
+                <ChevronsRight className="h-4 w-4 text-[#808080] sm:h-5 sm:w-5" strokeWidth={1.5} />
+              </PaginationButton>
+            </div>
           </nav>
         ) : null}
       </PageContainer>
@@ -490,9 +496,9 @@ export function ResourcesBrowseSection({
 
 function FilterGroup({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div className="flex flex-col gap-3.5">
+    <div className="flex flex-col gap-2 min-[800px]:gap-3.5">
       <p className="text-[16px] font-medium text-[#111111]">{title}</p>
-      <div className="flex flex-col gap-3.5 pl-2.5">{children}</div>
+      <div className="flex flex-col gap-2 pl-2.5 min-[800px]:gap-3.5">{children}</div>
     </div>
   );
 }
@@ -509,7 +515,7 @@ function PaginationButton({
       disabled={disabled}
       onClick={onClick}
       className={cn(
-        "flex items-center justify-center rounded-[10px] border border-[#CBCCCD] p-2.5 backdrop-blur-[50px] transition-opacity",
+        "flex items-center justify-center rounded-[10px] border border-[#CBCCCD] p-1.5 backdrop-blur-[50px] transition-opacity sm:p-2.5",
         disabled ? "cursor-not-allowed opacity-40" : "hover:bg-[#FAFAFA]",
       )}
       {...props}

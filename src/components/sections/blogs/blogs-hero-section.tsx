@@ -11,13 +11,13 @@ export function BlogsHeroSection() {
   const { tag, titleLead, titleAccent, description, ctaLabel, imageAlt } = blogsPageHero;
 
   return (
-    <section className="blogs-hero-section overflow-hidden bg-white py-12 pb-8 lg:py-[100px] lg:pb-12">
+    <section className="blogs-hero-section overflow-hidden bg-white pt-5 pb-3 lg:py-[100px] lg:pb-12">
       <PageContainer>
-        <div className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-center lg:gap-8 xl:gap-12">
-          <div className="flex w-full min-w-0 flex-1 flex-col items-start gap-[30px]">
-            <div className="flex flex-col items-start gap-5">
-              <div className="flex flex-col items-start gap-3">
-                <SectionTag label={tag} />
+        <div className="flex flex-col items-center gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-8 xl:gap-12">
+          <div className="flex w-full min-w-0 flex-1 flex-col items-center gap-3 text-center lg:items-start lg:gap-[30px] lg:text-left">
+            <div className="flex flex-col items-center gap-2 lg:items-start lg:gap-5">
+              <div className="flex flex-col items-center gap-1.5 lg:items-start lg:gap-3">
+                <SectionTag label={tag} className="self-center lg:self-start" />
                 <h1 className="text-section w-full max-w-[497px] capitalize max-lg:max-w-none">
                   <span className="font-medium text-[#111111]">{titleLead}</span>
                   <span className="font-light text-[#D70416]">{titleAccent}</span>

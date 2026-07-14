@@ -6,7 +6,7 @@ export function SectionTag({ label, className }: { label: string; className?: st
   return (
     <span
       className={cn(
-        "text-tag inline-flex w-fit self-start rounded-[10px] border border-vbs-blue bg-vbs-blue/10 px-3 py-1.5 text-vbs-blue",
+        "text-tag inline-flex w-fit items-center justify-center gap-2.5 self-start rounded-[10px] border border-[#2299D6] bg-[rgba(34,153,214,0.10)] px-3 py-1.5 text-[13px] font-normal capitalize leading-[1.2] text-[#2299D6] max-lg:rounded-[8px] max-lg:px-2 max-lg:py-1 max-lg:text-[10px]",
         className,
       )}
     >
@@ -45,15 +45,17 @@ export function SectionIntro({
   description,
   titleClassName = "text-section",
   descriptionClassName = "max-w-[536px] text-body",
+  className,
 }: {
   tag: string;
   title: ReactNode;
   description?: string;
   titleClassName?: string;
   descriptionClassName?: string;
+  className?: string;
 }) {
   return (
-    <div className="flex w-full flex-col items-start gap-5">
+    <div className={cn("flex w-full flex-col items-start gap-5", className)}>
       <div className="flex flex-col items-start gap-3">
         <SectionTag label={tag} />
         <h2 className={titleClassName}>{title}</h2>

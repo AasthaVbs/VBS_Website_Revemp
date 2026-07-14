@@ -652,8 +652,8 @@
   @media (max-width: 767px) {
     .evaluate-delivery-cta-card {
       position: relative;
-      height: auto;
-      min-height: 360px;
+      height: auto !important;
+      min-height: 0 !important;
       overflow: hidden;
     }
 
@@ -682,26 +682,34 @@
       object-position: center;
     }
 
+    /* Relative panel so content height drives the card; margin reveals mosaic frame */
     .evaluate-delivery-cta-panel {
-      position: absolute;
+      position: relative !important;
       z-index: 2;
-      inset: 16px;
-      margin: 0;
-      padding: 24px 20px;
-      min-height: 0;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      background: #ffffff;
+      inset: auto !important;
+      margin: 22px 16px !important;
+      padding: 28px 18px 32px !important;
+      min-height: 0 !important;
+      height: auto !important;
+      width: auto !important;
+      max-width: none !important;
+      box-sizing: border-box !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 20px !important;
+      background: #ffffff !important;
       border-radius: 10px;
       text-align: center;
+      overflow: visible !important;
     }
 
     .evaluate-delivery-cta-panel > div {
       align-items: center !important;
       text-align: center !important;
       width: 100%;
+      flex: none !important;
+      gap: 14px !important;
     }
 
     .evaluate-delivery-cta-panel h2,
@@ -709,23 +717,33 @@
       text-align: center !important;
       margin-left: auto;
       margin-right: auto;
+      max-width: 100% !important;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .evaluate-delivery-cta-panel h2 {
+      font-size: clamp(22px, 5.5vw, 28px) !important;
+      line-height: 1.25 !important;
     }
 
     .evaluate-delivery-cta-panel .primary-cta {
       align-self: center !important;
       margin-left: auto;
       margin-right: auto;
+      flex-shrink: 0 !important;
     }
 
     .evaluate-delivery-cta-card--compact {
-      min-height: 300px;
+      min-height: 0 !important;
+      height: auto !important;
     }
 
     .evaluate-delivery-cta-card--compact .evaluate-delivery-cta-panel {
-      inset: 14px;
-      margin: 0;
-      padding: 24px 20px;
-      min-height: 0;
+      margin: 18px 14px !important;
+      padding: 24px 16px 28px !important;
+      inset: auto !important;
+      min-height: 0 !important;
       background: #ffffff;
     }
 

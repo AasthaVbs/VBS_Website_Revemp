@@ -105,7 +105,8 @@
     }
 
     > section.vbs-trust-strip-section:has(.vbs-home-hero-trust) {
-      padding-top: 64px !important;
+      padding-top: 24px !important;
+      padding-bottom: 12px !important;
     }
 
     .vbs-careers-career-form__title {
@@ -477,7 +478,8 @@
   }
 
   .vbs-redesign-page .about-section-page.careers-section-page > section.vbs-careers-trust-strip.vbs-trust-strip-section {
-    padding-top: 64px !important;
+    padding-top: 24px !important;
+    padding-bottom: 12px !important;
   }
 }
 

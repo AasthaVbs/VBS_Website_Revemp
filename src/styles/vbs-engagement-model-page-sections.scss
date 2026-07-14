@@ -651,11 +651,15 @@
       padding: 12px 0 40px !important;
 
       &__container {
-        gap: 32px !important;
+        gap: 16px !important;
       }
 
       &__header {
-        gap: 16px !important;
+        gap: 10px !important;
+      }
+
+      &__title-block {
+        gap: 8px !important;
       }
 
       &__title {
@@ -667,6 +671,12 @@
         font-size: 15px !important;
         line-height: 22px !important;
         max-width: 100% !important;
+        margin-bottom: 0 !important;
+      }
+
+      &__cards {
+        margin-top: 0 !important;
+        gap: 16px !important;
       }
 
       &__card-title {

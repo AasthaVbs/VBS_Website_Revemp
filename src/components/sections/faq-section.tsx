@@ -146,7 +146,7 @@ export function FaqSection({
       <PageContainer className="grid items-start gap-10 md:grid-cols-2">
         <div className="flex flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
-            <span className="text-tag inline-flex w-fit rounded-[10px] border border-vbs-blue bg-vbs-blue/10 px-3 py-1.5 text-vbs-blue">
+            <span className="text-tag inline-flex w-fit items-center justify-center gap-2.5 rounded-[10px] border border-vbs-blue bg-vbs-blue/10 px-3 py-1.5 text-[13px] font-normal capitalize leading-[1.2] text-vbs-blue max-lg:rounded-[8px] max-lg:px-2 max-lg:py-1 max-lg:text-[10px]">
               {tag}
             </span>
             <h2 className="max-w-[528px] text-section">{title}</h2>

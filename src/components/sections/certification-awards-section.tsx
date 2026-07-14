@@ -41,6 +41,7 @@ export function CertificationAwardsSection({
             title={title}
             description={description}
             titleClassName="text-section max-w-[528px]"
+            className="gap-2.5 lg:gap-5"
           />
         </div>
 

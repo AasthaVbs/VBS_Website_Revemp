@@ -1,0 +1,173 @@
+/**
+ * Global mobile heading scale — one size for all h1s, one size for all h2s.
+ * Loaded last so it overrides page-specific heading clamps.
+ */
+
+@media (max-width: 767px) {
+  .vbs-redesign-page {
+    --vbs-mobile-h1-size: clamp(32px, 8vw, 40px);
+    --vbs-mobile-h1-line: 1.15;
+    --vbs-mobile-h2-size: clamp(28px, 4vw, 48px);
+    --vbs-mobile-h2-line: 1.15;
+  }
+
+  /* ── All H1 / display titles ── */
+  .vbs-redesign-page h1,
+  .vbs-redesign-page h1 span,
+  .vbs-redesign-page .h1,
+  .vbs-redesign-page .text-display,
+  .vbs-redesign-page .text-display-accent,
+  .vbs-redesign-page .vbs-home-hero__title,
+  .vbs-redesign-page .vbs-home-hero__title-dark,
+  .vbs-redesign-page .vbs-home-hero__title-accent,
+  .vbs-redesign-page .mep-page-hero h1,
+  .vbs-redesign-page .mep-page-hero h1 span,
+  .vbs-redesign-page .mep-page-hero--overlay h1,
+  .vbs-redesign-page .mep-page-hero--overlay h1 span,
+  .vbs-redesign-page .about-hero-section h1,
+  .vbs-redesign-page .about-hero-section h1 span,
+  .vbs-redesign-page .careers-hero-section h1,
+  .vbs-redesign-page .careers-hero-section h1 span,
+  .vbs-redesign-page .leadership-hero-section h1,
+  .vbs-redesign-page .leadership-hero-section h1 span,
+  .vbs-redesign-page .vbs-split-hero__copy h1,
+  .vbs-redesign-page .vbs-split-hero__copy h1 span {
+    font-size: var(--vbs-mobile-h1-size) !important;
+    line-height: var(--vbs-mobile-h1-line) !important;
+  }
+
+  /* ── All H2 / section titles ── */
+  .vbs-redesign-page h2,
+  .vbs-redesign-page h2 span,
+  .vbs-redesign-page h2 .text-section,
+  .vbs-redesign-page h2 .text-accent,
+  .vbs-redesign-page .h2,
+  .vbs-redesign-page .text-section,
+  .vbs-redesign-page .mep-section-heading,
+  .vbs-redesign-page .mep-section-heading .text-section,
+  .vbs-redesign-page .mep-section-heading .text-accent,
+  .vbs-redesign-page .vbs-home-capabilities__title,
+  .vbs-redesign-page .vbs-home-about__title,
+  .vbs-redesign-page .vbs-our-clients__title,
+  .vbs-redesign-page .vbs-our-clients__title-accent,
+  .vbs-redesign-page .vbs-our-clients__title-dark,
+  .vbs-redesign-page .vbs-best-benefits__title,
+  .vbs-redesign-page .vbs-best-benefits__title-dark,
+  .vbs-redesign-page .vbs-best-benefits__title-accent,
+  .vbs-redesign-page .vbs-home-faq__title,
+  .vbs-redesign-page .vbs-engagement-models-section__title,
+  .vbs-redesign-page .vbs-client-success-stories__title,
+  .vbs-redesign-page .mep-figma-overview h2 .text-section,
+  .vbs-redesign-page .mep-figma-overview h2 .text-accent,
+  .vbs-redesign-page .mep-figma-what-you-get h2 .text-section,
+  .vbs-redesign-page .mep-figma-what-you-get h2 .text-accent,
+  .vbs-redesign-page .mep-figma-services__title,
+  .vbs-redesign-page .mep-figma-services__title-dark,
+  .vbs-redesign-page .mep-figma-services__title-accent,
+  .vbs-redesign-page .mep-figma-disciplines h2 .text-section,
+  .vbs-redesign-page .mep-figma-disciplines h2 .text-accent,
+  .vbs-redesign-page .mep-figma-workflow__title,
+  .vbs-redesign-page .mep-figma-workflow__title-dark,
+  .vbs-redesign-page .mep-figma-workflow__title-accent,
+  .vbs-redesign-page .mep-figma-qa__title-dark,
+  .vbs-redesign-page .mep-figma-qa__title-accent,
+  .vbs-redesign-page .mep-figma-qa__title-heading,
+  .vbs-redesign-page .mep-figma-qa__title-heading span,
+  .vbs-redesign-page .mep-figma-benefits__title,
+  .vbs-redesign-page .mep-figma-benefits__title-dark,
+  .vbs-redesign-page .mep-figma-benefits__title-accent,
+  .vbs-redesign-page .mep-figma-why-choose__title,
+  .vbs-redesign-page .mep-figma-why-choose__title-dark,
+  .vbs-redesign-page .mep-figma-why-choose__title-accent,
+  .vbs-redesign-page .mep-figma-resources__title,
+  .vbs-redesign-page .mep-figma-resources__title-dark,
+  .vbs-redesign-page .mep-figma-resources__title-accent,
+  .vbs-redesign-page .architecture-ai-bim-workflow h2 .text-section,
+  .vbs-redesign-page .architecture-ai-bim-workflow h2 .text-accent,
+  .vbs-redesign-page .vbs-get-in-touch__info-head .text-section,
+  .vbs-redesign-page .vbs-get-in-touch__info-head h2 {
+    font-size: var(--vbs-mobile-h2-size) !important;
+    line-height: var(--vbs-mobile-h2-line) !important;
+  }
+
+  /* CTA card title — keep readable inside mosaic frame (card grows with content) */
+  .vbs-redesign-page .evaluate-delivery-cta-panel h2,
+  .vbs-redesign-page .evaluate-delivery-cta-panel h2 .text-section,
+  .vbs-redesign-page .evaluate-delivery-cta-panel h2 .text-accent,
+  .vbs-redesign-page .evaluate-delivery-cta-panel h2 span {
+    font-size: clamp(22px, 5.5vw, 28px) !important;
+    line-height: 1.25 !important;
+  }
+}
+
+/* Section / filter chips — smaller below desktop only */
+@media (max-width: 1023px) {
+  .vbs-redesign-page .text-tag,
+  .vbs-redesign-page .vbs-home-hero__tag,
+  .vbs-redesign-page .vbs-home-about__tag,
+  .vbs-redesign-page .vbs-our-clients__tag,
+  .vbs-redesign-page .vbs-best-benefits__tag,
+  .vbs-redesign-page .vbs-home-faq__tag,
+  .vbs-redesign-page .vbs-home-capabilities__tag,
+  .vbs-redesign-page .vbs-client-success-stories__tag,
+  .vbs-redesign-page .vbs-engagement-models-section__tag,
+  .vbs-redesign-page .vbs-careers-openings__tag,
+  .vbs-redesign-page .mep-figma-overview__tag,
+  .vbs-redesign-page .mep-figma-what-you-get__tag,
+  .vbs-redesign-page .mep-figma-services__tag,
+  .vbs-redesign-page .mep-figma-disciplines__tag,
+  .vbs-redesign-page .mep-figma-workflow__tag,
+  .vbs-redesign-page .mep-figma-qa__tag,
+  .vbs-redesign-page .mep-figma-benefits__tag,
+  .vbs-redesign-page .mep-figma-why-choose__tag,
+  .vbs-redesign-page .mep-figma-resources__tag {
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+    padding: 3px 8px !important;
+    border-radius: 8px !important;
+  }
+
+  .vbs-redesign-page .vbs-leadership-team__tab {
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+  }
+}
+
+/* Desktop chips — lock to Figma (13px / 12×6 pad / radius 10) */
+@media (min-width: 1024px) {
+  .vbs-redesign-page .text-tag,
+  .vbs-redesign-page .vbs-home-hero__tag,
+  .vbs-redesign-page .vbs-home-about__tag,
+  .vbs-redesign-page .vbs-our-clients__tag,
+  .vbs-redesign-page .vbs-best-benefits__tag,
+  .vbs-redesign-page .vbs-home-faq__tag,
+  .vbs-redesign-page .vbs-home-capabilities__tag,
+  .vbs-redesign-page .vbs-client-success-stories__tag,
+  .vbs-redesign-page .vbs-engagement-models-section__tag,
+  .vbs-redesign-page .vbs-careers-openings__tag,
+  .vbs-redesign-page .mep-figma-overview__tag,
+  .vbs-redesign-page .mep-figma-what-you-get__tag,
+  .vbs-redesign-page .mep-figma-services__tag,
+  .vbs-redesign-page .mep-figma-disciplines__tag,
+  .vbs-redesign-page .mep-figma-workflow__tag,
+  .vbs-redesign-page .mep-figma-qa__tag,
+  .vbs-redesign-page .mep-figma-benefits__tag,
+  .vbs-redesign-page .mep-figma-why-choose__tag,
+  .vbs-redesign-page .mep-figma-resources__tag {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    padding: 6px 12px !important;
+    border-radius: 10px !important;
+    border: 1px solid #2299d6 !important;
+    background: rgba(34, 153, 214, 0.1) !important;
+    font-family: var(--font-inter, Inter, sans-serif) !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+    color: #2299d6 !important;
+    text-transform: capitalize !important;
+  }
+}

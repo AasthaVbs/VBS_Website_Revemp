@@ -83,7 +83,7 @@ function LocationMap({ location }: { location: OfficeLocation }) {
 
 function LocationCard({ location }: { location: OfficeLocation }) {
   return (
-    <article className="vbs-our-locations__card">
+    <article className="vbs-our-locations__card w-full shrink-0 lg:min-w-0 lg:flex-1">
       <div className="vbs-our-locations__card-header">
         <div className="vbs-our-locations__card-title-row">
           <LocationFlag location={location} />
@@ -151,7 +151,7 @@ export function OurLocationsSection() {
           <p className="vbs-our-locations-section__desc">{description}</p>
         </div>
 
-        <div className="vbs-our-locations__cards">
+        <div className="vbs-our-locations__cards flex w-full flex-col gap-4 lg:flex-row lg:gap-5">
           {officeLocations.map((location) => (
             <LocationCard key={location.id} location={location} />
           ))}

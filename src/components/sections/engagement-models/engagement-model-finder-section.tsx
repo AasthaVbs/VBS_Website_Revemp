@@ -27,47 +27,26 @@ export function EngagementModelFinderSection() {
             </p>
           </div>
 
-          {/* Mobile — stacked cards */}
-          <div className="flex w-full flex-col gap-3 lg:hidden">
-            {engagementModelFinderRows.map((row, index) => (
-              <article
-                key={row.need}
-                className="overflow-hidden rounded-[10px] border border-[#CBCCCD]"
-              >
-                <div className="bg-[#111111] px-4 py-3">
-                  <p className="text-[12px] font-medium uppercase tracking-wide text-white/70">
-                    {tableHeaders.need}
-                  </p>
-                  <p className="mt-1 text-[15px] font-normal text-white">{row.need}</p>
-                </div>
-                <div className={cn("bg-[#2299D6] px-4 py-3", index % 2 === 1 && "bg-[#1e8ac4]")}>
-                  <p className="text-[12px] font-medium uppercase tracking-wide text-white/80">
-                    {tableHeaders.recommended}
-                  </p>
-                  <p className="mt-1 text-[15px] font-medium text-white">{row.recommended}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          {/* Desktop table format on all breakpoints — horizontal scroll on mobile */}
+          <div className="w-full min-w-0 flex-1 lg:max-w-[780px]">
+            <div className="overflow-x-auto overscroll-x-contain rounded-[10px] [-webkit-overflow-scrolling:touch]">
+              <div className="min-w-[520px] overflow-hidden rounded-[10px] border border-[#CBCCCD] lg:min-w-0">
+                <div className="grid grid-cols-[minmax(220px,400px)_minmax(200px,1fr)]">
+                  <div className="flex min-h-[56px] items-center border-r border-[#CBCCCD] bg-[#111111] p-4 lg:min-h-[64px] lg:p-5">
+                    <span className="text-[16px] font-normal text-white lg:text-[20px] xl:text-[24px]">
+                      {tableHeaders.need}
+                    </span>
+                  </div>
+                  <div className="flex min-h-[56px] items-center bg-[#2299D6] p-4 lg:min-h-[64px] lg:p-5">
+                    <span className="text-[16px] font-normal text-white lg:text-[20px] xl:text-[24px]">
+                      {tableHeaders.recommended}
+                    </span>
+                  </div>
 
-          {/* Desktop — table */}
-          <div className="hidden w-full min-w-0 flex-1 lg:block lg:max-w-[780px]">
-            <div className="overflow-hidden rounded-[10px] border border-[#CBCCCD]">
-              <div className="grid grid-cols-[400px_minmax(0,1fr)]">
-                <div className="flex min-h-[64px] items-center border-r border-[#CBCCCD] bg-[#111111] p-5">
-                  <span className="text-[20px] font-normal text-white xl:text-[24px]">
-                    {tableHeaders.need}
-                  </span>
+                  {engagementModelFinderRows.map((row, index) => (
+                    <FinderTableRow key={row.need} row={row} striped={index % 2 === 1} />
+                  ))}
                 </div>
-                <div className="flex min-h-[64px] items-center bg-[#2299D6] p-5">
-                  <span className="text-[20px] font-normal text-white xl:text-[24px]">
-                    {tableHeaders.recommended}
-                  </span>
-                </div>
-
-                {engagementModelFinderRows.map((row, index) => (
-                  <FinderTableRow key={row.need} row={row} striped={index % 2 === 1} />
-                ))}
               </div>
             </div>
           </div>
@@ -88,11 +67,13 @@ function FinderTableRow({
 
   return (
     <>
-      <div className={cn("flex items-start border-r border-[#CBCCCD] p-5", rowBg)}>
-        <span className="text-[16px] font-normal text-[#111111]">{row.need}</span>
+      <div className={cn("flex items-start border-r border-[#CBCCCD] p-4 lg:p-5", rowBg)}>
+        <span className="text-[14px] font-normal text-[#111111] lg:text-[16px]">{row.need}</span>
       </div>
-      <div className={cn("flex items-start p-5", rowBg)}>
-        <span className="text-[16px] font-medium leading-6 text-[#111111]">{row.recommended}</span>
+      <div className={cn("flex items-start p-4 lg:p-5", rowBg)}>
+        <span className="text-[14px] font-medium leading-6 text-[#111111] lg:text-[16px]">
+          {row.recommended}
+        </span>
       </div>
     </>
   );

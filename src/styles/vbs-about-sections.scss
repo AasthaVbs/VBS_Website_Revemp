@@ -33,7 +33,7 @@
     }
 
     @media (max-width: 767px) {
-      padding-top: 48px !important;
+      padding-top: 24px !important;
     }
   }
 
@@ -86,7 +86,8 @@
     }
 
     > section.vbs-trust-strip-section:has(.vbs-home-hero-trust) {
-      padding-top: 64px !important;
+      padding-top: 24px !important;
+      padding-bottom: 12px !important;
     }
   }
 }
@@ -94,18 +95,23 @@
 /* Leadership page — tighter hero top + trust strip spacing */
 .vbs-redesign-page .about-section-page.vbs-leadership-page {
   > section.leadership-hero-section.about-hero-section:first-of-type {
-    margin-top: 0 !important;
-    padding-top: 24px !important;
-    padding-bottom: 12px !important;
-
-    @media (min-width: 768px) {
-      padding-top: 36px !important;
-      padding-bottom: 16px !important;
-    }
+    padding-top: 48px !important;
+    padding-bottom: 20px !important;
 
     @media (min-width: 1024px) {
-      padding-top: 48px !important;
-      padding-bottom: 20px !important;
+      margin-top: 0 !important;
+    }
+
+    @media (max-width: 1023px) {
+      margin-top: 20px !important;
+      padding-top: 28px !important;
+      padding-bottom: 12px !important;
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 24px !important;
+      padding-top: 24px !important;
+      padding-bottom: 8px !important;
     }
   }
 
@@ -127,15 +133,31 @@
   }
 }
 
+@media (max-width: 1023px) {
+  .vbs-redesign-page .about-section-page.vbs-leadership-page {
+    > section.leadership-hero-section.about-hero-section:first-of-type {
+      margin-top: 20px !important;
+      padding-top: 28px !important;
+      padding-bottom: 12px !important;
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .vbs-redesign-page .about-section-page.vbs-leadership-page {
     > section.leadership-hero-section.about-hero-section:first-of-type {
-      padding-top: 20px !important;
+      margin-top: 24px !important;
+      padding-top: 24px !important;
       padding-bottom: 8px !important;
     }
 
     > section.vbs-trust-strip-section:has(.vbs-home-hero-trust) {
       padding-top: 12px !important;
+      padding-bottom: 8px !important;
+    }
+
+    .vbs-leadership-team__inner {
+      gap: 20px !important;
     }
   }
 }
@@ -158,12 +180,23 @@
 
   .vbs-core-values__inner,
   .vbs-careers-section__inner,
-  .vbs-leadership-team__inner,
   .mep-figma-benefits__container {
     gap: 40px !important;
 
     @media (max-width: 767px) {
       gap: 32px !important;
+    }
+  }
+
+  .vbs-leadership-team__inner {
+    gap: 24px !important;
+
+    @media (min-width: 1024px) {
+      gap: 40px !important;
+    }
+
+    @media (max-width: 767px) {
+      gap: 20px !important;
     }
   }
 
@@ -409,23 +442,15 @@
   }
 
   .vbs-vision-mission__card {
-    padding-top: 35px;
+    padding-top: 0;
 
     &::before {
-      content: "";
-      position: absolute;
-      top: 35px;
-      left: 0;
-      right: 0;
-      height: 1px;
-      @include vbs-fade-horizontal-divider;
-      pointer-events: none;
-      z-index: 0;
+      display: none;
     }
   }
 
   .vbs-vision-mission__card--mission {
-    margin-top: 40px;
+    margin-top: 32px;
   }
 }
 

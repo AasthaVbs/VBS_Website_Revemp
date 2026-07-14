@@ -91,7 +91,7 @@ export function MepDisciplinesSection({
       <PageContainer className="mep-figma-disciplines__container flex flex-col items-start">
         <div className="mep-figma-disciplines__intro flex w-full flex-col items-start">
           <div className="mep-figma-disciplines__intro-heading flex flex-col items-start">
-            <span className="text-tag inline-flex w-fit items-center justify-center rounded-[10px] border border-[#2299D6] bg-[rgba(34,153,214,0.10)] px-3 py-1.5 capitalize text-[#2299D6]">
+            <span className="text-tag inline-flex w-fit items-center justify-center gap-2.5 rounded-[10px] border border-[#2299D6] bg-[rgba(34,153,214,0.10)] px-3 py-1.5 text-[13px] font-normal capitalize leading-[1.2] text-[#2299D6] max-lg:rounded-[8px] max-lg:px-2 max-lg:py-1 max-lg:text-[10px]">
               {section.tag}
             </span>
             <h2

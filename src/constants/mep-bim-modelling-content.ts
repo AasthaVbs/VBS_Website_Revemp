@@ -520,7 +520,7 @@ export const mepBimModellingProjectCta = {
   description:
     "From 2D-to-BIM validation to pre-coordination support, we provide the technical depth you need to succeed in the US construction market.",
   cta: "Contact Us",
-  ctaHref: "/contact",
+  ctaHref: "/contact-us",
 } as const;
 
 export const mepBimModellingFaqDescription =

@@ -35,7 +35,7 @@ export function EvaluateDeliveryCtaSection({
   contentAlign = "start",
 }: EvaluateDeliveryCtaSectionProps) {
   const ctaHref =
-    ctaHrefProp ?? (ctaLabel.trim().toLowerCase() === "contact us" ? "/contact" : undefined);
+    ctaHrefProp ?? (ctaLabel.trim().toLowerCase() === "contact us" ? "/contact-us" : undefined);
 
   return (
     <section className="vbs-evaluate-cta bg-white py-12 lg:py-[100px]">

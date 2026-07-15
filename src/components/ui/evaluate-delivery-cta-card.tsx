@@ -23,7 +23,7 @@ export function EvaluateDeliveryCtaCard({
   title,
   description,
   ctaLabel = "Contact Us",
-  ctaHref = "/contact",
+  ctaHref = "/contact-us",
   titleClassName,
   descriptionClassName,
   className,

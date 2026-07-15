@@ -20,10 +20,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     const staticRedirects = [
-      { source: "/about-us", destination: "/about", permanent: true },
-      { source: "/about-us/:path*", destination: "/about", permanent: true },
-      { source: "/contact-us", destination: "/contact", permanent: true },
-      { source: "/contact-us/:path*", destination: "/contact", permanent: true },
+      { source: "/about", destination: "/about-us", permanent: true },
+      { source: "/about/:path*", destination: "/about-us", permanent: true },
+      { source: "/blogs", destination: "/blog", permanent: true },
+      { source: "/blogs/:path*", destination: "/blog/:path*", permanent: true },
+      { source: "/contact", destination: "/contact-us", permanent: true },
+      { source: "/contact/:path*", destination: "/contact-us", permanent: true },
       { source: "/bim-resources", destination: "/resources", permanent: true },
       { source: "/bim-resources/:path*", destination: "/resources", permanent: true },
       { source: "/engagement-model", destination: "/engagement-models", permanent: true },

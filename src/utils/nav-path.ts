@@ -89,6 +89,7 @@ export function capabilityLinkProps(service: NavDropdownLink) {
 
 export function isAboutSectionPath(path: string) {
   return (
+    path === "/about-us" ||
     path === "/about" ||
     path === "/leadership" ||
     path === "/careers" ||
@@ -100,8 +101,9 @@ export function isAboutSectionPath(path: string) {
 
 export function isResourcesSectionPath(path: string) {
   return (
-    path === "/blogs" ||
     path === "/blog" ||
+    path.startsWith("/blog/") ||
+    path === "/blogs" ||
     path === "/webinar" ||
     path === "/portfolio" ||
     path.startsWith("/portfolio/") ||
@@ -117,5 +119,10 @@ export function isEngagementSectionPath(path: string) {
 }
 
 export function isContactSectionPath(path: string) {
-  return path === "/contact" || path.startsWith("/contact/");
+  return (
+    path === "/contact-us" ||
+    path.startsWith("/contact-us/") ||
+    path === "/contact" ||
+    path.startsWith("/contact/")
+  );
 }

@@ -380,7 +380,7 @@ export const mepClashDetectionProjectCta = {
   description:
     "Our BIM team follows US standards and follows structured workflows, transparent reporting, and disciplined coordination practices that support all project stages.",
   cta: "Book a Quick Call",
-  ctaHref: "/contact",
+  ctaHref: "/contact-us",
 } as const;
 
 export const mepClashDetectionFaqSection = {

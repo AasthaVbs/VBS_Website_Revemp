@@ -73,7 +73,7 @@ export type ResourceListingItem = {
 
 /** Figma 337:37659 — default blog grid (8 cards) */
 function blogDetailHref(id: string) {
-  return `/blogs/${id}`;
+  return `/blog/${id}`;
 }
 
 export const figmaBlogListingItems: ResourceListingItem[] = [

@@ -69,7 +69,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
           titleAccent="Articles"
           description="Recent Insights and Research on AEC Industry"
           items={relatedItems}
-          viewAllHref="/blogs"
+          viewAllHref="/blog"
         />
         <GetInTouchSection />
       </main>

@@ -16,7 +16,7 @@ export function MepBimUseCasesSection({
   section = mepBimUseCasesSection,
   cards = mepBimUseCaseCards,
   showCta = false,
-  ctaHref = "/contact",
+  ctaHref = "/contact-us",
   iconVariant = "plain",
   descriptionMaxWidth = 536,
   columnsPerRow = 2,

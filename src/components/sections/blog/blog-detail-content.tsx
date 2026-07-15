@@ -153,7 +153,7 @@ export function BlogDetailContent({ blocks }: { blocks: BlogContentBlock[] }) {
                   {block.label}
                 </span>
                 <Link
-                  href={block.href ?? "/contact"}
+                  href={block.href ?? "/contact-us"}
                   className="text-[16px] font-medium capitalize leading-6 text-[#D70416] underline"
                 >
                   {block.linkLabel}
@@ -167,7 +167,7 @@ export function BlogDetailContent({ blocks }: { blocks: BlogContentBlock[] }) {
                 compact
                 title={block.title}
                 ctaLabel={block.ctaLabel}
-                ctaHref={block.href ?? "/contact"}
+                ctaHref={block.href ?? "/contact-us"}
               />
             );
           case "authorBio":

@@ -69,7 +69,7 @@ export function ListingPageHeroSection({
             </div>
             <PrimaryCtaButton
               fullWidth={false}
-              href="/contact"
+              href="/contact-us"
               className="vbs-listing-hero__cta shrink-0 px-5 py-4 capitalize"
             >
               {ctaLabel}

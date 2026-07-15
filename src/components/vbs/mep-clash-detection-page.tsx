@@ -53,7 +53,7 @@ export async function MepClashDetectionPage() {
         <MepPageHeroSection
           {...mepClashDetectionHero}
           imageSize="compact"
-          ctaHref="/contact"
+          ctaHref="/contact-us"
           containerClassName="!pt-0 !pb-4 sm:!pt-0 sm:!pb-5 lg:!pt-0 lg:!pb-6"
         />
         <MepTrustedByStripSection
@@ -67,7 +67,7 @@ export async function MepClashDetectionPage() {
         <MepBimServiceFeaturesSection
           section={mepClashDetectionServiceFeaturesSection}
           cards={mepClashDetectionServiceFeatureCards}
-          ctaHref="/contact"
+          ctaHref="/contact-us"
         />
         <MepEngagementProcessSection
           section={mepClashDetectionTypesSection}
@@ -100,7 +100,7 @@ export async function MepClashDetectionPage() {
           section={mepClashDetectionOutsourcingGuideSection}
           cards={mepClashDetectionOutsourcingGuideCards}
           showCta
-          ctaHref="/contact"
+          ctaHref="/contact-us"
           iconVariant="boxed"
           descriptionMaxWidth={636}
           columnsPerRow={3}

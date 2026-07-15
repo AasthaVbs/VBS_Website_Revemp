@@ -6,7 +6,7 @@ import { leadershipHeroCopy, leadershipHeroImages } from "@/constants/leadership
 /** Figma node 897:15373 — Leadership hero */
 export function LeadershipHeroSection() {
   const ctaHref =
-    leadershipHeroCopy.ctaLabel.trim().toLowerCase() === "contact us" ? "/contact" : undefined;
+    leadershipHeroCopy.ctaLabel.trim().toLowerCase() === "contact us" ? "/contact-us" : undefined;
 
   return (
     <section className="leadership-hero-section about-hero-section overflow-hidden bg-white pt-9 md:pt-12 lg:pt-[72px]">

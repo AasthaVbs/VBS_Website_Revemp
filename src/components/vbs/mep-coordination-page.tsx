@@ -53,7 +53,7 @@ export async function MepCoordinationPage() {
         <MepPageHeroSection
           {...mepCoordinationHero}
           imageSize="compact"
-          ctaHref="/contact"
+          ctaHref="/contact-us"
         />
         <MepTrustedByStripSection trustedBy={mepCoordinationTrustedBy} />
         <MepBimModellingIntroSection
@@ -63,7 +63,7 @@ export async function MepCoordinationPage() {
         <MepBimServiceFeaturesSection
           section={mepCoordinationServiceFeaturesSection}
           cards={mepCoordinationServiceFeatureCards}
-          ctaHref="/contact"
+          ctaHref="/contact-us"
         />
         <MepFullSpectrumServicesSection
           section={mepCoordinationServicesSection}
@@ -95,7 +95,7 @@ export async function MepCoordinationPage() {
           section={mepCoordinationOutsourcingGuideSection}
           cards={mepCoordinationOutsourcingGuideCards}
           showCta
-          ctaHref="/contact"
+          ctaHref="/contact-us"
           iconVariant="boxed"
           descriptionMaxWidth={618}
         />

@@ -38,7 +38,7 @@ export async function VbsHomePage() {
         titleLead={bestBenefitsSectionCopy.titleLead}
         titleAccent={bestBenefitsSectionCopy.titleAccent}
         description={bestBenefitsSectionCopy.description}
-        ctaHref="/contact"
+        ctaHref="/contact-us"
       />
       <DeferredEngagementModelsSection sectionClassName="vbs-engagement-models-section--home" />
       <DeferredIndustriesSection />
@@ -49,7 +49,7 @@ export async function VbsHomePage() {
       />
       <DeferredCertificationSection />
       <DeferredClientSuccessStoriesSection />
-      <DeferredEvaluateDeliveryCtaSection cardOnMobile ctaHref="/contact" />
+      <DeferredEvaluateDeliveryCtaSection cardOnMobile ctaHref="/contact-us" />
       <DeferredFaqSection variant="home" items={homeFaqItems} description={homeFaqDescription} />
       <DeferredGetInTouchSection />
       <DeferredSiteFooter />

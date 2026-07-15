@@ -1,9 +1,25 @@
 export const thankYouSocialLinks = [
-  { label: "Twitter", href: "#", icon: "/icons/social/twitter.svg" },
-  { label: "Instagram", href: "#", icon: "/icons/social/instagram.svg" },
-  { label: "Facebook", href: "#", icon: "/icons/social/facebook.svg" },
-  { label: "LinkedIn", href: "#", icon: "/icons/social/linkedin.svg" },
-  { label: "YouTube", href: "#", icon: "/icons/social/youtube.svg" },
+  { label: "Twitter", href: "https://x.com/vbsglobal", icon: "/icons/social/twitter.svg" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/virtualbuildingstudios/",
+    icon: "/icons/social/instagram.svg",
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/virtualbuildingstudio/",
+    icon: "/icons/social/facebook.svg",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/company/virtual-building-studio-inc/",
+    icon: "/icons/social/linkedin.svg",
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/channel/UCCNVUKdB5rncH-J1E-8xcoA",
+    icon: "/icons/social/youtube.svg",
+  },
 ] as const;
 
 export const thankYouContent = {

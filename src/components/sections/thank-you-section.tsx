@@ -37,6 +37,8 @@ export function ThankYouSection() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="thank-you-page__social-link"
                 >

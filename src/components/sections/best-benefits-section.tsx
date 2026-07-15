@@ -40,7 +40,7 @@ export function BestBenefitsSection({
   description = "Accelerate delivery, improve coordination, and scale project execution without increasing internal overhead.",
   items = defaultItems,
   ctaLabel = "Inquire Now",
-  ctaHref = "/contact",
+  ctaHref = "/contact-us",
 }: {
   id?: string;
   tag?: string;

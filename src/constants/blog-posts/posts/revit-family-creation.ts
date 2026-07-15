@@ -176,7 +176,7 @@ export const revitFamilyCreationPost: BlogPostDetail = {
       variant: "download",
       label: "Get 2,200+ Revit Families for Your AEC Projects:",
       linkLabel: "Download Now",
-      href: "/contact",
+      href: "/contact-us",
     },
     {
       type: "h2",
@@ -197,7 +197,7 @@ export const revitFamilyCreationPost: BlogPostDetail = {
       variant: "link",
       label: "Learn the Process and Key Benefits:",
       linkLabel: "Revit Family Creation",
-      href: "/contact",
+      href: "/contact-us",
     },
     {
       type: "h2",
@@ -262,7 +262,7 @@ export const revitFamilyCreationPost: BlogPostDetail = {
       type: "rich",
       spans: [
         { text: "That is why " },
-        { text: "Revit family creation services", underline: true, href: "/contact" },
+        { text: "Revit family creation services", underline: true, href: "/contact-us" },
         {
           text: " now play such an important role in modern AEC delivery. Strong families help firms maintain cleaner data, more accurate coordination, and more dependable project outcomes.",
         },
@@ -272,7 +272,7 @@ export const revitFamilyCreationPost: BlogPostDetail = {
       type: "ctaBanner",
       title: "Transform Your BIM Workflow with Custom Revit Families.",
       ctaLabel: "Contact Us",
-      href: "/contact",
+      href: "/contact-us",
     },
     {
       type: "authorBio",

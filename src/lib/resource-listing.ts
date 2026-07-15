@@ -234,7 +234,7 @@ export function matchesResourceServiceFilter(
 
 export function buildBlogHref(slug: string) {
   const cleanSlug = String(slug).replace(/^\/+|\/+$/g, "");
-  return `/blogs/${cleanSlug}`;
+  return `/blog/${cleanSlug}`;
 }
 
 export function buildWebinarHref(slug: string) {

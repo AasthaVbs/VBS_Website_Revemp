@@ -74,21 +74,20 @@ export function MepPageHeroSection({
           <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:gap-6 xl:gap-10">
             {/* Copy — vertically centered beside image on desktop */}
             <div
-              className="flex w-full shrink-0 flex-col justify-center gap-6 sm:gap-[30px] lg:min-w-[360px] lg:flex-[1.1_1_0%]"
+              className="flex w-full min-w-0 shrink flex-col justify-center gap-6 sm:gap-[30px] lg:flex-[0_1_auto]"
               style={{ maxWidth: copyMaxWidth }}
             >
-              <div className="flex w-full flex-col items-start gap-4 sm:gap-5">
-                <div className="flex flex-col items-start gap-3">
+              <div className="flex w-full max-w-full flex-col items-start gap-4 sm:gap-5">
+                <div className="flex w-full max-w-full flex-col items-start gap-3">
                   <MepSectionTag label={tag} />
-                  <h1 className="w-full capitalize text-[#111111]" style={{ maxWidth: copyMaxWidth }}>
+                  <h1
+                    className="w-full max-w-full capitalize text-[#111111]"
+                    style={{ maxWidth: copyMaxWidth }}
+                  >
                     {titleLead.split("\n").map((line, index, lines) => (
                       <span
                         key={`${line}-${index}`}
-                        className={cn(
-                          "block text-[32px] font-medium leading-[1.15] sm:text-[40px] lg:text-[48px]",
-                          index === 0 && "xl:whitespace-nowrap",
-                          index === lines.length - 1 && "xl:whitespace-nowrap",
-                        )}
+                        className="block text-[32px] font-medium leading-[1.15] sm:text-[40px] lg:text-[48px]"
                       >
                         {line}
                         {index === lines.length - 1 ? (
@@ -99,7 +98,7 @@ export function MepPageHeroSection({
                   </h1>
                 </div>
                 <p
-                  className="w-full text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]"
+                  className="w-full max-w-full text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]"
                   style={{ maxWidth: descriptionMaxWidth }}
                 >
                   {description}

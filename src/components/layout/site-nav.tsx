@@ -17,6 +17,7 @@ export function SiteNav() {
   const pathname = usePathname();
   const path = normalizePath(pathname);
   const isAbout =
+    pathname === "/about-us" ||
     pathname === "/about" ||
     pathname === "/leadership" ||
     pathname === "/careers" ||

@@ -72,7 +72,7 @@ function stubPostFromListing(item: ResourceListingItem): BlogPostDetail {
         type: "ctaBanner",
         title: "Transform Your BIM Workflow with Custom Revit Families.",
         ctaLabel: "Contact Us",
-        href: "/contact",
+        href: "/contact-us",
       },
       {
         type: "authorBio",

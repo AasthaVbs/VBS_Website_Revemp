@@ -32,7 +32,7 @@ export function BlogDetailSidebar({
     <aside className="w-full shrink-0 xl:w-[344px]">
       <div className="flex flex-col gap-5 rounded-[10px] bg-white p-5 shadow-[0_4px_10px_rgba(0,0,0,0.15)] xl:sticky xl:top-28">
         <Link
-          href="/blogs"
+          href="/blog"
           className="text-[16px] font-medium capitalize text-[#D70416] transition-opacity hover:opacity-80"
         >
           Go back To Blogs

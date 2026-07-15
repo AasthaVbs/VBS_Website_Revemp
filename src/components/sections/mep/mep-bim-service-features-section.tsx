@@ -44,10 +44,26 @@ export function MepBimServiceFeaturesSection({
           </p>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-[30px] md:grid-cols-2 lg:grid-cols-3">
-          {cards.map((card) => (
-            <FeatureCard key={card.title} card={card} />
-          ))}
+        <div className="grid w-full grid-cols-1 gap-[30px] md:grid-cols-2 lg:grid-cols-6">
+          {cards.map((card, index) => {
+            const lastRowCount = cards.length % 3;
+            const isLastIncompleteRow =
+              lastRowCount > 0 && index >= cards.length - lastRowCount;
+            const centersLastPair =
+              lastRowCount === 2 && index === cards.length - 2;
+
+            return (
+              <FeatureCard
+                key={card.title}
+                card={card}
+                className={cn(
+                  "lg:col-span-2",
+                  isLastIncompleteRow && lastRowCount === 1 && "lg:col-start-3",
+                  centersLastPair && "lg:col-start-2",
+                )}
+              />
+            );
+          })}
         </div>
 
         <PrimaryCtaButton

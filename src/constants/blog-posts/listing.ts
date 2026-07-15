@@ -6,7 +6,7 @@ import {
 import { mapSanityPostsToListing } from "@/lib/sanity-listing";
 
 export function blogPostHref(slug: string) {
-  return `/blogs/${slug}`;
+  return `/blog/${slug}`;
 }
 
 /** Listing cards for blogs browse — pass mapped Sanity posts from the server (never load snapshot here). */

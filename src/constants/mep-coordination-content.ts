@@ -121,7 +121,7 @@ export const mepCoordinationServicesSection = {
   description:
     "Our multi-disciplinary coordination workflows improve constructability, sequencing of installation and field level usability for complex commercial and infrastructure projects.",
   ctaLabel: "Start New Project",
-  ctaHref: "/contact",
+  ctaHref: "/contact-us",
   wideCards: true,
   titleMaxWidth: 747,
 } as const;
@@ -384,7 +384,7 @@ export const mepCoordinationProjectCta = {
   description:
     "Our US-certified MEP engineers deliver coordinated, fabrication-ready BIM models through precise coordination, clash resolution, and installation-focused workflows.",
   cta: "Book a Quick Call",
-  ctaHref: "/contact",
+  ctaHref: "/contact-us",
 } as const;
 
 export const mepCoordinationFaqDescription =

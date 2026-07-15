@@ -22,7 +22,7 @@ export function RelatedArticlesSection({
   titleAccent,
   description,
   items,
-  viewAllHref = "/blogs",
+  viewAllHref = "/blog",
 }: RelatedArticlesSectionProps) {
   const featured = items[0];
   const sideCards = items.slice(1, 4);

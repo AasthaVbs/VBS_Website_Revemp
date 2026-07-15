@@ -317,6 +317,12 @@ export const DeferredBlogsBrowseSection = createDeferredSection(
   { minHeight: 560 },
 );
 
+export const DeferredCaseStudiesBrowseSection = createDeferredSection(
+  () => import("@/components/sections/portfolio/case-studies-browse-section"),
+  "CaseStudiesBrowseSection",
+  { minHeight: 560 },
+);
+
 export const DeferredWebinarBrowseSection = createDeferredSection(
   () => import("@/components/sections/webinar/webinar-browse-section"),
   "WebinarBrowseSection",

@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "@/styles/vbs-legacy-projects.scss";
+import "@/styles/malaysia-data-center-case.scss";
 
 /** Legacy Gatsby project / case study detail pages */
 export default function PortfolioProjectLayout({ children }: { children: ReactNode }) {

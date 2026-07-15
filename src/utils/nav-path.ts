@@ -107,6 +107,8 @@ export function isResourcesSectionPath(path: string) {
     path === "/webinar" ||
     path === "/portfolio" ||
     path.startsWith("/portfolio/") ||
+    path === "/projects" ||
+    path.startsWith("/projects/") ||
     path === "/whitepaper" ||
     path.startsWith("/whitepaper/") ||
     path === "/testimonials" ||

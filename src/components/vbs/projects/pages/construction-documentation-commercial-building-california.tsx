@@ -120,7 +120,7 @@ const TOOLS = [
   { name: "AutoCAD", icon: "/icon/autocad.png" },
   { name: "Navisworks", icon: "/icon/navisworks.png" },
   { name: "BIM 360", icon: "/icon/bimcollab.png" },
-  { name: "Escape", icon: null },
+  { name: "Enscape", icon: null },
   { name: "Blender", icon: null },
   { name: "Revu", icon: null },
   { name: "Photoshop", icon: null },
@@ -404,7 +404,11 @@ export default function ConstructionDocumentationCommercialBuildingCaliforniaPag
               <p className="text-secondary">
               Phase-structured BIM delivery workflow integrating fast documentation cycles, multi-trade coordination, QA validation, and scalable workload management.
               </p>
-              </div>
+              <BookMeetingCta
+                buttonText="Start Your Project"
+                fullButtonClass="btn-lightblue text-white text-uppercase px-lg-4 py-2 rounded-pill fs-4 fw-semibold"
+              />
+            </div>
             <div className="list">
               {DELIVERED_POINTS.map(item => (
                 <div className="row-item" key={item.title}>

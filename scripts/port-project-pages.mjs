@@ -54,7 +54,7 @@ function transformSource(content, slug) {
   code = code.replace(/<Header \/>\s*/g, "");
   code = code.replace(/<Footer \/>\s*/g, "");
   code = code.replace(/<Contact[^>]*\/>\s*/g, "");
-  code = code.replace(/<BookMeetingCta[^>]*\/>\s*/g, "");
+  // Preserve BookMeetingCta JSX — only remap the import above for Next.
 
   code = code.replace(
     /from "\.\/mepf-bim-coordination-for-industrial-office-building"/g,

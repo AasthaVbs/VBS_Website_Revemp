@@ -280,7 +280,7 @@ export const homeResourcesListItems = [
     title: HOME_RESOURCE_TITLE,
     date: "12 Jan 2026",
     image: "/images/figma/resource-3.png",
-    href: "/portfolio",
+    href: "/projects",
   },
   {
     type: "White Paper",

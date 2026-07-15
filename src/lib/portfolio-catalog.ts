@@ -24,7 +24,7 @@ export function catalogProjectToPortfolioCard(
   };
 }
 
-/** Full project list for /portfolio/all-projects */
+/** Full project list for /projects/all-projects */
 export const allPortfolioProjectCards: PortfolioProjectItem[] =
   allPortfolioProjects.map(catalogProjectToPortfolioCard);
 
@@ -32,11 +32,25 @@ export const allPortfolioProjectCards: PortfolioProjectItem[] =
 export function mapPortfolioProjectsAsCaseStudies(
   projects: typeof allPortfolioProjects = allPortfolioProjects,
 ) {
-  return projects.map((project) => ({
-    ...project,
-    href: toPortfolioHref(project.href),
-    type: "Case Studies" as const,
-    badgeLabel: "Case Study",
-    category: project.category,
-  }));
+  return projects.map((project, index) => {
+    const service =
+      project.category === "MEP" ? "MEP Engineering Firms" : "Architecture Firms";
+    const href = toPortfolioHref(project.href);
+    const id = href.replace(/^\/projects\//, "").replace(/\/$/, "");
+
+    return {
+      id,
+      title: project.title,
+      excerpt: `${project.category} project highlighting coordinated BIM delivery for architecture and engineering firms.`,
+      href,
+      image: project.image,
+      type: "Case Studies" as const,
+      badgeLabel: "Case Study",
+      category: project.category,
+      location: project.location || null,
+      service,
+      sortOrder: index + 1,
+      publishedTimestamp: 5000 - index,
+    };
+  });
 }

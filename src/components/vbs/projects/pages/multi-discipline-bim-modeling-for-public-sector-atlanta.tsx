@@ -391,7 +391,11 @@ export default function MultiDisciplineBimModelingForPublicSectorAtlantaPage() {
               <p className="text-secondary">
                 End-to-end coordinated BIM delivery with validated models, resolved design gaps, and structured phase-gated execution
               </p>
-              </div>
+              <BookMeetingCta
+                buttonText="Start Your Project"
+                fullButtonClass="btn-lightblue text-white text-uppercase px-lg-4 py-2 rounded-pill fs-4 fw-semibold"
+              />
+            </div>
             <div className="list">
               {DELIVERED_POINTS.map(item => (
                 <div className="row-item" key={item.title}>

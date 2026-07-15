@@ -79,9 +79,9 @@
   }
 
   .mep-figma-overview__frame {
-    width: min(614px, 100%);
+    width: min(580px, 100%);
     height: auto;
-    aspect-ratio: 614 / 502;
+    aspect-ratio: 580 / 460;
   }
 
   .mep-figma-overview__photo {
@@ -92,9 +92,18 @@
     object-fit: cover;
   }
 
+  .mep-figma-overview__layout {
+    gap: 36px;
+  }
+
+  .mep-figma-overview__content {
+    max-width: 820px;
+  }
+
   .mep-figma-overview__chip {
-    flex: 1 1 auto;
-    min-width: 0;
+    flex: 0 0 auto;
+    width: fit-content;
+    max-width: 100%;
   }
 
   @media (max-width: 1024px) {
@@ -121,7 +130,8 @@
     }
 
     .mep-figma-overview__chip {
-      width: 100%;
+      width: fit-content;
+      max-width: 100%;
     }
   }
 }
@@ -2247,33 +2257,35 @@
   }
 
   &__title {
-    width: 804px !important;
+    width: 534px !important;
     max-width: 100% !important;
     margin: 0 !important;
     font-size: 48px !important;
     line-height: normal !important;
-    text-transform: capitalize !important;
+    text-transform: none !important;
     word-break: break-word !important;
   }
 
   &__title-dark {
     font-weight: 500 !important;
     color: #111111 !important;
+    text-transform: none !important;
   }
 
   &__title-accent {
     font-weight: 300 !important;
     color: #d70416 !important;
+    text-transform: none !important;
   }
 
   &__section-desc {
-    width: 685px !important;
+    width: 740px !important;
     max-width: 100% !important;
     margin: 0 !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     line-height: 24px !important;
-    text-transform: capitalize !important;
+    text-transform: none !important;
     color: #808080 !important;
     word-break: break-word !important;
   }
@@ -2360,8 +2372,8 @@
     &--single {
       .mep-figma-resources__featured {
         flex: 0 0 auto !important;
-        width: min(590px, 100%) !important;
-        max-width: 590px !important;
+        width: min(650px, 100%) !important;
+        max-width: 650px !important;
       }
     }
 
@@ -2374,7 +2386,7 @@
 
   &__solo-card {
     width: 100% !important;
-    max-width: 760px !important;
+    max-width: 650px !important;
     border-radius: 10px !important;
     background: #ffffff !important;
     padding: 10px !important;
@@ -2452,6 +2464,7 @@
     display: flex !important;
     min-width: 0 !important;
     flex: 1 1 0 !important;
+    max-width: 650px !important;
     flex-direction: column !important;
     align-items: center !important;
     gap: 30px !important;
@@ -2465,7 +2478,7 @@
     position: relative !important;
     display: block !important;
     width: 100% !important;
-    height: 350px !important;
+    height: 380px !important;
     flex-shrink: 0 !important;
     overflow: hidden !important;
     border-radius: 10px !important;
@@ -2505,7 +2518,7 @@
     display: block !important;
     margin: 0 !important;
     width: 100% !important;
-    font-size: 28px !important;
+    font-size: 24px !important;
     font-weight: 400 !important;
     line-height: normal !important;
     color: #111111 !important;
@@ -2529,7 +2542,7 @@
 
   &__list {
     display: flex !important;
-    width: 590px !important;
+    width: 660px !important;
     max-width: 100% !important;
     flex-shrink: 0 !important;
     flex-direction: column !important;
@@ -2540,7 +2553,9 @@
   &__compact-row {
     display: flex !important;
     width: 100% !important;
-    height: 178px !important;
+    height: 168px !important;
+    min-height: 168px !important;
+    max-height: 168px !important;
     align-items: stretch !important;
     justify-content: flex-start !important;
     gap: 20px !important;
@@ -2552,9 +2567,11 @@
 
   &__compact-media {
     position: relative !important;
-    flex: 0 0 300px !important;
-    width: 300px !important;
-    min-height: 178px !important;
+    flex: 0 0 290px !important;
+    width: 290px !important;
+    min-height: 168px !important;
+    height: 168px !important;
+    max-height: 168px !important;
     align-self: stretch !important;
     overflow: hidden !important;
     border-radius: 10px !important;
@@ -2573,22 +2590,26 @@
 
   &__compact-body {
     display: flex !important;
-    height: auto !important;
+    height: 168px !important;
+    min-height: 168px !important;
+    max-height: 168px !important;
     min-width: 0 !important;
-    min-height: 0 !important;
     flex: 1 1 0 !important;
     flex-direction: column !important;
     align-items: flex-start !important;
     align-self: stretch !important;
     justify-content: space-between !important;
+    gap: 8px !important;
     overflow: hidden !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
   }
 
   &__compact-title {
     display: block !important;
     margin: 0 !important;
     width: 100% !important;
-    font-size: 22px !important;
+    font-size: 18px !important;
     font-weight: 400 !important;
     line-height: normal !important;
     color: #111111 !important;
@@ -2864,7 +2885,7 @@
   &__panel {
     display: flex;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 16px;
     box-sizing: border-box;
@@ -2936,7 +2957,7 @@
     justify-content: center;
     width: 100%;
     margin: 0;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 400;
     line-height: normal;
     color: #111111;
@@ -2955,14 +2976,18 @@
 
   &__deliverables {
     display: flex;
-    flex: 1 1 591px;
-    max-width: 591px;
+    flex: 0 1 auto;
+    width: fit-content;
+    max-width: min(591px, 100%);
     min-width: 0;
+    height: fit-content;
+    min-height: 0;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    gap: 24px;
-    padding: 20px;
+    justify-content: flex-start;
+    align-self: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -3017,7 +3042,8 @@
 
   @media (min-width: 640px) {
     &__deliverables {
-      min-height: 391px;
+      min-height: 0;
+      height: fit-content;
     }
   }
 
@@ -3270,6 +3296,16 @@
     text-align: center;
   }
 
+  /* Below 1300px: shrink Result line so it stays on one line; default 16px unchanged above */
+  @media (max-width: 1299px) {
+    &__result {
+      span {
+        font-size: 14px !important;
+        line-height: 20px !important;
+      }
+    }
+  }
+
   @media (max-width: 767px) {
     h2 .text-section {
       font-size: clamp(24px, 6vw, 36px);
@@ -3333,6 +3369,25 @@
   main>section:not(.mep-page-hero):not(.mep-figma-services--h-scroll):not(.vbs-mep-stats-strip):not(.mep-trusted-by-strip):not(.mep-figma-what-you-get):not(.mep-figma-overview):not(.mep-figma-ai-bim-workflow) {
     padding-top: var(--vbs-mep-section-pad-y) !important;
     padding-bottom: var(--vbs-mep-section-pad-y) !important;
+  }
+
+  /* Tighten Overview → What You Get on MEP hub (default overview, not architecture/scan variants) */
+  main > .mep-figma-overview:not(.mep-figma-overview--features-below):not(.mep-figma-overview--scan-to-bim):not(.mep-figma-overview--mep-bim-modeling) {
+    padding-bottom: 72px !important;
+  }
+
+  main > .mep-figma-overview:not(.mep-figma-overview--features-below):not(.mep-figma-overview--scan-to-bim) + .mep-figma-what-you-get {
+    padding-top: 72px !important;
+  }
+
+  @media (max-width: 1023px) {
+    main > .mep-figma-overview:not(.mep-figma-overview--features-below):not(.mep-figma-overview--scan-to-bim):not(.mep-figma-overview--mep-bim-modeling) {
+      padding-bottom: 48px !important;
+    }
+
+    main > .mep-figma-overview:not(.mep-figma-overview--features-below):not(.mep-figma-overview--scan-to-bim) + .mep-figma-what-you-get {
+      padding-top: 48px !important;
+    }
   }
 
   main>.vbs-mep-stats-strip {
@@ -4084,8 +4139,8 @@
     }
   }
 
-  /* ── Responsive — tablet & mobile (all MEP hub sections) ── */
-  @media (max-width: 1279px) {
+  /* Resources: stack only on tablet/mobile — keep side-by-side on smaller laptops */
+  @media (max-width: 1023px) {
     .mep-figma-resources__content {
       flex-direction: column !important;
       gap: 24px !important;
@@ -4095,18 +4150,87 @@
       width: 100% !important;
       max-width: 100% !important;
     }
+  }
 
-    .mep-figma-disciplines__panel {
-      flex-direction: column !important;
-      align-items: stretch !important;
+  /* Smaller laptops: keep featured (left) visible beside the list */
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    .mep-figma-resources__content {
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: flex-start !important;
       gap: 20px !important;
     }
 
-    .mep-figma-disciplines__body,
+    .mep-figma-resources__featured {
+      display: flex !important;
+      flex: 1 1 0 !important;
+      width: auto !important;
+      min-width: 0 !important;
+      max-width: min(650px, 48%) !important;
+    }
+
+    .mep-figma-resources__list {
+      flex: 0 1 50% !important;
+      width: auto !important;
+      max-width: 50% !important;
+      min-width: 0 !important;
+      flex-shrink: 1 !important;
+    }
+
+    .mep-figma-resources__featured-media {
+      height: 380px !important;
+    }
+
+    .mep-figma-resources__compact-media {
+      flex: 0 0 240px !important;
+      width: 240px !important;
+      min-width: 200px !important;
+      max-width: 240px !important;
+      min-height: 168px !important;
+      height: 168px !important;
+      max-height: 168px !important;
+    }
+
+    .mep-figma-resources__compact-body {
+      height: 168px !important;
+      min-height: 168px !important;
+      max-height: 168px !important;
+    }
+
+    .mep-figma-resources__compact-row {
+      height: 168px !important;
+      min-height: 168px !important;
+      max-height: 168px !important;
+    }
+  }
+
+  /* Keep Core Points body + deliverables side-by-side on laptops; stack only ≤1023 */
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    .mep-figma-disciplines__panel {
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: flex-start !important;
+      gap: 16px !important;
+    }
+
+    .mep-figma-disciplines__body {
+      flex: 1 1 0 !important;
+      width: auto !important;
+      max-width: none !important;
+      min-width: 0 !important;
+    }
+
     .mep-figma-disciplines__deliverables {
-      flex: 1 1 auto !important;
-      max-width: 100% !important;
-      width: 100% !important;
+      flex: 0 1 auto !important;
+      width: fit-content !important;
+      max-width: 46% !important;
+      min-width: 0 !important;
+      height: fit-content !important;
+      min-height: 0 !important;
+      align-self: flex-start !important;
+      justify-content: flex-start !important;
+      padding: 16px 18px !important;
+      gap: 14px !important;
     }
   }
 
@@ -4195,8 +4319,9 @@
     }
 
     .mep-figma-resources__compact-row {
-      height: 178px !important;
-      min-height: 178px !important;
+      height: 168px !important;
+      min-height: 168px !important;
+      max-height: 168px !important;
     }
 
     .mep-figma-resources__compact-media {
@@ -4204,8 +4329,16 @@
       width: min(300px, 40%) !important;
       min-width: 110px !important;
       max-width: 300px !important;
-      min-height: 178px !important;
-      height: 178px !important;
+      min-height: 168px !important;
+      height: 168px !important;
+      max-height: 168px !important;
+    }
+
+    .mep-figma-resources__compact-body {
+      height: 168px !important;
+      min-height: 168px !important;
+      max-height: 168px !important;
+      justify-content: space-between !important;
     }
 
     .mep-figma-overview__layout {
@@ -4274,7 +4407,9 @@
     }
 
     .mep-figma-overview__chip {
-      width: 100% !important;
+      width: fit-content !important;
+      max-width: 100% !important;
+      flex: 0 0 auto !important;
     }
 
     .mep-figma-resources__compact-row {
@@ -4310,8 +4445,9 @@
 
   @media (min-width: 768px) and (max-width: 1023px) {
     .mep-figma-resources__compact-row {
-      height: 178px !important;
-      min-height: 178px !important;
+      height: 168px !important;
+      min-height: 168px !important;
+      max-height: 168px !important;
     }
 
     .mep-figma-resources__compact-media {
@@ -4319,8 +4455,16 @@
       width: 200px !important;
       min-width: 200px !important;
       max-width: 200px !important;
-      min-height: 178px !important;
-      height: 178px !important;
+      min-height: 168px !important;
+      height: 168px !important;
+      max-height: 168px !important;
+    }
+
+    .mep-figma-resources__compact-body {
+      height: 168px !important;
+      min-height: 168px !important;
+      max-height: 168px !important;
+      justify-content: space-between !important;
     }
   }
 
@@ -4394,7 +4538,7 @@
 
 /* ── Architecture services hero — larger cover image + home-matching type ── */
 .architecture-services-page {
-  /* Match home page heading scale */
+  /* Match home page heading scale on large desktops */
   h1 {
     font-size: 54px !important;
     line-height: 1.15 !important;
@@ -4416,6 +4560,16 @@
     h1,
     h1 span {
       font-size: 54px !important;
+      line-height: 1.15 !important;
+    }
+  }
+
+  /* Mid laptops (~1200px): keep title readable without colliding with image */
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    h1,
+    .mep-page-hero--overlay h1,
+    .mep-page-hero--overlay h1 span {
+      font-size: 42px !important;
       line-height: 1.15 !important;
     }
   }
@@ -4447,8 +4601,8 @@
   }
 
   main > .vbs-mep-stats-strip {
-    padding-top: 60px !important;
-    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+    padding-bottom: 24px !important;
 
     @media (max-width: 767px) {
       margin-top: 8px !important;
@@ -4527,7 +4681,35 @@
 
       .mep-page-hero__copy-wrap {
         padding-top: 100px !important;
-        padding-bottom: 100px !important;
+        padding-bottom: 40px !important;
+      }
+    }
+
+    /* Mid laptops (~1200–1250px): balanced copy + image, no collision or large gap */
+    @media (min-width: 1024px) and (max-width: 1366px) {
+      min-height: calc(min(56vw, 740px) * 607 / 1024) !important;
+
+      .mep-page-hero__media {
+        width: min(56%, 740px) !important;
+        max-width: 740px !important;
+      }
+
+      .mep-page-hero__copy-wrap {
+        padding-top: 72px !important;
+        padding-bottom: 32px !important;
+
+        > div {
+          max-width: min(560px, 48%) !important;
+        }
+
+        h1,
+        p {
+          max-width: min(560px, 100%) !important;
+        }
+      }
+
+      .mep-page-hero__media > div[aria-hidden] {
+        width: min(48%, 240px) !important;
       }
     }
   }
@@ -4563,10 +4745,12 @@
     }
 
     .mep-figma-overview__chip {
-      flex: 1 1 0 !important;
+      flex: 0 0 auto !important;
+      width: fit-content !important;
+      max-width: 100% !important;
       min-height: 0 !important;
-      padding: 14px 12px !important;
-      gap: 8px !important;
+      padding: 10px 14px !important;
+      gap: 10px !important;
 
       > span:first-child {
         width: 28px !important;
@@ -4579,7 +4763,7 @@
       }
 
       > span:last-child {
-        font-size: 14px !important;
+        font-size: 15px !important;
         line-height: 20px !important;
       }
     }
@@ -4694,13 +4878,65 @@
     }
 
     .mep-figma-disciplines__deliverables {
-      width: 604px;
+      width: fit-content;
       max-width: min(604px, 100%);
-      flex: 0 0 auto;
+      flex: 0 1 auto;
+      height: fit-content;
+      min-height: 0;
+      align-self: flex-start;
+      justify-content: flex-start;
+      padding: 16px 20px;
+      gap: 16px;
     }
 
     .mep-figma-disciplines__deliverable-text {
       text-transform: none !important;
+    }
+
+    /* Smaller laptops: keep deliverables on the right, not below */
+    @media (min-width: 1024px) and (max-width: 1366px) {
+      .mep-figma-disciplines__panel {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: flex-start !important;
+      }
+
+      .mep-figma-disciplines__body {
+        flex: 1 1 0 !important;
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+      }
+
+      .mep-figma-disciplines__panel-title {
+        font-size: 30px !important;
+      }
+
+      .mep-figma-disciplines__meta-label {
+        font-size: 20px !important;
+      }
+
+      .mep-figma-disciplines__deliverables {
+        flex: 0 1 auto !important;
+        width: fit-content !important;
+        max-width: 46% !important;
+        min-width: 0 !important;
+        height: fit-content !important;
+        min-height: 0 !important;
+        align-self: flex-start !important;
+        justify-content: flex-start !important;
+        padding: 16px 18px !important;
+        gap: 14px !important;
+      }
+
+      .mep-figma-disciplines__deliverables-title {
+        font-size: 20px !important;
+      }
+
+      .mep-figma-disciplines__deliverable-text {
+        font-size: 14px !important;
+        line-height: 20px !important;
+      }
     }
 
     @media (max-width: 1023px) {
@@ -5032,7 +5268,7 @@
   }
 
   main > .mep-figma-overview--scan-to-bim + .mep-figma-what-you-get {
-    padding-top: 48px !important;
+    padding-top: 30px !important;
   }
 
   .mep-page-hero--overlay {
@@ -5047,7 +5283,7 @@
   }
 
   .mep-figma-overview--scan-to-bim {
-    padding-bottom: 48px !important;
+    padding-bottom: 36px !important;
 
     .mep-figma-overview__layout {
       gap: 24px !important;
@@ -5136,11 +5372,11 @@
     }
 
     .mep-figma-overview--scan-to-bim {
-      padding-bottom: 32px !important;
+      padding-bottom: 28px !important;
     }
 
     main > .mep-figma-overview--scan-to-bim + .mep-figma-what-you-get {
-      padding-top: 32px !important;
+      padding-top: 28px !important;
     }
   }
 

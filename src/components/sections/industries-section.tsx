@@ -11,7 +11,11 @@ import {
 type IndustriesSectionProps = {
   intro?: string;
   titleLine1?: string;
+  /** Optional black text after a forced line break, before the accent (e.g. "Our "). */
+  titleBeforeAccent?: string;
   titleLine2?: string;
+  /** Force a line break after titleLine1 (Figma Industries title layout). */
+  breakTitle?: boolean;
   titleMaxWidth?: number;
   marqueeTrack?: typeof industriesMarqueeTrack;
   className?: string;
@@ -21,7 +25,9 @@ type IndustriesSectionProps = {
 export function IndustriesSection({
   intro = industriesSectionIntro,
   titleLine1 = "Industries ",
+  titleBeforeAccent,
   titleLine2 = "We Serve",
+  breakTitle = false,
   titleMaxWidth,
   marqueeTrack = industriesMarqueeTrack,
   className,
@@ -37,6 +43,10 @@ export function IndustriesSection({
               style={titleMaxWidth ? { maxWidth: `${titleMaxWidth}px` } : undefined}
             >
               <span className="font-medium text-[#111111]">{titleLine1}</span>
+              {breakTitle ? <br /> : null}
+              {titleBeforeAccent ? (
+                <span className="font-medium text-[#111111]">{titleBeforeAccent}</span>
+              ) : null}
               <span className="font-light text-accent">{titleLine2}</span>
             </h2>
           </div>

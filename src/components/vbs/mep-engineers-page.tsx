@@ -85,8 +85,10 @@ export async function MepEngineersPage() {
         <IndustriesSection
           intro={mepIndustriesSection.description}
           titleLine1={mepIndustriesSection.titleLine1}
+          titleBeforeAccent={mepIndustriesSection.titleBeforeAccent}
           titleLine2={mepIndustriesSection.titleLine2}
-          titleMaxWidth={933}
+          breakTitle={mepIndustriesSection.breakTitle}
+          titleMaxWidth={mepIndustriesSection.titleMaxWidth}
         />
         <MepEngagementProcessSection
           section={mepEngagementProcessSection}

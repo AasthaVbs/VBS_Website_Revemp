@@ -385,6 +385,10 @@ html:has(.vbs-redesign-page.build-your-team-page)::-webkit-scrollbar {
 
 .vbs-redesign-page .mep-figma-disciplines__deliverables {
   max-width: min(690px, 48%);
+  width: fit-content;
+  height: fit-content;
+  min-height: 0;
+  align-self: flex-start;
 }
 
 @media (max-width: 1023px) {

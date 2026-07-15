@@ -25,8 +25,10 @@ function normalizeCatalogHref(href: string) {
     return href || "/";
   }
   const [path, hash = ""] = href.split("#");
-  const portfolioPath = path.replace(/^\/projects\//, "/portfolio/");
-  const withSlash = portfolioPath.endsWith("/") ? portfolioPath : portfolioPath;
+  const projectsPath = path
+    .replace(/^\/portfolio(\/|$)/, "/projects$1")
+    .replace(/^\/case-study(\/|$)/, "/projects$1");
+  const withSlash = projectsPath;
   return hash ? `${withSlash}#${hash}` : withSlash;
 }
 

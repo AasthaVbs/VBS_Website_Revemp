@@ -1,9 +1,9 @@
 export const portfolioPageHero = {
-  tag: "Portfolio",
-  titleLead: "Portfolio ",
-  titleAccent: "Virtual Building Studio",
+  tag: "Case Study",
+  titleLead: "Real Projects. ",
+  titleAccent: "Measurable Results.",
   description:
-    "Since 2015, we've been the trusted partner for Architecture and Engineering firms, helping them rapidly scale their BIM teams and deliver award-winning projects every time.",
+    "Discover how our expertise has helped clients improve accuracy, accelerate delivery, and optimize project outcomes across diverse building projects.",
   ctaLabel: "Contact Us",
   imageAlt: "Team reviewing architectural case study model",
 } as const;
@@ -15,7 +15,7 @@ export const portfolioProjectsIntro = {
   description:
     "Explore coordinated BIM, MEP, and visualization work delivered for architecture and engineering firms across the United States.",
   ctaLabel: "Contact Us",
-  seeAllProjectsHref: "/portfolio/all-projects",
+  seeAllProjectsHref: "/projects/all-projects",
   mapImage: "/image/meet-our-company.png",
   mapAlt: "United States project coverage",
 } as const;
@@ -52,7 +52,7 @@ export const portfolioProjectItems: PortfolioProjectItem[] = [
     projectType: "MEP BIM",
     location: "Austin, TX",
     projectSize: "Education",
-    href: "/portfolio/hvac-bim-coordination-for-school-building-austin/",
+    href: "/projects/hvac-bim-coordination-for-school-building-austin/",
   },
   {
     id: "mepf-industrial-florida",
@@ -63,7 +63,7 @@ export const portfolioProjectItems: PortfolioProjectItem[] = [
     projectType: "MEP BIM",
     location: "Florida, USA",
     projectSize: "Commercial",
-    href: "/portfolio/mepf-bim-coordination-for-industrial-office-building/",
+    href: "/projects/mepf-bim-coordination-for-industrial-office-building/",
   },
   {
     id: "affordable-housing-revere",
@@ -74,7 +74,7 @@ export const portfolioProjectItems: PortfolioProjectItem[] = [
     projectType: "MEP BIM",
     location: "Revere, MA",
     projectSize: "Residential",
-    href: "/portfolio/mepf-coordination-for-affordable-housing/",
+    href: "/projects/mepf-coordination-for-affordable-housing/",
   },
   {
     id: "beachside-resort-hawaii",
@@ -85,7 +85,7 @@ export const portfolioProjectItems: PortfolioProjectItem[] = [
     projectType: "BIM Coordination",
     location: "Hawaii, USA",
     projectSize: "Hospitality",
-    href: "/portfolio/bim-coordination-for-beachside-resort-hawaii/",
+    href: "/projects/bim-coordination-for-beachside-resort-hawaii/",
   },
   {
     id: "site-utility-caldwell",
@@ -96,7 +96,7 @@ export const portfolioProjectItems: PortfolioProjectItem[] = [
     projectType: "MEP BIM",
     location: "Caldwell, ID",
     projectSize: "Residential",
-    href: "/portfolio/site-utility-modeilng-for-large-scale-residential-building-caldwell/",
+    href: "/projects/site-utility-modeilng-for-large-scale-residential-building-caldwell/",
   },
   {
     id: "data-center-malaysia",
@@ -107,7 +107,7 @@ export const portfolioProjectItems: PortfolioProjectItem[] = [
     projectType: "MEP BIM",
     location: "Malaysia",
     projectSize: "Data Center",
-    href: "/portfolio/data-center-bim-mep-coordination-malaysia/",
+    href: "/projects/data-center-bim-mep-coordination-malaysia/",
   },
   {
     id: "las-vegas-multifamily",
@@ -118,7 +118,7 @@ export const portfolioProjectItems: PortfolioProjectItem[] = [
     projectType: "Architecture",
     location: "Las Vegas, NV",
     projectSize: "Residential",
-    href: "/portfolio/multi-family-apartment-bim-visualization-las-vegas/",
+    href: "/projects/multi-family-apartment-bim-visualization-las-vegas/",
   },
   {
     id: "dubai-villa-viz",
@@ -129,6 +129,6 @@ export const portfolioProjectItems: PortfolioProjectItem[] = [
     projectType: "Visualization",
     location: "Dubai",
     projectSize: "Residential",
-    href: "/portfolio/architectural-visualization-residential-villa-dubai/",
+    href: "/projects/architectural-visualization-residential-villa-dubai/",
   },
 ];

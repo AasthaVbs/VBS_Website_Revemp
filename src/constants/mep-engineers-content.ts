@@ -50,8 +50,26 @@ export const mepIntroCopy = {
   tag: "Overview",
   titleLead: "Construction-Ready MEP BIM Services for ",
   titleAccent: "Seamless Project Execution",
+  titleParts: [
+    {
+      text: "Construction-Ready MEP BIM Services ",
+      className: "text-section font-medium text-[#111111]",
+    },
+    {
+      text: "f",
+      className: "text-section font-medium lowercase text-[#111111]",
+    },
+    {
+      text: "or ",
+      className: "text-section font-medium text-[#111111]",
+    },
+    {
+      text: "Seamless Project Execution",
+      className: "text-section text-accent font-light",
+    },
+  ],
   description:
-    "We are MEP BIM service providers in the USA supporting AEC firms and contractors across the project lifecycle. We handle everything from pre-bid estimation to clash-free coordination and drawings to support efficient project execution. Our specialists create code-compliant models in Revit and Navisworks for as-built deliverables with accuracy.",
+    "We are a USA-focused MEP BIM service provider supporting AEC firms and contractors across the project lifecycle. From MEP BIM modeling and pre-bid estimation to clash-free coordination, shop drawings, and as-built documentation, we deliver accurate, code-compliant Revit and Navisworks models that keep projects moving efficiently.",
   mainImage: mepBimServicesForProject,
 };
 
@@ -626,10 +644,10 @@ export const mepFaqSchema = {
 
 export const mepResourcesSection = {
   tag: "Resources",
-  titleLine1: "Latest Insights on ",
-  titleLine2: "Production, Governance, and Scale",
+  titleLine1: "Explore Our MEP BIM ",
+  titleLine2: "Insights & Resources",
   description:
-    "Explore technical thought leadership and actionable strategies designed to optimize your production workflows and scale without compromising standards.",
+    "Browse our latest guides, case studies, and articles on MEP BIM workflows, coordination strategies, and US code compliance to help you plan and deliver smarter projects.",
   viewAllHref: "/bim-resources/",
   serviceFilter: "MEP Engineering Firms",
 };
@@ -679,7 +697,7 @@ export const mepResourcesListItems = [
     date: "12 Jan 2026",
     image: "/images/figma/resource-2.png",
     imageCrop: { width: 345, height: 219, left: 0, top: 0 },
-    href: "/case-study/",
+    href: "/projects/",
   },
   {
     type: "White Paper",
@@ -693,8 +711,10 @@ export const mepResourcesListItems = [
 
 export const mepIndustriesSection = {
   tag: "Industries",
-  titleLine1: "Industries We Support with Our ",
+  titleLine1: "Industries We Support With",
+  titleBeforeAccent: "Our ",
   titleLine2: "MEP BIM Expertise",
+  breakTitle: true,
   titleMaxWidth: 850,
   description:
     "Delivering precision-driven MEP BIM solutions tailored to the unique requirements of every construction sector.",

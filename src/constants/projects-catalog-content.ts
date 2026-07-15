@@ -5,7 +5,7 @@ function projectIdFromHref(href: string) {
 }
 
 function toPortfolioHref(href: string) {
-  return href.replace(/^\/projects\//, "/portfolio/");
+  return href.replace(/^\/(?:projects|portfolio)\//, "/projects/");
 }
 
 export { toPortfolioHref };
@@ -35,74 +35,11 @@ function projectListingItem(
 
 export const allPortfolioProjects = [
   {
-    title: "From Redlines to Renders: Multi-Family Apartment, Las Vegas",
-    href: "/projects/multi-family-apartment-bim-visualization-las-vegas/",
-    image: "/image/Architectural 3D Visualization_Banner.jpg",
-    category: "Architecture",
-    location: "Las Vegas, NV",
-  },
-  {
-    title: "High-Fidelity Architectural Visualization: Residential Villa, Dubai",
-    href: "/projects/architectural-visualization-residential-villa-dubai/",
-    image: "/image/3D Visualization Banner.jpg",
-    category: "Architecture",
-    location: "Dubai",
-  },
-  {
-    title: "Multi-Discipline BIM Modeling from Scratch: Public Safety Facility, Atlanta, GA",
-    href: "/projects/multi-discipline-bim-modeling-for-public-sector-atlanta/",
-    image: "/image/police3D Visualization Banner.jpg",
-    category: "Architecture",
-    location: "Atlanta, GA",
-  },
-  {
-    title: "End-to-End Construction Documentation: Commercial Project, California",
-    href: "/projects/construction-documentation-commercial-building-california/",
-    image: "/image/3D Visualizaton_-Banner.jpg",
-    category: "Architecture",
-    location: "California",
-  },
-  {
-    title: "HVAC BIM Coordination for School Building, Austin, TX",
-    href: "/projects/hvac-bim-coordination-for-school-building-austin/",
-    image: "/image/HVAC-Coordination (1).png",
+    title: "BIM Coordination for a Large-Scale Mission-Critical Data Center in Malaysia",
+    href: "/projects/data-center-bim-mep-coordination-malaysia/",
+    image: "/image/data-center-bim-mep-coordination-malaysia.png",
     category: "MEP",
-    location: "Austin, TX",
-  },
-  {
-    title: "MEPF BIM Coordination for Industrial Office Building, Florida, USA",
-    href: "/projects/mepf-bim-coordination-for-industrial-office-building/",
-    image: "/image/MEPF-BIM-Coordination-for-Industrial-Office-Building-Florida,-USA.png",
-    category: "MEP",
-    location: "Florida, USA",
-  },
-  {
-    title: "Clash-Free MEPF Coordination for 56-Unit Residential Development: Revere, MA",
-    href: "/projects/mepf-coordination-for-affordable-housing/",
-    image: "/image/Clash-Free-MEPF-Coordination-for-56-Unit-Residential-Development.png",
-    category: "MEP",
-    location: "Revere, MA",
-  },
-  {
-    title: "Clash-Free BIM Modeling for Plant Room Refurbishment Project, UK",
-    href: "/projects/clash-free-bim-modeling-for-mechanical-plant-rom/",
-    image: "/image/Clash-Free-BIM-Modeling-for-Plant-Room-Refurbishment-Project.png",
-    category: "MEP",
-    location: "UK",
-  },
-  {
-    title: "Coordinated Plumbing BIM Modeling for Sports Club Facility | Iowa, USA",
-    href: "/projects/coordination-plumbing-bim-modeling-for-sport-club-facility-usa/",
-    image: "/image/Coordinated-Plumbing-BIM-Modeling-for-Sports-Club-Facility.png",
-    category: "MEP",
-    location: "Iowa, USA",
-  },
-  {
-    title: "Clash-Free BIM Coordination for Beachside Resort | Hawaii, USA",
-    href: "/projects/bim-coordination-for-beachside-resort-hawaii/",
-    image: "/image/Clash-Free-BIM-Coordination-for-Multi-Building-Beachside-Resort.png",
-    category: "MEP",
-    location: "Hawaii, USA",
+    location: "Malaysia",
   },
   {
     title: "High-Precision Site Utility Modeling for Large-Scale Residential Project | Caldwell, ID",
@@ -112,11 +49,74 @@ export const allPortfolioProjects = [
     location: "Caldwell, ID",
   },
   {
-    title: "BIM Coordination for a Large-Scale Mission-Critical Data Center in Malaysia",
-    href: "/projects/data-center-bim-mep-coordination-malaysia/",
-    image: "/image/data-center-bim-mep-coordination-malaysia.png",
+    title: "Clash-Free BIM Coordination for Beachside Resort | Hawaii, USA",
+    href: "/projects/bim-coordination-for-beachside-resort-hawaii/",
+    image: "/image/Clash-Free-BIM-Coordination-for-Multi-Building-Beachside-Resort.png",
     category: "MEP",
-    location: "Malaysia",
+    location: "Hawaii, USA",
+  },
+  {
+    title: "Coordinated Plumbing BIM Modeling for Sports Club Facility | Iowa, USA",
+    href: "/projects/coordination-plumbing-bim-modeling-for-sport-club-facility-usa/",
+    image: "/image/Coordinated-Plumbing-BIM-Modeling-for-Sports-Club-Facility.png",
+    category: "MEP",
+    location: "Iowa, USA",
+  },
+  {
+    title: "Clash-Free BIM Modeling for Plant Room Refurbishment Project, UK",
+    href: "/projects/clash-free-bim-modeling-for-mechanical-plant-rom/",
+    image: "/image/Clash-Free-BIM-Modeling-for-Plant-Room-Refurbishment-Project.png",
+    category: "MEP",
+    location: "UK",
+  },
+  {
+    title: "Clash-Free MEPF Coordination for 56-Unit Residential Development: Revere, MA",
+    href: "/projects/mepf-coordination-for-affordable-housing/",
+    image: "/image/Clash-Free-MEPF-Coordination-for-56-Unit-Residential-Development.png",
+    category: "MEP",
+    location: "Revere, MA",
+  },
+  {
+    title: "MEPF BIM Coordination for Industrial Office Building, Florida, USA",
+    href: "/projects/mepf-bim-coordination-for-industrial-office-building/",
+    image: "/image/MEPF-BIM-Coordination-for-Industrial-Office-Building-Florida,-USA.png",
+    category: "MEP",
+    location: "Florida, USA",
+  },
+  {
+    title: "HVAC BIM Coordination for School Building, Austin, TX",
+    href: "/projects/hvac-bim-coordination-for-school-building-austin/",
+    image: "/image/HVAC-Coordination (1).png",
+    category: "MEP",
+    location: "Austin, TX",
+  },
+  {
+    title: "End-to-End Construction Documentation: Commercial Project, California",
+    href: "/projects/construction-documentation-commercial-building-california/",
+    image: "/image/3D Visualizaton_-Banner.jpg",
+    category: "Architecture",
+    location: "California",
+  },
+  {
+    title: "Multi-Discipline BIM Modeling from Scratch: Public Safety Facility, Atlanta, GA",
+    href: "/projects/multi-discipline-bim-modeling-for-public-sector-atlanta/",
+    image: "/image/police3D Visualization Banner.jpg",
+    category: "Architecture",
+    location: "Atlanta, GA",
+  },
+  {
+    title: "High-Fidelity Architectural Visualization: Residential Villa, Dubai",
+    href: "/projects/architectural-visualization-residential-villa-dubai/",
+    image: "/image/3D Visualization Banner.jpg",
+    category: "Architecture",
+    location: "Dubai",
+  },
+  {
+    title: "From Redlines to Renders: Multi-Family Apartment, Las Vegas",
+    href: "/projects/multi-family-apartment-bim-visualization-las-vegas/",
+    image: "/image/Architectural 3D Visualization_Banner.jpg",
+    category: "Architecture",
+    location: "Las Vegas, NV",
   },
   {
     title: "LOD 400 ACS & MEPF Modeling with Clash Detection & Coordination",
@@ -171,7 +171,7 @@ export const allPortfolioProjects = [
   },
   {
     title: "LOD 500 As-Built Modeling",
-    href: "/projects/3d-bim-model-clash-detection-and-coordination-for-government-building/",
+    href: "/projects/bim-3d-model-clash-detection-and-coordination-for-government-building/",
     image: "/image/feature-img-project-9.jpg",
     category: "Architecture",
   },

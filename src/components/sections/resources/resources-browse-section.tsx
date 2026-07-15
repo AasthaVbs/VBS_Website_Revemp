@@ -38,7 +38,12 @@ import {
 } from "@/lib/resource-listing";
 import { cn } from "@/lib/utils";
 
-export type ResourcesBrowseVariant = "resources" | "blogs" | "webinars" | "whitepapers";
+export type ResourcesBrowseVariant =
+  | "resources"
+  | "blogs"
+  | "webinars"
+  | "whitepapers"
+  | "case-studies";
 
 const ITEMS_PER_PAGE = 8;
 
@@ -96,13 +101,22 @@ function FilterOption({
   );
 }
 
-function ResourceCard({ item }: { item: CatalogItem }) {
+function ResourceCard({
+  item,
+  hideBadge = false,
+  hideMeta = false,
+}: {
+  item: CatalogItem;
+  hideBadge?: boolean;
+  hideMeta?: boolean;
+}) {
   const metaPrimary =
     item.publishedAt ||
     ("location" in item ? item.location : null) ||
     ("delivery" in item ? item.delivery : null) ||
     null;
   const metaSecondary = item.category || item.badgeLabel || item.type || null;
+  const showMeta = !hideMeta && Boolean(metaPrimary || metaSecondary);
 
   return (
     <Link
@@ -115,13 +129,15 @@ function ResourceCard({ item }: { item: CatalogItem }) {
           src={item.image}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <span className="absolute bottom-3 right-3 rounded-[10px]  bg-[#D70416] px-3.5 py-1 text-[13px] text-white">
-          {item.badgeLabel || item.type || "Resource"}
-        </span>
+        {!hideBadge ? (
+          <span className="absolute bottom-3 right-3 rounded-[10px] bg-[#D70416] px-3.5 py-1 text-[13px] text-white">
+            {item.badgeLabel || item.type || "Resource"}
+          </span>
+        ) : null}
       </div>
       <div className="flex w-full flex-col gap-[15px] px-2.5 pb-2.5">
         <div className="flex flex-col gap-[19px]">
-          {metaPrimary || metaSecondary ? (
+          {showMeta ? (
             <div className="flex flex-wrap items-center justify-between gap-2 text-[14px] text-[#808080]">
               <span>{metaPrimary || ""}</span>
               {metaSecondary ? <span>{metaSecondary}</span> : null}
@@ -202,7 +218,13 @@ export function ResourcesBrowseSection({
   const isBlogsPage = variant === "blogs";
   const isWebinarsPage = variant === "webinars";
   const isWhitepapersPage = variant === "whitepapers";
-  const hasPageHero = isBlogsPage || isWebinarsPage || isWhitepapersPage || variant === "resources";
+  const isCaseStudiesPage = variant === "case-studies";
+  const hasPageHero =
+    isBlogsPage ||
+    isWebinarsPage ||
+    isWhitepapersPage ||
+    isCaseStudiesPage ||
+    variant === "resources";
 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedType, setSelectedType] = useState<string>(resourceAllTypesLabel);
@@ -252,6 +274,8 @@ export function ResourcesBrowseSection({
       baseItems = resourceCatalog.byType.Blog;
     } else if (isWhitepapersPage) {
       baseItems = resourceCatalog.byType.Whitepapers;
+    } else if (isCaseStudiesPage) {
+      baseItems = resourceCatalog.byType["Case Studies"];
     } else if (selectedType === resourceAllTypesLabel) {
       baseItems = resourceCatalog.allItems;
     } else {
@@ -296,6 +320,7 @@ export function ResourcesBrowseSection({
     isBlogsPage,
     isWebinarsPage,
     isWhitepapersPage,
+    isCaseStudiesPage,
     searchQuery,
     selectedType,
     selectedSort,
@@ -371,7 +396,7 @@ export function ResourcesBrowseSection({
                     />
                   ))}
                 </FilterGroup>
-              ) : !isBlogsPage && !isWhitepapersPage ? (
+              ) : !isBlogsPage && !isWhitepapersPage && !isCaseStudiesPage ? (
                 <FilterGroup title="Type of Resources">
                   {resourceTypeFilterOptions.map((type) => (
                     <FilterOption
@@ -398,7 +423,7 @@ export function ResourcesBrowseSection({
                 ))}
               </FilterGroup>
 
-              {isBlogsPage || !isWebinarsPage ? (
+              {isBlogsPage || isCaseStudiesPage || !isWebinarsPage ? (
                 <FilterGroup title="Service">
                   {resourceServiceFilterOptions.map((service) => (
                     <FilterOption
@@ -421,7 +446,12 @@ export function ResourcesBrowseSection({
               cardRows.map((row, rowIndex) => (
                 <div key={rowIndex} className="grid grid-cols-1 gap-5 min-[800px]:grid-cols-2">
                   {row.map((item) => (
-                    <ResourceCard key={`${item.type}-${item.id}`} item={item} />
+                    <ResourceCard
+                      key={`${item.type}-${item.id}`}
+                      item={item}
+                      hideBadge={isCaseStudiesPage}
+                      hideMeta={isCaseStudiesPage}
+                    />
                   ))}
                 </div>
               ))
@@ -441,6 +471,10 @@ export function ResourcesBrowseSection({
                         ? resourceCatalog.byType.Whitepapers.length === 0
                           ? "No white papers are available yet. Check back soon."
                           : "No white papers match your filters. Try another search term."
+                        : isCaseStudiesPage
+                          ? resourceCatalog.byType["Case Studies"].length === 0
+                            ? "No case studies are available yet. Check back soon."
+                            : "No case studies match your filters. Try another service or search term."
                         : `No ${selectedType === resourceAllTypesLabel ? "resources" : selectedType.toLowerCase()} match your filters. Try another type or search term.`}
               </p>
             )}
@@ -457,7 +491,9 @@ export function ResourcesBrowseSection({
                   ? "Blogs pagination"
                   : isWhitepapersPage
                     ? "White papers pagination"
-                    : "Resources pagination"
+                    : isCaseStudiesPage
+                      ? "Case studies pagination"
+                      : "Resources pagination"
             }
           >
             <div className="flex shrink-0 items-center gap-1.5 sm:gap-5">

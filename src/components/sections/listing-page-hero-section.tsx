@@ -17,6 +17,7 @@ type ListingHeroProps = {
   titleMaxWidthClass?: string;
   descriptionMaxWidthClass?: string;
   sectionClassName?: string;
+  ctaClassName?: string;
 };
 
 /**
@@ -34,6 +35,7 @@ export function ListingPageHeroSection({
   titleMaxWidthClass = "max-w-[597px]",
   descriptionMaxWidthClass = "max-w-[583px]",
   sectionClassName,
+  ctaClassName,
 }: ListingHeroProps) {
   return (
     <section
@@ -70,7 +72,10 @@ export function ListingPageHeroSection({
             <PrimaryCtaButton
               fullWidth={false}
               href="/contact-us"
-              className="vbs-listing-hero__cta shrink-0 px-5 py-4 capitalize"
+              className={cn(
+                "vbs-listing-hero__cta shrink-0 px-5 py-4 capitalize",
+                ctaClassName,
+              )}
             >
               {ctaLabel}
             </PrimaryCtaButton>

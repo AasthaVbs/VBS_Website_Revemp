@@ -25,7 +25,7 @@ export function CareersDetailedHeroSection() {
               {backLabel}
             </Link>
 
-            <h1 className="text-[34px] font-medium capitalize leading-tight text-[#111111] lg:text-[48px]">
+            <h1 className="text-[34px] font-medium leading-tight text-[#111111] lg:text-[48px]">
               {title}
             </h1>
 
@@ -89,7 +89,7 @@ export function CareersDetailedHeroSection() {
           ))}
 
           <article className="flex w-full flex-col items-start gap-2.5">
-            <h2 className="w-full text-[16px] font-medium capitalize leading-6 text-[#111111]">
+            <h2 className="w-full text-[16px] font-medium leading-6 text-[#111111]">
               How you&apos;ll grow
             </h2>
             <div className="flex w-full flex-col gap-4">
@@ -117,7 +117,7 @@ function DetailBlock({ section, className }: { section: DetailSection; className
 
   return (
     <article className={`flex flex-col items-start gap-2.5 ${className ?? ""}`}>
-      <h2 className="w-full text-[16px] font-medium capitalize leading-6 text-[#111111]">{section.title}</h2>
+      <h2 className="w-full text-[16px] font-medium leading-6 text-[#111111]">{section.title}</h2>
       {paragraphs?.map((paragraph) => (
         <p key={paragraph} className="w-full text-[16px] font-normal leading-6 text-[#808080]">
           {paragraph}

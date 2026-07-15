@@ -22,7 +22,7 @@ export function MepDataCenterWhyChooseSection() {
         <div className="flex w-full flex-col gap-5">
           <div className="flex max-w-[778px] flex-col gap-3">
             <SectionTag label={tag} />
-            <h2 className="text-section max-w-[778px] capitalize">
+            <h2 className="text-section max-w-[778px]">
               <span className="font-light text-[#D70416]">{titleAccent}</span>
               <span className="font-medium text-[#111111]">{titleLead}</span>
             </h2>

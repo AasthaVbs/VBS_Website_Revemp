@@ -40,7 +40,7 @@ export function MepKeyBenefitsSection() {
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={mepKeyBenefitsSection.tag} />
-            <h2 className="mep-section-heading max-w-[659px] capitalize">
+            <h2 className="mep-section-heading max-w-[659px]">
               <span className="font-medium">{mepKeyBenefitsSection.titleLine1} </span>
               <span className="text-accent font-light">{mepKeyBenefitsSection.titleLine2}</span>
             </h2>

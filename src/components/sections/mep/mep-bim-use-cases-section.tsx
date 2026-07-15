@@ -48,7 +48,7 @@ export function MepBimUseCasesSection({
         <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
           <div className="flex max-w-[785px] flex-col items-start gap-3">
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading max-w-[778px] capitalize">
+            <h2 className="mep-section-heading max-w-[778px]">
               <span className="font-medium">{titleLead}</span>
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>

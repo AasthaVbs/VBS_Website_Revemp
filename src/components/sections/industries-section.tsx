@@ -33,7 +33,7 @@ export function IndustriesSection({
           <div className="flex flex-col items-start gap-2 md:gap-3">
             <SectionTag label="Industries" />
             <h2
-              className="text-section capitalize"
+              className="text-section"
               style={titleMaxWidth ? { maxWidth: `${titleMaxWidth}px` } : undefined}
             >
               <span className="font-medium text-[#111111]">{titleLine1}</span>

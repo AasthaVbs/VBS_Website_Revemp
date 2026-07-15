@@ -110,7 +110,7 @@ export function SplitHeroSection({
             <div className="flex flex-col items-start gap-3">
               <div className="flex flex-col items-start gap-3">
                 <SectionTag label={tag} />
-                <h1 className="text-section w-full max-w-full capitalize lg:max-w-[597px]">
+                <h1 className="text-section w-full max-w-full lg:max-w-[597px]">
                   {titleLead}
                   {accentOnNewLine ? (
                     <>

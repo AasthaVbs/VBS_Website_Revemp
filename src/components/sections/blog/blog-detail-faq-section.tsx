@@ -27,7 +27,7 @@ export function BlogDetailFaqSection({ items }: BlogDetailFaqSectionProps) {
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3">
             <SectionTag label="FAQs" />
-            <h2 className="max-w-[528px] text-section capitalize">
+            <h2 className="max-w-[528px] text-section">
               Frequently Asked{" "}
               <span className="font-light text-[#D70416]">Questions</span>
             </h2>

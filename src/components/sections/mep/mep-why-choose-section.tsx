@@ -18,7 +18,7 @@ export function MepWhyChooseSection() {
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={mepWhyChooseSection.tag} />
-            <h2 className="mep-section-heading max-w-[724px] capitalize">
+            <h2 className="mep-section-heading max-w-[724px]">
               <span className="font-medium">{mepWhyChooseSection.titleLine1} </span>
               <span className="text-accent font-light">{mepWhyChooseSection.titleLine2}</span>
             </h2>

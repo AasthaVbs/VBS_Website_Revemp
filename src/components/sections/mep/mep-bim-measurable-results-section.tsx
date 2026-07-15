@@ -64,7 +64,7 @@ export function MepBimMeasurableResultsSection({
         <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading max-w-[657px] capitalize">
+            <h2 className="mep-section-heading max-w-[657px]">
               {titleLead.split("\n").map((line, index, lines) => (
                 <span key={`title-lead-${index}`} className="font-medium">
                   {line}

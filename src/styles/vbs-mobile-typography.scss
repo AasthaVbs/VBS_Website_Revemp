@@ -171,3 +171,21 @@
     text-transform: capitalize !important;
   }
 }
+
+/* Preserve authored casing in section/page titles (e.g. lowercase "and") */
+.vbs-redesign-page h1,
+.vbs-redesign-page h2,
+.vbs-redesign-page h1 *,
+.vbs-redesign-page h2 *,
+.vbs-redesign-page .mep-section-heading,
+.vbs-redesign-page .mep-section-heading *,
+.vbs-redesign-page .mep-figma-overview__title,
+.vbs-redesign-page .mep-figma-overview__title *,
+.vbs-redesign-page .mep-figma-what-you-get__title,
+.vbs-redesign-page .mep-figma-what-you-get__title *,
+.vbs-redesign-page .mep-page-hero h1,
+.vbs-redesign-page .mep-page-hero h1 *,
+.vbs-redesign-page .text-section,
+.vbs-redesign-page .text-accent {
+  text-transform: none !important;
+}

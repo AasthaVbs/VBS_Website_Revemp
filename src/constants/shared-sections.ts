@@ -4,7 +4,7 @@ export type StatItem = {
   label: string;
 };
 
-/** Architecture + Reality Capture service pages — shared resources block */
+/** Architecture service pages — ACS blogs, webinars, white papers, case studies only */
 export const ACS_RESOURCES_SERVICE_FILTER = "Architecture Firms";
 
 export const acsServicePagesResourcesSection = {
@@ -15,6 +15,16 @@ export const acsServicePagesResourcesSection = {
     "Explore technical thought leadership and actionable strategies designed to optimize your production workflows and scale without compromising standards.",
   viewAllHref: "/resources",
   serviceFilter: ACS_RESOURCES_SERVICE_FILTER,
+};
+
+/** Home + Reality Capture / Survey pages — latest across all services */
+export const allServicesResourcesSection = {
+  tag: "Resources",
+  titleLine1: "Latest Insights on ",
+  titleLine2: "Production, Governance, and Scale",
+  description:
+    "Explore technical thought leadership and actionable strategies designed to optimize your production workflows and scale without compromising standards.",
+  viewAllHref: "/resources",
 };
 
 export const defaultStatsStrip: StatItem[] = [

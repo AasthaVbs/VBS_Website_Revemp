@@ -34,7 +34,7 @@ export function MepEngagementProcessSection({
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={tag} />
             <h2
-              className="mep-section-heading capitalize"
+              className="mep-section-heading"
               style={{ maxWidth: section.titleMaxWidth ?? titleMaxWidth }}
             >
               {isInlineTitle ? (

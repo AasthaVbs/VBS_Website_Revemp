@@ -12,7 +12,7 @@ export function MepTechnicalMethodsSection() {
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={mepTechnicalMethods.tag} />
-            <h2 className="mep-section-heading max-w-[834px] capitalize">
+            <h2 className="mep-section-heading max-w-[834px]">
               <span className="block font-medium">{mepTechnicalMethods.titleLine1}</span>
               <span className="text-accent block font-light">{mepTechnicalMethods.titleLine2}</span>
             </h2>

@@ -30,7 +30,7 @@ export function MepDisciplinesSection() {
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label="MEP Disciplines" />
-            <h2 className="mep-section-heading max-w-[759px] capitalize">
+            <h2 className="mep-section-heading max-w-[759px]">
               <span className="font-medium">Core </span>
               <span className="text-accent font-light">MEP Disciplines </span>
               <span className="font-medium">Modeled with BIM Expertise</span>

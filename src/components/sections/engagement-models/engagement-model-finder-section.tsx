@@ -17,7 +17,7 @@ export function EngagementModelFinderSection() {
           <div className="flex shrink-0 flex-col items-start gap-4 sm:gap-5 lg:max-w-[474px]">
             <div className="flex flex-col items-start gap-3">
               <MepSectionTag label={tag} />
-              <h2 className="mep-section-heading capitalize">
+              <h2 className="mep-section-heading">
                 <span className="font-medium">{titleLead}</span>
                 <span className="text-accent font-light">{titleAccent}</span>
               </h2>

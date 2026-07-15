@@ -50,7 +50,7 @@ export function LeadershipTeamSection() {
         <div className="vbs-leadership-team__header">
           <div className="vbs-leadership-team__title-block">
             <SectionTag label={leadershipTeamSectionCopy.tag} />
-            <h2 className="text-section vbs-leadership-team__title capitalize">
+            <h2 className="text-section vbs-leadership-team__title">
               {leadershipTeamSectionCopy.titleLead}
               <span className="text-accent font-light">{leadershipTeamSectionCopy.titleAccent}</span>
             </h2>

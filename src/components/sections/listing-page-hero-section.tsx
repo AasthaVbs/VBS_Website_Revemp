@@ -50,7 +50,7 @@ export function ListingPageHeroSection({
                 <SectionTag label={tag} className="vbs-listing-hero__tag" />
                 <h1
                   className={cn(
-                    "vbs-listing-hero__title text-section w-full capitalize max-lg:max-w-none",
+                    "vbs-listing-hero__title text-section w-full max-lg:max-w-none",
                     titleMaxWidthClass,
                   )}
                 >

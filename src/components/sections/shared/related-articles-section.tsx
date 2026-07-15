@@ -51,7 +51,7 @@ export function RelatedArticlesSection({
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <SectionTag label={tag} />
-            <h2 className="text-section capitalize">
+            <h2 className="text-section">
               <span className="font-medium text-[#111111]">{titleLead}</span>
               <span className="font-light text-[#D70416]">{titleAccent}</span>
             </h2>

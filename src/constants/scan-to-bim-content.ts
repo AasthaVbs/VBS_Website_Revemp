@@ -18,7 +18,7 @@ import reductionInFieldReworkIcon from "@/assets/images/reduction-in-field-rewor
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { mepStatsStrip } from "@/constants/mep-engineers-content";
 import { ROUTES } from "@/constants/navigation";
-import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
+import { allServicesResourcesSection } from "@/constants/shared-sections";
 
 export { mepStatsStrip as scanToBimStatsStrip };
 
@@ -509,7 +509,7 @@ export const scanToBimWhyChooseItems = [
   },
 ];
 
-export const scanToBimResourcesSection = acsServicePagesResourcesSection;
+export const scanToBimResourcesSection = allServicesResourcesSection;
 
 export const scanToBimIndustriesIntro = {
   titleLine1: "Industries We Serve, Delivering ",

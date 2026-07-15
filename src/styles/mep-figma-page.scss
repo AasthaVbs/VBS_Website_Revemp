@@ -34,7 +34,7 @@
   h1 .text-display,
   h1 .text-display-accent {
     display: inline;
-    text-transform: capitalize;
+    text-transform: none;
   }
 
   @media (max-width: 1024px) {
@@ -69,13 +69,13 @@
     display: inline;
     font-size: 48px;
     line-height: 1.15;
-    text-transform: capitalize;
+    text-transform: none;
   }
 
   h2 .text-accent {
     font-size: 48px;
     line-height: 1.15;
-    text-transform: capitalize;
+    text-transform: none;
   }
 
   .mep-figma-overview__frame {
@@ -2858,7 +2858,7 @@
     display: inline;
     font-size: 48px;
     line-height: 1.15;
-    text-transform: capitalize;
+    text-transform: none;
   }
 
   &__panel {
@@ -3224,7 +3224,7 @@
     display: inline;
     font-size: 48px;
     line-height: 1.15;
-    text-transform: capitalize;
+    text-transform: none;
   }
 
   h2 .text-section.lowercase {
@@ -4533,8 +4533,28 @@
   }
 
   .mep-figma-overview--features-below {
+    .mep-figma-overview__layout {
+      gap: 40px !important;
+      align-items: stretch !important;
+    }
+
+    .mep-figma-overview__frame {
+      width: min(540px, 100%);
+      height: auto !important;
+      aspect-ratio: auto;
+      align-self: stretch;
+    }
+
+    .mep-figma-overview__photo {
+      position: absolute !important;
+      inset: 0;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
+
     .mep-figma-overview__content {
-      max-width: 786px !important;
+      max-width: 860px !important;
       gap: 18px !important;
     }
 
@@ -4565,6 +4585,22 @@
     }
 
     @media (max-width: 1023px) {
+      .mep-figma-overview__layout {
+        align-items: stretch !important;
+      }
+
+      .mep-figma-overview__frame {
+        width: 100% !important;
+        max-width: 100% !important;
+        aspect-ratio: 540 / 441;
+        align-self: auto;
+      }
+
+      .mep-figma-overview__photo {
+        position: relative !important;
+        inset: auto;
+      }
+
       .mep-figma-overview__features--below {
         flex-direction: column !important;
       }

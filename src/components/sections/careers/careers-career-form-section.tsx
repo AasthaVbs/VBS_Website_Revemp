@@ -13,7 +13,7 @@ export function CareersCareerFormSection() {
       titleLead={copy.titleLead}
       titleAccent={copy.titleAccent}
       description={copy.description}
-      titleClassName="text-section vbs-careers-career-form__title capitalize"
+      titleClassName="text-section vbs-careers-career-form__title"
       descriptionClassName="max-w-[435px] text-[#808080]"
     />
   );

@@ -34,7 +34,7 @@ export function MepBimServiceFeaturesSection({
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading max-w-[716px] capitalize">
+            <h2 className="mep-section-heading max-w-[716px]">
               <span className="whitespace-pre-line font-medium">{titleLead}</span>
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>

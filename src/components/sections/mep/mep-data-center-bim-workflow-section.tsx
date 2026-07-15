@@ -16,7 +16,7 @@ export function MepDataCenterBimWorkflowSection() {
         <div className="flex w-full max-w-[890px] flex-col items-center gap-5 text-center">
           <div className="flex flex-col items-center gap-3">
             <SectionTag label={tag} />
-            <h2 className="text-section max-w-[760px] capitalize">
+            <h2 className="text-section max-w-[760px]">
               <span className="font-medium">
                 {titleLead}
                 <br className="hidden sm:block" />

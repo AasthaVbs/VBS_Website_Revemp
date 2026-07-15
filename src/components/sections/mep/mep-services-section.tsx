@@ -13,7 +13,7 @@ export function MepServicesSection() {
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={mepWhatYouGetSection.tag} />
-            <h2 className="mep-section-heading capitalize">
+            <h2 className="mep-section-heading">
               <span className="font-medium">{mepWhatYouGetSection.titleLine1} </span>
               <span className="text-accent font-light">{mepWhatYouGetSection.titleLine2}</span>
             </h2>

@@ -37,7 +37,7 @@ export function MepBimTechnologyStackSection({
         <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
           <div className="flex max-w-[898px] flex-col items-start gap-3">
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading max-w-[798px] capitalize">
+            <h2 className="mep-section-heading max-w-[798px]">
               <span className="font-medium">{titleLine1}</span>
               {titleLayout === "stacked" ? <br /> : " "}
               <span className="text-accent font-light">{titleAccent}</span>

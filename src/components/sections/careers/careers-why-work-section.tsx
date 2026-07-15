@@ -22,7 +22,7 @@ export function CareersWhyWorkSection() {
           <header className="vbs-careers-section__header">
             <div className="vbs-careers-section__title-block">
               <SectionTag label={copy.tag} />
-              <h2 className="vbs-careers-section__title text-section capitalize">
+              <h2 className="vbs-careers-section__title text-section">
                 <span className="font-medium">{copy.titleLead}</span>
                 <span className="text-accent font-light">{copy.titleAccent}</span>
               </h2>

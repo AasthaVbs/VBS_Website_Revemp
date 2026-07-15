@@ -95,7 +95,7 @@ export function MepDisciplinesSection({
               {section.tag}
             </span>
             <h2
-              className={cn("capitalize", !section.titleMaxWidth && "max-w-[759px]")}
+              className={cn(!section.titleMaxWidth && "max-w-[759px]")}
               style={section.titleMaxWidth ? { maxWidth: `${section.titleMaxWidth}px` } : undefined}
             >
               <span className="text-section font-medium text-[#111111]">{section.titleLine1}</span>

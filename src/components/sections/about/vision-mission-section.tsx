@@ -33,7 +33,7 @@ export function VisionMissionSection() {
         <div className="vbs-vision-mission__header">
           <div className="vbs-vision-mission__title-block">
             <SectionTag label={tag} className="self-center" />
-            <h2 className="text-section text-center capitalize">
+            <h2 className="text-section text-center">
               {titleLead}
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>

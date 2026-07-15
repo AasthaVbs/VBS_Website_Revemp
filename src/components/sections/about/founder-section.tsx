@@ -26,7 +26,7 @@ export function FounderSection() {
           <div className="vbs-founder__copy">
             <div className="vbs-founder__title-block">
               <SectionTag label={tag} />
-              <h2 className="text-section vbs-founder__title capitalize">
+              <h2 className="text-section vbs-founder__title">
                 {titleLead}
                 <span className="text-accent font-light">{titleAccent}</span>
               </h2>

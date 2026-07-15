@@ -28,7 +28,7 @@ export function MepFullSpectrumSection() {
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label="Services" />
-            <h2 className="mep-section-heading max-w-[759px] capitalize">
+            <h2 className="mep-section-heading max-w-[759px]">
               <span className="font-medium">Our Full-Spectrum </span>
               <span className="text-accent font-light">MEP Services</span>
             </h2>

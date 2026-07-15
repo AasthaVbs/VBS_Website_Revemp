@@ -132,7 +132,7 @@ function buildPortableTextComponents(previewMode?: boolean): PortableTextCompone
       h2: ({ children, value }) => (
         <h2
           id={value?._key ? `toc-${value._key}` : undefined}
-          className="scroll-mt-28 text-[24px] font-medium capitalize text-[#111111]"
+          className="scroll-mt-28 text-[24px] font-medium text-[#111111]"
         >
           {children}
         </h2>

@@ -25,7 +25,7 @@ export function AllProjectsSection() {
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-3">
                 <SectionTag label={tag} />
-                <h1 className="text-section max-w-[688px] capitalize">
+                <h1 className="text-section max-w-[688px]">
                   <span className="font-medium text-[#111111]">{titleLead}</span>
                   <span className="font-light text-[#D70416]">{titleAccent}</span>
                 </h1>

@@ -24,7 +24,7 @@ export function CareersOpeningsSection({ hidden = false }: { hidden?: boolean })
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <SectionTag label={currentOpeningsSectionCopy.tag} />
-            <h2 className="text-section max-w-[659px] capitalize">
+            <h2 className="text-section max-w-[659px]">
               <span className="font-medium">{currentOpeningsSectionCopy.titleLead}</span>
               <span className="text-accent font-light">
                 {currentOpeningsSectionCopy.titleAccent}

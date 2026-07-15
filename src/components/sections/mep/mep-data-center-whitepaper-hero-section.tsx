@@ -47,7 +47,7 @@ function HeroContactForm({ className }: { className?: string }) {
     >
       <div className="flex flex-col gap-[30px]">
         <div className="flex flex-col gap-5">
-          <h2 className="max-w-[528px] text-[24px] capitalize leading-8 text-[#111111]">
+          <h2 className="max-w-[528px] text-[24px] leading-8 text-[#111111]">
             Get in <span className="font-light text-[#D70416]">Touch</span>
           </h2>
           <p className="max-w-[480px] text-[16px] leading-6 text-[#808080]">
@@ -113,7 +113,7 @@ export function MepDataCenterWhitepaperHeroSection() {
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-3">
               <SectionTag label="MEP BIM for data Canters" />
-              <h1 className="w-full capitalize text-[#111111]">
+              <h1 className="w-full text-[#111111]">
                 <span className="block text-[32px] font-medium leading-[1.15] sm:text-[40px] lg:text-[48px]">
                   Fabrication-Ready
                 </span>

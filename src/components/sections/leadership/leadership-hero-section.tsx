@@ -16,7 +16,7 @@ export function LeadershipHeroSection() {
             <div className="flex flex-col items-start gap-2.5 lg:gap-5">
               <div className="flex flex-col items-start gap-2 lg:gap-3">
                 <SectionTag label={leadershipHeroCopy.tag} />
-                <h1 className="text-section w-full capitalize max-lg:max-w-none">
+                <h1 className="text-section w-full max-lg:max-w-none">
                   {leadershipHeroCopy.titleLead}
                   <span className="text-accent font-light">{leadershipHeroCopy.titleAccent}</span>
                 </h1>

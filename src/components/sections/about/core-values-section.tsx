@@ -18,7 +18,7 @@ export function CoreValuesSection() {
         <div className="vbs-core-values__header flex w-full flex-col items-center gap-5 text-center">
           <div className="vbs-core-values__title-wrap flex flex-col items-center gap-3">
             <SectionTag label={tag} className="self-center" />
-            <h2 className="text-section vbs-core-values__title capitalize">
+            <h2 className="text-section vbs-core-values__title">
               {titleLead}
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>

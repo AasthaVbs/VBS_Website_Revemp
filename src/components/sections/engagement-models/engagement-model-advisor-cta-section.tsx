@@ -14,7 +14,7 @@ export function EngagementModelAdvisorCtaSection() {
           <span className="font-light">{titleAccent}</span>
         </>
       }
-      titleClassName="mep-section-heading w-full max-w-[787px] capitalize"
+      titleClassName="mep-section-heading w-full max-w-[787px]"
       description={description}
       descriptionClassName="w-full max-w-[582px] text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]"
       ctaLabel={ctaLabel}

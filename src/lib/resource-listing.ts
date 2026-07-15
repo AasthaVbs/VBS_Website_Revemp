@@ -147,8 +147,7 @@ export function matchesWhitepaperServiceFilter(
   if (isAcsResourceServiceFilter(targetService)) {
     return (
       services.includes(ACS_RESOURCES_SERVICE_FILTER) ||
-      services.includes("Reality Capture & Survey Companies") ||
-      services.includes("MEP Engineering Firms")
+      services.includes("Reality Capture & Survey Companies")
     );
   }
 

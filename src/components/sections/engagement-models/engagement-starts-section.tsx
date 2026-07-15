@@ -15,7 +15,7 @@ export function EngagementStartsSection() {
         <div className="flex w-full max-w-[1440px] flex-col items-center gap-4 sm:gap-5">
           <div className="flex max-w-[890px] flex-col items-center gap-3 px-2 text-center">
             <MepSectionTag label={tag} centered />
-            <h2 className="mep-section-heading max-w-[688px] capitalize">
+            <h2 className="mep-section-heading max-w-[688px]">
               <span className="font-medium">{titleLead}</span>
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>

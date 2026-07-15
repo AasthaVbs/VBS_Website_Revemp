@@ -54,7 +54,7 @@ export function MepBimModellingIntroSection({
           <div className="mep-figma-overview__content flex min-w-0 flex-1 flex-col justify-center gap-5 lg:max-w-[690px]">
             <div className="flex flex-col items-start gap-3">
               <MepSectionTag label={tag} />
-              <h2 className="mep-figma-overview__title w-full capitalize">
+              <h2 className="mep-figma-overview__title w-full">
                 <span className="text-section font-medium text-[#111111]">{titleLead}</span>
                 <span className="text-section text-accent font-light">{titleAccent}</span>
               </h2>

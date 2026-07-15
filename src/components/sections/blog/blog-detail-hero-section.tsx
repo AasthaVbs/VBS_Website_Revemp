@@ -31,7 +31,7 @@ export function BlogDetailHeroSection({ post, previewMode }: BlogDetailHeroSecti
               />
             </div>
             <div className="flex flex-col gap-5">
-              <h1 className="text-[28px] font-medium capitalize leading-tight text-[#111111] sm:text-[36px]">
+              <h1 className="text-[28px] font-medium leading-tight text-[#111111] sm:text-[36px]">
                 {post.title}
               </h1>
             </div>

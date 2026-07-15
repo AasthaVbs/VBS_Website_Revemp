@@ -100,7 +100,7 @@ export function BlogDetailContent({ blocks }: { blocks: BlogContentBlock[] }) {
               <h2
                 key={index}
                 id={block.id}
-                className="scroll-mt-28 text-[24px] font-medium capitalize text-[#111111]"
+                className="scroll-mt-28 text-[24px] font-medium text-[#111111]"
               >
                 {block.text}
               </h2>

@@ -143,7 +143,7 @@ export function OurLocationsSection() {
         <div className="vbs-our-locations-section__header">
           <div className="vbs-our-locations-section__title-block">
             <SectionTag label={tag} />
-            <h2 className="text-section max-w-[497px] capitalize">
+            <h2 className="text-section max-w-[497px]">
               {titleLead}
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>

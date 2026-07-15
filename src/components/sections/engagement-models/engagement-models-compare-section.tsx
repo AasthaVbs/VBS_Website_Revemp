@@ -19,7 +19,7 @@ export function EngagementModelsCompareSection() {
         <div className="flex w-full max-w-[1440px] flex-col items-start gap-4 sm:gap-5">
           <div className="flex max-w-[1111px] flex-col items-start gap-3">
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading capitalize">
+            <h2 className="mep-section-heading">
               <span className="font-medium">{titleLead}</span>
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>

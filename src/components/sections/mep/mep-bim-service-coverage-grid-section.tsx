@@ -50,7 +50,7 @@ export function MepBimServiceCoverageGridSection() {
             <MepSectionTag label={tag} />
             <h2
               id="mep-bim-service-coverage-heading"
-              className="mep-section-heading max-w-[659px] capitalize text-center"
+              className="mep-section-heading max-w-[659px] text-center"
             >
               <span className="font-medium">{titleLine1}</span>
               <br />

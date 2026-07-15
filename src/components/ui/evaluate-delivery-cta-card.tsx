@@ -57,8 +57,8 @@ export function EvaluateDeliveryCtaCard({
           <h2
             className={cn(
               compact
-                ? "max-w-[373px] text-[24px] font-medium capitalize leading-[34px] text-[#111111]"
-                : "text-section max-w-[530px] capitalize",
+                ? "max-w-[373px] text-[24px] font-medium leading-[34px] text-[#111111]"
+                : "text-section max-w-[530px]",
               titleClassName,
             )}
           >

@@ -16,7 +16,7 @@ export function MepDataCenterKeyChallengesSection() {
         <div className="flex w-full flex-col gap-5">
           <div className="flex max-w-[1111px] flex-col gap-3">
             <SectionTag label={tag} />
-            <h2 className="text-section max-w-[671px] capitalize">
+            <h2 className="text-section max-w-[671px]">
               <span className="font-medium">{titleLead}</span>
               <span className="font-light text-[#D70416]">{titleAccent}</span>
             </h2>

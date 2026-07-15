@@ -35,7 +35,7 @@ export function MepBimLodCarouselSection({
       carouselAriaLabel={carouselAriaLabel}
       cardVariant="lod"
       showCarouselFades
-      titleClassName="mep-section-heading max-w-[1028px] capitalize"
+      titleClassName="mep-section-heading max-w-[1028px]"
       titleLine1ClassName="font-medium"
       titleLine2ClassName="text-accent font-light"
       descriptionClassName="mep-bim-lod-carousel__desc"

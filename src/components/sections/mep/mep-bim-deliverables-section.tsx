@@ -48,7 +48,7 @@ export function MepBimDeliverablesSection({
         <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
           <div className="flex max-w-[833px] flex-col items-start gap-3">
             <MepSectionTag label={tag} />
-            <h2 id="mep-bim-deliverables-heading" className="mep-section-heading max-w-[833px] capitalize">
+            <h2 id="mep-bim-deliverables-heading" className="mep-section-heading max-w-[833px]">
               <span className="font-medium">{titleLead}</span>
               <br />
               <span className="text-accent font-light">{titleAccent}</span>

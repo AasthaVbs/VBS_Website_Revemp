@@ -81,7 +81,7 @@ export function MepPageHeroSection({
                 <div className="flex w-full max-w-full flex-col items-start gap-3">
                   <MepSectionTag label={tag} />
                   <h1
-                    className="w-full max-w-full capitalize text-[#111111]"
+                    className="w-full max-w-full text-[#111111]"
                     style={{ maxWidth: copyMaxWidth }}
                   >
                     {titleLead.split("\n").map((line, index, lines) => (
@@ -165,7 +165,7 @@ export function MepPageHeroSection({
             <div className="flex flex-col items-center gap-3 lg:items-start">
               <MepSectionTag label={tag} className="max-lg:!self-center" />
               <h1
-                className="w-full capitalize text-[#111111]"
+                className="w-full text-[#111111]"
                 style={{ maxWidth: copyMaxWidth }}
               >
                 <span className="text-[28px] font-medium leading-[1.15] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[60px]">

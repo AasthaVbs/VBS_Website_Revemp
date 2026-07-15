@@ -53,7 +53,7 @@ export function MepIntroSection({
               <div className="flex flex-col items-start gap-3">
                 <MepSectionTag label={copy.tag} />
                 <h2
-                  className={`mep-figma-overview__title w-full${copy.titleParts?.length ? "" : " capitalize"}`}
+                  className={`mep-figma-overview__title w-full`}
                 >
                   {copy.titleParts?.length ? (
                     copy.titleParts.map((part) => (

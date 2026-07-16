@@ -59,6 +59,7 @@ function resolveAuthor(post: SanityPostRecord) {
     role: author.role || "Author",
     image: author.image?.asset?.url || DEFAULT_AUTHOR.image,
     bio: author.bio || DEFAULT_AUTHOR.bio,
+    linkedinUrl: DEFAULT_AUTHOR.linkedinUrl,
   };
 }
 

@@ -1,109 +1,151 @@
 "use client";
 // @ts-nocheck
 
-import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
-const bannerImage = "/image/blog-banner.png";
-const CasestudyCheck = "/icon/casestudy-check.png";
+import { ProjectCaseStudy } from "@/components/vbs/projects/case-study";
+import { overviewChipIcons, toExecutionSteps } from "@/components/vbs/projects/case-study/helpers";
 
-const SwiperImage1 = "/image/banner-design-1.png";
-// const SwiperImage1 = "/image/project1-slider1.jpg";
-const SwiperImage2 = "/image/banner-design-2.png";
-// const SwiperImage2 = "/image/project1-slider2.jpg";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import Link from "next/link";
-
-
-const portfolioArchitectural = () => {
-    const data = [
-        { id: 1, text: "LOD 400 Architectural, Structural, and MEPF Models" },
-        { id: 2, text: "Clash Detection and Coordination Reports" },
-        { id: 3, text: "Construction Scheduling and Project Tracking Reports" },
-        { id: 4, text: "4D Simulation Videos and Presentationsn" },
-        { id: 5, text: "Comprehensive Construction Documentsl" }
-    ];
-
-    const navigation = {
-        prevEl: ".swiper-button-prev",
-        nextEl: ".swiper-button-next"
-    }
-
-    return (
-        <>
-            
-            <section className="home-banner-2 pb-10 pt-4 vbs-project-detail-hero" style={{ backgroundImage: `url(${bannerImage})` }} >
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto">
-                        <div className="category-badge mb-2">
-                            <Link href="/" className="category">
-                                Commercial Building
-                            </Link>
-                        </div>
-                        <h1>LOD 400 ACS & MEPF Modeling with Clash Detection & Coordination</h1>
-                    </Col>
-                </Container>
-            </section>
-            <section className="py-10">
-                <Swiper
-                    slidesPerView={2}
-                    centeredSlides={true}
-                    spaceBetween={40}
-                    pagination={{
-                        el: '.swiper-pagination',
-                        clickable: true
-                    }}
-                    navigation={navigation}
-                    modules={[Pagination, Navigation]}
-                    className="casestudy-swiper pb-9"
-                >
-                    <SwiperSlide>
-                        <Image src={SwiperImage1} className="img-fluid" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src={SwiperImage2} className="img-fluid" />
-                    </SwiperSlide>
-                    <div className="swiper-custom-button d-flex align-items-center pt-3">
-                        <div className="swiper-button-prev"></div>
-                        <div className="swiper-pagination"></div>
-                        <div className="swiper-button-next"></div>
-                    </div>
-                </Swiper>
-            </section>
-            <section className="py-10">
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto mb-5 mb-lg-8">
-                        <h2>Capabilities of <span className="highlight-text">Top 1% Architects Engineers</span></h2>
-                    </Col>
-                    <Row lg={3} md={2} xs={1} className="g-6 justify-content-center mb-6">
-                        {data.map((col, index) => (
-                            <Col key={index}>
-                                <div className={`p-5 h-100 text-center ${index % 2 === 0 ? 'bg-primary bg-opacity-10' : 'bg-light'}`}>
-                                    <Image src={CasestudyCheck} width={56} height={56} className="mb-2" />
-                                    <h4 className="mb-0 text-dark">{col.text}</h4>
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
-                    <Col lg={8} xs={12} className="mx-auto">
-                        <div className="bg-primary p-4 rounded-3 text-center">
-                            <div>
-                                <h3 className="title text-white mb-3">Do you want to Hire Dedicated Resources for a similar Project?</h3>
-                                <Link className="btn btn-light text-uppercase px-lg-4 py-12 fs-4 fw-semibold" href='/contact-us'>
-                                    Access Top 1% Architects & Engineers in 3 Days
-                                    <i className="icon ms-2 fa fa-lg fa-long-arrow-alt-right"></i>
-                                </Link>
-                            </div>
-                        </div>
-                    </Col>
-                </Container>
-            </section>
-            </>
-    );
+const content = {
+  hero: {
+    tag: "Commercial Building",
+    titleLead: "LOD 400 ACS & MEPF Modeling with Clash Detection & Coordination: ",
+    titleAccent: "Commercial Tower",
+    description:
+      "LOD 400 architectural, structural, and MEPF modeling with clash detection, 4D simulation, construction scheduling, and comprehensive construction documents for a commercial tower.",
+    image: "/image/banner-design-1.png",
+    imageAlt: "Commercial tower ACS and MEPF BIM modeling",
+  },
+  overview: {
+    image: "/image/banner-design-2.png",
+    imageAlt: "Coordinated commercial tower BIM model",
+    paragraphs: [
+      "This commercial tower project required LOD 400 models across architectural, structural, and MEPF disciplines with integrated clash detection and coordination. Our team delivered coordinated models, clash reports, construction scheduling, and 4D simulation outputs.",
+      "Comprehensive construction documents were produced alongside the coordinated BIM deliverables to support the tower's construction phase.",
+    ],
+    chips: [
+      { label: "Level of Development LOD 400", icon: overviewChipIcons.lod },
+      { label: "Discipline ACS & MEPF", icon: overviewChipIcons.manpower },
+      { label: "Location Commercial Tower", icon: overviewChipIcons.location },
+      { label: "Project Type Commercial Building", icon: overviewChipIcons.area },
+    ],
+  },
+  tools: {
+    description:
+      "Multi-discipline modeling, clash detection, and 4D simulation ran in Autodesk Revit and Navisworks.",
+    items: [
+      { name: "Revit", icon: "/icon/revit.png" },
+      { name: "Navisworks", icon: "/icon/navisworks.png" },
+    ],
+  },
+  io: {
+    description:
+      "From design inputs to LOD 400 coordinated models, clash reports, 4D simulations, and construction documents.",
+    inputImages: [
+      { src: "/image/banner-design-1.png", label: "Design Drawings and Reference Models" },
+    ],
+    outputImages: [
+      { src: "/image/banner-design-2.png", label: "LOD 400 Coordinated ACS & MEPF Model" },
+    ],
+    inputPoints: [
+      "Architectural, structural, and MEPF design drawings",
+      "Client BIM execution plan and standards",
+      "Consultant reference models",
+      "Construction schedule baseline data",
+    ],
+    outputPoints: [
+      "LOD 400 architectural, structural, and MEPF models",
+      "Clash detection and coordination reports",
+      "Construction scheduling and project tracking reports",
+      "4D simulation videos and presentations",
+      "Comprehensive construction documents",
+    ],
+  },
+  pain: {
+    description:
+      "High-rise commercial towers demand precise multi-discipline coordination and construction-ready documentation.",
+    items: [
+      {
+        title: "Multi-Discipline LOD 400 Complexity",
+        text: "Architectural, structural, and MEPF systems in a tower require detailed LOD 400 models across all trades.",
+      },
+      {
+        title: "Vertical Shaft and Core Coordination",
+        text: "Elevator, stair, and MEP shaft routing in tall buildings creates dense clash zones requiring systematic detection.",
+      },
+      {
+        title: "4D Schedule Integration",
+        text: "Construction sequencing for towers must be linked to BIM models for effective 4D simulation.",
+      },
+      {
+        title: "Construction Document Completeness",
+        text: "Tower projects require comprehensive, coordinated construction documents aligned with BIM models.",
+      },
+    ],
+  },
+  approach: {
+    description:
+      "Integrated ACS and MEPF modeling with clash detection, 4D simulation, and construction document production.",
+    items: [
+      {
+        title: "LOD 400 Multi-Discipline Modeling",
+        text: "Developed architectural, structural, and MEPF models at LOD 400 in Revit.",
+      },
+      {
+        title: "Clash Detection and Reporting",
+        text: "Ran federated clash tests in Navisworks and produced coordination reports for resolution.",
+      },
+      {
+        title: "4D Simulation and Scheduling",
+        text: "Linked BIM models to construction schedules for 4D simulation videos and tracking reports.",
+      },
+      {
+        title: "Construction Document Production",
+        text: "Produced comprehensive construction documents aligned with coordinated BIM deliverables.",
+      },
+    ],
+  },
+  execution: {
+    tag: "Execution Strategy",
+    titleLine1: "A Structured Tower ",
+    titleLine2: "Workflow - Phase by Phase",
+    description:
+      "Delivery moved from scope alignment through multi-discipline modeling, clash detection, 4D simulation, and document production.",
+    steps: toExecutionSteps([
+      "Scope Briefing and Tool Alignment",
+      "LOD 400 ACS & MEPF Modeling",
+      "Clash Detection and Coordination",
+      "4D Simulation and Scheduling",
+      "Construction Document Production",
+      "Final Review and Delivery",
+    ]),
+  },
+  outcomes: {
+    description:
+      "LOD 400 coordinated models, clash reports, 4D simulations, and construction documents delivered for the commercial tower.",
+    items: [
+      {
+        title: "LOD 400 ACS & MEPF Models",
+        text: "Architectural, structural, and MEPF models developed at LOD 400.",
+      },
+      {
+        title: "Clash Detection and Coordination Reports",
+        text: "Interdisciplinary clashes identified and documented for resolution.",
+      },
+      {
+        title: "Construction Scheduling and Project Tracking",
+        text: "Schedule-linked reports supporting construction planning and tracking.",
+      },
+      {
+        title: "4D Simulation Videos and Presentations",
+        text: "Visual simulations linking BIM models to construction sequencing.",
+      },
+      {
+        title: "Comprehensive Construction Documents",
+        text: "Complete construction document sets aligned with coordinated BIM models.",
+      },
+    ],
+  },
 };
 
-export default portfolioArchitectural;
+export default function PortfolioArchitecturalCommercialTowerPage() {
+  return <ProjectCaseStudy content={content} />;
+}

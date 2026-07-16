@@ -1,91 +1,141 @@
 "use client";
 // @ts-nocheck
 
-import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
-const bannerImage = "/image/blog-banner.png";
-const CasestudyCheck = "/icon/casestudy-check.png";
-const SwiperImage1 = "/image/project16-slider-1.jpg";
-const SwiperImage2 = "/image/project16-slider-2.jpg";
+import { ProjectCaseStudy } from "@/components/vbs/projects/case-study";
+import { overviewChipIcons, toExecutionSteps } from "@/components/vbs/projects/case-study/helpers";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import Link from "next/link";
-
-const PortfolioStructuralForRoadInfrastructure = () => {
-    const data = [
-        { id: 1, text: "LOD 350 3D Model" },
-        { id: 2, text: "4D Simulation" },
-        { id: 3, text: "Quantity Take-Off" },
-    ];
-
-
-    return (
-        <>
-            
-            <section className="home-banner-2 pb-10 pt-4 vbs-project-detail-hero" style={{ backgroundImage: `url(${bannerImage})` }} >
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto">
-                        <div className="category-badge mb-2">
-                            <Link href="/" className="category">
-                                Public Infrastructure
-                            </Link>
-                        </div>
-                        <h1>LOD 350 with Structural BIM Modeling & 4D Simulation</h1>
-                    </Col>
-                </Container>
-            </section>
-            <section className="py-10">
-                <Swiper
-                    slidesPerView={2}
-                    centeredSlides={true}
-                    spaceBetween={40}
-                    pagination={{ clickable: true }}
-                    navigation={true}
-                    modules={[Pagination, Navigation]}
-                    className="casestudy-swiper pb-9"
-                >
-                    <SwiperSlide>
-                        <Image src={SwiperImage1} className="img-fluid" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src={SwiperImage2} className="img-fluid" />
-                    </SwiperSlide>
-                </Swiper>
-            </section>
-            <section className="py-10">
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto mb-5 mb-lg-8">
-                        <h2>Capabilities of <span className="highlight-text">Top 1% Architects Engineers</span></h2>
-                    </Col>
-                    <Row lg={3} md={2} xs={1} className="g-6 justify-content-center mb-6">
-                        {data.map((col, index) => (
-                            <Col key={index}>
-                                <div className={`p-5 h-100 text-center ${index % 2 === 0 ? 'bg-primary bg-opacity-10' : 'bg-light'}`}>
-                                    <Image src={CasestudyCheck} width={56} height={56} className="mb-2" />
-                                    <h4 className="mb-0 text-dark">{col.text}</h4>
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
-                    <Col lg={8} xs={12} className="mx-auto">
-                        <div className="bg-primary p-4 rounded-3 text-center">
-                            <div>
-                                <h3 className="title text-white mb-3">Do you want to Hire Dedicated Resources for a similar Project?</h3>
-                                <Link className="btn btn-light text-uppercase px-lg-4 py-12 fs-4 fw-semibold" href='/contact-us'>
-                                    Access Top 1% Architects & Engineers in 3 Days
-                                    <i className="icon ms-2 fa fa-lg fa-long-arrow-alt-right"></i>
-                                </Link>
-                            </div>
-                        </div>
-                    </Col>
-                </Container>
-            </section>
-            </>
-    );
+const content = {
+  hero: {
+    tag: "Public Infrastructure",
+    titleLead: "Structural BIM Modeling & 4D Simulation: ",
+    titleAccent: "Road Infrastructure",
+    description:
+      "LOD 350 structural BIM modeling with 4D simulation and quantity take-off for a road infrastructure project.",
+    image: "/image/project16-slider-1.jpg",
+    imageAlt: "Road infrastructure structural BIM modeling project",
+  },
+  overview: {
+    image: "/image/project16-slider-2.jpg",
+    imageAlt: "LOD 350 road infrastructure BIM model",
+    paragraphs: [
+      "This road infrastructure project required LOD 350 structural BIM modeling with integrated 4D simulation and quantity take-off. Our team developed detailed structural models supporting construction sequencing and cost planning.",
+      "The deliverables enabled the client to visualize construction phasing and extract accurate quantities from the coordinated 3D model.",
+    ],
+    chips: [
+      { label: "Level of Development LOD 350", icon: overviewChipIcons.lod },
+      { label: "Discipline Structural", icon: overviewChipIcons.manpower },
+      { label: "Location Road Infrastructure", icon: overviewChipIcons.location },
+      { label: "Project Type Public Infrastructure", icon: overviewChipIcons.area },
+    ],
+  },
+  tools: {
+    description:
+      "Structural BIM modeling, 4D simulation, and quantity take-off ran in Autodesk Revit and Navisworks.",
+    items: [
+      { name: "Revit", icon: "/icon/revit.png" },
+      { name: "Navisworks", icon: "/icon/navisworks.png" },
+    ],
+  },
+  io: {
+    description:
+      "From structural design inputs to LOD 350 models with 4D simulation and quantity take-off data.",
+    inputImages: [
+      { src: "/image/project16-slider-1.jpg", label: "Structural Design Drawings and Survey Data" },
+    ],
+    outputImages: [
+      { src: "/image/project16-slider-2.jpg", label: "LOD 350 Structural Model with 4D Simulation" },
+    ],
+    inputPoints: [
+      "Structural engineering drawings",
+      "Road alignment and survey data",
+      "Construction schedule baseline",
+      "Material specifications and standards",
+    ],
+    outputPoints: [
+      "LOD 350 3D model",
+      "4D simulation",
+      "Quantity take-off",
+    ],
+  },
+  pain: {
+    description:
+      "Road infrastructure projects require coordinated structural models with sequencing and quantity intelligence.",
+    items: [
+      {
+        title: "Complex Infrastructure Geometry",
+        text: "Road and bridge structures involve complex geometry requiring detailed LOD 350 modeling.",
+      },
+      {
+        title: "Construction Sequencing Visibility",
+        text: "Infrastructure projects benefit from 4D simulation to visualize phasing and identify conflicts.",
+      },
+      {
+        title: "Quantity Accuracy for Procurement",
+        text: "Large infrastructure volumes demand precise quantity take-offs from coordinated models.",
+      },
+      {
+        title: "Multi-Phase Construction Planning",
+        text: "Road projects span extended timelines requiring schedule-linked BIM deliverables.",
+      },
+    ],
+  },
+  approach: {
+    description:
+      "LOD 350 structural modeling with 4D simulation integration and quantity take-off extraction.",
+    items: [
+      {
+        title: "LOD 350 Structural Modeling",
+        text: "Developed detailed structural BIM models in Revit at LOD 350.",
+      },
+      {
+        title: "4D Simulation Development",
+        text: "Linked structural models to construction schedules for 4D phasing simulation in Navisworks.",
+      },
+      {
+        title: "Quantity Take-Off",
+        text: "Extracted accurate quantities from the coordinated model for cost and procurement planning.",
+      },
+      {
+        title: "Coordinated Delivery",
+        text: "Validated models, simulations, and quantity data against project requirements before delivery.",
+      },
+    ],
+  },
+  execution: {
+    tag: "Execution Strategy",
+    titleLine1: "A Structured Infrastructure ",
+    titleLine2: "Workflow - Phase by Phase",
+    description:
+      "Delivery progressed from design intake through structural modeling, 4D simulation, and quantity extraction.",
+    steps: toExecutionSteps([
+      "Design Intake and Scope Alignment",
+      "LOD 350 Structural BIM Modeling",
+      "Construction Schedule Integration",
+      "4D Simulation Development",
+      "Quantity Take-Off Extraction",
+      "Final Review and Delivery",
+    ]),
+  },
+  outcomes: {
+    description:
+      "LOD 350 structural model with 4D simulation and quantity take-off delivered for road infrastructure.",
+    items: [
+      {
+        title: "LOD 350 3D Model",
+        text: "Detailed structural BIM model developed at LOD 350.",
+      },
+      {
+        title: "4D Simulation",
+        text: "Construction phasing simulation linking model elements to schedule activities.",
+      },
+      {
+        title: "Quantity Take-Off",
+        text: "Accurate quantity data extracted from the coordinated model for planning.",
+      },
+    ],
+  },
 };
 
-export default PortfolioStructuralForRoadInfrastructure;
+export default function PortfolioStructuralRoadInfrastructurePage() {
+  return <ProjectCaseStudy content={content} />;
+}

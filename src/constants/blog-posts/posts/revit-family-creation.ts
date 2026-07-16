@@ -12,6 +12,7 @@ export const revitFamilyCreationPost: BlogPostDetail = {
     role: "CEO | Think Tank",
     image: "/images/Ankit Kansara.png",
     bio: "Ar. Ankit Kansara is the visionary Founder and CEO of Virtual Building Studio Inc., revolutionizing the architecture and construction industry with innovative BIM solutions. With a strong foundation in architecture and a global presence, Ankit leads the company in providing cutting-edge AEC services, embracing technology and pushing boundaries.",
+    linkedinUrl: "https://www.linkedin.com/in/ankit-kansara-virtual-building-studio/",
   },
   meta: {
     category: "MEP BIM Modeling",
@@ -77,6 +78,7 @@ export const revitFamilyCreationPost: BlogPostDetail = {
       type: "h2",
       id: "what-is",
       text: "What Is Revit Family Creation?",
+      accent: true,
     },
     {
       type: "paragraph",
@@ -209,11 +211,6 @@ export const revitFamilyCreationPost: BlogPostDetail = {
       text: "Standards give families a common language, which matters once projects involve multiple teams or multiple offices. The BIMForum LOD Specification remains one of the most widely referenced standards for defining BIM element reliability.",
     },
     {
-      type: "image",
-      src: "/images/figma/resource-2.png",
-      alt: "BIM standards illustration",
-    },
-    {
       type: "h2",
       id: "challenges",
       text: "Common Challenges in Revit Family Creation",
@@ -259,6 +256,10 @@ export const revitFamilyCreationPost: BlogPostDetail = {
       text: "Conclusion",
     },
     {
+      type: "paragraph",
+      text: "Revit families are much more than technical modeling components. They shape how BIM workflows perform across coordination, scheduling, documentation, fabrication, and lifecycle management.",
+    },
+    {
       type: "rich",
       spans: [
         { text: "That is why " },
@@ -267,6 +268,10 @@ export const revitFamilyCreationPost: BlogPostDetail = {
           text: " now play such an important role in modern AEC delivery. Strong families help firms maintain cleaner data, more accurate coordination, and more dependable project outcomes.",
         },
       ],
+    },
+    {
+      type: "paragraph",
+      text: "BIM content creation services also help firms build reusable standards instead of repeating the same modeling work across projects. Firms that treat BIM content as long-term infrastructure can gain stronger consistency, better workflow performance, and fewer downstream corrections.",
     },
     {
       type: "ctaBanner",

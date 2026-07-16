@@ -1,9 +1,11 @@
 "use client";
 
+import { ChevronRight } from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
 
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/sections/site-footer";
+import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import {
   WHITEPAPER_FORM_ANCHOR,
   WHITEPAPER_MEP_DC_PAGE_STYLES,
@@ -98,12 +100,14 @@ export function WhitepaperLandingPage({
                   <p className="lead text-secondary my-1">{heroSubheading}</p>
 
                   <div className="wb-hero-actions mt-3">
-                    <a
+                    <PrimaryCtaButton
+                      fullWidth={false}
                       href={`#${WHITEPAPER_FORM_ANCHOR}`}
-                      className="btn btn-primary rounded-pill px-4 py-2 text-decoration-none d-inline-flex align-items-center justify-content-center gap-2"
+                      className="wb-hero-cta shrink-0 capitalize"
                     >
                       {ctaLabel}
-                    </a>
+                      <ChevronRight className="h-2.5 w-2.5" strokeWidth={1.5} />
+                    </PrimaryCtaButton>
                   </div>
                 </div>
                 <div className="wb-hero-media">
@@ -111,12 +115,14 @@ export function WhitepaperLandingPage({
                   <img src={heroImage} alt={heroImageAlt} />
                 </div>
                 <div className="wb-hero-actions wb-hero-actions-mobile mt-2">
-                  <a
+                  <PrimaryCtaButton
+                    fullWidth
                     href={`#${WHITEPAPER_FORM_ANCHOR}`}
-                    className="btn btn-primary rounded-pill px-4 py-2 text-decoration-none d-inline-flex align-items-center justify-content-center gap-2"
+                    className="wb-hero-cta capitalize"
                   >
                     {ctaLabel}
-                  </a>
+                    <ChevronRight className="h-2.5 w-2.5" strokeWidth={1.5} />
+                  </PrimaryCtaButton>
                 </div>
               </div>
             </div>

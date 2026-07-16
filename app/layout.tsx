@@ -22,6 +22,7 @@ import "@/styles/mep-figma-page.scss";
 import "@/styles/vbs-legal-page.scss";
 import "@/styles/vbs-thank-you-page.scss";
 import "@/styles/vbs-mobile-typography.scss";
+import "@/styles/vbs-blog-detail.scss";
 
 const inter = Inter({
   subsets: ["latin"],

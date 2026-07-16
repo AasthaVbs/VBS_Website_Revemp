@@ -46,9 +46,9 @@ export function RelatedArticlesSection({
   };
 
   return (
-    <section className="bg-white py-12 lg:py-20">
-      <PageContainer className="space-y-10 lg:space-y-[60px]">
-        <div className="flex w-full flex-col items-start gap-5">
+    <section className="vbs-related-articles bg-white py-8 sm:py-12 lg:py-20">
+      <PageContainer className="space-y-6 sm:space-y-10 lg:space-y-[60px]">
+        <div className="flex w-full flex-col items-start gap-3 sm:gap-5">
           <div className="flex flex-col items-start gap-3">
             <SectionTag label={tag} />
             <h2 className="text-section">
@@ -61,7 +61,7 @@ export function RelatedArticlesSection({
           </p>
         </div>
 
-        <div className="space-y-5">
+        <div className="space-y-4 sm:space-y-5">
           <div className="flex flex-wrap items-center justify-end gap-4">
             <Link
               href={viewAllHref}
@@ -72,9 +72,9 @@ export function RelatedArticlesSection({
             </Link>
           </div>
 
-          <div className="grid items-start gap-5 lg:grid-cols-2">
-            <article className="inline-flex flex-col gap-[30px] overflow-hidden">
-              <div className="relative h-[280px] overflow-hidden rounded-[10px] sm:h-[360px]">
+          <div className="grid items-start gap-6 sm:gap-5 lg:grid-cols-2">
+            <article className="inline-flex flex-col gap-4 overflow-hidden sm:gap-[30px]">
+              <div className="relative h-[200px] overflow-hidden rounded-[10px] sm:h-[360px]">
                 <Image
                   src={featured.image}
                   alt=""
@@ -88,12 +88,12 @@ export function RelatedArticlesSection({
                   {featured.badgeLabel ?? featured.type}
                 </span>
               </div>
-              <div className="flex flex-col items-start gap-[15px]">
-                <div className="flex flex-col items-start gap-4">
-                  <h3 className="text-[24px] font-normal leading-[1.2] text-[#111111] sm:text-[36px]">
+              <div className="flex flex-col items-start gap-3 sm:gap-[15px]">
+                <div className="flex flex-col items-start gap-3 sm:gap-4">
+                  <h3 className="text-[20px] font-normal leading-[1.25] text-[#111111] sm:text-[36px] sm:leading-[1.2]">
                     {featured.title}
                   </h3>
-                  <p className="text-[16px] leading-6 text-[#808080] normal-case">
+                  <p className="text-[15px] leading-6 text-[#808080] normal-case sm:text-[16px]">
                     {featured.excerpt}
                   </p>
                 </div>
@@ -107,10 +107,13 @@ export function RelatedArticlesSection({
               </div>
             </article>
 
-            <div className="inline-flex w-full flex-col gap-5">
+            <div className="inline-flex w-full flex-col gap-5 sm:gap-5">
               {sideCards.map((item) => (
-                <article key={item.id} className="grid gap-5 sm:grid-cols-2">
-                  <div className="relative h-[193px] overflow-hidden rounded-[10px]">
+                <article
+                  key={item.id}
+                  className="grid gap-3 sm:grid-cols-2 sm:gap-5"
+                >
+                  <div className="relative h-[180px] overflow-hidden rounded-[10px] sm:h-[193px]">
                     <Image
                       src={item.image}
                       alt=""
@@ -124,8 +127,8 @@ export function RelatedArticlesSection({
                       {item.badgeLabel ?? item.type}
                     </span>
                   </div>
-                  <div className="flex min-h-[193px] flex-col justify-between gap-4">
-                    <h3 className="text-[20px] font-normal leading-[1.3] text-[#111111] sm:text-[24px]">
+                  <div className="flex flex-col justify-between gap-3 sm:min-h-[193px] sm:gap-4">
+                    <h3 className="text-[18px] font-normal leading-[1.3] text-[#111111] sm:text-[24px]">
                       {item.title}
                     </h3>
                     <Link

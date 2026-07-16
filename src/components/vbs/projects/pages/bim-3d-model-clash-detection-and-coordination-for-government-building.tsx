@@ -1,91 +1,135 @@
 "use client";
 // @ts-nocheck
 
-import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
-const bannerImage = "/image/blog-banner.png";
-const CasestudyCheck = "/icon/casestudy-check.png";
+import { ProjectCaseStudy } from "@/components/vbs/projects/case-study";
+import { overviewChipIcons, toExecutionSteps } from "@/components/vbs/projects/case-study/helpers";
 
-const SwiperImage1 = "/image/project9-slider1.jpg";
-const SwiperImage2 = "/image/project9-slider2.jpg";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import Link from "next/link";
-
-const ThreedBimModelClashDetection = () => {
-    const data = [
-        { id: 1, text: "LOD 500 As-Built Models" },
-        { id: 2, text: "Inter-Discipline Clash Detection & Coordination" },
-    ];
-
-
-    return (
-        <>
-            
-            <section className="home-banner-2 pb-10 pt-4 vbs-project-detail-hero" style={{ backgroundImage: `url(${bannerImage})` }} >
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto">
-                        <div className="category-badge mb-2">
-                            <Link href="/" className="category">
-                                Public Infrastructure
-                            </Link>
-                        </div>
-                        <h1>LOD 500 As-Built Modeling</h1>
-                    </Col>
-                </Container>
-            </section>
-            <section className="py-10">
-                <Swiper
-                    slidesPerView={2}
-                    centeredSlides={true}
-                    spaceBetween={40}
-                    pagination={{ clickable: true }}
-                    navigation={true}
-                    modules={[Pagination, Navigation]}
-                    className="casestudy-swiper pb-9"
-                >
-                    <SwiperSlide>
-                        <Image src={SwiperImage1} className="img-fluid" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src={SwiperImage2} className="img-fluid" />
-                    </SwiperSlide>
-                </Swiper>
-            </section>
-            <section className="py-10">
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto mb-5 mb-lg-8">
-                        <h2>Capabilities of <span className="highlight-text">Top 1% Architects Engineers</span></h2>
-                    </Col>
-                    <Row lg={3} md={2} xs={1} className="g-6 justify-content-center mb-6">
-                        {data.map((col, index) => (
-                            <Col key={index}>
-                                <div className={`p-5 h-100 text-center ${index % 2 === 0 ? 'bg-primary bg-opacity-10' : 'bg-light'}`}>
-                                    <Image src={CasestudyCheck} width={56} height={56} className="mb-2" />
-                                    <h4 className="mb-0 text-dark">{col.text}</h4>
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
-                    <Col lg={8} xs={12} className="mx-auto">
-                        <div className="bg-primary p-4 rounded-3 text-center">
-                            <div>
-                                <h3 className="title text-white mb-3">Do you want to Hire Dedicated Resources for a similar Project?</h3>
-                                <Link className="btn btn-light text-uppercase px-lg-4 py-12 fs-4 fw-semibold" href='/contact-us'>
-                                    Access Top 1% Architects & Engineers in 3 Days
-                                    <i className="icon ms-2 fa fa-lg fa-long-arrow-alt-right"></i>
-                                </Link>
-                            </div>
-                        </div>
-                    </Col>
-                </Container>
-            </section>
-            </>
-    );
+const content = {
+  hero: {
+    tag: "Public Infrastructure",
+    titleLead: "LOD 500 As-Built Modeling: ",
+    titleAccent: "Government Building",
+    description:
+      "LOD 500 as-built BIM modeling with inter-discipline clash detection and coordination for a government building project.",
+    image: "/image/project9-slider1.jpg",
+    imageAlt: "Government building LOD 500 as-built modeling",
+  },
+  overview: {
+    image: "/image/project9-slider2.jpg",
+    imageAlt: "LOD 500 as-built government building model",
+    paragraphs: [
+      "This government building project required LOD 500 as-built BIM models capturing the constructed state of the facility. Our team developed accurate as-built models with inter-discipline clash detection and coordination.",
+      "The deliverables provide a reliable digital record of the building for facility management, future renovations, and operational planning.",
+    ],
+    chips: [
+      { label: "Level of Development LOD 500", icon: overviewChipIcons.lod },
+      { label: "Discipline Multi-Discipline", icon: overviewChipIcons.manpower },
+      { label: "Location Government Building", icon: overviewChipIcons.location },
+      { label: "Project Type Public Infrastructure", icon: overviewChipIcons.area },
+    ],
+  },
+  tools: {
+    description:
+      "As-built modeling and coordination ran in Autodesk Revit and Navisworks for accurate facility documentation.",
+    items: [
+      { name: "Revit", icon: "/icon/revit.png" },
+      { name: "Navisworks", icon: "/icon/navisworks.png" },
+    ],
+  },
+  io: {
+    description:
+      "From field data and existing documentation to LOD 500 as-built models with coordinated discipline outputs.",
+    inputImages: [
+      { src: "/image/project9-slider1.jpg", label: "Existing Documentation and Field Data" },
+    ],
+    outputImages: [
+      { src: "/image/project9-slider2.jpg", label: "LOD 500 As-Built Coordinated Model" },
+    ],
+    inputPoints: [
+      "Existing design and construction drawings",
+      "Field survey and laser scan data",
+      "As-built mark-ups and redlines",
+      "Equipment and asset records",
+    ],
+    outputPoints: [
+      "LOD 500 as-built models",
+      "Inter-discipline clash detection and coordination",
+    ],
+  },
+  pain: {
+    description:
+      "Government buildings require accurate as-built records that reflect actual constructed conditions across all disciplines.",
+    items: [
+      {
+        title: "As-Built Accuracy Requirements",
+        text: "LOD 500 models must precisely reflect field conditions, including undocumented changes during construction.",
+      },
+      {
+        title: "Multi-Discipline Record Gaps",
+        text: "As-built documentation often exists in silos across architectural, structural, and MEP disciplines.",
+      },
+      {
+        title: "Facility Management Needs",
+        text: "Government facilities require reliable digital twins for long-term operations and maintenance.",
+      },
+      {
+        title: "Inter-Discipline Consistency",
+        text: "As-built models must be coordinated across disciplines to serve as a single source of truth.",
+      },
+    ],
+  },
+  approach: {
+    description:
+      "Field-verified as-built modeling with inter-discipline coordination at LOD 500.",
+    items: [
+      {
+        title: "As-Built Data Collection",
+        text: "Gathered field data, surveys, and redlines to establish accurate as-built conditions.",
+      },
+      {
+        title: "LOD 500 Model Development",
+        text: "Built discipline models at LOD 500 capturing actual constructed elements and systems.",
+      },
+      {
+        title: "Inter-Discipline Clash Detection",
+        text: "Coordinated federated as-built models through Navisworks clash detection.",
+      },
+      {
+        title: "Validated Facility Record",
+        text: "Reviewed and validated models against field conditions for facility management use.",
+      },
+    ],
+  },
+  execution: {
+    tag: "Execution Strategy",
+    titleLine1: "A Structured As-Built ",
+    titleLine2: "Workflow - Phase by Phase",
+    description:
+      "Delivery progressed from data collection through LOD 500 modeling, coordination, and final validation.",
+    steps: toExecutionSteps([
+      "Field Data and Documentation Intake",
+      "LOD 500 As-Built Modeling",
+      "Inter-Discipline Coordination",
+      "Clash Detection and Resolution",
+      "Final Validation and Delivery",
+    ]),
+  },
+  outcomes: {
+    description:
+      "LOD 500 as-built models with inter-discipline coordination delivered for the government building.",
+    items: [
+      {
+        title: "LOD 500 As-Built Models",
+        text: "Accurate as-built BIM models capturing constructed conditions at LOD 500.",
+      },
+      {
+        title: "Inter-Discipline Clash Detection & Coordination",
+        text: "Discipline models coordinated into a unified, clash-free facility record.",
+      },
+    ],
+  },
 };
 
-export default ThreedBimModelClashDetection;
+export default function ThreedBimModelGovernmentBuildingPage() {
+  return <ProjectCaseStudy content={content} />;
+}

@@ -82,7 +82,7 @@ export default function PreviewPageClient() {
   const post = state.post;
 
   return (
-    <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page vbs-blog-detail-page min-h-screen bg-white">
       <SiteHeader />
       <main>
         <BlogDetailHeroSection post={post} previewMode />

@@ -5,13 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 
+import { EvaluateDeliveryCtaCard } from "@/components/ui/evaluate-delivery-cta-card";
+import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
+import type { BlogPostDetail } from "@/constants/blog-posts/types";
 import { sanityDataset, sanityProjectId } from "@/lib/sanity-env";
-import { sanityImageUrl } from "@/lib/sanity-blog";
 import { cn } from "@/lib/utils";
 
 type SanityPortableTextProps = {
   value: unknown[];
   previewMode?: boolean;
+  author?: BlogPostDetail["author"];
 };
 
 function getSanityFileUrl(assetRef?: string) {
@@ -23,58 +26,67 @@ function getSanityFileUrl(assetRef?: string) {
   return `https://cdn.sanity.io/files/${sanityProjectId}/${sanityDataset}/${id}.${format}?dl=`;
 }
 
-function buildPortableTextComponents(previewMode?: boolean): PortableTextComponents {
+function buildPortableTextComponents(
+  previewMode?: boolean,
+  author?: BlogPostDetail["author"],
+): PortableTextComponents {
   return {
     types: {
-      image: ({ value }) => {
-        if (!value?.asset) return null;
-        const src = previewMode
-          ? sanityImageUrl(value)
-          : value.asset.url || sanityImageUrl(value);
-
-        return (
-          <div className="relative my-6 aspect-[754/446] w-full overflow-hidden rounded-[10px]">
-            <Image
-              src={src}
-              alt={value.alt || "Blog content image"}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 754px"
-            />
-          </div>
-        );
-      },
+      image: () => null,
       table: ({ value }) => {
         const rows = value?.rows || [];
         if (!rows.length) return null;
         const [head, ...bodyRows] = rows;
+        const colCount = head?.cells?.length || 0;
 
         return (
-          <div className="my-6 overflow-hidden rounded-[10px] border border-[#CBCCCD]">
-            <table className="w-full text-left text-[16px]">
-              {head ? (
-                <thead className="bg-[#111111] text-white">
-                  <tr>
-                    {(head.cells || []).map((cell: { content?: string; _key?: string }, index: number) => (
-                      <th key={cell._key || index} className="p-5">
-                        {cell.content}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-              ) : null}
-              <tbody>
-                {bodyRows.map((row: { _key?: string; cells?: Array<{ content?: string; _key?: string }> }) => (
-                  <tr key={row._key} className="border-t border-[#CBCCCD]">
-                    {(row.cells || []).map((cell, index) => (
-                      <td key={cell._key || index} className="p-5 text-[#808080]">
-                        {cell.content}
-                      </td>
-                    ))}
-                  </tr>
+          <div className="overflow-hidden rounded-[10px] border border-[#CBCCCD]">
+            {head ? (
+              <div
+                className="grid bg-[#111111] text-white"
+                style={{ gridTemplateColumns: `minmax(180px, 272px) repeat(${Math.max(colCount - 1, 1)}, 1fr)` }}
+              >
+                {(head.cells || []).map((cell: { content?: string; _key?: string }, index: number) => (
+                  <div
+                    key={cell._key || index}
+                    className={cn(
+                      "p-5 text-[16px] leading-7",
+                      index > 0 && index < colCount - 1 && "border-x border-[#808080]",
+                    )}
+                  >
+                    {cell.content}
+                  </div>
                 ))}
-              </tbody>
-            </table>
+              </div>
+            ) : null}
+            {bodyRows.map(
+              (
+                row: { _key?: string; cells?: Array<{ content?: string; _key?: string }> },
+                rowIndex: number,
+              ) => (
+                <div
+                  key={row._key}
+                  className={cn(
+                    "grid",
+                    rowIndex % 2 === 1 ? "bg-[#FAFAFA]" : "bg-white",
+                  )}
+                  style={{ gridTemplateColumns: `minmax(180px, 272px) repeat(${Math.max(colCount - 1, 1)}, 1fr)` }}
+                >
+                  {(row.cells || []).map((cell, index) => (
+                    <div
+                      key={cell._key || index}
+                      className={cn(
+                        "p-5 text-[16px] leading-7",
+                        index === 0 ? "text-[#111111]" : "text-[#808080]",
+                        index > 0 && index < colCount - 1 && "border-x border-[#CBCCCD]",
+                      )}
+                    >
+                      {cell.content}
+                    </div>
+                  ))}
+                </div>
+              ),
+            )}
           </div>
         );
       },
@@ -87,11 +99,13 @@ function buildPortableTextComponents(previewMode?: boolean): PortableTextCompone
         if (!fileUrl) return null;
 
         return (
-          <div className="my-6 flex flex-wrap items-center justify-center gap-2.5 rounded-[10px] border border-[#D70416] bg-[#FFF8F8] p-5">
-            <span className="text-[16px] text-[#111111]">{value.modalHeading || "Download"}</span>
+          <div className="vbs-blog-detail__callout">
+            <span className="vbs-blog-detail__callout-label">
+              {value.modalHeading || "Download"}
+            </span>
             <Link
               href={fileUrl}
-              className="text-[16px] font-medium text-[#D70416] underline"
+              className="vbs-blog-detail__callout-link"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -103,26 +117,22 @@ function buildPortableTextComponents(previewMode?: boolean): PortableTextCompone
       rawHtml: ({ value }) => {
         const html = value?.code?.code;
         if (!html) return null;
-        return <div className="my-6" dangerouslySetInnerHTML={{ __html: html }} />;
+        return <div dangerouslySetInnerHTML={{ __html: html }} />;
       },
       cta: ({ value }) => (
-        <div className="my-8 flex flex-col items-center justify-between gap-4 rounded-[10px] bg-[#111111] p-6 text-white sm:flex-row">
-          <p className="text-[20px]">{value.title}</p>
-          {value.buttonUrl ? (
-            <Link
-              href={value.buttonUrl}
-              className="inline-flex items-center rounded-full bg-white px-6 py-3 text-[16px] font-semibold text-[#111111]"
-            >
-              {value.buttonText || "Learn more"}
-            </Link>
-          ) : null}
-        </div>
+        <EvaluateDeliveryCtaCard
+          className="vbs-blog-detail__cta-card"
+          title={value.title}
+          description={value.description}
+          ctaLabel={value.buttonText || "Contact Us"}
+          ctaHref={value.buttonUrl || "/contact-us"}
+        />
       ),
       readMore: ({ value }) =>
         value?.url ? (
-          <div className="my-6 rounded-[10px] border border-[#CBCCCD] p-5">
-            <p className="text-[16px] text-[#808080]">{value.label}</p>
-            <Link href={value.url} className="text-[16px] font-medium text-[#D70416] underline">
+          <div className="vbs-blog-detail__callout">
+            <span className="vbs-blog-detail__callout-label">{value.label}</span>
+            <Link href={value.url} className="vbs-blog-detail__callout-link">
               {value.linkText}
             </Link>
           </div>
@@ -132,16 +142,16 @@ function buildPortableTextComponents(previewMode?: boolean): PortableTextCompone
       h2: ({ children, value }) => (
         <h2
           id={value?._key ? `toc-${value._key}` : undefined}
-          className="scroll-mt-28 text-[24px] font-medium text-[#111111]"
+          className="vbs-blog-detail__h2"
         >
           {children}
         </h2>
       ),
       h3: ({ children }) => (
-        <h3 className="scroll-mt-28 text-[20px] font-medium capitalize text-[#111111]">{children}</h3>
+        <h3 className="vbs-blog-detail__h2 text-[20px]">{children}</h3>
       ),
       normal: ({ children }) => (
-        <p className="text-[16px] leading-6 text-[#808080]">{children}</p>
+        <p className="vbs-blog-detail__paragraph">{children}</p>
       ),
     },
     marks: {
@@ -151,7 +161,7 @@ function buildPortableTextComponents(previewMode?: boolean): PortableTextCompone
         return (
           <Link
             href={href}
-            className={cn("text-[#111111] underline")}
+            className="vbs-blog-detail__link"
             target={isExternal ? "_blank" : undefined}
             rel={isExternal ? "noopener noreferrer" : undefined}
           >
@@ -159,26 +169,68 @@ function buildPortableTextComponents(previewMode?: boolean): PortableTextCompone
           </Link>
         );
       },
+      strong: ({ children }) => (
+        <strong className="vbs-blog-detail__em">{children}</strong>
+      ),
     },
     list: {
       bullet: ({ children }) => (
-        <ul className="list-disc space-y-2 pl-6 text-[16px] leading-6 text-[#808080]">{children}</ul>
+        <ul className="list-disc space-y-2 pl-6 text-[16px] leading-7 text-[#808080]">{children}</ul>
       ),
       number: ({ children }) => (
-        <ol className="list-decimal space-y-2 pl-6 text-[16px] leading-6 text-[#808080]">{children}</ol>
+        <ol className="list-decimal space-y-2 pl-6 text-[16px] leading-7 text-[#808080]">
+          {children}
+        </ol>
       ),
+    },
+    listItem: {
+      bullet: ({ children }) => <li className="leading-7">{children}</li>,
+      number: ({ children }) => <li className="leading-7">{children}</li>,
     },
   };
 }
 
-export function SanityPortableText({ value, previewMode }: SanityPortableTextProps) {
-  const components = useMemo(() => buildPortableTextComponents(previewMode), [previewMode]);
+export function SanityPortableText({ value, previewMode, author }: SanityPortableTextProps) {
+  const components = useMemo(
+    () => buildPortableTextComponents(previewMode, author),
+    [previewMode, author],
+  );
 
   if (!Array.isArray(value) || !value.length) return null;
 
   return (
-    <div className="flex w-full flex-col gap-[30px]">
-      <PortableText value={value as PortableTextBlock[]} components={components} />
+    <div className="vbs-blog-detail__body">
+      <div className="vbs-blog-detail__section vbs-blog-detail__prose">
+        <PortableText value={value as PortableTextBlock[]} components={components} />
+      </div>
+      {author?.bio ? (
+        <div className="vbs-blog-detail__author-bio">
+          <div className="vbs-blog-detail__author-bio-image">
+            <Image
+              src={author.image}
+              alt={author.name}
+              fill
+              className="object-cover"
+              sizes="100px"
+            />
+          </div>
+          <div className="vbs-blog-detail__author-bio-text">
+            <p className="vbs-blog-detail__author-bio-name">{author.name}</p>
+            <p className="vbs-blog-detail__author-bio-desc">{author.bio}</p>
+          </div>
+          {author.linkedinUrl ? (
+            <div className="vbs-blog-detail__author-bio-cta">
+              <PrimaryCtaButton
+                fullWidth={false}
+                href={author.linkedinUrl}
+                className="h-auto min-h-[52px] w-full whitespace-nowrap px-5 sm:w-auto"
+              >
+                Linkedin
+              </PrimaryCtaButton>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
     </div>
   );
 }

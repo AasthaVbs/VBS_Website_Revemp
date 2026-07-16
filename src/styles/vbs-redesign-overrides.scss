@@ -13,7 +13,7 @@ html:has(.vbs-redesign-page) {
 .vbs-redesign-page {
   /* 1400px canvas — gutters scaled from Gatsby 1200px shell (×7/6) */
   --vbs-page-max: 1400px;
-  --vbs-page-gutter: 28px;
+  --vbs-page-gutter: 16px;
   --vbs-page-gutter-md: 37px;
   --vbs-content-width: calc(var(--vbs-page-max) - (2 * var(--vbs-page-gutter-md)));
 
@@ -28,9 +28,17 @@ html:has(.vbs-redesign-page) {
   width: 100%;
   background-color: #ffffff;
 
-  /* clip horizontal bleed — except service pages with scroll-pinned carousel (clip kills sticky) */
-  &:not(.mep-bim-services-page):not(.scan-to-bim-services-page):not(.architecture-services-page):not(.mep-bim-modeling-services-page):not(.mep-bim-coordination-services-page) {
+  /* overflow-x: clip on .vbs-redesign-page kills sticky — keep this page fully visible */
+  &:not(.mep-bim-services-page):not(.scan-to-bim-services-page):not(.architecture-services-page):not(.mep-bim-modeling-services-page):not(.mep-bim-coordination-services-page):not(.vbs-blog-detail-page) {
     overflow-x: clip;
+  }
+
+  &.vbs-blog-detail-page {
+    overflow: visible !important;
+  }
+
+  @media (min-width: 768px) {
+    --vbs-page-gutter: 28px;
   }
 }
 
@@ -41,8 +49,8 @@ html:has(.vbs-redesign-page) {
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 28px;
-  padding-right: 28px;
+  padding-left: 16px;
+  padding-right: 16px;
 
   @media (min-width: 768px) {
     padding-left: 37px;
@@ -53,14 +61,50 @@ html:has(.vbs-redesign-page) {
 /* Redesign pages — same shell via design tokens (header uses .vbs-site-header override) */
 .vbs-redesign-page .vbs-page-container {
   max-width: var(--vbs-page-max);
-  padding-left: var(--vbs-page-gutter);
-  padding-right: var(--vbs-page-gutter);
+  padding-left: var(--vbs-page-gutter) !important;
+  padding-right: var(--vbs-page-gutter) !important;
 }
 
 @media (min-width: 768px) {
   .vbs-redesign-page .vbs-page-container {
-    padding-left: var(--vbs-page-gutter-md);
-    padding-right: var(--vbs-page-gutter-md);
+    padding-left: var(--vbs-page-gutter-md) !important;
+    padding-right: var(--vbs-page-gutter-md) !important;
+  }
+}
+
+/*
+ * After visiting /projects/[slug], Bootstrap + legacy CSS stay loaded and can
+ * inflate gutters on the main /projects listing. Force redesign mobile gutters.
+ */
+@media (max-width: 767px) {
+  .vbs-redesign-page .vbs-page-container,
+  .vbs-redesign-page .container,
+  .vbs-redesign-page .container-fluid {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .vbs-redesign-page .row {
+    --bs-gutter-x: 1rem;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* CTA / contact blocks — tighter vertical padding on phones */
+  .vbs-redesign-page .vbs-evaluate-cta,
+  .vbs-redesign-page section.vbs-evaluate-cta {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .vbs-redesign-page .evaluate-delivery-cta-panel {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .vbs-redesign-page .vbs-get-in-touch-section {
+    padding-top: 16px !important;
+    padding-bottom: 8px !important;
   }
 }
 
@@ -198,8 +242,8 @@ html:has(.vbs-redesign-page) {
   .vbs-redesign-page .text-display,
   .vbs-redesign-page h1,
   .vbs-redesign-page .h1 {
-    font-size: clamp(32px, 8vw, 40px);
-    line-height: 1.15;
+    font-size: clamp(32px, 8vw, 40px) !important;
+    line-height: 1.15 !important;
   }
 }
 
@@ -301,6 +345,26 @@ html:has(.vbs-redesign-page) {
   .vbs-redesign-page .evaluate-delivery-cta-card {
     height: auto !important;
     min-height: 0 !important;
+  }
+
+  .vbs-redesign-page .evaluate-delivery-cta-mosaic {
+    position: absolute !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    transform: none !important;
+    background-image: var(
+      --cta-mosaic-mobile,
+      url("/images/cta-mobile-bg.jpg")
+    ) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
   }
 
   .vbs-redesign-page .evaluate-delivery-cta-panel {

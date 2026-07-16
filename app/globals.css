@@ -546,18 +546,15 @@
     transform: translateX(-50%);
     pointer-events: none;
     user-select: none;
+    background-image: url("/images/figma/evaluate-cta-mosaic.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 
   .evaluate-delivery-cta-mosaic__desktop,
-  .evaluate-delivery-cta-mosaic__mobile {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .evaluate-delivery-cta-mosaic__mobile {
+  .evaluate-delivery-cta-mosaic__mobile,
+  .evaluate-delivery-cta-mosaic__image {
     display: none;
   }
 
@@ -668,6 +665,13 @@
       height: 100%;
       max-width: none;
       transform: none;
+      background-image: var(
+        --cta-mosaic-mobile,
+        url("/images/cta-mobile-bg.jpg")
+      ) !important;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
     }
 
     .evaluate-delivery-cta-mosaic__desktop {
@@ -675,11 +679,11 @@
     }
 
     .evaluate-delivery-cta-mosaic__mobile {
-      display: block !important;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
+      display: none !important;
+    }
+
+    .evaluate-delivery-cta-mosaic__image {
+      display: none !important;
     }
 
     /* Relative panel so content height drives the card; margin reveals mosaic frame */

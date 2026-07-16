@@ -5,12 +5,12 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "@/styles/vbs-legacy-projects.scss";
 import "@/styles/malaysia-data-center-case.scss";
+import "@/styles/las-vegas-case.scss";
 
 /** Legacy Gatsby project / case study detail pages */
 export default function PortfolioProjectLayout({ children }: { children: ReactNode }) {

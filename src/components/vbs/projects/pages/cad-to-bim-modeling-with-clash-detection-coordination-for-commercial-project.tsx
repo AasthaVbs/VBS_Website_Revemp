@@ -1,87 +1,135 @@
 "use client";
 // @ts-nocheck
 
-import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
-const bannerImage = "/image/blog-banner.png";
-const CasestudyCheck = "/icon/casestudy-check.png";
+import { ProjectCaseStudy } from "@/components/vbs/projects/case-study";
+import { overviewChipIcons, toExecutionSteps } from "@/components/vbs/projects/case-study/helpers";
 
-const SwiperImage1 = "/image/project14-slider-1.jpg";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import Link from "next/link";
-
-const PortfoliocadtoBimCommercial = () => {
-    const data = [
-        { id: 1, text: "LOD300 BIM Model of Mechanical, Electrical, and Plumbing" },
-        { id: 2, text: "Clash Detection and Coordination" },
-    ];
-
-
-    return (
-        <>
-            
-            <section className="home-banner-2 pb-10 pt-4 vbs-project-detail-hero" style={{ backgroundImage: `url(${bannerImage})` }} >
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto">
-                        <div className="category-badge mb-2">
-                            <Link href="/" className="category">
-                                Commercial Building
-                            </Link>
-                        </div>
-                        <h1>LOD 300 MEPF Modeling</h1>
-                    </Col>
-                </Container>
-            </section>
-            <section className="py-10">
-                <Swiper
-                    slidesPerView={2}
-                    centeredSlides={true}
-                    spaceBetween={40}
-                    pagination={{ clickable: true }}
-                    navigation={true}
-                    modules={[Pagination, Navigation]}
-                    className="casestudy-swiper pb-9"
-                >
-                    <SwiperSlide>
-                        <Image src={SwiperImage1} className="img-fluid" />
-                    </SwiperSlide>
-                </Swiper>
-            </section>
-            <section className="py-10">
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto mb-5 mb-lg-8">
-                        <h2>Capabilities of <span className="highlight-text">Top 1% Architects Engineers</span></h2>
-                    </Col>
-                    <Row lg={3} md={2} xs={1} className="g-6 justify-content-center mb-6">
-                        {data.map((col, index) => (
-                            <Col key={index}>
-                                <div className={`p-5 h-100 text-center ${index % 2 === 0 ? 'bg-primary bg-opacity-10' : 'bg-light'}`}>
-                                    <Image src={CasestudyCheck} width={56} height={56} className="mb-2" />
-                                    <h4 className="mb-0 text-dark">{col.text}</h4>
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
-                    <Col lg={8} xs={12} className="mx-auto">
-                        <div className="bg-primary p-4 rounded-3 text-center">
-                            <div>
-                                <h3 className="title text-white mb-3">Do you want to Hire Dedicated Resources for a similar Project?</h3>
-                                <Link className="btn btn-light text-uppercase px-lg-4 py-12 fs-4 fw-semibold" href='/contact-us'>
-                                    Access Top 1% Architects & Engineers in 3 Days
-                                    <i className="icon ms-2 fa fa-lg fa-long-arrow-alt-right"></i>
-                                </Link>
-                            </div>
-                        </div>
-                    </Col>
-                </Container>
-            </section>
-            </>
-    );
+const content = {
+  hero: {
+    tag: "Commercial Building",
+    titleLead: "LOD 300 MEPF Modeling with Clash Detection: ",
+    titleAccent: "Commercial Project",
+    description:
+      "LOD 300 mechanical, electrical, and plumbing BIM modeling with clash detection and coordination for a commercial building project.",
+    image: "/image/project14-slider-1.jpg",
+    imageAlt: "Commercial LOD 300 MEPF BIM modeling project",
+  },
+  overview: {
+    image: "/image/project14-slider-1.jpg",
+    imageAlt: "LOD 300 MEP coordinated commercial model",
+    paragraphs: [
+      "This commercial project required LOD 300 BIM models for mechanical, electrical, and plumbing systems with integrated clash detection and coordination. Our team developed discipline models aligned with project standards.",
+      "Clash detection workflows ensured MEP systems coordinated effectively before construction, reducing field conflicts on the commercial build.",
+    ],
+    chips: [
+      { label: "Level of Development LOD 300", icon: overviewChipIcons.lod },
+      { label: "Discipline MEP", icon: overviewChipIcons.manpower },
+      { label: "Location Commercial Project", icon: overviewChipIcons.location },
+      { label: "Project Type Commercial Building", icon: overviewChipIcons.area },
+    ],
+  },
+  tools: {
+    description:
+      "MEP modeling and clash detection ran in Autodesk Revit and Navisworks.",
+    items: [
+      { name: "Revit", icon: "/icon/revit.png" },
+      { name: "Navisworks", icon: "/icon/navisworks.png" },
+    ],
+  },
+  io: {
+    description:
+      "From MEP design inputs to LOD 300 coordinated models with clash-free MEP systems.",
+    inputImages: [
+      { src: "/image/project14-slider-1.jpg", label: "MEP Design Drawings and References" },
+    ],
+    outputImages: [
+      { src: "/image/project14-slider-1.jpg", label: "LOD 300 MEP Coordinated Model" },
+    ],
+    inputPoints: [
+      "MEP design drawings and specifications",
+      "Architectural and structural reference models",
+      "Equipment schedules and layout data",
+      "Client BIM standards",
+    ],
+    outputPoints: [
+      "LOD 300 BIM model of mechanical, electrical, and plumbing",
+      "Clash detection and coordination",
+    ],
+  },
+  pain: {
+    description:
+      "Commercial MEP projects require coordinated LOD 300 models with systematic clash detection.",
+    items: [
+      {
+        title: "MEP System Complexity",
+        text: "Commercial buildings involve dense MEP routing that requires detailed LOD 300 modeling.",
+      },
+      {
+        title: "Ceiling Space Coordination",
+        text: "Mechanical, electrical, and plumbing systems compete for limited ceiling and plenum space.",
+      },
+      {
+        title: "Clash Prevention",
+        text: "Undetected MEP clashes lead to costly field rework and schedule delays.",
+      },
+      {
+        title: "Multi-Trade Alignment",
+        text: "MEP models must align with architectural and structural constraints throughout the building.",
+      },
+    ],
+  },
+  approach: {
+    description:
+      "LOD 300 MEP modeling with federated clash detection and coordination workflows.",
+    items: [
+      {
+        title: "LOD 300 MEP Modeling",
+        text: "Developed mechanical, electrical, and plumbing models in Revit at LOD 300.",
+      },
+      {
+        title: "Federated Model Coordination",
+        text: "Linked MEP models with architectural and structural references for coordination.",
+      },
+      {
+        title: "Clash Detection",
+        text: "Ran Navisworks clash tests across all MEP systems and reference disciplines.",
+      },
+      {
+        title: "Issue Resolution",
+        text: "Documented and resolved clashes through structured coordination workflows.",
+      },
+    ],
+  },
+  execution: {
+    tag: "Execution Strategy",
+    titleLine1: "A Structured MEP ",
+    titleLine2: "Workflow - Phase by Phase",
+    description:
+      "Delivery progressed from design intake through MEP modeling, clash detection, and final coordination.",
+    steps: toExecutionSteps([
+      "MEP Design Intake and Standards Alignment",
+      "LOD 300 MEP Discipline Modeling",
+      "Federated Model Assembly",
+      "Clash Detection and Resolution",
+      "Final Coordinated Model Delivery",
+    ]),
+  },
+  outcomes: {
+    description:
+      "LOD 300 MEP models with clash detection and coordination delivered for the commercial project.",
+    items: [
+      {
+        title: "LOD 300 MEP BIM Model",
+        text: "Mechanical, electrical, and plumbing models developed at LOD 300.",
+      },
+      {
+        title: "Clash Detection and Coordination",
+        text: "Interdisciplinary clashes identified and resolved through structured workflows.",
+      },
+    ],
+  },
 };
 
-export default PortfoliocadtoBimCommercial;
+export default function PortfolioCadToBimCommercialPage() {
+  return <ProjectCaseStudy content={content} />;
+}

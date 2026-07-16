@@ -22,8 +22,8 @@ export function BlogDetailFaqSection({ items }: BlogDetailFaqSectionProps) {
   );
 
   return (
-    <section className="bg-white py-12 lg:py-[100px]">
-      <PageContainer className="grid items-start gap-10 lg:grid-cols-2 lg:gap-[60px]">
+    <section className="vbs-blog-faq bg-white py-12 lg:py-[100px]">
+      <PageContainer className="grid items-start gap-6 lg:grid-cols-2 lg:gap-[60px]">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3">
             <SectionTag label="FAQs" />
@@ -37,15 +37,15 @@ export function BlogDetailFaqSection({ items }: BlogDetailFaqSectionProps) {
           </p>
         </div>
 
-        <div className="space-y-5">
+        <div className="space-y-4 lg:space-y-5">
           {items.map((item, index) => {
             const isOpen = openIndex === index;
             return (
               <article
                 key={item.question}
                 className={cn(
-                  "rounded-[10px] border border-[#CBCCCD] p-5",
-                  isOpen ? "flex flex-col gap-5" : "",
+                  "rounded-[10px] border border-[#CBCCCD] p-4 lg:p-5",
+                  isOpen ? "flex flex-col gap-2.5 lg:gap-5" : "",
                 )}
               >
                 <button

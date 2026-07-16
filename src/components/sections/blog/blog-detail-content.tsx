@@ -2,17 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { EvaluateDeliveryCtaCard } from "@/components/ui/evaluate-delivery-cta-card";
-import type { BlogContentBlock, BlogTextSpan } from "@/constants/blog-posts/types";
+import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
+import type {
+  BlogContentBlock,
+  BlogPostDetail,
+  BlogTextSpan,
+} from "@/constants/blog-posts/types";
 import { cn } from "@/lib/utils";
 
 function RichText({ spans }: { spans: BlogTextSpan[] }) {
   return (
-    <p className="text-[16px] leading-6 text-[#808080]">
+    <p className="vbs-blog-detail__rich">
       {spans.map((span, index) => {
         const className = cn(
-          span.underline && "text-[#111111] underline",
-          span.italic && "font-medium italic text-[#111111]",
-          !span.underline && !span.italic && "text-[#808080]",
+          span.underline && "vbs-blog-detail__link",
+          span.italic && "vbs-blog-detail__em",
         );
         if (span.href) {
           return (
@@ -39,14 +43,14 @@ function BlogTable({
   rows: { cells: [string, string, string]; highlight?: boolean }[];
 }) {
   return (
-    <div className="overflow-hidden rounded-[10px] border border-[#CBCCCD]">
-      <div className="grid grid-cols-1 bg-[#111111] sm:grid-cols-3">
+    <div className="vbs-blog-detail__table">
+      <div className="vbs-blog-detail__table-head">
         {headers.map((header, index) => (
           <div
             key={header}
             className={cn(
-              "p-5 text-[16px] text-white",
-              index === 1 && "sm:border-x sm:border-[#808080]",
+              "vbs-blog-detail__table-head-cell",
+              index === 1 && "vbs-blog-detail__table-head-cell--bordered",
             )}
           >
             {header}
@@ -57,17 +61,17 @@ function BlogTable({
         <div
           key={rowIndex}
           className={cn(
-            "grid grid-cols-1 sm:grid-cols-3",
-            row.highlight ? "bg-[#FAFAFA]" : "bg-white",
+            "vbs-blog-detail__table-row",
+            row.highlight && "vbs-blog-detail__table-row--alt",
           )}
         >
           {row.cells.map((cell, cellIndex) => (
             <div
               key={cellIndex}
               className={cn(
-                "p-5 text-[16px] leading-6",
-                cellIndex === 0 ? "text-[#111111]" : "text-[#808080]",
-                cellIndex === 1 && "sm:border-x sm:border-[#CBCCCD]",
+                "vbs-blog-detail__table-cell",
+                cellIndex === 0 && "vbs-blog-detail__table-cell--label",
+                cellIndex === 1 && "vbs-blog-detail__table-cell--bordered",
               )}
             >
               {cell}
@@ -79,119 +83,167 @@ function BlogTable({
   );
 }
 
-export function BlogDetailContent({ blocks }: { blocks: BlogContentBlock[] }) {
+type BlockSection = {
+  blocks: BlogContentBlock[];
+};
+
+function groupBlogBlocks(blocks: BlogContentBlock[]): BlockSection[] {
+  const sections: BlockSection[] = [];
+  let current: BlogContentBlock[] = [];
+
+  const pushCurrent = () => {
+    if (current.length) {
+      sections.push({ blocks: current });
+      current = [];
+    }
+  };
+
+  for (const block of blocks) {
+    if (block.type === "ctaBanner" || block.type === "authorBio") {
+      pushCurrent();
+      sections.push({ blocks: [block] });
+      continue;
+    }
+
+    if (block.type === "h2") {
+      pushCurrent();
+      current = [block];
+      continue;
+    }
+
+    current.push(block);
+  }
+
+  pushCurrent();
+  return sections;
+}
+
+function renderBlock(
+  block: BlogContentBlock,
+  index: number,
+  author: BlogPostDetail["author"],
+) {
+  switch (block.type) {
+    case "paragraph":
+      return (
+        <p key={index} className="vbs-blog-detail__paragraph">
+          {block.text}
+        </p>
+      );
+    case "rich":
+      return <RichText key={index} spans={block.spans} />;
+    case "h2":
+      return (
+        <h2
+          key={index}
+          id={block.id}
+          className={cn(
+            "vbs-blog-detail__h2",
+            block.accent && "vbs-blog-detail__h2--accent",
+          )}
+        >
+          {block.text}
+        </h2>
+      );
+    case "bulletList":
+      return (
+        <div key={index} className="vbs-blog-detail__bullet-list">
+          {block.items.map((item) => (
+            <div key={item.title} className="vbs-blog-detail__bullet-item">
+              <p className="vbs-blog-detail__bullet-title">{item.title}</p>
+              <p className="vbs-blog-detail__bullet-body">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      );
+    case "table":
+      return <BlogTable key={index} headers={block.headers} rows={block.rows} />;
+    case "image":
+      return (
+        <div key={index} className="vbs-blog-detail__content-image">
+          <Image
+            src={block.src}
+            alt={block.alt ?? ""}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 845px"
+          />
+        </div>
+      );
+    case "callout":
+      return (
+        <div key={index} className="vbs-blog-detail__callout">
+          <span className="vbs-blog-detail__callout-label">{block.label}</span>
+          <Link
+            href={block.href ?? "/contact-us"}
+            className="vbs-blog-detail__callout-link"
+          >
+            {block.linkLabel}
+          </Link>
+        </div>
+      );
+    case "ctaBanner":
+      return (
+        <EvaluateDeliveryCtaCard
+          key={index}
+          className="vbs-blog-detail__cta-card"
+          title={block.title}
+          description={block.description}
+          ctaLabel={block.ctaLabel}
+          ctaHref={block.href ?? "/contact-us"}
+        />
+      );
+    case "authorBio":
+      return (
+        <div key={index} className="vbs-blog-detail__author-bio">
+          <div className="vbs-blog-detail__author-bio-image">
+            <Image
+              src={block.image}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="100px"
+            />
+          </div>
+          <div className="vbs-blog-detail__author-bio-text">
+            <p className="vbs-blog-detail__author-bio-name">{author.name}</p>
+            <p className="vbs-blog-detail__author-bio-desc">{block.bio}</p>
+          </div>
+          {author.linkedinUrl ? (
+            <div className="vbs-blog-detail__author-bio-cta">
+              <PrimaryCtaButton
+                fullWidth={false}
+                href={author.linkedinUrl}
+                className="h-auto min-h-[52px] w-full whitespace-nowrap px-5 sm:w-auto"
+              >
+                Linkedin
+              </PrimaryCtaButton>
+            </div>
+          ) : null}
+        </div>
+      );
+    default:
+      return null;
+  }
+}
+
+type BlogDetailContentProps = {
+  blocks: BlogContentBlock[];
+  author: BlogPostDetail["author"];
+};
+
+export function BlogDetailContent({ blocks, author }: BlogDetailContentProps) {
+  const sections = groupBlogBlocks(blocks);
+
   return (
-    <div className="flex w-full flex-col gap-[30px]">
-      {blocks.map((block, index) => {
-        switch (block.type) {
-          case "paragraph":
-            return (
-              <p
-                key={index}
-                className="text-[16px] leading-6 text-[#808080]"
-              >
-                {block.text}
-              </p>
-            );
-          case "rich":
-            return <RichText key={index} spans={block.spans} />;
-          case "h2":
-            return (
-              <h2
-                key={index}
-                id={block.id}
-                className="scroll-mt-28 text-[24px] font-medium text-[#111111]"
-              >
-                {block.text}
-              </h2>
-            );
-          case "bulletList":
-            return (
-              <div key={index} className="flex flex-col gap-4 px-0 sm:px-[30px]">
-                {block.items.map((item) => (
-                  <div key={item.title} className="flex flex-col gap-2.5">
-                    <p className="text-[16px] leading-6 text-[#111111]">
-                      {item.title}
-                    </p>
-                    <p className="text-[16px] leading-6 text-[#808080]">
-                      {item.body}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            );
-          case "table":
-            return (
-              <BlogTable
-                key={index}
-                headers={block.headers}
-                rows={block.rows}
-              />
-            );
-          case "image":
-            return (
-              <div
-                key={index}
-                className="relative aspect-[754/446] w-full overflow-hidden rounded-[10px]"
-              >
-                <Image
-                  src={block.src}
-                  alt={block.alt ?? ""}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 754px"
-                />
-              </div>
-            );
-          case "callout":
-            return (
-              <div
-                key={index}
-                className="flex flex-wrap items-center justify-center gap-2.5 rounded-[10px] border border-[#D70416] bg-[#FFF8F8] p-5"
-              >
-                <span className="text-[16px] leading-6 text-[#111111]">
-                  {block.label}
-                </span>
-                <Link
-                  href={block.href ?? "/contact-us"}
-                  className="text-[16px] font-medium capitalize leading-6 text-[#D70416] underline"
-                >
-                  {block.linkLabel}
-                </Link>
-              </div>
-            );
-          case "ctaBanner":
-            return (
-              <EvaluateDeliveryCtaCard
-                key={index}
-                compact
-                title={block.title}
-                ctaLabel={block.ctaLabel}
-                ctaHref={block.href ?? "/contact-us"}
-              />
-            );
-          case "authorBio":
-            return (
-              <div
-                key={index}
-                className="flex flex-col gap-4 rounded-[10px] border border-[#CBCCCD] bg-white p-5 shadow-[0_4px_10px_rgba(0,0,0,0.15)] sm:flex-row sm:items-start sm:gap-4"
-              >
-                <div className="relative h-[126px] w-[126px] shrink-0 overflow-hidden">
-                  <Image
-                    src={block.image}
-                    alt=""
-                    fill
-                    className="object-cover"
-                    sizes="126px"
-                  />
-                </div>
-                <p className="text-[16px] leading-6 text-[#808080]">{block.bio}</p>
-              </div>
-            );
-          default:
-            return null;
-        }
-      })}
+    <div className="vbs-blog-detail__body">
+      {sections.map((section, sectionIndex) => (
+        <div key={sectionIndex} className="vbs-blog-detail__section">
+          {section.blocks.map((block, blockIndex) =>
+            renderBlock(block, blockIndex, author),
+          )}
+        </div>
+      ))}
     </div>
   );
 }

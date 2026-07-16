@@ -74,8 +74,11 @@ export const WHITEPAPER_STYLES = `
     --white: #ffffff;
     --light: #f7f8fa;
     --border: #e3e5e8;
-    --text: #5a5f66;
-    font-family: "Segoe UI", system-ui, sans-serif;
+    --text: #808080;
+    font-family: var(--font-inter, "Inter", "Inter Fallback", system-ui, sans-serif);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
     background: linear-gradient(180deg, #ffffff 0%, #fcfcfd 100%);
     color: var(--black);
     padding-top: 88px;
@@ -124,29 +127,43 @@ export const WHITEPAPER_STYLES = `
     padding: 18px 0;
   }
   .wb-hero h1 {
-    font-size: clamp(2rem, 3.6vw, 3.1rem);
-    line-height: 1.12;
+    font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+    font-size: 48px;
+    line-height: 1.15;
     margin-bottom: 14px;
-    font-weight: 800;
+    font-weight: 500;
     max-width: 620px;
+    color: #111111;
   }
   .wb-hero h1 span {
     color: var(--red);
+    font-weight: 300;
     display: inline !important;
     line-height: inherit !important;
     vertical-align: baseline;
     border-radius: 0 !important;
   }
   .wb-hero h1 strong {
+    font-weight: 500;
     display: inline !important;
     line-height: inherit !important;
     vertical-align: baseline;
+  }
+  .wb-hero-copy .lead {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: #808080 !important;
   }
   .wb-hero-actions {
     display: flex;
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
+  }
+  .wb-hero-actions .wb-hero-cta.primary-cta,
+  .wb-hero-actions-mobile .wb-hero-cta.primary-cta {
+    text-decoration: none !important;
   }
   .wb-hero-actions-mobile {
     display: none;
@@ -180,20 +197,27 @@ export const WHITEPAPER_STYLES = `
     background: var(--red);
     color: #fff;
     border-radius: 5px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
+    font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     padding: 4px 10px;
     margin-bottom: 14px;
   }
-  .wb-form-card h3 {
-    font-size: 1.2rem;
+  .wb-form-card h3,
+  .wb-form-simple__intro h3 {
+    font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #111111;
     margin-bottom: 4px;
   }
   .wb-form-sub {
-    font-size: 14px;
-    line-height: 1.5;
+    font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+    font-size: 16px;
+    line-height: 24px;
     color: var(--text);
     margin-bottom: 12px;
   }
@@ -302,17 +326,22 @@ export const WHITEPAPER_STYLES = `
     margin-bottom: 5px !important;
     color: var(--red);
     text-transform: uppercase;
-    font-size: 14px !important;
-    letter-spacing: 0.12em;
-    font-weight: 800 !important;
+    font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+    font-size: 13px !important;
+    letter-spacing: 0.08em;
+    font-weight: 500 !important;
     margin-top: 20px !important;
   }
-  .wb-section h2 {
-    font-size: clamp(1.6rem, 3vw, 2rem);
-    line-height: 1.25;
+  .wb-section h2,
+  .wb-key-insight-section h2,
+  .wb-whofor-section h2,
+  .wb-learn-panel h2 {
+    font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+    font-size: 40px !important;
+    line-height: 1.15 !important;
     margin-bottom: 24px;
-    font-family: "Segoe UI", system-ui, sans-serif;
-    font-weight: 700;
+    font-weight: 500 !important;
+    color: #111111;
   }
 
   .wb-learn-grid {
@@ -344,11 +373,12 @@ export const WHITEPAPER_STYLES = `
     margin-top: 1px;
   }
   .wb-learn-item p {
-    font-size: 18px !important;
-    line-height: 1.35 !important;
+    font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+    font-size: 16px !important;
+    line-height: 24px !important;
     margin: 0;
-    color: #4b5563 !important;
-    font-weight: 600 !important;
+    color: #808080 !important;
+    font-weight: 400 !important;
   }
 
   .wb-key-insight-section {
@@ -382,18 +412,19 @@ export const WHITEPAPER_STYLES = `
   }
   .wb-key-value {
     color: var(--red);
-    font-size: 1.62rem;
-    font-weight: 900;
+    font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+    font-size: 36px;
+    font-weight: 500;
     line-height: 1;
     margin-bottom: 20px;
-    margin-top:20px;
-    font-family: "Arial Black","Segoe UI Black","Segoe UI",system-ui,sans-serif;
+    margin-top: 20px;
   }
   .wb-key-item h5 {
-    color: #111827;
-    font-size: 1.03rem;
-    line-height: 1.28 !important;
-    font-weight: 700 !important;
+    font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+    color: #111111;
+    font-size: 16px;
+    line-height: 24px !important;
+    font-weight: 500 !important;
   }
 
   .wb-whofor-section {
@@ -432,11 +463,12 @@ export const WHITEPAPER_STYLES = `
     margin: 0 auto 12px;
   }
   .wb-whofor-title {
-    font-size: 0.96rem;
-    line-height: 1.28;
-    color: #111827;
+    font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+    font-size: 16px;
+    line-height: 1.35;
+    color: #111111;
     margin: 0;
-    font-weight: 800;
+    font-weight: 500;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 5px;
@@ -497,10 +529,11 @@ export const WHITEPAPER_STYLES = `
   }
   .wb-related-card h3 {
     padding: 10px 0 0;
-    font-size: 0.9rem !important;
-    line-height: 1.45 !important;
-    font-weight: 700 !important;
-    color:#000000 !important;
+    font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+    font-weight: 500 !important;
+    color: #111111 !important;
   }
   .wb-related-card h3:hover {
     color:#e5232b !important;
@@ -533,6 +566,18 @@ export const WHITEPAPER_STYLES = `
     .wb-whofor-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+    .wb-hero h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.15;
+    }
+    .wb-section h2,
+    .wb-key-insight-section h2,
+    .wb-whofor-section h2,
+    .wb-learn-panel h2 {
+      font-size: clamp(28px, 4vw, 40px) !important;
+      line-height: 1.15 !important;
+      font-weight: 500 !important;
+    }
   }
   @media (max-width: 640px) {
     .wb-page {
@@ -551,7 +596,8 @@ export const WHITEPAPER_STYLES = `
       display: flex;
       width: 100%;
     }
-    .wb-hero-actions-mobile .btn {
+    .wb-hero-actions-mobile .primary-cta,
+    .wb-hero-actions-mobile .wb-hero-cta {
       width: 100%;
       justify-content: center;
     }
@@ -566,6 +612,25 @@ export const WHITEPAPER_STYLES = `
     }
     .wb-whofor-grid {
       grid-template-columns: 1fr;
+    }
+    .wb-hero h1 {
+      font-size: clamp(26px, 6.5vw, 32px);
+      line-height: 1.2;
+    }
+    .wb-section h2,
+    .wb-key-insight-section h2,
+    .wb-whofor-section h2,
+    .wb-learn-panel h2 {
+      font-size: clamp(28px, 4vw, 40px) !important;
+      line-height: 1.15 !important;
+      font-weight: 500 !important;
+    }
+    .wb-related-card h3,
+    .wb-form-simple__intro h3 {
+      font-size: 18px !important;
+    }
+    .wb-key-value {
+      font-size: 28px;
     }
   }
 `;
@@ -657,9 +722,10 @@ export const WHITEPAPER_MEP_DC_PAGE_STYLES = `
     margin: 0 0 12px;
   }
   .wb-page--mep-dc .wb-form-simple__intro h3 {
-    font-size: 1.48rem !important;
-    line-height: 1.42 !important;
-    font-weight: 900 !important;
+    font-family: var(--font-inter, "Inter", system-ui, sans-serif);
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+    font-weight: 500 !important;
     margin: 0 0 8px !important;
     padding: 0;
     color: var(--black);
@@ -728,10 +794,10 @@ export const WHITEPAPER_MEP_DC_PAGE_STYLES = `
     .wb-page--mep-dc .wb-form-simple {
       position: static;
     }
-    .whitepaper-detail-page.wb-page--mep-dc .wb-hero-actions .btn {
+    .whitepaper-detail-page.wb-page--mep-dc .wb-hero-actions .primary-cta {
       padding: 10px 16px !important;
       font-size: clamp(13px, 1.6vw, 16px) !important;
-      font-weight: 600 !important;
+      font-weight: 500 !important;
       line-height: 1.15 !important;
       white-space: nowrap;
     }
@@ -782,10 +848,10 @@ export const WHITEPAPER_MEP_DC_PAGE_STYLES = `
     ${LEGACY_SHELL_HEADING_OVERRIDE} ${MEP_DC_PAGE} .wb-whofor-section h2 strong,
     ${LEGACY_SHELL_HEADING_OVERRIDE} ${MEP_DC_PAGE} .wb-learn-panel h2 strong,
     ${LEGACY_SHELL_HEADING_OVERRIDE} ${MEP_DC_PAGE} .wb-section h2 strong {
-      font-size: clamp(20px, 5.2vw, 26px) !important;
-      line-height: 1.25 !important;
+      font-size: clamp(28px, 4vw, 40px) !important;
+      line-height: 1.15 !important;
       margin-bottom: 14px !important;
-      font-weight: 600 !important;
+      font-weight: 500 !important;
     }
     ${LEGACY_SHELL_HEADING_OVERRIDE} ${MEP_DC_PAGE} .wb-form-simple__intro h3,
     ${LEGACY_SHELL_HEADING_OVERRIDE} ${MEP_DC_PAGE} .wb-form-simple__intro h3 span,
@@ -851,13 +917,13 @@ export const WHITEPAPER_MEP_DC_PAGE_STYLES = `
       font-size: 13px !important;
       line-height: 1.45 !important;
     }
-    .whitepaper-detail-page.wb-page--mep-dc .wb-hero-actions-mobile .btn,
-    .whitepaper-detail-page.wb-page--mep-dc .wb-hero-actions .btn {
+    .whitepaper-detail-page.wb-page--mep-dc .wb-hero-actions-mobile .primary-cta,
+    .whitepaper-detail-page.wb-page--mep-dc .wb-hero-actions .primary-cta {
       width: 100%;
       max-width: 100%;
       padding: 9px 12px !important;
       font-size: clamp(12px, 3.15vw, 14px) !important;
-      font-weight: 600 !important;
+      font-weight: 500 !important;
       line-height: 1.15 !important;
       letter-spacing: 0.01em;
       white-space: nowrap;

@@ -14,7 +14,7 @@ export type BlogTextSpan = {
 export type BlogContentBlock =
   | { type: "paragraph"; text: string }
   | { type: "rich"; spans: BlogTextSpan[] }
-  | { type: "h2"; id?: string; text: string }
+  | { type: "h2"; id?: string; text: string; accent?: boolean }
   | { type: "bulletList"; items: { title: string; body: string }[] }
   | {
       type: "table";
@@ -32,6 +32,7 @@ export type BlogContentBlock =
   | {
       type: "ctaBanner";
       title: string;
+      description?: string;
       ctaLabel: string;
       href?: string;
     }
@@ -53,6 +54,7 @@ export type BlogPostDetail = {
     role: string;
     image: string;
     bio: string;
+    linkedinUrl?: string;
   };
   meta: {
     category: string;

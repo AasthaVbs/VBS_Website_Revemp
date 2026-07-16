@@ -1,98 +1,147 @@
 "use client";
 // @ts-nocheck
 
-import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
-const bannerImage = "/image/blog-banner.png";
+import { ProjectCaseStudy } from "@/components/vbs/projects/case-study";
+import { overviewChipIcons, toExecutionSteps } from "@/components/vbs/projects/case-study/helpers";
 
-const CasestudyCheck = "/icon/casestudy-check.png";
-const SwiperImage1 = "/image/project2-slider1.jpg";
-const SwiperImage2 = "/image/project2-slider2.jpg";
-const SwiperImage3 = "/image/project2-slider3.jpg";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import Link from "next/link";
-
-
-const MepfModelWithClash = () => {
-    const data = [
-        { id: 1, text: "LOD 400 Mechanical, Electrical, Plumbing, and Fire protection models" },
-        { id: 2, text: "Inter-Discipline Clash Detection and Coordination" },
-        { id: 3, text: "Shop Drawings" },
-        { id: 4, text: "Fabrication Drawings" }
-    ];
-
-
-    return (
-        <>
-            
-            <section className="home-banner-2 pb-10 pt-4 vbs-project-detail-hero" style={{ backgroundImage: `url(${bannerImage})` }} >
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto">
-                        <div className="category-badge mb-2">
-                            <Link href="/" className="category">
-                                Public Infrastructure
-                            </Link>
-                        </div>
-                        <h1>LOD 400 ACS & MEPF Modeling with Shop Drawings & Clash Detection & Coordination</h1>
-                    </Col>
-                </Container>
-            </section>
-            <section className="py-10">
-                <Swiper
-                    slidesPerView={2}
-                    centeredSlides={true}
-                    spaceBetween={40}
-                    pagination={{ clickable: true }}
-                    navigation={true}
-                    modules={[Pagination, Navigation]}
-                    className="casestudy-swiper pb-9"
-                >
-                    <SwiperSlide>
-                        <Image src={SwiperImage1} className="img-fluid" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src={SwiperImage2} className="img-fluid" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src={SwiperImage3} className="img-fluid" />
-                    </SwiperSlide>
-                </Swiper>
-            </section>
-            <section className="py-10">
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto mb-5 mb-lg-8">
-                        <h2>Capabilities of <span className="highlight-text">Top 1% Architects Engineers</span></h2>
-                    </Col>
-                    <Row lg={3} md={2} xs={1} className="g-6 justify-content-center mb-6">
-                        {data.map((col, index) => (
-                            <Col key={index}>
-                                <div className={`p-5 h-100 text-center ${index % 2 === 0 ? 'bg-primary bg-opacity-10' : 'bg-light'}`}>
-                                    <Image src={CasestudyCheck} width={56} height={56} className="mb-2" />
-                                    <h4 className="mb-0 text-dark">{col.text}</h4>
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
-                    <Col lg={8} xs={12} className="mx-auto">
-                        <div className="bg-primary p-4 rounded-3 text-center">
-                            <div>
-                                <h3 className="title text-white mb-3">Do you want to Hire Dedicated Resources for a similar Project?</h3>
-                                <Link className="btn btn-light text-uppercase px-lg-4 py-12 fs-4 fw-semibold" href='/contact-us'>
-                                    Access Top 1% Architects & Engineers in 3 Days
-                                    <i className="icon ms-2 fa fa-lg fa-long-arrow-alt-right"></i>
-                                </Link>
-                            </div>
-                        </div>
-                    </Col>
-                </Container>
-            </section>
-            </>
-    );
+const content = {
+  hero: {
+    tag: "Public Infrastructure",
+    titleLead: "LOD 400 ACS & MEPF Modeling with Shop Drawings & Clash Detection: ",
+    titleAccent: "Defence Institute",
+    description:
+      "LOD 400 mechanical, electrical, plumbing, and fire protection modeling with inter-discipline clash detection, shop drawings, and fabrication drawings for a defence institute.",
+    image: "/image/project2-slider1.jpg",
+    imageAlt: "Defence institute MEPF BIM modeling project",
+  },
+  overview: {
+    image: "/image/project2-slider2.jpg",
+    imageAlt: "LOD 400 MEPF coordinated model defence institute",
+    paragraphs: [
+      "This defence institute project required LOD 400 MEPF models across mechanical, electrical, plumbing, and fire protection systems with inter-discipline clash detection and coordination. Our team delivered coordinated models along with shop and fabrication drawings.",
+      "The deliverables supported installation planning and fabrication with accurate, coordinated drawing sets derived from the LOD 400 BIM models.",
+    ],
+    chips: [
+      { label: "Level of Development LOD 400", icon: overviewChipIcons.lod },
+      { label: "Discipline MEPF", icon: overviewChipIcons.manpower },
+      { label: "Location Defence Institute", icon: overviewChipIcons.location },
+      { label: "Project Type Public Infrastructure", icon: overviewChipIcons.area },
+    ],
+  },
+  tools: {
+    description:
+      "MEPF modeling, clash detection, and drawing production ran in Autodesk Revit and Navisworks.",
+    items: [
+      { name: "Revit", icon: "/icon/revit.png" },
+      { name: "Navisworks", icon: "/icon/navisworks.png" },
+    ],
+  },
+  io: {
+    description:
+      "From MEPF design inputs to LOD 400 coordinated models, shop drawings, and fabrication drawings.",
+    inputImages: [
+      { src: "/image/project2-slider1.jpg", label: "MEPF Design Drawings and References" },
+    ],
+    outputImages: [
+      { src: "/image/project2-slider2.jpg", label: "LOD 400 Coordinated MEPF Model" },
+      { src: "/image/project2-slider3.jpg", label: "Shop and Fabrication Drawings" },
+    ],
+    inputPoints: [
+      "MEPF design drawings and specifications",
+      "Architectural and structural reference models",
+      "Equipment schedules and layout data",
+      "Client BIM standards and templates",
+    ],
+    outputPoints: [
+      "LOD 400 mechanical, electrical, plumbing, and fire protection models",
+      "Inter-discipline clash detection and coordination",
+      "Shop drawings",
+      "Fabrication drawings",
+    ],
+  },
+  pain: {
+    description:
+      "Defence institute facilities require precise MEPF coordination and fabrication-ready documentation.",
+    items: [
+      {
+        title: "LOD 400 MEPF Detail Requirements",
+        text: "Institutional MEPF systems require detailed LOD 400 models for installation and fabrication.",
+      },
+      {
+        title: "Inter-Discipline Coordination",
+        text: "Mechanical, electrical, plumbing, and fire protection systems must coordinate without conflicts.",
+      },
+      {
+        title: "Shop and Fabrication Drawing Accuracy",
+        text: "Installation and fabrication depend on drawing sets that precisely reflect the coordinated model.",
+      },
+      {
+        title: "Institutional System Complexity",
+        text: "Defence facilities involve specialized MEPF systems with stringent coordination requirements.",
+      },
+    ],
+  },
+  approach: {
+    description:
+      "LOD 400 MEPF modeling with clash detection, coordination, and shop/fabrication drawing production.",
+    items: [
+      {
+        title: "LOD 400 MEPF Modeling",
+        text: "Developed mechanical, electrical, plumbing, and fire protection models at LOD 400 in Revit.",
+      },
+      {
+        title: "Inter-Discipline Clash Detection",
+        text: "Ran federated clash tests across all MEPF disciplines using Navisworks.",
+      },
+      {
+        title: "Shop Drawing Production",
+        text: "Extracted shop drawings from coordinated models for installation planning.",
+      },
+      {
+        title: "Fabrication Drawing Delivery",
+        text: "Produced fabrication-ready drawing sets aligned with the coordinated BIM model.",
+      },
+    ],
+  },
+  execution: {
+    tag: "Execution Strategy",
+    titleLine1: "A Structured MEPF ",
+    titleLine2: "Workflow - Phase by Phase",
+    description:
+      "Delivery progressed from design intake through MEPF modeling, clash detection, and drawing production.",
+    steps: toExecutionSteps([
+      "MEPF Design Intake and Standards Alignment",
+      "LOD 400 MEPF Discipline Modeling",
+      "Inter-Discipline Clash Detection",
+      "Coordination and Issue Resolution",
+      "Shop and Fabrication Drawing Production",
+      "Final Review and Delivery",
+    ]),
+  },
+  outcomes: {
+    description:
+      "LOD 400 MEPF models with clash detection, shop drawings, and fabrication drawings delivered.",
+    items: [
+      {
+        title: "LOD 400 MEPF Models",
+        text: "Mechanical, electrical, plumbing, and fire protection models at LOD 400.",
+      },
+      {
+        title: "Inter-Discipline Clash Detection and Coordination",
+        text: "Conflicts identified and resolved across all MEPF disciplines.",
+      },
+      {
+        title: "Shop Drawings",
+        text: "Installation-ready shop drawing sets extracted from coordinated models.",
+      },
+      {
+        title: "Fabrication Drawings",
+        text: "Fabrication-ready drawing sets aligned with the BIM model.",
+      },
+    ],
+  },
 };
 
-export default MepfModelWithClash;
+export default function MepfModelDefenceInstitutePage() {
+  return <ProjectCaseStudy content={content} />;
+}

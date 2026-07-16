@@ -1,504 +1,166 @@
 "use client";
 // @ts-nocheck
 
-import React, { useEffect, useState } from "react";
-import { Container, Col, Row, Image } from "react-bootstrap";
-import { ensureNimbusBookingScript, openBookMeetingModal } from "@/utils/nimbus-booking";
-import {
-  ROOT,
-  HVAC_CASE_PAGE_STYLES,
-  Icon,
-  Reveal,
-} from "@/components/vbs/projects/hvac-case/shared";
+import { ProjectCaseStudy } from "@/components/vbs/projects/case-study";
+import { overviewChipIcons, toExecutionSteps } from "@/components/vbs/projects/case-study/helpers";
 
-const CS_IMG = {
-  ductPipe3d: encodeURI("/image/Coordinated-Plumbing-BIM-Modeling-for-Sports-Club-Facility.png"),
-  inputOutputDiagram: encodeURI("/image/YMCA_Input-Output.svg"),
-  ioInput1: encodeURI("/image/YMCA_Input (1).jpg"),
-  ioInput2: encodeURI("/image/YMCA_Input (2).jpg"),
-  ioOutput1: encodeURI("/image/YMCA_Output (2).jpg"),
-  ioOutput2: encodeURI("/image/YMCA_Output (4).jpg"),
-  executionStrategy2: encodeURI("/image/YMCA_Execution Strategy.svg"),
-};
-
-const TOOL_ICONS = {
-  revit: "/icon/revit.png",
-  navisworks: "/icon/navisworks.png",
-};
-
-const META_ITEMS = [
-  { icon: "building-2", label: "Project Type", value: "Sports Club Building" },
-  { icon: "layers", label: "Level of Development", value: "LOD 350" },
-  { icon: "users", label: "Manpower Used", value: "5 Resources" },
-  { icon: "map-pin", label: "Location", value: "LeClaire, IA, USA" },
-];
-
-const WHY_ITEMS = [
-  {
-    icon: "git-merge",
-    title: "Persistent Design Conflicts",
-    text: "Frequent clashes between architectural and structural components were stalling progress and threatening the timeline.",
+const content = {
+  hero: {
+    tag: "Sports Club Building",
+    titleLead: "Coordinated Plumbing BIM Modeling for Sports Club Facility: ",
+    titleAccent: "LeClaire, IA",
+    description:
+      "Delivered LOD 350 clash-free BIM coordinated plumbing models for a 38,000 sq. ft. modern community wellness hub.",
+    image: "/image/Coordinated-Plumbing-BIM-Modeling-for-Sports-Club-Facility.png",
+    imageAlt: "Coordinated plumbing BIM model for sports club facility in LeClaire, Iowa",
   },
-  {
-    icon: "file-text",
-    title: "Inadequate System Documentation",
-    text: "Sparse MEP data made long-term facility operations and maintenance planning difficult for the client.",
+  overview: {
+    image: "/image/YMCA_Output%20(2).jpg",
+    imageAlt: "Coordinated plumbing BIM output for sports club facility",
+    paragraphs: [
+      "An MEPF firm required expert BIM support for a new 38,000 sq. ft. sports facility in Iowa. The project featured 30 diverse sports spaces, including aquatics and fitness centers.",
+      "We provided LOD 350 plumbing modeling and comprehensive clash resolution within a compressed two-month project schedule. Our team ensured all systems integrated perfectly within the building's complex structural framework.",
+    ],
+    chips: [
+      { label: "Project Type Sports Club Building", icon: overviewChipIcons.area },
+      { label: "Level of Development LOD 350", icon: overviewChipIcons.lod },
+      { label: "Project Area 38,000 Sq.Ft.", icon: overviewChipIcons.area },
+      { label: "Manpower Used 5 Resources", icon: overviewChipIcons.manpower },
+      { label: "Location LeClaire, IA, USA", icon: overviewChipIcons.location },
+    ],
   },
-  {
-    icon: "messages-square",
-    title: "Communication Inefficiency",
-    text: "Poor cross-team communication caused unresolved clashes and made meeting strict deadlines nearly impossible.",
+  tools: {
+    description:
+      "Plumbing coordination ran in Autodesk Revit and Navisworks so models and clash reviews stayed in the client's delivery stack.",
+    items: [
+      { name: "Autodesk Revit", icon: "/icon/revit.png" },
+      { name: "Navisworks", icon: "/icon/navisworks.png" },
+    ],
   },
-  {
-    icon: "eye",
-    title: "Low System Visibility",
-    text: "Limited insight into system interdependencies led to fears of costly adjustments during the installation phase.",
+  io: {
+    description:
+      "From fragmented MEP references to LOD 350 clash-free plumbing models across 30 sports and recreation spaces.",
+    inputImages: [
+      { src: "/image/YMCA_Input%20(1).jpg", label: "Plumbing Input 1" },
+      { src: "/image/YMCA_Input%20(2).jpg", label: "Plumbing Input 2" },
+    ],
+    outputImages: [
+      { src: "/image/YMCA_Output%20(2).jpg", label: "Coordinated Output 1" },
+      { src: "/image/YMCA_Output%20(4).jpg", label: "Coordinated Output 2" },
+    ],
+    inputPoints: [
+      "Architectural and structural references",
+      "Incomplete MEP documentation",
+      "Sports facility space program",
+      "Equipment clearance requirements",
+      "Two-month delivery schedule",
+    ],
+    outputPoints: [
+      "LOD 350 plumbing system model",
+      "Clash-free coordinated plumbing layout",
+      "Multi-trade BIM coordination package",
+      "Construction-ready plumbing routing",
+    ],
   },
-];
-
-const SCOPE_ITEMS = [
-  { icon: "droplets", title: "Plumbing System Modeling" },
-  { icon: "scan-search", title: "Clash Detection and Resolution" },
-  { icon: "network", title: "Multi-trade BIM Coordination" },
-];
-
-const CHALLENGE_ITEMS = [
-  {
-    icon: "route",
-    title: "Structural Truss Constraints",
-    text: "Routing plumbing lines through complex truss zones without compromising structural integrity.",
-  },
-  {
-    icon: "ruler",
-    title: "Strict Equipment Clearances",
-    text: "Ensuring every mechanical unit maintains specific clearance zones for future maintenance access.",
-  },
-  {
-    icon: "timer",
-    title: "Accelerated Submission Schedule",
-    text: "Managing high-precision modeling tasks within a very tight two-month project window.",
-  },
-  {
-    icon: "layout-grid",
-    title: "Complex Spatial Integration",
-    text: "Coordinating dense plumbing networks within thirty unique sports and recreation spaces.",
-  },
-];
-
-const IMPACT_ITEMS = [
-  { big: "4", suffix: "x", label: "Cost Saving" },
-  { big: "99", suffix: "%", label: "On-time Delivery" },
-  { big: "98", suffix: "%", label: "Project Efficiency" },
-  { big: "99", suffix: "%", label: "Quality Assurance" },
-  { big: "1376", suffix: "", label: "Clash Detected & Resolved" },
-];
-
-const HVAC_TOOLS_TILES = [
-  { icon: TOOL_ICONS.revit, title: "Revit" },
-  { icon: TOOL_ICONS.navisworks, title: "Navisworks" },
-];
-
-function BasicIconCard({ item }) {
-  return (
-    <div className="why-row">
-      <div className="why-ico">
-        <Icon name={item.icon} />
-      </div>
-      <div className="why-info">
-        <h4>{item.title}</h4>
-        <p className="text-secondary">{item.text}</p>
-      </div>
-    </div>
-  );
-}
-
-function HvacCaseIoSection() {
-  const [activePreviewMode, setActivePreviewMode] = useState(null);
-  const inputImages = [CS_IMG.ioInput1, CS_IMG.ioInput2];
-  const outputImages = [CS_IMG.ioOutput1, CS_IMG.ioOutput2];
-  const closePreviewOverlay = () => setActivePreviewMode(null);
-
-  useEffect(() => {
-    if (!activePreviewMode || typeof document === "undefined") return;
-    const onKey = (e) => {
-      if (e.key === "Escape") setActivePreviewMode(null);
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [activePreviewMode]);
-
-  return (
-    <section className="hvac-sec">
-      <div className="wrap">
-        <header className="hvac-sec__head sec-head sec-head--center r">
-
-          <h2 className="sec-t">Solution Delivered</h2>
-
-        </header>
-        <div className="hvac-io-body r d1">
-          <Container className="hvac-io-container px-0 px-md-3 px-lg-4">
-            <div className="case-custom-io-block">
-              <div className="case-custom-io-main-image-wrap">
-                <Image
-                  src={CS_IMG.inputOutputDiagram}
-                  className="img-fluid text-center d-block mx-auto hvac-io-main-diagram"
-                  alt="Input and output overview"
-                />
-              </div>
-              <div className="case-custom-io-button-grid">
-                <div className="case-custom-io-side case-custom-io-card">
-                  <div className="case-custom-io-thumb-grid">
-                    {inputImages.map((src, idx) => (
-                      <Image
-                        key={`hvac-io-in-${idx}`}
-                        src={src}
-                        className="case-custom-io-thumb-image"
-                        alt={`Project input example ${idx + 1}`}
-                      />
-                    ))}
-                  </div>
-                  <button
-                    type="button"
-                    className="btn case-custom-io-button case-custom-io-button-pill"
-                    onClick={() => setActivePreviewMode("input")}
-                  >
-                    <i className="far fa-eye me-2" aria-hidden="true" />
-                    View Inputs
-                  </button>
-                </div>
-                <div className="case-custom-io-side case-custom-io-card">
-                  <div className="case-custom-io-thumb-grid">
-                    {outputImages.map((src, idx) => (
-                      <Image
-                        key={`hvac-io-out-${idx}`}
-                        src={src}
-                        className="case-custom-io-thumb-image"
-                        alt={`Project output example ${idx + 1}`}
-                      />
-                    ))}
-                  </div>
-                  <button
-                    type="button"
-                    className="btn case-custom-io-button case-custom-io-button-pill"
-                    onClick={() => setActivePreviewMode("output")}
-                  >
-                    <i className="far fa-eye me-2" aria-hidden="true" />
-                    View Outputs
-                  </button>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </div>
-      </div>
-      {activePreviewMode && (activePreviewMode === "input" ? inputImages : outputImages).length > 0 && (
-        <div
-          className="case-custom-io-overlay"
-          role="dialog"
-          aria-modal="true"
-          onClick={closePreviewOverlay}
-        >
-          <div className="case-custom-io-overlay-inner" onClick={(e) => e.stopPropagation()} role="document">
-            <button
-              type="button"
-              className="case-custom-io-overlay-close"
-              onClick={closePreviewOverlay}
-              aria-label="Close preview"
-            >
-              <i className="fas fa-times" aria-hidden="true" />
-            </button>
-            <h4 className="case-custom-io-overlay-title">
-              {activePreviewMode === "input" ? "The Input Drawings We Got" : "The Output Drawings We Gave"}
-            </h4>
-            <div className="case-custom-io-overlay-grid">
-              {(activePreviewMode === "input" ? inputImages : outputImages).map((src, idx) => (
-                <Image
-                  key={`${activePreviewMode}-hvac-${idx}`}
-                  src={src}
-                  className="case-custom-io-overlay-image"
-                  alt={`${activePreviewMode} preview ${idx + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-    </section>
-  );
-}
-
-function HvacCaseToolsSection() {
-  return (
-    <div className="singapore-case-theme">
-      <section className="hvac-sec hvac-tools-sec">
-        <Container>
-          <header className="hvac-tools-head text-center mx-auto r">
-            <h2 className="hvac-tools-title">Tools Used</h2>
-          </header>
-          <Row lg={3} md={2} xs={1} className="g-4 g-lg-5 justify-content-center case-custom-tools-features-row">
-            {HVAC_TOOLS_TILES.map((feature) => (
-              <Col key={feature.title}>
-                <div className="text-center h-100 p-4 p-lg-5 bg-white border rounded-3 shadow-sm hvac-tools-tile">
-                  <Image src={feature.icon} width={56} height={56} className="mb-2" alt="" />
-                  <h4 className="mb-0 text-dark">{feature.title}</h4>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
-    </div>
-  );
-}
-
-function CoordinationPlumbingBimModelingForSportClubFacilityUsaPage() {
-  useEffect(() => {
-    ensureNimbusBookingScript().catch(() => {});
-
-    const runLucide = () => {
-      if (typeof window !== "undefined" && window.lucide?.createIcons) {
-        window.lucide.createIcons();
-      }
-    };
-    runLucide();
-    const iconTimer = setTimeout(runLucide, 200);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("on");
-            observer.unobserve(entry.target);
-          }
-        });
+  pain: {
+    description:
+      "Persistent clashes, sparse documentation, and dense recreation spaces threatened the two-month delivery schedule.",
+    items: [
+      {
+        title: "Persistent Design Conflicts",
+        text: "Frequent clashes between architectural and structural components were stalling progress and threatening the timeline.",
       },
-      { threshold: 0.08 }
-    );
-    document.querySelectorAll(`.${ROOT} .r`).forEach((el) => observer.observe(el));
+      {
+        title: "Inadequate System Documentation",
+        text: "Sparse MEP data made long-term facility operations and maintenance planning difficult for the client.",
+      },
+      {
+        title: "Communication Inefficiency",
+        text: "Poor cross-team communication caused unresolved clashes and made meeting strict deadlines nearly impossible.",
+      },
+      {
+        title: "Low System Visibility",
+        text: "Limited insight into system interdependencies led to fears of costly adjustments during the installation phase.",
+      },
+      {
+        title: "Structural Truss Constraints",
+        text: "Routing plumbing lines through complex truss zones without compromising structural integrity.",
+      },
+      {
+        title: "Strict Equipment Clearances",
+        text: "Ensuring every mechanical unit maintains specific clearance zones for future maintenance access.",
+      },
+      {
+        title: "Accelerated Submission Schedule",
+        text: "Managing high-precision modeling tasks within a very tight two-month project window.",
+      },
+      {
+        title: "Complex Spatial Integration",
+        text: "Coordinating dense plumbing networks within thirty unique sports and recreation spaces.",
+      },
+    ],
+  },
+  approach: {
+    description:
+      "Five specialists executed a structured BIM workflow focused on exact spatial integration and proactive clash resolution.",
+    items: [
+      {
+        title: "Plumbing System Modeling",
+        text: "Developed LOD 350 plumbing models across aquatics, fitness, and recreation zones using Revit.",
+      },
+      {
+        title: "Clash Detection and Resolution",
+        text: "Identified and resolved conflicts between plumbing, structure, and equipment before construction documentation advanced.",
+      },
+      {
+        title: "Multi-trade BIM Coordination",
+        text: "Coordinated plumbing routing with architectural and structural constraints across all 30 sports spaces.",
+      },
+    ],
+  },
+  execution: {
+    tag: "Execution Strategy",
+    titleLine1: "Structured Plumbing Coordination ",
+    titleLine2: "Across 30 Sports Spaces",
+    description:
+      "We deployed 5 specialists to execute a structured BIM workflow. Our team focused on exact spatial integration using Revit. We proactively resolved conflicts to ensure a smooth transition from digital model to physical construction.",
+    steps: toExecutionSteps([
+      "Model Setup and Standards Alignment",
+      "Plumbing System Modeling in Revit",
+      "Structural Truss Zone Coordination",
+      "Clash Detection and Issue Resolution",
+      "Equipment Clearance Validation",
+      "Final Coordinated Model Delivery",
+    ]),
+  },
+  outcomes: {
+    description:
+      "Precision plumbing coordination delivered clash-free models and measurable project efficiency gains.",
+    items: [
+      {
+        title: "4x Cost Saving",
+        text: "Offshore BIM coordination reduced delivery cost while maintaining LOD 350 accuracy across the facility.",
+      },
+      {
+        title: "99% On-time Delivery",
+        text: "Coordinated plumbing models were delivered within the two-month project schedule.",
+      },
+      {
+        title: "98% Project Efficiency",
+        text: "Structured clash cycles kept five specialists aligned without late-stage rework.",
+      },
+      {
+        title: "99% Quality Assurance",
+        text: "Equipment clearances and truss-zone routing were validated before final model submission.",
+      },
+      {
+        title: "1,376 Clashes Detected & Resolved",
+        text: "Systematic clash detection prevented plumbing conflicts from reaching the construction site.",
+      },
+    ],
+  },
+};
 
-    return () => {
-      clearTimeout(iconTimer);
-      observer.disconnect();
-    };
-  }, []);
-
-  return (
-    <>
-      <main className={ROOT}>
-        <style>{HVAC_CASE_PAGE_STYLES}</style>
-        <style>{`
-          .${ROOT} .imp-bar{
-            grid-template-columns:repeat(5,minmax(0,1fr));
-          }
-          @media (max-width:1100px){
-            .${ROOT} .imp-bar{
-              grid-template-columns:repeat(3,minmax(0,1fr));
-            }
-          }
-          @media (max-width:720px){
-            .${ROOT} .imp-bar{
-              grid-template-columns:repeat(2,minmax(0,1fr));
-            }
-          }
-          @media (max-width:480px){
-            .${ROOT} .imp-bar{
-              grid-template-columns:1fr;
-            }
-          }
-        `}</style>
-
-        <section className="hvac-hero">
-          <div className="wrap">
-            <div className="hvac-hero__top">
-              <Reveal>
-                <h1 className="hvac-hero__title fw-bold text-dark">
-                  Coordinated <span className="acc">Plumbing BIM Modeling</span> for Sports Club Facility : LeClaire, IA
-                </h1>
-                <p className="hero-sub lead text-secondary">
-                  Delivered LOD 350 clash-free BIM coordinated plumbing models for a 38,000 sq. ft. Ft. modern community wellness hub.
-                </p>
-              </Reveal>
-              <Reveal delayClass="d1">
-                <div className="hero-img-wrap">
-                  <img
-                    src={CS_IMG.ductPipe3d}
-                    alt="Coordinated plumbing BIM model for sports club facility in LeClaire, Iowa"
-                  />
-                  <div className="hero-img-overlay" />
-                </div>
-              </Reveal>
-            </div>
-            <Reveal delayClass="d2">
-              <div className="meta-strip" role="list">
-                {META_ITEMS.map((m) => (
-                  <div key={m.label} className="m-cell" role="listitem">
-                    <div className="m-ico-circle">
-                      <Icon name={m.icon} />
-                    </div>
-                    <span className="m-lbl text-secondary">{m.label}</span>
-                    <div className="m-val">{m.value}</div>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="hvac-sec">
-          <div className="wrap">
-            <header className="hvac-sec__head r">
-              <h2 className="sec-t">Project Overview</h2>
-            </header>
-            <Reveal delayClass="d1">
-              <div className="ov-body">
-                <p className="text-secondary">
-                  An MEPF firm required expert BIM support for a new 38,000 sq. ft. sports facility in Iowa. The project featured 30 diverse sports spaces, including aquatics and fitness centers. We provided LOD 350 plumbing modeling and comprehensive clash resolution within a compressed two-month project schedule. Our team ensured all systems integrated perfectly within the building&apos;s complex structural framework.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="hvac-sec">
-          <div className="wrap">
-            <header className="hvac-sec__head r">
-              <h2 className="sec-t">Why the Client Needed Help</h2>
-            </header>
-            <Reveal delayClass="d1">
-              <div className="hvac-challenge-grid hvac-challenge-grid--paired">
-                <div className="hvac-challenge-pair">
-                  <BasicIconCard item={WHY_ITEMS[0]} />
-                  <BasicIconCard item={WHY_ITEMS[1]} />
-                </div>
-                <div className="hvac-challenge-pair">
-                  <BasicIconCard item={WHY_ITEMS[2]} />
-                  <BasicIconCard item={WHY_ITEMS[3]} />
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="hvac-sec">
-          <div className="wrap">
-            <header className="hvac-sec__head r">
-              <h2 className="sec-t">Scope of Work</h2>
-            </header>
-            <Reveal delayClass="d1">
-              <div className="scope-row-5" role="list" style={{ gridTemplateColumns: "repeat(3, minmax(0, 1fr))" }}>
-                {SCOPE_ITEMS.map((s) => (
-                  <div key={s.title} className="scope-box" role="listitem">
-                    <div className="scope-box-ico">
-                      <Icon name={s.icon} />
-                    </div>
-                    <p className="scope-box-title">{s.title}</p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="hvac-sec">
-          <div className="wrap">
-            <header className="hvac-sec__head r">
-              <h2 className="sec-t">Key Project Challenges</h2>
-            </header>
-            <Reveal delayClass="d1">
-              <div className="hvac-challenge-grid hvac-challenge-grid--paired">
-                <div className="hvac-challenge-pair">
-                  <BasicIconCard item={CHALLENGE_ITEMS[0]} />
-                  <BasicIconCard item={CHALLENGE_ITEMS[1]} />
-                </div>
-                <div className="hvac-challenge-pair">
-                  <BasicIconCard item={CHALLENGE_ITEMS[2]} />
-                  <BasicIconCard item={CHALLENGE_ITEMS[3]} />
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="hvac-sec">
-          <div className="wrap">
-            <header className="hvac-sec__head sec-head sec-head--center r">
-              <h2 className="sec-t">Our Project Execution Strategy</h2>
-              <p className="text-secondary">
-                We deployed 5 specialists to execute a structured BIM workflow. Our team focused on exact spatial integration using Revit. We proactively resolved conflicts to ensure a smooth transition from digital model to physical construction.
-              </p>
-            </header>
-            <Reveal delayClass="d1">
-              <div className="exec-strat-diagram">
-                <img src={CS_IMG.executionStrategy2} alt="Step-by-step BIM execution strategy for coordinated plumbing delivery" />
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        <HvacCaseIoSection />
-
-        <section className="hvac-sec">
-          <div className="wrap">
-            <header className="hvac-sec__head r">
-              <h2 className="sec-t">Business Impact</h2>
-            </header>
-            <Reveal delayClass="d1">
-              <div className="imp-bar" role="list">
-                {IMPACT_ITEMS.map((it) => (
-                  <div key={it.label} className="imp-c" role="listitem">
-                    <div className="imp-big">
-                      {it.big}
-                      {it.suffix ? <span className="imp-big-suffix">{it.suffix}</span> : null}
-                    </div>
-                    <div className="imp-lbl">{it.label}</div>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        <HvacCaseToolsSection />
-
-        <section className="hvac-sec hvac-sec--testi">
-          <div className="wrap">
-            <header className="hvac-sec__head sec-head sec-head--center r">
-              <h2 className="sec-t">Client Testimonial</h2>
-            </header>
-            <div className="testi-sec">
-              <Reveal delayClass="d1" className="testi-inner">
-                <p className="text-secondary">
-                  &quot;Working with Virtual Building Studio was an outstanding experience. Their Plumbing BIM work was accurate, timely, and instrumental in helping our construction team avoid conflicts and stay on schedule. We truly appreciate their dedication and highly recommend their services.&quot;
-                </p>
-                <div className="testi-author testi-author--brand">- VDC Manager</div>
-              </Reveal>
-            </div>
-          </div>
-        </section>
-
-        <section className="hvac-sec hvac-sec--cta" id="cta" aria-labelledby="hvac-cta-heading">
-          <div className="wrap">
-            <Reveal>
-              <div className="cta-inner">
-                <h2 id="hvac-cta-heading" className="cta-h text-dark">
-                  Ready to achieve clash-free coordination and faster construction delivery?
-                </h2>
-                <button
-                  type="button"
-                  onClick={openBookMeetingModal}
-                  className="btn btn-primary rounded-pill px-4 py-3 cta-btn text-decoration-none d-inline-flex align-items-center justify-content-center gap-2"
-                >
-                  Let&apos;s Discuss Your Next Project
-                  <Icon name="arrow-right" />
-                </button>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-      </main>
-
-      </>
-  );
+export default function CoordinationPlumbingBimModelingForSportClubFacilityUsaPage() {
+  return <ProjectCaseStudy content={content} />;
 }
-
-export default CoordinationPlumbingBimModelingForSportClubFacilityUsaPage;

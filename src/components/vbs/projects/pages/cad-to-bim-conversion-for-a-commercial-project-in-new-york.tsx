@@ -1,94 +1,146 @@
 "use client";
 // @ts-nocheck
 
-import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
-const bannerImage = "/image/blog-banner.png";
+import { ProjectCaseStudy } from "@/components/vbs/projects/case-study";
+import { overviewChipIcons, toExecutionSteps } from "@/components/vbs/projects/case-study/helpers";
 
-const CasestudyCheck = "/icon/casestudy-check.png";
-const SwiperImage1 = "/image/project3-slider1.jpg";
-const SwiperImage2 = "/image/project3-slider2.jpg";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import Link from "next/link";
-
-
-const CadToBimVonversion = () => {
-    const data = [
-        { id: 1, text: "LOD 400 Coordinated Model" },
-        { id: 2, text: "Shop Drawings" },
-        { id: 3, text: "Hanger Drawings" },
-        { id: 4, text: "Sleeve Drawings" }
-    ];
-
-
-    return (
-        <>
-            
-            <section className="home-banner-2 pb-10 pt-4 vbs-project-detail-hero" style={{ backgroundImage: `url(${bannerImage})` }} >
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto">
-                        <div className="category-badge mb-2">
-                            <Link href="/" className="category">
-                                Commercial Building
-                            </Link>
-                        </div>
-                        <h1>CAD to BIM Modeling with MEP Coordination</h1>
-                    </Col>
-                </Container>
-            </section>
-            <section className="py-10">
-                <Swiper
-                    slidesPerView={2}
-                    centeredSlides={true}
-                    spaceBetween={40}
-                    pagination={{ clickable: true }}
-                    navigation={true}
-                    modules={[Pagination, Navigation]}
-                    className="casestudy-swiper pb-9"
-                >
-                    <SwiperSlide>
-                        <Image src={SwiperImage1} className="img-fluid" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src={SwiperImage2} className="img-fluid" />
-                    </SwiperSlide>
-                </Swiper>
-            </section>
-            <section className="py-10">
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto mb-5 mb-lg-8">
-                        <h2>Capabilities of <span className="highlight-text">Top 1% Architects Engineers</span></h2>
-                    </Col>
-                    <Row lg={3} md={2} xs={1} className="g-6 justify-content-center mb-6">
-                        {data.map((col, index) => (
-                            <Col key={index}>
-                                <div className={`p-5 h-100 text-center ${index % 2 === 0 ? 'bg-primary bg-opacity-10' : 'bg-light'}`}>
-                                    <Image src={CasestudyCheck} width={56} height={56} className="mb-2" />
-                                    <h4 className="mb-0 text-dark">{col.text}</h4>
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
-                    <Col lg={8} xs={12} className="mx-auto">
-                        <div className="bg-primary p-4 rounded-3 text-center">
-                            <div>
-                                <h3 className="title text-white mb-3">Do you want to Hire Dedicated Resources for a similar Project?</h3>
-                                <Link className="btn btn-light text-uppercase px-lg-4 py-12 fs-4 fw-semibold" href='/contact-us'>
-                                    Access Top 1% Architects & Engineers in 3 Days
-                                    <i className="icon ms-2 fa fa-lg fa-long-arrow-alt-right"></i>
-                                </Link>
-                            </div>
-                        </div>
-                    </Col>
-                </Container>
-            </section>
-            </>
-    );
+const content = {
+  hero: {
+    tag: "Commercial Building",
+    titleLead: "CAD to BIM Modeling with MEP Coordination: ",
+    titleAccent: "Commercial Project, New York",
+    description:
+      "CAD to BIM conversion producing a LOD 400 coordinated model with shop drawings, hanger drawings, and sleeve drawings for a commercial project in New York.",
+    image: "/image/project3-slider1.jpg",
+    imageAlt: "New York commercial CAD to BIM conversion project",
+  },
+  overview: {
+    image: "/image/project3-slider2.jpg",
+    imageAlt: "LOD 400 coordinated commercial BIM model",
+    paragraphs: [
+      "This commercial project in New York required converting CAD documentation into a LOD 400 coordinated BIM model with MEP-focused deliverables. Our team developed the coordinated model and produced shop, hanger, and sleeve drawings for construction.",
+      "The deliverables supported MEP installation planning with accurate, coordinated drawing sets derived from the BIM model.",
+    ],
+    chips: [
+      { label: "Level of Development LOD 400", icon: overviewChipIcons.lod },
+      { label: "Discipline MEP", icon: overviewChipIcons.manpower },
+      { label: "Location New York, USA", icon: overviewChipIcons.location },
+      { label: "Project Type Commercial Building", icon: overviewChipIcons.area },
+    ],
+  },
+  tools: {
+    description:
+      "CAD to BIM conversion and MEP coordination ran in Autodesk Revit with Navisworks for clash detection.",
+    items: [
+      { name: "Revit", icon: "/icon/revit.png" },
+      { name: "Navisworks", icon: "/icon/navisworks.png" },
+    ],
+  },
+  io: {
+    description:
+      "From 2D CAD MEP drawings to a LOD 400 coordinated model with shop, hanger, and sleeve drawing sets.",
+    inputImages: [
+      { src: "/image/project3-slider1.jpg", label: "2D CAD MEP Drawings" },
+    ],
+    outputImages: [
+      { src: "/image/project3-slider2.jpg", label: "LOD 400 Coordinated Model and Drawings" },
+    ],
+    inputPoints: [
+      "2D CAD MEP design drawings",
+      "Equipment schedules and specifications",
+      "Structural and architectural reference models",
+      "Client drafting standards",
+    ],
+    outputPoints: [
+      "LOD 400 coordinated model",
+      "Shop drawings",
+      "Hanger drawings",
+      "Sleeve drawings",
+    ],
+  },
+  pain: {
+    description:
+      "Commercial MEP projects in New York require coordinated BIM models and fabrication-ready drawing sets.",
+    items: [
+      {
+        title: "CAD to BIM Conversion Accuracy",
+        text: "Legacy CAD MEP drawings must be converted accurately to support LOD 400 coordinated modeling.",
+      },
+      {
+        title: "MEP Installation Coordination",
+        text: "Hanger and sleeve placements require precise coordination with structural elements.",
+      },
+      {
+        title: "Shop Drawing Production",
+        text: "Fabrication-ready shop drawings must reflect the coordinated BIM model accurately.",
+      },
+      {
+        title: "Multi-Trade Alignment",
+        text: "MEP systems must align with architectural and structural constraints in dense commercial buildings.",
+      },
+    ],
+  },
+  approach: {
+    description:
+      "CAD to BIM conversion followed by LOD 400 coordination and MEP drawing production.",
+    items: [
+      {
+        title: "CAD to BIM Conversion",
+        text: "Converted 2D CAD MEP documentation into structured Revit models.",
+      },
+      {
+        title: "LOD 400 Coordinated Modeling",
+        text: "Developed coordinated MEP models at LOD 400 aligned with reference disciplines.",
+      },
+      {
+        title: "Shop and Fabrication Drawings",
+        text: "Produced shop drawings from the coordinated model for fabrication and installation.",
+      },
+      {
+        title: "Hanger and Sleeve Drawings",
+        text: "Generated hanger and sleeve drawing sets with precise placement coordinates.",
+      },
+    ],
+  },
+  execution: {
+    tag: "Execution Strategy",
+    titleLine1: "A Structured CAD to BIM ",
+    titleLine2: "Workflow - Phase by Phase",
+    description:
+      "Delivery moved from CAD intake through BIM conversion, coordination, and MEP drawing production.",
+    steps: toExecutionSteps([
+      "CAD Intake and Standards Review",
+      "CAD to BIM Conversion",
+      "LOD 400 Coordinated Modeling",
+      "MEP Coordination and Clash Detection",
+      "Shop, Hanger, and Sleeve Drawing Production",
+      "Final Review and Delivery",
+    ]),
+  },
+  outcomes: {
+    description:
+      "LOD 400 coordinated model with shop, hanger, and sleeve drawings delivered for the New York commercial project.",
+    items: [
+      {
+        title: "LOD 400 Coordinated Model",
+        text: "MEP-coordinated BIM model developed at LOD 400 from CAD inputs.",
+      },
+      {
+        title: "Shop Drawings",
+        text: "Fabrication-ready shop drawing sets extracted from the coordinated model.",
+      },
+      {
+        title: "Hanger Drawings",
+        text: "Precise hanger placement drawings for MEP installation.",
+      },
+      {
+        title: "Sleeve Drawings",
+        text: "Coordinated sleeve drawings aligned with structural penetrations.",
+      },
+    ],
+  },
 };
 
-export default CadToBimVonversion;
+export default function CadToBimCommercialNewYorkPage() {
+  return <ProjectCaseStudy content={content} />;
+}

@@ -1,95 +1,151 @@
 "use client";
 // @ts-nocheck
 
-import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
-const bannerImage = "/image/blog-banner.png";
-const CasestudyCheck = "/icon/casestudy-check.png";
+import { ProjectCaseStudy } from "@/components/vbs/projects/case-study";
+import { overviewChipIcons, toExecutionSteps } from "@/components/vbs/projects/case-study/helpers";
 
-const SwiperImage1 = "/image/project6-slider1.jpg";
-const SwiperImage2 = "/image/project6-slider2.jpg";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import Link from "next/link";
-
-
-const SchematicDesign = () => {
-    const data = [
-        { id: 1, text: "LOD 300 Architectural and Structural Models" },
-        { id: 2, text: "Design Revisions" },
-        { id: 3, text: "Quantity Estimation" },
-        { id: 4, text: "3D Rendering" },
-        { id: 5, text: "SD to CD Stage Documentation" }
-    ];
-
-
-    return (
-        <>
-            
-            <section className="home-banner-2 pb-10 pt-4 vbs-project-detail-hero" style={{ backgroundImage: `url(${bannerImage})` }} >
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto">
-                        <div className="category-badge mb-2">
-                            <Link href="/" className="category">
-                                Historical Building
-                            </Link>
-                        </div>
-                        <h1>Architecture Drafting & SD, DD, CD Stage Documentation</h1>
-                    </Col>
-                </Container>
-            </section>
-            <section className="py-10">
-                <Swiper
-                    slidesPerView={2}
-                    centeredSlides={true}
-                    spaceBetween={40}
-                    pagination={{ clickable: true }}
-                    navigation={true}
-                    modules={[Pagination, Navigation]}
-                    className="casestudy-swiper pb-9"
-                >
-                    <SwiperSlide>
-                        <Image src={SwiperImage1} className="img-fluid" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Image src={SwiperImage2} className="img-fluid" />
-                    </SwiperSlide>
-                </Swiper>
-            </section>
-            <section className="py-10">
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto mb-5 mb-lg-8">
-                        <h2>Capabilities of <span className="highlight-text">Top 1% Architects Engineers</span></h2>
-                    </Col>
-                    <Row lg={3} md={2} xs={1} className="g-6 justify-content-center mb-6">
-                        {data.map((col, index) => (
-                            <Col key={index}>
-                                <div className={`p-5 h-100 text-center ${index % 2 === 0 ? 'bg-primary bg-opacity-10' : 'bg-light'}`}>
-                                    <Image src={CasestudyCheck} width={56} height={56} className="mb-2" />
-                                    <h4 className="mb-0 text-dark">{col.text}</h4>
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
-                    <Col lg={8} xs={12} className="mx-auto">
-                        <div className="bg-primary p-4 rounded-3 text-center">
-                            <div>
-                                <h3 className="title text-white mb-3">Do you want to Hire Dedicated Resources for a similar Project?</h3>
-                                <Link className="btn btn-light text-uppercase px-lg-4 py-12 fs-4 fw-semibold" href='/contact-us'>
-                                    Access Top 1% Architects & Engineers in 3 Days
-                                    <i className="icon ms-2 fa fa-lg fa-long-arrow-alt-right"></i>
-                                </Link>
-                            </div>
-                        </div>
-                    </Col>
-                </Container>
-            </section>
-            </>
-    );
+const content = {
+  hero: {
+    tag: "Historical Building",
+    titleLead: "Architecture Drafting & SD, DD, CD Documentation: ",
+    titleAccent: "Heritage Building Redevelopment",
+    description:
+      "LOD 300 architectural and structural modeling with design revisions, quantity estimation, 3D rendering, and schematic through construction documentation for a heritage building redevelopment.",
+    image: "/image/project6-slider1.jpg",
+    imageAlt: "Heritage building redevelopment documentation project",
+  },
+  overview: {
+    image: "/image/project6-slider2.jpg",
+    imageAlt: "Heritage building LOD 300 models and documentation",
+    paragraphs: [
+      "This heritage building redevelopment required LOD 300 architectural and structural models with design revisions, quantity estimation, and 3D rendering across schematic design through construction documentation stages. Our team supported the full documentation lifecycle.",
+      "Heritage projects demand careful balance between preserving existing conditions and integrating new design elements, addressed through structured modeling and phased documentation delivery.",
+    ],
+    chips: [
+      { label: "Level of Development LOD 300", icon: overviewChipIcons.lod },
+      { label: "Discipline Architectural & Structural", icon: overviewChipIcons.manpower },
+      { label: "Location Heritage Building", icon: overviewChipIcons.location },
+      { label: "Project Type Historical Building", icon: overviewChipIcons.area },
+    ],
+  },
+  tools: {
+    description:
+      "Architectural and structural modeling, documentation, and visualization ran in Autodesk Revit and Navisworks.",
+    items: [
+      { name: "Revit", icon: "/icon/revit.png" },
+      { name: "Navisworks", icon: "/icon/navisworks.png" },
+    ],
+  },
+  io: {
+    description:
+      "From heritage survey data and design inputs to LOD 300 models, documentation sets, and 3D renderings.",
+    inputImages: [
+      { src: "/image/project6-slider1.jpg", label: "Heritage Survey and Design Inputs" },
+    ],
+    outputImages: [
+      { src: "/image/project6-slider2.jpg", label: "LOD 300 Models and Documentation" },
+    ],
+    inputPoints: [
+      "Existing heritage building surveys and as-built data",
+      "Schematic and design development drawings",
+      "Heritage preservation guidelines and constraints",
+      "Client documentation standards",
+    ],
+    outputPoints: [
+      "LOD 300 architectural and structural models",
+      "Design revisions",
+      "Quantity estimation",
+      "3D rendering",
+      "SD to CD stage documentation",
+    ],
+  },
+  pain: {
+    description:
+      "Heritage building redevelopments require careful documentation across design stages while respecting existing conditions.",
+    items: [
+      {
+        title: "Heritage Condition Documentation",
+        text: "Existing heritage elements must be accurately captured before integrating new design work.",
+      },
+      {
+        title: "Multi-Stage Documentation",
+        text: "Projects require consistent documentation from schematic design through construction documents.",
+      },
+      {
+        title: "Design Revision Management",
+        text: "Heritage projects involve frequent design revisions that must be tracked across all deliverables.",
+      },
+      {
+        title: "Preservation vs. New Design Balance",
+        text: "Models must reconcile existing heritage fabric with new architectural and structural elements.",
+      },
+    ],
+  },
+  approach: {
+    description:
+      "Phased documentation from SD through CD with LOD 300 modeling, revisions, and visualization.",
+    items: [
+      {
+        title: "LOD 300 Architectural and Structural Modeling",
+        text: "Developed discipline models at LOD 300 capturing both existing and new design elements.",
+      },
+      {
+        title: "Design Revision Management",
+        text: "Tracked and incorporated design revisions across models and documentation sets.",
+      },
+      {
+        title: "Quantity Estimation",
+        text: "Extracted quantities from coordinated models for cost planning and procurement.",
+      },
+      {
+        title: "SD to CD Documentation",
+        text: "Produced phased documentation sets from schematic design through construction documents.",
+      },
+    ],
+  },
+  execution: {
+    tag: "Execution Strategy",
+    titleLine1: "A Structured Heritage ",
+    titleLine2: "Workflow - Phase by Phase",
+    description:
+      "Delivery moved from heritage survey through SD, DD, and CD documentation with modeling and visualization.",
+    steps: toExecutionSteps([
+      "Heritage Survey and Existing Conditions Modeling",
+      "Schematic Design Documentation",
+      "Design Development and Revisions",
+      "LOD 300 Model Refinement",
+      "Quantity Estimation and 3D Rendering",
+      "Construction Document Production and Delivery",
+    ]),
+  },
+  outcomes: {
+    description:
+      "LOD 300 models, design revisions, quantities, renderings, and SD-to-CD documentation delivered.",
+    items: [
+      {
+        title: "LOD 300 Architectural and Structural Models",
+        text: "Discipline models developed at LOD 300 for the heritage redevelopment.",
+      },
+      {
+        title: "Design Revisions",
+        text: "Design changes tracked and incorporated across all deliverables.",
+      },
+      {
+        title: "Quantity Estimation",
+        text: "Accurate quantities extracted from coordinated models.",
+      },
+      {
+        title: "3D Rendering",
+        text: "Visual renderings produced for design presentation and stakeholder review.",
+      },
+      {
+        title: "SD to CD Stage Documentation",
+        text: "Complete documentation sets delivered from schematic design through construction documents.",
+      },
+    ],
+  },
 };
 
-export default SchematicDesign;
+export default function SchematicDesignHeritageBuildingPage() {
+  return <ProjectCaseStudy content={content} />;
+}

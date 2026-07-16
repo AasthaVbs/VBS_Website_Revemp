@@ -1,87 +1,134 @@
 "use client";
 // @ts-nocheck
 
-import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
-const bannerImage = "/image/blog-banner.png";
-const CasestudyCheck = "/icon/casestudy-check.png";
-const SwiperImage1 = "/image/project10-slider1.jpg";
+import { ProjectCaseStudy } from "@/components/vbs/projects/case-study";
+import { overviewChipIcons, toExecutionSteps } from "@/components/vbs/projects/case-study/helpers";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import Link from "next/link";
-
-
-const Portfoliocadtobim = () => {
-    const data = [
-        { id: 1, text: "LOD 400 BIM Model" },
-        { id: 2, text: "Parametric Data Integration" },
-    ];
-
-
-    return (
-        <>
-            
-            <section className="home-banner-2 pb-10 pt-4 vbs-project-detail-hero" style={{ backgroundImage: `url(${bannerImage})` }} >
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto">
-                        <div className="category-badge mb-2">
-                            <Link href="/" className="category">
-                                Commercial Building
-                            </Link>
-                        </div>
-                        <h1>CAD to BIM with LOD 400</h1>
-                    </Col>
-                </Container>
-            </section>
-            <section className="py-10">
-                <Swiper
-                    slidesPerView={2}
-                    centeredSlides={true}
-                    spaceBetween={40}
-                    pagination={{ clickable: true }}
-                    navigation={true}
-                    modules={[Pagination, Navigation]}
-                    className="casestudy-swiper pb-9"
-                >
-                    <SwiperSlide>
-                        <Image src={SwiperImage1} className="img-fluid" />
-                    </SwiperSlide>
-                </Swiper>
-            </section>
-            <section className="py-10">
-                <Container>
-                    <Col lg={9} xs={12} className="text-center mx-auto mb-5 mb-lg-8">
-                        <h2>Capabilities of <span className="highlight-text">Top 1% Architects Engineers</span></h2>
-                    </Col>
-                    <Row lg={3} md={2} xs={1} className="g-6 justify-content-center mb-6">
-                        {data.map((col, index) => (
-                            <Col key={index}>
-                                <div className={`p-5 h-100 text-center ${index % 2 === 0 ? 'bg-primary bg-opacity-10' : 'bg-light'}`}>
-                                    <Image src={CasestudyCheck} width={56} height={56} className="mb-2" />
-                                    <h4 className="mb-0 text-dark">{col.text}</h4>
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
-                    <Col lg={8} xs={12} className="mx-auto">
-                        <div className="bg-primary p-4 rounded-3 text-center">
-                            <div>
-                                <h3 className="title text-white mb-3">Do you want to Hire Dedicated Resources for a similar Project?</h3>
-                                <Link className="btn btn-light text-uppercase px-lg-4 py-12 fs-4 fw-semibold" href='/contact-us'>
-                                    Access Top 1% Architects & Engineers in 3 Days
-                                    <i className="icon ms-2 fa fa-lg fa-long-arrow-alt-right"></i>
-                                </Link>
-                            </div>
-                        </div>
-                    </Col>
-                </Container>
-            </section>
-            </>
-    );
+const content = {
+  hero: {
+    tag: "Commercial Building",
+    titleLead: "CAD to BIM with LOD 400: ",
+    titleAccent: "Resort Adventure Park, UK",
+    description:
+      "CAD to BIM conversion producing a LOD 400 BIM model with parametric data integration for a resort adventure park project in the UK.",
+    image: "/image/project10-slider1.jpg",
+    imageAlt: "UK resort adventure park CAD to BIM project",
+  },
+  overview: {
+    image: "/image/project10-slider1.jpg",
+    imageAlt: "LOD 400 resort adventure park BIM model",
+    paragraphs: [
+      "This resort adventure park project in the UK required converting CAD documentation into a LOD 400 BIM model with integrated parametric data. Our team developed the model with accurate element representation and embedded parametric properties.",
+      "The deliverable supports design coordination, facility planning, and data-driven workflows for the commercial resort development.",
+    ],
+    chips: [
+      { label: "Level of Development LOD 400", icon: overviewChipIcons.lod },
+      { label: "Discipline Architectural", icon: overviewChipIcons.manpower },
+      { label: "Location UK", icon: overviewChipIcons.location },
+      { label: "Project Type Commercial Building", icon: overviewChipIcons.area },
+    ],
+  },
+  tools: {
+    description:
+      "CAD to BIM conversion with parametric data integration ran in Autodesk Revit.",
+    items: [
+      { name: "Revit", icon: "/icon/revit.png" },
+    ],
+  },
+  io: {
+    description:
+      "From 2D CAD design drawings to a LOD 400 BIM model with parametric data integration.",
+    inputImages: [
+      { src: "/image/project10-slider1.jpg", label: "2D CAD Design Drawings" },
+    ],
+    outputImages: [
+      { src: "/image/project10-slider1.jpg", label: "LOD 400 BIM Model with Parametric Data" },
+    ],
+    inputPoints: [
+      "2D CAD architectural design drawings",
+      "Resort layout and facility schedules",
+      "Client BIM standards and data requirements",
+      "Material and equipment specifications",
+    ],
+    outputPoints: [
+      "LOD 400 BIM model",
+      "Parametric data integration",
+    ],
+  },
+  pain: {
+    description:
+      "Resort and adventure park projects require detailed BIM models with rich parametric data for facility management.",
+    items: [
+      {
+        title: "Complex Resort Layouts",
+        text: "Adventure park facilities involve diverse building types requiring detailed LOD 400 modeling.",
+      },
+      {
+        title: "Parametric Data Requirements",
+        text: "Models must embed parametric properties for equipment, materials, and facility assets.",
+      },
+      {
+        title: "CAD to BIM Fidelity",
+        text: "Design drawings must be converted accurately to preserve design intent at LOD 400.",
+      },
+      {
+        title: "Multi-Facility Coordination",
+        text: "Resort developments span multiple structures that must be modeled consistently.",
+      },
+    ],
+  },
+  approach: {
+    description:
+      "CAD to BIM conversion with LOD 400 modeling and parametric data integration.",
+    items: [
+      {
+        title: "CAD to BIM Conversion",
+        text: "Converted 2D CAD documentation into structured Revit models.",
+      },
+      {
+        title: "LOD 400 Model Development",
+        text: "Built detailed models at LOD 400 with accurate geometry and element detail.",
+      },
+      {
+        title: "Parametric Data Integration",
+        text: "Embedded parametric properties and data into model elements for facility workflows.",
+      },
+      {
+        title: "Quality Assurance",
+        text: "Validated model accuracy and data completeness against project requirements.",
+      },
+    ],
+  },
+  execution: {
+    tag: "Execution Strategy",
+    titleLine1: "A Structured CAD to BIM ",
+    titleLine2: "Workflow - Phase by Phase",
+    description:
+      "Delivery moved from CAD intake through LOD 400 modeling, parametric data integration, and validation.",
+    steps: toExecutionSteps([
+      "CAD Intake and Scope Review",
+      "CAD to BIM Conversion",
+      "LOD 400 Model Development",
+      "Parametric Data Integration",
+      "Quality Validation and Delivery",
+    ]),
+  },
+  outcomes: {
+    description:
+      "LOD 400 BIM model with parametric data integration delivered for the UK resort adventure park.",
+    items: [
+      {
+        title: "LOD 400 BIM Model",
+        text: "Detailed BIM model developed at LOD 400 from CAD inputs.",
+      },
+      {
+        title: "Parametric Data Integration",
+        text: "Model elements enriched with parametric properties for data-driven workflows.",
+      },
+    ],
+  },
 };
 
-export default Portfoliocadtobim;
+export default function PortfolioCadToBimResortUkPage() {
+  return <ProjectCaseStudy content={content} />;
+}

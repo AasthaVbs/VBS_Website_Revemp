@@ -87,7 +87,7 @@ export function SiteFooter() {
               Always at the forefront, Virtual Building Studio leads the AEC industry with its
               innovative solution.
             </p>
-            <div className="vbs-site-footer__socials flex max-w-[360px] flex-wrap content-center items-center gap-5">
+            <div className="vbs-site-footer__socials flex max-w-[360px] flex-wrap content-center items-center gap-3">
               {footerSocialLinks.map((social) => (
                 <a
                   key={social.label}

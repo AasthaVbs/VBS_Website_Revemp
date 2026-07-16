@@ -88,7 +88,7 @@
     }
 
     .vbs-site-footer__socials {
-      gap: 14px !important;
+      gap: 12px !important;
       max-width: none;
       margin-top: 4px;
     }
@@ -297,6 +297,7 @@
 
     .vbs-site-footer__socials {
       max-width: 360px;
+      gap: 18px !important;
     }
 
     .vbs-site-footer__column--quick-links {
@@ -327,9 +328,10 @@
 
     .vbs-site-footer__location-list {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 10px;
       width: 100%;
       margin: 0;
       padding: 0;
@@ -338,17 +340,19 @@
 
     .vbs-site-footer__location-item {
       display: inline-flex;
-      align-items: flex-start;
-      gap: 10px;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
 
     .vbs-site-footer__location-item--bullet {
-      padding-left: 30px;
+      padding-left: 0;
     }
 
     .vbs-site-footer__location-bullet {
       flex-shrink: 0;
-      width: 20px;
+      width: auto;
       text-align: center;
       font-size: 16px;
       line-height: 24px;

@@ -1,6 +1,912 @@
 {
-  "fetchedAt": "2026-07-16T15:24:01.309Z",
+  "fetchedAt": "2026-07-17T14:06:18.890Z",
   "posts": [
+    {
+      "_id": "0eaa9a16-890a-43c3-9342-b52e297de7f4",
+      "body": [
+        {
+          "_key": "8f4b0fffaa70",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-5ffafa8d11697cd15bc0c68c269db849a2343dd3-1460x926-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "313d0c7ddc2c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "136a2b98167f",
+              "_type": "span",
+              "marks": [],
+              "text": "Data centers rank among the most technically demanding structures in modern construction. Mechanical, electrical, plumbing, and structural systems all fight for the same cramped square footage. Timelines rarely offer breathing room either, since operators want capacity online as fast as possible. Uptime is the whole point of the building, so even a small design choice can have lasting effects on safety and day-to-day operations."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e1bfeeee59c9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f8c28a2abb15",
+              "_type": "span",
+              "marks": [],
+              "text": "So how do architects, engineers, and contractors keep all of this under control? Most now lean on structured digital workflows, with building information modeling at the center. BIM hands every stakeholder the same coordinated picture of the finished building instead of a dozen conflicting drawing sets. Demand for new capacity keeps climbing as cloud providers and AI platforms expand their footprint. "
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ee8ec31eec6c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f8c28a2abb15",
+              "_type": "span",
+              "marks": [],
+              "text": "This growth makes every design decision made before groundbreaking more critical. This article walks through the technical mechanics behind architectural BIM adoption, section by section, from a field execution standpoint."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "880270646724",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4a9fbfb69378",
+              "_type": "span",
+              "marks": [],
+              "text": "Why Data Center Construction Demands Precise Coordination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "c8fea3453a1a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "eb793af6e181",
+              "_type": "span",
+              "marks": [],
+              "text": "Data center floors hold thousands of cable runs. Power distribution units sit inches from cooling assemblies. Structural grids leave narrow tolerances for MEP routing. A single clash between a duct and a busway forces field rework. Field rework consumes schedule days that owners rarely recover. Uptime requirements push design teams toward zero-tolerance planning."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f0bd8bbdb48d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e8a60888ea40",
+              "_type": "span",
+              "marks": [],
+              "text": "Redundant power architectures such as 2N and N+1 double the routing volume across every floor. Every extra cable run adds coordination weight to the project. Teams that skip early spatial planning discover conflicts during installation instead of design. That timing shift multiplies cost several times over across the schedule."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3de9ed3bc6ad",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "391a51c892f8",
+              "_type": "span",
+              "marks": [],
+              "text": "Field auditors reviewing hyperscale campuses see the same pattern repeat across markets. Raised floor voids carry power feeds, data cabling, and fire suppression piping in the same tight band. Ceiling voids carry chilled water lines, electrical busways, and structural steel in parallel. Cooling loads climb higher every year as AI workloads push rack densities upward. Older two-dimensional coordination methods lose visibility inside this layered environment. A structured digital workflow restores that visibility from the earliest design stage forward."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8ffae7753801",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3562f44193c5",
+              "_type": "span",
+              "marks": [],
+              "text": "What Are Architectural BIM Services?"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "4da36c1008cd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "763aca366543",
+              "_type": "span",
+              "marks": [
+                "eb09c6b51ba2"
+              ],
+              "text": "Architectural BIM services"
+            },
+            {
+              "_key": "b91481a0f385",
+              "_type": "span",
+              "marks": [],
+              "text": " translate design intent into coordinated, highly detailed digital models. Licensed architects develop these models in stages, from LOD 100 all the way up to LOD 500. Each stage comes with its own geometric and data requirements, and those requirements follow AIA, IBC, and BIMForum standards rather than any one firm's internal rules."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "eb09c6b51ba2",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/architectural-bim-services"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "7182ea5bb9b5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "16326dc39ed1",
+              "_type": "span",
+              "marks": [],
+              "text": "Architectural teams model walls, floors, roofs, and building envelope systems inside Revit. These models carry parametric intelligence, so a change in one view updates every connected drawing automatically. Structural and MEP teams then link their models into the same coordinate system. The result becomes a single federated model that represents the entire building from footing to roof."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "bf6a42d63c56",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "63bcbf523465",
+              "_type": "span",
+              "marks": [],
+              "text": "Delivery scope for a data center architectural package commonly covers several defined stages."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7b02b2306c5c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "861b529481c7",
+              "_type": "span",
+              "marks": [],
+              "text": "Schematic massing and site placement studies at LOD 100 through LOD 200"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e286d9893d7d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ac6c1ffee3ff",
+              "_type": "span",
+              "marks": [],
+              "text": "Design development modeling with wall assemblies, floor plates, and envelope systems at LOD 300"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0d48c42f34a0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d82f657c2f1e",
+              "_type": "span",
+              "marks": [],
+              "text": "Construction documentation packages aligned with AIA, ADA, and local building codes"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "87dc5c7135a8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e51066ec4765",
+              "_type": "span",
+              "marks": [],
+              "text": "Clash coordination reviews against structural and MEP disciplines using Navisworks"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3b59bfa2affd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8aaec82c4553",
+              "_type": "span",
+              "marks": [],
+              "text": "As-built model updates delivered under ISO 19650 and COBie standards for facility handover"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "82a0bddcef84",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4ac44373e19a",
+              "_type": "span",
+              "marks": [],
+              "text": "Every stage builds directly on the previous deliverable inside the same live model file."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a7ff6da647e2",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nLearn About --> \n<a href=\"https://www.virtualbuildingstudio.com/blog/future-of-architectural-bim-ai-automation-digital-twins/\">\nFuture of Architectural BIM Services: AI, Automation, and Digital Twins\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
+        },
+        {
+          "_key": "690213ad3836",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b5e90b447aca",
+              "_type": "span",
+              "marks": [],
+              "text": "How BIM Improves Data Center Design Coordination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "49918ee79959",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cc8c7f3ca428",
+              "_type": "span",
+              "marks": [],
+              "text": "Data Center BIM modeling puts every discipline inside one shared spatial environment. Architects, structural engineers, and MEP teams work from a common coordinate system from day one. Coordinators run clash detection cycles using Navisworks and Solibri to flag overlaps between ductwork, conduits, and structural members."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b402bc1f56fb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "fc966d380042",
+              "_type": "span",
+              "marks": [],
+              "text": "Weekly coordination cycles keep the model current across every discipline. Teams resolve conflicts inside the model, long before construction teams reach the site. Architects and trade contractors close communication gaps faster inside this shared environment. A rough concept sketch turns into a buildable, code-compliant drawing set without the usual back and forth."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "edd686e47f88",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "85d9eed6d5b2",
+              "_type": "span",
+              "marks": [],
+              "text": "Key Benefits of Architectural BIM for Data Center Projects"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "6a4737cff587",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ba59675617f8",
+              "_type": "span",
+              "marks": [],
+              "text": "The payoff from architectural BIM shows up in three places: the schedule, the budget, and the quality of what actually gets built. Catching clashes early helps avoid costly change orders. And when every trade works from the same coordinated model, RFIs drop because nobody has to guess at scope or dimensions."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9b38758b0198",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-d98734b6409bd96414674e0b4428dae7f00b77e2-1460x645-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "b652d127c5a0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9dafd1d5bae5",
+              "_type": "span",
+              "marks": [],
+              "text": "Facility teams gain a COBie-compliant digital record for long-term operations and maintenance planning. Owners get something out of it too: a clear visual preview of the finished facility, long before anyone breaks ground. Quantity takeoffs pulled directly from the model support accurate procurement and cost forecasting. Every discipline works from one accurate source of design truth."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "92d459c200bb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "52d1e27b387c",
+              "_type": "span",
+              "marks": [],
+              "text": "Auditors reviewing completed data center handovers report a recurring pattern. Projects that adopt coordinated architectural BIM early carry fewer punch list items at closeout. Facility managers navigate a digital twin instead of a stack of paper drawings. Equipment locations, warranty records, and maintenance schedules stay attached to the model itself. This structure shortens the search time for a technician chasing a fault at 2 a.m."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0aec5c06b83c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1810baeb5ac8",
+              "_type": "span",
+              "marks": [],
+              "text": "How Architectural BIM Supports MEP Coordination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "c9584f6d34be",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c6bf8426e524",
+              "_type": "span",
+              "marks": [],
+              "text": "The architectural model serves as the spatial anchor for every MEP system inside a data center. Wall positions define the routing envelopes available for ductwork above each corridor. Ceiling heights determine the workable depth of every service void. Raised floor zones mark where power feeders travel beneath the white space. MEP designers reference these architectural boundaries first."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e3339dd76d57",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "be18187d1a71",
+              "_type": "span",
+              "marks": [],
+              "text": "Architects reserve service zones long before MEP routing work begins. Riser shafts get cut openings for busway runs between floors. Hot aisle containment geometry lives inside the base model itself. Roof plans carry curb points for every rooftop chiller. Each provision gives mechanical and electrical teams a clear path to follow. This early work removes dozens of routing snags from later reviews."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "32474e992e92",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5f560f1a4a05",
+              "_type": "span",
+              "marks": [],
+              "text": "Every trade stays within a single common coordinate grid thanks to linked Revit models. Every week, coordinators check wall geometry against MEP routes. Access zones around air handling units flag issues right away. This specific workflow is to rework cuts. Teams then fix every flagged item before the field crews mobilize on site."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fcd9b4fa43a5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8bac8d50d1b0",
+              "_type": "span",
+              "marks": [],
+              "text": "Architectural teams support MEP coordination through five key practices on live data center work."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "de4def4065fe",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ca1cdbce19c1",
+              "_type": "span",
+              "marks": [],
+              "text": "Shared coordinate setup with survey control points across every linked model"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6e62f734a29f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1e82eece0df8",
+              "_type": "span",
+              "marks": [],
+              "text": "Raised floor depth checks that confirm clearance for underfloor power routes"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8ed0f60da8fc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "71a7cb2c5e2c",
+              "_type": "span",
+              "marks": [],
+              "text": "Sleeve placement through fire-rated assemblies at documented penetration points"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "90ff610d0db8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c0509b8836cb",
+              "_type": "span",
+              "marks": [],
+              "text": "Maintenance access envelopes around power distribution units in electrical rooms"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1f6b9070e315",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0dcab3d7cdd4",
+              "_type": "span",
+              "marks": [],
+              "text": "Model audits before each drawing release to verify coordinated geometry"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "90ef888ad3b3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a851e2dc0d0d",
+              "_type": "span",
+              "marks": [],
+              "text": "This early groundwork changes how field crews experience the job site. Installers get clear routing paths that respect every wall opening. RFI volume drops off fast because spatial answers live inside the model. Commissioning agents verify access zones in the same file. The architectural model quietly guides each MEP fit from rough-in to test."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6f3c36b3a361",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e8f51657b1db",
+              "_type": "span",
+              "marks": [],
+              "text": "Architectural BIM for Space Planning and Equipment Layout"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "eb491697a8ef",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "715da5b5afe9",
+              "_type": "span",
+              "marks": [],
+              "text": "Space planning decides how much compute capacity a completed facility ultimately delivers. Architectural BIM models map white space against gray space with exact room boundaries. Rack rows follow hot aisle geometry drawn directly into the floor plans. Circulation corridors stay wide enough for heavy equipment delivery carts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5fd44df9cde4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b09c3aec129b",
+              "_type": "span",
+              "marks": [],
+              "text": "Parametric equipment families speed layout choices during design development. Architects position generator sets alongside switchboards using exact vendor dimensions. Maintenance clearances appear automatically around each placed unit. Area schedules compare usable floor area with future growth needs. Egress paths stay compliant because corridor widths update parametrically with each revision."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5fa0a59a666e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4cbcd5c3f9cb",
+              "_type": "span",
+              "marks": [],
+              "text": "Common Challenges Solved by Architectural BIM"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "2f01a2c28e9e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "89d7a8f1fd91",
+              "_type": "span",
+              "marks": [],
+              "text": "Old project files rarely arrive in clean shape. More often than not, what shows up is a pile of scattered 2D drawings, half of them outdated revisions with dimensions missing. "
+            },
+            {
+              "_key": "f4948b18c030",
+              "_type": "span",
+              "marks": [
+                "c419bb058309"
+              ],
+              "text": "CAD to BIM services"
+            },
+            {
+              "_key": "9ce2e6c59399",
+              "_type": "span",
+              "marks": [],
+              "text": " take that mess and rebuild it into structured, coordinated digital models that renovation and retrofit teams can actually work with. Scan to BIM workflows add another layer of accuracy for existing facilities, turning laser-captured point clouds into usable geometry."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "c419bb058309",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/cad-to-bim/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "1f7089f198f1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ebb455364cba",
+              "_type": "span",
+              "marks": [],
+              "text": "Maintenance clearance conflicts create real safety exposure around switchgear and chillers. Clearance envelopes added to the model flag any system that enters a protected access zone. Late-stage coordination cycles create the costliest category of rework across every project type. Weekly clash reviews starting at design development catch these issues long before fabrication release."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e930c8a33e85",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c59fd492e8b7",
+              "_type": "span",
+              "marks": [],
+              "text": "Redundant power routing and tight ceiling voids compound these challenges further inside hyperscale campuses. One fix that works well here is a zone allocation matrix, which hands each discipline its own defined slice of the floor plate. HVAC and primary power routes get first pick of the priority zones. Secondary systems fill remaining space according to a documented hierarchy. This governance approach catches overcrowding inside the model, long before installation reaches the site."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "664ee260baf8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "945fe079a2c9",
+              "_type": "span",
+              "marks": [],
+              "text": "Choosing the Right Architectural BIM Partner for Data Center Projects"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "d6248708d321",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "18d52f976cbc",
+              "_type": "span",
+              "marks": [],
+              "text": "Project owners gain the most value from partners with confirmed experience in delivering data centers. A qualified BIM partner supplies BIM documentation services covering construction documentation, as-built records, and COBie-compliant handover packages. Ask prospective partners about their "
+            },
+            {
+              "_key": "572009633401",
+              "_type": "span",
+              "marks": [
+                "a820dbfb6e92"
+              ],
+              "text": "Level of Development"
+            },
+            {
+              "_key": "d7ecd65d7cca",
+              "_type": "span",
+              "marks": [],
+              "text": " (LOD) delivery history, their clash resolution turnaround, and their familiarity with Tier III and Tier IV separation requirements."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "a820dbfb6e92",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/blog/bim-level-of-development-an-overview/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "dce29ba8ad38",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1964c51cf44d",
+              "_type": "span",
+              "marks": [],
+              "text": "It also helps when one firm handles architectural, structural, and MEP coordination together, since fewer handoffs between disciplines means less friction. Check that the partner actually works inside Navisworks, Solibri, and Autodesk Construction Cloud for real-time collaboration, not just claims to. And if you are still unsure, a short trial engagement is a low-risk way to test the fit before committing to a full project."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "54f98e0826e0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "947d1541fa69",
+              "_type": "span",
+              "marks": [],
+              "text": "Consider these questions during partner evaluation calls."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c2e45a899db7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8568c356d482",
+              "_type": "span",
+              "marks": [],
+              "text": "Which data center projects has the team delivered, and at what LOD range"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2d5e06075417",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e7d4d5827a74",
+              "_type": "span",
+              "marks": [],
+              "text": "How does the team structure weekly clash detection and issue tracking"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "43b5c7623edb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5d5e98e3d4a7",
+              "_type": "span",
+              "marks": [],
+              "text": "What turnaround time applies to coordination review cycles and model updates"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7dc0f59e7e0a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "42741b60b696",
+              "_type": "span",
+              "marks": [],
+              "text": "Which standards govern deliverables, such as ISO 19650, COBie, and BIMForum LOD definitions"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ede99cb10e9e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "851316a65ead",
+              "_type": "span",
+              "marks": [],
+              "text": "How does the team support prefabrication packages and digital twin handover"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c7b39dfd1048",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "26a512615ab2",
+              "_type": "span",
+              "marks": [],
+              "text": "Clear answers to these questions signal a partner ready for mission-critical delivery."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "73bd66f16309",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7fac0c014c2e",
+              "_type": "span",
+              "marks": [],
+              "text": "Conclusion"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "d1405761acf4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "eb24431645c1",
+              "_type": "span",
+              "marks": [],
+              "text": "A structured, coordinated BIM workflow gives data center teams a clear path through one of the most demanding building types in construction. Coordinated models catch clashes early, support fabrication-ready delivery, and hand owners a COBie-compliant digital record for decades of operation. Teams that adopt these workflows from the design development stage protect their schedule, their budget, and their long-term facility performance. "
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d06396bcee9e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "eb24431645c1",
+              "_type": "span",
+              "marks": [],
+              "text": "The path toward a coordinated, construction-ready data center starts with the right modeling partner, the right workflow discipline, and an early commitment to spatial planning. Owners, architects, and contractors who invest in this discipline early carry that value forward across the full operational life of the facility."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d299850f039e",
+          "_type": "cta",
+          "buttonText": "Contact Us",
+          "buttonUrl": "/contact-us/",
+          "title": "Ready to Build Your Data Center on a Coordinated Model? "
+        }
+      ],
+      "categories": [
+        {
+          "_id": "c4570779-37fa-4762-8173-57e0a7f8de73",
+          "title": "BIM Modeling "
+        }
+      ],
+      "featuredImage": {
+        "asset": {
+          "originalFilename": "Architectural BIM Data Center Construction.jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/5ffafa8d11697cd15bc0c68c269db849a2343dd3-1460x926.jpg"
+        }
+      },
+      "publishedAt": "2026-07-16",
+      "slug": "architectural-bim-data-center-construction",
+      "tags": null,
+      "title": "How Architectural BIM Services Improve Data Center Construction Projects"
+    },
     {
       "_id": "716f2550-592f-4519-8f22-d68fa1563ca6",
       "body": [
@@ -40203,7 +41109,7 @@
             {
               "_key": "4864ebb1c2f5",
               "_type": "link",
-              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/mep-bim-services/"
+              "href": "https://www.virtualbuildingstudio.com/mep-bim-services/mep-bim-modeling-services/"
             }
           ],
           "style": "normal"

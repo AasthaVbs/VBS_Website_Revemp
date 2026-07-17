@@ -54,10 +54,13 @@ export const ZOHO_HIDDEN_COST_WP_IFRAME_SRC =
 /** Fixed visible iframe area for hidden-cost whitepaper — taller than data center form. */
 export const ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_PX = 500;
 
+/** Taller locked viewport on mobile for the hidden-cost whitepaper form. */
+export const ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_MOBILE_PX = 740;
+
 /** Hide duplicate Zoho title — hidden-cost whitepaper only. */
 export const ZOHO_HIDDEN_COST_WP_HEADER_CROP_PX = 210;
 
-export const ZOHO_HIDDEN_COST_WP_HEADER_CROP_MOBILE_PX = 210;
+export const ZOHO_HIDDEN_COST_WP_HEADER_CROP_MOBILE_PX = 300;
 
 export function getZohoHiddenCostWpHeaderCropPx() {
   if (typeof window === "undefined") {
@@ -70,10 +73,10 @@ export function getZohoHiddenCostWpHeaderCropPx() {
 }
 
 /** Shared Zoho whitepaper embed crops — data center whitepaper only. */
-export const ZOHO_MEP_DC_WP_HEADER_CROP_PX = 240;
+export const ZOHO_MEP_DC_WP_HEADER_CROP_PX = 265;
 
 /** Taller Zoho header stack on narrow viewports. */
-export const ZOHO_MEP_DC_WP_HEADER_CROP_MOBILE_PX = 280;
+export const ZOHO_MEP_DC_WP_HEADER_CROP_MOBILE_PX = 338;
 
 /** Fallback full iframe height until Zoho posts its auto-resize message. */
 export const ZOHO_MEP_DC_WP_IFRAME_INITIAL_HEIGHT_PX = 720;
@@ -81,13 +84,25 @@ export const ZOHO_MEP_DC_WP_IFRAME_INITIAL_HEIGHT_PX = 720;
 /** Fixed visible iframe area — lockHeight uses this as the viewport height. */
 export const ZOHO_MEP_DC_WP_VISIBLE_HEIGHT_PX = 480;
 
+/**
+ * Mobile locked base height — keep close to field stack + button so the
+ * outer clip window doesn’t leave empty Zoho page space below the form.
+ */
+export const ZOHO_MEP_DC_WP_VISIBLE_HEIGHT_MOBILE_PX = 580;
+
 /** Trim empty space below the MEP DC whitepaper form fields. */
 export const ZOHO_MEP_DC_WP_FOOTER_CROP_PX = 148;
 
-export const ZOHO_MEP_DC_WP_FOOTER_CROP_MOBILE_PX = 120;
+export const ZOHO_MEP_DC_WP_FOOTER_CROP_MOBILE_PX = 190;
 
 export function getZohoMepDcWpMinVisibleHeightPx() {
-  return ZOHO_MEP_DC_WP_VISIBLE_HEIGHT_PX;
+  if (typeof window === "undefined") {
+    return ZOHO_MEP_DC_WP_VISIBLE_HEIGHT_PX;
+  }
+
+  return window.matchMedia("(max-width: 767px)").matches
+    ? ZOHO_MEP_DC_WP_VISIBLE_HEIGHT_MOBILE_PX
+    : ZOHO_MEP_DC_WP_VISIBLE_HEIGHT_PX;
 }
 
 export function getZohoMepDcWpFooterCropPx() {

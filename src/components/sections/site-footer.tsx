@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 import footerBgImg from "@/assets/images/BG Image Footer 1.png";
+import footerLogo from "@/assets/images/VBS_white.png";
 import { PageContainer } from "@/components/layout/page-container";
 import { VBS_FOOTER_URLS } from "@/constants/navigation";
 
@@ -76,7 +77,7 @@ export function SiteFooter() {
           <div className="vbs-site-footer__brand flex max-w-[374px] flex-col items-start gap-5">
             <Link href="/" className="inline-flex shrink-0" aria-label="Virtual Building Studio home">
               <Image
-                src="/logos/logo.svg"
+                src={footerLogo}
                 alt="Virtual Building Studio"
                 width={301}
                 height={64}

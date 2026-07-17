@@ -16,6 +16,8 @@ import {
   getZohoMepDcWpFooterCropPx,
   getZohoMepDcWpHeaderCropPx,
   getZohoMepDcWpMinVisibleHeightPx,
+  ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_MOBILE_PX,
+  ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_PX,
   isZohoFormSubmissionMessage,
   parseZohoIframeResizeHeight,
   shouldRedirectAfterZohoSubmit,
@@ -124,6 +126,23 @@ export function ZohoPublicIframeForm({
     return 320;
   };
 
+  const getLockBaseHeightPx = () => {
+    if (headerCropPreset === "hidden-cost-wp") {
+      if (typeof window === "undefined") {
+        return Math.max(initialHeight, ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_PX);
+      }
+      const mobile = window.matchMedia("(max-width: 767px)").matches;
+      return Math.max(
+        initialHeight,
+        mobile ? ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_MOBILE_PX : ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_PX,
+      );
+    }
+    if (minVisibleHeightPreset === "mep-dc-wp" || headerCropPreset === "mep-dc-wp") {
+      return Math.max(initialHeight, getZohoMepDcWpMinVisibleHeightPx());
+    }
+    return initialHeight;
+  };
+
   const getFooterCropPx = () => {
     if (footerCropPreset === "mep-dc-wp") {
       return getZohoMepDcWpFooterCropPx();
@@ -137,7 +156,7 @@ export function ZohoPublicIframeForm({
   const [iframeHeight, setIframeHeight] = useState(initialHeight);
   const [visibleHeight, setVisibleHeight] = useState(() =>
     lockHeight
-      ? initialHeight
+      ? Math.max(280, getLockBaseHeightPx() - resolvedFooterCrop)
       : resolveVisibleHeight(
           initialHeight,
           resolvedHeaderCrop,
@@ -191,7 +210,7 @@ export function ZohoPublicIframeForm({
     const cropPx = getHeaderCropPx();
     const footerCropPx = getFooterCropPx();
     if (lockHeight) {
-      setVisibleHeight(Math.max(280, initialHeight - footerCropPx));
+      setVisibleHeight(Math.max(280, getLockBaseHeightPx() - footerCropPx));
       return;
     }
     setVisibleHeight(
@@ -297,9 +316,10 @@ export function ZohoPublicIframeForm({
   const cropPx = getHeaderCropPx();
   const footerCropForLayout = getFooterCropPx();
   const useHeaderShift = cropPx > 0;
-  const lockedIframeHeight = lockHeight ? initialHeight + cropPx : iframeHeight;
+  const lockBaseHeight = getLockBaseHeightPx();
+  const lockedIframeHeight = lockHeight ? lockBaseHeight + cropPx : iframeHeight;
   const lockedVisibleHeight = lockHeight
-    ? Math.max(280, initialHeight - footerCropForLayout)
+    ? Math.max(280, lockBaseHeight - footerCropForLayout)
     : visibleHeight;
   const fitContentContainerStyle: CSSProperties =
     fitContent && !useHeaderShift ? { minHeight: `${lockedVisibleHeight}px` } : {};

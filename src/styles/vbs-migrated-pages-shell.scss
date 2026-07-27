@@ -1,5 +1,5 @@
 /**
- * Migrated redesign pages — responsive content shell, no horizontal padding.
+ * Migrated redesign pages — responsive content shell with 12px side gutters.
  */
 
 .vbs-redesign-page {
@@ -14,8 +14,8 @@
 }
 
 html:not(:has(.vbs-redesign-page:not(.vbs-redesign-page--contact-embed))) {
-  --vbs-legacy-shell-gutter: 0px;
-  --vbs-legacy-shell-gutter-md: 0px;
+  --vbs-legacy-shell-gutter: 12px;
+  --vbs-legacy-shell-gutter-md: 12px;
 
   @media (min-width: 768px) {
     --vbs-legacy-shell-gutter: var(--vbs-legacy-shell-gutter-md);
@@ -28,13 +28,13 @@ html:not(:has(.vbs-redesign-page:not(.vbs-redesign-page--contact-embed))) {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: var(--vbs-legacy-shell-gutter, 12px) !important;
+    padding-right: var(--vbs-legacy-shell-gutter, 12px) !important;
   }
 
   .container:not(.container-fluid):not(.vbs-allow-bootstrap) {
     max-width: var(--vbs-legacy-shell-max) !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: var(--vbs-legacy-shell-gutter, 12px) !important;
+    padding-right: var(--vbs-legacy-shell-gutter, 12px) !important;
   }
 }

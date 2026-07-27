@@ -7,6 +7,10 @@
 :root {
   --vbs-page-max: 1330px;
   --vbs-legacy-shell-max: 1330px;
+  --vbs-page-gutter: 12px;
+  --vbs-page-gutter-md: 12px;
+  --vbs-legacy-shell-gutter: 12px;
+  --vbs-legacy-shell-gutter-md: 12px;
 }
 
 @media (min-width: 1400px) {
@@ -24,9 +28,9 @@ html:has(.vbs-redesign-page) {
 }
 
 .vbs-redesign-page {
-  /* Canvas width from :root --vbs-page-max */
-  --vbs-page-gutter: 0px;
-  --vbs-page-gutter-md: 0px;
+  /* Canvas width from :root --vbs-page-max; 12px side gutters site-wide */
+  --vbs-page-gutter: 12px;
+  --vbs-page-gutter-md: 12px;
   --vbs-content-width: var(--vbs-page-max);
 
   --font-inter: "Inter", "Inter Fallback", system-ui, sans-serif;
@@ -50,41 +54,41 @@ html:has(.vbs-redesign-page) {
   }
 }
 
-/* PageContainer — centered column, no horizontal padding */
+/* PageContainer — centered column with 12px side gutters */
 .vbs-page-container {
   box-sizing: border-box;
   width: 100%;
   max-width: var(--vbs-page-max, 1330px);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: var(--vbs-page-gutter, 12px);
+  padding-right: var(--vbs-page-gutter, 12px);
 }
 
 /* Redesign pages — same shell via design tokens (header uses .vbs-site-header override) */
 .vbs-redesign-page .vbs-page-container {
   max-width: var(--vbs-page-max);
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  padding-left: var(--vbs-page-gutter, 12px) !important;
+  padding-right: var(--vbs-page-gutter, 12px) !important;
 }
 
 @media (min-width: 768px) {
   .vbs-redesign-page .vbs-page-container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: var(--vbs-page-gutter-md, 12px) !important;
+    padding-right: var(--vbs-page-gutter-md, 12px) !important;
   }
 }
 
 /*
  * After visiting /projects/[slug], Bootstrap + legacy CSS stay loaded and can
- * inflate gutters on the main /projects listing. Keep zero horizontal padding.
+ * inflate gutters on the main /projects listing. Keep the 12px shell gutter.
  */
 @media (max-width: 767px) {
   .vbs-redesign-page .vbs-page-container,
   .vbs-redesign-page .container,
   .vbs-redesign-page .container-fluid {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: var(--vbs-page-gutter, 12px) !important;
+    padding-right: var(--vbs-page-gutter, 12px) !important;
   }
 
   .vbs-redesign-page .row {

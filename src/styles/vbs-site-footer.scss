@@ -52,8 +52,8 @@
   }
 
   .vbs-page-container {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: var(--vbs-page-gutter, 12px);
+    padding-right: var(--vbs-page-gutter, 12px);
   }
 
   @media (max-width: 1023px) {

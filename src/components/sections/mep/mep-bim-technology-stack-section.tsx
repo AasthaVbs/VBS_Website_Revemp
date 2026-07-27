@@ -34,7 +34,7 @@ export function MepBimTechnologyStackSection({
   return (
     <section className="overflow-hidden bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
+        <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
           <div className="flex max-w-[898px] flex-col items-start gap-3">
             <MepSectionTag label={tag} />
             <h2 className="mep-section-heading max-w-[798px]">
@@ -51,7 +51,7 @@ export function MepBimTechnologyStackSection({
           </p>
         </div>
 
-        <div className="flex w-full max-w-[1440px] flex-col gap-10 lg:gap-[50px]">
+        <div className="flex w-full max-w-[1400px] flex-col gap-10 lg:gap-[50px]">
           <TechnologyToolRow tools={toolsRowOne} className="lg:justify-between" />
           <TechnologyToolRow tools={toolsRowTwo} className="lg:justify-center lg:gap-[60px]" />
         </div>

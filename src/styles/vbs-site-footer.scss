@@ -52,15 +52,8 @@
   }
 
   .vbs-page-container {
-    @media (max-width: 639px) {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-
-    @media (min-width: 640px) and (max-width: 767px) {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+    padding-left: 0;
+    padding-right: 0;
   }
 
   @media (max-width: 1023px) {

@@ -14,9 +14,9 @@
   --text-primary: #111111;
   --text-secondary: #808080;
   --text-accent: #d70416;
-  --vbs-page-max: 1440px;
-  --vbs-page-gutter: 24px;
-  --vbs-page-gutter-md: 40px;
+  --vbs-page-max: 1400px;
+  --vbs-page-gutter: 0px;
+  --vbs-page-gutter-md: 0px;
 }
 
 * {
@@ -541,7 +541,7 @@
     position: absolute;
     left: 50%;
     top: -533px;
-    width: 1440px;
+    width: 1400px;
     height: 1466.08px;
     transform: translateX(-50%);
     pointer-events: none;

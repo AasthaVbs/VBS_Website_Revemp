@@ -1,26 +1,21 @@
 /**
- * Migrated redesign pages — 1400px content shell (Next.js).
- * Gatsby reference uses 1200px; spacing scaled ×7/6 for width parity.
+ * Migrated redesign pages — responsive content shell, no horizontal padding.
  */
 
 .vbs-redesign-page {
-  --vbs-page-max: 1400px;
-
   .vbs-page-container,
   .vbs-site-footer__container,
   > .container,
   main .container:not(.vbs-allow-bootstrap),
   .max-w-\[1400px\],
-  .max-w-\[1440px\],
   .max-w-\[1111px\] {
-    max-width: 1400px !important;
+    max-width: var(--vbs-page-max, 1330px) !important;
   }
 }
 
 html:not(:has(.vbs-redesign-page:not(.vbs-redesign-page--contact-embed))) {
-  --vbs-legacy-shell-max: 1400px;
-  --vbs-legacy-shell-gutter: 28px;
-  --vbs-legacy-shell-gutter-md: 37px;
+  --vbs-legacy-shell-gutter: 0px;
+  --vbs-legacy-shell-gutter-md: 0px;
 
   @media (min-width: 768px) {
     --vbs-legacy-shell-gutter: var(--vbs-legacy-shell-gutter-md);
@@ -33,13 +28,13 @@ html:not(:has(.vbs-redesign-page:not(.vbs-redesign-page--contact-embed))) {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--vbs-legacy-shell-gutter) !important;
-    padding-right: var(--vbs-legacy-shell-gutter) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .container:not(.container-fluid):not(.vbs-allow-bootstrap) {
     max-width: var(--vbs-legacy-shell-max) !important;
-    padding-left: var(--vbs-legacy-shell-gutter) !important;
-    padding-right: var(--vbs-legacy-shell-gutter) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }

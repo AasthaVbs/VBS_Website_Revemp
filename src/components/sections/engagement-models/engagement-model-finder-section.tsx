@@ -13,7 +13,7 @@ export function EngagementModelFinderSection() {
   return (
     <section className="bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer>
-        <div className="flex w-full max-w-[1440px] flex-col items-stretch gap-8 lg:flex-row lg:justify-between lg:gap-10">
+        <div className="flex w-full max-w-[1400px] flex-col items-stretch gap-8 lg:flex-row lg:justify-between lg:gap-10">
           <div className="flex shrink-0 flex-col items-start gap-4 sm:gap-5 lg:max-w-[474px]">
             <div className="flex flex-col items-start gap-3">
               <MepSectionTag label={tag} />

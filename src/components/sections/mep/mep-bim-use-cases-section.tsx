@@ -45,7 +45,7 @@ export function MepBimUseCasesSection({
   return (
     <section id={id} className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-stretch gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
+        <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
           <div className="flex max-w-[785px] flex-col items-start gap-3">
             <MepSectionTag label={tag} />
             <h2 className="mep-section-heading max-w-[778px]">
@@ -61,7 +61,7 @@ export function MepBimUseCasesSection({
           </p>
         </div>
 
-        <div className={cn("grid w-full max-w-[1440px] gap-[30px]", gridCols)}>
+        <div className={cn("grid w-full max-w-[1400px] gap-[30px]", gridCols)}>
           {cards.map((card) => (
             <UseCaseCard key={card.title} card={card} iconVariant={iconVariant} />
           ))}

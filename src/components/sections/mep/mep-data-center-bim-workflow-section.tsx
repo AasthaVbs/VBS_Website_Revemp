@@ -27,7 +27,7 @@ export function MepDataCenterBimWorkflowSection() {
           <p className="max-w-[790px] text-[16px] leading-6 text-[#808080]">{description}</p>
         </div>
 
-        <div className="relative w-full max-w-[1440px] px-0 sm:px-4 lg:px-[165px]">
+        <div className="relative w-full max-w-[1400px] px-0 sm:px-4 lg:px-[165px]">
           <div
             className="pointer-events-none absolute left-1/2 top-[38px] bottom-[38px] hidden w-[2px] -translate-x-1/2 bg-[repeating-linear-gradient(to_bottom,#CBCCCD_0_10px,transparent_10px_20px)] lg:block"
             aria-hidden

@@ -61,7 +61,7 @@ export function MepBimMeasurableResultsSection({
   return (
     <section id={id} className="bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
+        <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={tag} />
             <h2 className="mep-section-heading max-w-[657px]">
@@ -83,7 +83,7 @@ export function MepBimMeasurableResultsSection({
         </div>
 
         {/* Mobile: stacked cards with faded horizontal dividers between each */}
-        <div className="flex w-full max-w-[1440px] flex-col gap-5 lg:hidden">
+        <div className="flex w-full max-w-[1400px] flex-col gap-5 lg:hidden">
           {cards.map((card, index) => (
             <Fragment key={card.title}>
               {index > 0 ? <HorizontalDivider /> : null}
@@ -93,7 +93,7 @@ export function MepBimMeasurableResultsSection({
         </div>
 
         {/* Desktop: row / grid layout */}
-        <div className="hidden w-full max-w-[1440px] flex-col gap-12 lg:flex">
+        <div className="hidden w-full max-w-[1400px] flex-col gap-12 lg:flex">
           {rows.map((row, rowIndex) =>
             useColumnDividers ? (
               <MeasurableResultsRow key={`measurable-row-${rowIndex}`} cards={row} />

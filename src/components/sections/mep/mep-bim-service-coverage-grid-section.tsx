@@ -45,7 +45,7 @@ export function MepBimServiceCoverageGridSection() {
       className="scroll-mt-[120px] bg-white py-16 lg:scroll-mt-[148px] lg:py-[100px]"
     >
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[1440px] flex-col items-center gap-5">
+        <div className="flex w-full max-w-[1400px] flex-col items-center gap-5">
           <div className="flex w-full flex-col items-center gap-3">
             <MepSectionTag label={tag} />
             <h2
@@ -62,7 +62,7 @@ export function MepBimServiceCoverageGridSection() {
           </p>
         </div>
 
-        <div className="flex w-full max-w-[1440px] flex-col items-center gap-10 lg:gap-[40px]">
+        <div className="flex w-full max-w-[1400px] flex-col items-center gap-10 lg:gap-[40px]">
           <CoverageRow items={rowOne} />
           <HorizontalDivider />
           <CoverageRow items={rowTwo} />

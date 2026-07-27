@@ -1,10 +1,9 @@
 /* VBS header — isolated from Bootstrap navbar */
 
 .vbs-site-header {
-  --vbs-page-max: 1400px;
-  --vbs-page-gutter: 16px;
-  --vbs-page-gutter-md: 24px;
-  --vbs-page-gutter-lg: 32px;
+  --vbs-page-gutter: 0px;
+  --vbs-page-gutter-md: 0px;
+  --vbs-page-gutter-lg: 0px;
   --vbs-dropdown-gutter: 16px;
 
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
@@ -29,30 +28,28 @@
     color: inherit;
   }
 
-  /* 1200px shell on every page (not only .vbs-redesign-page) */
+  /* Site shell — no horizontal padding */
   .vbs-page-container {
     box-sizing: border-box;
     width: 100%;
-    max-width: var(--vbs-page-max);
+    max-width: var(--vbs-page-max, 1330px);
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--vbs-page-gutter);
-    padding-right: var(--vbs-page-gutter);
+    padding-left: 0;
+    padding-right: 0;
     overflow: visible;
   }
 
   @media (min-width: 640px) {
     --vbs-dropdown-gutter: 20px;
-    --vbs-page-gutter: 20px;
   }
 
   @media (min-width: 768px) {
     --vbs-dropdown-gutter: 24px;
-    --vbs-page-gutter: 24px;
 
     .vbs-page-container {
-      padding-left: var(--vbs-page-gutter-md);
-      padding-right: var(--vbs-page-gutter-md);
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -62,7 +59,6 @@
 
   @media (min-width: 1280px) {
     --vbs-dropdown-gutter: 32px;
-    --vbs-page-gutter-md: 32px;
   }
 
   .vbs-header-bar {
@@ -591,7 +587,7 @@
     -webkit-overflow-scrolling: touch;
     background: #fff;
     border-top: 1px solid #eee;
-    padding: 16px var(--vbs-page-gutter);
+    padding: 16px 16px;
     padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   }
 
@@ -706,8 +702,8 @@
 
   @media (min-width: 768px) {
     .vbs-header-mobile-panel {
-      padding-left: var(--vbs-page-gutter-md);
-      padding-right: var(--vbs-page-gutter-md);
+      padding-left: 16px;
+      padding-right: 16px;
     }
   }
 

@@ -45,7 +45,7 @@ export function MepBimDeliverablesSection({
       className={cn("scroll-mt-[120px] py-16 lg:scroll-mt-[148px] lg:py-[100px]", sectionClassName)}
     >
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[1440px] flex-col items-start gap-5">
+        <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
           <div className="flex max-w-[833px] flex-col items-start gap-3">
             <MepSectionTag label={tag} />
             <h2 id="mep-bim-deliverables-heading" className="mep-section-heading max-w-[833px]">
@@ -62,7 +62,7 @@ export function MepBimDeliverablesSection({
           </p>
         </div>
 
-        <div className="flex w-full max-w-[1440px] flex-col gap-5 lg:gap-10">
+        <div className="flex w-full max-w-[1400px] flex-col gap-5 lg:gap-10">
           <div
             className={cn(
               "grid gap-5 lg:gap-5",

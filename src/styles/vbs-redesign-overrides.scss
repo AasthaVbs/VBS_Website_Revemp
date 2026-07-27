@@ -3,6 +3,19 @@
  * Section padding/gap: see vbs-redesign-spacing.scss (loaded after this file).
  */
 
+/* Site shell width: 1330px below 1350px viewport, 1440px from 1400px viewport up */
+:root {
+  --vbs-page-max: 1330px;
+  --vbs-legacy-shell-max: 1330px;
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --vbs-page-max: 1440px;
+    --vbs-legacy-shell-max: 1440px;
+  }
+}
+
 html:has(.vbs-redesign-page) {
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
   font-size: 16px;
@@ -11,11 +24,10 @@ html:has(.vbs-redesign-page) {
 }
 
 .vbs-redesign-page {
-  /* 1400px canvas — gutters scaled from Gatsby 1200px shell (×7/6) */
-  --vbs-page-max: 1400px;
-  --vbs-page-gutter: 16px;
-  --vbs-page-gutter-md: 37px;
-  --vbs-content-width: calc(var(--vbs-page-max) - (2 * var(--vbs-page-gutter-md)));
+  /* Canvas width from :root --vbs-page-max */
+  --vbs-page-gutter: 0px;
+  --vbs-page-gutter-md: 0px;
+  --vbs-content-width: var(--vbs-page-max);
 
   --font-inter: "Inter", "Inter Fallback", system-ui, sans-serif;
   font-family: var(--font-inter);
@@ -36,52 +48,43 @@ html:has(.vbs-redesign-page) {
   &.vbs-blog-detail-page {
     overflow: visible !important;
   }
-
-  @media (min-width: 768px) {
-    --vbs-page-gutter: 28px;
-  }
 }
 
-/* PageContainer — 1400px centered column on every page (redesign + legacy Contact footer) */
+/* PageContainer — centered column, no horizontal padding */
 .vbs-page-container {
   box-sizing: border-box;
   width: 100%;
-  max-width: 1400px;
+  max-width: var(--vbs-page-max, 1330px);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 16px;
-  padding-right: 16px;
-
-  @media (min-width: 768px) {
-    padding-left: 37px;
-    padding-right: 37px;
-  }
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Redesign pages — same shell via design tokens (header uses .vbs-site-header override) */
 .vbs-redesign-page .vbs-page-container {
   max-width: var(--vbs-page-max);
-  padding-left: var(--vbs-page-gutter) !important;
-  padding-right: var(--vbs-page-gutter) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 @media (min-width: 768px) {
   .vbs-redesign-page .vbs-page-container {
-    padding-left: var(--vbs-page-gutter-md) !important;
-    padding-right: var(--vbs-page-gutter-md) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
 /*
  * After visiting /projects/[slug], Bootstrap + legacy CSS stay loaded and can
- * inflate gutters on the main /projects listing. Force redesign mobile gutters.
+ * inflate gutters on the main /projects listing. Keep zero horizontal padding.
  */
 @media (max-width: 767px) {
   .vbs-redesign-page .vbs-page-container,
   .vbs-redesign-page .container,
   .vbs-redesign-page .container-fluid {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .vbs-redesign-page .row {
@@ -293,9 +296,9 @@ html:has(.vbs-redesign-page) {
   border-bottom: none !important;
 }
 
-/* Main-repo shells → cap at 1400px content column (do not stretch past canvas) */
+/* Main-repo shells → cap at content column (do not stretch past canvas) */
 .vbs-redesign-page .max-w-\[1400px\],
-.vbs-redesign-page .max-w-\[1440px\],
+.vbs-redesign-page .max-w-\[1400px\],
 .vbs-redesign-page .max-w-\[1111px\] {
   max-width: var(--vbs-page-max) !important;
   width: 100%;

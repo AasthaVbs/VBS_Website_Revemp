@@ -2,19 +2,19 @@
  * Multi-family Las Vegas case study — Figma nodes 1803-15868 … 1803-19280
  */
 
-/* Project detail pages — keep gutters in sync with redesign mobile shell */
+/* Project detail pages — match site shell (1400px, no horizontal padding) */
 .vbs-project-detail-page {
   @media (max-width: 768px) {
     .vbs-page-container {
-      padding-left: 16px !important;
-      padding-right: 16px !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
   }
 
   @media (max-width: 480px) {
     .vbs-page-container {
-      padding-left: 14px !important;
-      padding-right: 14px !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
   }
 }

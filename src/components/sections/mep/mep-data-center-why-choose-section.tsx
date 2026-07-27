@@ -30,7 +30,7 @@ export function MepDataCenterWhyChooseSection() {
           <p className="max-w-[636px] text-[16px] leading-6 text-[#808080]">{description}</p>
         </div>
 
-        <div className="flex w-full max-w-[1440px] flex-col gap-[30px]">
+        <div className="flex w-full max-w-[1400px] flex-col gap-[30px]">
           <div className="grid grid-cols-1 gap-[30px] md:grid-cols-2 xl:grid-cols-3">
             {rowOne.map((card) => (
               <WhyChooseCard key={card.title} card={card} />

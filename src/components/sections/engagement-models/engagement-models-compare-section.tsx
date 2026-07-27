@@ -16,7 +16,7 @@ export function EngagementModelsCompareSection() {
   return (
     <section className="bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-stretch gap-8 sm:gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[1440px] flex-col items-start gap-4 sm:gap-5">
+        <div className="flex w-full max-w-[1400px] flex-col items-start gap-4 sm:gap-5">
           <div className="flex max-w-[1111px] flex-col items-start gap-3">
             <MepSectionTag label={tag} />
             <h2 className="mep-section-heading">
@@ -30,7 +30,7 @@ export function EngagementModelsCompareSection() {
         </div>
 
         {/* Desktop table format on all breakpoints — horizontal scroll on mobile */}
-        <div className="w-full max-w-[1440px]">
+        <div className="w-full max-w-[1400px]">
           <div className="overflow-x-auto overscroll-x-contain rounded-[10px] [-webkit-overflow-scrolling:touch]">
             <div className="min-w-[720px] overflow-hidden rounded-[10px] border border-[#CBCCCD] lg:min-w-0">
               <div className="grid grid-cols-[minmax(180px,400px)_repeat(3,minmax(160px,1fr))]">

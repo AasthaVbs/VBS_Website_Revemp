@@ -47,7 +47,7 @@ function TrustedItem({
           -
         </span>
       )}
-      <span className="text-[14px] font-normal text-[#808080] sm:whitespace-nowrap sm:text-[16px]">
+      <span className="text-[14px] font-normal text-[#111111] sm:whitespace-nowrap sm:text-[16px]">
         {item.label}
       </span>
     </div>
@@ -83,9 +83,9 @@ export function MepTrustedByStripSection({
           </div>
         </div>
 
-        {/* Desktop: horizontal strip with dividers */}
+        {/* Desktop: horizontal strip with dividers — Figma 2058:23595 */}
         <div className="hidden items-center gap-5 lg:flex">
-          <div className="flex min-w-[100px] flex-1 shrink-0 flex-col justify-center">
+          <div className="flex w-[178px] shrink-0 flex-col justify-center overflow-hidden">
             <p className="text-[24px] capitalize leading-tight">
               <span className="font-light text-[#D70416]">{titleAccent}</span>
               <span className="font-medium text-[#111111]">{titleLead}</span>
@@ -96,7 +96,7 @@ export function MepTrustedByStripSection({
 
           {items.map((item, index) => (
             <Fragment key={item.label}>
-              <div className="flex min-w-[160px] flex-1 items-center justify-center">
+              <div className="flex min-w-0 flex-1 items-center justify-center overflow-hidden">
                 <TrustedItem item={item} />
               </div>
               {index < items.length - 1 ? <TrustedDivider /> : null}

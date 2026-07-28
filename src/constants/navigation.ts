@@ -50,7 +50,7 @@ export const ROUTES = {
   mepSpoolDrawings: "/bim-modeling-services/shop-fabrication-drawings",
   mepClashDetection: "/mep-bim-services/mep-clash-detection-services",
   mepCoordination: "/mep-bim-services/mep-coordination-services",
-  mepRevitFamily: "/bim-modeling-services/revit-family-creation",
+  mepRevitFamily: "/mep-bim-services/mep-revit-family-creation-services",
   mepBom: "/mep-bim-services",
   mepPreBid: "/mep-bim-services",
   fiveDBimCost: "/mep-bim-services",

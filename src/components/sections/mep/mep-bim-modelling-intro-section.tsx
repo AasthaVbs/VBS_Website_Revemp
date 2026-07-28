@@ -22,6 +22,7 @@ export function MepBimModellingIntroSection({
     titleAccent,
     paragraph1,
     paragraph1Bold,
+    paragraph1Tail,
     paragraph2,
     paragraph2Lead,
     paragraph2Bold,
@@ -38,8 +39,8 @@ export function MepBimModellingIntroSection({
       className={`mep-figma-overview ${sectionClassName} bg-white py-12 sm:py-16 lg:py-[100px]`}
     >
       <PageContainer>
-        <div className="mep-figma-overview__layout flex flex-col items-start gap-[60px] lg:flex-row lg:items-start">
-          <div className="mep-figma-overview__frame relative shrink-0 overflow-hidden rounded-[10px] bg-[#F4F4F4]">
+        <div className="mep-figma-overview__layout flex flex-col items-start gap-10 lg:flex-row lg:items-start lg:gap-10">
+          <div className="mep-figma-overview__frame relative shrink-0 overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)]">
             <Image
               src={mainImage}
               alt={imageAlt ?? altFromImageSrc(mainImage)}
@@ -51,10 +52,10 @@ export function MepBimModellingIntroSection({
             />
           </div>
 
-          <div className="mep-figma-overview__content flex min-w-0 flex-1 flex-col justify-center gap-5 lg:max-w-[690px]">
+          <div className="mep-figma-overview__content flex min-w-0 flex-1 flex-col justify-center gap-5 lg:max-w-[771px]">
             <div className="flex flex-col items-start gap-3">
               <MepSectionTag label={tag} />
-              <h2 className="mep-figma-overview__title w-full">
+              <h2 className="mep-figma-overview__title w-full max-w-[771px]">
                 <span className="text-section font-medium text-[#111111]">{titleLead}</span>
                 <span className="text-section text-accent font-light">{titleAccent}</span>
               </h2>
@@ -62,7 +63,10 @@ export function MepBimModellingIntroSection({
 
             <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
               {paragraph1}
-              {paragraph1Bold ? <span className="text-[#111111]">{paragraph1Bold}</span> : null}
+              {paragraph1Bold ? (
+                <span className="font-medium text-[#111111]">{paragraph1Bold}</span>
+              ) : null}
+              {paragraph1Tail}
             </p>
             {paragraph2 ? (
               <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">{paragraph2}</p>

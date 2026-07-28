@@ -64,6 +64,7 @@ export type MepOverviewIntroContent = {
   titleAccent: string;
   paragraph1: string;
   paragraph1Bold?: string;
+  paragraph1Tail?: string;
   paragraph2?: string;
   paragraph2Lead?: string;
   paragraph2Bold?: string;

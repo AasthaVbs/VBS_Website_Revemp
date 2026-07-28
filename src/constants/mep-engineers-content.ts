@@ -154,7 +154,7 @@ export const mepFullSpectrumCards = [
     image: "/image/MEP Revit Family Creation-2.jpeg",
     imageCrop: { width: 502, height: 280, left: -21, top: 0 },
     elevated: false,
-    href: "/bim-modeling-services/revit-family-creation/",
+    href: "/mep-bim-services/mep-revit-family-creation-services",
   },
   {
     title: "MEP Shop Drawing Services",

@@ -46,7 +46,7 @@ export const ROUTES = {
   architecturalDrafting: "/architectural-drafting-services",
   visualization: "/3d-visualization-services",
   mepCadDrafting: "/cad-drafting-services",
-  mepShopDrawings: "/bim-modeling-services/shop-fabrication-drawings",
+  mepShopDrawings: "/mep-bim-services/mep-shop-drawing-services",
   mepSpoolDrawings: "/bim-modeling-services/shop-fabrication-drawings",
   mepClashDetection: "/mep-bim-services/mep-clash-detection-services",
   mepCoordination: "/mep-bim-services/mep-coordination-services",

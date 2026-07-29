@@ -162,7 +162,7 @@ export const mepFullSpectrumCards = [
     image: "/image/MEP-BIM-Modeling-Services-2.jpg",
     imageCrop: { width: 532, height: 280, left: -36, top: 0 },
     elevated: false,
-    href: "/bim-modeling-services/shop-fabrication-drawings/",
+    href: "/mep-bim-services/mep-shop-drawing-services",
   },
   {
     title: "Bill of Material (BOM) Services",

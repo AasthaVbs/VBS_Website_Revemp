@@ -1,4 +1,8 @@
 import accurateShopDrawingsIcon from "@/assets/images/accurate-shop-drawings-icon 1.png";
+import autocadIcon from "@/assets/images/autocad-icon.png";
+import autodeskRevitIcon from "@/assets/images/autodesk-revit-icon.png";
+import bim360Icon from "@/assets/images/bim-360-icon.png";
+import bluebeamIcon from "@/assets/images/bluebeam-icon.png";
 import clashDetectionResolution from "@/assets/images/clash-detection-resolution.jpg";
 import complexHighRiseProjectsIcon from "@/assets/images/complex-high-rise-projects-icon 1.png";
 import coordinatedMultiDisciplineModelsIcon from "@/assets/images/coordinated-multi-discipline-models-icon 1.png";
@@ -9,13 +13,17 @@ import fasterCoordinationCyclesIcon from "@/assets/images/faster-coordination-cy
 import improvedConstructabilityReviewIcon from "@/assets/images/improved-constructability-review-icon 1.png";
 import inHouseCapacityConstraintsIcon from "@/assets/images/in-house capacity-constraints-icon 1.png";
 import interdisciplinaryMepCoordination from "@/assets/images/interdisciplinary-mep-coordination.jpg";
+import lumionIcon from "@/assets/images/lumion-icon.png";
 import mepCoordinationsBanner from "@/assets/images/mep-coordinations-banner.jpg";
 import mepCoordinationsOverview from "@/assets/images/mep-coordinations-overview.jpg";
 import mepVsArchitecturalCoordination from "@/assets/images/mep-vs-architectural-coordination.jpg";
 import mepVsStructuralCoordination from "@/assets/images/mep-vs-structural-coordination .jpg";
+import navisworksIcon from "@/assets/images/navisworks-icon.png";
 import preFabricationModularGoalsIcon from "@/assets/images/pre-fabrication-&-modular-goals-icon 1.png";
 import prefabricationFabricationSupport from "@/assets/images/prefabrication-fabrication-support.jpg";
+import recapProIcon from "@/assets/images/recap-pro-icon.png";
 import reducedReworkChangeOrdersIcon from "@/assets/images/reduced-rework-&-change-orders-icon 1.png";
+import reviztoIcon from "@/assets/images/revizto-icon.png";
 import systemsPrioritizationRoutingStrategy from "@/assets/images/systems-prioritization-routing-strategy.jpg";
 import transparentIssueTrackingIcon from "@/assets/images/transparent-issue-tracking-icon 1.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
@@ -36,8 +44,8 @@ export const mepCoordinationHero = {
   ctaLabel: "Get a Free Quote",
   imageSrc: mepCoordinationsBanner,
   imageAlt: "mep-coordinations-banner",
-  copyMaxWidth: 920,
-  descriptionMaxWidth: 820,
+  copyMaxWidth: 730,
+  descriptionMaxWidth: 699,
 } as const;
 
 export const mepCoordinationTrustedBy: MepTrustedByContent = {
@@ -176,7 +184,9 @@ export const mepCoordinationDeliverablesSection = {
   titleMaxWidth: 833,
   description:
     "Our deliverables are accuracy-verified, construction-ready, and built to reduce field conflicts, support fabrication, and accelerate project approvals without rework.",
-  descriptionMaxWidth: 683,
+  descriptionMaxWidth: 720,
+  ctaLabel: "Get A Free Quote",
+  ctaHref: "/contact-us",
 } as const;
 
 export const mepCoordinationDeliverablesCards = [
@@ -215,24 +225,24 @@ export const mepCoordinationTechnologyStackSection = {
 } as const;
 
 export const mepCoordinationTechnologyStackToolsRowOne: MepBimTechnologyTool[] = [
-  { name: "Autodesk Revit", icon: "/icon/revit.png", iconWidth: 84, iconHeight: 84 },
-  { name: "Lumion", icon: "/icon/lumion.png", iconWidth: 74, iconHeight: 74 },
-  { name: "AutoCAD", icon: "/icon/autocad.png", iconWidth: 84, iconHeight: 84 },
+  { name: "Autodesk Revit", icon: autodeskRevitIcon.src, iconWidth: 84, iconHeight: 84 },
+  { name: "Lumion", icon: lumionIcon.src, iconWidth: 74, iconHeight: 74 },
+  { name: "AutoCAD", icon: autocadIcon.src, iconWidth: 84, iconHeight: 84 },
   {
     name: "ReCap Pro",
-    icon: "/image/ReCap-Pro-2023-lockup-Blk-OL-ADSK-No-Year-Stacked-1.jpg",
+    icon: recapProIcon.src,
     iconWidth: 71,
     iconHeight: 66,
   },
-  { name: "BIM 360", icon: "/image/bim-360.png", iconWidth: 66, iconHeight: 79 },
+  { name: "BIM 360", icon: bim360Icon.src, iconWidth: 66, iconHeight: 79 },
 ];
 
 export const mepCoordinationTechnologyStackToolsRowTwo: MepBimTechnologyTool[] = [
-  { name: "Navis works", icon: "/icon/navisworks.png", iconWidth: 55, iconHeight: 85 },
-  { name: "Revizto", icon: "/icon/revizto.png", iconWidth: 75, iconHeight: 75 },
+  { name: "Navis works", icon: navisworksIcon.src, iconWidth: 55, iconHeight: 85 },
+  { name: "Revizto", icon: reviztoIcon.src, iconWidth: 75, iconHeight: 75 },
   {
     name: "Bluebeam",
-    icon: "/image/bluebeam-inc-vector-logo-1.jpg",
+    icon: bluebeamIcon.src,
     iconWidth: 85,
     iconHeight: 91,
   },
@@ -285,7 +295,7 @@ export const mepCoordinationOutsourcingGuideSection = {
   titleAccent: "MEP clash detection services",
   description:
     "Get expert coordination support when multidisciplinary projects require faster issue resolution and reliable model accuracy.",
-  ctaLabel: "Let's Talk",
+  ctaLabel: "Let’s Talk",
 } as const;
 
 export const mepCoordinationOutsourcingGuideCards = [
@@ -298,7 +308,7 @@ export const mepCoordinationOutsourcingGuideCards = [
   {
     title: "Fast-Track Construction Schedules",
     description:
-      "When it's time to parallel track design and fabrication, our specialists can be a reliable partner for fast, clash-free shop drawing outputs.",
+      "When it’s time to parallel track design and fabrication, our specialists can be a reliable partner for fast, clash-free shop drawing outputs.",
     icon: fastTrackConstructionSchedulesIcon.src,
   },
   {

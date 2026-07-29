@@ -20,6 +20,7 @@ export function MepBimUseCasesSection({
   iconVariant = "plain",
   descriptionMaxWidth = 536,
   columnsPerRow = 2,
+  titleMaxWidth = 778,
 }: {
   id?: string;
   section?: {
@@ -35,6 +36,7 @@ export function MepBimUseCasesSection({
   iconVariant?: "plain" | "boxed";
   descriptionMaxWidth?: number;
   columnsPerRow?: 2 | 3;
+  titleMaxWidth?: number;
 } = {}) {
   const { tag, titleLead, titleAccent, description, ctaLabel } = section;
   const gridCols =
@@ -46,9 +48,9 @@ export function MepBimUseCasesSection({
     <section id={id} className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-stretch gap-10 lg:gap-[60px]">
         <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
-          <div className="flex max-w-[785px] flex-col items-start gap-3">
+          <div className="flex flex-col items-start gap-3" style={{ maxWidth: titleMaxWidth }}>
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading max-w-[778px]">
+            <h2 className="mep-section-heading" style={{ maxWidth: titleMaxWidth }}>
               <span className="font-medium">{titleLead}</span>
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>

@@ -54,8 +54,12 @@ export async function MepCoordinationPage() {
           {...mepCoordinationHero}
           imageSize="compact"
           ctaHref="/contact-us"
+          containerClassName="!pt-0 !pb-4 sm:!pt-0 sm:!pb-5 lg:!pt-0 lg:!pb-6"
         />
-        <MepTrustedByStripSection trustedBy={mepCoordinationTrustedBy} />
+        <MepTrustedByStripSection
+          trustedBy={mepCoordinationTrustedBy}
+          className="!pt-3 sm:!pt-4 lg:!pt-6"
+        />
         <MepBimModellingIntroSection
           intro={mepCoordinationIntro}
           sectionClassName="mep-figma-overview--mep-coordination"
@@ -64,6 +68,8 @@ export async function MepCoordinationPage() {
           section={mepCoordinationServiceFeaturesSection}
           cards={mepCoordinationServiceFeatureCards}
           ctaHref="/contact-us"
+          titleMaxWidth={680}
+          descriptionMaxWidth={730}
         />
         <MepFullSpectrumServicesSection
           section={mepCoordinationServicesSection}
@@ -97,6 +103,7 @@ export async function MepCoordinationPage() {
           showCta
           ctaHref="/contact-us"
           iconVariant="boxed"
+          titleMaxWidth={778}
           descriptionMaxWidth={618}
         />
         <MepBimMeasurableResultsSection
@@ -106,6 +113,7 @@ export async function MepCoordinationPage() {
           columnsPerRow={3}
           descriptionMaxWidth={683}
         />
+        {/* @ts-expect-error -- mep-resources-section uses @ts-nocheck so props infer as object */}
         <DeferredMepResourcesSection section={mepCoordinationResourcesSection} allItems={resourcesFeed} />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile

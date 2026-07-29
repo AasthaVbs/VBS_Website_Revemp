@@ -9,12 +9,25 @@ import {
 } from "@/constants/mep-data-center-whitepaper-content";
 import { altFromImageSrc, cn } from "@/lib/utils";
 
-const rowOne = dataCenterWhyChooseCards.slice(0, 3);
-const rowTwo = dataCenterWhyChooseCards.slice(3, 5);
-
 /** Figma node 995:24862 — Why choose us for data centers */
-export function MepDataCenterWhyChooseSection() {
-  const { tag, titleAccent, titleLead, description, ctaLabel } = dataCenterWhyChooseSection;
+export function MepDataCenterWhyChooseSection({
+  section = dataCenterWhyChooseSection,
+  cards = dataCenterWhyChooseCards,
+  ctaHref = "/contact-us",
+}: {
+  section?: {
+    tag: string;
+    titleAccent: string;
+    titleLead: string;
+    description: string;
+    ctaLabel: string;
+  };
+  cards?: ReadonlyArray<{ title: string; description: string; icon: string }>;
+  ctaHref?: string;
+}) {
+  const { tag, titleAccent, titleLead, description, ctaLabel } = section;
+  const rowOne = cards.slice(0, 3);
+  const rowTwo = cards.slice(3, 5);
 
   return (
     <section className="bg-[#FAFAFA] py-12 lg:py-[100px]">
@@ -46,6 +59,7 @@ export function MepDataCenterWhyChooseSection() {
         <div className="flex w-full justify-center px-2">
           <PrimaryCtaButton
             fullWidth={false}
+            href={ctaHref}
             className="w-auto max-w-full shrink-0 px-5 py-4 capitalize backdrop-blur-[50px]"
           >
             {ctaLabel}
@@ -60,7 +74,7 @@ function WhyChooseCard({
   card,
   className,
 }: {
-  card: (typeof dataCenterWhyChooseCards)[number];
+  card: { title: string; description: string; icon: string };
   className?: string;
 }) {
   return (

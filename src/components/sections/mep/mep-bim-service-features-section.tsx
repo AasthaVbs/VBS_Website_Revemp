@@ -15,6 +15,9 @@ export function MepBimServiceFeaturesSection({
   section = mepBimServiceFeaturesSection,
   cards = mepBimServiceFeatureCards,
   ctaHref,
+  columnsPerRow = 3,
+  titleMaxWidth = 716,
+  descriptionMaxWidth = 705,
 }: {
   section?: {
     tag: string;
@@ -25,8 +28,13 @@ export function MepBimServiceFeaturesSection({
   };
   cards?: MepBimFeatureCard[];
   ctaHref?: string;
+  /** Desktop columns — Figma shop drawings uses 2×2; most MEP pages use 3. */
+  columnsPerRow?: 2 | 3;
+  titleMaxWidth?: number;
+  descriptionMaxWidth?: number;
 } = {}) {
   const { tag, titleLead, titleAccent, description, ctaLabel } = section;
+  const isTwoColumn = columnsPerRow === 2;
 
   return (
     <section className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
@@ -34,18 +42,33 @@ export function MepBimServiceFeaturesSection({
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading max-w-[716px]">
+            <h2
+              className="mep-section-heading"
+              style={{ maxWidth: titleMaxWidth }}
+            >
               <span className="whitespace-pre-line font-medium">{titleLead}</span>
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>
           </div>
-          <p className="max-w-[705px] text-[16px] font-normal leading-6 text-[#808080]">
+          <p
+            className="text-[16px] font-normal leading-6 text-[#808080]"
+            style={{ maxWidth: descriptionMaxWidth }}
+          >
             {description}
           </p>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-[30px] md:grid-cols-2 lg:grid-cols-6">
+        <div
+          className={cn(
+            "grid w-full grid-cols-1 gap-[30px] md:grid-cols-2",
+            !isTwoColumn && "lg:grid-cols-6",
+          )}
+        >
           {cards.map((card, index) => {
+            if (isTwoColumn) {
+              return <FeatureCard key={card.title} card={card} />;
+            }
+
             const lastRowCount = cards.length % 3;
             const isLastIncompleteRow =
               lastRowCount > 0 && index >= cards.length - lastRowCount;

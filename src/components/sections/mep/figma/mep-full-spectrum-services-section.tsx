@@ -10,7 +10,16 @@ import {
 } from "@/constants/mep-engineers-content";
 
 export type MepFullSpectrumServicesSectionProps = Partial<
-  Pick<StickyHorizontalServicesSectionProps, "scrollInteraction" | "sectionId" | "className">
+  Pick<
+    StickyHorizontalServicesSectionProps,
+    | "scrollInteraction"
+    | "sectionId"
+    | "className"
+    | "titleClassName"
+    | "titleLine1ClassName"
+    | "titleLine2ClassName"
+    | "descriptionClassName"
+  >
 > & {
   section?: StickyHorizontalServicesSectionProps["section"];
   cards?: StickyHorizontalServicesSectionProps["cards"];
@@ -26,6 +35,10 @@ export function MepFullSpectrumServicesSection({
   scrollInteraction = "hover",
   sectionId = "services",
   className,
+  titleClassName,
+  titleLine1ClassName,
+  titleLine2ClassName,
+  descriptionClassName,
 }: MepFullSpectrumServicesSectionProps) {
   return (
     <StickyHorizontalServicesSection
@@ -34,6 +47,10 @@ export function MepFullSpectrumServicesSection({
       scrollInteraction={scrollInteraction}
       sectionId={sectionId}
       className={className}
+      titleClassName={titleClassName}
+      titleLine1ClassName={titleLine1ClassName}
+      titleLine2ClassName={titleLine2ClassName}
+      descriptionClassName={descriptionClassName}
     />
   );
 }

@@ -1,6 +1,2118 @@
 {
-  "fetchedAt": "2026-07-17T14:06:18.890Z",
+  "fetchedAt": "2026-07-29T15:55:47.195Z",
   "posts": [
+    {
+      "_id": "7954baf3-f7c1-4f61-a50b-46f62058cccd",
+      "body": [
+        {
+          "_key": "f17c0b4188fd",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-b1a022644d4f5b0d4de853022cf872fdf8375cfc-1460x926-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "8be4774a91b3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "263520ad42e2",
+              "_type": "span",
+              "marks": [],
+              "text": "US construction teams face a defining technology choice on every new project. One route follows the drawing workflow that served the industry for decades. The other route builds intelligent digital models that carry structured data through each phase. This guide compares both methods from a practitioner viewpoint. It draws on field lessons from hundreds of delivered US projects. Readers gain a clear framework for the next bid decision. Every claim below stays verifiable through named standards or published research."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7f89d7b0bd74",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "43959b7871a2",
+              "_type": "span",
+              "marks": [],
+              "text": "Terms like clash coordination now shape US preconstruction meetings. Federated models feed constructability reviews. Common data environments hold project truth for owners. This shift prepares us for the comparison ahead."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8d96c95631b2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "43959b7871a2",
+              "_type": "span",
+              "marks": [],
+              "text": "What Is Traditional CAD Drafting?"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "e4dd9e733855",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e62216c5605c",
+              "_type": "span",
+              "marks": [],
+              "text": "Computer-aided design reached architecture offices during the early 1980s. AutoCAD launched in 1982 and quickly displaced manual paper drafting. Drafters create plans with simple geometric elements. Lines form walls. Arcs form curved features. Text blocks record dimensions plus notes. Each drawing lives as an independent DWG or DXF file."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1690e6a5ff75",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "dad76d0f3759",
+              "_type": "span",
+              "marks": [],
+              "text": "The workflow mirrors the old drafting board. A plan sheet exists as one file. A section sheet exists as a separate file. Elevations occupy their files again. Every sheet demands a manual update after a design change. A document reviewer spots version conflicts across these file sets often. A revised door position appears correctly on the plan yet stays wrong on the elevation. Quality control depends on human vigilance alone."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f1cc1847b14e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9eb0426ad20d",
+              "_type": "span",
+              "marks": [],
+              "text": "Field note from a recent drawing set review: a 40-sheet school renovation set held three conflicting stair dimensions. Each sheet had received edits from a different drafter on a different day. The contractor caught the mismatch during pricing. That episode cost the design team two weeks of rework time."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1dd816a439f8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c6563d7666ff",
+              "_type": "span",
+              "marks": [],
+              "text": "Layer discipline gives CAD its structure. US firms follow the AIA CAD Layer Guidelines to keep files organized. External references allow one base plan to feed multiple sheets. These tools improve consistency within clear limits. The files still hold pure geometry with zero embedded intelligence."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6d42bf430cb7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "be65f3b23679",
+              "_type": "span",
+              "marks": [],
+              "text": "2D CAD drafting continues to dominate small residential permit sets across many US counties. The method delivers quick output for simple scopes. File sizes stay light at the kilobyte scale. Transfers between offices happen instantly. Licensing costs stay low compared to full modeling platforms. Training demands stay modest for new hires."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c8afc5f02560",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c0049f9049d3",
+              "_type": "span",
+              "marks": [],
+              "text": "What Are Architectural BIM Services?"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "c325e2c7ad74",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "080bb471aa95",
+              "_type": "span",
+              "marks": [],
+              "text": "Building Information Modeling treats a building as a structured digital asset. "
+            },
+            {
+              "_key": "dad1cc5cb48c",
+              "_type": "span",
+              "marks": [
+                "ec155ff4d9aa"
+              ],
+              "text": "Architectural BIM services"
+            },
+            {
+              "_key": "af3ddb44a5e0",
+              "_type": "span",
+              "marks": [],
+              "text": " produce parametric 3D models where every object carries embedded data. A wall object knows its fire rating. A door object knows its hardware set. A window object knows its thermal value plus its manufacturer reference."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "ec155ff4d9aa",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/architectural-bim-services"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "98047e747f16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "469868162b38",
+              "_type": "span",
+              "marks": [],
+              "text": "Modelers work in platforms such as Autodesk Revit or Graphisoft Archicad. The model lives inside a common data environment as the central project reference. Plans derive from the model automatically. Sections derive from the same model. Schedules derive from the same data set. A single design change updates every sheet at once. Version conflicts disappear at the source."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fd2fe97392cb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7a1b36bed101",
+              "_type": "span",
+              "marks": [],
+              "text": "Development follows defined Level of Detail stages. LOD 100 covers conceptual massing studies. LOD 300 supports coordinated construction documents. LOD 400 supports fabrication-level detail. LOD 500 records the verified-as-built condition. Contract documents such as AIA E203 define these expectations for US project teams."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e65329df9cae",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "39f59a1a9ca3",
+              "_type": "span",
+              "marks": [],
+              "text": "Deliverables extend far past printed drawings. Teams receive IFC exchange files for open collaboration. Teams receive COBie data sets for facility management handover. Teams receive clash reports from Navisworks coordination reviews. Cloud worksharing lets several modelers build one file together in real time. This data depth defines the entire service category."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c76ba1545baf",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3d072b8bc94d",
+              "_type": "span",
+              "marks": [],
+              "text": "Architectural BIM vs CAD Drafting: Key Differences"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "0da177e51897",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e498bf33ecd1",
+              "_type": "span",
+              "marks": [],
+              "text": "The two methods differ at the data level first. CAD stores geometry alone. BIM stores geometry, behavior, and specification data. This single distinction drives every downstream difference in cost. It shapes coordination quality. It shapes lifecycle value."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "013956859fe3",
+          "_type": "table",
+          "columnWidths": [
+            "35%",
+            "35%",
+            "30%"
+          ],
+          "rows": [
+            {
+              "_key": "f3ef801b2f36",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "d1a86c31036c",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Factor",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "9e63657e6b52",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Architectural BIM",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "0d0186ac0957",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Traditional CAD",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "d2d4ce16de18",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "d3738ca3f130",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Core output",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "61fa28f89c8f",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "One parametric 3D model",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "10c2faac696f",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Independent 2D sheets",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "a0cde05037e4",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "e0f1b35aca8e",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Change management",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "db40da452698",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Automatic updates everywhere",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "573e60833cb9",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Manual edits per sheet",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "7a003b9c091e",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "12917c2bca61",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Data content",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "b2cd2eb00a94",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Geometry plus rich metadata",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "a6e3a9d8de2e",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Pure geometry",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "42143714fa4e",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "8cffe3abf7a3",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Coordination",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "04203634f8d0",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Automated clash detection",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "42f7b86ba915",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Visual overlay checks",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "9676092176ee",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "3e278114ab97",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Quantities",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "f9ea187f3f80",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Instant model schedules",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "b4f0bddb490e",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Manual takeoff",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "a5186123428a",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "4c50670c7cae",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "File formats",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "58cd368788d1",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "RVT / IFC / NWD / COBie",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "aa5810fb79ac",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "DWG / DXF",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "b8edd4e596ad",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "d0319e1f8de3",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "File size",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "f7908764f8a2",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Hundreds of megabytes upward",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "d827c1bc207d",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Kilobytes to megabytes",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "ec4a9fec6269",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "6f7ded6e4642",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Lifecycle reach",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "4959d7e22894",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Design through operations",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "69286b4bbef5",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Design phase only",
+                  "rowspan": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_key": "3409f1a0bf73",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6c39a118c3ad",
+              "_type": "span",
+              "marks": [],
+              "text": "Collaboration marks the sharpest contrast. CAD files pass between disciplines as static reference copies. BIM teams share one cloud-hosted model in live sessions. Structural engineers see architectural changes instantly. MEP designers coordinate routing inside the same environment. Accountability improves because the model logs every edit with an author name."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "11a64c0426c1",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-e1274a2a4c4ee701fbf1d9d991fbe0f4cebaf468-1536x1024-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "c4fa04f4730b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0b484dd9820a",
+              "_type": "span",
+              "marks": [],
+              "text": "Why US Construction Projects Are Adopting BIM"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "c8dcd5860b05",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cca8bc3494ec",
+              "_type": "span",
+              "marks": [],
+              "text": "Federal policy pushes adoption forward. The US General Services Administration requires spatial program BIM for major public building projects. The National BIM Standard-United States gives firms a credentialed framework for model quality. ISO 19650 adds a global information management structure that many US owners now reference directly in contracts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "20eb75e57cc5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "612479997440",
+              "_type": "span",
+              "marks": [],
+              "text": "State agencies follow the same direction. Several state transportation departments now request model deliverables on infrastructure work. Large healthcare systems write "
+            },
+            {
+              "_key": "697f4bbcbe69",
+              "_type": "span",
+              "marks": [
+                "3b979af5c351"
+              ],
+              "text": "BIM execution plans"
+            },
+            {
+              "_key": "f0ca564a342a",
+              "_type": "span",
+              "marks": [],
+              "text": " into their design agreements. Data center owners demand fully coordinated models before groundbreaking approval."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "3b979af5c351",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-resources/bim-execution-plan/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "8cbade98cc86",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>The financial evidence keeps growing. A peer-reviewed study <a href=\"https://www.sciencedirect.com/science/article/pii/S2590123024008107\" rel=\"nofollow\" target=\"_blank\">reports</a> BIM return values from 16 percent up to 1654 percent across reviewed studies. Preconstruction analysts connect these returns to fewer field surprises. Predictable budgets follow predictable coordination.</p>"
+          }
+        },
+        {
+          "_key": "d07b2caa9dbf",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "91d871b61a84",
+              "_type": "span",
+              "marks": [],
+              "text": "Labor pressure adds another push. Skilled drafting staff remain scarce across many US metros. Specialized "
+            },
+            {
+              "_key": "e389682dd6b4",
+              "_type": "span",
+              "marks": [
+                "f3bb50170a61"
+              ],
+              "text": "Revit BIM modeling services"
+            },
+            {
+              "_key": "9f6cb7cb3b86",
+              "_type": "span",
+              "marks": [],
+              "text": " give firms rapid access to trained modeling teams. Outsourced production lets local staff focus on design intent. Prefabrication programs gain accuracy from model-level detail as well."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "f3bb50170a61",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "e8d929d851b2",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nRead more --> \n<a href=\"https://www.virtualbuildingstudio.com/blog/architectural-bim-data-center-construction/\">\nHow BIM Improves Data Center Construction\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
+        },
+        {
+          "_key": "145138492e58",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "aed47b7757b7",
+              "_type": "span",
+              "marks": [],
+              "text": "Benefits of Architectural BIM Over Traditional CAD"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "edecad5988d7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "411e05e41697",
+              "_type": "span",
+              "marks": [],
+              "text": "Clash detection leads the benefit list. Software checks the architectural model against structural framing automatically. It checks ductwork against beam depths. It flags every conflict before field trades mobilize. Field change orders drop as a direct result. The same review shows that coordination improvements have reduced design changes by 6 to 47%."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "27a86d9888c6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3081b4ef7b82",
+              "_type": "span",
+              "marks": [],
+              "text": "Quantity takeoff improves next. The model counts every door instantly. It measures every wall area instantly. Estimators pull material schedules directly into 5D cost workflows. 4D scheduling links model elements to the construction program. Superintendents preview installation sequencing weeks ahead of mobilization."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a87afe8a4da8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5d764424741e",
+              "_type": "span",
+              "marks": [],
+              "text": "Tool choice shapes these gains. The "
+            },
+            {
+              "_key": "1a62b29ae01b",
+              "_type": "span",
+              "marks": [
+                "55078dce0bf9"
+              ],
+              "text": "Revit vs. AutoCAD"
+            },
+            {
+              "_key": "7b85fd7a070c",
+              "_type": "span",
+              "marks": [],
+              "text": " architectural debate settles quickly on data grounds. Revit binds geometry to structured information. AutoCAD records geometry alone. Firms seeking automated schedules pick Revit for that exact reason. Firms that produce quick standalone sheets keep AutoCAD in their toolkit."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "55078dce0bf9",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/blog/revit-vs-autocad/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "bf1af0841184",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7b4c266d4c9c",
+              "_type": "span",
+              "marks": [],
+              "text": "Documentation quality rises across the set. Sheets stay consistent because one model feeds them all. Dimension errors fade from issued drawings. Energy analysis runs directly on model geometry. Photorealistic visualization supports owner approvals earlier. Handover packages arrive as a working digital twin with asset data inside every element."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "58151996e99e",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nRead more: \n<a href=\"https://www.virtualbuildingstudio.com/blog/architectural-bim-modeling-construction/\">\nWhy Architectural BIM Modeling Is Essential for Construction Projects\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
+        },
+        {
+          "_key": "c6a1dbed6ee5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a6a2f80a0e6b",
+              "_type": "span",
+              "marks": [],
+              "text": "When CAD Drafting Still Makes Sense"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "772e4a980ac9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a39019e701e7",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM suits complex work best. Simple scopes tell a different story. A small kitchen renovation needs a permit plan fast. A light tenant fit-out needs quick sheets at minimal cost. 2D output serves both cases perfectly well."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5632b3dec634",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d16e3c9fa408",
+              "_type": "span",
+              "marks": [],
+              "text": "Professional "
+            },
+            {
+              "_key": "eb55b4a48512",
+              "_type": "span",
+              "marks": [
+                "89f8b1f66c27"
+              ],
+              "text": "CAD drafting services"
+            },
+            {
+              "_key": "1d257c61f10c",
+              "_type": "span",
+              "marks": [],
+              "text": " remain the practical answer in several situations:"
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "89f8b1f66c27",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/cad-drafting-services/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "31962e8ed9a5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "dff6fe5a502d",
+              "_type": "span",
+              "marks": [],
+              "text": "Legacy archives stored as DWG files need matching format updates."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "40e2b38e9618",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ec005ce08567",
+              "_type": "span",
+              "marks": [],
+              "text": "Municipal reviewers in some counties accept plain PDF sheets happily."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "511cd218c04f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "02e7574f3013",
+              "_type": "span",
+              "marks": [],
+              "text": "Tight budgets on minor scopes favor lower licensing costs."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0f938a352813",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "15a0be43bc96",
+              "_type": "span",
+              "marks": [],
+              "text": "Fabricators sometimes request simple shop details in native DWG format."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5aa45cd3498c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9f27fdb7499f",
+              "_type": "span",
+              "marks": [],
+              "text": "Early concept sketches move faster in a lightweight 2D environment."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3ca65c964943",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "418c3fcd7101",
+              "_type": "span",
+              "marks": [],
+              "text": "Experienced firms keep both capabilities alive. They match the tool to the scope. They protect margins on small jobs through lean 2D workflows. They deploy full modeling where coordination risk justifies the investment. This dual capability keeps clients served at every project scale."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7bbf61c11fa0",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nRead Success Story --> \n<a href=\"https://www.virtualbuildingstudio.com/projects/multi-discipline-bim-modeling-for-public-sector-atlanta/\">\nHow BIM streamlined a public safety project.\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
+        },
+        {
+          "_key": "5d8d8889b72f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3f3f9fad777e",
+              "_type": "span",
+              "marks": [],
+              "text": "Choosing the Right Solution for Your Next Project"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "683d15a2ba93",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "efd9f04bf36f",
+              "_type": "span",
+              "marks": [],
+              "text": "Start with a readiness assessment. Score the project on size. Score it based on discipline count. Score it on owner requirements. A federal project with heavy MEP complexity points straight to BIM. A garage addition points to a quick 2D permit set."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e42ad03e30be",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2b17334e5715",
+              "_type": "span",
+              "marks": [],
+              "text": "Budget planning comes second. Model authoring costs more upfront. Coordination savings repay that cost for complex work. Trackable metrics make the case clear for finance teams. Track requests for information per project. Track change order value as a percentage of contract sum. Compare both figures across delivery methods each quarter."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cfe7cf933201",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5a91dbd16816",
+              "_type": "span",
+              "marks": [],
+              "text": "Legacy data forms the third factor. Decades of DWG archives hold real value. "
+            },
+            {
+              "_key": "3e2fc6637bd9",
+              "_type": "span",
+              "marks": [
+                "08e7996fa2ee"
+              ],
+              "text": "CAD to BIM conversion for architects"
+            },
+            {
+              "_key": "016c8f30d390",
+              "_type": "span",
+              "marks": [],
+              "text": " turns those archives into intelligent Revit models. Converted models then support renovation work with complete data behind every element. Scan to BIM workflows extend this value to existing buildings that lack drawings."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "08e7996fa2ee",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/cad-to-bim/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "ea8d6872818e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "23a9bb798148",
+              "_type": "span",
+              "marks": [],
+              "text": "Governance closes the framework. Draft a BIM execution plan before modeling starts. Define the LOD target for each phase inside that plan. Name a model manager with clear authority over standards. These steps keep expectations transparent for every stakeholder from day one."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fcae083a3173",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1c793988eea8",
+              "_type": "span",
+              "marks": [],
+              "text": "Conclusion"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "a92d70c17cc4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "49f3d1d1286c",
+              "_type": "span",
+              "marks": [],
+              "text": "Both methods hold a legitimate place in US practice today. CAD delivers speed on simple scopes at low cost. BIM delivers coordinated data on complex scopes at scale. Market direction favors intelligent models for commercial work. Federal requirements reinforce that direction every year. Smart firms treat the choice as a project-level decision. "
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ff8da2b6a04e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "49f3d1d1286c",
+              "_type": "span",
+              "marks": [],
+              "text": "They weigh scope against coordination risk. They weigh the budget against long-range data value. That balanced approach protects quality. It protects profit at the same time. The next project deserves this assessment before the first sheet starts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b010b76548a5",
+          "_type": "cta",
+          "buttonText": "Contact Us",
+          "buttonUrl": "/contact-us/",
+          "title": "Ready to cut change orders from your next US project? "
+        }
+      ],
+      "categories": [
+        {
+          "_id": "c4570779-37fa-4762-8173-57e0a7f8de73",
+          "title": "BIM Modeling "
+        }
+      ],
+      "featuredImage": {
+        "asset": {
+          "originalFilename": "BIM-vs-CAD.jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/b1a022644d4f5b0d4de853022cf872fdf8375cfc-1460x926.jpg"
+        }
+      },
+      "publishedAt": "2026-07-22",
+      "slug": "architectural-bim-vs-cad-drafting",
+      "tags": null,
+      "title": "Architectural BIM vs Traditional CAD Drafting for US Construction Projects"
+    },
+    {
+      "_id": "c40677b6-222a-4636-b255-7ec6c29d5c6c",
+      "body": [
+        {
+          "_key": "b428a4a043f3",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-ce7bde4ef1e4b98ae78697f233dd4385d1d4c28b-1460x926-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "25c41092598a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "18f809f5d27e",
+              "_type": "span",
+              "marks": [],
+              "text": "Construction teams depend on models that match field conditions exactly. A single misplaced duct run or an incorrect pipe elevation carries real cost once fabrication starts. Most coordination failures trace back to modeling decisions made long before a crew reaches the site. This guide covers what a high-quality MEP BIM model looks like, the characteristics that make it constructible, the checks that confirm quality before construction, and the benefits contractors gain from getting it right."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "34304ac1a35a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9238413e9f73",
+              "_type": "span",
+              "marks": [],
+              "text": "What Is an MEP BIM Model?"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "77357eba67b4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "bc16bb66d50a",
+              "_type": "span",
+              "marks": [],
+              "text": "An MEP BIM model represents the mechanical, electrical, and plumbing systems of a building in three dimensions. Designers build it during design development. Contractors use it during fabrication and installation. The model carries geometry, connectivity, and system data together in one file, and every trade references the same coordinates."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cee143a919ba",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3f4ced7a961f",
+              "_type": "span",
+              "marks": [],
+              "text": "The model serves two audiences at once. Engineers use it to size systems and check code compliance. Field teams rely on it for planning installation sequences and ordering materials. Construction BIM modeling connects these two audiences through one shared file, so a gap between their needs turns into the coordination failures this article addresses."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e36d95745174",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3f4ced7a961f",
+              "_type": "span",
+              "marks": [],
+              "text": "Why Model Quality Matters in Construction"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "c65ce82c2d3e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "69c06272ff53",
+              "_type": "span",
+              "marks": [],
+              "text": "Model quality determines how smoothly trades coordinate on site. A team with an accurate model resolves clashes in the office. A team with a flawed model resolves them in the field, often after materials arrive. Quality at the model stage sets the ceiling for quality on site."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "99707692dc03",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5e38717dc592",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Coordination efficiency"
+            },
+            {
+              "_key": "af6b4c460908",
+              "_type": "span",
+              "marks": [],
+              "text": " improves when every trade trusts the shared model. Teams stop cross-checking dimensions on paper and start working directly from the federated file. Well-run "
+            },
+            {
+              "_key": "70a44ad156c5",
+              "_type": "span",
+              "marks": [
+                "a0942fcd2dec"
+              ],
+              "text": "MEP coordination services"
+            },
+            {
+              "_key": "2c1c90d557a4",
+              "_type": "span",
+              "marks": [],
+              "text": " turn this shared model into a single source of truth for every discipline."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [
+            {
+              "_key": "a0942fcd2dec",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/blog/mep-coordination-bim-benefits-process-outsourcing/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "62b22a9d420d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "beb00dc05388",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Clash reduction"
+            },
+            {
+              "_key": "51cdad1a08d4",
+              "_type": "span",
+              "marks": [],
+              "text": " happens earlier when geometry reflects true equipment sizes and insulation thickness. Reviewers catch conflicts during design instead of during rough-in."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7757ecb54a96",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6f59ef389769",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Fabrication readiness"
+            },
+            {
+              "_key": "03b35982e286",
+              "_type": "span",
+              "marks": [],
+              "text": " depends on dimensional accuracy. Shops cut duct and pipe straight from model data, so any geometric error becomes a physical part that does not fit."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "463e0eeb4000",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "781576ef35bf",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Field installation accuracy"
+            },
+            {
+              "_key": "b5cc40941d99",
+              "_type": "span",
+              "marks": [],
+              "text": " follows directly from the first three factors. Experts install faster when the model accurately reflects elevations, routing, and clearances."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "858685acfe2c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "59c7475c7d1a",
+              "_type": "span",
+              "marks": [],
+              "text": "These four factors compound over the course of a project. A small geometric error at the model stage grows into a field conflict, then a change order, then a schedule slip. Strong model quality stops that chain before it starts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "58812861f1ab",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2bf0d643f1c2",
+              "_type": "span",
+              "marks": [],
+              "text": "Key Characteristics of a High-Quality MEP BIM Model"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "351cd0db1602",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "30047c30e7f5",
+              "_type": "span",
+              "marks": [],
+              "text": "Accurate Geometry"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "e294f73e9bd0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "29e32d8619cb",
+              "_type": "span",
+              "marks": [],
+              "text": "Geometry forms the foundation of every downstream decision. Correct dimensions allow shop drawings to move straight to fabrication without manual correction. Real-world constructability means the model accounts for insulation, flanges, hangers, and access panels, not just the bare pipe or duct centerline."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3b1b174ecf43",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2609aef571ee",
+              "_type": "span",
+              "marks": [],
+              "text": "An auditor reviewing a submitted model checks wall thickness against architectural backgrounds first. A four-inch discrepancy at this stage often signals that the MEP team modeled against outdated architectural files."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8a71d82c45d3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5dfb3a26c909",
+              "_type": "span",
+              "marks": [],
+              "text": "Role of LOD Standards in MEP BIM Modeling"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "de873beca612",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e568270bad07",
+              "_type": "span",
+              "marks": [
+                "1fe62c26758d"
+              ],
+              "text": "Level of Development"
+            },
+            {
+              "_key": "c8f1808a2af0",
+              "_type": "span",
+              "marks": [],
+              "text": ", or LOD, tells you how far to trust a given element. Think of it as a maturity label. Early on, an element is a rough placeholder. Later, a shop can build straight from it."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "1fe62c26758d",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/blog/bim-level-of-development-an-overview/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "f54cf0911313",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "22c7a286bc20",
+              "_type": "span",
+              "marks": [],
+              "text": "At LOD 200, you get approximate size, shape, and location. Enough to rough out coordination, a little more. LOD 300 sharpens that into real dimensions and a fixed position, and that is where trade-to-trade coordination really happens. LOD 350 adds the connections, the grade most teams skip, and shows how an element meets the beam above it or the wall beside it. LOD 400 is fabrication grade: exact fittings, supports, and the installation detail a shop picks up and runs with."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e3437d6803b6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d8e7016bd8f5",
+              "_type": "span",
+              "marks": [],
+              "text": "Here is the trap I see most often. A model jumps from 200 straight to 400 and skips the grades in between. It looks finished. It hides a pile of unresolved clashes. So match the LOD to the project phase before you accept a model, and confirm the middle steps happened."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c4143da6d500",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "420ac9c36acd",
+              "_type": "span",
+              "marks": [],
+              "text": "Complete System Connectivity"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "a8e0355d9bc2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0828c34a0e94",
+              "_type": "span",
+              "marks": [],
+              "text": "Every run must be closed. Duct pulls from the air handling unit all the way to the diffusers, with transitions sized right at each branch. Pipe carries continuously from source equipment to the last fixture, and the valves, fittings, and supports sit where teams will find them. Electrical is the one people rush: conduit runs, panel connections, and device locations all need to line up with the single-line diagram the engineer of record issued."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "61aa1dcdb77e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b65a98faec52",
+              "_type": "span",
+              "marks": [],
+              "text": "Break one connection and a 3D view still looks fine. The problem shows up on site. "
+            },
+            {
+              "_key": "d41bb7d99edb",
+              "_type": "span",
+              "marks": [
+                "0197ef4326ea"
+              ],
+              "text": "MEP BIM modeling workflow"
+            },
+            {
+              "_key": "8b4c9a0be8f2",
+              "_type": "span",
+              "marks": [],
+              "text": " that checks connectivity at each stage catches those open runs long before the coordination meeting."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "0197ef4326ea",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/blog/mechanical-bim-modeling-workflow-mep-coordination/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "5e8694e0c44c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "79fc4bbdcbd9",
+              "_type": "span",
+              "marks": [],
+              "text": "Accurate Equipment Representation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "8b4027666532",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0ca97822558e",
+              "_type": "span",
+              "marks": [],
+              "text": "Equipment families carry the real numbers: manufacturer dimensions, weight, and connection points. Drop in a generic placeholder for an air handling unit, and clash detection lies to you. The placeholder rarely matches the true footprint, and it seldom matches the service clearance the unit demands. Accurate Revit MEP families services swap those placeholders for real manufacturer geometry, so a clean clash report means clean hardware, not a lucky guess."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6070efe36966",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6dac86011c8b",
+              "_type": "span",
+              "marks": [],
+              "text": "Correct Elevation and Routing"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "62d5dfeb4d8a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cbad13dcc327",
+              "_type": "span",
+              "marks": [],
+              "text": "Elevation data determines whether systems physically fit within the available ceiling space. Routing decisions affect maintenance access, code-required clearances, and the sequence of trades during installation. A duct modeled two inches too high on paper becomes a real conflict with a structural beam once teams break ground."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "178c4f2f2d48",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "174b80325169",
+              "_type": "span",
+              "marks": [],
+              "text": "Constructability-Focused Modeling"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "a343554d9889",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "77dcfe65bb81",
+              "_type": "span",
+              "marks": [],
+              "text": "A constructability review asks whether a crew can install, insulate, and maintain each system as modeled. Sharp offsets, unrealistic bend radii, and inaccessible valves indicate a model built for visual completeness rather than field execution."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "743e95aaad6c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c29b9369a061",
+              "_type": "span",
+              "marks": [],
+              "text": "Accurate Metadata and Parameters"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "9502a8879c3b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1ee044cdd88b",
+              "_type": "span",
+              "marks": [],
+              "text": "Parameters carry information beyond geometry: system type, service classification, fire rating, and insulation specification. Estimators and facility managers extract this data directly from the model, so incomplete parameters create downstream errors in quantity takeoffs and operations documentation."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "087ec0dd015c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c89c4e250854",
+              "_type": "span",
+              "marks": [],
+              "text": "Consistent Naming Conventions"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "fbf87a74786e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5b34d93132e8",
+              "_type": "span",
+              "marks": [],
+              "text": "Naming sounds like housekeeping. The issue is more complex than that. When mechanical, electrical, and plumbing all follow the same convention, the clash software automatically groups related elements. Mixed conventions force a person to sort everything by hand, every cycle, and that hand-sorting is where review time quietly disappears."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1d517a40a607",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6188625e95d6",
+              "_type": "span",
+              "marks": [],
+              "text": "Key Quality Checks Before Construction"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "5deb3b607fb1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "89d5909782e7",
+              "_type": "span",
+              "marks": [],
+              "text": "Five checks stand between a model and a clean install. Skip one and it tends to resurface later, in the field, at the worst possible moment."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7159a06b87eb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a8ef2a3f1ecd",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Clash detection"
+            },
+            {
+              "_key": "c18747696447",
+              "_type": "span",
+              "marks": [],
+              "text": " finds the physical conflicts before a single pipe goes up. A structured "
+            },
+            {
+              "_key": "75a2d2b835c7",
+              "_type": "span",
+              "marks": [
+                "bf83709e3f61"
+              ],
+              "text": "clash detection process"
+            },
+            {
+              "_key": "0daac2138ad7",
+              "_type": "span",
+              "marks": [],
+              "text": " sorts clashes by priority and hands each one to the trade that owns it."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [
+            {
+              "_key": "bf83709e3f61",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/blog/clash-detection-in-bim-process-tools-best-practices/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "65e684d94e42",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "33581940dd3b",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Model validation"
+            },
+            {
+              "_key": "2f540bbbd26c",
+              "_type": "span",
+              "marks": [],
+              "text": " addresses errors that clash, which the software cannot see. Missing parameters, an incorrect system type, and a naming scheme that drifted mid-project do not show as red clashes, yet all of them cause downstream issues. Validation checks the model against the BIM execution plan and flags the gaps."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9d841bc43040",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "83dfd1375c87",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Clearance verification"
+            },
+            {
+              "_key": "54a7ab21987a",
+              "_type": "span",
+              "marks": [],
+              "text": " guards the space around equipment: maintenance access, code-required gaps, and room for insulation."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a2b54d932f8f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0787600fcd8d",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Equipment Access Review"
+            },
+            {
+              "_key": "0b55dd76b364",
+              "_type": "span",
+              "marks": [],
+              "text": " asks a blunt question. Once everything goes in, can a technician still reach the valve, the damper, and the service panel? Adjacent systems and the finished ceiling height decide the answer."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a20787ac43e0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9e922e8edd96",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Coordination Review"
+            },
+            {
+              "_key": "888be26f7119",
+              "_type": "span",
+              "marks": [],
+              "text": " puts every trade in one room, or on one call, walking the federated model section by section before sign-off. A fixed agenda keeps the meeting moving, so each open clash is assigned an owner and a date."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d544f175d7b3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "015eb76d634a",
+              "_type": "span",
+              "marks": [],
+              "text": "A published "
+            },
+            {
+              "_key": "05793a92543e",
+              "_type": "span",
+              "marks": [
+                "e4d2b4698255"
+              ],
+              "text": "MEP BIM model checklist"
+            },
+            {
+              "_key": "42fb37fb224b",
+              "_type": "span",
+              "marks": [],
+              "text": " turns these five into a repeatable routine across every phase. Same criteria, every submission. That consistency holds model quality from the first floor to the last."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "e4d2b4698255",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/blog/how-to-ensure-accuracy-mep-bim-models-checklist/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "5fef8648aeec",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nRead more:\n<a href=\"https://www.virtualbuildingstudio.com/projects/clash-free-bim-modeling-for-mechanical-plant-rom/\">\nClash-Free BIM Models for Mechanical Plant Applications\n</a>\n</div>\n \n<style>\n\n.highlight-note {\n\n  border-left: 5px solid #d70416;\n\n  background-color: #f5f5f4;\n\n  padding: 12px 16px;\n\n  margin: 20px 0;\n\n  font-size: 17px;\n\n  line-height: 1.6;\n\n  color: #333;\n\n  font-style: italic;\n\n}\n \n.highlight-note a {\n\n  color: #1e73be;\n\n  font-weight: 600;\n\n  text-decoration: underline;\n\n}\n \n.highlight-note a:hover {\n\n  text-decoration: none;\n\n}\n</style>"
+          }
+        },
+        {
+          "_key": "ee5be61226e0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4394a224ecc8",
+              "_type": "span",
+              "marks": [],
+              "text": "Common Signs of a Poor BIM Model"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "89718d61905f",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-8ab82d3a83b3192564eb12eb50a3106c877b9bbb-1460x814-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "e9375d2cd394",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "49cee2b3aced",
+              "_type": "span",
+              "marks": [],
+              "text": "Floating elements appear disconnected from structure or from other system components, usually the result of a copy-paste error during modeling. Incomplete connections leave duct or pipe runs open at one end. This gap stays invisible in a 3D view, then surfaces the moment a crew tries to install the missing section."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2724a05246b9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "603368404c2f",
+              "_type": "span",
+              "marks": [],
+              "text": "Wrong elevations are sneakier. A run sits at a height that fights the structure or another trade, and the cause traces back to a coordinate mismatch nobody caught at setup. Missing parameters leave estimators and facilities staff without the data they need. Duplicate components are the quiet ones. They inflate counts and confuse the clash engine, which reads each copy as its object to resolve."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c7f7c721def5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0edce1b034f1",
+              "_type": "span",
+              "marks": [],
+              "text": "An auditor who finds two or more of these signs in the first review pass usually recommends a full model audit rather than a partial correction."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8c05dee7e2cc",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nRead more --> \n<a href=\"https://www.virtualbuildingstudio.com/blog/mep-bim-modeling-mistakes-how-to-fix-them/\">\n Top MEP BIM Modeling Mistakes & How to Fix Them\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
+        },
+        {
+          "_key": "38eefe266836",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ede130514bbe",
+              "_type": "span",
+              "marks": [],
+              "text": "Quality Assurance Process for MEP BIM Models"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "8ed1b4a24bc7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "962e4352595a",
+              "_type": "span",
+              "marks": [],
+              "text": "A structured QA process starts with an internal review inside each trade before the model reaches the coordination team. Reviewers check geometry against the latest architectural and structural backgrounds, confirm parameters against the project's data standard, and run an internal clash pass before submission."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "184433954de6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9a38ea64c093",
+              "_type": "span",
+              "marks": [],
+              "text": "The federated coordination stage combines the models from every trade, runs full clash detection, and produces a prioritized issue log. Teams working with dedicated "
+            },
+            {
+              "_key": "f634c9159584",
+              "_type": "span",
+              "marks": [
+                "edf5c6130080"
+              ],
+              "text": "Revit MEP BIM modeling services"
+            },
+            {
+              "_key": "256972dc2ab8",
+              "_type": "span",
+              "marks": [],
+              "text": " build this QA gate directly into their modeling workflow, so the model arrives at coordination meetings closer to being fabrication-ready."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "edf5c6130080",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/mep-bim-services/mep-bim-modeling-services/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "9e1d97606c3f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8ddd92374a4c",
+              "_type": "span",
+              "marks": [],
+              "text": "A final signoff stage locks the model version, records outstanding issues, and hands the file to fabrication. Any change after signoff goes through a formal revision process rather than an unrecorded edit. Firms that use outsourced MEP BIM services in the USA gain a second review layer here, since an external QA team checks the model against the same standard the internal team applied."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a5527504b68b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a7d63636e9f7",
+              "_type": "span",
+              "marks": [],
+              "text": "Validation Rules and Automated Checks"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "a2c46f1add7c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b9abadcdc08e",
+              "_type": "span",
+              "marks": [],
+              "text": "Modern QA workflows run automated rule sets across the model before any human review begins. A rule set flags open connectors, elements at incorrect elevations, and parameters left blank against the project data standard. These automated passes handle the repetitive checks quickly, so reviewers focus their attention on judgment calls that software cannot make."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "be6897063f54",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b8785053e32f",
+              "_type": "span",
+              "marks": [],
+              "text": "Automated clash grouping earns its keep here. A raw scan can produce hundreds of clashes, and most are the same problem in different forms. One beam through one duct run throws dozens of individual hits. Grouping folds them into a single item, points it at the trade that owns the fix, and stamps a due date on it. A log that short is one a team can close in a single cycle."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fa9b1a19feea",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nRead more:\n<a href=\"https://www.virtualbuildingstudio.com/blog/bim-mep-as-builts-facility-management/\">\nHow BIM Simplifies MEP Project Handover and Documentation \n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
+        },
+        {
+          "_key": "338d2d939ad0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "615f7a50a39a",
+              "_type": "span",
+              "marks": [],
+              "text": "Benefits of High-Quality BIM Models for Contractors"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "976867ee96cf",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9fd87ee067ff",
+              "_type": "span",
+              "marks": [],
+              "text": "High-quality models change how contractors work on site. Accurate geometry, clean data, and complete connectivity turn the model into a tool that teams trust for real installation decisions. Each characteristic maps to a concrete field gain."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "84163e286bab",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "78b55592f48e",
+              "_type": "span",
+              "marks": [],
+              "text": "These gains share one root cause. A model built for fabrication and installation, rather than for visual review alone, hands every trade fewer surprises once work begins in the field."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "059b350b6a02",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>The numbers back these claims up, and they come from industry data, not a vendor deck. A 2024 study in the Journal of Building Engineering, by Gharaibeh, Matarneh, and Lantz, points to industry data where BIM coordination cut coordination-related rework by about 50 percent, a figure first <a href=\"https://www.sciencedirect.com/science/article/pii/S2590123024008107\"2 rel=\"nofollow\" target=\"_blank\">reported</a> by Abdelbary and colleagues. Less rework in the model means fewer change orders in the field.</P>"
+          }
+        },
+        {
+          "_key": "8ef5a458572e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "756187d32bc6",
+              "_type": "span",
+              "marks": [],
+              "text": "Conclusion"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "ad8ab588820b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c450a6ef636e",
+              "_type": "span",
+              "marks": [],
+              "text": "Coordination works when every trade builds from the same accurate model. That single dependency explains why model quality matters more than any other factor in MEP delivery. Accurate geometry, complete connectivity, correct LOD, and clean metadata each prevent a specific class of field conflict. Teams that check quality at every stage catch errors early, when fixes stay cheap. The payoff shows up as fewer RFIs, fewer change orders, and a cleaner handoff to fabrication. Model quality, put simply, is where effective coordination begins."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1c6efdacab21",
+          "_type": "cta",
+          "buttonText": "Contact Us",
+          "buttonUrl": "/contact-us/",
+          "title": "Get a Construction-Ready MEP BIM Model"
+        }
+      ],
+      "categories": [
+        {
+          "_id": "022c6bd5-d22b-4747-86aa-0e458ec48619",
+          "title": "MEP "
+        }
+      ],
+      "featuredImage": {
+        "asset": {
+          "originalFilename": "High-Quality MEP BIM Model.jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/ce7bde4ef1e4b98ae78697f233dd4385d1d4c28b-1460x926.jpg"
+        }
+      },
+      "publishedAt": "2026-07-20",
+      "slug": "high-quality-mep-bim-model-construction",
+      "tags": null,
+      "title": "What Makes a High-Quality MEP BIM Model for Construction Projects"
+    },
     {
       "_id": "0eaa9a16-890a-43c3-9342-b52e297de7f4",
       "body": [
@@ -905,7 +3017,7 @@
       "publishedAt": "2026-07-16",
       "slug": "architectural-bim-data-center-construction",
       "tags": null,
-      "title": "How Architectural BIM Services Improve Data Center Construction Projects"
+      "title": "How Architectural BIM Improve Data Center Construction Projects"
     },
     {
       "_id": "716f2550-592f-4519-8f22-d68fa1563ca6",
@@ -3859,21 +5971,7 @@
               "_key": "33dff06a64c2",
               "_type": "span",
               "marks": [],
-              "text": "The AEC industry has shifted dramatically over the past two decades. Firms once managed"
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "9b62a192ed46",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "5fc71914f4b4",
-              "_type": "span",
-              "marks": [],
-              "text": "projects with paper drawings and disconnected CAD files. Today, architectural BIM services place every wall, system, and schedule inside a shared, intelligent model. That model travels with the project from concept through construction delivery."
+              "text": "The AEC industry has shifted dramatically over the past two decades. Firms once managed projects with paper drawings and disconnected CAD files. Today, architectural BIM services place every wall, system, and schedule inside a shared, intelligent model. That model travels with the project from concept through construction delivery."
             }
           ],
           "markDefs": [],
@@ -4622,7 +6720,10 @@
             {
               "_key": "a4a89c3b6476",
               "_type": "span",
-              "marks": [],
+              "marks": [
+                "strong",
+                "em"
+              ],
               "text": "Adoption requires deliberate planning."
             }
           ],
@@ -4886,7 +6987,10 @@
             {
               "_key": "7fc878b076ab",
               "_type": "span",
-              "marks": [],
+              "marks": [
+                "em",
+                "strong"
+              ],
               "text": "Preparation starts with internal assessment."
             }
           ],
@@ -18484,7 +20588,7 @@
       "publishedAt": "2026-05-29",
       "slug": "revit-family-creation-for-aec-firms",
       "tags": null,
-      "title": "Why Revit Family Creation Services Are Essential for Modern AEC Firms"
+      "title": "Why Revit Family Creation Are Essential for Modern AEC Firms"
     },
     {
       "_id": "f937776a-fd94-44b7-b361-770e59b5d564",
@@ -143756,10 +145860,10 @@
       "_id": "18ed7b4f-b82c-44be-9d27-75076d5b6333",
       "body": [
         {
-          "_key": "040c8d97ba34",
+          "_key": "bbc882ce7c1f",
           "_type": "image",
           "asset": {
-            "_ref": "image-8fc12a6b1a696a44f15d4751f4401601334775b6-850x554-webp",
+            "_ref": "image-6ac6bf592296e30a0afe2d608b5e9c13bc85fcd5-1460x926-jpg",
             "_type": "reference"
           }
         },
@@ -143798,7 +145902,7 @@
           "_type": "rawHtml",
           "code": {
             "_type": "code",
-            "code": "<p>Level of Development (LOD) was first introduced in 2008 by the<a href=\"https://www.aia.org/\" rel=\"nofollow\" target=\"_blank\">American Institute of Architects</a>, (AIA); the concept was already in use. It defined the five different levels of development to elaborate the stages of detailing in BIM.</P>"
+            "code": "<p>Level of Development (LOD) was first introduced in 2008 by the<a href=\"https://www.aia.org/\" rel=\"nofollow\" target=\"_blank\"> American Institute of Architects</a>, (AIA); the concept was already in use. It defined the five different levels of development to elaborate the stages of detailing in BIM.</P>"
           }
         },
         {
@@ -144742,8 +146846,8 @@
       ],
       "featuredImage": {
         "asset": {
-          "originalFilename": "level-of-development-in-bim-featured-image.webp",
-          "url": "https://cdn.sanity.io/images/rog08jar/production/b3bb0b8356bbc1a61d1a925978057917b8abd1d9-1500x978.webp"
+          "originalFilename": "leve-of-development-details-lod.jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/6ac6bf592296e30a0afe2d608b5e9c13bc85fcd5-1460x926.jpg"
         }
       },
       "publishedAt": "2023-08-31",
@@ -166586,18 +168690,18 @@
               "_key": "7836b15f44b5",
               "_type": "span",
               "marks": [],
-              "text": "India is likely to surpass China, in terms of population, by the year 2025. We are also one of the fastest-growing economies in the world. This calls for the development of improved infrastructure, renovations, and refurbishments. BIM adoption could help with the faster execution of these projects."
+              "text": "India is likely to surpass China, in terms of population, by the year 2025. We are also one of the fastest-growing economies in the world. This calls for the development of improved infrastructure, renovations, and refurbishments. BIM adoption could help with the faster execution of these projects.\n"
             }
           ],
           "markDefs": [],
           "style": "normal"
         },
         {
-          "_key": "5fa8379d5f9e",
+          "_key": "9ce0db7720bf",
           "_type": "block",
           "children": [
             {
-              "_key": "9f40a125beaa",
+              "_key": "7836b15f44b5",
               "_type": "span",
               "marks": [],
               "text": "The Mumbai-Nagpur Expressway is one of the first centrally-procured infrastructural projects in India. A lot more indeed needs to be done in this regard, but BIM adoption for the development of this expressway is a step forward in the right direction."
@@ -166628,10 +168732,30 @@
               "_key": "893a65863197",
               "_type": "span",
               "marks": [],
-              "text": "The length of the road was approximately 42.5 km. We provided 3D BIM services for the virtual monitoring of the on-site construction activities. We also provided 4D BIM simulation services to extract accurate quantities, and for cost estimation. The input data was in the form of CAD and PDF."
+              "text": "The length of the road was approximately 42.5 km. We provided "
+            },
+            {
+              "_key": "06f9630580d4",
+              "_type": "span",
+              "marks": [
+                "235049fd219c"
+              ],
+              "text": "3D BIM Modeling services"
+            },
+            {
+              "_key": "0adf8118a5c9",
+              "_type": "span",
+              "marks": [],
+              "text": " for the virtual monitoring of the on-site construction activities. We also provided 4D BIM simulation services to extract accurate quantities, and for cost estimation. The input data was in the form of CAD and PDF."
             }
           ],
-          "markDefs": [],
+          "markDefs": [
+            {
+              "_key": "235049fd219c",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/"
+            }
+          ],
           "style": "normal"
         },
         {
@@ -166656,30 +168780,10 @@
               "_key": "7c936f7dffc5",
               "_type": "span",
               "marks": [],
-              "text": "We also used Dynamo scripting for automating certain tasks that Revit could not perform. We delivered "
-            },
-            {
-              "_key": "9c9b447dc9c6",
-              "_type": "span",
-              "marks": [
-                "4f846d832b4c"
-              ],
-              "text": "our project"
-            },
-            {
-              "_key": "58c6b29f9590",
-              "_type": "span",
-              "marks": [],
-              "text": " on-time, and our clients were pleased with our efficiency and determination. The expressway is still under construction as some of the land acquisition deals are still underway, but it would be ready by the end of 2020."
+              "text": "We also used Dynamo scripting for automating certain tasks that Revit could not perform. We delivered our project on-time, and our clients were pleased with our efficiency and determination. The expressway is still under construction as some of the land acquisition deals are still underway, but it would be ready by the end of 2020."
             }
           ],
-          "markDefs": [
-            {
-              "_key": "4f846d832b4c",
-              "_type": "link",
-              "href": "https://www.virtualbuildingstudio.com/portfolio/"
-            }
-          ],
+          "markDefs": [],
           "style": "normal"
         },
         {
@@ -166725,18 +168829,11 @@
           "style": "normal"
         },
         {
-          "_key": "d4630cbb0274",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "a1affb9f92ed",
-              "_type": "span",
-              "marks": [],
-              "text": "\n"
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
+          "_key": "fd19fd11e470",
+          "_type": "cta",
+          "buttonText": "Contact Us",
+          "buttonUrl": "/contact-us/",
+          "title": "Ready to Accelerate Your Infrastructure Project with BIM?"
         }
       ],
       "categories": [

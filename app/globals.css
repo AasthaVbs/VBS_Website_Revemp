@@ -541,7 +541,9 @@
     position: absolute;
     left: 50%;
     top: -533px;
-    width: 1400px;
+    /* Bleed 1px past card edges so SVG white strokes / AA don’t leave a gap */
+    width: calc(100% + 2px);
+    min-width: calc(100% + 2px);
     height: 1466.08px;
     transform: translateX(-50%);
     pointer-events: none;
@@ -641,8 +643,9 @@
 
     .evaluate-delivery-cta-mosaic {
       top: -420px;
-      width: 120%;
-      max-width: 900px;
+      width: 100%;
+      min-width: 100%;
+      max-width: none;
     }
   }
 

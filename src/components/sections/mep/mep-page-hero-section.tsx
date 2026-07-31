@@ -11,6 +11,8 @@ export type MepPageHeroContent = {
   tag: string;
   titleLead: string;
   titleAccent: string;
+  /** When true, accent (red/light) renders before lead (black/medium). */
+  titleAccentFirst?: boolean;
   description: string;
   ctaLabel: string;
   imageSrc: string | StaticImageData;
@@ -51,6 +53,7 @@ export function MepPageHeroSection({
   tag,
   titleLead,
   titleAccent,
+  titleAccentFirst = false,
   description,
   ctaLabel,
   imageSrc,
@@ -84,17 +87,37 @@ export function MepPageHeroSection({
                     className="w-full max-w-full text-[#111111]"
                     style={{ maxWidth: copyMaxWidth }}
                   >
-                    {titleLead.split("\n").map((line, index, lines) => (
-                      <span
-                        key={`${line}-${index}`}
-                        className="block text-[32px] font-medium leading-[1.15] sm:text-[40px] lg:text-[48px]"
-                      >
-                        {line}
-                        {index === lines.length - 1 ? (
-                          <span className="font-light text-[#D70416]">{titleAccent}</span>
-                        ) : null}
+                    {titleAccentFirst ? (
+                      <span className="text-[32px] leading-[1.15] sm:text-[40px] lg:text-[48px]">
+                        <span className="font-light text-[#D70416]">{titleAccent}</span>
+                        {titleLead.split("\n").map((line, index) =>
+                          index === 0 ? (
+                            <span key={`${line}-${index}`} className="font-medium text-[#111111]">
+                              {line}
+                            </span>
+                          ) : (
+                            <span
+                              key={`${line}-${index}`}
+                              className="block font-medium text-[#111111]"
+                            >
+                              {line}
+                            </span>
+                          ),
+                        )}
                       </span>
-                    ))}
+                    ) : (
+                      titleLead.split("\n").map((line, index, lines) => (
+                        <span
+                          key={`${line}-${index}`}
+                          className="block text-[32px] font-medium leading-[1.15] sm:text-[40px] lg:text-[48px]"
+                        >
+                          {line}
+                          {index === lines.length - 1 ? (
+                            <span className="font-light text-[#D70416]">{titleAccent}</span>
+                          ) : null}
+                        </span>
+                      ))
+                    )}
                   </h1>
                 </div>
                 <p
@@ -108,7 +131,7 @@ export function MepPageHeroSection({
               <PrimaryCtaButton
                 fullWidth={false}
                 href={ctaHref}
-                className="h-auto min-h-[52px] self-start px-5 py-4 capitalize backdrop-blur-[50px]"
+                className="!h-[56px] !min-h-[56px] self-start !px-6 capitalize"
               >
                 {ctaLabel}
               </PrimaryCtaButton>
@@ -200,7 +223,7 @@ export function MepPageHeroSection({
           <PrimaryCtaButton
             fullWidth={false}
             href={ctaHref}
-            className="h-auto min-h-[52px] self-center px-5 py-4 capitalize backdrop-blur-[50px] lg:self-start"
+            className="!h-[56px] !min-h-[56px] self-center !px-6 capitalize lg:self-start"
           >
             {ctaLabel}
           </PrimaryCtaButton>

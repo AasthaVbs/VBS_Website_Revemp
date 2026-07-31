@@ -1,9 +1,26 @@
 import { PageContainer } from "@/components/layout/page-container";
 import { homeOurClientsLogos, homeOurClientsSection } from "@/constants/home-content";
 
-export function OurClientsSection() {
-  const section = homeOurClientsSection;
-  const marqueeLogos = [...homeOurClientsLogos, ...homeOurClientsLogos];
+type OurClientsSectionContent = {
+  tag: string;
+  titleAccent: string;
+  titleLead: string;
+  description: string;
+};
+
+type OurClientsLogo = {
+  name: string;
+  src: string;
+};
+
+export function OurClientsSection({
+  section = homeOurClientsSection,
+  logos = homeOurClientsLogos,
+}: {
+  section?: OurClientsSectionContent;
+  logos?: readonly OurClientsLogo[];
+} = {}) {
+  const marqueeLogos = [...logos, ...logos];
 
   return (
     <section className="vbs-our-clients">
@@ -26,8 +43,8 @@ export function OurClientsSection() {
               <img
                 key={`${logo.name}-${index}`}
                 src={logo.src}
-                alt={index < homeOurClientsLogos.length ? logo.name : ""}
-                aria-hidden={index >= homeOurClientsLogos.length ? true : undefined}
+                alt={index < logos.length ? logo.name : ""}
+                aria-hidden={index >= logos.length ? true : undefined}
                 className="vbs-our-clients__logo"
                 loading="lazy"
                 decoding="async"

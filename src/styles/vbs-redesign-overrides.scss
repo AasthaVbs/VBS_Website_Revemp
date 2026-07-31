@@ -326,10 +326,11 @@ html:has(.vbs-redesign-page) {
   }
 }
 
-/* Evaluate CTA mosaic: full width of page column, not fixed asset width */
+/* Evaluate CTA mosaic: always fill the card edge-to-edge (no side gaps) */
 .vbs-redesign-page .evaluate-delivery-cta-mosaic {
-
-  max-width: var(--vbs-page-max) !important;
+  max-width: none !important;
+  width: calc(100% + 2px) !important;
+  min-width: calc(100% + 2px) !important;
 }
 
 .vbs-redesign-page .vbs-life-at-vbs-gallery__bleed {
@@ -344,7 +345,8 @@ html:has(.vbs-redesign-page) {
 
 @media (max-width: 1023px) {
   .vbs-redesign-page .evaluate-delivery-cta-mosaic {
-    max-width: 100% !important;
+    max-width: none !important;
+    width: 100% !important;
   }
 }
 

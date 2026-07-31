@@ -54,6 +54,7 @@ export async function BimModelingServicesPage() {
           {...bimModelingHero}
           imageSize="compact"
           ctaHref="#bim-modeling-page-contact"
+          containerClassName="!pt-0 sm:!pt-2 lg:!pt-10"
         />
         <TrustStripSection
           stats={bimModelingStatsStrip}

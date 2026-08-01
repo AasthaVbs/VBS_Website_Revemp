@@ -1,9 +1,17 @@
-import billMateriaServicesBanner from "@/assets/images/bill-materia-services-banner.png";
-import billMateriaServicesOverview from "@/assets/images/bill-materia-services-overview.png";
+import billMateriaServicesBanner from "@/assets/images/bill-materia-services-banner.jpg";
+import billMateriaServicesOverview from "@/assets/images/bill-materia-services-overview.jpg";
+import componentsHvacSystems from "@/assets/images/components-hvac-systems.jpg";
 import costEstimationDuringPreConstructionIcon from "@/assets/images/cost-estimation-during-pre-construction-icon.png";
+import customMepMaterialSegmentation from "@/assets/images/custom-mep-material-segmentation.jpg";
+import fixturesAndFittings from "@/assets/images/fixtures-and-fittings.jpg";
 import largeScaleProcurementIcon from "@/assets/images/large-scale-procurement-icon.png";
+import materialsPlumbingSystem from "@/assets/images/materials-plumbing-system.jpg";
 import mepCoordinationComplexIcon from "@/assets/images/mep-coordination-complex-icon.png";
+import mepDataOutputConcertedManner from "@/assets/images/mep-data-output-concerted-manner.jpg";
+import mepEquipmentTakeoff from "@/assets/images/mep-equipment-takeoff.jpg";
 import modelingForFabricationIcon from "@/assets/images/modeling-for-fabrication-icon.png";
+import partsElectricalSystems from "@/assets/images/parts-electrical-systems.jpg";
+import pipesDuctSystems from "@/assets/images/pipes-duct-systems.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
   MepBimFeatureCard,
@@ -17,8 +25,6 @@ import {
   mepBimTechnologyStackToolsRowOne,
   mepBimTechnologyStackToolsRowTwo,
 } from "@/constants/mep-bim-modelling-content";
-
-const BOM_COVERAGE_IMAGE = "/image/Bill-of-Material-(BOM)-Services.jpg";
 
 export const mepBomHero = {
   tag: "Bill of Material (BOM)",
@@ -112,42 +118,42 @@ export const mepBomServiceCards = [
   {
     title: "Pipes and Duct Systems",
     text: "Detailed quantity extraction for HVAC ducts, chilled water, drainage, and piping networks to support accurate fabrication, installation sequencing, and coordination.",
-    image: BOM_COVERAGE_IMAGE,
+    image: pipesDuctSystems.src,
   },
   {
     title: "Fixtures and Fittings",
     text: "Valves, joints, hangers, supports and connectors are quantified from project specifications, results in reduced procurement errors and site discrepancies during installation.",
-    image: BOM_COVERAGE_IMAGE,
+    image: fixturesAndFittings.src,
   },
   {
     title: "MEP Equipment Takeoff",
     text: "BIM-based quantity takeoffs of AHUs, pumps, chillers, electrical panels and other mechanical equipment help in coordinated planning and procurement.",
-    image: BOM_COVERAGE_IMAGE,
+    image: mepEquipmentTakeoff.src,
   },
   {
     title: "Parts of Electrical Systems",
     text: "Conduits, cable trays, wiring, switch gear, fixtures, etc., are pulled out to help in procurement, installation planning and accurate load calculations.",
-    image: BOM_COVERAGE_IMAGE,
+    image: partsElectricalSystems.src,
   },
   {
     title: "Materials in Plumbing System",
     text: "Where required, sanitary, domestic water and storm water components are quantified according to approved designs and maintained consistently throughout onsite installation activities.",
-    image: BOM_COVERAGE_IMAGE,
+    image: materialsPlumbingSystem.src,
   },
   {
     title: "Components of HVAC systems",
     text: "Diffusers, dampers, insulation and duct accessories for efficient system installation and performance enhancement quantities.",
-    image: BOM_COVERAGE_IMAGE,
+    image: componentsHvacSystems.src,
   },
   {
     title: "Custom MEP Material Segmentation",
     text: "Materials are categorized by CSI MasterFormat or project specific standards that improve traceability and management of procurement during handover and stakeholder review.",
-    image: BOM_COVERAGE_IMAGE,
+    image: customMepMaterialSegmentation.src,
   },
   {
     title: "MEP Data Output In a Concerted Manner",
     text: "Integrated BOM data that is aligned with the coordinated BIM models reduces coordination issues and helps achieve smoother construction execution for clients.",
-    image: BOM_COVERAGE_IMAGE,
+    image: mepDataOutputConcertedManner.src,
   },
 ];
 

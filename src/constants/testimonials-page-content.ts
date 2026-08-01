@@ -2,10 +2,10 @@ import { testimonialQuote } from "@/constants/shared-sections";
 
 export const testimonialsPageHero = {
   tag: "Testimonials",
-  titleLead: "Testimonials ",
-  titleAccent: "@VBS",
+  titleLead: "What Our ",
+  titleAccent: "Clients Say",
   description:
-    "As a specialized MEP BIM modeling service provider in the USA, we ensure your building systems are clash-free and fabrication-ready.",
+    "Real feedback from clients who rely on our BIM, Scan to BIM, MEP, and digital construction services to deliver successful projects with confidence.",
   ctaLabel: "Contact Us",
   imageAlt: "Client testimonials on Virtual Building Studio BIM services",
 } as const;
@@ -16,6 +16,15 @@ export const testimonialsReviewsIntro = {
   titleAccent: "Stories and Client Reviews",
   description:
     "Meet the visionaries and experts who guide Virtual Building Studio's mission to revolutionize the AEC industry through innovation and dedication.",
+} as const;
+
+export const testimonialsJoinTeamCta = {
+  titleLine1: "Join ",
+  titleAccent: "the Team",
+  description:
+    "Join 500+ BIM experts, architects, and engineers driving innovation for leading architecture, engineering, and construction firms worldwide. Grow your skills, work with cutting-edge technologies, and help deliver exceptional projects.",
+  ctaLabel: "Contact Us",
+  ctaHref: "/contact-us",
 } as const;
 
 export type ClientReviewItem = {
@@ -40,10 +49,9 @@ const reviewCovers = [
   "/images/figma/evaluate-cta-2.png",
 ] as const;
 
-/** Figma 948:29976 — client review cards */
-export const clientReviewItems: ClientReviewItem[] = [
+/** Figma 948:29976 — base client review cards (cycled across pages) */
+const clientReviewTemplates: Omit<ClientReviewItem, "id">[] = [
   {
-    id: "review-1",
     name: "Marvin McKinney",
     role: "CEO at Oceanmtech",
     quote: testimonialQuote,
@@ -51,7 +59,6 @@ export const clientReviewItems: ClientReviewItem[] = [
     cover: reviewCovers[0],
   },
   {
-    id: "review-2",
     name: "Ronald Richards",
     role: "Binford Ltd.",
     quote: testimonialQuote,
@@ -59,7 +66,6 @@ export const clientReviewItems: ClientReviewItem[] = [
     cover: reviewCovers[1],
   },
   {
-    id: "review-3",
     name: "Jenny Wilson",
     role: "Binford Ltd.",
     quote: testimonialQuote,
@@ -67,7 +73,6 @@ export const clientReviewItems: ClientReviewItem[] = [
     cover: reviewCovers[2],
   },
   {
-    id: "review-4",
     name: "Dianne Russell",
     role: "Biffco Enterprises Ltd.",
     quote: testimonialQuote,
@@ -75,7 +80,6 @@ export const clientReviewItems: ClientReviewItem[] = [
     cover: reviewCovers[3],
   },
   {
-    id: "review-5",
     name: "Arlene McCoy",
     role: "Big Kahuna Burger Ltd.",
     quote: testimonialQuote,
@@ -83,7 +87,6 @@ export const clientReviewItems: ClientReviewItem[] = [
     cover: reviewCovers[4],
   },
   {
-    id: "review-6",
     name: "Theresa Webb",
     role: "Barone LLC.",
     quote: testimonialQuote,
@@ -91,7 +94,6 @@ export const clientReviewItems: ClientReviewItem[] = [
     cover: reviewCovers[5],
   },
   {
-    id: "review-7",
     name: "Marvin McKinney",
     role: "Abstergo Ltd.",
     quote: testimonialQuote,
@@ -99,7 +101,6 @@ export const clientReviewItems: ClientReviewItem[] = [
     cover: reviewCovers[6],
   },
   {
-    id: "review-8",
     name: "Cameron Williamson",
     role: "Abstergo Ltd.",
     quote: testimonialQuote,
@@ -107,7 +108,6 @@ export const clientReviewItems: ClientReviewItem[] = [
     cover: reviewCovers[7],
   },
   {
-    id: "review-9",
     name: "Cody Fisher",
     role: "Binford Ltd.",
     quote: testimonialQuote,
@@ -115,7 +115,6 @@ export const clientReviewItems: ClientReviewItem[] = [
     cover: reviewCovers[8],
   },
   {
-    id: "review-10",
     name: "Albert Flores",
     role: "Acme Co.",
     quote: testimonialQuote,
@@ -124,7 +123,22 @@ export const clientReviewItems: ClientReviewItem[] = [
   },
 ];
 
-/** All 10 reviews on page 01 (single slide) */
+/** 10 reviews per page × 10 pages (Figma pagination 01…10) */
 export const clientReviewsPerPage = 10;
+export const clientReviewTotalPages = 10;
 
-export const clientReviewPaginationPages = ["01", "02", "03", "...", "09", "10"] as const;
+export const clientReviewItems: ClientReviewItem[] = Array.from(
+  { length: clientReviewsPerPage * clientReviewTotalPages },
+  (_, index) => {
+    const template = clientReviewTemplates[index % clientReviewTemplates.length];
+    return {
+      ...template,
+      id: `review-${index + 1}`,
+      cover: reviewCovers[index % reviewCovers.length],
+      avatar:
+        index % 2 === 0
+          ? "/images/figma/testimonial-1.png"
+          : "/images/figma/testimonial-2.png",
+    };
+  },
+);

@@ -20,6 +20,7 @@ export type MepFullSpectrumServicesSectionProps = Partial<
     | "titleLine2ClassName"
     | "descriptionClassName"
     | "showCarouselFades"
+    | "metrics"
   >
 > & {
   section?: StickyHorizontalServicesSectionProps["section"];
@@ -41,6 +42,7 @@ export function MepFullSpectrumServicesSection({
   titleLine2ClassName,
   descriptionClassName,
   showCarouselFades,
+  metrics,
 }: MepFullSpectrumServicesSectionProps) {
   return (
     <StickyHorizontalServicesSection
@@ -54,6 +56,7 @@ export function MepFullSpectrumServicesSection({
       titleLine2ClassName={titleLine2ClassName}
       descriptionClassName={descriptionClassName}
       showCarouselFades={showCarouselFades}
+      metrics={metrics}
     />
   );
 }

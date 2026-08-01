@@ -73,6 +73,8 @@ export const extendedWhitepaperListingItems = [
       "Architecture Firms",
       "Reality Capture & Survey Companies",
     ],
+    publishedAt: "16 Jun 2026",
+    publishedTimestamp: 4002,
   },
   {
     id: "hidden-cost-mep-coordination",
@@ -87,6 +89,46 @@ export const extendedWhitepaperListingItems = [
       "Architecture Firms",
       "Reality Capture & Survey Companies",
     ],
+    publishedAt: "12 Jan 2026",
+    publishedTimestamp: 4001,
+  },
+  {
+    id: "documentation-systems-that-scale",
+    title: "Documentation Systems That Scale Without a Bigger Team",
+    excerpt:
+      "When architecture firms grow from small teams into mid-sized practices, they begin to surface familiar symptoms. This whitepaper explains why informal documentation systems fail during growth.",
+    href: "/landing/documentation-system-that-scale/?utm_source=Resource_WP&utm_medium=Website&utm_campaign=ABM",
+    image: encodeURI("/image/Documentation System that scale.jpg"),
+    service: "Architecture Firms",
+    services: ["Architecture Firms"],
+    publishedAt: "Jul 2026",
+    publishedTimestamp: 4000,
+  },
+  {
+    id: "hiring-vs-dedicated-remote-architect",
+    title: "Hiring vs Dedicated Remote Architect",
+    excerpt:
+      "What actually happens after you hire — a structural look at what changes inside architecture firms during the first 90 days after adding capacity.",
+    href: "/landing/hiring-vs-dedicated-remote-architect/?utm_source=Resource_WP&utm_medium=Website&utm_campaign=ABM",
+    image: encodeURI("/image/Hiring vs Dedicated Remote Architect.png"),
+    service: "Architecture Firms",
+    services: ["Architecture Firms"],
+    publishedAt: "Jul 2026",
+    publishedTimestamp: 3999,
+  },
+  {
+    id: "documentation-wall-growing-firms",
+    title: "Why Growing Architecture Firms Hit a Documentation Wall",
+    excerpt:
+      "A quick guide for architecture leaders whose success is starting to strain their system.",
+    href: "/landing/why-growing-architecture-firms-hit-documentation-wall/?utm_source=Resource_WP&utm_medium=Website&utm_campaign=ABM",
+    image: encodeURI(
+      "/image/Why Growing Architecture Firms Hit a Documentation wall Mockup-Website.png",
+    ),
+    service: "Architecture Firms",
+    services: ["Architecture Firms"],
+    publishedAt: "Jul 2026",
+    publishedTimestamp: 3998,
   },
 ].map((item, index) =>
   toListingItem({
@@ -95,6 +137,7 @@ export const extendedWhitepaperListingItems = [
     badgeLabel: "Whitepaper",
     category: "Whitepaper",
     sortOrder: index + 1,
-    publishedTimestamp: 4000 - index,
+    publishedTimestamp: item.publishedTimestamp ?? 4000 - index,
+    publishedAt: item.publishedAt ?? null,
   }),
 );

@@ -15,12 +15,15 @@
     "clean": "node -e \"const fs=require('fs');['.next','node_modules/.cache'].forEach(p=>{try{fs.rmSync(p,{recursive:true,force:true})}catch(e){}})\""
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@portabletext/react": "^4.0.3",
     "@sanity/client": "^7.23.0",
     "@sanity/image-url": "^1.2.0",
     "bootstrap": "^5.3.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "formik": "^2.4.9",
+    "framer-motion": "^12.43.0",
     "lucide-react": "^1.16.0",
     "next": "^15.5.18",
     "react": "^19.2.6",
@@ -28,7 +31,8 @@
     "react-dom": "^19.2.6",
     "server-only": "^0.0.1",
     "swiper": "^14.0.1",
-    "tailwind-merge": "^3.6.0"
+    "tailwind-merge": "^3.6.0",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@types/node": "^20",

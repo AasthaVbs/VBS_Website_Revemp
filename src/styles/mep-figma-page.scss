@@ -4562,7 +4562,9 @@
 .architectural-bim-services-page,
 .cad-to-bim-page,
 .cad-drafting-services-page,
-.architectural-drafting-services-page {
+.architectural-drafting-services-page,
+.point-cloud-to-bim-services-page,
+.scan-to-cad-services-page {
   @media (max-width: 767px) {
     .mep-figma-services--wide-cards .mep-figma-services__sticky {
       gap: 16px !important;

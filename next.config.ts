@@ -105,6 +105,26 @@ const nextConfig: NextConfig = {
         destination: "/terms-of-use",
         permanent: true,
       },
+      {
+        source: "/hiring-vs-dedicated-remote-architect",
+        destination: "/landing/hiring-vs-dedicated-remote-architect",
+        permanent: true,
+      },
+      {
+        source: "/hiring-vs-dedicated-remote-architect/",
+        destination: "/landing/hiring-vs-dedicated-remote-architect",
+        permanent: true,
+      },
+      {
+        source: "/why-growing-architecture-firms-hit-documentation-wall",
+        destination: "/landing/why-growing-architecture-firms-hit-documentation-wall",
+        permanent: true,
+      },
+      {
+        source: "/why-growing-architecture-firms-hit-documentation-wall/",
+        destination: "/landing/why-growing-architecture-firms-hit-documentation-wall",
+        permanent: true,
+      },
     ];
 
     let sanityRedirects: { source: string; destination: string; permanent: boolean }[] = [];

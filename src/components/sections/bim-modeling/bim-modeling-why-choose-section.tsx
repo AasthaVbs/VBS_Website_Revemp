@@ -8,7 +8,13 @@ import {
   bimModelingWhyChooseSection,
 } from "@/constants/bim-modeling-services-content";
 
-type WhyChooseItem = (typeof bimModelingWhyChooseItems)[number];
+type WhyChooseItem = {
+  prefix: string;
+  suffix: string;
+  prefixColor: string;
+  title: string;
+  description: string;
+};
 
 function VerticalDivider() {
   return (
@@ -61,7 +67,14 @@ export function BimModelingWhyChooseSection({
   section = bimModelingWhyChooseSection,
   items = bimModelingWhyChooseItems,
 }: {
-  section?: typeof bimModelingWhyChooseSection;
+  section?: {
+    tag: string;
+    titleLead: string;
+    titleAccent: string;
+    description: string;
+    ctaLabel?: string;
+    ctaHref?: string;
+  };
   items?: readonly WhyChooseItem[];
 } = {}) {
   const rowOne = items.slice(0, 2);
@@ -109,7 +122,7 @@ export function BimModelingWhyChooseSection({
           <PrimaryCtaButton
             fullWidth={false}
             href={section.ctaHref}
-            className="h-auto min-h-[52px] self-center px-5 py-4 capitalize backdrop-blur-[50px]"
+            className="!h-11 !min-h-11 self-center !px-4 !py-0 text-[14px] capitalize backdrop-blur-[50px]"
           >
             {section.ctaLabel}
           </PrimaryCtaButton>

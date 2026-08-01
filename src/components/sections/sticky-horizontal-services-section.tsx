@@ -30,6 +30,12 @@ export type StickyServicesCard = {
   highlighted?: boolean;
 };
 
+export type StickyServicesMetric = {
+  value: string;
+  label: string;
+  valueColor: string;
+};
+
 export type StickyServicesSectionContent = {
   tag: string;
   titleLine1: string;
@@ -55,6 +61,7 @@ export type StickyHorizontalServicesSectionProps = {
   titleLine1ClassName?: string;
   titleLine2ClassName?: string;
   descriptionClassName?: string;
+  metrics?: readonly StickyServicesMetric[];
 };
 
 function ViewMoreCta({ label }: { label: string }) {
@@ -216,6 +223,33 @@ function SectionHeader({
   );
 }
 
+function SectionMetrics({ metrics }: { metrics?: readonly StickyServicesMetric[] }) {
+  if (!metrics?.length) {
+    return null;
+  }
+
+  return (
+    <div className="vbs-page-container flex w-full flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-4 lg:gap-4">
+      {metrics.map((metric) => (
+        <div
+          key={metric.label}
+          className="flex min-w-0 flex-1 flex-col items-start justify-center gap-2.5 rounded-[10px] border border-solid border-[#CBCCCD] bg-white p-5"
+        >
+          <div
+            className="text-[24px] font-medium capitalize leading-6"
+            style={{ color: metric.valueColor }}
+          >
+            {metric.value}
+          </div>
+          <div className="text-[16px] font-normal capitalize leading-6 text-[#111111]">
+            {metric.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function SectionCta({ section }: { section: StickyServicesSectionContent }) {
   if (!section.ctaLabel || !section.ctaHref) {
     return null;
@@ -303,6 +337,7 @@ export function StickyHorizontalServicesSection({
   titleLine1ClassName,
   titleLine2ClassName,
   descriptionClassName,
+  metrics,
 }: StickyHorizontalServicesSectionProps) {
   const isHoverScroll = scrollInteraction === "hover";
   const { isMobile, ready: layoutReady } = useMobileLayout();
@@ -380,6 +415,7 @@ export function StickyHorizontalServicesSection({
           <CardTrack {...cardTrackProps} activeIndex={0} />
         </div>
 
+        <SectionMetrics metrics={metrics} />
         <SectionCta section={section} />
       </section>
     );
@@ -397,6 +433,7 @@ export function StickyHorizontalServicesSection({
             className="mep-figma-services__sticky mep-figma-services__sticky--cards-only"
           >
             {cardTrack}
+            <SectionMetrics metrics={metrics} />
             <SectionCta section={section} />
           </div>
         </div>
@@ -412,6 +449,7 @@ export function StickyHorizontalServicesSection({
 
         {cardTrack}
 
+        <SectionMetrics metrics={metrics} />
         <SectionCta section={section} />
       </div>
     </section>

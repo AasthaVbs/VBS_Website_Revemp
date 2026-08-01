@@ -55,9 +55,9 @@ export const ROUTES = {
   mepPreBid: "/mep-bim-services/pre-bid-estimation-services",
   fiveDBimCost: "/mep-bim-services",
   mepDataCenter: "/mep-bim-services/mep-data-center-services",
-  pointCloudToBim: "/bim-modeling-services/laser-scan-to-bim",
-  scanToCad: "/bim-modeling-services/scan-to-cad-services",
-  asBuiltModeling: "/bim-modeling-services/laser-scan-to-bim",
+  pointCloudToBim: "/point-cloud-to-bim-services",
+  scanToCad: "/scan-to-cad-services",
+  asBuiltModeling: "/as-built-modeling-services",
   laserScanning: "/bim-modeling-services/laser-scan-to-bim",
   whitepaper: "/whitepaper",
   whitepaperMepDc: "/whitepaper/mep-coordination-data-centers-bim-workflows",
@@ -67,8 +67,8 @@ export const ROUTES = {
   privacy: "/privacy-policy",
   terms: "/terms-of-use",
   cookies: "/cookie-policy",
-  scanToBimPointCloud: "https://www.scantobim.online/point-cloud-to-bim-services/",
-  scanToBimAsBuilt: "https://www.scantobim.online/as-built-modeling-services/",
+  scanToBimPointCloud: "/point-cloud-to-bim-services",
+  scanToBimAsBuilt: "/as-built-modeling-services",
   scanToBimArchitectural: "https://www.scantobim.online/architectural-scan-to-bim-services/",
   scanToBimMepf: "https://www.scantobim.online/mepf-scan-to-bim-services/",
 } as const;
@@ -93,6 +93,7 @@ export const RESOURCES_DROPDOWN_LINKS: NavDropdownLink[] = [
   { label: "Blog", href: ROUTES.blog },
   { label: "White Paper", href: ROUTES.whitepaper },
   { label: "Webinar", href: ROUTES.webinar },
+  { label: "Testimonials", href: ROUTES.testimonials },
 ];
 
 export const CAPABILITY_CATEGORIES: CapabilityCategory[] = [
@@ -142,8 +143,9 @@ export const CAPABILITY_CATEGORIES: CapabilityCategory[] = [
     href: ROUTES.scanToBimServices,
     services: [
       [
-        { label: "Point Cloud to BIM", href: ROUTES.scanToBimPointCloud, external: true },
-        { label: "As-Built Modeling", href: ROUTES.scanToBimAsBuilt, external: true },
+        { label: "Point Cloud to BIM", href: ROUTES.scanToBimPointCloud },
+        { label: "Scan to CAD", href: ROUTES.scanToCad },
+        { label: "As-Built Modeling", href: ROUTES.scanToBimAsBuilt },
         {
           label: "Architectural Scan to BIM",
           href: ROUTES.scanToBimArchitectural,

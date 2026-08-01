@@ -147,7 +147,7 @@ export const scanToBimFullSpectrumCards = [
     title: "As-built Drawing Services",
     text: "Our scan to BIM specialists convert your scan data into an accurate as-built Revit model. Floor plans, sections, and elevations are then extracted directly from that model. Your team gets dimensioned, annotated drawings ready for design, permits, and contractor coordination.",
     image: asBuiltDrawingServicesImage.src,
-    href: "https://www.scantobim.online/as-built-modeling-services/",
+    href: "/as-built-modeling-services",
   },
   {
     title: "Point Cloud to BIM",

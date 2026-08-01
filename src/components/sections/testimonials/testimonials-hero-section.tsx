@@ -1,8 +1,8 @@
-import testimonialsBannerImg from "@/assets/images/testimonials-banner.jpg";
+import testimonialsBannerImg from "@/assets/images/testimonials-banner.png";
 import { ListingPageHeroSection } from "@/components/sections/listing-page-hero-section";
 import { testimonialsPageHero } from "@/constants/testimonials-page-content";
 
-/** Figma 948:29895 — Testimonials hero */
+/** Figma — Testimonials hero */
 export function TestimonialsHeroSection() {
   const { tag, titleLead, titleAccent, description, ctaLabel, imageAlt } = testimonialsPageHero;
 
@@ -15,8 +15,8 @@ export function TestimonialsHeroSection() {
       ctaLabel={ctaLabel}
       image={testimonialsBannerImg}
       imageAlt={imageAlt}
-      titleMaxWidthClass="max-w-[497px]"
-      descriptionMaxWidthClass="max-w-[497px]"
+      titleMaxWidthClass="max-w-[680px]"
+      descriptionMaxWidthClass="max-w-[582px]"
     />
   );
 }

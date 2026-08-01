@@ -80,8 +80,8 @@ export function SiteFooter() {
                 src={footerLogo}
                 alt="Virtual Building Studio"
                 width={301}
-                height={64}
-                className="vbs-site-footer__logo h-[64px] w-auto max-w-[301px]"
+                height={54}
+                className="vbs-site-footer__logo h-[54px] w-auto max-w-[301px]"
               />
             </Link>
             <p className="vbs-site-footer__brand-copy max-w-[374px] text-[16px] font-normal leading-6 text-[#CBCCCD]">

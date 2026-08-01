@@ -5578,7 +5578,7 @@
   .mep-bim-lod-carousel__fade {
     position: absolute;
     top: 0;
-    width: min(240px, 18vw);
+    width: 80px;
     height: 100%;
     pointer-events: none;
     z-index: 2;
@@ -5586,12 +5586,24 @@
 
   .mep-bim-lod-carousel__fade--right {
     right: 0;
-    background: linear-gradient(270deg, #fafafa 56%, rgba(250, 250, 250, 0) 100%);
+    background: linear-gradient(270deg, #fafafa 0%, rgba(250, 250, 250, 0) 100%);
   }
 
   .mep-bim-lod-carousel__fade--left {
     left: 0;
-    background: linear-gradient(90deg, #fafafa 56%, rgba(250, 250, 250, 0) 100%);
+    background: linear-gradient(90deg, #fafafa 0%, rgba(250, 250, 250, 0) 100%);
+  }
+
+  @media (min-width: 1440px) {
+    .mep-bim-lod-carousel__fade {
+      width: 120px;
+    }
+  }
+
+  @media (min-width: 1720px) {
+    .mep-bim-lod-carousel__fade {
+      width: 160px;
+    }
   }
 
   .mep-bim-lod-card {

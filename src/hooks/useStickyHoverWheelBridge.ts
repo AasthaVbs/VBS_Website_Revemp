@@ -8,11 +8,6 @@ function getHeaderOffset() {
 
 function getStickyPinHeight(sticky) {
   if (!sticky) return 0;
-  const isCardsOnly = sticky.classList.contains("mep-figma-services__sticky--cards-only");
-  if (isCardsOnly) {
-    const viewport = sticky.querySelector(".mep-figma-services__carousel-viewport");
-    return viewport?.offsetHeight ?? sticky.offsetHeight;
-  }
   return sticky.offsetHeight;
 }
 

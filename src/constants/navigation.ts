@@ -52,7 +52,7 @@ export const ROUTES = {
   mepCoordination: "/mep-bim-services/mep-coordination-services",
   mepRevitFamily: "/mep-bim-services/mep-revit-family-creation-services",
   mepBom: "/mep-bim-services/bill-of-material-services",
-  mepPreBid: "/mep-bim-services",
+  mepPreBid: "/mep-bim-services/pre-bid-estimation-services",
   fiveDBimCost: "/mep-bim-services",
   mepDataCenter: "/mep-bim-services/mep-data-center-services",
   pointCloudToBim: "/bim-modeling-services/laser-scan-to-bim",
@@ -126,6 +126,7 @@ export const CAPABILITY_CATEGORIES: CapabilityCategory[] = [
         { label: "MEP Revit Family Creation Services", href: ROUTES.mepRevitFamily },
         { label: "MEP Shop Drawing Services", href: ROUTES.mepShopDrawings },
         { label: "Bill of Material (BOM) Services", href: ROUTES.mepBom },
+        { label: "Pre-Bid Estimation Services", href: ROUTES.mepPreBid },
       ],
       [
         { label: "MEP Clash Detection Services", href: ROUTES.mepClashDetection },

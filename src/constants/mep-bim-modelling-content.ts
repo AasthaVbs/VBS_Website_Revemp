@@ -470,6 +470,8 @@ export const mepBimMeasurableResultsSection = {
 export type MepBimMeasurableResultCard = {
   value: string;
   valueColor: string;
+  /** Optional leading digit(s) shown in valueColor; `value` renders in #111111. */
+  valuePrefix?: string;
   title: string;
   description: string;
 };

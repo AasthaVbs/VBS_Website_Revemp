@@ -178,7 +178,7 @@ export const mepFullSpectrumCards = [
     image: "/image/Pre-Bid-Estimation-Services-1.jpg",
     imageCrop: { width: 532, height: 280, left: -25, top: 0 },
     elevated: false,
-    href: "#",
+    href: "/mep-bim-services/pre-bid-estimation-services",
   },
   {
     title: "MEP Spool Drawing Services",

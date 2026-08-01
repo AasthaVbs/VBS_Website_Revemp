@@ -19,10 +19,12 @@ const CARD_HEIGHT_MAX = 560;
 const CARD_HEIGHT_MIN = 300;
 /** More horizontal travel per vertical scroll — shorter pin runway */
 const HOVER_SCROLL_RATIO = 1.25;
-/** Short-laptop cards-only: denser mapping so less empty gap under cards */
+/**
+ * Cards-only pin: denser mapping (less vertical travel per card).
+ * Runway must stay maxScroll / ratio — never cap below that, or the pin
+ * releases and the page scrolls down before the last card is shown.
+ */
 const CARDS_ONLY_SCROLL_RATIO = 2.6;
-/** Cap pin runway on short laptops (fraction of viewport height) */
-const CARDS_ONLY_RUNWAY_MAX_VH = 0.5;
 const CARDS_ONLY_SMOOTHING = 0.42;
 const HOVER_SCROLL_SMOOTHING = 0.28;
 
@@ -137,10 +139,9 @@ export function useStickyServicesCarousel(
 
     const getRunway = () => {
       if (maxScroll <= 0) return 0;
-      const raw = maxScroll / getScrollRatio();
-      if (!cardsOnlyPin) return raw;
-      const cap = Math.max(240, Math.round(window.innerHeight * CARDS_ONLY_RUNWAY_MAX_VH));
-      return Math.min(raw, cap);
+      // Pin duration must map 1:1 to full horizontal travel so the last card
+      // is fully visible before the sticky releases and the page scrolls on.
+      return maxScroll / getScrollRatio();
     };
 
     const getScrolledFromPin = (pinTop) => {
@@ -422,10 +423,8 @@ function clearPinStyles(sticky, spacer) {
 }
 
 function getStickyHeight(sticky) {
-  const isCardsOnly = sticky.classList.contains("mep-figma-services__sticky--cards-only");
-  if (isCardsOnly) {
-    const carouselViewport = sticky.querySelector(".mep-figma-services__carousel-viewport");
-    return Math.max(carouselViewport?.offsetHeight ?? sticky.offsetHeight, 1);
-  }
+  // Include carousel + CTA (cards-only puts CTA inside sticky). Using only the
+  // viewport height made the pin zone shorter than the fixed sticky, so the
+  // next section scrolled up while cards were still moving.
   return Math.max(sticky.offsetHeight, 1);
 }

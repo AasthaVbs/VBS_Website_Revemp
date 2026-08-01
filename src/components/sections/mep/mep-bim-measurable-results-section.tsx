@@ -20,7 +20,7 @@ function chunkCards<T>(cards: T[], size: number): T[][] {
 function VerticalDivider() {
   return (
     <div
-      className="hidden w-px shrink-0 self-stretch bg-gradient-to-b from-transparent via-[#CBCCCD] to-transparent lg:block"
+      className="hidden w-px shrink-0 self-stretch bg-[linear-gradient(to_bottom,transparent_0%,transparent_20%,rgba(203,204,205,0.25)_35%,#CBCCCD_50%,rgba(203,204,205,0.25)_65%,transparent_80%,transparent_100%)] lg:block"
       aria-hidden
     />
   );
@@ -29,7 +29,7 @@ function VerticalDivider() {
 function HorizontalDivider() {
   return (
     <div
-      className="h-px w-full shrink-0 bg-[linear-gradient(to_right,transparent_0%,#CBCCCD_12%,#CBCCCD_88%,transparent_100%)]"
+      className="h-px w-full shrink-0 bg-[linear-gradient(to_right,transparent_0%,transparent_20%,rgba(203,204,205,0.25)_35%,#CBCCCD_50%,rgba(203,204,205,0.25)_65%,transparent_80%,transparent_100%)]"
       aria-hidden
     />
   );
@@ -42,6 +42,7 @@ export function MepBimMeasurableResultsSection({
   cards = mepBimMeasurableResultCards,
   columnsPerRow = 2,
   descriptionMaxWidth = 548,
+  titleMaxWidth = 657,
 }: {
   id?: string;
   section?: {
@@ -53,10 +54,10 @@ export function MepBimMeasurableResultsSection({
   cards?: MepBimMeasurableResultCard[];
   columnsPerRow?: 2 | 3;
   descriptionMaxWidth?: number;
+  titleMaxWidth?: number;
 } = {}) {
   const { tag, titleLead, titleAccent, description } = section;
   const rows = chunkCards(cards, columnsPerRow);
-  const useColumnDividers = columnsPerRow === 3;
 
   return (
     <section id={id} className="bg-white py-12 sm:py-16 lg:py-[100px]">
@@ -64,7 +65,7 @@ export function MepBimMeasurableResultsSection({
         <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading max-w-[657px]">
+            <h2 className="mep-section-heading" style={{ maxWidth: titleMaxWidth }}>
               {titleLead.split("\n").map((line, index, lines) => (
                 <span key={`title-lead-${index}`} className="font-medium">
                   {line}
@@ -92,22 +93,14 @@ export function MepBimMeasurableResultsSection({
           ))}
         </div>
 
-        {/* Desktop: row / grid layout */}
-        <div className="hidden w-full max-w-[1400px] flex-col gap-12 lg:flex">
-          {rows.map((row, rowIndex) =>
-            useColumnDividers ? (
-              <MeasurableResultsRow key={`measurable-row-${rowIndex}`} cards={row} />
-            ) : (
-              <div
-                key={`measurable-row-${rowIndex}`}
-                className="grid grid-cols-1 gap-5 md:grid-cols-2"
-              >
-                {row.map((card) => (
-                  <MeasurableResultCard key={card.title} card={card} />
-                ))}
-              </div>
-            ),
-          )}
+        {/* Desktop: rows with faded vertical + horizontal dividers */}
+        <div className="hidden w-full max-w-[1400px] flex-col gap-10 lg:flex">
+          {rows.map((row, rowIndex) => (
+            <Fragment key={`measurable-row-${rowIndex}`}>
+              {rowIndex > 0 ? <HorizontalDivider /> : null}
+              <MeasurableResultsRow cards={row} />
+            </Fragment>
+          ))}
         </div>
       </PageContainer>
     </section>
@@ -116,7 +109,7 @@ export function MepBimMeasurableResultsSection({
 
 function MeasurableResultsRow({ cards }: { cards: MepBimMeasurableResultCard[] }) {
   return (
-    <div className="flex w-full flex-col gap-5 lg:flex-row lg:items-stretch">
+    <div className="flex w-full flex-col gap-5 lg:flex-row lg:items-stretch lg:gap-5">
       {cards.map((card, index) => (
         <Fragment key={card.title}>
           {index > 0 ? <VerticalDivider /> : null}
@@ -137,11 +130,15 @@ function MeasurableResultCard({
   return (
     <article className={cn("flex flex-col gap-5 px-2.5 py-0", className)}>
       <div className="flex flex-col gap-2.5">
-        <span
-          className="text-[28px] font-medium leading-none sm:text-[36px]"
-          style={{ color: card.valueColor }}
-        >
-          {card.value}
+        <span className="text-[28px] font-medium leading-none sm:text-[36px]">
+          {card.valuePrefix ? (
+            <>
+              <span style={{ color: card.valueColor }}>{card.valuePrefix}</span>
+              <span className="text-[#111111]">{card.value}</span>
+            </>
+          ) : (
+            <span style={{ color: card.valueColor }}>{card.value}</span>
+          )}
         </span>
         <h3 className="text-[20px] font-normal leading-[1.35] text-[#111111] sm:text-[24px]">{card.title}</h3>
       </div>

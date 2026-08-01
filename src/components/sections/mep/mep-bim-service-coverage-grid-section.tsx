@@ -45,19 +45,19 @@ export function MepBimServiceCoverageGridSection() {
       className="scroll-mt-[120px] bg-white py-16 lg:scroll-mt-[148px] lg:py-[100px]"
     >
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[1400px] flex-col items-center gap-5">
-          <div className="flex w-full flex-col items-center gap-3">
+        <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
+          <div className="flex w-full flex-col items-start gap-3">
             <MepSectionTag label={tag} />
             <h2
               id="mep-bim-service-coverage-heading"
-              className="mep-section-heading max-w-[659px] text-center"
+              className="mep-section-heading max-w-[659px] text-left"
             >
               <span className="font-medium">{titleLine1}</span>
               <br />
               <span className="text-accent font-light">{titleLine2}</span>
             </h2>
           </div>
-          <p className="max-w-[536px] text-center text-[16px] font-normal leading-6 text-[#808080]">
+          <p className="max-w-[536px] text-left text-[16px] font-normal leading-6 text-[#808080]">
             {description}
           </p>
         </div>

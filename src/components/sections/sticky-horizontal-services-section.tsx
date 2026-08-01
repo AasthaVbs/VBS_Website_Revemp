@@ -306,15 +306,10 @@ export function StickyHorizontalServicesSection({
 }: StickyHorizontalServicesSectionProps) {
   const isHoverScroll = scrollInteraction === "hover";
   const { isMobile, ready: layoutReady } = useMobileLayout();
-  const shortLaptopLayout = useShortLaptopLayout();
-  // Wide-card ACS pages keep title + description sticky with the cards until the
-  // last card finishes — do not peel the header off into a separate intro.
+  const cardsOnlyViewport = useShortLaptopLayout();
+  // Below 1400px desktop: only cards pin. At 1400px+: title + description + cards pin together.
   const cardsOnlyPin =
-    layoutReady &&
-    isHoverScroll &&
-    shortLaptopLayout &&
-    !isMobile &&
-    !section.wideCards;
+    layoutReady && isHoverScroll && cardsOnlyViewport && !isMobile;
   const useHorizontalCarousel = layoutReady && !isMobile;
 
   const sectionRef = useRef<HTMLElement>(null);
@@ -402,10 +397,9 @@ export function StickyHorizontalServicesSection({
             className="mep-figma-services__sticky mep-figma-services__sticky--cards-only"
           >
             {cardTrack}
+            <SectionCta section={section} />
           </div>
         </div>
-
-        <SectionCta section={section} />
       </section>
     );
   }

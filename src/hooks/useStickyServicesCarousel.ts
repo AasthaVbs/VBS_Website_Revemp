@@ -59,13 +59,13 @@ function updateStickyCardSizing(section, sticky, headerOffset, track) {
   section.classList.toggle("mep-figma-services--compact-sticky", isCompact && !isCardsOnlySticky);
 
   const cta = sticky.querySelector(".mep-figma-services__cta-wrap");
-  const ctaH = isCardsOnlySticky ? 0 : (cta?.offsetHeight ?? 52);
+  const ctaH = cta?.offsetHeight ?? 52;
   const stickyPadding = isCompact ? 16 : isCardsOnlySticky ? 0 : 48;
   const headerEl = sticky.querySelector(".mep-figma-services__header");
   // Wide-card ACS keeps title+description in the sticky pin — always measure them.
   const headerH = isCardsOnlySticky ? 0 : (headerEl?.offsetHeight ?? 0);
-  const gap = isCompact ? 8 : isCardsOnlySticky ? 0 : 24;
-  const chrome = stickyPadding + headerH + gap + ctaH + gap;
+  const gap = isCompact ? 8 : isCardsOnlySticky ? 16 : 24;
+  const chrome = stickyPadding + headerH + gap + ctaH + (isCardsOnlySticky ? 0 : gap);
 
   section.style.removeProperty("--services-card-h");
   const measuredCardH = measureTrackCardHeight(track);

@@ -215,17 +215,24 @@
 
     .mep-figma-services__sticky--cards-only {
       padding: 0 !important;
-      gap: 0 !important;
+      gap: 16px !important;
       height: fit-content !important;
       max-height: none !important;
       background: #fafafa !important;
       box-sizing: border-box !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
     }
 
     .mep-figma-services__cta-wrap {
       position: relative;
       z-index: 1;
-      margin-top: 16px;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
     }
 
     .mep-figma-services__carousel-viewport {

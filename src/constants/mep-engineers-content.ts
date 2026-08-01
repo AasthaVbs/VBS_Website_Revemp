@@ -170,7 +170,7 @@ export const mepFullSpectrumCards = [
     image: "/image/Bill-of-Material-(BOM)-Services.jpg",
     imageCrop: { width: 532, height: 280, left: -30, top: 0 },
     elevated: false,
-    href: "#",
+    href: "/mep-bim-services/bill-of-material-services",
   },
   {
     title: "Pre-Bid Estimation Services",

@@ -71,7 +71,7 @@ export function MepBimModellingIntroSection({
             {paragraph2 ? (
               <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">{paragraph2}</p>
             ) : null}
-            {paragraph2Lead ? (
+            {paragraph2Lead || paragraph2Bold ? (
               <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
                 {paragraph2Lead}
                 {paragraph2Bold ? (

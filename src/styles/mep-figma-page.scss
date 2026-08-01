@@ -176,8 +176,8 @@
     position: relative !important;
     z-index: 1 !important;
     overflow: visible !important;
-    padding-top: clamp(48px, 8vh, 100px) !important;
-    padding-bottom: clamp(40px, 6vh, 64px) !important;
+    padding-top: clamp(40px, 6vh, 72px) !important;
+    padding-bottom: clamp(28px, 4vh, 48px) !important;
     background: #fafafa !important;
     isolation: isolate;
 
@@ -185,7 +185,7 @@
       position: relative;
       z-index: 1;
       display: block !important;
-      margin-bottom: clamp(24px, 4vh, 40px);
+      margin-bottom: clamp(16px, 3vh, 28px);
       background: #fafafa !important;
     }
 
@@ -225,14 +225,15 @@
     .mep-figma-services__cta-wrap {
       position: relative;
       z-index: 1;
-      margin-top: 24px;
+      margin-top: 16px;
     }
 
     .mep-figma-services__carousel-viewport {
       min-width: 0 !important;
       max-width: 100% !important;
       height: auto !important;
-      min-height: var(--services-card-h, 560px) !important;
+      /* Hug card content — avoid default --services-card-h (620px) empty gap */
+      min-height: 0 !important;
       max-height: none !important;
       overflow-x: hidden !important;
       overflow-y: visible !important;
@@ -783,7 +784,14 @@
 
   &.mep-figma-services--hover-scroll.mep-figma-services--short-laptop.mep-figma-services--h-scroll {
     .mep-figma-services__carousel-viewport {
-      min-height: var(--services-card-h, var(--services-card-min-h)) !important;
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: none !important;
+    }
+
+    .mep-figma-services__card {
+      height: auto !important;
+      min-height: var(--services-card-min-h) !important;
       max-height: none !important;
     }
   }
@@ -893,9 +901,12 @@
   }
 }
 
-/* Short laptop viewport — fit full card inside sticky pin (JS sets --services-card-h) */
+/* Short laptop viewport — fit sticky content inside the pin (JS sets --services-card-h) */
 .vbs-redesign-page .mep-figma-services--compact-sticky {
-  &.mep-figma-services--h-scroll .mep-figma-services__sticky .mep-figma-services__header {
+  /* Non-wide: hide in-sticky header (legacy compact). Wide ACS keeps title visible. */
+  &:not(.mep-figma-services--wide-cards).mep-figma-services--h-scroll
+    .mep-figma-services__sticky
+    .mep-figma-services__header {
     display: none !important;
   }
 
@@ -906,17 +917,28 @@
   }
 
   &.mep-figma-services--wide-cards {
+    &.mep-figma-services--h-scroll .mep-figma-services__sticky {
+      gap: 12px !important;
+      padding-top: 12px !important;
+      padding-bottom: 12px !important;
+      justify-content: flex-start !important;
+    }
+
+    .mep-figma-services__header {
+      display: flex !important;
+    }
+
     .mep-figma-services__card {
       height: auto !important;
-      min-height: var(--services-card-h, var(--services-card-min-h)) !important;
+      min-height: var(--services-card-min-h) !important;
       max-height: none !important;
     }
 
     .mep-figma-services__carousel-viewport {
       height: auto !important;
-      min-height: var(--services-card-h, var(--services-card-min-h)) !important;
+      min-height: 0 !important;
       max-height: none !important;
-      overflow: visible !important;
+      overflow: hidden !important;
     }
 
     .mep-figma-services__card-body {
@@ -1732,8 +1754,8 @@
   }
 
   &__section-desc {
-    width: 581px;
-    max-width: 100%;
+    width: 100%;
+    max-width: var(--benefits-desc-max-w, 581px);
     margin: 0;
     font-size: 16px;
     font-weight: 400;
@@ -2257,7 +2279,7 @@
   }
 
   &__title {
-    width: 534px !important;
+    width: 820px !important;
     max-width: 100% !important;
     margin: 0 !important;
     font-size: 48px !important;
@@ -4526,9 +4548,14 @@
    .some-animated-wrapper { transform: none !important; }
 */
 
-/* ── /scan-to-bim-services/ + architecture — wide cards use same h-scroll layout ── */
+/* ── /scan-to-bim-services/ + architecture ACS pages — wide cards use same h-scroll layout ── */
 .scan-to-bim-services-page,
-.architecture-services-page {
+.architecture-services-page,
+.bim-modeling-services-page,
+.architectural-bim-services-page,
+.cad-to-bim-page,
+.cad-drafting-services-page,
+.architectural-drafting-services-page {
   @media (max-width: 767px) {
     .mep-figma-services--wide-cards .mep-figma-services__sticky {
       gap: 16px !important;
@@ -5194,12 +5221,12 @@
 
   .mep-figma-benefits {
     .mep-figma-benefits__title {
-      max-width: 920px !important;
+      max-width: var(--benefits-title-max-w, 920px) !important;
     }
 
     .mep-figma-benefits__section-desc {
       width: 100% !important;
-      max-width: 850px !important;
+      max-width: var(--benefits-desc-max-w, 850px) !important;
       text-transform: none !important;
     }
   }

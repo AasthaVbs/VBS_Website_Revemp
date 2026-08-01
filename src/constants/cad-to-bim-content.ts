@@ -1,6 +1,6 @@
 import architecturalBimModelingImg from "@/assets/images/architectural-bim-modeling.jpg";
 import cadToBimImg from "@/assets/images/cad-to-bim.jpg";
-import structuralArchitecturalBimServicesImg from "@/assets/images/structural-architectural-bim-services-for-project 1.jpg";
+import cadToBimConversionServicesImg from "@/assets/images/cad-to-bim-conversion-services.png";
 import structuralBimServicesImg from "@/assets/images/structural-bim-services.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { bimModelingStatsStrip } from "@/constants/bim-modeling-services-content";
@@ -47,7 +47,7 @@ export const cadToBimIntro = {
     "Improved collaboration with multi-discipline integration and less RFIs.",
     "Deliverables produced for design development, construction and facilities management.",
   ],
-  mainImage: structuralArchitecturalBimServicesImg,
+  mainImage: cadToBimConversionServicesImg,
   imageAlt: "CAD to BIM overview",
 };
 
@@ -67,7 +67,6 @@ export const cadToBimServicesSection = {
     "Our support covers your project from the first drawing set through construction documentation and final handover.",
   ctaLabel: "let's Talk Now",
   ctaHref: "#cad-to-bim-page-contact",
-  titleMaxWidth: 800,
   wideCards: true,
 };
 

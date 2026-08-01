@@ -65,7 +65,6 @@ export const bimModelingServicesSection = {
     "Our 3D BIM Services provide accuracy, coordination and US standards adherence at all stages of projects from concept to construction documentation.",
   ctaLabel: "Start New Project",
   ctaHref: "#bim-modeling-page-contact",
-  titleMaxWidth: 747,
   wideCards: true,
 };
 

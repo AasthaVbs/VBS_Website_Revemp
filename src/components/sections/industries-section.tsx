@@ -17,6 +17,7 @@ type IndustriesSectionProps = {
   /** Force a line break after titleLine1 (Figma Industries title layout). */
   breakTitle?: boolean;
   titleMaxWidth?: number;
+  introMaxWidth?: number;
   marqueeTrack?: typeof industriesMarqueeTrack;
   className?: string;
 };
@@ -29,6 +30,7 @@ export function IndustriesSection({
   titleLine2 = "We Serve",
   breakTitle = false,
   titleMaxWidth,
+  introMaxWidth = 536,
   marqueeTrack = industriesMarqueeTrack,
   className,
 }: IndustriesSectionProps) {
@@ -50,7 +52,10 @@ export function IndustriesSection({
               <span className="font-light text-accent">{titleLine2}</span>
             </h2>
           </div>
-          <p className="max-w-[536px] text-[16px] font-normal leading-6 text-[#808080]">
+          <p
+            className="text-[16px] font-normal leading-6 text-[#808080]"
+            style={{ maxWidth: `${introMaxWidth}px` }}
+          >
             {intro}
           </p>
         </div>

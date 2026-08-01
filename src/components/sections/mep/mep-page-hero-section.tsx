@@ -137,9 +137,9 @@ export function MepPageHeroSection({
               </PrimaryCtaButton>
             </div>
 
-            {/* Image — matches MEP BIM Modeling compact hero area (≈981×680) */}
+            {/* Image — compact hero area (≈981×720) */}
             <div className="relative min-w-0 flex-1 lg:flex lg:items-center lg:justify-end">
-              <div className="relative ml-auto w-full max-w-[650px] overflow-hidden rounded-[10px] bg-white shadow-[0_0_16.8px_rgba(0,0,0,0.15)] aspect-[981/680]">
+              <div className="relative ml-auto w-full max-w-[650px] overflow-hidden rounded-[10px] bg-white shadow-[0_0_16.8px_rgba(0,0,0,0.15)] aspect-[981/720]">
                 <Image
                   src={imageSrc}
                   alt={resolvedImageAlt}

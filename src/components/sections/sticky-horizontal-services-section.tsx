@@ -307,7 +307,14 @@ export function StickyHorizontalServicesSection({
   const isHoverScroll = scrollInteraction === "hover";
   const { isMobile, ready: layoutReady } = useMobileLayout();
   const shortLaptopLayout = useShortLaptopLayout();
-  const cardsOnlyPin = layoutReady && isHoverScroll && shortLaptopLayout && !isMobile;
+  // Wide-card ACS pages keep title + description sticky with the cards until the
+  // last card finishes — do not peel the header off into a separate intro.
+  const cardsOnlyPin =
+    layoutReady &&
+    isHoverScroll &&
+    shortLaptopLayout &&
+    !isMobile &&
+    !section.wideCards;
   const useHorizontalCarousel = layoutReady && !isMobile;
 
   const sectionRef = useRef<HTMLElement>(null);

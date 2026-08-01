@@ -54,7 +54,7 @@ export async function ArchitecturalBimServicesPage() {
           {...architecturalBimHero}
           imageSize="compact"
           ctaHref="#architectural-bim-page-contact"
-          containerClassName="!pt-0 sm:!pt-2 lg:!pt-10"
+          containerClassName="!pt-0 sm:!pt-1 lg:!pt-4"
         />
         <TrustStripSection
           stats={architecturalBimStatsStrip}
@@ -66,8 +66,6 @@ export async function ArchitecturalBimServicesPage() {
           section={architecturalBimServicesSection}
           cards={architecturalBimServiceCards}
           scrollInteraction="hover"
-          titleLine2ClassName="block"
-          descriptionClassName="max-w-[766px]"
         />
         <ArchitectureAiBimWorkflowSection
           section={architecturalBimAiBimWorkflowSection}

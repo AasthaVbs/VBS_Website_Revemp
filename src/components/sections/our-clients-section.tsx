@@ -6,6 +6,11 @@ type OurClientsSectionContent = {
   titleAccent: string;
   titleLead: string;
   description: string;
+  /** When false, dark lead renders before accent (default: accent first). */
+  titleAccentFirst?: boolean;
+  /** Force a line break between the two title parts. */
+  breakTitle?: boolean;
+  titleMaxWidth?: number;
 };
 
 type OurClientsLogo = {
@@ -21,6 +26,13 @@ export function OurClientsSection({
   logos?: readonly OurClientsLogo[];
 } = {}) {
   const marqueeLogos = [...logos, ...logos];
+  const titleAccentFirst = section.titleAccentFirst !== false;
+  const accentSpan = (
+    <span className="vbs-our-clients__title-accent">{section.titleAccent}</span>
+  );
+  const darkSpan = (
+    <span className="vbs-our-clients__title-dark">{section.titleLead}</span>
+  );
 
   return (
     <section className="vbs-our-clients">
@@ -28,9 +40,27 @@ export function OurClientsSection({
         <div className="vbs-our-clients__head">
           <div className="vbs-our-clients__head-top">
             <span className="vbs-our-clients__tag">{section.tag}</span>
-            <h2 className="vbs-our-clients__title">
-              <span className="vbs-our-clients__title-accent">{section.titleAccent}</span>
-              <span className="vbs-our-clients__title-dark">{section.titleLead}</span>
+            <h2
+              className="vbs-our-clients__title"
+              style={
+                section.titleMaxWidth
+                  ? { ["--our-clients-title-max-w"]: `${section.titleMaxWidth}px` }
+                  : undefined
+              }
+            >
+              {titleAccentFirst ? (
+                <>
+                  {accentSpan}
+                  {section.breakTitle ? <br /> : null}
+                  {darkSpan}
+                </>
+              ) : (
+                <>
+                  {darkSpan}
+                  {section.breakTitle ? <br /> : null}
+                  {accentSpan}
+                </>
+              )}
             </h2>
           </div>
           <p className="vbs-our-clients__desc">{section.description}</p>

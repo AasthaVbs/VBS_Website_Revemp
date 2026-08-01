@@ -74,7 +74,6 @@ export const architecturalBimServicesSection = {
     "Our Architectural Modeling Services provide accuracy, coordination and compliance through all stages of a project life cycle, from concept and design to construction documentation and onward.",
   ctaLabel: "let's Talk Now",
   ctaHref: "#architectural-bim-page-contact",
-  titleMaxWidth: 869,
   wideCards: true,
 };
 

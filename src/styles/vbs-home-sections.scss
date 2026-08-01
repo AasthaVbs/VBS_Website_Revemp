@@ -1209,7 +1209,7 @@
   }
 
   &__title {
-    width: 528px !important;
+    width: var(--our-clients-title-max-w, 528px) !important;
     max-width: 100% !important;
     margin: 0 !important;
     font-size: 48px !important;

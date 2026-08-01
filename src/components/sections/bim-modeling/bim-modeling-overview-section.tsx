@@ -11,6 +11,7 @@ type BimModelingIntroContent = {
   titleAccent: string;
   /** Stack title lines (default) vs inline lead + accent. */
   titleStacked?: boolean;
+  titleMaxWidth?: number;
   description: string;
   sideDescription: string;
   featuresTitle: string;
@@ -30,6 +31,7 @@ export function BimModelingOverviewSection({
     titleLead,
     titleAccent,
     titleStacked = true,
+    titleMaxWidth = 750,
     description,
     sideDescription,
     featuresTitle,
@@ -43,7 +45,10 @@ export function BimModelingOverviewSection({
     <section className="bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
         <div className="flex w-full flex-col items-start gap-5">
-          <div className="flex w-full max-w-[750px] flex-col items-start gap-3">
+          <div
+            className="flex w-full flex-col items-start gap-3"
+            style={{ maxWidth: `${titleMaxWidth}px` }}
+          >
             <MepSectionTag label={tag} />
             <h2 className="w-full">
               <span className={`text-section font-medium text-[#111111] ${titlePartClass}`}>

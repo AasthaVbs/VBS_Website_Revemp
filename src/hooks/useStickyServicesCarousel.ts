@@ -17,9 +17,12 @@ function getTrackPad(section) {
 const COMPACT_VIEWPORT_MAX = 820;
 const CARD_HEIGHT_MAX = 560;
 const CARD_HEIGHT_MIN = 300;
-/** More horizontal travel per vertical scroll â€” shorter pin runway */
+/** More horizontal travel per vertical scroll — shorter pin runway */
 const HOVER_SCROLL_RATIO = 1.25;
-const CARDS_ONLY_SCROLL_RATIO = 1.5;
+/** Short-laptop cards-only: denser mapping so less empty gap under cards */
+const CARDS_ONLY_SCROLL_RATIO = 2.6;
+/** Cap pin runway on short laptops (fraction of viewport height) */
+const CARDS_ONLY_RUNWAY_MAX_VH = 0.5;
 const CARDS_ONLY_SMOOTHING = 0.42;
 const HOVER_SCROLL_SMOOTHING = 0.28;
 
@@ -57,11 +60,11 @@ function updateStickyCardSizing(section, sticky, headerOffset, track) {
 
   const cta = sticky.querySelector(".mep-figma-services__cta-wrap");
   const ctaH = isCardsOnlySticky ? 0 : (cta?.offsetHeight ?? 52);
-  const stickyPadding = isCompact ? 20 : isCardsOnlySticky ? 0 : 48;
+  const stickyPadding = isCompact ? 16 : isCardsOnlySticky ? 0 : 48;
   const headerEl = sticky.querySelector(".mep-figma-services__header");
-  const headerH =
-    isCardsOnlySticky || (isCompact && !isCardsOnlySticky) ? 0 : (headerEl?.offsetHeight ?? 0);
-  const gap = isCompact ? 10 : isCardsOnlySticky ? 0 : 24;
+  // Wide-card ACS keeps title+description in the sticky pin — always measure them.
+  const headerH = isCardsOnlySticky ? 0 : (headerEl?.offsetHeight ?? 0);
+  const gap = isCompact ? 8 : isCardsOnlySticky ? 0 : 24;
   const chrome = stickyPadding + headerH + gap + ctaH + gap;
 
   section.style.removeProperty("--services-card-h");
@@ -69,9 +72,9 @@ function updateStickyCardSizing(section, sticky, headerOffset, track) {
   const viewportMax = Math.max(CARD_HEIGHT_MIN, available - chrome);
 
   let maxCardH = Math.max(measuredCardH, CARD_HEIGHT_MIN);
-  if (isCardsOnlySticky && isCompact) {
-    maxCardH = Math.min(maxCardH, Math.min(available - 20, viewportMax));
-  } else if (isCompact && !isCardsOnlySticky) {
+  if (isCardsOnlySticky) {
+    maxCardH = measuredCardH;
+  } else if (isCompact) {
     maxCardH = Math.min(maxCardH, viewportMax);
   }
 
@@ -132,7 +135,13 @@ export function useStickyServicesCarousel(
       return 1;
     };
 
-    const getRunway = () => (maxScroll > 0 ? maxScroll / getScrollRatio() : 0);
+    const getRunway = () => {
+      if (maxScroll <= 0) return 0;
+      const raw = maxScroll / getScrollRatio();
+      if (!cardsOnlyPin) return raw;
+      const cap = Math.max(240, Math.round(window.innerHeight * CARDS_ONLY_RUNWAY_MAX_VH));
+      return Math.min(raw, cap);
+    };
 
     const getScrolledFromPin = (pinTop) => {
       const vertical = Math.max(0, headerOffset - pinTop);

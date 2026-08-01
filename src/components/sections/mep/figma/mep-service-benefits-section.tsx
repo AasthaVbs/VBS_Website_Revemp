@@ -89,7 +89,14 @@ export function MepServiceBenefitsSection({
   return (
     <section id={id} className="mep-figma-benefits bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="mep-figma-benefits__container flex flex-col items-center gap-[60px]">
-        <header className="mep-figma-benefits__head">
+        <header
+          className="mep-figma-benefits__head"
+          style={
+            section.descriptionMaxWidth
+              ? { ["--benefits-desc-max-w"]: `${section.descriptionMaxWidth}px` }
+              : undefined
+          }
+        >
           <div className="mep-figma-benefits__head-top">
             <span className="mep-figma-benefits__tag">{section.tag}</span>
             <p
@@ -129,16 +136,7 @@ export function MepServiceBenefitsSection({
               )}
             </p>
           </div>
-          <p
-            className="mep-figma-benefits__section-desc"
-            style={
-              section.descriptionMaxWidth
-                ? { maxWidth: `${section.descriptionMaxWidth}px` }
-                : undefined
-            }
-          >
-            {section.description}
-          </p>
+          <p className="mep-figma-benefits__section-desc">{section.description}</p>
         </header>
 
         <div

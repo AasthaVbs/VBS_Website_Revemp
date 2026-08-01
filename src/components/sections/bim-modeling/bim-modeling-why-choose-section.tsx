@@ -10,6 +10,24 @@ import {
 
 type WhyChooseItem = (typeof bimModelingWhyChooseItems)[number];
 
+function VerticalDivider() {
+  return (
+    <div
+      className="hidden w-px shrink-0 self-stretch bg-gradient-to-b from-transparent via-[#CBCCCD] to-transparent lg:block"
+      aria-hidden
+    />
+  );
+}
+
+function HorizontalDivider() {
+  return (
+    <div
+      className="hidden h-px w-full shrink-0 bg-gradient-to-r from-transparent via-[#CBCCCD] to-transparent lg:block"
+      aria-hidden
+    />
+  );
+}
+
 function WhyChooseCard({ item }: { item: WhyChooseItem }) {
   return (
     <article className="flex min-w-0 flex-1 flex-col items-start gap-5 self-stretch overflow-hidden p-2.5">
@@ -69,28 +87,18 @@ export function BimModelingWhyChooseSection({
           <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-5">
             {rowOne.map((item, index) => (
               <Fragment key={item.title}>
-                {index > 0 ? (
-                  <div
-                    className="hidden w-px shrink-0 self-stretch bg-[#CBCCCD] lg:block"
-                    aria-hidden
-                  />
-                ) : null}
+                {index > 0 ? <VerticalDivider /> : null}
                 <WhyChooseCard item={item} />
               </Fragment>
             ))}
           </div>
 
-          <div className="hidden h-px w-full bg-[#CBCCCD] lg:block" aria-hidden />
+          <HorizontalDivider />
 
           <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-5">
             {rowTwo.map((item, index) => (
               <Fragment key={item.title}>
-                {index > 0 ? (
-                  <div
-                    className="hidden w-px shrink-0 self-stretch bg-[#CBCCCD] lg:block"
-                    aria-hidden
-                  />
-                ) : null}
+                {index > 0 ? <VerticalDivider /> : null}
                 <WhyChooseCard item={item} />
               </Fragment>
             ))}

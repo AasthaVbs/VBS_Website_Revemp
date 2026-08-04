@@ -162,3 +162,4 @@ export function webinarSeo(webinar: WebinarDetail) {
     image: webinar.bannerImage || webinar.youtubeThumbnail || webinar.upcomingImage,
   };
 }
+

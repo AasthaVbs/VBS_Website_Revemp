@@ -1,14 +1,23 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
+import { PageContainer } from "@/components/layout/page-container";
+import type { ResourceListingItem } from "@/constants/resources-page-content";
 import type { WebinarDetail } from "@/lib/sanity-webinar";
 
+import {
+  WebinarCalendarIcon,
+  WebinarClockIcon,
+  WebinarLocationIcon,
+} from "./webinar-event-detail-icons";
+import { WebinarDetailSidebar } from "./webinar-detail-sidebar";
 import { WebinarPortableText } from "./webinar-portable-text";
-import { WebinarSidebarMedia } from "./webinar-sidebar-media";
 
 type WebinarDetailViewProps = {
   webinar: WebinarDetail;
+  searchableWebinars?: ResourceListingItem[];
 };
 
 function formatEventDateParts(eventDate?: string | null) {
@@ -37,107 +46,98 @@ function formatEventDateParts(eventDate?: string | null) {
   };
 }
 
-export function WebinarDetailView({ webinar }: WebinarDetailViewProps) {
+export function WebinarDetailView({
+  webinar,
+  searchableWebinars = [],
+}: WebinarDetailViewProps) {
   const [eventParts, setEventParts] = useState({ date: "—", time: "—" });
+  const heroImage =
+    webinar.bannerImage || webinar.youtubeThumbnail || webinar.upcomingImage || "";
 
   useEffect(() => {
     setEventParts(formatEventDateParts(webinar.eventDate));
   }, [webinar.eventDate]);
 
   return (
-    <main className="webinar-section webinar-detail-page">
-      <section className="mt-lg-10">
-        {webinar.bannerImage ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={webinar.bannerImage} alt={webinar.metaTitle} className="w-100 img-fluid banner-img" />
-        ) : null}
-      </section>
+    <section className="vbs-webinar-detail">
+      <PageContainer>
+        <div className="vbs-webinar-detail__stack">
+          <h1
+            className="vbs-webinar-detail__title !text-[38px] !leading-[46px] !font-medium max-md:!text-[28px] max-md:!leading-[36px]"
+            style={{ fontSize: 38, lineHeight: "46px", fontWeight: 500 }}
+          >
+            <WebinarPortableText value={webinar.rawTitle} variant="title" />
+          </h1>
 
-      <section className="webinar-detail-layout">
-        <div className="container">
-          <div className="row webinar-detail-row">
-            <div className="col-lg-8 col-md-8 col-12 webinar-detail-main">
-              <section className="webinar-detail-block">
-                <div className="container">
-                  <div className="col">
-                    <h1>
-                      <WebinarPortableText value={webinar.rawTitle} variant="title" />
-                    </h1>
-                    <div className="webinar-detail-content">
-                      <WebinarPortableText value={webinar.rawBody} />
-                    </div>
-                  </div>
+          <div className="vbs-webinar-detail__layout">
+            <article className="vbs-webinar-detail__main">
+              {heroImage ? (
+                <div className="vbs-webinar-detail__hero">
+                  <Image
+                    src={heroImage}
+                    alt={webinar.metaTitle}
+                    fill
+                    className="object-contain object-center"
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 920px"
+                  />
                 </div>
-              </section>
+              ) : null}
 
-              {webinar.speaker ? (
-                <section className="webinar-detail-block">
-                  <div className="container">
-                    <h2>Meet the Speaker: {webinar.speaker.name}</h2>
+              <div className="vbs-webinar-detail__body">
+                <div className="vbs-webinar-detail__content">
+                  <WebinarPortableText value={webinar.rawBody} />
+                </div>
+
+                {webinar.speaker ? (
+                  <div className="vbs-webinar-detail__speaker">
+                    <h2 className="vbs-webinar-detail__section-title">
+                      Meet the Speaker: {webinar.speaker.name}
+                    </h2>
                     {webinar.speaker.rawDescription?.length ? (
-                      <div className="webinar-detail-content">
+                      <div className="vbs-webinar-detail__content">
                         <WebinarPortableText value={webinar.speaker.rawDescription} />
                       </div>
                     ) : null}
                   </div>
-                </section>
-              ) : null}
+                ) : null}
 
-              <section className="webinar-detail-block webinar-detail-block--muted bg-light">
-                <div className="container">
-                  <h2>Event Details</h2>
-                  <div className="row g-3 webinar-detail-event-grid">
-                    <div className="col">
-                      <div className="bg-white p-3 h-100">
-                        <p className="mb-lg-1">🗓️ Date</p>
-                        <h6 className="mb-0">{eventParts.date}</h6>
-                      </div>
+                <div className="vbs-webinar-detail__event">
+                  <h2 className="vbs-webinar-detail__section-title">Event Details</h2>
+                  <div className="vbs-webinar-detail__event-grid">
+                    <div className="vbs-webinar-detail__event-card">
+                      <span className="vbs-webinar-detail__event-icon-wrap">
+                        <WebinarCalendarIcon />
+                      </span>
+                      <span className="vbs-webinar-detail__event-label">{eventParts.date}</span>
                     </div>
-                    <div className="col">
-                      <div className="bg-white p-3 h-100">
-                        <p className="mb-lg-1">⏳ Time</p>
-                        <h6 className="mb-0">{eventParts.time}</h6>
-                      </div>
+                    <div className="vbs-webinar-detail__event-card">
+                      <span className="vbs-webinar-detail__event-icon-wrap">
+                        <WebinarClockIcon />
+                      </span>
+                      <span className="vbs-webinar-detail__event-label">{eventParts.time}</span>
                     </div>
-                    <div className="col">
-                      <div className="bg-white p-3 h-100">
-                        <p className="mb-lg-1">📍 Location</p>
-                        <h6 className="mb-0">{webinar.location}</h6>
-                        {webinar.eventNote ? (
-                          <p className="small text-muted mb-0 mt-1">{webinar.eventNote}</p>
-                        ) : null}
-                      </div>
+                    <div className="vbs-webinar-detail__event-card">
+                      <span className="vbs-webinar-detail__event-icon-wrap">
+                        <WebinarLocationIcon />
+                      </span>
+                      <span className="vbs-webinar-detail__event-label">
+                        {webinar.location}
+                        {webinar.eventNote ? ` · ${webinar.eventNote}` : ""}
+                      </span>
                     </div>
                   </div>
                 </div>
-              </section>
-
-              {webinar.ctaButton ? (
-                <section className="webinar-detail-block">
-                  <div className="container">
-                    <div>
-                      <a
-                        className="btn btn-lightblue text-white text-uppercase px-lg-4 py-2 rounded-pill fs-4 fw-semibold"
-                        href={webinar.ctaButton.buttonUrl}
-                        target={webinar.ctaButton.openInNewTab ? "_blank" : "_self"}
-                        rel={webinar.ctaButton.openInNewTab ? "noopener noreferrer" : undefined}
-                      >
-                        {webinar.ctaButton.buttonText}
-                      </a>
-                    </div>
-                  </div>
-                </section>
-              ) : null}
-            </div>
-
-            <div className="col-lg-4 col-md-4 col-12">
-              <div className="rounded-3 bg-light sticky-section p-2">
-                <WebinarSidebarMedia webinar={webinar} />
               </div>
-            </div>
+            </article>
+
+            <WebinarDetailSidebar
+              webinar={webinar}
+              searchableWebinars={searchableWebinars}
+            />
           </div>
         </div>
-      </section>
-    </main>
+      </PageContainer>
+    </section>
   );
 }

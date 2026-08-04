@@ -69,7 +69,7 @@ export const ROUTES = {
   cookies: "/cookie-policy",
   scanToBimPointCloud: "/point-cloud-to-bim-services",
   scanToBimAsBuilt: "/as-built-modeling-services",
-  scanToBimArchitectural: "https://www.scantobim.online/architectural-scan-to-bim-services/",
+  scanToBimArchitectural: "/architectural-scan-to-bim-services",
   scanToBimMepf: "https://www.scantobim.online/mepf-scan-to-bim-services/",
 } as const;
 
@@ -149,7 +149,6 @@ export const CAPABILITY_CATEGORIES: CapabilityCategory[] = [
         {
           label: "Architectural Scan to BIM",
           href: ROUTES.scanToBimArchitectural,
-          external: true,
         },
       ],
       [{ label: "MEP Scan to BIM", href: ROUTES.scanToBimMepf, external: true }],

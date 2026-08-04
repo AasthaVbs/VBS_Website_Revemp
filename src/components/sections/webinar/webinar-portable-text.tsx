@@ -4,6 +4,7 @@ import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import Link from "next/link";
 import { useMemo } from "react";
 
+import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { sanityImageUrl } from "@/lib/sanity-blog";
 
 type WebinarPortableTextProps = {
@@ -13,8 +14,13 @@ type WebinarPortableTextProps = {
 
 function buildWebinarPortableTextComponents(variant: "body" | "title"): PortableTextComponents {
   const titleComponents: PortableTextComponents = {
+    block: {
+      normal: ({ children }) => <>{children}</>,
+    },
     marks: {
-      highlight: ({ children }) => <span className="highlight-text">{children}</span>,
+      highlight: ({ children }) => (
+        <span className="vbs-webinar-detail__highlight">{children}</span>
+      ),
     },
   };
 
@@ -25,35 +31,55 @@ function buildWebinarPortableTextComponents(variant: "body" | "title"): Portable
   return {
     ...titleComponents,
     block: {
-      h1: ({ children, value }) => <h1 id={`toc-${value._key}`}>{children}</h1>,
-      h2: ({ children, value }) => <h2 id={`toc-${value._key}`}>{children}</h2>,
-      h3: ({ children, value }) => <h3 id={`toc-${value._key}`}>{children}</h3>,
+      h1: ({ children, value }) => (
+        <h2 id={`toc-${value._key}`} className="vbs-webinar-detail__pt-heading">
+          {children}
+        </h2>
+      ),
+      h2: ({ children, value }) => (
+        <h2 id={`toc-${value._key}`} className="vbs-webinar-detail__pt-heading">
+          {children}
+        </h2>
+      ),
+      h3: ({ children, value }) => (
+        <h3 id={`toc-${value._key}`} className="vbs-webinar-detail__pt-heading">
+          {children}
+        </h3>
+      ),
       h4: ({ children, value }) => (
-        <h4 id={`toc-${value._key}`} className="text-primary">
+        <h4 id={`toc-${value._key}`} className="vbs-webinar-detail__pt-heading">
           {children}
         </h4>
       ),
-      normal: ({ children }) => <p>{children}</p>,
+      normal: ({ children }) => <p className="vbs-webinar-detail__pt-paragraph">{children}</p>,
     },
     list: {
-      bullet: ({ children }) => <ul className="list-style">{children}</ul>,
-      number: ({ children }) => <ol>{children}</ol>,
+      bullet: ({ children }) => <ul className="vbs-webinar-detail__pt-list">{children}</ul>,
+      number: ({ children }) => <ol className="vbs-webinar-detail__pt-list">{children}</ol>,
     },
     listItem: {
-      bullet: ({ children }) => <li>✅ {children}</li>,
+      bullet: ({ children }) => <li className="vbs-webinar-detail__pt-list-item">{children}</li>,
+      number: ({ children }) => <li className="vbs-webinar-detail__pt-list-item">{children}</li>,
     },
     marks: {
       ...titleComponents.marks,
-      strong: ({ children }) => <strong className="text-dark">{children}</strong>,
+      strong: ({ children }) => (
+        <strong className="vbs-webinar-detail__pt-strong">{children}</strong>
+      ),
       link: ({ children, value }) => {
         const href = value?.href || "#";
         const isInternal = /^\/(?!\/)/.test(href);
         return isInternal ? (
-          <Link href={href} className="text-decoration-none">
+          <Link href={href} className="vbs-webinar-detail__pt-link">
             {children}
           </Link>
         ) : (
-          <a href={href} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="vbs-webinar-detail__pt-link"
+          >
             {children}
           </a>
         );
@@ -68,29 +94,25 @@ function buildWebinarPortableTextComponents(variant: "body" | "title"): Portable
           <img
             src={src}
             alt={value.alt || "Webinar content image"}
-            className="webinar-detail-image img-fluid rounded-4"
+            className="vbs-webinar-detail__pt-image"
             loading="lazy"
           />
         );
       },
       readMore: ({ value }) => (
-        <div className="readmore-section">
-          {value?.label ? <div className="paragraph">{value.label}</div> : null}
-          <div className="title">
-            <Link href={value?.url || "#"}>{value?.linkText}</Link>
-          </div>
+        <div className="vbs-webinar-detail__readmore">
+          {value?.label ? <p className="vbs-webinar-detail__pt-paragraph">{value.label}</p> : null}
+          <Link href={value?.url || "#"} className="vbs-webinar-detail__pt-link">
+            {value?.linkText}
+          </Link>
         </div>
       ),
       cta: ({ value }) => (
-        <div className="cta-section justify-content-between row align-items-center">
-          <div className="col-8">
-            <div className="title">{value?.title}</div>
-          </div>
-          <div className="col-lg-4">
-            <Link className="btn btn-light w-100 d-block" href={value?.buttonUrl || "#"}>
-              {value?.buttonText}
-            </Link>
-          </div>
+        <div className="vbs-webinar-detail__inline-cta">
+          <p className="vbs-webinar-detail__section-title">{value?.title}</p>
+          <PrimaryCtaButton fullWidth={false} href={value?.buttonUrl || "#"}>
+            {value?.buttonText || "Learn More"}
+          </PrimaryCtaButton>
         </div>
       ),
     },

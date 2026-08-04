@@ -36,6 +36,16 @@
     line-height: var(--vbs-mobile-h1-line) !important;
   }
 
+  /* Webinar detail page titles stay smaller than global mobile H1 scale */
+  .vbs-redesign-page.vbs-webinar-detail-page h1.vbs-webinar-detail__title,
+  .vbs-redesign-page.vbs-webinar-detail-page h1.vbs-webinar-detail__title span,
+  .vbs-redesign-page.vbs-webinar-detail-page h1.vbs-webinar-detail__title *,
+  .vbs-redesign-page.vbs-webinar-detail-page .vbs-webinar-detail__title,
+  .vbs-redesign-page.vbs-webinar-detail-page .vbs-webinar-detail__title * {
+    font-size: 28px !important;
+    line-height: 36px !important;
+  }
+
   /* ── All H2 / section titles ── */
   .vbs-redesign-page h2,
   .vbs-redesign-page h2 span,

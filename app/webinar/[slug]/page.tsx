@@ -3,8 +3,10 @@ import { notFound } from "next/navigation";
 
 import { SiteHeader } from "@/components/layout/site-header";
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
+import { RelatedArticlesSection } from "@/components/sections/shared/related-articles-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { WebinarDetailView } from "@/components/sections/webinar/webinar-detail-view";
+import { getRelatedWebinarListingItems } from "@/lib/related-webinars";
 import {
   getAllWebinarSlugsForBuild,
   resolveWebinarDetailBySlug,
@@ -40,17 +42,34 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function WebinarDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const webinar = await resolveWebinarDetailBySlug(normalizeWebinarSlug(slug));
+  const cleanSlug = normalizeWebinarSlug(slug);
+  const webinar = await resolveWebinarDetailBySlug(cleanSlug);
 
   if (!webinar) {
     notFound();
   }
 
+  const relatedWebinars = getRelatedWebinarListingItems(cleanSlug, 4);
+  const searchableWebinars = getRelatedWebinarListingItems(cleanSlug, 20);
+
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page vbs-webinar-detail-page min-h-screen bg-white">
       <SiteHeader />
-      <WebinarDetailView webinar={webinar} />
-      <GetInTouchSection />
+      <main>
+        <WebinarDetailView webinar={webinar} searchableWebinars={searchableWebinars} />
+        <RelatedArticlesSection
+          tag="Resources"
+          titleLead="Latest Insights on "
+          titleAccent="Production, Governance, and Scale"
+          description="Explore technical thought leadership and actionable strategies designed to optimize your production workflows and scale without compromising standards."
+          items={relatedWebinars}
+          viewAllHref={null}
+          sideMeta="date"
+          descriptionMaxWidth={628}
+          titleMaxWidth={674}
+        />
+        <GetInTouchSection />
+      </main>
       <SiteFooter />
     </div>
   );

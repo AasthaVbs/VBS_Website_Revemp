@@ -126,9 +126,31 @@ export default function LandingPdfLeadModal({
           background:#fff;
           border-radius:24px;
         }
+        .landing-pdf-modal .top-closebtn{
+          position:absolute!important;
+          top:14px!important;
+          right:14px!important;
+          left:auto!important;
+          z-index:1056;
+          background:#fff;
+          border:none;
+          border-radius:50%;
+          width:36px;
+          height:36px;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-size:16px;
+          box-shadow:0 0 8px rgba(0,0,0,.15);
+          cursor:pointer;
+        }
+        .landing-pdf-modal .top-closebtn:hover{
+          background:#f1f1f1;
+        }
         .landing-pdf-modal__head{
           text-align:center;
           margin-bottom:28px;
+          padding-right:24px;
         }
         .landing-pdf-modal__head h3{
           font-size:1.5rem;

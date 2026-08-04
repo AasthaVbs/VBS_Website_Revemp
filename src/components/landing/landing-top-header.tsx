@@ -3,10 +3,18 @@
 import Link from "next/link";
 import { Container, Image } from "react-bootstrap";
 
-export function LandingTopHeader() {
+type LandingTopHeaderProps = {
+  /** Override Bootstrap container max-width (e.g. 1400) for a specific landing page */
+  maxWidth?: number;
+};
+
+export function LandingTopHeader({ maxWidth }: LandingTopHeaderProps = {}) {
   return (
     <header className="landing-top-header">
-      <Container className="landing-top-header-inner border-bottom border-primary border-opacity-25 py-2">
+      <Container
+        className="landing-top-header-inner border-bottom border-primary border-opacity-25 py-2"
+        style={maxWidth ? { maxWidth } : undefined}
+      >
         <Link href="/" className="landing-top-header-logo" aria-label="Virtual Building Studio home">
           <Image src="/image/logo.svg" width={260} height={50} alt="Virtual Building Studio" />
         </Link>

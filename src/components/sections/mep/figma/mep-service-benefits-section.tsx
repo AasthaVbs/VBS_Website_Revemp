@@ -16,7 +16,7 @@ function resolveImageSrc(icon) {
   return typeof icon === "string" ? icon : icon.src;
 }
 
-function BenefitCard({ card, index, activeIndex }) {
+function BenefitCard({ card, index, activeIndex, className }) {
   const [isHovered, setIsHovered] = useState(false);
   const highlighted = index <= activeIndex;
   const showColoredIcon = isHovered;
@@ -29,6 +29,7 @@ function BenefitCard({ card, index, activeIndex }) {
         "mep-figma-benefits__card flex min-w-0 flex-1 flex-col items-start gap-3 self-stretch overflow-hidden bg-white",
         highlighted && "mep-figma-benefits__card--highlighted",
         isHovered && "mep-figma-benefits__card--hovered",
+        className,
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -56,13 +57,29 @@ function BenefitCard({ card, index, activeIndex }) {
   );
 }
 
-function BenefitRow({ cards, startIndex, activeIndex }) {
+function BenefitRow({ cards, startIndex, activeIndex, columns }) {
+  const isPartial = cards.length > 0 && cards.length < columns;
+
   return (
-    <div className="mep-figma-benefits__row flex w-full items-stretch self-stretch">
+    <div
+      className={cn(
+        "mep-figma-benefits__row flex w-full items-stretch self-stretch",
+        isPartial && "justify-center",
+      )}
+    >
       {cards.map((card, index) => (
         <Fragment key={card.title}>
           {index > 0 ? <div className="mep-figma-benefits__divider" aria-hidden /> : null}
-          <BenefitCard card={card} index={startIndex + index} activeIndex={activeIndex} />
+          <BenefitCard
+            card={card}
+            index={startIndex + index}
+            activeIndex={activeIndex}
+            className={
+              isPartial
+                ? "w-full max-w-[min(100%,454px)] !flex-none lg:max-w-[calc((100%-40px)/3)]"
+                : undefined
+            }
+          />
         </Fragment>
       ))}
     </div>
@@ -80,9 +97,11 @@ export function MepServiceBenefitsSection({
 }) {
   const gridRef = useRef(null);
   const activeIndex = useScrollRevealProgress(gridRef, cards.length, "[data-scroll-reveal]", 0.55);
-  const rowSplit = cards.length === 4 ? 2 : 3;
-  const rowOne = cards.slice(0, rowSplit);
-  const rowTwo = cards.slice(rowSplit);
+  const columns = cards.length === 4 ? 2 : 3;
+  const rows = [];
+  for (let i = 0; i < cards.length; i += columns) {
+    rows.push(cards.slice(i, i + columns));
+  }
   const hasThreePartTitle = section.titleBefore || section.titleAfter;
   const hasTitleParts = section.titleParts?.length > 0;
 
@@ -143,9 +162,19 @@ export function MepServiceBenefitsSection({
           ref={gridRef}
           className="mep-figma-benefits__grid flex w-full flex-col items-center self-stretch"
         >
-          <BenefitRow cards={rowOne} startIndex={0} activeIndex={activeIndex} />
-          <div className="mep-figma-benefits__row-divider" aria-hidden />
-          <BenefitRow cards={rowTwo} startIndex={rowSplit} activeIndex={activeIndex} />
+          {rows.map((rowCards, rowIndex) => (
+            <Fragment key={rowCards.map((card) => card.title).join("|")}>
+              {rowIndex > 0 ? (
+                <div className="mep-figma-benefits__row-divider" aria-hidden />
+              ) : null}
+              <BenefitRow
+                cards={rowCards}
+                startIndex={rowIndex * columns}
+                activeIndex={activeIndex}
+                columns={columns}
+              />
+            </Fragment>
+          ))}
         </div>
         {showCta && section.ctaLabel ? (
           <PrimaryCtaButton fullWidth={false} href={section.ctaHref}>

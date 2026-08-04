@@ -66,6 +66,7 @@ function WhyChooseCard({ item }: { item: WhyChooseItem }) {
 export function BimModelingWhyChooseSection({
   section = bimModelingWhyChooseSection,
   items = bimModelingWhyChooseItems,
+  descriptionMaxWidth = 571,
 }: {
   section?: {
     tag: string;
@@ -76,6 +77,7 @@ export function BimModelingWhyChooseSection({
     ctaHref?: string;
   };
   items?: readonly WhyChooseItem[];
+  descriptionMaxWidth?: number;
 } = {}) {
   const rowOne = items.slice(0, 2);
   const rowTwo = items.slice(2, 4);
@@ -91,7 +93,10 @@ export function BimModelingWhyChooseSection({
               <span className="text-section font-light text-accent">{section.titleAccent}</span>
             </h2>
           </div>
-          <p className="w-full max-w-[571px] text-[16px] font-normal leading-6 text-[#808080]">
+          <p
+            className="w-full text-[16px] font-normal leading-6 text-[#808080]"
+            style={{ maxWidth: `${descriptionMaxWidth}px` }}
+          >
             {section.description}
           </p>
         </header>
@@ -122,7 +127,7 @@ export function BimModelingWhyChooseSection({
           <PrimaryCtaButton
             fullWidth={false}
             href={section.ctaHref}
-            className="!h-11 !min-h-11 self-center !px-4 !py-0 text-[14px] capitalize backdrop-blur-[50px]"
+            className="self-center"
           >
             {section.ctaLabel}
           </PrimaryCtaButton>

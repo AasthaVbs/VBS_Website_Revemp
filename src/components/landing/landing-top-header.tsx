@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { Container, Image } from "react-bootstrap";
 
+import "@/styles/landing-top-header.scss";
+
 type LandingTopHeaderProps = {
   /** Override Bootstrap container max-width (e.g. 1400) for a specific landing page */
   maxWidth?: number;

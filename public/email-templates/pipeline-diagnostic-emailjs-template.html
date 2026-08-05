@@ -1,0 +1,388 @@
+<!--
+  EmailJS — Pipeline Health Diagnostic (paste into EmailJS)
+
+  The site sends BOTH:
+    • {{{html_results}}} — full pre-rendered results block (recommended).
+    • All variables below — so {{total_score}}, {{section_1_pct}}, etc. also work in this template.
+
+  Standard: {{to_email}} or {{email}}, {{name}}, {{company}}, {{page}}, {{message}}
+  Greeting alias: {{first_name}}
+
+  Scores & red bars (numbers only for *_pct, no % sign):
+    {{total_score}}  {{total_score_pct}}   (= round((total_score/36)*100))
+    {{diagnosis_tier}}  {{diagnosis_headline}}  {{diagnosis_copy}}
+    {{intervention_title}}  {{intervention_copy}}  {{cta_heading}}  {{cta_copy}}
+
+  Sections (×3): {{section_X_title}}  {{section_X_sub}}  {{section_X_score}}  {{section_X_pct}}
+    (= round((section_X_score/12)*100))  same as {{section_X_bar_width}} if you prefer that name.
+  Highest row: {{{section_X_badge_html}}}  (empty or Highest pill HTML)
+    OR {{section_X_flag_display}} = inline-block | none (for ref-style Highest span)
+
+  Optional: {{submission_date}}  {{current_year}}  {{diagnosis_tier_short}}
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Your Pipeline Health Diagnosis</title>
+<!--[if mso]>
+<style type="text/css">
+  table, td, div, p, a { font-family: Arial, Helvetica, sans-serif !important; }
+</style>
+<![endif]-->
+<style type="text/css">
+  body, table, td, p, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+  table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+  img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+  body { margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #f4f4f4; }
+  a { color: #D70416; }
+  .pre-msg { font-family: Consolas, 'Courier New', monospace; font-size: 11px; line-height: 1.45; color: #374151; white-space: pre-wrap; word-break: break-word; }
+  @media only screen and (max-width: 620px) {
+    .email-container { width: 100% !important; max-width: 100% !important; }
+    .stack-col { display: block !important; width: 100% !important; max-width: 100% !important; }
+    .px-mob { padding-left: 20px !important; padding-right: 20px !important; }
+    .py-mob { padding-top: 20px !important; padding-bottom: 20px !important; }
+    .h1-mob { font-size: 26px !important; line-height: 34px !important; }
+    .h2-mob { font-size: 20px !important; line-height: 26px !important; }
+    .hide-mob { display: none !important; }
+    .center-mob { text-align: center !important; }
+    .score-cell { padding-bottom: 16px !important; padding-right: 0 !important; }
+    .bar-label-cell { padding-bottom: 4px !important; }
+  }
+</style>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f4f4; font-family:'Segoe UI', Arial, Helvetica, sans-serif;">
+
+<div style="display:none; font-size:1px; color:#f4f4f4; line-height:1px; max-height:0; max-width:0; opacity:0; overflow:hidden;">
+  Your Pipeline Health Diagnosis is ready. Score: {{total_score}}/36 · {{diagnosis_tier_short}}.
+</div>
+
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#f4f4f4;">
+  <tr>
+    <td align="center" style="padding:24px 12px;">
+
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" style="max-width:600px; width:100%; background-color:#ffffff; border-radius:12px; overflow:hidden;">
+
+        <!-- Header strip -->
+        <tr>
+          <td style="background-color:#D70416; padding:20px 32px;" class="px-mob">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td style="font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; letter-spacing:0.18em; color:#ffffff; text-transform:uppercase;">
+                  Virtual Building Studio
+                </td>
+                <td align="right" style="font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:11px; font-weight:600; color:#ffffff; letter-spacing:0.04em;">
+                  Pipeline Health Diagnostic · Results
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Greeting -->
+        <tr>
+          <td style="padding:32px 32px 8px;" class="px-mob">
+            <p style="margin:0 0 6px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:14px; font-weight:600; color:#D70416; letter-spacing:0.02em;">
+              Hi {{name}},
+            </p>
+            <h1 class="h1-mob" style="margin:0 0 10px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:30px; line-height:38px; font-weight:600; color:#000000; letter-spacing:0.005em;">
+              Your Pipeline Health Diagnosis
+            </h1>
+            <p style="margin:0; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:15px; line-height:24px; color:rgba(0,0,0,0.7);">
+              Here's where your project sits relative to the Delivery Ceiling — and the highest-leverage place to intervene first.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Score + diagnosis -->
+        <tr>
+          <td style="padding:24px 32px 0;" class="px-mob">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td class="stack-col score-cell" valign="top" width="210" style="width:210px; padding-right:16px;">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#ffffff; border:2px solid #000000; border-radius:12px;">
+                    <tr>
+                      <td align="center" style="padding:20px 16px;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td align="center" style="font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:56px; line-height:56px; font-weight:700; color:#D70416; letter-spacing:-0.02em;">
+                              {{total_score}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="center" style="font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:12px; color:rgba(0,0,0,0.55); font-weight:500; padding-top:2px;">
+                              out of 36
+                            </td>
+                          </tr>
+                        </table>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-top:16px;">
+                          <tr>
+                            <td style="background-color:#eaeaea; border-radius:100px;">
+                              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                  <td height="8" width="{{total_score_pct}}%" bgcolor="#D70416" style="background-color:#D70416; border-radius:100px; line-height:8px; font-size:0; height:8px;">&nbsp;</td>
+                                  <td height="8" style="line-height:8px; font-size:0; height:8px;">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <p style="margin:14px 0 0; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:10px; font-weight:700; letter-spacing:0.18em; color:#D70416; text-transform:uppercase;">
+                          Total Score
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td class="stack-col" valign="top" style="padding-left:0;">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#ffffff; border:2px solid #D70416; border-radius:12px;">
+                    <tr>
+                      <td style="padding:22px 22px;">
+                        <p style="margin:0 0 6px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:10px; font-weight:700; letter-spacing:0.20em; color:#D70416; text-transform:uppercase;">
+                          Your Diagnosis
+                        </p>
+                        <p style="margin:0 0 10px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; letter-spacing:0.10em; color:rgba(0,0,0,0.55); text-transform:uppercase;">
+                          {{diagnosis_tier}}
+                        </p>
+                        <h2 class="h2-mob" style="margin:0 0 8px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:20px; line-height:26px; font-weight:600; color:#000000;">
+                          {{diagnosis_headline}}
+                        </h2>
+                        <p style="margin:0; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:14px; line-height:22px; color:rgba(0,0,0,0.72);">
+                          {{diagnosis_copy}}
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Section breakdown -->
+        <tr>
+          <td style="padding:24px 32px 0;" class="px-mob">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#ffffff; border:1px solid rgba(0,0,0,0.08); border-radius:12px;">
+              <tr>
+                <td style="padding:18px 22px;">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td style="font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:13px; font-weight:700; letter-spacing:0.04em; color:#000000; text-transform:uppercase; padding-bottom:14px;">
+                        Section Breakdown
+                      </td>
+                      <td align="right" class="hide-mob" style="font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:11px; color:rgba(0,0,0,0.55); padding-bottom:14px;">
+                        Highest = your highest-leverage intervention
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- Section 1 -->
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-top:1px solid rgba(0,0,0,0.08);">
+                    <tr>
+                      <td style="padding:12px 0 4px;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td class="bar-label-cell" valign="middle" style="font-family:'Segoe UI', Arial, Helvetica, sans-serif;">
+                              <p style="margin:0; font-size:14px; font-weight:600; line-height:18px; color:#000000;">
+                                {{section_1_title}}{{{section_1_badge_html}}}
+                              </p>
+                              <p style="margin:2px 0 0; font-size:11px; color:rgba(0,0,0,0.55); line-height:14px; letter-spacing:0.02em;">
+                                {{section_1_sub}}
+                              </p>
+                            </td>
+                            <td align="right" valign="middle" width="70" style="font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:16px; font-weight:700; color:#000000; white-space:nowrap;">
+                              {{section_1_score}}<span style="color:#999999; font-weight:500; font-size:13px;"> / 12</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding:6px 0 12px;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#eaeaea; border-radius:100px;">
+                          <tr>
+                            <td height="8" width="{{section_1_pct}}%" bgcolor="#D70416" style="background-color:#D70416; border-radius:100px; line-height:8px; font-size:0; height:8px;">&nbsp;</td>
+                            <td height="8" style="line-height:8px; font-size:0; height:8px;">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- Section 2 -->
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-top:1px solid rgba(0,0,0,0.08);">
+                    <tr>
+                      <td style="padding:12px 0 4px;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td class="bar-label-cell" valign="middle" style="font-family:'Segoe UI', Arial, Helvetica, sans-serif;">
+                              <p style="margin:0; font-size:14px; font-weight:600; line-height:18px; color:#000000;">
+                                {{section_2_title}}{{{section_2_badge_html}}}
+                              </p>
+                              <p style="margin:2px 0 0; font-size:11px; color:rgba(0,0,0,0.55); line-height:14px; letter-spacing:0.02em;">
+                                {{section_2_sub}}
+                              </p>
+                            </td>
+                            <td align="right" valign="middle" width="70" style="font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:16px; font-weight:700; color:#000000; white-space:nowrap;">
+                              {{section_2_score}}<span style="color:#999999; font-weight:500; font-size:13px;"> / 12</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding:6px 0 12px;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#eaeaea; border-radius:100px;">
+                          <tr>
+                            <td height="8" width="{{section_2_pct}}%" bgcolor="#D70416" style="background-color:#D70416; border-radius:100px; line-height:8px; font-size:0; height:8px;">&nbsp;</td>
+                            <td height="8" style="line-height:8px; font-size:0; height:8px;">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- Section 3 -->
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-top:1px solid rgba(0,0,0,0.08);">
+                    <tr>
+                      <td style="padding:12px 0 4px;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td class="bar-label-cell" valign="middle" style="font-family:'Segoe UI', Arial, Helvetica, sans-serif;">
+                              <p style="margin:0; font-size:14px; font-weight:600; line-height:18px; color:#000000;">
+                                {{section_3_title}}{{{section_3_badge_html}}}
+                              </p>
+                              <p style="margin:2px 0 0; font-size:11px; color:rgba(0,0,0,0.55); line-height:14px; letter-spacing:0.02em;">
+                                {{section_3_sub}}
+                              </p>
+                            </td>
+                            <td align="right" valign="middle" width="70" style="font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:16px; font-weight:700; color:#000000; white-space:nowrap;">
+                              {{section_3_score}}<span style="color:#999999; font-weight:500; font-size:13px;"> / 12</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding:6px 0 0;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#eaeaea; border-radius:100px;">
+                          <tr>
+                            <td height="8" width="{{section_3_pct}}%" bgcolor="#D70416" style="background-color:#D70416; border-radius:100px; line-height:8px; font-size:0; height:8px;">&nbsp;</td>
+                            <td height="8" style="line-height:8px; font-size:0; height:8px;">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Intervention -->
+        <tr>
+          <td style="padding:18px 32px 0;" class="px-mob">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#000000; border-radius:12px;">
+              <tr>
+                <td style="padding:22px 26px;">
+                  <p style="margin:0 0 8px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:10px; font-weight:700; letter-spacing:0.18em; color:#D70416; text-transform:uppercase;">
+                    Where You Intervene First
+                  </p>
+                  <h3 style="margin:0 0 8px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:20px; line-height:26px; font-weight:600; color:#ffffff;">
+                    {{intervention_title}}
+                  </h3>
+                  <p style="margin:0; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:14px; line-height:22px; color:rgba(255,255,255,0.78);">
+                    {{intervention_copy}}
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- CTA -->
+        <tr>
+          <td style="padding:18px 32px 0;" class="px-mob">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#D70416; border-radius:12px;">
+              <tr>
+                <td align="center" style="padding:24px 26px;">
+                  <h3 style="margin:0 0 8px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:20px; line-height:26px; font-weight:600; color:#ffffff;">
+                    {{cta_heading}}
+                  </h3>
+                  <p style="margin:0 0 18px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:14px; line-height:22px; color:rgba(255,255,255,0.92);">
+                    {{cta_copy}}
+                  </p>
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto;">
+                    <tr>
+                      <td style="border-radius:6px; background-color:#ffffff;">
+                        <a href="https://booknow.virtualbuildingstudio.com/portal-embed#/4689125000003492031" target="_blank" style="display:inline-block; padding:14px 28px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; color:#D70416; text-decoration:none; border-radius:6px; letter-spacing:0.02em;">
+                          Book the 30-Minute Call &rarr;
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Diagnose again -->
+        <tr>
+          <td style="padding:22px 32px 8px;" class="px-mob" align="center">
+            <a href="https://www.virtualbuildingstudio.com/pipeline-health-diagnostic/" style="font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; color:#D70416; text-decoration:none;">
+              &#8635; Diagnose Another Project
+            </a>
+          </td>
+        </tr>
+
+        <!-- Footnote -->
+        <tr>
+          <td style="padding:8px 32px 24px;" class="px-mob">
+            <p style="margin:0; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:rgba(0,0,0,0.45); text-align:center;">
+              This diagnosis was generated from your responses on {{submission_date}}.<br />
+              Share it with your team — or reply to this email if you'd like to discuss your results.
+            </p>
+          </td>
+        </tr>
+
+      </table>
+
+      <!-- Firm + plain backup -->
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" style="max-width:600px; width:100%; background-color:#ffffff; border-radius:12px; margin-top:12px;">
+        <tr>
+          <td style="padding:20px 28px 12px;" class="px-mob">
+            <p style="margin:0 0 6px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:13px; color:rgba(0,0,0,0.72); line-height:1.5;">
+              <strong style="color:#000000;">Firm:</strong> {{company}}
+            </p>
+            <p style="margin:0 0 14px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:12px; color:rgba(0,0,0,0.5);">{{page}}</p>
+            <p style="margin:0 0 8px; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(0,0,0,0.45);">Plain text</p>
+            <div class="pre-msg" style="background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.1); border-radius:10px; padding:14px 16px;">{{message}}</div>
+          </td>
+        </tr>
+      </table>
+
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" style="max-width:600px; width:100%;">
+        <tr>
+          <td align="center" style="padding:20px 24px;">
+            <p style="margin:0; font-family:'Segoe UI', Arial, Helvetica, sans-serif; font-size:11px; line-height:16px; color:rgba(0,0,0,0.45);">
+              You received this because you completed the Pipeline Health Diagnostic.<br />
+              <a href="https://www.virtualbuildingstudio.com/pipeline-health-diagnostic/" style="color:#D70416; font-weight:600; text-decoration:none;">Open diagnostic again</a>
+              &nbsp;&middot;&nbsp;
+              <a href="https://www.virtualbuildingstudio.com/" style="color:#D70416; font-weight:600; text-decoration:none;">virtualbuildingstudio.com</a><br />
+              &copy; {{current_year}} Virtual Building Studio &middot; All rights reserved
+            </p>
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

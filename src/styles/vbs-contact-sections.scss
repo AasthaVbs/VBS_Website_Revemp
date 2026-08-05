@@ -1196,15 +1196,25 @@
 }
 
 .vbs-our-locations__meta-row {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
 }
 
 .vbs-our-locations__address {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  width: 100%;
   min-width: 0;
+  flex: 0 1 auto;
+  max-width: none;
   color: #111111;
   text-decoration: none;
   transition: opacity 0.15s ease;

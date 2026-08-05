@@ -3,8 +3,6 @@ import { CareersBenefitsSection } from "@/components/sections/careers/careers-be
 import { CareersHeroSection } from "@/components/sections/careers/careers-hero-section";
 import { CareersJoinTeamCtaSection } from "@/components/sections/careers/careers-join-team-cta-section";
 import { CareersWhyWorkSection } from "@/components/sections/careers/careers-why-work-section";
-import { TrustStripSection } from "@/components/sections/trust-strip-section";
-import { lifeAtVbsStatsStrip } from "@/constants/life-at-vbs-content";
 import {
   DeferredCareersCareerFormSection,
   DeferredCareersOpeningsSection,
@@ -17,14 +15,10 @@ export function VbsCareersPage() {
       <SiteHeader />
 
       <CareersHeroSection />
-      <TrustStripSection
-        stats={lifeAtVbsStatsStrip}
-        className=" pt-20 vbs-trust-strip-section vbs-careers-trust-strip bg-white"
-      />
       <CareersWhyWorkSection />
-      <CareersJoinTeamCtaSection />
       <CareersBenefitsSection />
       <DeferredCareersOpeningsSection hidden />
+      <CareersJoinTeamCtaSection />
       <DeferredCareersCareerFormSection />
       <DeferredSiteFooter />
     </div>

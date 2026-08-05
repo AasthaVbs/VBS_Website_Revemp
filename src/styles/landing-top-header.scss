@@ -1,0 +1,79 @@
+/* Compact landing header: logo left + email/phone right */
+
+.landing-top-header {
+  background: #fff;
+  position: relative;
+  z-index: 1100;
+}
+
+.landing-top-header-inner {
+  min-height: 66px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  flex-direction: row !important;
+  gap: 1rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+.landing-top-header-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.landing-top-header-logo img {
+  max-width: 280px;
+  height: auto;
+  display: block;
+}
+
+.landing-top-header-contact {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end;
+  gap: 1.1rem;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.landing-top-header-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.4rem;
+  color: #6b7280 !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+  font-size: 1.05rem;
+  line-height: 1.2;
+
+  svg {
+    flex-shrink: 0;
+    display: block;
+    color: #d70416;
+  }
+
+  &:hover {
+    color: #111111 !important;
+    text-decoration: none !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .landing-top-header-inner {
+    gap: 0.6rem;
+    justify-content: center !important;
+  }
+
+  .landing-top-header-logo img {
+    max-width: 170px;
+  }
+
+  /* Mobile landing header: logo only */
+  .landing-top-header-contact {
+    display: none !important;
+  }
+}

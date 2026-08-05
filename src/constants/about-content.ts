@@ -1,7 +1,5 @@
-import aboutUsBanner from "@/assets/images/about-us-banner.jpg";
-
 export const aboutHeroImages = {
-  main: aboutUsBanner.src,
+  main: "/image/About-VBS.jpg",
 } as const;
 
 export const aboutVisionImage = "/image/about-vision-main.jpg";
@@ -9,7 +7,7 @@ export const aboutVisionImage = "/image/about-vision-main.jpg";
 export const visionMissionCards = [
   {
     title: "Vision",
-    description: "To digitally transform how the world builds.",
+    description: "To digitally transform how the World builds.",
     iconSrc: "/images/about/icon-vision.svg",
   },
   {
@@ -21,7 +19,7 @@ export const visionMissionCards = [
 ] as const;
 
 export const visionMissionSectionCopy = {
-  tag: "Our Vision & Mission",
+  tag: "Our Vision",
   titleLead: "Company's ",
   titleAccent: "Vision & Mission",
   description:

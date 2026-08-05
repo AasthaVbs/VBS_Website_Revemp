@@ -1,8 +1,7 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { LeadershipHeroSection } from "@/components/sections/leadership/leadership-hero-section";
 import { TrustStripSection } from "@/components/sections/trust-strip-section";
-import { lifeAtVbsStatsStrip } from "@/constants/life-at-vbs-content";
-import { leadershipJoinTeamCopy } from "@/constants/leadership-content";
+import { leadershipJoinTeamCopy, leadershipStats } from "@/constants/leadership-content";
 import { ROUTES } from "@/constants/navigation";
 import {
   DeferredCertificationAwardsSection,
@@ -18,7 +17,7 @@ export function VbsLeadershipPage() {
       <SiteHeader />
 
       <LeadershipHeroSection />
-      <TrustStripSection stats={lifeAtVbsStatsStrip} className="vbs-trust-strip-section bg-white" />
+      <TrustStripSection stats={leadershipStats} className="vbs-trust-strip-section bg-white" />
       <DeferredLeadershipTeamSection />
       <DeferredCertificationAwardsSection />
       <DeferredClientSuccessStoriesSection />

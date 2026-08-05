@@ -9,8 +9,7 @@ export function CareersJoinTeamCtaSection() {
       cardOnMobile
       title={
         <>
-          <span className="font-medium">{titleLine1}</span>
-          <span className="font-light text-[#111111]">{titleAccent}</span>
+          {titleLine1} <span className="text-accent">{titleAccent}</span>
         </>
       }
       description={description}

@@ -1,8 +1,8 @@
-import careersBanner from "@/assets/images/carrer-banner.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import { joinTeamCtaCopy } from "@/constants/about-content";
 
 export const careersHeroImages = {
-  main: careersBanner.src,
+  main: `/image/${encodeURIComponent("Careers\u00a0Virtual-Building-Studio-VBS.jpg")}`,
 };
 
 export const careersHeroCopy = {
@@ -167,13 +167,8 @@ export const jobOpenings: JobOpening[] = [
   },
 ];
 
-export const careersJoinTeamCtaCopy = {
-  titleLine1: "Join the ",
-  titleAccent: "Team",
-  description:
-    "Join our team 150+ Architecture from the across the globe and contribute to groundbreaking projects with top-tier architects and engineers.",
-  ctaLabel: "Contact Us",
-} as const;
+/** Careers join CTA matches Gatsby JoinTeamCtaSection (about joinTeamCtaCopy). */
+export const careersJoinTeamCtaCopy = joinTeamCtaCopy;
 
 export const careersFormSectionCopy = {
   tag: "Career Form",

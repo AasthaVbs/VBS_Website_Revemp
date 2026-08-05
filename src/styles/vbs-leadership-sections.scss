@@ -131,7 +131,8 @@
     color: #111111 !important;
   }
 
-  .vbs-leadership-team__rows {
+  .vbs-leadership-team__rows,
+  .vbs-leadership-team__cards {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -160,7 +161,8 @@
     }
   }
 
-  .vbs-leadership-team__row--first {
+  .vbs-leadership-team__row--first,
+  .vbs-leadership-team__row--secondary {
     @media (min-width: 1024px) {
       grid-template-columns: repeat(2, 345px);
     }
@@ -263,6 +265,21 @@
   font-size: 16px !important;
   font-weight: 500 !important;
   line-height: 24px !important;
+  color: #808080 !important;
+}
+
+.vbs-leadership-team__card-bio {
+  margin: 0;
+  width: 100%;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  color: #808080 !important;
+}
+
+.vbs-leadership-team__empty {
+  margin: 0;
+  font-size: 16px !important;
   color: #808080 !important;
 }
 

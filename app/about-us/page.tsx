@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { VbsAboutPage } from "@/components/vbs/about-page";
 
 export const metadata: Metadata = {
-  title: "About Us | Virtual Building Studio",
+  title: "About Virtual Building Studio (VBS) | Leading BIM Company in USA",
   description:
-    "Since 2015, Virtual Building Studio has been the trusted BIM delivery partner for Architecture and Engineering firms across the USA.",
+    "Virtual Building Studio delivers BIM services for AEC firms worldwide, improving project coordination, accuracy, and cost efficiency across construction projects.",
 };
 
 export default function AboutPage() {

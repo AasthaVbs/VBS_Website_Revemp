@@ -36,7 +36,7 @@ export const defaultStatsStrip: StatItem[] = [
 
 export const aboutStatsStrip: StatItem[] = [
   { value: "11+", color: "text-vbs-red", label: "Years Embedded Inside U.S. AEC Delivery" },
-  { value: "2000+", color: "text-vbs-green", label: "Concurrent Project Environments" },
+  { value: "200+", color: "text-vbs-green", label: "Production Professionals Across Delivery Centers" },
   { value: "5+", color: "text-vbs-blue", label: "Years Average Engagement Length" },
   { value: "6+", color: "text-vbs-yellow", label: "Disciplines Covered" },
 ];

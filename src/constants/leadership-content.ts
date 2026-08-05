@@ -1,32 +1,17 @@
-import leadershipBanner from "@/assets/images/leadership-banner.jpg";
-import akshayKhatariImg from "@/assets/images/akshay-khatari.png";
-import ankitKansaraImg from "@/assets/images/ankit-kansara.png";
-import chiragSharmaImg from "@/assets/images/chirag-sharma.png";
-import gajendraChoudharyImg from "@/assets/images/gajendra-choudhary.png";
-import hiteshNegiImg from "@/assets/images/hitesh-negi.png";
-import ishanVoraImg from "@/assets/images/ishan-vora.png";
-import mahipalsinhJadejaImg from "@/assets/images/mahipalsinh-jadeja.png";
-import manishDeyImg from "@/assets/images/manish-dey.png";
-import nisargKansaraImg from "@/assets/images/nisarg-kansara.png";
-import poonamKansaraImg from "@/assets/images/poonam-kansara.png";
-import ramaKansaraImg from "@/assets/images/rama-kansara.png";
-import saumilTrivediImg from "@/assets/images/saumil-trivedi.png";
-import saurabhImg from "@/assets/images/saurash.png";
-import sounakBanerjeeImg from "@/assets/images/sounak-banerjee.png";
-import yogeshChokhraImg from "@/assets/images/yogesh-chokhra.png";
+import { ROUTES } from "@/constants/navigation";
 import type { StatItem } from "@/constants/shared-sections";
 
 export const leadershipHeroImages = {
-  main: leadershipBanner.src,
+  main: "/image/Leadership.jpg",
 } as const;
 
 export const leadershipHeroCopy = {
-  tag: "Leaders Board",
+  tag: "Leadership",
   titleLead: "Leadership ",
   titleAccent: "@VBS",
   descriptionLead:
     "Field-level rework and uncoordinated submittals frequently derail project timelines and inflate budgets. Virtual Building Studio functions as a technical extension of your team, providing access to a team of",
-  descriptionHighlight: "150+ dedicated remote BIM modelers.",
+  descriptionHighlight: "200+ dedicated remote BIM modelers.",
   descriptionTail:
     "As a specialized MEP BIM modeling service provider in the USA, we ensure your building systems are clash-free and fabrication-ready.",
   ctaLabel: "Contact Us",
@@ -34,7 +19,7 @@ export const leadershipHeroCopy = {
 
 export const leadershipStats: StatItem[] = [
   { value: "11+", color: "text-vbs-red", label: "Years Embedded Inside U.S. AEC Delivery" },
-  { value: "2000+", color: "text-vbs-green", label: "Production professionals across delivery centers" },
+  { value: "2000+", color: "text-vbs-green", label: "Concurrent Project Environments" },
   { value: "5+", color: "text-vbs-blue", label: "Years Average Engagement Length" },
   { value: "6+", color: "text-vbs-yellow", label: "Disciplines Covered" },
 ];
@@ -47,133 +32,71 @@ export const leadershipTeamSectionCopy = {
     "Meet the visionaries and experts who guide Virtual Building Studio's mission to revolutionize the AEC industry through innovation and dedication.",
 } as const;
 
-export type LeadershipTabId = "operations" | "board";
+export type LeadershipTabId = "board" | "operations" | "sales";
 
 export const leadershipTeamTabs: { id: LeadershipTabId; label: string }[] = [
-  { id: "operations", label: "Operations & Management" },
   { id: "board", label: "Board of Directors" },
+  { id: "operations", label: "Operations & Management" },
+  { id: "sales", label: "Sales & Marketing" },
 ];
 
 export type LeadershipMember = {
-  id: string;
   name: string;
   role: string;
+  bio: string;
   image: string;
   featured?: boolean;
-  linkedinHref?: string;
+  compact?: boolean;
+  viewMoreHref?: string;
 };
-
-export const leadershipOperationsMembers: LeadershipMember[] = [
-  {
-    id: "ankit-kansara",
-    name: "AK - Ar. Ankit Kansara",
-    role: "Founder & CEO",
-    image: ankitKansaraImg.src,
-    featured: true,
-  },
-  {
-    id: "sounak-banerjee",
-    name: "Sean - Sounak Banerjee",
-    role: "EVP - Sales",
-    image: sounakBanerjeeImg.src,
-  },
-  {
-    id: "manish-dey",
-    name: "Maddy - Manish Dey",
-    role: "Sales Head - Architecture",
-    image: manishDeyImg.src,
-    featured: true,
-  },
-  {
-    id: "hitesh-negi",
-    name: "Ar. Hitesh Negi",
-    role: "Production Head - Architecture",
-    image: hiteshNegiImg.src,
-  },
-  {
-    id: "ishan-vora",
-    name: "Ian - Ishan Vora",
-    role: "Marketing Head - Architecture",
-    image: ishanVoraImg.src,
-  },
-  {
-    id: "saurabh",
-    name: "Shawn - Saurabh",
-    role: "Sales Head - MEPF",
-    image: saurabhImg.src,
-    featured: true,
-  },
-  {
-    id: "akshay-khatari",
-    name: "Akshay Khatri",
-    role: "Production Head - MEPF",
-    image: akshayKhatariImg.src,
-  },
-  {
-    id: "saumil-trivedi",
-    name: "Samuel - Saumil Trivedi",
-    role: "Marketing Head - MEPF",
-    image: saumilTrivediImg.src,
-  },
-  {
-    id: "gajendra-choudhary",
-    name: "Victor - Gajendra Choudhary",
-    role: "Sales Head - Scan to BIM",
-    image: gajendraChoudharyImg.src,
-    featured: true,
-  },
-  {
-    id: "chirag-sharma",
-    name: "Chirag Sharma",
-    role: "Production Head - Scan to BIM",
-    image: chiragSharmaImg.src,
-  },
-  {
-    id: "mahipalsinh-jadeja",
-    name: "Miles - Mahipalsinh Jadeja",
-    role: "Marketing Head - Scan to BIM",
-    image: mahipalsinhJadejaImg.src,
-    featured: true,
-  },
-  {
-    id: "nisarg-kansara",
-    name: "Nik - Nisarg Kansara",
-    role: "Head - Strategic Accounts",
-    image: nisargKansaraImg.src,
-  },
-  {
-    id: "yogesh-chokhra",
-    name: "Yogesh Chokhra",
-    role: "Head - Accounts",
-    image: yogeshChokhraImg.src,
-  },
-];
-
-export const leadershipBoardMembers: LeadershipMember[] = [
-  {
-    id: "poonam-kansara",
-    name: "Poonam Kansara",
-    role: "Director",
-    image: poonamKansaraImg.src,
-    featured: true,
-  },
-  {
-    id: "rama-kansara",
-    name: "Rama Kansara",
-    role: "Director",
-    image: ramaKansaraImg.src,
-  },
-];
 
 export const leadershipMembersByTab: Record<LeadershipTabId, LeadershipMember[]> = {
-  operations: leadershipOperationsMembers,
-  board: leadershipBoardMembers,
+  board: [
+    {
+      name: "Ar. Ankit Kansara",
+      role: "Founder & CEO",
+      bio: "A Gold Medalist Architect with 15+ years of global experience, leading VBS with purpose-driven innovation.",
+      image: encodeURI("/image/Ankit Kansara-Founder & CEO.jpg"),
+      featured: true,
+      viewMoreHref: `${ROUTES.about}#founder`,
+    },
+    {
+      name: "Poonam Kansara",
+      role: "Director",
+      bio: "People-first leader fostering trust, empathy, and teamwork across VBS.",
+      image: "/image/Poonam Kansara.jpg",
+      featured: false,
+      viewMoreHref: ROUTES.about,
+    },
+    {
+      name: "Rama Kansara",
+      role: "Director",
+      bio: "Pillar of integrity and continuity guiding VBS culture and values.",
+      image: "/image/Rama Kansara.jpg",
+      featured: false,
+      viewMoreHref: ROUTES.about,
+    },
+    {
+      name: "Ravi Jain",
+      role: "Independent Director - Business Excellence & Finance",
+      bio: "Independent Director bringing business excellence, finance and governance expertise.",
+      image: "/image/Ravi Jain.jpg",
+      featured: false,
+      compact: true,
+      viewMoreHref: ROUTES.about,
+    },
+  ],
+  operations: [],
+  sales: [],
 };
+
+/** @deprecated Use leadershipMembersByTab */
+export const leadershipMembers = leadershipMembersByTab.board;
 
 export const leadershipJoinTeamCopy = {
   titleLine1: "Join ",
   titleAccent: "the Team",
   description:
-    "Join our team 150+ Architecture from the across the globe and contribute to groundbreaking projects with top-tier architects and engineers.",
+    "Join our team of architects and engineers from across the globe and contribute to groundbreaking projects with top-tier professionals.",
   ctaLabel: "Explore Current Openings",
 } as const;

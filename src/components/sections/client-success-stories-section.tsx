@@ -68,9 +68,11 @@ function ClientSuccessStoryCard({
 export function ClientSuccessStoriesSection({
   description = clientSuccessStoriesDefaultDescription,
   viewAllHref = ROUTES.testimonials,
+  sectionId,
 }: {
   description?: string;
   viewAllHref?: string;
+  sectionId?: string;
 }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const progressTrackRef = useRef<HTMLDivElement>(null);
@@ -180,7 +182,7 @@ export function ClientSuccessStoriesSection({
   const progressOffset = scrollProgress * progressMaxOffset;
 
   return (
-    <section className="vbs-client-success-stories">
+    <section id={sectionId} className="vbs-client-success-stories">
       <PageContainer className="vbs-client-success-stories__container">
         <header className="vbs-client-success-stories__header">
           <div className="vbs-client-success-stories__intro">

@@ -1,0 +1,1101 @@
+/* Revit documentation support case study — /revit-documentation-support-for-architecture-firms/ */
+
+.vbs-redesign-page.revit-doc-support-page {
+  --revit-section-py: 48px;
+  --revit-section-py-lg: 72px;
+  --revit-block-gap: 32px;
+  --revit-block-gap-lg: 40px;
+  --revit-hero-media-w: 640px;
+  --revit-hero-media-h: 420px;
+  --revit-hero-media-w-desktop: 640px;
+  --revit-hero-media-h-desktop: 420px;
+  --revit-pain-media-w: 600px;
+  --revit-pain-media-w-desktop: 600px;
+  --revit-pain-media-h: 460px;
+  --revit-pain-media-h-desktop: 460px;
+  --revit-hero-media-ratio: 640 / 420;
+  --revit-pain-media-ratio: 600 / 460;
+
+  background: #fff;
+  color: #111111;
+  font-family: var(--font-inter), Inter, "Segoe UI", system-ui, sans-serif;
+  overflow-x: clip;
+
+  main {
+    text-transform: capitalize;
+  }
+
+  h1.revit-doc-support__title,
+  h2.revit-doc-support__title {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 500;
+    line-height: 1.15;
+
+    span {
+      display: inline !important;
+      line-height: inherit !important;
+      border-radius: 0 !important;
+    }
+  }
+
+  .revit-doc-support-key-aspects__item-title {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #111111 !important;
+    text-transform: capitalize;
+  }
+
+  .revit-doc-support-advantage__title {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-transform: capitalize;
+  }
+
+  /* ── Description copy — 16px everywhere (override legacy / Bootstrap) ── */
+  main .revit-doc-support__body,
+  main .revit-doc-support__lead,
+  main .revit-doc-support-pain__list-item,
+  main .revit-doc-support-advantages__desc,
+  main .revit-doc-support-key-aspects__item .revit-doc-support__body,
+  main .revit-doc-support-advantage .revit-doc-support__body {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+
+  main .revit-doc-support__body,
+  main .revit-doc-support-pain__list-item,
+  main .revit-doc-support-advantages__desc,
+  main .revit-doc-support-key-aspects__item .revit-doc-support__body,
+  main .revit-doc-support-advantage .revit-doc-support__body {
+    font-weight: 400 !important;
+    color: #808080 !important;
+  }
+
+  main .revit-doc-support__lead {
+    font-weight: 500 !important;
+    color: #111111 !important;
+  }
+
+  p.revit-doc-support__body {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: #808080 !important;
+  }
+
+  .revit-doc-support__body {
+    margin: 0;
+    color: #808080;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+  }
+
+  .revit-doc-support__lead {
+    margin: 0;
+    color: #111111;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+  }
+  .revit-doc-support__title {
+    margin: 0;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 500;
+    line-height: 1.15;
+    text-transform: capitalize;
+    max-width: 689px;
+  }
+
+  .revit-doc-support__title-lead,
+  .revit-doc-support__title-accent {
+    display: inline !important;
+    line-height: inherit !important;
+    border-radius: 0 !important;
+  }
+
+  .revit-doc-support__title--hero {
+    max-width: none;
+  }
+
+  .revit-doc-support-hero h1.revit-doc-support__title {
+    font-size: clamp(32px, 3.8vw, 46px);
+    line-height: 1.25;
+
+    .revit-doc-support__title-lead,
+    .revit-doc-support__title-accent {
+      line-height: 1.25 !important;
+    }
+  }
+
+  .revit-doc-support-hero__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .revit-doc-support-hero__desc {
+    margin-top: 4px;
+    font-size: 18px !important;
+    line-height: 28px !important;
+    color: #808080 !important;
+  }
+
+  .revit-doc-support__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  main p {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+
+  .revit-doc-support-hero__head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+
+    @media (max-width: 991px) {
+      gap: 16px;
+    }
+  }
+
+  /* ── Shared media frame ── */
+  .revit-doc-support-media {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8.49px;
+    background: #f3f3f3;
+  }
+
+  .revit-doc-support-media__img {
+    display: block;
+    max-width: none;
+  }
+
+  .revit-doc-support-media__img--hero,
+  .revit-doc-support-media__img--pain {
+    position: absolute;
+    object-fit: cover;
+  }
+
+  .revit-doc-support-media__img--hero {
+    width: 100.15%;
+    height: 106.23%;
+    left: -0.15%;
+    top: -3.21%;
+  }
+
+  .revit-doc-support-media__img--pain {
+    width: 123.07%;
+    height: 100%;
+    left: -11.54%;
+    top: 0;
+  }
+
+  .revit-doc-support-media__img--infographic {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .revit-doc-support-key-aspects__media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 470px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    border: 0.85px solid #cbcccd;
+    border-radius: 8.55px;
+    background: #f3f3f3;
+    padding: 1px;
+    overflow: hidden;
+
+    @media (min-width: 992px) {
+      width: 470px !important;
+      max-width: 470px !important;
+      min-width: 470px;
+      height: 470px !important;
+      aspect-ratio: auto;
+      margin: 0;
+      align-self: flex-start;
+      flex: 0 0 470px !important;
+    }
+  }
+
+  /* ── Hero ── */
+  .revit-doc-support-hero {
+    padding: 24px 0 var(--revit-section-py);
+    background: #fff;
+
+    @media (min-width: 992px) {
+      padding: 32px 0 var(--revit-section-py-lg);
+    }
+  }
+
+  .revit-doc-support-hero__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+
+    @media (max-width: 991px) {
+      gap: 20px;
+    }
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 64px;
+    }
+  }
+
+  .revit-doc-support-hero__copy {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+    max-width: 700px;
+    width: 100%;
+
+    @media (max-width: 991px) {
+      flex: 0 0 auto;
+      max-width: 100%;
+    }
+  }
+
+  .revit-doc-support-hero__media {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: var(--revit-hero-media-w);
+    height: clamp(220px, 48vw, var(--revit-hero-media-h));
+    align-self: center;
+
+    @media (min-width: 992px) {
+      align-self: center;
+      width: min(100%, var(--revit-hero-media-w-desktop));
+      max-width: var(--revit-hero-media-w-desktop);
+      height: var(--revit-hero-media-h-desktop);
+      flex: 0 1 var(--revit-hero-media-w-desktop);
+    }
+  }
+
+  /* ── Split sections (pain points) ── */
+  .revit-doc-support-split {
+    padding: var(--revit-section-py) 0;
+    background: #fff;
+
+    @media (min-width: 992px) {
+      padding: var(--revit-section-py-lg) 0;
+    }
+  }
+
+  .revit-doc-support-split__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--revit-block-gap);
+    width: 100%;
+
+    @media (max-width: 991px) {
+      gap: 0;
+      align-items: stretch;
+    }
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 64px;
+    }
+  }
+
+  .revit-doc-support-split__grid--media-first {
+    @media (max-width: 991px) {
+      .revit-doc-support-pain__media {
+        order: 2;
+      }
+
+      .revit-doc-support-split__copy {
+        order: 1;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .revit-doc-support-pain__media {
+        order: 0;
+      }
+
+      .revit-doc-support-split__copy {
+        order: 1;
+      }
+    }
+  }
+
+  .revit-doc-support-split__copy {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+
+    @media (max-width: 991px) {
+      flex: 0 0 auto;
+    }
+  }
+
+  .revit-doc-support-pain .revit-doc-support__title {
+    max-width: none;
+  }
+
+  .revit-doc-support-pain__media {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: var(--revit-pain-media-w);
+    height: clamp(220px, 52vw, var(--revit-pain-media-h));
+    align-self: center;
+
+    @media (min-width: 992px) {
+      width: var(--revit-pain-media-w-desktop) !important;
+      max-width: var(--revit-pain-media-w-desktop) !important;
+      min-width: var(--revit-pain-media-w-desktop);
+      height: var(--revit-pain-media-h-desktop) !important;
+      align-self: flex-start;
+      flex: 0 0 var(--revit-pain-media-w-desktop) !important;
+    }
+  }
+
+  .revit-doc-support-pain__notices {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .revit-doc-support-pain__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .revit-doc-support-pain__list-item {
+    position: relative;
+    padding-left: 18px;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: #808080 !important;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #808080;
+    }
+  }
+
+  /* ── Key aspects ── */
+  .revit-doc-support-key-aspects {
+    padding: var(--revit-section-py) 0;
+    background: #fff;
+
+    @media (min-width: 992px) {
+      padding: var(--revit-section-py-lg) 0;
+    }
+  }
+
+  .revit-doc-support-key-aspects__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+
+  .revit-doc-support-key-aspects__row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--revit-block-gap);
+    width: 100%;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--revit-block-gap-lg);
+    }
+  }
+
+  .revit-doc-support-key-aspects__copy {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+  }
+
+  .revit-doc-support-key-aspects__header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .revit-doc-support-key-aspects__items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .revit-doc-support-key-aspects__item {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .revit-doc-support-key-aspects__item-title {
+    margin: 0;
+    color: #111111 !important;
+    font-size: 21px !important;
+    font-weight: 400 !important;
+    line-height: 1.3 !important;
+  }
+
+  .revit-doc-support-key-aspects__item .revit-doc-support__body {
+    font-size: 16px !important;
+    line-height: 24px !important;
+    max-width: none;
+    width: 100%;
+  }
+
+  .revit-doc-support-key-aspects__cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* ── Advantages ── */
+  .revit-doc-support-advantages {
+    padding: var(--revit-section-py) 0;
+    background: #fafafa;
+
+    @media (min-width: 992px) {
+      padding: var(--revit-section-py-lg) 0;
+    }
+  }
+
+  .revit-doc-support-advantages__container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--revit-block-gap);
+    width: 100%;
+  }
+
+  .revit-doc-support-advantages__head {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 750px;
+  }
+
+  .revit-doc-support-advantages__title {
+    max-width: 629px;
+  }
+
+  .revit-doc-support-advantages__desc {
+    max-width: 750px;
+  }
+
+  .revit-doc-support-advantages__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+      align-items: stretch;
+    }
+  }
+
+  .revit-doc-support-advantage {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    padding: 20px;
+    border: 1px solid #cbcccd;
+    border-radius: 10px;
+    background: transparent;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .revit-doc-support-advantage__icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 9px;
+    border: 1px solid #cbcccd;
+    border-radius: 10px;
+    background: #fbf9f9;
+  }
+
+  .revit-doc-support-advantage__icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .revit-doc-support-advantage__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .revit-doc-support-advantage__title {
+    margin: 0;
+    color: #111111;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .revit-doc-support-advantage .revit-doc-support__body {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+
+  /* ── Final CTA — desktop typography; mobile matches home via service-pages-mobile.scss ── */
+  .revit-doc-support-page .vbs-evaluate-cta {
+    scroll-margin-top: 100px;
+
+    @media (min-width: 992px) {
+      text-transform: capitalize;
+      padding-top: var(--revit-section-py-lg) !important;
+      padding-bottom: var(--revit-section-py-lg) !important;
+
+      .evaluate-delivery-cta-panel {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+
+      .evaluate-delivery-cta-panel .primary-cta {
+        width: auto !important;
+        max-width: none !important;
+        flex: 0 0 auto !important;
+        align-self: center !important;
+      }
+
+      h2 {
+        max-width: 787px;
+        font-size: clamp(28px, 3.5vw, 42px) !important;
+        line-height: 1.15 !important;
+      }
+
+      p {
+        max-width: 644px;
+        font-size: 16px !important;
+        line-height: 24px !important;
+        color: #808080 !important;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    .revit-doc-support-hero__copy .primary-cta,
+    .revit-doc-support-key-aspects__cta .primary-cta {
+      width: auto !important;
+      max-width: none !important;
+      align-self: flex-start !important;
+    }
+
+    .revit-doc-support-key-aspects__cta {
+      justify-content: flex-start;
+    }
+  }
+
+  /* Compact laptops — keep side-by-side without overflow */
+  @media (min-width: 992px) and (max-width: 1280px) {
+    --revit-hero-media-w-desktop: 480px;
+    --revit-hero-media-h-desktop: 320px;
+    --revit-pain-media-w-desktop: 600px;
+    --revit-pain-media-h-desktop: 400px;
+
+    .revit-doc-support-hero__grid,
+    .revit-doc-support-split__grid {
+      gap: 32px;
+    }
+
+    .revit-doc-support-hero__copy {
+      max-width: 560px;
+    }
+
+    .revit-doc-support-pain__media {
+      width: 600px !important;
+      max-width: 600px !important;
+      min-width: 600px;
+      flex: 0 0 600px !important;
+    }
+
+    .revit-doc-support-key-aspects__media {
+      width: 420px !important;
+      max-width: 420px !important;
+      min-width: 420px;
+      height: 420px !important;
+      flex: 0 0 420px !important;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .vbs-redesign-page.revit-doc-support-page {
+    .revit-doc-support-hero__copy,
+    .revit-doc-support-split__copy,
+    .revit-doc-support-key-aspects__copy,
+    .revit-doc-support-advantages__head,
+    .revit-doc-support-advantages__title,
+    .revit-doc-support-advantages__desc {
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+
+    .revit-doc-support__title {
+      max-width: 100% !important;
+    }
+
+    .revit-doc-support-hero__grid,
+    .revit-doc-support-split__grid,
+    .revit-doc-support-key-aspects__row {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 24px !important;
+    }
+
+    .revit-doc-support-hero__media,
+    .revit-doc-support-pain__media,
+    .revit-doc-support-key-aspects__media {
+      width: 100% !important;
+      max-width: 100% !important;
+      flex: 0 0 auto !important;
+    }
+
+    .revit-doc-support-hero__media,
+    .revit-doc-support-pain__media {
+      height: auto !important;
+      aspect-ratio: var(--revit-hero-media-ratio) !important;
+    }
+
+    .revit-doc-support-pain__media {
+      aspect-ratio: var(--revit-pain-media-ratio) !important;
+      margin-top: 8px !important;
+    }
+
+    .revit-doc-support-key-aspects__media {
+      height: auto !important;
+      aspect-ratio: 1 / 1 !important;
+      margin: 0 auto !important;
+    }
+
+    .revit-doc-support-split__copy {
+      flex: 0 0 auto !important;
+    }
+
+    .revit-doc-support-pain .revit-doc-support-split__grid {
+      gap: 20px !important;
+    }
+
+    .revit-doc-support-media__img--hero,
+    .revit-doc-support-media__img--pain {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      left: 0 !important;
+      top: 0 !important;
+      object-fit: cover !important;
+      object-position: center !important;
+    }
+  }
+}
+
+/* ── Mobile (≤767px) — typography, gaps, CTAs, images ── */
+@media (max-width: 767px) {
+  .vbs-redesign-page.revit-doc-support-page {
+    --revit-section-py: 32px;
+    --revit-block-gap: 20px;
+
+    /* Section spacing */
+    .revit-doc-support-hero,
+    .revit-doc-support-split,
+    .revit-doc-support-key-aspects,
+    .revit-doc-support-advantages {
+      padding-top: 32px !important;
+      padding-bottom: 32px !important;
+    }
+
+    /* H1 hero */
+    .revit-doc-support-hero h1.revit-doc-support__title,
+    h1.revit-doc-support__title.revit-doc-support__title--hero {
+      font-size: clamp(26px, 7.5vw, 32px) !important;
+      line-height: 1.2 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+      text-align: left !important;
+
+      .revit-doc-support__title-lead,
+      .revit-doc-support__title-accent {
+        line-height: 1.2 !important;
+      }
+    }
+
+    /* H2 section titles */
+    h2.revit-doc-support__title,
+    .revit-doc-support__title:not(.revit-doc-support__title--hero) {
+      font-size: clamp(26px, 7vw, 32px) !important;
+      line-height: 1.25 !important;
+      max-width: 100% !important;
+      text-align: left !important;
+    }
+
+    /* Section tags — smaller chip */
+    main .text-tag {
+      font-size: 12px !important;
+      line-height: 1.2 !important;
+      padding: 5px 10px !important;
+      border-radius: 8px !important;
+    }
+
+    /* Body copy — readable mobile size */
+    main .revit-doc-support__body,
+    main p.revit-doc-support__body,
+    main p,
+    main .revit-doc-support-pain__list-item,
+    main .revit-doc-support-advantages__desc,
+    main .revit-doc-support-key-aspects__item .revit-doc-support__body,
+    main .revit-doc-support-advantage .revit-doc-support__body,
+    .revit-doc-support-hero__desc {
+      font-size: 15px !important;
+      line-height: 22px !important;
+      color: #808080 !important;
+    }
+
+    main .revit-doc-support__lead {
+      font-size: 15px !important;
+      line-height: 22px !important;
+      color: #111111 !important;
+      font-weight: 500 !important;
+    }
+
+    .revit-doc-support-key-aspects__item-title,
+    .revit-doc-support-advantage__title {
+      font-size: 18px !important;
+      line-height: 1.3 !important;
+      color: #111111 !important;
+      font-weight: 500 !important;
+    }
+
+    /* ── Hero ── */
+    .revit-doc-support-hero {
+      padding-top: 20px !important;
+    }
+
+    .revit-doc-support-hero__grid {
+      gap: 20px !important;
+      align-items: stretch !important;
+    }
+
+    .revit-doc-support-hero__copy {
+      gap: 20px !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+      width: 100% !important;
+    }
+
+    .revit-doc-support-hero__intro {
+      gap: 12px !important;
+      align-items: flex-start !important;
+      width: 100% !important;
+    }
+
+    .revit-doc-support-hero .revit-doc-support-hero__head {
+      align-items: flex-start !important;
+      gap: 10px !important;
+      width: 100% !important;
+    }
+
+    .revit-doc-support-hero .revit-doc-support-hero__head .text-tag {
+      align-self: flex-start !important;
+    }
+
+    .revit-doc-support-hero__desc {
+      margin-top: 0 !important;
+      max-width: 100% !important;
+      text-align: left !important;
+      font-size: 15px !important;
+      line-height: 22px !important;
+    }
+
+    .revit-doc-support-hero__media {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      aspect-ratio: var(--revit-hero-media-ratio) !important;
+      margin: 0 !important;
+      border-radius: 10px !important;
+    }
+
+    /* ── Pain points ── */
+    .revit-doc-support-pain .revit-doc-support-split__grid {
+      gap: 20px !important;
+      align-items: stretch !important;
+    }
+
+    .revit-doc-support-split__copy {
+      gap: 16px !important;
+      flex: 0 0 auto !important;
+      width: 100% !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
+
+    .revit-doc-support-pain__notices {
+      gap: 12px !important;
+    }
+
+    .revit-doc-support-pain__list {
+      gap: 8px !important;
+    }
+
+    .revit-doc-support-pain__media {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      aspect-ratio: var(--revit-pain-media-ratio) !important;
+      margin: 0 !important;
+      flex: 0 0 auto !important;
+      border-radius: 10px !important;
+    }
+
+    /* ── Key aspects ── */
+    .revit-doc-support-key-aspects__container {
+      gap: 24px !important;
+      align-items: stretch !important;
+    }
+
+    .revit-doc-support-key-aspects__row {
+      gap: 20px !important;
+    }
+
+    .revit-doc-support-key-aspects__copy {
+      gap: 16px !important;
+    }
+
+    .revit-doc-support-key-aspects__header {
+      gap: 12px !important;
+    }
+
+    .revit-doc-support-key-aspects__items {
+      gap: 16px !important;
+    }
+
+    .revit-doc-support-key-aspects__item {
+      gap: 8px !important;
+    }
+
+    .revit-doc-support-key-aspects__media {
+      width: min(100%, 360px) !important;
+      max-width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 1 / 1 !important;
+      margin: 0 auto !important;
+      padding: 8px !important;
+    }
+
+    .revit-doc-support-key-aspects__cta {
+      justify-content: stretch !important;
+      padding: 0 !important;
+      width: 100% !important;
+    }
+
+    /* ── Advantages ── */
+    .revit-doc-support-advantages__container {
+      gap: 20px !important;
+    }
+
+    .revit-doc-support-advantages__head {
+      gap: 12px !important;
+    }
+
+    .revit-doc-support-advantages__cards {
+      grid-template-columns: 1fr !important;
+      gap: 14px !important;
+    }
+
+    .revit-doc-support-advantage {
+      padding: 16px !important;
+      gap: 14px !important;
+    }
+
+    .revit-doc-support-advantage__content {
+      gap: 8px !important;
+    }
+
+    /* ── Images ── */
+    .revit-doc-support-media__img--hero,
+    .revit-doc-support-media__img--pain {
+      position: absolute !important;
+      width: 100% !important;
+      height: 100% !important;
+      left: 0 !important;
+      top: 0 !important;
+      object-fit: cover !important;
+      object-position: center !important;
+    }
+
+    .revit-doc-support-media__img--infographic {
+      width: 100% !important;
+      height: auto !important;
+      max-width: 100% !important;
+      object-fit: contain !important;
+    }
+
+    /* ── CTAs ── */
+    .revit-doc-support-hero__copy .primary-cta,
+    .revit-doc-support-key-aspects__cta .primary-cta {
+      align-self: stretch !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-height: 48px !important;
+      height: auto !important;
+      padding: 12px 16px !important;
+      font-size: 14px !important;
+      justify-content: center !important;
+    }
+
+    .revit-doc-support-hero__copy .primary-cta .primary-cta-label,
+    .revit-doc-support-key-aspects__cta .primary-cta .primary-cta-label {
+      font-size: 14px !important;
+      font-weight: 500 !important;
+    }
+
+    .revit-doc-support-pain__list-item {
+      font-size: 15px !important;
+      line-height: 22px !important;
+      padding-left: 16px !important;
+
+      &::before {
+        top: 8px !important;
+      }
+    }
+
+    .revit-doc-support-pdf-fab {
+      width: 48px;
+      height: 48px;
+      right: 8px;
+    }
+  }
+
+  .revit-doc-support-pdf-fab {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    background: #d70416;
+    color: #fff;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(215, 4, 22, 0.35);
+    text-decoration: none;
+  }
+
+  .revit-doc-support-pdf-fab .fa-file-pdf {
+    font-size: 22px;
+  }
+
+  .revit-doc-support-pdf-fab:hover::after {
+    content: "Get Your Free PDF";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 374px) {
+  .vbs-redesign-page.revit-doc-support-page {
+    .revit-doc-support-hero h1.revit-doc-support__title,
+    h1.revit-doc-support__title.revit-doc-support__title--hero {
+      font-size: 24px !important;
+      line-height: 1.25 !important;
+    }
+
+    h2.revit-doc-support__title,
+    .revit-doc-support__title:not(.revit-doc-support__title--hero) {
+      font-size: 24px !important;
+      line-height: 1.3 !important;
+    }
+
+    .revit-doc-support-hero__copy .primary-cta,
+    .revit-doc-support-key-aspects__cta .primary-cta {
+      font-size: 13px !important;
+      padding: 11px 14px !important;
+    }
+  }
+}

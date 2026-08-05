@@ -53,6 +53,14 @@ export function PrimaryCtaButton({
   );
 
   if (href) {
+    if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+      return (
+        <a href={href} className={classes}>
+          {content}
+        </a>
+      );
+    }
+
     return (
       <Link href={href} className={classes}>
         {content}

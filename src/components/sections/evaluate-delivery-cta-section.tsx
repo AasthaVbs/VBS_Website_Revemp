@@ -13,6 +13,8 @@ type EvaluateDeliveryCtaSectionProps = {
   contentAlign?: "start" | "center";
   /** @deprecated Card is always shown; mobile uses CTA Mobile BG behind the card */
   cardOnMobile?: boolean;
+  /** Custom CTA node (e.g. gated PDF download) — replaces the default PrimaryCtaButton */
+  ctaElement?: ReactNode;
 };
 
 const defaultTitle = (
@@ -33,6 +35,7 @@ export function EvaluateDeliveryCtaSection({
   titleClassName,
   descriptionClassName,
   contentAlign = "start",
+  ctaElement,
 }: EvaluateDeliveryCtaSectionProps) {
   const ctaHref =
     ctaHrefProp ?? (ctaLabel.trim().toLowerCase() === "contact us" ? "/contact-us" : undefined);
@@ -48,6 +51,7 @@ export function EvaluateDeliveryCtaSection({
           titleClassName={titleClassName}
           descriptionClassName={descriptionClassName}
           contentAlign={contentAlign}
+          ctaElement={ctaElement}
         />
       </PageContainer>
     </section>

@@ -16,6 +16,8 @@ type EvaluateDeliveryCtaCardProps = {
   /** Blog detail: title-only panel matching Figma 1398:16524 */
   compact?: boolean;
   contentAlign?: "start" | "center";
+  /** Custom CTA node (e.g. gated PDF download) — replaces the default PrimaryCtaButton */
+  ctaElement?: ReactNode;
 };
 
 /** Figma 958:32154 / blog inline CTA — mosaic background + white panel */
@@ -29,6 +31,7 @@ export function EvaluateDeliveryCtaCard({
   className,
   compact = false,
   contentAlign = "start",
+  ctaElement,
 }: EvaluateDeliveryCtaCardProps) {
   const isCentered = contentAlign === "center";
 
@@ -75,14 +78,16 @@ export function EvaluateDeliveryCtaCard({
             </p>
           ) : null}
         </div>
-        <PrimaryCtaButton
-          fullWidth={false}
-          href={ctaHref}
-          className={cn("shrink-0", isCentered && "self-center")}
-        >
-          {ctaLabel}
-          <ChevronRight className="h-2.5 w-2.5" strokeWidth={1.5} />
-        </PrimaryCtaButton>
+        {ctaElement ?? (
+          <PrimaryCtaButton
+            fullWidth={false}
+            href={ctaHref}
+            className={cn("shrink-0", isCentered && "self-center")}
+          >
+            {ctaLabel}
+            <ChevronRight className="h-2.5 w-2.5" strokeWidth={1.5} />
+          </PrimaryCtaButton>
+        )}
       </div>
     </div>
   );

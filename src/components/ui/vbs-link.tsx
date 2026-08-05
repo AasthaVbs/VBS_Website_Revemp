@@ -8,11 +8,20 @@ type VbsLinkProps = {
   href?: string;
   children: ReactNode;
   className?: string;
+  "aria-label"?: string;
   onClick?: AnchorHTMLAttributes<HTMLAnchorElement>["onClick"];
   onMouseEnter?: AnchorHTMLAttributes<HTMLAnchorElement>["onMouseEnter"];
 };
 
-export function VbsLink({ to, href, children, className, onClick, onMouseEnter }: VbsLinkProps) {
+export function VbsLink({
+  to,
+  href,
+  children,
+  className,
+  onClick,
+  onMouseEnter,
+  "aria-label": ariaLabel,
+}: VbsLinkProps) {
   const target = to ?? href ?? "/";
 
   if (
@@ -22,7 +31,13 @@ export function VbsLink({ to, href, children, className, onClick, onMouseEnter }
     target.startsWith("https://")
   ) {
     return (
-      <a href={target} className={className} onClick={onClick} onMouseEnter={onMouseEnter}>
+      <a
+        href={target}
+        className={className}
+        onClick={onClick}
+        onMouseEnter={onMouseEnter}
+        aria-label={ariaLabel}
+      >
         {children}
       </a>
     );
@@ -30,7 +45,13 @@ export function VbsLink({ to, href, children, className, onClick, onMouseEnter }
 
   if (target.includes("#")) {
     return (
-      <a href={target} className={className} onClick={onClick} onMouseEnter={onMouseEnter}>
+      <a
+        href={target}
+        className={className}
+        onClick={onClick}
+        onMouseEnter={onMouseEnter}
+        aria-label={ariaLabel}
+      >
         {children}
       </a>
     );
@@ -43,6 +64,7 @@ export function VbsLink({ to, href, children, className, onClick, onMouseEnter }
       className={cn(className)}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
+      aria-label={ariaLabel}
     >
       {children}
     </Link>

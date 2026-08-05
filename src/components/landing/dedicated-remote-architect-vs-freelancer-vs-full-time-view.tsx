@@ -792,6 +792,61 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
         </section>
       </main>
 
+      <LandingPdfLeadModal
+        title={PDF_MODAL_TITLE}
+        downloadUrl={COMPARISON_GUIDE_PDF_URL}
+        onBeforeOpen={trackPdfClick}
+        trigger={
+          <a
+            href={COMPARISON_GUIDE_PDF_URL}
+            className="pdf-fab dedicated-capacity-lp-pdf-fab"
+            title="Get Your Free PDF"
+            aria-label="Get Your Free PDF"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa fa-file-pdf" aria-hidden="true" />
+          </a>
+        }
+      />
+
+      <style>{`
+        .dedicated-capacity-lp .call-icon { display: none !important; }
+        .dedicated-capacity-lp .pdf-fab.dedicated-capacity-lp-pdf-fab {
+          position: fixed;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 9999;
+          background: #D70416;
+          color: #fff;
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 6px 18px rgba(215, 4, 22, 0.35);
+          text-decoration: none;
+          border: none;
+          padding: 0;
+        }
+        .dedicated-capacity-lp .pdf-fab.dedicated-capacity-lp-pdf-fab .fa-file-pdf { font-size: 22px; }
+        .dedicated-capacity-lp .pdf-fab.dedicated-capacity-lp-pdf-fab:hover::after {
+          content: "Get Your Free PDF";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          background: #111;
+          color: #fff;
+          padding: 6px 10px;
+          border-radius: 6px;
+          white-space: nowrap;
+          font-size: 12px;
+        }
+      `}</style>
+
       <SiteFooter />
     </div>
   );

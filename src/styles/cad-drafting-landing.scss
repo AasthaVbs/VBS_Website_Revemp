@@ -1,0 +1,1982 @@
+/**
+ * CAD Drafting Services USA landing page — Figma nodes 40-16725, 40-16780, 40-16800, 457-3953, 40-16875.
+ */
+
+.vbs-redesign-page.cad-drafting-landing-page {
+  /* Align header + hero content to the same 1400px canvas */
+  --vbs-page-max: 1400px;
+  --vbs-page-gutter: 24px;
+  --vbs-page-gutter-md: 32px;
+  --vbs-content-width: calc(var(--vbs-page-max) - (2 * var(--vbs-page-gutter-md)));
+  --cad-landing-header-offset: 80px;
+  overflow-x: clip;
+  padding-top: var(--cad-landing-header-offset);
+
+  main [id] {
+    scroll-margin-top: calc(var(--cad-landing-header-offset) + 12px);
+  }
+
+  main {
+    overflow-x: clip;
+  }
+
+  /* Match home-page typography scale (h1 / h2 / h3 / p) */
+  h1,
+  h1 span,
+  .mep-page-hero__title,
+  .mep-page-hero__title-text,
+  .mep-page-hero__title-accent,
+  .mep-page-hero__title-lead {
+    font-size: 48px !important;
+    line-height: 1.15 !important;
+  }
+
+  h2,
+  h2 span,
+  .text-section,
+  .cad-landing-services__title,
+  .cad-landing-services__title-accent,
+  .cad-landing-services__title-dark,
+  .cad-landing-comparison__title,
+  .cad-landing-comparison__title-accent,
+  .cad-landing-comparison__title-dark,
+  .cad-landing-tools__title,
+  .cad-landing-tools__title-accent,
+  .cad-landing-tools__title-dark,
+  .mep-figma-workflow__title,
+  .mep-figma-workflow__title-dark,
+  .mep-figma-workflow__title-accent,
+  .mep-figma-benefits__title,
+  .mep-figma-benefits__title-dark,
+  .mep-figma-benefits__title-accent,
+  .vbs-our-clients__title,
+  .vbs-our-clients__title-accent,
+  .vbs-our-clients__title-dark,
+  .vbs-client-success-stories__title,
+  .vbs-home-faq__title {
+    font-size: 48px !important;
+    line-height: 1.15 !important;
+  }
+
+  h3,
+  h3 span,
+  .text-card-title,
+  .cad-landing-services__card-title,
+  .vbs-case-study-card__title,
+  .mep-figma-workflow__step-title {
+    font-size: 24px !important;
+    line-height: 1.35 !important;
+  }
+
+  p,
+  .text-body,
+  .mep-page-hero__desc,
+  .cad-landing-hero__trust-line,
+  .cad-landing-services__section-desc,
+  .cad-landing-services__card-text,
+  .cad-landing-comparison__section-desc,
+  .cad-landing-tools__section-desc,
+  .mep-figma-workflow__section-desc,
+  .mep-figma-workflow__step-text {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+
+  /* Keep trust-strip numbers/labels matching home page */
+  .vbs-home-hero-trust__value,
+  .vbs-home-hero-trust__value span {
+    font-size: 36px !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+  }
+
+  .vbs-home-hero-trust__value--red {
+    color: #d70416 !important;
+  }
+
+  .vbs-home-hero-trust__value--green {
+    color: #42aa32 !important;
+  }
+
+  .vbs-home-hero-trust__value--blue {
+    color: #2299d6 !important;
+  }
+
+  .vbs-home-hero-trust__value--yellow {
+    color: #f0b300 !important;
+  }
+
+  .vbs-home-hero-trust__label {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: normal !important;
+    color: #808080 !important;
+  }
+
+  .vbs-trust-strip-section,
+  .vbs-mep-stats-strip,
+  main > .vbs-mep-stats-strip,
+  main > .vbs-trust-strip-section {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .vbs-trust-strip-section .vbs-home-hero-trust,
+  .vbs-mep-stats-strip .vbs-home-hero-trust {
+    display: flex !important;
+    width: 100% !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    padding-top: 48px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .text-tag {
+    font-size: 13px !important;
+  }
+
+  @media (max-width: 767px) {
+    h1,
+    h1 span,
+    .mep-page-hero__title,
+    .mep-page-hero__title-text,
+    .mep-page-hero__title-accent,
+    .mep-page-hero__title-lead {
+      font-size: clamp(32px, 8vw, 40px) !important;
+      line-height: 1.15 !important;
+    }
+
+    h2,
+    h2 span,
+    .text-section,
+    .cad-landing-services__title,
+    .cad-landing-services__title-accent,
+    .cad-landing-services__title-dark,
+    .cad-landing-comparison__title,
+    .cad-landing-comparison__title-accent,
+    .cad-landing-comparison__title-dark,
+    .cad-landing-tools__title,
+    .cad-landing-tools__title-accent,
+    .cad-landing-tools__title-dark,
+    .mep-figma-workflow__title,
+    .mep-figma-workflow__title-dark,
+    .mep-figma-workflow__title-accent,
+    .mep-figma-benefits__title,
+    .mep-figma-benefits__title-dark,
+    .mep-figma-benefits__title-accent,
+    .vbs-our-clients__title,
+    .vbs-our-clients__title-accent,
+    .vbs-our-clients__title-dark,
+    .vbs-client-success-stories__title,
+    .vbs-home-faq__title {
+      font-size: clamp(28px, 4vw, 48px) !important;
+      line-height: 1.15 !important;
+    }
+
+    h3,
+    h3 span,
+    .cad-landing-services__card-title,
+    .vbs-case-study-card__title,
+    .mep-figma-workflow__step-title {
+      font-size: 20px !important;
+      line-height: 1.35 !important;
+    }
+
+    p,
+    .text-body,
+    .mep-page-hero__desc,
+    .cad-landing-hero__trust-line,
+    .cad-landing-services__section-desc,
+    .cad-landing-services__card-text,
+    .cad-landing-comparison__section-desc,
+    .cad-landing-tools__section-desc,
+    .mep-figma-workflow__section-desc,
+    .mep-figma-workflow__step-text {
+      font-size: 16px !important;
+      line-height: 24px !important;
+    }
+
+    .vbs-home-hero-trust__value,
+    .vbs-home-hero-trust__value span {
+      font-size: 32px !important;
+      line-height: 1.1 !important;
+    }
+
+    .vbs-home-hero-trust__label {
+      font-size: 13px !important;
+      line-height: 16px !important;
+    }
+
+    .vbs-trust-strip-section,
+    .vbs-mep-stats-strip,
+    main > .vbs-mep-stats-strip,
+    main > .vbs-trust-strip-section {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding-top: 16px !important;
+      padding-bottom: 12px !important;
+    }
+
+    .vbs-trust-strip-section .vbs-home-hero-trust,
+    .vbs-mep-stats-strip .vbs-home-hero-trust {
+      padding-top: 12px !important;
+      padding-bottom: 12px !important;
+    }
+  }
+
+  .cad-landing-hero.mep-page-hero {
+    /* Match Gatsby CAD LP hero — beat shared mep-figma-page overrides */
+    margin-top: 80px !important;
+    margin-bottom: 24px !important;
+
+    .mep-page-hero__copy {
+      padding-top: 88px !important;
+      padding-bottom: 56px !important;
+    }
+
+    .mep-page-hero__cta {
+      padding-bottom: 16px !important;
+    }
+
+    .mep-page-hero__copy-inner {
+      gap: 12px !important;
+    }
+
+    .mep-page-hero__head {
+      gap: 12px !important;
+    }
+
+    h1.mep-page-hero__title .mep-page-hero__title-text,
+    h1.mep-page-hero__title .mep-page-hero__title-text span {
+      line-height: 1.15 !important;
+    }
+
+    .mep-page-hero__desc {
+      max-width: 533px !important;
+    }
+
+    .mep-page-hero__photo {
+      max-width: none !important;
+    }
+
+    /* Keep Gatsby MepSectionTag scale (main tag shrinks on <lg) */
+    .text-tag {
+      font-size: 13px !important;
+      padding: 6px 12px !important;
+      border-radius: 10px !important;
+    }
+
+    /* Smaller laptops / compact desktops — tighter top spacing */
+    @media (min-width: 768px) and (max-width: 1440px) {
+      margin-top: 28px !important;
+
+      .mep-page-hero__copy {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1280px) {
+      margin-top: 20px !important;
+
+      .mep-page-hero__copy {
+        padding-top: 32px !important;
+        padding-bottom: 32px !important;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .mep-page-hero__grid {
+        grid-template-columns: minmax(0, 52fr) minmax(0, 48fr);
+      }
+
+      .mep-page-hero__copy {
+        padding-right: 8px !important;
+        padding-left: max(
+          var(--vbs-page-gutter-md, 32px),
+          calc((100vw - var(--vbs-page-max, 1400px)) / 2 + var(--vbs-page-gutter-md, 32px))
+        ) !important;
+      }
+
+      .mep-page-hero__cta {
+        padding-right: 8px !important;
+        padding-left: max(
+          var(--vbs-page-gutter-md, 32px),
+          calc((100vw - var(--vbs-page-max, 1400px)) / 2 + var(--vbs-page-gutter-md, 32px))
+        ) !important;
+      }
+
+      .mep-page-hero__desc {
+        max-width: 500px !important;
+      }
+
+      .mep-page-hero__photo {
+        position: absolute !important;
+        top: calc(-1 * var(--mep-hero-img-bleed-top, 56px)) !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: calc(-1 * var(--mep-hero-img-bleed-bottom, 20px)) !important;
+        width: 100% !important;
+        height: calc(
+          100% + var(--mep-hero-img-bleed-top, 56px) + var(--mep-hero-img-bleed-bottom, 20px)
+        ) !important;
+        max-width: none !important;
+        object-fit: cover !important;
+        object-position: right center !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .mep-page-hero__copy {
+        padding-right: 12px !important;
+      }
+
+      .mep-page-hero__cta {
+        padding-right: 12px !important;
+      }
+
+      h1.mep-page-hero__title .mep-page-hero__title-text,
+      h1.mep-page-hero__title .mep-page-hero__title-text span {
+        font-size: 48px !important;
+        line-height: 1.15 !important;
+      }
+
+      /* Softer edge fade between copy and hero image */
+      .mep-page-hero__media::before {
+        background:
+          linear-gradient(180deg,
+            #ffffff 0%,
+            rgba(255, 255, 255, 0.95) 5%,
+            rgba(255, 255, 255, 0) 16%),
+          linear-gradient(90deg,
+            #ffffff 0%,
+            rgba(255, 255, 255, 0.75) 3%,
+            rgba(255, 255, 255, 0.28) 9%,
+            rgba(255, 255, 255, 0) 16%);
+      }
+
+      .mep-page-hero__media::after {
+        height: 12%;
+        max-height: 72px;
+        background: linear-gradient(0deg,
+            #ffffff 0%,
+            rgba(255, 255, 255, 0.75) 18%,
+            rgba(255, 255, 255, 0) 100%);
+      }
+    }
+  }
+
+  .cad-landing-services {
+    &__head {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    &__head-top {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    &__tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: normal;
+      color: #2299d6;
+      text-transform: capitalize;
+      background: rgba(34, 153, 214, 0.1);
+      border: 1px solid #2299d6;
+      border-radius: 10px;
+    }
+
+    &__title {
+      margin: 0;
+      max-width: 697px;
+      font-size: 48px;
+      line-height: normal;
+      text-transform: capitalize;
+      word-break: break-word;
+    }
+
+    &__title-accent {
+      font-weight: 300;
+      color: #d70416;
+    }
+
+    &__title-dark {
+      font-weight: 500;
+      color: #111111;
+    }
+
+    &__section-desc {
+      max-width: 574px;
+      margin: 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-transform: capitalize;
+      color: #808080;
+    }
+
+    &__icon-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      border-radius: 10px;
+    }
+
+    &__icon {
+      display: block;
+      width: 46px;
+      height: 46px;
+      transition: transform 0.25s ease;
+    }
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__card-main {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &__card-head {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    &__card--hovered,
+    &__card--icon-colored {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &__card--featured {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &__card--hovered &__icon,
+    &__card--icon-colored &__icon {
+      transform: scale(1.02);
+    }
+
+    &__card-title {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: normal;
+      color: #111111;
+    }
+
+    &__card-text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #808080;
+    }
+
+    &__card-bullets {
+      width: 100%;
+      margin: 0;
+      padding: 0 0 0 18px;
+      list-style-type: disc;
+
+      li {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #808080;
+
+        &::marker {
+          color: #808080;
+        }
+
+        +li {
+          margin-top: 2px;
+        }
+      }
+    }
+
+    &__also-available {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 10px;
+      width: 100%;
+      padding: 20px;
+      background: #f8fffa;
+      border: 1px solid #42aa32;
+      border-radius: 10px;
+    }
+
+    &__also-available-label,
+    &__also-available-sep {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      text-transform: capitalize;
+      color: #42aa32;
+    }
+
+    &__also-available-text {
+      flex: 1 1 0;
+      min-width: 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-transform: capitalize;
+      color: #111111;
+    }
+  }
+
+  .cad-landing-hero__trust-line {
+    margin-top: -4px;
+  }
+
+  .cad-landing-comparison {
+    &__head {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    &__head-top {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    &__tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 400;
+      color: #2299d6;
+      text-transform: capitalize;
+      background: rgba(34, 153, 214, 0.1);
+      border: 1px solid #2299d6;
+      border-radius: 10px;
+    }
+
+    &__title {
+      margin: 0;
+      max-width: 697px;
+      font-size: 48px;
+      line-height: 1.15;
+      text-transform: capitalize;
+      word-break: break-word;
+    }
+
+    &__title-dark {
+      display: block;
+      font-weight: 500;
+      color: #111111;
+    }
+
+    &__title-accent {
+      display: block;
+      font-weight: 300;
+      color: #d70416;
+    }
+
+    &__section-desc {
+      max-width: 683px;
+      margin: 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-transform: capitalize;
+      color: #808080;
+    }
+
+    &__table-wrap {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+    }
+
+    &__table {
+      display: grid;
+      grid-template-columns: max-content max-content max-content max-content;
+      width: max-content;
+      min-width: 100%;
+      gap: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid #cbcccd;
+      background: #ffffff;
+      isolation: isolate;
+    }
+
+    &__column {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: max-content;
+      background: #ffffff;
+      border-right: 1px solid #cbcccd;
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      &--factor {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        overflow: hidden;
+      }
+
+      &--vbs {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        overflow: hidden;
+      }
+    }
+
+    &__header-cell {
+      padding: 16px 20px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #ffffff;
+      background: #111111;
+      border-bottom: 1px solid #808080;
+      white-space: nowrap;
+    }
+
+    &__header-cell--vbs {
+      font-weight: 500;
+      background: #d70416;
+      border-bottom-color: #d70416;
+    }
+
+    &__body-cell {
+      padding: 20px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #111111;
+      background: #ffffff;
+      border-top: 1px solid #cbcccd;
+      white-space: nowrap;
+
+      &--alt {
+        background: #fafafa;
+      }
+
+      &--muted {
+        color: #808080;
+      }
+    }
+
+    @media (min-width: 768px) {
+      &__table-wrap {
+        overflow-x: visible;
+      }
+
+      &__table {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.15fr);
+        width: 100%;
+      }
+
+      &__column {
+        min-width: 0;
+      }
+    }
+
+    &__footnote {
+      padding: 20px;
+      background: #fff8f8;
+      border: 1px solid #d70416;
+      border-radius: 10px;
+    }
+
+    &__footnote-text {
+      font-size: 16px;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 24px;
+      text-align: center;
+      text-transform: capitalize;
+      color: #111111;
+    }
+  }
+
+  .vbs-case-study-card {
+    box-sizing: border-box;
+    width: min(920px, 100%);
+    min-width: 0;
+    max-width: 920px;
+    flex-shrink: 0;
+    padding: 24px;
+    gap: 16px;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(17, 17, 17, 0.1);
+
+    &__copy {
+      max-width: 380px;
+      gap: 16px;
+    }
+
+    &__copy-top {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      gap: 10px;
+    }
+
+    &__meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &__media {
+      display: flex;
+      min-width: 0;
+      width: 100%;
+    }
+
+    &__title {
+      width: 100% !important;
+      margin: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      color: #111111 !important;
+      font-size: 24px !important;
+      font-family: Inter, "Inter 18pt", system-ui, -apple-system, sans-serif !important;
+      font-weight: 500 !important;
+      line-height: 1.2 !important;
+      overflow-wrap: break-word !important;
+      word-wrap: break-word !important;
+    }
+
+    &__gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      max-width: 470px;
+      min-width: 0;
+      overflow: visible;
+    }
+
+    &__viewer {
+      position: relative;
+      width: min(470px, 100%);
+      max-width: 100%;
+      min-width: 0;
+      padding: 0 12px;
+      overflow: visible;
+    }
+
+    &__viewer-media {
+      position: relative;
+      width: 100%;
+      min-width: 0;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    &__viewer-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+
+      &.object-cover {
+        object-fit: cover;
+      }
+
+      &.object-contain {
+        object-fit: contain;
+      }
+    }
+
+    &__viewer-btn {
+      position: absolute;
+      top: 50%;
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      color: #ffffff;
+      background: #d70416;
+      border: 1px solid #ffffff;
+      border-radius: 8px;
+      backdrop-filter: blur(8px);
+      transition: transform 0.2s ease;
+
+      &--prev {
+        left: 12px;
+        transform: translate(-50%, -50%);
+
+        &:hover {
+          transform: translate(-50%, -50%) scale(1.04);
+        }
+      }
+
+      &--next {
+        right: 12px;
+        transform: translate(50%, -50%);
+
+        &:hover {
+          transform: translate(50%, -50%) scale(1.04);
+        }
+      }
+    }
+
+    &__thumbs {
+      display: grid;
+      grid-template-columns: repeat(var(--thumb-cols, 5), minmax(0, 1fr));
+      gap: 8px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    &__thumb {
+      position: relative;
+      width: 100%;
+      min-width: 0;
+      height: 56px;
+      overflow: hidden;
+      padding: 0;
+      border: 1px solid #cbcccd;
+      border-radius: 10px;
+      background: #ffffff;
+      cursor: pointer;
+
+      &--active {
+        border-color: #d70416;
+      }
+
+      &--more::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    &__thumb-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__thumb-more-label {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #ffffff;
+    }
+  }
+
+  .cad-landing-case-studies {
+    &__progress-thumb {
+      width: min(280px, 72%) !important;
+    }
+
+    .client-success-cards-scroll {
+      scroll-padding-inline: 0;
+      padding-block: 8px;
+      margin-block: -8px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &.mep-bim-services-page {
+      --vbs-mep-section-pad-y: 48px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .vbs-case-study-card {
+      padding: 28px;
+      gap: 20px;
+
+      &__media {
+        max-width: 470px;
+        flex: 0 1 470px;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .vbs-case-study-card {
+      width: min(920px, calc(100vw - 80px));
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 1023px) {
+
+    .cad-landing-services,
+    .cad-landing-comparison,
+    .cad-landing-tools,
+    .cad-landing-case-studies {
+
+      &__head,
+      &__head-top {
+        gap: 12px;
+      }
+    }
+
+    .cad-landing-services__title,
+    .cad-landing-comparison__title,
+    .cad-landing-tools__title {
+      font-size: clamp(28px, 4vw, 48px) !important;
+    }
+
+    .vbs-case-study-card {
+      width: min(780px, 100%);
+
+      &__gallery {
+        max-width: 100%;
+      }
+
+      &__viewer {
+        width: 100%;
+        padding: 0 14px;
+      }
+
+      &__viewer-media {
+        height: clamp(220px, 38vw, 300px);
+      }
+
+      &__viewer-btn {
+        width: 32px;
+        height: 32px;
+
+        &--prev {
+          left: 14px;
+        }
+
+        &--next {
+          right: 14px;
+        }
+      }
+
+      &__thumb {
+        height: 52px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cad-landing-hero.mep-page-hero {
+      margin-top: 36px !important;
+      margin-bottom: 16px !important;
+
+      .mep-page-hero__copy {
+        padding-top: 40px !important;
+        padding-bottom: 12px !important;
+      }
+
+      .mep-page-hero__cta {
+        padding-bottom: 8px !important;
+      }
+
+      .mep-page-hero__desc {
+        max-width: 100% !important;
+        font-size: 15px;
+        line-height: 22px;
+      }
+    }
+
+    .cad-landing-services__container,
+    .cad-landing-comparison__container,
+    .cad-landing-tools__container {
+      align-items: stretch !important;
+    }
+
+    .cad-landing-services__container {
+      gap: 24px !important;
+
+      >.primary-cta {
+        margin-top: -12px !important;
+      }
+    }
+
+    &.mep-bim-services-page {
+      .mep-figma-workflow {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+      }
+
+      .mep-figma-workflow__container {
+        gap: 32px !important;
+      }
+
+      .mep-figma-workflow__head {
+        gap: 16px !important;
+      }
+
+      .mep-figma-workflow__head-top {
+        gap: 14px !important;
+      }
+
+      .mep-figma-workflow__title,
+      .mep-figma-workflow__title-dark,
+      .mep-figma-workflow__title-accent {
+        line-height: 1.3 !important;
+      }
+
+      .mep-figma-workflow__section-desc {
+        line-height: 24px !important;
+      }
+
+      .mep-figma-workflow__step-title {
+        line-height: 1.35 !important;
+      }
+
+      .mep-figma-workflow__step-text {
+        line-height: 24px !important;
+      }
+
+      .mep-figma-workflow__step-mobile {
+        gap: 14px;
+      }
+    }
+
+    .cad-landing-services__card {
+      padding: 16px !important;
+    }
+
+    .cad-landing-services__card-title {
+      font-size: 20px !important;
+    }
+
+    .cad-landing-services__card-text,
+    .cad-landing-services__card-bullets li {
+      font-size: 16px !important;
+      line-height: 24px !important;
+    }
+
+    .cad-landing-services__icon-wrap {
+      width: 52px;
+      height: 52px;
+    }
+
+    .cad-landing-services__icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .cad-landing-comparison__header-cell {
+      font-size: 18px;
+      padding: 14px 16px;
+      white-space: nowrap;
+    }
+
+    .cad-landing-comparison__body-cell {
+      padding: 14px 16px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .cad-landing-comparison__table {
+      grid-template-columns: max-content max-content max-content max-content;
+      width: max-content;
+      min-width: 100%;
+    }
+
+    .cad-landing-tools__marquee--tools {
+      gap: 24px !important;
+    }
+
+    .cad-landing-tools__tile {
+      gap: 10px;
+      padding: 10px 14px;
+    }
+
+    .cad-landing-tools__logo {
+      height: 48px;
+      max-width: 140px;
+    }
+
+    .cad-landing-tools__tile-name {
+      font-size: 16px;
+    }
+
+    .vbs-case-study-card {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 14px;
+
+      &__copy {
+        max-width: 100% !important;
+      }
+
+      &__gallery {
+        gap: 12px;
+      }
+
+      &__viewer {
+        padding: 0 12px;
+      }
+
+      &__viewer-media {
+        height: clamp(200px, 56vw, 260px);
+        border-radius: 6px;
+      }
+
+      &__viewer-btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+
+        &--prev {
+          left: 12px;
+        }
+
+        &--next {
+          right: 12px;
+        }
+      }
+
+      &__thumbs {
+        gap: 6px;
+      }
+
+      &__thumb {
+        height: 48px;
+        border-radius: 8px;
+      }
+
+      &__thumb-more-label {
+        font-size: 14px;
+      }
+    }
+
+    .cad-landing-case-studies__progress-thumb {
+      width: min(200px, 68%) !important;
+    }
+  }
+
+  @media (max-width: 479px) {
+
+    .cad-landing-services__title,
+    .cad-landing-comparison__title,
+    .cad-landing-tools__title {
+      font-size: clamp(28px, 7.5vw, 40px) !important;
+    }
+
+    .cad-landing-comparison__table {
+      width: max-content;
+      min-width: 100%;
+    }
+
+    .vbs-case-study-card__viewer-media {
+      height: clamp(180px, 52vw, 220px);
+    }
+  }
+
+  .cad-landing-tools {
+    &__tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 400;
+      color: #2299d6;
+      text-transform: capitalize;
+      background: rgba(34, 153, 214, 0.1);
+      border: 1px solid #2299d6;
+      border-radius: 10px;
+    }
+
+    &__title {
+      margin: 0;
+      max-width: 583px;
+      font-size: 48px;
+      line-height: 1.15;
+      text-transform: capitalize;
+      word-break: break-word;
+    }
+
+    &__title-dark {
+      font-weight: 500;
+      color: #111111;
+    }
+
+    &__title-accent {
+      font-weight: 300;
+      color: #d70416;
+    }
+
+    &__desc {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-transform: capitalize;
+      color: #808080;
+    }
+
+    &__marquee--tools {
+      gap: 40px !important;
+      animation: cad-landing-tools-scroll 28s linear infinite !important;
+    }
+
+    &__tile {
+      display: flex;
+      flex-shrink: 0;
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      white-space: nowrap;
+      padding: 14px 20px;
+    }
+
+    &__logo {
+      display: block;
+      height: 64px;
+      width: auto;
+      max-width: 200px;
+      flex-shrink: 0;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    &__tile-name {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1;
+      text-align: left;
+      text-transform: capitalize;
+      color: #111111;
+      white-space: nowrap;
+    }
+  }
+
+  @keyframes cad-landing-tools-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .cad-landing-case-studies__nav-btn--carousel {
+    color: #ffffff;
+    background: #d70416;
+    border-color: #d70416;
+
+    &:enabled:hover {
+      background: #c00414;
+      border-color: #c00414;
+    }
+  }
+
+  .cad-landing-case-studies__nav-btn--viewer {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    background: #ffffff;
+
+    &.cad-landing-case-studies__nav-btn--viewer-prev {
+      left: 12px;
+      transform: translate(-50%, -50%);
+    }
+
+    &.cad-landing-case-studies__nav-btn--viewer-next {
+      right: 12px;
+      transform: translate(50%, -50%);
+    }
+  }
+
+  .cad-landing-header {
+    --cad-landing-header-max: 1400px;
+    --cad-landing-header-gutter: clamp(20px, 4vw, 32px);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid rgba(203, 204, 205, 0.65);
+    transition: box-shadow 0.25s ease;
+  }
+
+  .cad-landing-header--scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .cad-landing-header-bar {
+    display: flex;
+    width: 100%;
+    height: 4px;
+  }
+
+  .cad-landing-header-bar>span {
+    flex: 1 1 25%;
+    height: 100%;
+  }
+
+  .cad-landing-header-bar-red {
+    background: #d70416;
+  }
+
+  .cad-landing-header-bar-green {
+    background: #1da100;
+  }
+
+  .cad-landing-header-bar-yellow {
+    background: #eeb211;
+  }
+
+  .cad-landing-header-bar-blue {
+    background: #08a0e9;
+  }
+
+  .cad-landing-header-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 45;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: rgba(17, 17, 17, 0.45);
+    cursor: pointer;
+  }
+
+  .cad-landing-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    max-width: var(--cad-landing-header-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px var(--cad-landing-header-gutter);
+  }
+
+  .cad-landing-header-logo {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: min(220px, 58vw);
+    position: relative;
+    z-index: 2;
+  }
+
+  .cad-landing-header-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .cad-landing-header-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+
+  .cad-landing-header-toggle span:not(.sr-only) {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin-inline: auto;
+    background: #111111;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .cad-landing-header--menu-open .cad-landing-header-toggle span:nth-of-type(2) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .cad-landing-header--menu-open .cad-landing-header-toggle span:nth-of-type(3) {
+    opacity: 0;
+  }
+
+  .cad-landing-header--menu-open .cad-landing-header-toggle span:nth-of-type(4) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .cad-landing-header-nav {
+    display: none;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cad-landing-header-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cad-landing-header-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: stretch;
+    padding: 0 6px;
+    border-bottom: 1px solid transparent;
+    color: #111111;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 40px;
+    text-decoration: none;
+    text-transform: capitalize;
+    white-space: nowrap;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .cad-landing-header-link:hover,
+  .cad-landing-header-link--active {
+    color: #d70416;
+    border-bottom-color: #d70416;
+    font-weight: 500;
+  }
+
+  .cad-landing-header-cta--bar {
+    position: relative;
+    z-index: 3;
+    flex-shrink: 0;
+    display: none;
+    align-self: center;
+  }
+
+  @media (min-width: 1024px) {
+    .cad-landing-header-inner {
+      gap: 16px;
+    }
+
+    .cad-landing-header-logo {
+      width: min(261px, 34vw);
+    }
+
+    .cad-landing-header-toggle {
+      display: none;
+    }
+
+    .cad-landing-header-nav {
+      display: flex;
+      flex: 1 1 auto;
+      justify-content: flex-end;
+      gap: clamp(8px, 1.5vw, 16px);
+      min-width: 0;
+    }
+
+    .cad-landing-header-links {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: clamp(2px, 0.8vw, 8px);
+    }
+
+    .cad-landing-header-link {
+      font-size: clamp(13px, 1.1vw, 15px);
+      line-height: 36px;
+    }
+
+    .cad-landing-header-cta--bar {
+      display: inline-flex;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .cad-landing-header-nav {
+      position: fixed;
+      top: var(--cad-landing-header-offset, 74px);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 51;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      padding: 16px var(--cad-landing-header-gutter) calc(24px + env(safe-area-inset-bottom, 0px));
+      background: #fff;
+      border-top: 1px solid #cbcccd;
+      box-shadow: 0 12px 24px rgba(17, 17, 17, 0.08);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      transform: translateY(-8px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+    }
+
+    .cad-landing-header-nav--open {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .cad-landing-header-links {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .cad-landing-header-link {
+      line-height: 1.4;
+      padding: 12px 6px;
+      font-size: 16px;
+      white-space: normal;
+    }
+
+    .cad-landing-header-cta--bar {
+      display: inline-flex;
+      margin-left: auto;
+    }
+  }
+
+  /* Match home page CTA sizing — loads after service-pages-mobile.scss */
+  .cad-landing-header .cad-landing-header-cta.primary-cta:not(.primary-cta--striped-long) {
+    align-self: center;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .cad-landing-header .cad-landing-header-cta.primary-cta:not(.primary-cta--striped-long) {
+      height: 52px !important;
+      min-height: 52px !important;
+      padding: 0 20px !important;
+      font-size: 16px !important;
+      line-height: 1 !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .vbs-evaluate-cta--card-on-mobile .evaluate-delivery-cta-card {
+      padding: 0 !important;
+    }
+  }
+
+  &.bim-modeling-landing-page {
+    .cad-landing-hero.mep-page-hero {
+      .mep-page-hero__title {
+        max-width: 640px;
+      }
+
+      .mep-page-hero__title-accent,
+      .mep-page-hero__title-lead {
+        display: block;
+      }
+
+      .mep-page-hero__copy-inner {
+        max-width: 600px;
+      }
+
+      .mep-page-hero__desc {
+        max-width: 600px !important;
+      }
+
+      .cad-landing-hero__trust-line {
+        max-width: 600px;
+      }
+
+      @media (min-width: 768px) {
+        .mep-page-hero__desc {
+          max-width: 600px !important;
+        }
+      }
+    }
+
+    .cad-landing-comparison__title {
+      max-width: none;
+    }
+
+    .cad-landing-services__section-desc {
+      max-width: 654px;
+    }
+
+    .mep-figma-benefits__section-desc {
+      max-width: 654px;
+    }
+
+    @media (min-width: 768px) {
+      .mep-figma-benefits__title {
+        max-width: 697px !important;
+        font-size: 48px !important;
+        line-height: normal !important;
+        text-transform: capitalize !important;
+        word-wrap: break-word !important;
+        color: #111111 !important;
+      }
+
+      .mep-figma-benefits__title-dark {
+        display: inline !important;
+        font-size: 48px !important;
+        font-weight: 500 !important;
+        line-height: normal !important;
+        text-transform: capitalize !important;
+        color: #111111 !important;
+      }
+
+      .mep-figma-benefits__title-accent {
+        display: inline !important;
+        font-size: 48px !important;
+        font-weight: 300 !important;
+        line-height: normal !important;
+        text-transform: capitalize !important;
+        color: #d70416 !important;
+      }
+    }
+
+    .vbs-evaluate-cta .evaluate-delivery-cta-panel h2.bim-landing-cta__title {
+      max-width: 787px;
+      font-size: 48px;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: capitalize;
+      color: #111111;
+    }
+
+    .vbs-evaluate-cta .evaluate-delivery-cta-panel h2.bim-landing-cta__title .font-light {
+      font-weight: 300;
+      color: #111111;
+    }
+
+    .vbs-evaluate-cta .evaluate-delivery-cta-panel p.bim-landing-cta__description {
+      max-width: 609px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-transform: capitalize;
+      color: #808080;
+    }
+
+    .bim-landing-zoho-form {
+      background: #fff;
+      padding-top: 48px;
+      padding-bottom: 0;
+      margin-bottom: -32px;
+
+      @media (min-width: 768px) {
+        padding-top: 64px;
+        margin-bottom: -40px;
+      }
+
+      @media (min-width: 1024px) {
+        padding-top: 100px;
+        margin-bottom: -56px;
+      }
+
+      &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        align-items: start;
+        width: 100%;
+
+        @media (min-width: 768px) {
+          gap: 36px;
+        }
+
+        @media (min-width: 1024px) {
+          grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+          gap: 0;
+          align-items: start;
+        }
+      }
+
+      &__aside {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        min-width: 0;
+
+        @media (min-width: 1024px) {
+          gap: 40px;
+          margin-top: 0;
+        }
+      }
+
+      &__heading {
+        margin: 0;
+        padding-top: 60px;
+        max-width: 520px;
+        font-family: var(--font-inter), Inter, system-ui, sans-serif;
+        font-size: clamp(32px, 4.2vw, 52px);
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: #111111;
+      }
+
+      &__heading-accent {
+        display: block;
+        font-weight: 300;
+        color: #d70416;
+      }
+
+      &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      &__contact {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-family: var(--font-inter), Inter, system-ui, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #111111;
+        text-decoration: none;
+        transition: color 0.15s ease;
+
+        &:hover {
+          color: #d70416;
+        }
+      }
+
+      &__icon {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        color: #111111;
+      }
+
+      &__socials {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 24px;
+        margin-top: 4px;
+      }
+
+      &__social {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        transition: opacity 0.15s ease;
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        img {
+          display: block;
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      &__form-col {
+        min-width: 0;
+        width: 100%;
+
+        @media (min-width: 1024px) {
+          margin-top: -4px;
+        }
+      }
+
+      &__wrap {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        min-width: 0;
+        height: 700px;
+        padding: 0;
+        margin: 0 0 -48px;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      &__iframe.vbs-zoho-iframe-form {
+        position: relative;
+        width: 100%;
+        min-width: 0;
+        height: 700px !important;
+        min-height: 700px;
+        max-height: 700px;
+        overflow: hidden;
+        touch-action: manipulation;
+        background: transparent;
+
+        --vbs-zoho-iframe-visible-height: 700px;
+      }
+
+      .vbs-zoho-iframe-form__shift {
+        transform: translate3d(0, calc(-1 * var(--vbs-zoho-iframe-header-crop)), 0);
+        will-change: transform;
+        background: transparent;
+      }
+
+      &__frame {
+        display: block;
+        width: 100% !important;
+        min-width: 100%;
+        border: none !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        margin-top: 0;
+        height: var(--vbs-zoho-iframe-full-height) !important;
+        touch-action: manipulation;
+        pointer-events: auto;
+      }
+
+      @media (max-width: 1023px) {
+        &__aside {
+          gap: 28px;
+          text-align: center;
+          align-items: center;
+        }
+
+        &__heading {
+          max-width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+        }
+
+        &__contacts {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          max-width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 0;
+        }
+
+        &__contacts > li {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+
+        &__contact {
+          display: inline-flex;
+          justify-content: flex-start;
+          width: max-content;
+          max-width: 100%;
+          text-align: left;
+        }
+
+        &__socials {
+          justify-content: center;
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 767px) {
+        &__grid {
+          gap: 20px;
+        }
+
+        &__aside {
+          gap: 0;
+        }
+
+        &__heading {
+          padding-top: 12px !important;
+          font-size: clamp(32px, 10vw, 30px) !important;
+          line-height: 1.22 !important;
+          padding-bottom: 4px !important;
+        }
+
+        &__contacts,
+        &__socials {
+          display: none !important;
+        }
+      }
+    }
+
+    .bim-landing-get-in-touch.vbs-get-in-touch-section {
+      --vbs-zoho-iframe-visible-height: 720px;
+      --vbs-zoho-iframe-full-height: 842px;
+
+      .vbs-contact-zoho-wrap .vbs-zoho-iframe-form {
+        height: 720px !important;
+        min-height: 720px;
+        max-height: 720px;
+      }
+
+      @media (min-width: 1024px) {
+        .vbs-get-in-touch__visual-slot {
+          height: 720px;
+          max-height: 720px;
+        }
+
+        .vbs-get-in-touch__visual {
+          height: 720px;
+          max-height: 720px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        --vbs-zoho-iframe-header-crop: 175px;
+        --vbs-zoho-iframe-full-height: 875px;
+      }
+    }
+  }
+}

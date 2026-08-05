@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Expose gated-PDF EmailJS ids to the browser (Gatsby used GATSBY_*).
+  env: {
+    NEXT_PUBLIC_GATED_PDF_SERVICE_ID:
+      process.env.NEXT_PUBLIC_GATED_PDF_SERVICE_ID || process.env.GATSBY_GATED_PDF_SERVICE_ID || "",
+    NEXT_PUBLIC_GATED_PDF_TEMPLATE_ID:
+      process.env.NEXT_PUBLIC_GATED_PDF_TEMPLATE_ID || process.env.GATSBY_GATED_PDF_TEMPLATE_ID || "",
+    NEXT_PUBLIC_GATED_PDF_PUBLIC_KEY:
+      process.env.NEXT_PUBLIC_GATED_PDF_PUBLIC_KEY || process.env.GATSBY_GATED_PDF_PUBLIC_KEY || "",
+  },
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },

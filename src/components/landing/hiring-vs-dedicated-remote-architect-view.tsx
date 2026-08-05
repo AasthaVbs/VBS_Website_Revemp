@@ -3,6 +3,7 @@
 import React, { useCallback, useState } from "react";
 
 import { SiteFooter } from "@/components/sections/site-footer";
+import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import LandingTopHeader from "@/components/landing/landing-top-header";
 import LandingPdfLeadModal from "@/components/landing/landing-pdf-lead-modal";
 
@@ -1168,6 +1169,7 @@ const HiringVsDedicatedRemoteArchitectView = () => {
           font-size: 12px;
         }
       `}</style>
+      <GetInTouchSection />
       <SiteFooter />
       {/* <WebinarHomePopupModal /> */}
     </main >

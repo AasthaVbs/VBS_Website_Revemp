@@ -16,6 +16,7 @@ import seniorArchitectsIcon from "@/assets/images/senior architects.svg";
 import LandingPdfLeadModal from "@/components/landing/landing-pdf-lead-modal";
 import { LandingTopHeader } from "@/components/landing/landing-top-header";
 import { PageContainer } from "@/components/layout/page-container";
+import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
@@ -847,6 +848,7 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
         }
       `}</style>
 
+      <GetInTouchSection />
       <SiteFooter />
     </div>
   );

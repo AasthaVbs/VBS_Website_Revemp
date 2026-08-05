@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 
 import { SiteFooter } from "@/components/sections/site-footer";
+import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import LandingTopHeader from "@/components/landing/landing-top-header";
 import LandingPdfLeadModal from "@/components/landing/landing-pdf-lead-modal";
 
@@ -914,6 +915,7 @@ const WhyGrowingArchitectureFirmsHitDocumentationWallView = () => {
       </section>
 
 
+      <GetInTouchSection />
       <SiteFooter />
       <LandingPdfLeadModal
         title="Why Growing Architecture Firms Hit a Documentation Wall"

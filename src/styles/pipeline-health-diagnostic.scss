@@ -32,6 +32,9 @@ body.vbs-pipeline-diagnostic-hide-float-ui [class*='zsiq-float'][class*='zsiq-fl
           line-height: 1.5;
           padding-top: 22px;
           padding-bottom: 22px;
+          overflow-x: hidden;
+          width: 100%;
+          max-width: 100vw;
         }
         .pipeline-health-page *, .pipeline-health-page *::before, .pipeline-health-page *::after { box-sizing: border-box; }
         .pipeline-health-page h1, .pipeline-health-page .h1 { font-size: 44px; line-height: 58px !important; letter-spacing: 0.005em !important; }
@@ -384,20 +387,54 @@ body.vbs-pipeline-diagnostic-hide-float-ui [class*='zsiq-float'][class*='zsiq-fl
           pointer-events: none !important;
         }
         @media (max-width: 960px) {
-          .pipeline-health-page .container { padding: 0 24px; }
+          .pipeline-health-page { padding-top: 12px; padding-bottom: 16px; }
+          .pipeline-health-page .container { padding: 0 20px; }
           .pipeline-health-page .intro { padding: 14px 0 12px; }
-          .pipeline-health-page .intro .title { font-size: 32px; line-height:54px !important; letter-spacing: 0.02em; }
-          .pipeline-health-page .intro .meta-line { font-size: 14px; }
-          .pipeline-health-page .how-to-block { padding: 8px 10px 12px !important; max-width: 100% !important; width: 100% !important; text-align: left !important; }
-          .pipeline-health-page .how-to-toggle { font-size: 17px !important; max-width: 100% !important; padding: 6px 8px !important; text-align: left !important; justify-content: flex-start !important; }
-          .pipeline-health-page .options { grid-template-columns: repeat(2, 1fr); }
-          .pipeline-health-page .question { padding: 20px 4px; }
-          .pipeline-health-page .q-text { font-size: 20px; line-height: 30px; margin-bottom: 14px; }
-          .pipeline-health-page .section-num { font-size: 26px !important; }
+          .pipeline-health-page .intro .title {
+            font-size: 28px !important;
+            line-height: 1.25 !important;
+            letter-spacing: 0.02em !important;
+            margin-bottom: 10px !important;
+          }
+          .pipeline-health-page .intro .meta-line { font-size: 14px !important; gap: 6px !important; }
+          .pipeline-health-page .how-to-block { padding: 8px 10px 12px !important; max-width: 100% !important; width: 100% !important; text-align: left !important; margin: 12px auto 8px !important; }
+          .pipeline-health-page .how-to-toggle { font-size: 16px !important; max-width: 100% !important; padding: 6px 8px !important; text-align: left !important; justify-content: flex-start !important; }
+          .pipeline-health-page .section-block { padding: 24px 0 4px; }
+          .pipeline-health-page .section-head {
+            grid-template-columns: auto 1fr;
+            grid-template-areas: "num title" "num pill";
+            gap: 6px 12px;
+            align-items: start;
+          }
+          .pipeline-health-page .section-num { grid-area: num; font-size: 24px !important; padding-top: 2px; }
+          .pipeline-health-page .section-title-stack { grid-area: title; min-width: 0; }
           .pipeline-health-page .section-title-stack .title { font-size: 16px !important; }
-          .pipeline-health-page .submit-block { flex-direction: column; align-items: stretch; text-align: center; }
-          .pipeline-health-page .submit-block .btn { width: 100%; justify-content: center; }
+          .pipeline-health-page .section-title-stack .diag { font-size: 11px !important; word-break: break-word; }
+          .pipeline-health-page .section-pill { grid-area: pill; justify-self: start; }
+          .pipeline-health-page .options { grid-template-columns: 1fr; gap: 8px; }
+          .pipeline-health-page .question { padding: 18px 0; }
+          .pipeline-health-page .q-text { font-size: 17px !important; line-height: 26px !important; margin-bottom: 14px !important; }
+          .pipeline-health-page .option { padding: 10px 12px; min-height: 44px; }
+          .pipeline-health-page .option .label-text { font-size: 14px; line-height: 20px; word-break: break-word; }
+          .pipeline-health-page .submit-block {
+            flex-direction: column;
+            align-items: stretch;
+            text-align: center;
+            padding: 20px 18px;
+            margin: 24px 0 40px;
+            gap: 16px;
+          }
+          .pipeline-health-page .submit-block .btn {
+            width: 100%;
+            justify-content: center;
+            white-space: normal;
+            text-align: center;
+          }
+          .pipeline-health-page .btn { white-space: normal; }
+          .pipeline-health-page .lead-modal-backdrop { padding: 16px; align-items: flex-start; padding-top: 48px; }
+          .pipeline-health-page .lead-modal { max-width: 100%; }
           .pipeline-health-page .results-wrap { padding: 14px 0 18px; }
+          .pipeline-health-page .results-topbar { flex-direction: column; align-items: flex-start; gap: 8px; }
           .pipeline-health-page .result-top { grid-template-columns: 1fr; gap: 14px; margin-bottom: 14px; }
           .pipeline-health-page .score-card { padding: 14px; flex-direction: row; gap: 16px; justify-content: flex-start; }
           .pipeline-health-page .score-circle { width: 100px; height: 100px; margin-bottom: 0; flex-shrink: 0; }
@@ -405,38 +442,53 @@ body.vbs-pipeline-diagnostic-hide-float-ui [class*='zsiq-float'][class*='zsiq-fl
           .pipeline-health-page .score-num { font-size: 30px; }
           .pipeline-health-page .score-card-label { display: none; }
           .pipeline-health-page .score-card::after { content: "TOTAL"; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; color: var(--red); margin-left: auto; }
-          .pipeline-health-page .diag-card { padding: 18px 18px; }
+          .pipeline-health-page .diag-card { padding: 18px; }
           .pipeline-health-page .diag-card h3 { font-size: 17px; line-height: 24px !important; }
           .pipeline-health-page .breakdown { padding: 14px 16px; margin-bottom: 14px; }
           .pipeline-health-page .bar-row { grid-template-columns: 1fr auto; grid-template-areas: "label value" "track track"; gap: 6px 12px; padding: 8px 0; }
-          .pipeline-health-page .bar-label { grid-area: label; }
+          .pipeline-health-page .bar-label { grid-area: label; min-width: 0; }
           .pipeline-health-page .bar-value { grid-area: value; font-size: 12px; }
           .pipeline-health-page .bar-track { grid-area: track; }
+          .pipeline-health-page .highest-flag { margin-left: 0; margin-top: 4px; }
           .pipeline-health-page .action-strip { grid-template-columns: 1fr; gap: 10px; }
           .pipeline-health-page .intervention-card { padding: 14px 16px; }
           .pipeline-health-page .intervention-card h4 { font-size: 15px !important; line-height: 20px !important; }
           .pipeline-health-page .cta-card { padding: 14px 16px; }
+          .pipeline-health-page .restart-link { margin-left: auto; margin-right: auto; }
         }
         @media (max-width: 560px) {
-          .pipeline-health-page { padding-top: 12px; padding-bottom: 12px; }
-          .pipeline-health-page .container { padding: 0 18px; }
-          .pipeline-health-page .intro { padding: 12px 0 10px; }
-          .pipeline-health-page .intro .title { font-size: 26px; line-height: 54px !important; letter-spacing: 0.015em; }
-          .pipeline-health-page .how-to-toggle { font-size: 15px !important; padding: 6px 8px !important; max-width: 100% !important; text-align: left !important; justify-content: flex-start !important; }
+          .pipeline-health-page { padding-top: 8px; padding-bottom: 12px; }
+          .pipeline-health-page .container { padding: 0 16px; }
+          .pipeline-health-page .intro { padding: 10px 0 8px; }
+          .pipeline-health-page .intro .title {
+            font-size: 22px !important;
+            line-height: 1.3 !important;
+            letter-spacing: 0.01em !important;
+          }
+          .pipeline-health-page .intro .meta-line { font-size: 13px !important; }
+          .pipeline-health-page .how-to-toggle { font-size: 15px !important; padding: 6px 4px !important; }
           .pipeline-health-page .how-to-block .how-to-intro { font-size: 14px !important; line-height: 22px !important; }
           .pipeline-health-page .how-to-points { padding: 6px 0 2px !important; }
-          .pipeline-health-page .how-to-points li { grid-template-columns: 20px 1fr; padding: 2px 0; }
-          .pipeline-health-page .how-to-points li span:last-child { font-size: 14px; line-height: 22px; }
-          .pipeline-health-page .options { grid-template-columns: 1fr; gap: 8px; }
-          .pipeline-health-page .section-head { gap: 12px; padding: 8px 0 14px; }
-          .pipeline-health-page .section-num { font-size: 26px !important; }
-          .pipeline-health-page .section-title-stack .title { font-size: 14px !important; }
-          .pipeline-health-page .section-title-stack .diag { font-size: 11px !important; }
-          .pipeline-health-page .section-pill { font-size: 11px !important; padding: 4px 10px; }
-          .pipeline-health-page .q-text { font-size: 17px !important; line-height: 24px !important; margin-bottom: 12px !important; }
-          .pipeline-health-page .option { padding: 8px 10px; min-height: 40px; }
+          .pipeline-health-page .how-to-points li { grid-template-columns: 20px 1fr; padding: 2px 0; gap: 6px; }
+          .pipeline-health-page .how-to-points li span:last-child { font-size: 13px; line-height: 20px; }
+          .pipeline-health-page .ben-chk { width: 18px; height: 18px; font-size: 13px; }
+          .pipeline-health-page .section-block { padding: 20px 0 4px; }
+          .pipeline-health-page .section-head { gap: 4px 10px; padding: 6px 0 12px; }
+          .pipeline-health-page .section-num { font-size: 22px !important; }
+          .pipeline-health-page .section-title-stack .title { font-size: 15px !important; }
+          .pipeline-health-page .section-title-stack .diag { font-size: 10px !important; }
+          .pipeline-health-page .section-pill { font-size: 10px !important; padding: 3px 8px; }
+          .pipeline-health-page .q-text { font-size: 15px !important; line-height: 22px !important; margin-bottom: 12px !important; gap: 6px; }
+          .pipeline-health-page .q-num-inline { min-width: 18px; }
+          .pipeline-health-page .option { padding: 10px; min-height: 42px; gap: 10px; }
           .pipeline-health-page .option .label-text { font-size: 13px; line-height: 18px; }
-          .pipeline-health-page .lead-modal { padding: 12px 10px 10px !important; max-height: 88vh; }
+          .pipeline-health-page .submit-block { padding: 18px 14px; margin: 20px 0 32px; }
+          .pipeline-health-page .submit-block-text h4 { font-size: 16px !important; line-height: 22px !important; }
+          .pipeline-health-page .submit-block-text p { font-size: 13px !important; line-height: 18px !important; }
+          .pipeline-health-page .btn { padding: 12px 18px; font-size: 14px; }
+          .pipeline-health-page .error-toast { top: 72px; padding: 12px 16px; font-size: 13px; }
+          .pipeline-health-page .lead-modal-backdrop { padding: 12px; padding-top: 40px; }
+          .pipeline-health-page .lead-modal { padding: 16px 14px 14px !important; max-height: 90vh; border-radius: 10px; }
           .pipeline-health-page .lead-modal h3 { font-size: 17px !important; line-height: 22px !important; margin-bottom: 3px; }
           .pipeline-health-page .lead-modal-sub { font-size: 12px !important; line-height: 16px !important; margin-bottom: 8px; }
           .pipeline-health-page .form-row { margin-bottom: 6px; }
@@ -444,8 +496,12 @@ body.vbs-pipeline-diagnostic-hide-float-ui [class*='zsiq-float'][class*='zsiq-fl
           .pipeline-health-page .form-row input,
           .pipeline-health-page .form-row textarea { padding: 8px 10px; font-size: 13px; }
           .pipeline-health-page .zpl-two-col { grid-template-columns: 1fr; gap: 0; }
-          .pipeline-health-page .lead-modal .btn { padding: 9px; font-size: 13px; }
+          .pipeline-health-page .lead-modal .btn { padding: 10px; font-size: 13px; }
           .pipeline-health-page .privacy-note { margin-top: 8px; font-size: 10px !important; line-height: 14px !important; }
           .pipeline-health-page .results-wrap { padding: 10px 0 14px; }
+          .pipeline-health-page .score-card { flex-wrap: wrap; }
+          .pipeline-health-page .score-card::after { width: 100%; margin-left: 0; text-align: center; margin-top: 4px; }
+          .pipeline-health-page .diag-card::before { left: 12px; font-size: 9px; }
+          .pipeline-health-page .hi-highlight { flex-wrap: wrap; }
         }
       

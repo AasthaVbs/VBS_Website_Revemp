@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // Expose gated-PDF / pipeline-diag EmailJS ids to the browser (Gatsby used GATSBY_*).
+  // Expose gated-PDF / pipeline-diag / contact EmailJS ids to the browser (Gatsby used GATSBY_*).
   env: {
     NEXT_PUBLIC_GATED_PDF_SERVICE_ID:
       process.env.NEXT_PUBLIC_GATED_PDF_SERVICE_ID || process.env.GATSBY_GATED_PDF_SERVICE_ID || "",
@@ -27,6 +27,61 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_PIPELINE_DIAG_PUBLIC_KEY:
       process.env.NEXT_PUBLIC_PIPELINE_DIAG_PUBLIC_KEY ||
       process.env.GATSBY_PIPELINE_DIAG_PUBLIC_KEY ||
+      "",
+    NEXT_PUBLIC_SERVICE_ID:
+      process.env.NEXT_PUBLIC_SERVICE_ID ||
+      process.env.GATSBY_SERVICE_ID ||
+      process.env.SERVICE_ID ||
+      "",
+    NEXT_PUBLIC_TEMPLATE_ID:
+      process.env.NEXT_PUBLIC_TEMPLATE_ID ||
+      process.env.GATSBY_TEMPLATE_ID ||
+      process.env.TEMPLATE_ID ||
+      "",
+    NEXT_PUBLIC_PUBLIC_KEY:
+      process.env.NEXT_PUBLIC_PUBLIC_KEY ||
+      process.env.GATSBY_PUBLIC_KEY ||
+      process.env.PUBLIC_KEY ||
+      "",
+    NEXT_PUBLIC_SIXTY_MINUTES_QUICK_SUBMIT_SERVICE_ID:
+      process.env.NEXT_PUBLIC_SIXTY_MINUTES_QUICK_SUBMIT_SERVICE_ID ||
+      process.env.GATSBY_SIXTY_MINUTES_QUICK_SUBMIT_SERVICE_ID ||
+      process.env.GATSBY_SIXTY_MINUTES_TEAM_SERVICE_ID ||
+      "",
+    NEXT_PUBLIC_SIXTY_MINUTES_QUICK_SUBMIT_TEMPLATE_ID:
+      process.env.NEXT_PUBLIC_SIXTY_MINUTES_QUICK_SUBMIT_TEMPLATE_ID ||
+      process.env.GATSBY_SIXTY_MINUTES_QUICK_SUBMIT_TEMPLATE_ID ||
+      process.env.GATSBY_SIXTY_MINUTES_TEAM_TEMPLATE_ID ||
+      "",
+    NEXT_PUBLIC_SIXTY_MINUTES_QUICK_SUBMIT_PUBLIC_KEY:
+      process.env.NEXT_PUBLIC_SIXTY_MINUTES_QUICK_SUBMIT_PUBLIC_KEY ||
+      process.env.GATSBY_SIXTY_MINUTES_QUICK_SUBMIT_PUBLIC_KEY ||
+      process.env.GATSBY_SIXTY_MINUTES_TEAM_PUBLIC_KEY ||
+      "",
+    NEXT_PUBLIC_SIXTY_MINUTES_USER_SUMMARY_SERVICE_ID:
+      process.env.NEXT_PUBLIC_SIXTY_MINUTES_USER_SUMMARY_SERVICE_ID ||
+      process.env.GATSBY_SIXTY_MINUTES_USER_SUMMARY_SERVICE_ID ||
+      "",
+    NEXT_PUBLIC_SIXTY_MINUTES_USER_SUMMARY_TEMPLATE_ID:
+      process.env.NEXT_PUBLIC_SIXTY_MINUTES_USER_SUMMARY_TEMPLATE_ID ||
+      process.env.GATSBY_SIXTY_MINUTES_USER_SUMMARY_TEMPLATE_ID ||
+      "",
+    NEXT_PUBLIC_SIXTY_MINUTES_USER_SUMMARY_PUBLIC_KEY:
+      process.env.NEXT_PUBLIC_SIXTY_MINUTES_USER_SUMMARY_PUBLIC_KEY ||
+      process.env.GATSBY_SIXTY_MINUTES_USER_SUMMARY_PUBLIC_KEY ||
+      "",
+    NEXT_PUBLIC_SIXTY_MINUTES_IMAGE_UPLOAD_URL:
+      process.env.NEXT_PUBLIC_SIXTY_MINUTES_IMAGE_UPLOAD_URL ||
+      process.env.GATSBY_SIXTY_MINUTES_IMAGE_UPLOAD_URL ||
+      "",
+    NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN:
+      process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN ||
+      process.env.GATSBY_MAPBOX_ACCESS_TOKEN ||
+      "",
+    NEXT_PUBLIC_GOOGLE_STATIC_MAPS_API_KEY:
+      process.env.NEXT_PUBLIC_GOOGLE_STATIC_MAPS_API_KEY ||
+      process.env.GATSBY_GOOGLE_STATIC_MAPS_API_KEY ||
+      process.env.GATSBY_GOOGLE_MAPS_API_KEY ||
       "",
   },
   experimental: {

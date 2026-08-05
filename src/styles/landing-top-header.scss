@@ -1,21 +1,39 @@
-/* Compact landing header: logo left + email/phone right */
+/* Compact landing header: logo left + email/phone right
+   Content width matches global SiteHeader (PageContainer / --vbs-page-max). */
 
 .landing-top-header {
+  --landing-top-header-height: 72px;
+
   background: #fff;
   position: relative;
   z-index: 1100;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.landing-top-header--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.landing-top-header-spacer {
+  height: var(--landing-top-header-height, 72px);
+  width: 100%;
+  flex-shrink: 0;
 }
 
 .landing-top-header-inner {
-  min-height: 66px;
+  min-height: var(--landing-top-header-height, 72px);
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   flex-wrap: nowrap !important;
   flex-direction: row !important;
   gap: 1rem;
-  padding-top: 0.35rem;
-  padding-bottom: 0.35rem;
+  padding-top: 0.65rem !important;
+  padding-bottom: 0.55rem !important;
 }
 
 .landing-top-header-logo {
@@ -50,19 +68,31 @@
   font-size: 1.05rem;
   line-height: 1.2;
 
+  .landing-top-header-icon,
   svg {
     flex-shrink: 0;
     display: block;
-    color: #d70416;
+    width: 18px;
+    height: 18px;
+    color: #d70416 !important;
   }
 
   &:hover {
     color: #111111 !important;
     text-decoration: none !important;
+
+    .landing-top-header-icon,
+    svg {
+      color: #d70416 !important;
+    }
   }
 }
 
 @media (max-width: 767.98px) {
+  .landing-top-header {
+    --landing-top-header-height: 64px;
+  }
+
   .landing-top-header-inner {
     gap: 0.6rem;
     justify-content: center !important;

@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 
 import { SiteFooter } from "@/components/sections/site-footer";
+import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { BimLandingZohoFormSection } from "@/components/sections/cad-landing/bim-landing-zoho-form-section";
 import { IndustriesSection } from "@/components/sections/industries-section";
 import { FaqSection } from "@/components/sections/faq-section";
@@ -5932,6 +5933,7 @@ export function ProfessionalArchitecturalDraftingServicesView() {
         </section>
       </div>
 
+      <GetInTouchSection />
       <SiteFooter />
     </>
   );

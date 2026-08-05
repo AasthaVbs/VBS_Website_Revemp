@@ -1,0 +1,577 @@
+/* ROI Calculator — Gatsby structure with redesign typography / accent tokens */
+
+.roi-calculator-page {
+  --roi-accent: #d70416;
+  --roi-text: #111111;
+  --roi-ink-muted: #52606d;
+  --roi-lightblue: #089adf;
+  --roi-primary: #d70416;
+  --roi-soft: rgba(215, 4, 22, 0.06);
+
+  font-family: var(--font-inter), Inter, "Segoe UI", system-ui, sans-serif;
+  color: var(--roi-text);
+
+  .container {
+    max-width: var(--vbs-page-max, 1400px);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-inter), Inter, "Segoe UI", system-ui, sans-serif;
+    color: var(--roi-text);
+    font-weight: 600;
+  }
+
+  h1,
+  .title {
+    font-size: clamp(1.75rem, 2.5vw, 2.625rem);
+    line-height: 1.3;
+    font-weight: 600;
+    color: var(--roi-text);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 2vw, 2.375rem);
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+  }
+
+  p,
+  .table-text,
+  td,
+  th:not(.bg-primary) {
+    font-family: var(--font-inter), Inter, "Segoe UI", system-ui, sans-serif;
+    color: var(--roi-text);
+  }
+
+  .text-accent,
+  .text-primary {
+    color: var(--roi-accent) !important;
+  }
+
+  /* Bootstrap primary → redesign accent */
+  --bs-primary: #d70416;
+  --bs-primary-rgb: 215, 4, 22;
+
+  .bg-primary {
+    background-color: var(--roi-primary) !important;
+  }
+
+  .btn-primary {
+    background-color: var(--roi-primary) !important;
+    border-color: var(--roi-primary) !important;
+  }
+
+  .btn-outline-primary {
+    color: var(--roi-primary) !important;
+    border-color: var(--roi-primary) !important;
+
+    &:hover {
+      background-color: var(--roi-primary) !important;
+      color: #fff !important;
+    }
+  }
+
+  .bg-primary.bg-opacity-10,
+  .roi-calculator-section.bg-primary.bg-opacity-10 {
+    background-color: var(--roi-soft) !important;
+  }
+
+  .btn-lightblue {
+    background-color: var(--roi-accent) !important;
+    color: #fff !important;
+    border-color: var(--roi-accent) !important;
+    transition: 0.4s ease-in-out;
+  }
+
+  .btn-lightblue:hover {
+    background-color: #ffffff !important;
+    border: 1px solid var(--roi-accent) !important;
+    color: var(--roi-accent) !important;
+  }
+
+  .btn-light.text-white,
+  .btn-text-white {
+    background-color: var(--roi-accent) !important;
+    border-color: var(--roi-accent) !important;
+    color: #fff !important;
+  }
+
+  .text-lightblue {
+    color: var(--roi-lightblue) !important;
+  }
+
+  .bg-lightblue-100 {
+    background-color: rgba(8, 154, 223, 0.12) !important;
+  }
+
+  .fs-2 {
+    font-size: 1.25rem !important;
+    line-height: 30px !important;
+  }
+
+  .fs-3 {
+    font-size: 1.125rem !important;
+  }
+
+  .fs-4 {
+    font-size: 0.875rem !important;
+  }
+
+  .py-10 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+
+  .mb-lg-8 {
+    @media (min-width: 992px) {
+      margin-bottom: 4.5rem !important;
+    }
+  }
+
+  .home-banner-2,
+  .roi-calculator-banner {
+    background-repeat: no-repeat !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: var(--roi-soft) !important;
+    background-size: cover;
+    background-position: center;
+    margin-top: 0 !important;
+    /* Clear fixed SiteHeader only — no extra mt-9 gap */
+    padding-top: calc(var(--vbs-header-offset, 132px) + 16px) !important;
+    padding-bottom: 28px !important;
+    min-height: 0;
+  }
+
+  .blog-banner {
+    width: 100%;
+  }
+
+  .blog-banner .title,
+  .roi-calculator-banner__title {
+    font-family: var(--font-inter), Inter, "Segoe UI", system-ui, sans-serif !important;
+    font-size: 48px !important;
+    font-weight: 500 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.01em;
+    color: var(--roi-text) !important;
+    margin: 0 auto;
+    max-width: 920px;
+  }
+
+  .proprietary-solution {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #cccccc;
+    box-shadow: 4px 4px 8px 0px #0000001a;
+  }
+
+  .table-bg {
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: bottom;
+    background-color: var(--roi-soft);
+    background-size: cover;
+  }
+
+  .table-input-2 {
+    background-color: #fce9ea;
+    height: 44px;
+    width: 180px !important;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    border: 0;
+    font-weight: 600;
+    color: var(--roi-text);
+  }
+
+  .table-input-2[type="number"]::-webkit-inner-spin-button,
+  .table-input-2[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .table-input-2::placeholder {
+    opacity: 1;
+    color: #000;
+    font-weight: 600;
+  }
+
+  .table-icon {
+    top: -40px;
+    right: 4px;
+    z-index: 99;
+    position: absolute;
+  }
+
+  .table-section table th,
+  .table-section table tbody tr {
+    height: 60px !important;
+    vertical-align: middle;
+    border-bottom: 1px solid #e1e7ec;
+  }
+
+  .table-section table th {
+    font-weight: 600 !important;
+  }
+
+  .table-section tbody {
+    background-color: #fff !important;
+  }
+
+  .table-section table tbody tr:last-child {
+    border-bottom: none !important;
+  }
+
+  .table-section .table > :not(caption) > * > * {
+    border-bottom-width: 0 !important;
+  }
+
+  .table-section .table-responsive {
+    border: 1px solid #cccccc !important;
+  }
+
+  .table-section .box-shadow {
+    box-shadow: inset 0px 0px 0px 1.8px #fff !important;
+  }
+
+  .top-closebtn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #fff;
+    border-radius: 100%;
+    width: 30px !important;
+    height: 30px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    font-size: 14px;
+    border: 1px solid #333333;
+  }
+
+  .pop-up .heading {
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    color: var(--roi-text) !important;
+  }
+
+  .contact-form {
+    width: 100% !important;
+    max-width: 100%;
+    position: static !important;
+    padding: 0 !important;
+  }
+
+  .modal {
+    scrollbar-width: none !important;
+  }
+
+  @media (max-width: 1023px) {
+    .home-banner-2,
+    .roi-calculator-banner {
+      padding-top: calc(var(--vbs-header-offset, 92px) + 12px) !important;
+      padding-bottom: 24px !important;
+    }
+
+    .blog-banner .title,
+    .roi-calculator-banner__title {
+      font-size: clamp(28px, 5vw, 40px) !important;
+      line-height: 1.2 !important;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .py-10 {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+
+    .home-banner-2,
+    .roi-calculator-banner {
+      padding-top: calc(var(--vbs-header-offset, 72px) + 8px) !important;
+      padding-bottom: 20px !important;
+    }
+
+    .blog-banner .title,
+    .roi-calculator-banner__title {
+      font-size: clamp(24px, 7vw, 32px) !important;
+      line-height: 1.25 !important;
+    }
+
+    .proprietary-solution .border-end {
+      border-right: 0 !important;
+      border-bottom: 1px solid #e1e7ec;
+    }
+
+    .table-input-2 {
+      width: 120px !important;
+    }
+  }
+}
+
+/* Modal portal renders outside .roi-calculator-page */
+.table-model .modal-content {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.table-model table tr:last-child td,
+.table-model table tr:last-child th {
+  border-bottom: none !important;
+}
+
+.modal .top-closebtn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #fff;
+  border-radius: 100%;
+  width: 30px !important;
+  height: 30px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  font-size: 14px;
+  border: 1px solid #333333;
+}
+
+.modal .btn-lightblue,
+.modal .btn-light.text-white {
+  background-color: #d70416 !important;
+  border-color: #d70416 !important;
+  color: #fff !important;
+}
+
+.modal .table-input-2 {
+  background-color: #fce9ea;
+  height: 44px;
+  width: 180px !important;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+  border: 0;
+  font-weight: 600;
+}
+
+.modal .bg-primary {
+  background-color: #d70416 !important;
+}
+
+/* ROI lead capture popup */
+.roi-lead-modal .modal-content {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(17, 24, 39, 0.18);
+  overflow: visible;
+}
+
+.roi-lead-modal__dialog {
+  max-width: 720px;
+}
+
+.roi-lead-modal__body {
+  position: relative;
+  padding: 36px 40px 32px !important;
+}
+
+.roi-lead-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #111111;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.roi-lead-modal__close:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.roi-lead-modal__header {
+  text-align: center;
+  margin: 0 auto 28px;
+  max-width: 560px;
+  padding-right: 28px;
+  padding-left: 28px;
+}
+
+.roi-lead-modal__title {
+  font-family: var(--font-inter), Inter, "Segoe UI", system-ui, sans-serif !important;
+  font-size: clamp(22px, 2.5vw, 28px) !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  color: #111111 !important;
+  margin: 0 !important;
+}
+
+.roi-lead-modal__form {
+  width: 100% !important;
+  max-width: 100%;
+  position: static !important;
+  padding: 0 !important;
+}
+
+.roi-lead-modal__field {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.roi-lead-modal__field .form-label {
+  display: block;
+  font-family: var(--font-inter), Inter, "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #111111;
+  margin-bottom: 8px;
+}
+
+.roi-lead-modal__field .form-control {
+  min-height: 48px;
+  padding: 10px 14px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #111111;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.roi-lead-modal__field .form-control:focus {
+  border-color: #d70416;
+  box-shadow: 0 0 0 3px rgba(215, 4, 22, 0.12);
+}
+
+.roi-lead-modal__field textarea.form-control {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.roi-lead-modal__phone {
+  width: 100% !important;
+}
+
+.roi-lead-modal__phone .form-control,
+.roi-lead-modal__phone .react-tel-input .form-control {
+  width: 100% !important;
+  min-height: 48px !important;
+  height: 48px !important;
+  padding-left: 52px !important;
+  font-size: 15px !important;
+  border: 1.5px solid #d1d5db !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+.roi-lead-modal__phone .flag-dropdown {
+  border: 1.5px solid #d1d5db !important;
+  border-radius: 8px 0 0 8px !important;
+  background: #f9fafb !important;
+}
+
+.roi-lead-modal__phone .selected-flag {
+  width: 46px !important;
+  padding: 0 0 0 10px !important;
+  border-radius: 8px 0 0 8px !important;
+}
+
+.roi-lead-modal__phone .form-control:focus,
+.roi-lead-modal__phone.react-tel-input .form-control:focus {
+  border-color: #d70416 !important;
+  box-shadow: 0 0 0 3px rgba(215, 4, 22, 0.12) !important;
+}
+
+.roi-lead-modal__error,
+.roi-lead-modal__field .invalid-feedback {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #d70416;
+  text-align: left;
+}
+
+.roi-lead-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.roi-lead-modal__submit {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 48px;
+  padding: 12px 28px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+  border-radius: 999px !important;
+  background-color: #d70416 !important;
+  border-color: #d70416 !important;
+  color: #fff !important;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.roi-lead-modal__submit:hover:not(:disabled),
+.roi-lead-modal__submit:focus:not(:disabled) {
+  background-color: #fff !important;
+  color: #d70416 !important;
+  border-color: #d70416 !important;
+}
+
+.roi-lead-modal__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 767.98px) {
+  .roi-lead-modal__body {
+    padding: 28px 20px 24px !important;
+  }
+
+  .roi-lead-modal__header {
+    margin-bottom: 20px;
+    padding-left: 12px;
+    padding-right: 28px;
+  }
+
+  .roi-lead-modal__title {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  .roi-lead-modal__actions {
+    justify-content: stretch;
+  }
+
+  .roi-lead-modal__submit {
+    width: 100%;
+  }
+}

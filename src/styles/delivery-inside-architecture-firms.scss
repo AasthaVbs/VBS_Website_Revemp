@@ -1,0 +1,823 @@
+/* Delivery Inside Architecture Firms — Figma-aligned redesign */
+
+.delivery-inside-architecture-firms-page {
+  --vbs-page-max: 1400px;
+  --diaf-black: #111111;
+  --diaf-gray: #808080;
+  --diaf-red: #d70416;
+  --diaf-green: #42aa32;
+  --diaf-yellow: #f0b300;
+  --diaf-blue: #2299d6;
+  --diaf-border: #cbcccd;
+  --diaf-soft: #fafafa;
+
+  font-family: var(--font-inter), Inter, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: var(--diaf-black);
+
+  .diaf-accent {
+    color: var(--diaf-red) !important;
+    font-weight: 300 !important;
+  }
+
+  /* ----- Hero ----- */
+  .diaf-hero {
+    background: #fff;
+    padding: 70px 0;
+    overflow: hidden;
+  }
+
+  .diaf-hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .diaf-hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 694px;
+  }
+
+  .diaf-hero-copy-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .diaf-hero h1 {
+    font-size: 48px !important;
+    font-weight: 500 !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0 !important;
+    text-transform: capitalize;
+    color: var(--diaf-black) !important;
+    margin: 0 !important;
+    max-width: 689px;
+  }
+
+  .diaf-hero p {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: var(--diaf-gray) !important;
+    margin: 0 !important;
+  }
+
+  .diaf-hero-cta {
+    max-width: 100%;
+  }
+
+  .diaf-hero-media {
+    flex: 0 1 650px;
+    width: 100%;
+    max-width: 650px;
+    height: 530px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f4f4f4;
+    box-shadow: 0 0 16.8px rgba(0, 0, 0, 0.15);
+  }
+
+  .diaf-hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ----- Growth ----- */
+  .diaf-growth {
+    background: #fff;
+    padding: 80px 0;
+  }
+
+  .diaf-growth-inner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .diaf-growth-media {
+    flex: 0 0 auto;
+    width: min(100%, 574px);
+    height: 574px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .diaf-growth-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+  }
+
+  .diaf-growth-copy {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .diaf-growth-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .diaf-growth h2 {
+    font-size: 48px !important;
+    font-weight: 500 !important;
+    line-height: 1.15 !important;
+    color: var(--diaf-black) !important;
+    margin: 0 !important;
+    max-width: 614px;
+  }
+
+  .diaf-growth-intro p {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: var(--diaf-gray) !important;
+    margin: 0 !important;
+    max-width: 802px;
+  }
+
+  .diaf-growth-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .diaf-growth-list li {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    color: var(--diaf-gray) !important;
+    padding: 0 0 28px 1.15em;
+    margin: 0;
+    position: relative;
+  }
+
+  .diaf-growth-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--diaf-red);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .diaf-growth-list li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 14px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(128, 128, 128, 0.45) 0%,
+      rgba(128, 128, 128, 0.18) 55%,
+      rgba(128, 128, 128, 0) 100%
+    );
+  }
+
+  .diaf-growth-list li:last-child {
+    padding-bottom: 0;
+  }
+
+  /* ----- Pressure ----- */
+  .diaf-pressure {
+    background: var(--diaf-soft);
+    padding: 100px 0;
+  }
+
+  .diaf-pressure-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .diaf-pressure-title {
+    font-size: 36px !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    color: var(--diaf-black) !important;
+    margin: 0 !important;
+  }
+
+  .diaf-pressure-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .diaf-pressure-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .diaf-pressure-card {
+    background: #fff;
+    border: 1px solid var(--diaf-border);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .diaf-pressure-card-stat,
+  .diaf-pressure-card-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .diaf-pressure-card-stat {
+    gap: 20px;
+  }
+
+  .diaf-pressure-value {
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    color: var(--diaf-green) !important;
+  }
+
+  .diaf-pressure-label {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: var(--diaf-gray) !important;
+  }
+
+  .diaf-pressure-card h3 {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 1.3 !important;
+    text-transform: capitalize;
+    color: var(--diaf-black) !important;
+    margin: 0 !important;
+  }
+
+  .diaf-pressure-card p {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: var(--diaf-gray) !important;
+    margin: 0 !important;
+  }
+
+  .diaf-pressure-quote {
+    margin: 0;
+    padding: 20px;
+    background: rgba(215, 4, 22, 0.06);
+    border: 1px solid var(--diaf-red);
+    border-radius: 10px;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: var(--diaf-black) !important;
+  }
+
+  /* ----- Helps you see ----- */
+  .diaf-helps {
+    background: #fff;
+    padding: 80px 0;
+  }
+
+  .diaf-helps-inner {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .diaf-helps-copy {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .diaf-helps h2 {
+    font-size: 48px !important;
+    font-weight: 500 !important;
+    line-height: 1.15 !important;
+    color: var(--diaf-black) !important;
+    margin: 0 !important;
+  }
+
+  .diaf-helps-copy > p {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: var(--diaf-gray) !important;
+    margin: 0 !important;
+  }
+
+  .diaf-helps-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .diaf-helps-list li {
+    position: relative;
+    padding-left: 1.15em;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: var(--diaf-gray) !important;
+  }
+
+  .diaf-helps-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--diaf-red);
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  .diaf-helps-media {
+    flex: 0 1 710px;
+    width: 100%;
+    max-width: 710px;
+    height: 446px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .diaf-helps-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ----- Resource hub ----- */
+  .diaf-resources {
+    background: #fff;
+    padding: 100px 0;
+  }
+
+  .diaf-resources-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .diaf-resources-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 680px;
+  }
+
+  .diaf-resources h2 {
+    font-size: 48px !important;
+    font-weight: 500 !important;
+    line-height: 1.15 !important;
+    text-transform: capitalize;
+    color: var(--diaf-black) !important;
+    margin: 0 !important;
+  }
+
+  .diaf-resources-desc {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: var(--diaf-gray) !important;
+    margin: 0 !important;
+    max-width: 559px;
+  }
+
+  .diaf-resources-lead {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: var(--diaf-black) !important;
+    margin: 0 !important;
+    max-width: 559px;
+  }
+
+  .diaf-resources-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .diaf-resource-card {
+    appearance: none;
+    border: 1px solid var(--diaf-border);
+    border-radius: 10px;
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .diaf-resource-card:hover {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .diaf-resource-card-image {
+    width: 100%;
+    aspect-ratio: 670 / 419;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--diaf-border);
+    background: #f4f4f4;
+  }
+
+  .diaf-resource-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .diaf-resource-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .diaf-resource-card h3 {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 1.35 !important;
+    text-transform: capitalize;
+    color: var(--diaf-black) !important;
+    margin: 0 !important;
+  }
+
+  .diaf-resource-card p {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: var(--diaf-gray) !important;
+    margin: 0 !important;
+  }
+
+  .diaf-resource-card-cta {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: var(--diaf-blue) !important;
+  }
+
+  /* ----- Credibility metrics ----- */
+  .diaf-credibility {
+    background: #fff;
+    padding: 0 0 100px;
+  }
+
+  .diaf-credibility-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 10px;
+  }
+
+  .diaf-credibility-metric {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    text-align: center;
+  }
+
+  .diaf-credibility-num {
+    font-size: 36px !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+  }
+
+  .diaf-credibility-num--red {
+    color: var(--diaf-red) !important;
+  }
+
+  .diaf-credibility-num--green {
+    color: var(--diaf-green) !important;
+  }
+
+  .diaf-credibility-num--yellow {
+    color: var(--diaf-yellow) !important;
+  }
+
+  .diaf-credibility-label {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    color: var(--diaf-gray) !important;
+    max-width: 220px;
+  }
+
+  /* Evaluate CTA sits above credibility metrics */
+  .vbs-evaluate-cta {
+    padding-bottom: 40px !important;
+  }
+
+  .vbs-page-container {
+    padding-left: max(16px, env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(16px, env(safe-area-inset-right, 0px)) !important;
+  }
+
+  @media (min-width: 768px) {
+    .vbs-page-container {
+      padding-left: max(24px, env(safe-area-inset-left, 0px)) !important;
+      padding-right: max(24px, env(safe-area-inset-right, 0px)) !important;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .diaf-hero {
+      padding: 48px 0 40px;
+    }
+
+    .diaf-hero h1,
+    .diaf-growth h2,
+    .diaf-helps h2,
+    .diaf-resources h2 {
+      font-size: 40px !important;
+    }
+
+    .diaf-hero-media {
+      height: 440px;
+      flex-basis: min(48%, 520px);
+    }
+
+    .diaf-growth-media {
+      width: min(100%, 420px);
+      height: 420px;
+    }
+
+    .diaf-helps-media {
+      height: 360px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .diaf-hero,
+    .diaf-growth,
+    .diaf-helps {
+      padding: 40px 0;
+    }
+
+    .diaf-pressure,
+    .diaf-resources {
+      padding: 56px 0;
+    }
+
+    .diaf-hero-inner,
+    .diaf-growth-inner,
+    .diaf-helps-inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 28px;
+    }
+
+    .diaf-hero-copy,
+    .diaf-growth-copy,
+    .diaf-helps-copy {
+      max-width: 100%;
+    }
+
+    .diaf-growth-copy {
+      gap: 28px;
+    }
+
+    .diaf-hero h1,
+    .diaf-growth h2,
+    .diaf-helps h2,
+    .diaf-resources h2 {
+      font-size: clamp(28px, 6vw, 36px) !important;
+      max-width: 100%;
+    }
+
+    .diaf-pressure-title {
+      font-size: clamp(24px, 5vw, 32px) !important;
+    }
+
+    .diaf-hero-cta,
+    .diaf-hero-cta.primary-cta {
+      width: 100% !important;
+      max-width: 100%;
+    }
+
+    .diaf-hero-media,
+    .diaf-helps-media {
+      max-width: 100%;
+      flex: none;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 650 / 530;
+    }
+
+    .diaf-growth-media {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      max-width: 100%;
+    }
+
+    .diaf-pressure-inner {
+      gap: 32px;
+    }
+
+    .diaf-pressure-grid,
+    .diaf-resources-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .diaf-resource-card-image {
+      aspect-ratio: 16 / 10;
+    }
+
+    .diaf-resources-inner {
+      gap: 36px;
+    }
+
+    .diaf-resources-header {
+      max-width: 100%;
+    }
+
+    .diaf-credibility {
+      padding-bottom: 64px;
+    }
+
+    .diaf-credibility-inner {
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .vbs-evaluate-cta {
+      padding-top: 40px !important;
+      padding-bottom: 24px !important;
+    }
+
+    .vbs-evaluate-cta .primary-cta {
+      width: 100% !important;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    overflow-x: hidden;
+
+    .diaf-hero {
+      padding: 28px 0 24px;
+    }
+
+    .diaf-growth,
+    .diaf-helps {
+      padding: 32px 0;
+    }
+
+    .diaf-pressure,
+    .diaf-resources {
+      padding: 40px 0;
+    }
+
+    .diaf-hero-inner,
+    .diaf-growth-inner,
+    .diaf-helps-inner {
+      gap: 20px;
+    }
+
+    .diaf-hero-copy {
+      gap: 20px;
+    }
+
+    .diaf-hero-copy-main,
+    .diaf-growth-intro {
+      gap: 14px;
+    }
+
+    .diaf-hero h1,
+    .diaf-growth h2,
+    .diaf-helps h2,
+    .diaf-resources h2 {
+      font-size: clamp(24px, 7vw, 30px) !important;
+      line-height: 1.2 !important;
+    }
+
+    .diaf-pressure-title {
+      font-size: 22px !important;
+      line-height: 1.25 !important;
+    }
+
+    .diaf-hero p,
+    .diaf-growth-intro p,
+    .diaf-helps-copy > p,
+    .diaf-growth-list li,
+    .diaf-helps-list li,
+    .diaf-resources-desc,
+    .diaf-resources-lead,
+    .diaf-pressure-card p,
+    .diaf-pressure-quote {
+      font-size: 15px !important;
+      line-height: 22px !important;
+    }
+
+    .diaf-growth-list li {
+      padding-bottom: 20px;
+    }
+
+    .diaf-growth-list li:not(:last-child)::after {
+      bottom: 10px;
+    }
+
+    .diaf-pressure-card {
+      padding: 18px 16px;
+      gap: 20px;
+    }
+
+    .diaf-pressure-value {
+      font-size: 26px !important;
+    }
+
+    .diaf-resource-card {
+      padding: 14px;
+      gap: 14px;
+    }
+
+    .diaf-resource-card h3 {
+      font-size: 16px !important;
+    }
+
+    .diaf-credibility-num {
+      font-size: 30px !important;
+    }
+
+    .diaf-credibility {
+      padding-bottom: 48px;
+    }
+
+    .diaf-credibility-inner {
+      gap: 22px;
+      padding-top: 0;
+    }
+  }
+
+  @media (max-width: 479.98px) {
+    .diaf-hero-media,
+    .diaf-helps-media {
+      border-radius: 8px;
+      aspect-ratio: 4 / 3;
+    }
+
+    .diaf-growth-media {
+      border-radius: 8px;
+    }
+
+    .diaf-hero-cta {
+      white-space: normal;
+      height: auto !important;
+      min-height: 52px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+    }
+  }
+}

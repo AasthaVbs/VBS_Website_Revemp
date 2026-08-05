@@ -9,6 +9,10 @@ declare global {
       zfutm_iframeSprt?: () => void;
       zfutm_DHtmlSprt?: () => void;
     };
+    /** Zoho WebForm analytics (capacity calculator MOFU form). */
+    _wfa_track?: {
+      wfa_submit?: (event: Event | unknown) => void;
+    };
   }
 }
 

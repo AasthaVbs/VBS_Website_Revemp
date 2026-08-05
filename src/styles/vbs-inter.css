@@ -1,0 +1,27 @@
+/**
+ * Inter — matches Next.js app/layout.tsx (next/font/google weights 300–600).
+ * Font files synced from main repo build output under /fonts/inter/.
+ */
+:root {
+  --font-inter: "Inter", "Inter Fallback", system-ui, sans-serif;
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --muted: 0 0% 97%;
+  --muted-foreground: 0 0% 28%;
+  --border: 355 70% 88%;
+  --primary: 355 96% 42%;
+  --primary-foreground: 0 0% 100%;
+  --soft-accent: #fef3f3;
+  --text-primary: #111111;
+  --text-secondary: #808080;
+  --text-accent: #d70416;
+}
+
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  ascent-override: 90.44%;
+  descent-override: 22.52%;
+  line-gap-override: 0%;
+  size-adjust: 107.12%;
+}

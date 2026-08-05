@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Container, Row, Col } from "react-bootstrap";
 
 import { SiteFooter } from "@/components/sections/site-footer";
+import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import LandingTopHeader from "@/components/landing/landing-top-header";
 import LandingPdfLeadModal from "@/components/landing/landing-pdf-lead-modal";
 
@@ -739,6 +740,7 @@ const DocumentationSystemThatScaleView = () => {
         </div>
       </section>
 
+      <GetInTouchSection />
       <SiteFooter />
       <LandingPdfLeadModal
         title="Documentation Systems That Scale"

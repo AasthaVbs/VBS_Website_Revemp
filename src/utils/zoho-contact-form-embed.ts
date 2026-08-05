@@ -39,6 +39,64 @@ export const ZOHO_CONTACT_THANK_YOU_PATH = "/thank-you/";
 export const ZOHO_CONTACT_THANK_YOU_URL =
   "https://www.virtualbuildingstudio.com/thank-you/";
 
+/** ACS horizontal contact form — BIM / architectural drafting landing pages. */
+export const ZOHO_ACS_BIM_LANDING_IFRAME_ID = "ziframe_30612";
+
+export const ZOHO_ACS_BIM_LANDING_IFRAME_SRC =
+  "https://forms.zohopublic.com/virtualbuildingstudio1/form/ACSLandingpageHoriContactusForm/formperma/JZfvlXwJQ3PLAkUyiVRbTHDkipbLtLyRL_bGmOOgr5w";
+
+export const ZOHO_ACS_BIM_LANDING_IFRAME_INITIAL_HEIGHT_PX = 700;
+
+/** Fixed visible iframe container height on the ACS landing contact section. */
+export const ZOHO_ACS_BIM_LANDING_VISIBLE_HEIGHT_PX = 700;
+
+export const ZOHO_ACS_BIM_LANDING_FORM_MAX_WIDTH_PX = 1200;
+
+/** Background image behind the ACS horizontal form. */
+export const ZOHO_ACS_BIM_LANDING_FORM_BG_IMAGE = "/image/OUTPUT%202.png";
+
+/** Hide duplicate Zoho form title inside the ACS horizontal embed. */
+export const ZOHO_ACS_BIM_LANDING_HEADER_CROP_PX = 179;
+
+/** Taller Zoho header stack on narrow viewports. */
+export const ZOHO_ACS_BIM_LANDING_HEADER_CROP_MOBILE_PX = 155;
+
+/** Trim excess empty space below the ACS horizontal form embed. */
+export const ZOHO_ACS_BIM_LANDING_FOOTER_CROP_PX = 72;
+
+export const ZOHO_ACS_BIM_LANDING_FOOTER_CROP_MOBILE_PX = 64;
+
+/** Extra visible height so fields are not clipped after crops. */
+export const ZOHO_ACS_BIM_LANDING_VISIBLE_HEIGHT_BUFFER_PX = 0;
+
+/** High cap so Zoho auto-resize can show the full form without internal scroll. */
+export const ZOHO_ACS_BIM_LANDING_VISIBLE_CAP_PX = 2400;
+
+export function getZohoAcsBimLandingHeaderCropPx() {
+  if (typeof window === "undefined") {
+    return ZOHO_ACS_BIM_LANDING_HEADER_CROP_PX;
+  }
+
+  return window.matchMedia("(max-width: 767px)").matches
+    ? ZOHO_ACS_BIM_LANDING_HEADER_CROP_MOBILE_PX
+    : ZOHO_ACS_BIM_LANDING_HEADER_CROP_PX;
+}
+
+export function getZohoAcsBimLandingFooterCropPx() {
+  if (typeof window === "undefined") {
+    return ZOHO_ACS_BIM_LANDING_FOOTER_CROP_PX;
+  }
+
+  return window.matchMedia("(max-width: 767px)").matches
+    ? ZOHO_ACS_BIM_LANDING_FOOTER_CROP_MOBILE_PX
+    : ZOHO_ACS_BIM_LANDING_FOOTER_CROP_PX;
+}
+
+/** Floor when using dynamic resize — fixed height uses ZOHO_ACS_BIM_LANDING_VISIBLE_HEIGHT_PX. */
+export function getZohoAcsBimLandingMinVisibleHeightPx() {
+  return ZOHO_ACS_BIM_LANDING_VISIBLE_HEIGHT_PX;
+}
+
 /** MEP data center whitepaper download form — /whitepaper/mep-coordination-data-centers-bim-workflows/ */
 export const ZOHO_MEP_DC_WP_IFRAME_ID = "ziframe_629176";
 

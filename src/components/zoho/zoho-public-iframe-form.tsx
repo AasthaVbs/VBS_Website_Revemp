@@ -11,6 +11,9 @@ import {
   applyZohoFormReferrer,
   applyZohoFormUtmToIframes,
   ensureGoogleRecaptchaForZoho,
+  getZohoAcsBimLandingFooterCropPx,
+  getZohoAcsBimLandingHeaderCropPx,
+  getZohoAcsBimLandingMinVisibleHeightPx,
   getZohoHiddenCostWpHeaderCropPx,
   getZohoIframeHeaderCropPx,
   getZohoMepDcWpFooterCropPx,
@@ -23,8 +26,9 @@ import {
   shouldRedirectAfterZohoSubmit,
 } from "@/utils/zoho-contact-form-embed";
 
-type HeaderCropPreset = "contact" | "mep-dc-wp" | "hidden-cost-wp";
-type FooterCropPreset = "mep-dc-wp";
+type HeaderCropPreset = "contact" | "mep-dc-wp" | "hidden-cost-wp" | "acs-bim";
+type FooterCropPreset = "mep-dc-wp" | "acs-bim";
+type MinVisibleHeightPreset = "mep-dc-wp" | "acs-bim";
 
 type ZohoPublicIframeFormProps = {
   iframeId: string;
@@ -34,7 +38,7 @@ type ZohoPublicIframeFormProps = {
   cropHeader?: "contact" | "";
   headerCropPx?: number;
   headerCropPreset?: HeaderCropPreset;
-  minVisibleHeightPreset?: "mep-dc-wp";
+  minVisibleHeightPreset?: MinVisibleHeightPreset;
   footerCropPreset?: FooterCropPreset;
   footerCropPx?: number;
   visibleCapDesktop?: number;
@@ -107,6 +111,9 @@ export function ZohoPublicIframeForm({
   const redirectedRef = useRef(false);
 
   const getHeaderCropPx = () => {
+    if (headerCropPreset === "acs-bim") {
+      return getZohoAcsBimLandingHeaderCropPx();
+    }
     if (headerCropPreset === "mep-dc-wp") {
       return getZohoMepDcWpHeaderCropPx();
     }
@@ -120,6 +127,9 @@ export function ZohoPublicIframeForm({
   };
 
   const getMinVisibleHeightPx = () => {
+    if (minVisibleHeightPreset === "acs-bim") {
+      return getZohoAcsBimLandingMinVisibleHeightPx();
+    }
     if (minVisibleHeightPreset === "mep-dc-wp") {
       return getZohoMepDcWpMinVisibleHeightPx();
     }
@@ -137,6 +147,9 @@ export function ZohoPublicIframeForm({
         mobile ? ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_MOBILE_PX : ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_PX,
       );
     }
+    if (minVisibleHeightPreset === "acs-bim" || headerCropPreset === "acs-bim") {
+      return Math.max(initialHeight, getZohoAcsBimLandingMinVisibleHeightPx());
+    }
     if (minVisibleHeightPreset === "mep-dc-wp" || headerCropPreset === "mep-dc-wp") {
       return Math.max(initialHeight, getZohoMepDcWpMinVisibleHeightPx());
     }
@@ -144,6 +157,9 @@ export function ZohoPublicIframeForm({
   };
 
   const getFooterCropPx = () => {
+    if (footerCropPreset === "acs-bim") {
+      return getZohoAcsBimLandingFooterCropPx();
+    }
     if (footerCropPreset === "mep-dc-wp") {
       return getZohoMepDcWpFooterCropPx();
     }

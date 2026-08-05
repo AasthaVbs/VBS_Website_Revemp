@@ -224,18 +224,13 @@ function ImpactChangesDiagram({ points }: { points: readonly string[] }) {
         </div>
       </div>
 
-      {/* Logo hub — desktop */}
+      {/* Logo hub — desktop only */}
       <div className="absolute left-[46px] top-1/2 z-10 hidden -translate-y-1/2 lg:block">
         <VbsLogoTile />
       </div>
 
-      {/* Logo hub — mobile */}
-      <div className="mb-8 flex justify-center lg:hidden">
-        <VbsLogoTile />
-      </div>
-
       {/* Numbered outcomes */}
-      <ol className="relative z-[1] flex w-full max-w-[508px] flex-col gap-8 max-lg:mx-auto max-lg:gap-6 lg:absolute lg:right-0 lg:top-1/2 lg:gap-[60px] lg:-translate-y-1/2">
+      <ol className="relative z-[1] flex w-full max-w-[508px] flex-col gap-4 max-lg:mx-auto sm:gap-5 lg:absolute lg:right-0 lg:top-1/2 lg:gap-[60px] lg:-translate-y-1/2">
         {points.map((text, index) => (
           <li key={text} className="flex items-start gap-3 sm:items-center sm:gap-5">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#D70416] bg-[#D70416] shadow-[0_6px_20px_rgba(255,192,192,0.55)] sm:h-[50px] sm:w-[50px]">
@@ -575,7 +570,7 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
 
         {/* What Actually Changes After You Decide */}
         <section className="bg-white py-16 max-lg:py-12 lg:py-20">
-          <PageContainer className="flex items-start gap-8 max-lg:flex-col max-lg:items-stretch max-lg:gap-8 lg:items-center lg:gap-10">
+          <PageContainer className="flex items-start gap-8 max-lg:flex-col max-lg:items-stretch max-lg:gap-6 lg:items-center lg:gap-10">
             <div className="flex w-full max-w-[508px] shrink-0 flex-col items-start gap-5 max-lg:max-w-full">
               <div className="flex w-full flex-col items-start gap-3">
                 <MepSectionTag label="What Actually Changes After You Decide" />
@@ -591,13 +586,23 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
               <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
                 After implementation, firms often notice:
               </p>
+              {/* Callout stays with copy on desktop; moved below diagram on mobile */}
+              <div className="hidden lg:block">
+                <CalloutAside>
+                  “These changes are not theoretical. They directly affect delivery timelines and
+                  project stability.”
+                </CalloutAside>
+              </div>
+            </div>
+
+            <ImpactChangesDiagram points={afterDecidePoints} />
+
+            <div className="w-full lg:hidden">
               <CalloutAside>
                 “These changes are not theoretical. They directly affect delivery timelines and
                 project stability.”
               </CalloutAside>
             </div>
-
-            <ImpactChangesDiagram points={afterDecidePoints} />
           </PageContainer>
         </section>
 

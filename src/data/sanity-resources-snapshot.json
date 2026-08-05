@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-01T13:40:01.780Z",
+  "fetchedAt": "2026-08-05T08:49:27.746Z",
   "posts": [
     {
       "_id": "92956000-fa3d-4687-9b11-040813fee588",
@@ -131146,7 +131146,7 @@
               "_key": "0208355b1a6d",
               "_type": "span",
               "marks": [],
-              "text": "With the revolutionization of technology, being fast and constantly updated has become a crucial need for any industry. Similarly, for BIM in AEC sector, professionals need to stay in sync with the latest trends and developments. Initially, the AEC professionals used CAD software for building design and modeling,"
+              "text": "With the revolutionization of technology, being fast and constantly updated has become a crucial need for any industry. Similarly, for BIM in AEC sector, professionals need to stay in sync with the latest trends and developments. Initially, the AEC professionals used CAD software for building design and modeling."
             }
           ],
           "markDefs": [],
@@ -131201,94 +131201,12 @@
           "style": "normal"
         },
         {
-          "_key": "25dcb405d9f0",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "0b931720d803",
-              "_type": "span",
-              "marks": [],
-              "text": "As outlined in a "
-            },
-            {
-              "_key": "724ded54f9db",
-              "_type": "span",
-              "marks": [
-                "ccfefa2e0764"
-              ],
-              "text": "Redshift report"
-            },
-            {
-              "_key": "4c9f6df50919",
-              "_type": "span",
-              "marks": [],
-              "text": ", the construction sector faces the monumental task of erecting "
-            },
-            {
-              "_key": "a2c419afe88f",
-              "_type": "span",
-              "marks": [
-                "strong"
-              ],
-              "text": "13,000"
-            },
-            {
-              "_key": "c3642b4ca54d",
-              "_type": "span",
-              "marks": [],
-              "text": " buildings daily until "
-            },
-            {
-              "_key": "01d9ef2a47da",
-              "_type": "span",
-              "marks": [
-                "strong"
-              ],
-              "text": "2050"
-            },
-            {
-              "_key": "be9bac1f9d4b",
-              "_type": "span",
-              "marks": [],
-              "text": ". This unprecedented demand arises from projections that anticipate accommodating an urban population of "
-            },
-            {
-              "_key": "f8f8d4c04498",
-              "_type": "span",
-              "marks": [
-                "strong"
-              ],
-              "text": "7 billion"
-            },
-            {
-              "_key": "b3b7e24846e5",
-              "_type": "span",
-              "marks": [],
-              "text": " (and a global population of "
-            },
-            {
-              "_key": "41fd438b6806",
-              "_type": "span",
-              "marks": [
-                "strong"
-              ],
-              "text": "10 billion"
-            },
-            {
-              "_key": "b3f8e16490bc",
-              "_type": "span",
-              "marks": [],
-              "text": ") by that time"
-            }
-          ],
-          "markDefs": [
-            {
-              "_key": "ccfefa2e0764",
-              "_type": "link",
-              "href": "https://redshift.autodesk.com/infographics/global-infrastructure"
-            }
-          ],
-          "style": "normal"
+          "_key": "e86722ce8ae1",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>As outlined in a <a href=\"https://redshift.autodesk.com/infographics/global-infrastructure\" rel=\"nofollow\" target=\"_blank\">Redshift report</a>, the construction sector faces the monumental task of erecting 13,000 buildings daily until 2050. This unprecedented demand arises from projections that anticipate accommodating an urban population of 7 billion (and a global population of 10 billion) by that time</P>\n "
+          }
         },
         {
           "_key": "433f4f497a18",

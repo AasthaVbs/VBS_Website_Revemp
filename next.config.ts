@@ -201,6 +201,57 @@ const nextConfig: NextConfig = {
         destination: "/landing/why-growing-architecture-firms-hit-documentation-wall",
         permanent: true,
       },
+      {
+        source: "/delivery-capacity-in-architecture-firms",
+        destination: "/landing/delivery-capacity-in-architecture-firms",
+        permanent: true,
+      },
+      {
+        source: "/delivery-capacity-in-architecture-firms/",
+        destination: "/landing/delivery-capacity-in-architecture-firms",
+        permanent: true,
+      },
+      // Resource hub short URLs from Gatsby delivery-capacity LP → working Main pages
+      {
+        source: "/capacity-model-comparison",
+        destination: "/landing/dedicated-remote-architect-vs-freelancer-vs-full-time",
+        permanent: true,
+      },
+      {
+        source: "/capacity-model-comparison/",
+        destination: "/landing/dedicated-remote-architect-vs-freelancer-vs-full-time",
+        permanent: true,
+      },
+      {
+        source: "/case-study-stabilizing-documentation",
+        destination: "/landing/why-growing-architecture-firms-hit-documentation-wall",
+        permanent: true,
+      },
+      {
+        source: "/case-study-stabilizing-documentation/",
+        destination: "/landing/why-growing-architecture-firms-hit-documentation-wall",
+        permanent: true,
+      },
+      {
+        source: "/senior-architect-bottlenecks-webinar",
+        destination: "/landing/documentation-system-that-scale",
+        permanent: true,
+      },
+      {
+        source: "/senior-architect-bottlenecks-webinar/",
+        destination: "/landing/documentation-system-that-scale",
+        permanent: true,
+      },
+      {
+        source: "/capacity-diagnostic-worksheet",
+        destination: "/pipeline-health-diagnostic",
+        permanent: true,
+      },
+      {
+        source: "/capacity-diagnostic-worksheet/",
+        destination: "/pipeline-health-diagnostic",
+        permanent: true,
+      },
     ];
 
     let sanityRedirects: { source: string; destination: string; permanent: boolean }[] = [];

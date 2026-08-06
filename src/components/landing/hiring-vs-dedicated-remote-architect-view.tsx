@@ -267,6 +267,10 @@ export function HiringVsDedicatedRemoteArchitectView() {
               </blockquote>
             </div>
             <div className="hvd-question-cards">
+              <article className="hvd-question-card">
+                <h3>At a certain stage, firms stop asking:</h3>
+                <p>&quot;Who do we hire next?&quot;</p>
+              </article>
               <div className="hvd-question-arrow" aria-hidden>
                 <Image
                   src={questionArrowIcon}
@@ -276,10 +280,6 @@ export function HiringVsDedicatedRemoteArchitectView() {
                   className="hvd-question-arrow-img"
                 />
               </div>
-              <article className="hvd-question-card">
-                <h3>At a certain stage, firms stop asking:</h3>
-                <p>&quot;Who do we hire next?&quot;</p>
-              </article>
               <article className="hvd-question-card hvd-question-card--accent">
                 <h3>They begin asking:</h3>
                 <p className="hvd-question-quote">

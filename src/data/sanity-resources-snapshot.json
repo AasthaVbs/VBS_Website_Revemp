@@ -1,6 +1,3170 @@
 {
-  "fetchedAt": "2026-08-05T15:32:19.400Z",
+  "fetchedAt": "2026-08-06T14:28:49.643Z",
   "posts": [
+    {
+      "_id": "18ed7b4f-b82c-44be-9d27-75076d5b6333",
+      "body": [
+        {
+          "_key": "3e7a1b58a004",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-33236f9a33def6a146d50afd1bab32dcbd29fa27-1460x926-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "c94c7003d55c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b5980c0dc3d2",
+              "_type": "span",
+              "marks": [],
+              "text": "A 3D model can look completely finished long before it actually is. A rendered column or air handlingunit can display full geometry during early design. Its actual structural capacity, fabrication tolerances, and connection details still remain unconfirmed. That gap between visual polish and real reliability creates a genuine problem for project teams. Contractors, estimators and fabricators all need one specific answer: how much can they trust this model right now?"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7e9d76646752",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "010fc45c3fc7",
+              "_type": "span",
+              "marks": [],
+              "text": "Without that answer, teams start making wrong assumptions. A contractor might treat a schematic-phase duct route as final and order materials against it. That single wrong assumption leads directly to field rework, wasted budget and schedule delays."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cff4b0ce06ab",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>The<a href=\"https://bimforum.org/resource/lod-level-of-development-lod-specification/\" rel=\"nofollow\" target=\"_blank\"> BIMForum’s Level of Development (LOD) Specification</a> defined a framework to solve exactly this problem. LOD in BIM defines exactly how developed a model element's geometry and data actually are. The LOD framework lets architects, contractors, and facility managers share one binding answer to that trust question.</P>"
+          }
+        },
+        {
+          "_key": "1d28769dd744",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "577ce870f303",
+              "_type": "span",
+              "marks": [],
+              "text": "This BIM Level of Development Guide walks through LOD 100 to LOD 500, shows how architectural, structural, and MEP teams apply them differently, and covers the standards that govern them. That shared answer starts with a clear definition of what LOD actually measures."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f4a72161a6e9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "577ce870f303",
+              "_type": "span",
+              "marks": [],
+              "text": "What Is Level of Development (LOD) in BIM?"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "6326453a551f",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>LOD in BIM tracks how a model element matures over a project's life. It starts as an abstract space-planning placeholder and ends as a fully field-verified physical component. The American Institute of Architects (AIA) coined this exact concept in 2008, inside the E202 BIM Protocol Exhibit. The AIA later refined it through the G202-2013 form, then again in the <a href=\"https://help.aiacontracts.com/hc/en-us/articles/7921936749587-faqs-e202-2022-bim-exhibit-for-sharing-models-with-project-participants-where-model-versions-may-not-be-enumerated-as-a-contract-document\" rel=\"nofollow\" target=\"_blank\"> 2022 E201 and E202</a>, digital practice documents.</P>"
+          }
+        },
+        {
+          "_key": "b2da493aa416",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "09e589046410",
+              "_type": "span",
+              "marks": [],
+              "text": "The AIA made one deliberate choice when naming this framework: it avoided the term \"Level of Detail.\" Visual detail and data reliability are not the same thing. Mixing them up is exactly what causes the trust problem described above. So the industry separated BIM levels of detail from Level of Development as two distinct concepts:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "909d2be18f32",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "60ac072cd91a",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Level of Detail (input metric):"
+            },
+            {
+              "_key": "87f58e90259b",
+              "_type": "span",
+              "marks": [],
+              "text": " It represents graphical richness, like the settings governing Revit level of detail. An element can look extremely detailed and still remain dimensionally unreliable."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "776726791352",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "969959658e03",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Level of Development (output metric):"
+            },
+            {
+              "_key": "e26901293e49",
+              "_type": "span",
+              "marks": [],
+              "text": " It measures how much project teams can rely on an element's geometry and data for real decisions, from cost estimating to fabrication."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c38daf52922c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7247932f7fb1",
+              "_type": "span",
+              "marks": [],
+              "text": "A few related terms show up alongside LOD in project documentation:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "406ec4744660",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "fcd6169fd560",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Level of Information (LOI):"
+            },
+            {
+              "_key": "74f3bfea4470",
+              "_type": "span",
+              "marks": [],
+              "text": " LOI includes non-graphical metadata, such as acoustic ratings, structural properties, and warranty data."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "10ebeb80ef71",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2a28f7347307",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Level of Model Definition (LOMD):"
+            },
+            {
+              "_key": "332b1d5e6da0",
+              "_type": "span",
+              "marks": [],
+              "text": " It's a UK term combining LOD and LOI into one baseline requirement."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "dda2d1a62372",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a7907207025a",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Level of Information Need (LOIN):"
+            },
+            {
+              "_key": "0f34dda41ab2",
+              "_type": "span",
+              "marks": [],
+              "text": " The team is codified under ISO 19650 and BS EN 17412-1; LOIN defines the exact geometric, alphanumeric and documentary data a specific project decision requires."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "28adbd622ec6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "baf5f130e748",
+              "_type": "span",
+              "marks": [],
+              "text": "This definition explains what LOD measures. It doesn't yet explain why project teams treat it as a contractual priority. That's the next question worth answering."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0f1dc2c8f0be",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nRead the Quick Guide on BIM Dimensions 2D to 8D--> \n<a href=\"https://www.virtualbuildingstudio.com/blog/bim-dimensions-2d-3d-4d-5d-6d-7d-8d/\">\nDetails and Benefits\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
+        },
+        {
+          "_key": "bfb0b6d4fdda",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1ea31041500a",
+              "_type": "span",
+              "marks": [],
+              "text": "Why BIM LOD Is Important in AEC Industry"
+            }
+          ],
+          "markDefs": [],
+          "style": "h1"
+        },
+        {
+          "_key": "411774d7d4b4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "fb0003187f98",
+              "_type": "span",
+              "marks": [],
+              "text": "Without a shared LOD framework, project teams end up making assumptions about model completeness, and those assumptions are usually wrong. A general contractor receiving a schematic-phase architectural model might assume mechanical duct routes are final and start procurement based on incomplete data. That single misread leads directly to field rework and schedule delays."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b897bb663b77",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "98e4ecca1d70",
+              "_type": "span",
+              "marks": [],
+              "text": "Formal BIM Level of Development standards prevent this by giving teams a common reference point."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "02ce51252af9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "116ad252910a",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Standardizing communication:"
+            },
+            {
+              "_key": "c5d33fcfba8a",
+              "_type": "span",
+              "marks": [],
+              "text": " Architects, structural engineers, MEP specialists and owners all speak the same language, when talking about model completeness."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1e6e7873515b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e28bc4df63e1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Reducing contractual risk:"
+            },
+            {
+              "_key": "4e70e41f747e",
+              "_type": "span",
+              "marks": [],
+              "text": " Teams incorporate an LOD matrix inside the BIM Execution Plan (BEP) and contract exhibits such as AIA E201-2022. This provides specific authorized uses for each model and protects design professionals if a contractor fabricates off an early stage model."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9488a9d91891",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "acc112fc0179",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Cutting over-modeling:"
+            },
+            {
+              "_key": "c673fa67f409",
+              "_type": "span",
+              "marks": [],
+              "text": " Modeling graphic in detail before it is needed wastes design fees and bloats file sizes.Teams that hold to LOD 100 or LOD 200 targets in early phases spend their modeling budget only where it counts."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "bdb293476979",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d8984d002c1e",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Supporting downstream BIM uses:"
+            },
+            {
+              "_key": "64f23d7f662e",
+              "_type": "span",
+              "marks": [],
+              "text": " LOD directly gates what teams can do with a model:"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "35adb94f8b2f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a1256528504a",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "3D coordination:"
+            },
+            {
+              "_key": "807c4be10fb3",
+              "_type": "span",
+              "marks": [],
+              "text": " Moving from LOD 200 to LOD 300/350 is what makes automated clash detection reliable."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "11ccdb36b68c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "44b0465a2f78",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "4D scheduling:"
+            },
+            {
+              "_key": "6faa610b91f5",
+              "_type": "span",
+              "marks": [],
+              "text": " Construction sequencing needs LOD 300 or 400 geometry to reflect real installation assemblies."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0de6afbf6f92",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9b6f19f70707",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "5D cost estimating:"
+            },
+            {
+              "_key": "aee0e670e5bb",
+              "_type": "span",
+              "marks": [],
+              "text": " Estimators move from rough $/sq ft numbers at LOD 100 to committed purchase prices at LOD 400."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "01500e58970a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f28f7d9ec704",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "6D facility operations:"
+            },
+            {
+              "_key": "9a6eb4fd5e2f",
+              "_type": "span",
+              "marks": [],
+              "text": " Facility managers depend on LOD 500 models loaded with asset tags and maintenance data."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fcc984246da7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1fcab1d7ee07",
+              "_type": "span",
+              "marks": [],
+              "text": "These benefits only work once teams understand what each individual level actually requires. That's where the framework gets specific."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2500b08301ed",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "803ef77bb9f9",
+              "_type": "span",
+              "marks": [],
+              "text": "Understanding Each BIM Level of Development (LOD 100 – LOD 500)"
+            }
+          ],
+          "markDefs": [],
+          "style": "h1"
+        },
+        {
+          "_key": "df6932438f44",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "94bafed32734",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD Standards in BIM only function because each level carries a precise, documented definition. Here's exactly what to expect at each stage, from BIM LOD 100 to LOD 500."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f620af6cf30b",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-4ab1a7d782bc435a0a8e047eefbd5856bad4213c-1460x633-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "120fc1f4f376",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1856f98f0ae4",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 100: Conceptual Design"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "ea519ce300e6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d6deee324dc5",
+              "_type": "span",
+              "marks": [],
+              "text": "At this LOD 100, a model element is nothing more than a generic symbol, a mass volume, or a broad spatial boundary. There's no material data behind it, no structural profile, and no product specification. Any dimension visible on screen works as a placeholder, not an actual measurement."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5b0e7d01c001",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9a5648d92b85",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Graphical data:"
+            },
+            {
+              "_key": "d9c1cd33f7ad",
+              "_type": "span",
+              "marks": [],
+              "text": " Overall massing, footprint polygons, conceptual volumes."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1a86ef23d5a2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "868d6af2aef7",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Non-graphical data:"
+            },
+            {
+              "_key": "25ce750b7da1",
+              "_type": "span",
+              "marks": [],
+              "text": " Gross area, target volume, occupancy classification, preliminary performance targets."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cb333dd0f2be",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "81cde699730b",
+              "_type": "span",
+              "marks": [],
+              "text": "Project teams use LOD 100 for feasibility studies, solar orientation analysis, gross area compliance checks, and macro cost estimates like cost-per-square-foot. Nobody should pull exact dimensions off an LOD 100 element for anything beyond that."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d234f47092e1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "bf65efd04e79",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Architectural:"
+            },
+            {
+              "_key": "f949fae28768",
+              "_type": "span",
+              "marks": [],
+              "text": " A massing block representing a proposed building wing, showing square footage without wall layers."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4dc3071d8795",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f50f44cc26b0",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Structural:"
+            },
+            {
+              "_key": "519f42768360",
+              "_type": "span",
+              "marks": [],
+              "text": " A generic structural zone denoting floor plate depth, without rebar or steel sections."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4d90ee5e1e2c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "18925adb1629",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "MEP:"
+            },
+            {
+              "_key": "d82404d29597",
+              "_type": "span",
+              "marks": [],
+              "text": " A volumetric box reserving space for a mechanical plant room, nothing more."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "810b2f8e1254",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6c32c1811b79",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 100 answers one question: does this fit the site and the budget? The next level starts answering a harder question: how will this actually get arranged?"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6f43697e9aa6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "273bacadf77f",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 200: Schematic Design (Approximate Geometry)"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "00606d53bb30",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a44fcf9bdff6",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 200 picks up exactly where LOD 100 leaves off. Model elements become generic systems and assemblies with approximate quantities, sizes, and locations. The geometry turns real at this stage, though it stays generic. A wall shows up with roughly correct thickness, but nobody has specified the stud gauge yet."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8bb07c0b60ea",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "04329c730833",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Graphical data:"
+            },
+            {
+              "_key": "a16e60242a0c",
+              "_type": "span",
+              "marks": [],
+              "text": " Generic wall thickness, floor slab contours, structural column layouts, preliminary duct routing."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "214dec5acd06",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7d0dac91fb4c",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Non-graphical data:"
+            },
+            {
+              "_key": "13405cfc9f43",
+              "_type": "span",
+              "marks": [],
+              "text": " Generic material categories, preliminary structural grades, approximate assembly types."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cbda93a2ed11",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ad61b01f1429",
+              "_type": "span",
+              "marks": [],
+              "text": "Teams use LOD 200 for schematic design review, checking spatial clearance and early quantity takeoffs."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5b92b9652eed",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "24781778027d",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Architectural:"
+            },
+            {
+              "_key": "03b13ffb09f3",
+              "_type": "span",
+              "marks": [],
+              "text": " Interior partitions as generic solids with corrected overall thickness."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0ea33dbb9bb5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e0d205aeec4c",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Structural:"
+            },
+            {
+              "_key": "0846db728395",
+              "_type": "span",
+              "marks": [],
+              "text": " Wide-flange steel columns at approximate grid intersection points."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "91f069f54471",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7360608945a2",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "MEP:"
+            },
+            {
+              "_key": "968dd3d65651",
+              "_type": "span",
+              "marks": [],
+              "text": " Main HVAC ducts modeled as rectangular solids, without flanges or turning vanes."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "09e94f563942",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c0d2f0d9b83a",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 200 gives the building its rough shape. LOD 300 turns that rough shape into something teams can actually build documents from."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0efbe676f57e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3d4e91bb1e22",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 300: Detailed Design (Precise Geometry)"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "fe6535e48de6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2a88ad4214e2",
+              "_type": "span",
+              "marks": [],
+              "text": "At LOD 300, elements become accurate in quantity, size, shape, location, and orientation. Every element also ties to the project's actual coordinate origin. That detail matters: teams can measure directly off the model instead of relying on written callouts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "747201c775b2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f8842e79ad37",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Graphical data:"
+            },
+            {
+              "_key": "908b0e917f10",
+              "_type": "span",
+              "marks": [],
+              "text": " Exact component layers in walls, precise structural profiles, actual MEP equipment footprints and connection ports."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5ec4e3b1a0f0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0bd33a9ef3aa",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Non-graphical data:"
+            },
+            {
+              "_key": "bc3e7a195194",
+              "_type": "span",
+              "marks": [],
+              "text": " Thermal performance values, structural ratings, fire ratings, OmniClass/UniFormat tags."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2cc4932bf187",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cd08a7bc3344",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 300 is the standard level for construction documentation. Teams typically prepare drawings, schedules and elevations straight from LOD 300 models. This is also the level where general clash detection starts producing meaningful results."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cd6596d3aa0e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ab2b23757685",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Architectural:"
+            },
+            {
+              "_key": "04dc2907189b",
+              "_type": "span",
+              "marks": [],
+              "text": " An exterior wall with exact layering, such as 5/8-inch gypsum board, 3-5/8-inch steel studs, 1-inch rigid insulation, and 4-inch face brick."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "13b0f9a10df9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d257847b2801",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Structural:"
+            },
+            {
+              "_key": "5c9a32492a4a",
+              "_type": "span",
+              "marks": [],
+              "text": " A concrete beam with right dimensions and cast-in sleeve openings for MEP."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f20783315baf",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0ba9d91285ca",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "MEP:"
+            },
+            {
+              "_key": "6e64f0342a27",
+              "_type": "span",
+              "marks": [],
+              "text": " An air handling unit with exact manufacturer dimensions and connection points."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "88a5c8eee86c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0f47f35cafd6",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 300 tells a contractor what the design intends. It doesn't tell them how the pieces physically connect to each other. BIMForum built LOD 350 specifically to close that gap."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a4deb39e67c2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "972e867b9e99",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 350: Construction Coordination (Precise Geometry with Connections)"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "0b80c2ead387",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "034df82c6871",
+              "_type": "span",
+              "marks": [],
+              "text": "BIMForum introduced LOD 350 to fill the exact space between design intent and fabrication. At this level, elements gain explicit interface geometry. The model now shows how a component physically connects to the systems around it, not just what the component looks like alone."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d53a75fa817a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4f083b47d13c",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Graphical data:"
+            },
+            {
+              "_key": "1e97fc95ab26",
+              "_type": "span",
+              "marks": [],
+              "text": " Support brackets, backing plates, slab edge angles, MEP hangers, seismic bracing, penetration sleeves."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a847f1a1208f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "61973e05d2ed",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Non-graphical data:"
+            },
+            {
+              "_key": "c71bebe59703",
+              "_type": "span",
+              "marks": [],
+              "text": " Fastener load ratings, connection specifications, trade installation responsibilities."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c8c67a339ff9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8f6f12012099",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 350 is the benchmark for detailed multi-trade clash resolution and pre-construction sign-off. It lets general contractors and trade specialists catch structural bracing clashing with ductwork before anyone shows up on site."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "90310e1b9dda",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c1c04d191d7c",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Architectural:"
+            },
+            {
+              "_key": "5c0c1e2f2c45",
+              "_type": "span",
+              "marks": [],
+              "text": " A curtain wall with embed plates, anchor brackets, and fire-stop seals."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d83838efa0fc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9676f4390c9c",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Structural:"
+            },
+            {
+              "_key": "738d78a58469",
+              "_type": "span",
+              "marks": [],
+              "text": " Steel columns with base plates, anchor bolts, stiffeners and splice joints."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b01b69058b21",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e04952a99981",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "MEP:"
+            },
+            {
+              "_key": "afaa1b71fe8e",
+              "_type": "span",
+              "marks": [],
+              "text": " Chilled water pipes with insulation thickness, hangers, and seismic trapeze assemblies."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "adf095648590",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "af5e316cee89",
+              "_type": "span",
+              "marks": [],
+              "text": "Once connections get resolved at LOD 350, the next step is turning that coordination into something a fabricator can actually cut and weld."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "40b21ca6199a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a49336a11a93",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 400: Fabrication Ready Geometry"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "df811a8c58d9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5268022355ee",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 400 elements become vendor-specific, carrying complete fabrication, assembly, and installation detail. The geometry gets precise enough that shop teams can feed it directly into CNC steel cutters or duct spooling machines."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1a3cdc7961b9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8bfee784bfcd",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Graphical data:"
+            },
+            {
+              "_key": "ff6b13a46e5b",
+              "_type": "span",
+              "marks": [],
+              "text": " Weld symbols, individual rebar with bend radii, sheet metal flanges, bolt threads, shop assembly cutouts."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0b1acc70bfc3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "491c3c89ae78",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Non-graphical data:"
+            },
+            {
+              "_key": "de71f34bfbf2",
+              "_type": "span",
+              "marks": [],
+              "text": " Manufacturer part numbers, order codes, fabrication delivery sequencing, committed purchase costs."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "00ceac1173f5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5168840356e8",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 400 authorizes off-site prefabrication, shop drawing extraction, procurement and detailed 4D logistics planning plus crane capacities and shoring layouts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8614375a0f55",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "190638be22c4",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Architectural:"
+            },
+            {
+              "_key": "27e784ba5a1b",
+              "_type": "span",
+              "marks": [],
+              "text": " Precast facade panels with lifting loops, panel connections and sealant backer rods."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "808f9ce5c211",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e1bd56aacb24",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Structural:"
+            },
+            {
+              "_key": "c00d5d2bec12",
+              "_type": "span",
+              "marks": [],
+              "text": " A concrete column with complete rebar layout, tie spacing and embedded plates."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9b89d15f637e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f781439d07c3",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "MEP:"
+            },
+            {
+              "_key": "e0c0f60e9ae5",
+              "_type": "span",
+              "marks": [],
+              "text": " Ductwork spools with exact sheet metal thickness, flanges, and shop piece IDs for plasma cutting."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a633f504816e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "44f246a84b8d",
+              "_type": "span",
+              "marks": [],
+              "text": "Once fabricators install these components on site, one transformation still remains: capturing what actually got built, not just what got planned."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "466600cf74ec",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9f7a8f4e3798",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 500: As-Built Model"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "623fe97a3ae5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f3299819a878",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 500 flips the logic behind the four BIM modeling levels before it. LOD 100 through 400 represent design intent and construction planning. Contractors verify field conditions to prepare LOD 500 models that correctly represent reality, not the design intent."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c23581e88804",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a10d71039f01",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Graphical data:"
+            },
+            {
+              "_key": "b5b1c9442976",
+              "_type": "span",
+              "marks": [],
+              "text": " Geometry adjusted to match field conditions, laser-scan point cloud alignments, verified clearances."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "de5163db53b0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0c47ff42db17",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Non-graphical data:"
+            },
+            {
+              "_key": "de40c8e71b8d",
+              "_type": "span",
+              "marks": [],
+              "text": " Asset tracking IDs, serial numbers, warranty dates, maintenance schedules, COBie data, commissioning records."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "71545e3bb52d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "882ed77b733d",
+              "_type": "span",
+              "marks": [],
+              "text": "Facility teams use LOD 500 exclusively for facility management, asset tracking, capital planning and digital twin deployment."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ad95b645d746",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "798d81fe01db",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Architectural:"
+            },
+            {
+              "_key": "939fab9c423e",
+              "_type": "span",
+              "marks": [],
+              "text": " As-built floor plans with verified dimensions and installed hardware schedules."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8952ccbcd252",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "470d72a31497",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Structural:"
+            },
+            {
+              "_key": "d3cbe5ca9d17",
+              "_type": "span",
+              "marks": [],
+              "text": " A foundation model that represents actual pile cap coordinates and post tensioning anchor locations."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6f62a467790c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cfb0a0d784cf",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "MEP:"
+            },
+            {
+              "_key": "4febeb05b224",
+              "_type": "span",
+              "marks": [],
+              "text": " A commissioned mechanical model with barcode tags, serial numbers, and balanced flow data."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "910a981c0ecb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f587b6cbc743",
+              "_type": "span",
+              "marks": [],
+              "text": "That covers the full spectrum, from placeholder mass to field-verified asset. Seeing all six levels side by side makes the differences easier to compare."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "554a1286c958",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4024d13e45f0",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 100 to LOD 500 – Quick Comparison"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "58776fd0809a",
+          "_type": "table",
+          "columnWidths": [
+            "15%",
+            "19%",
+            "23%",
+            "23%",
+            "20%"
+          ],
+          "rows": [
+            {
+              "_key": "8ef943c67e44",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "7fca15a0323b",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD Level",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "aa65afdf28c2",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Project Stage",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "3b9d14ee0c3a",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Geometric Accuracy",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "1cd3be825062",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Primary Authorized Use",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "3be1507d798d",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Cost Estimation Method",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "fee84223fea9",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "24ce918e8b87",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 100",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "c3a8e5117128",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Pre-Planning",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "c24b5a7dfc23",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Generic mass or symbol",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "a7c506a513dd",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Feasibility, massing studies",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "e315fd1dc75f",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Conceptual $/sq. ft. allowance",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "367b25999844",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "bcc25d7da49a",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 200",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "8cfc664f313a",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Schematic Design",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "8df284c71c0a",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Approximate size, shape and location",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "997c40378682",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Spatial clearance, schematic review",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "766b43e93fe3",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Estimated cost by generic volume",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "595fbdc7d8b3",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "a8870990f861",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 300",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "b4353d9035f9",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Design Development ",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "e14f6acaf419",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Specific, accurate size and location",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "44e0a628089b",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Permit drawings, contract docs",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "31a6de99d60b",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Cost by specific assembly take-off",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "634b9f711e8f",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "01301a7ba1db",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 350",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "24ef3af583d8",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Construction Coordination",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "203ac158bb65",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Specific plus interface geometry",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "2b8a6428c6fe",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Detailed clash resolution",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "b0a4df1f9074",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Subcontractor-informed pricing",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "2e3cbd539d69",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "96025613bea3",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 400",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "ead521d289e0",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Procurement or Fabrication",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "6d305ad950a3",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Vendor-specific, shop-level",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "612e6f2ba261",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Off-site manufacturing, CNC prefab",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "08c7d82c1d4f",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Committed buyout price",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "83b7b0cb76ca",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "135e3a56c4d8",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 500",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "602587af0abd",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Handover or Operations",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "fe1431b6ed90",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Field-verified as-built",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "3886b475f6b5",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Facility management, digital twins",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "f88498a53bdd",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Actual record costs and capital replacement values3",
+                  "rowspan": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_key": "b84716a45870",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "33aca62539b9",
+              "_type": "span",
+              "marks": [],
+              "text": "This table shows LOD as a clean, linear progression. Real projects, though, rarely move that way, and understanding why matters just as much as knowing the definitions."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "bf7c97a4a8dc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "33aca62539b9",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD Requirements Across Project Phases"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "dfdd89cee9d0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5239412bc3ee",
+              "_type": "span",
+              "marks": [],
+              "text": "A common assumption trips up a lot of teams: that an entire building model advance through LOD levels uniformly, all at once. It doesn't. A BIM model is a mix of elements progressing at different speeds depending on discipline priorities."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "16f62f969d81",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "feaecb067cd6",
+              "_type": "span",
+              "marks": [],
+              "text": "During Design Development, for instance, structural framing might already be at LOD 350 because long-lead steel needs to go out for procurement early. Meanwhile, interior casework is still sitting at LOD 200, and specialty MEP equipment hasn't moved past LOD 100. All three coexist in the same model, at the same phase, at three different LOD levels."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "afd1059931aa",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6ba5b6cf7d4b",
+              "_type": "span",
+              "marks": [],
+              "text": "The progression typically maps to project phases this way:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "499e89ac8c58",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1001aa3bdc17",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Pre-Design or Master Planning:"
+            },
+            {
+              "_key": "f69f5bf3dddc",
+              "_type": "span",
+              "marks": [],
+              "text": " LOD 100 across the board."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e70434aef3b9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "be3542f073f1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Schematic Design:"
+            },
+            {
+              "_key": "8ca9e0127600",
+              "_type": "span",
+              "marks": [],
+              "text": " LOD 200, with generic placeholders for major systems."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "52c23392369d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b2ed76bc11a1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Design Development:"
+            },
+            {
+              "_key": "125777a5af87",
+              "_type": "span",
+              "marks": [],
+              "text": " LOD 300, dimensioned and positioned accurately."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "36b8350052ac",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f4e1b4987fb7",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Construction Documentation:"
+            },
+            {
+              "_key": "4b357cf19b21",
+              "_type": "span",
+              "marks": [],
+              "text": " LOD 350, with connections and interfaces resolved."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "535a2e2953e1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e49f809d70e1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Procurement or Fabrication:"
+            },
+            {
+              "_key": "0c5d8cfb1c2a",
+              "_type": "span",
+              "marks": [],
+              "text": " LOD 400, owned by trade contractors."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9f1b08fab288",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "396700738978",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Handover or Closeout:"
+            },
+            {
+              "_key": "13fbc32ba876",
+              "_type": "span",
+              "marks": [],
+              "text": " LOD 500, field-verified and loaded with O&M data."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9e713a16f035",
+          "_type": "table",
+          "columnWidths": [
+            "40%",
+            "20%",
+            "20%",
+            "20%"
+          ],
+          "rows": [
+            {
+              "_key": "89baaa638ce9",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "f0a15648423c",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Project Phase",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "d0b899e2bf89",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Architectural",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "574b7ea8f88b",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Structural",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "eea7c79de0f2",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "MEP",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "31c4dec3e2d7",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "1367d009ad86",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Concept",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "ebda28c0fac9",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 100",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "2a5ebeee8fe2",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 100",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "27f56982fa2b",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 100",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "c911b2024bce",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "1ffb3f873736",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Schematic Design",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "cde55f0a2506",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 200",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "55069199657c",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 200",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "13ba93636348",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 200",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "c3ddf9e0dad1",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "ce64ab24ece0",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Design Development",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "55af9a46f17c",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 300",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "5023dc7bc18b",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 300",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "ca9d571f8159",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 300",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "9d07fda781ab",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "164eaf3b859a",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Construction Docs",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "c9825219dd3c",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 300–350",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "bf5b498f73b1",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 350",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "f59b86617f0f",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 350",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "5e4a2f16cc1f",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "c0760b28dcda",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Procurement & Build",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "37007be17ac0",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 400",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "757430b07ff9",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 400",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "6390740b4ff0",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 400",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "b7c0dc375bf8",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "1dc4c21b7c38",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Handover",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "d282866f74b4",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 500",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "e8f53205fbd0",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 500",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "f803267dd191",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "LOD 500",
+                  "rowspan": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_key": "04947a05a91d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "03ab8b2e3465",
+              "_type": "span",
+              "marks": [],
+              "text": "Phase alignment explains the timeline. But each discipline also applies these levels in its own way, and that's worth breaking down separately."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "672f2d0fc165",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3f7beabdd22c",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM LOD for Different Building Disciplines"
+            }
+          ],
+          "markDefs": [],
+          "style": "h1"
+        },
+        {
+          "_key": "5b793ff207c2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "839210438a79",
+              "_type": "span",
+              "marks": [],
+              "text": "Architectural, structural, and MEP teams follow the same six BIM LOD levels. They just apply them to entirely different problems, whether through in-house staff or outsourced "
+            },
+            {
+              "_key": "f5a869b66de5",
+              "_type": "span",
+              "marks": [
+                "f21416c365ae"
+              ],
+              "text": "BIM Modeling Services"
+            },
+            {
+              "_key": "87ca73be4bda",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "f21416c365ae",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "65ad11009666",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "fd13d0447b88",
+              "_type": "span",
+              "marks": [],
+              "text": "Architectural BIM LOD"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "5d101667d1ed",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e1f1022cf1b9",
+              "_type": "span",
+              "marks": [],
+              "text": "Architectural BIM LOD tracks spatial enclosures, partitions, and building envelopes. Firms delivering "
+            },
+            {
+              "_key": "51400af009a1",
+              "_type": "span",
+              "marks": [
+                "a480823b722c"
+              ],
+              "text": "Architectural BIM Services"
+            },
+            {
+              "_key": "c8e1cb545e43",
+              "_type": "span",
+              "marks": [],
+              "text": " start at LOD 100 with simple massing that shows overall volume without wall layers. At LOD 200, partitions become generic solids with approx thickness. Real-world layers like gypsum board and stud cavities with openings are modeled at LOD 300."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "a480823b722c",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/architectural-bim-services"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "18f9aaeefeda",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5666454bb226",
+              "_type": "span",
+              "marks": [],
+              "text": "The curtain wall interface details including embed plates and firestopping are at LOD 350. LOD 400 delivers shop joinery and precast panel lifting hardware. LOD 500 closes the loop with field-verified dimensions and finish codes."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a7215fb53efd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "aabe33f9f2ed",
+              "_type": "span",
+              "marks": [],
+              "text": "Structural BIM LOD"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "b382fcccf57b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d99901f9e3df",
+              "_type": "span",
+              "marks": [],
+              "text": "Structural BIM LOD represents foundations, reinforcement, framing and connections. Engineers start at LOD 100 with spatial volume allowances for core walls. At LOD 200, they place generic wide-flange shapes at approx grid intersections. LOD 300 sizes members accurately along with sleeve openings for MEP."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6fddbaa7d6a2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c335b7c94174",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 350 adds base plates, stiffeners, and splice joints. LOD 400 articulates full rebar geometry and weld symbols ready for CNC cutting. LOD 500 records verified pile cap coordinates and actual concrete test data."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d6980fb9966b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "839d5681af88",
+              "_type": "span",
+              "marks": [],
+              "text": "MEP BIM LOD"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "8c2cb6590fb9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7517004d7547",
+              "_type": "span",
+              "marks": [],
+              "text": "MEP BIM LOD represents HVAC, electrical, plumbing and fire protection systems. Teams keep space for utility plants at LOD 100, then showcase main duct and pipe routes as generic solids at LOD 200."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4ef639c78790",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e740bda7b1f4",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 300 sizes ductwork and piping to actual manufacturer footprints. LOD 350 adds insulation thickness, seismic hangers, and penetration sleeves. LOD 400 delivers full sheet metal spool models ready for plasma cutting. LOD 500 populates commissioned models with barcode tags and flow test data."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "256bb80f0455",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e480a5284ab5",
+              "_type": "span",
+              "marks": [],
+              "text": "Knowing what each discipline expects at every level helps teams plan correctly. It doesn't automatically stop them from misapplying the framework once the project gets moving."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "15adba9e5c72",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "17ad5bf92083",
+              "_type": "span",
+              "marks": [],
+              "text": "Common Mistakes When Using BIM Level of Development"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "8a1e1779dbdc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "37ea5885a160",
+              "_type": "span",
+              "marks": [],
+              "text": "Even with LOD standards written into contracts, teams still misapply them regularly, and the fallout follows a predictable pattern: cost overruns, bloated files, and disputes over who owed what."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1354af18d1e7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "234a33e75276",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "The uniform LOD fallacy:"
+            },
+            {
+              "_key": "5dfb8c022518",
+              "_type": "span",
+              "marks": [],
+              "text": " Demanding an entire model hit LOD 400, including furniture and minor trim, inflates modeling costs for no practical benefit."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d8b0780019c3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a0422c95cd68",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Confusing detail with development:"
+            },
+            {
+              "_key": "1e5d938f4a26",
+              "_type": "span",
+              "marks": [],
+              "text": " A Revit element can look highly detailed and still not be dimensionally reliable, only its assigned LOD confirms that."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4e496b5545b1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3a572491ced8",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Treating the LOD matrix as static:"
+            },
+            {
+              "_key": "b20cbec8bd17",
+              "_type": "span",
+              "marks": [],
+              "text": "If you leave the Model Element Table frozen after kickoff, you will have gaps as to who owns what element at each phase."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ad93da2df227",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1830c1afd58e",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Fabricating from LOD 300 models:"
+            },
+            {
+              "_key": "773e5c8a6e70",
+              "_type": "span",
+              "marks": [],
+              "text": " Subcontractors sometimes go directly from design-intent geometry to manufacturing without thinking about the tolerances that exist only at LOD 400.Components then arrive on site that don't fit."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "22c26dbd8743",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9d08513c956e",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Blanket LOD 500 requirements:"
+            },
+            {
+              "_key": "4d62219da4d9",
+              "_type": "span",
+              "marks": [],
+              "text": " Field-verifying every stud and footing wastes resources. Teams should target LOD 500 only at assets facility managers actually need to track."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9f4e6167642a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4b7bf5301b73",
+              "_type": "span",
+              "marks": [],
+              "text": "Avoiding these mistakes takes more than good intentions. It requires reference points, which published LOD standards already provide."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c5b8c97433fa",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "26a35cab9a77",
+              "_type": "span",
+              "marks": [],
+              "text": "The BIM LOD Standards and Industry Guidelines"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "9747e56bc88e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6c6ff3b7aec6",
+              "_type": "span",
+              "marks": [],
+              "text": "AIA Digital Practice Documents remain the backbone of LOD in North America. E202-2008 introduced the original five-tier system and the Model Element Table. G202-2013 sharpened the focus on authorized reliance. The 2022 E201-E202 series added modern digital rights and liability language."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1a22d263a576",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "67229f9aa227",
+              "_type": "span",
+              "marks": [],
+              "text": "BIMForum's Level of Development Specification builds on the AIA base. BIMForum added LOD 350 as a sixth tier to the original five levels the AIA defined, organizing definitions through CSI UniFormat 2010 and OmniClass. It also provides visual illustrations for hundreds of components across every discipline, which makes it the most practical day-to-day reference for project teams."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4cc9be961214",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2d8012f115bc",
+              "_type": "span",
+              "marks": [],
+              "text": "ISO 19650 and BS EN 17412-1 point toward where the industry is heading. Instead of rigid numeric tiers, the Level of Information Need (LOIN) framework asks clients to define exactly what geometric, alphanumeric, and documentary data a specific deliverable needs."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5deef53cd2ee",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "17a9b5fb2442",
+              "_type": "span",
+              "marks": [],
+              "text": "Knowing these standards is one thing. Applying them correctly on a live project is the harder skill, and it comes down to a few repeatable practices."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "23d9472f1c0e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6dbb204a565d",
+              "_type": "span",
+              "marks": [],
+              "text": "Best Practices for Selecting the Right LOD"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "7e5d7ae20a8f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "655ba7610bef",
+              "_type": "span",
+              "marks": [],
+              "text": "Getting LOD right means balancing model usefulness against modeling cost, and teams set that balance early, not after the fact."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d903754a7e43",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "dfdebde85eb2",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Build a project-specific LOD matrix:"
+            },
+            {
+              "_key": "9d36214f0650",
+              "_type": "span",
+              "marks": [],
+              "text": " Map every element, classified by UniFormat or OmniClass, against every project phase inside the BEP."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "20c459256f4f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1e2b6dbc0a25",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Assign Model Element Authorship explicitly:"
+            },
+            {
+              "_key": "0d70121cea4a",
+              "_type": "span",
+              "marks": [],
+              "text": " One person owns each element at each phase, whether that's the architect for partitions or the fabricator for connections. This helps in avoiding duplicate modeling across all the trades."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a86628c04953",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d4a76c517515",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Match LOD targets to delivery method:"
+            },
+            {
+              "_key": "7d0e22ab0d84",
+              "_type": "span",
+              "marks": [],
+              "text": " In Design-Bid-Build the design teams end at LOD 300 or LOD 350 and the speciality contractors create separate shop level LOD 400 models. In Design-Build or IPD, fabricators join early and models move straight into LOD 350 or 400 together."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0017f5f7df47",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a569a529c67b",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Run automated model audits:"
+            },
+            {
+              "_key": "7ab476214526",
+              "_type": "span",
+              "marks": [],
+              "text": " Tools like Solibri or Navisworks catch LOD compliance issues before milestone sign-off, so nobody discovers a mismatch after the fact."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ee6faaaf6dc6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d0e3291463b1",
+              "_type": "span",
+              "marks": [],
+              "text": "These practices keep LOD useful today. The framework itself, though, is evolving, and it's worth knowing where it's headed next."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c21f61db46cd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0adc9b7c5bab",
+              "_type": "span",
+              "marks": [],
+              "text": "Future of LOD in Building Information Modeling"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "7327e889af76",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "83d38b26dd1e",
+              "_type": "span",
+              "marks": [],
+              "text": "Laser scanning, AI and cloud data management are reshaping how teams apply LOD in practice."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "59a7311ee5a9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7d7e74aa7111",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Shift toward LOIN:"
+            },
+            {
+              "_key": "0bdeb5c6f95d",
+              "_type": "span",
+              "marks": [],
+              "text": " The industry is gradually moving from fixed numeric tiers toward dynamic, machine-readable Level of Information Need definitions that pull only the data a specific decision actually requires."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1775c856a1e0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3467a175d371",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Scan-to-BIM automation:"
+            },
+            {
+              "_key": "b549300af58a",
+              "_type": "span",
+              "marks": [],
+              "text": " Teams now use LiDAR scanning and photogrammetry to compare point cloud data against design models automatically, speeding up the path to verified LOD 500 status."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "621a3e46ba67",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a43b9be3edfd",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "AI-based LOD Auditing:"
+            },
+            {
+              "_key": "27788f0f0abb",
+              "_type": "span",
+              "marks": [],
+              "text": " Machine learning tools are increasingly auto tagging the model elements with the right LOD class according to geometric completeness."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2456767cf4eb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2ca454dc865e",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "LOD as the digital twin foundation:"
+            },
+            {
+              "_key": "13371fffad8d",
+              "_type": "span",
+              "marks": [],
+              "text": " Facility teams bind real-time IoT and building management data directly to field-verified LOD 500 geometry to run functional digital twins."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2468d24794d0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7705a6a4850f",
+              "_type": "span",
+              "marks": [],
+              "text": "These shifts don't replace the fundamentals covered in this guide. They build on them, which is exactly why understanding LOD 100 through 500 remains essential groundwork."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6f7f2820fecb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8971f46d7dc4",
+              "_type": "span",
+              "marks": [],
+              "text": "Conclusion"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "c5025395c95e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d9eded47f41b",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD gives the AEC industry something static 2D drawings never provided: a precise, enforceable answer to how much a model can be trusted at any given moment. From the placeholder massing of LOD 100 to the field-verified precision of LOD 500, each level answers a specific question at a specific project stage."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a3d19bea45d9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1a2861e1ca36",
+              "_type": "span",
+              "marks": [],
+              "text": "Getting LOD right protects design fees, prevents field rework, and keeps architectural, structural, and MEP teams working from matching expectations. As the industry moves toward ISO 19650 and LOIN, the logic behind LOD Standards in BIM isn't disappearing. It's getting sharper, and teams that understand it now will adapt fastest as it evolves."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8367a6437dd3",
+          "_type": "cta",
+          "buttonText": "Contact Us",
+          "buttonUrl": "/contact-us/",
+          "title": "Get Expert BIM Services That Deliver the Exact LOD Reliability Your Project Needs"
+        }
+      ],
+      "categories": [
+        {
+          "_id": "c4570779-37fa-4762-8173-57e0a7f8de73",
+          "title": "BIM Modeling "
+        }
+      ],
+      "featuredImage": {
+        "asset": {
+          "originalFilename": "Level of Development Details.jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/33236f9a33def6a146d50afd1bab32dcbd29fa27-1460x926.jpg"
+        }
+      },
+      "publishedAt": "2026-08-06",
+      "slug": "bim-level-of-development-an-overview",
+      "tags": [
+        "Blog"
+      ],
+      "title": "Level of Development (LOD) in BIM: 100, 200, 300, 350, 400, 500"
+    },
     {
       "_id": "92956000-fa3d-4687-9b11-040813fee588",
       "body": [
@@ -56095,43 +59259,12 @@
           }
         },
         {
-          "_key": "72a005782060",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "338cb35429a9",
-              "_type": "span",
-              "marks": [],
-              "text": "For MEP leaders, BIM coordination is no longer a nice-to-have quality check. It’s a line item that directly affects profit, schedule, and legal exposure. Missed clashes, late RFIs, and on-site rework hit budgets fast and quietly. "
-            },
-            {
-              "_key": "90536e296597",
-              "_type": "span",
-              "marks": [
-                "5fbcb35fda56",
-                "strong",
-                "em"
-              ],
-              "text": "Industry studies"
-            },
-            {
-              "_key": "4ed7cbcfb05d",
-              "_type": "span",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "text": " show avoidable data problems cost the construction sector $1.84 trillion, and rework commonly eats 5–10% percent of project value."
-            }
-          ],
-          "markDefs": [
-            {
-              "_key": "5fbcb35fda56",
-              "_type": "link",
-              "href": "https://fmicorp.com/insights/thought-leadership/beyond-the-buzz-harnessing-the-power-of-data-analytics-in-construction"
-            }
-          ],
-          "style": "normal"
+          "_key": "db76bf827335",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p></p>For MEP leaders, BIM coordination is no longer a nice-to-have quality check. It’s a line item that directly affects profit, schedule, and legal exposure. Missed clashes, late RFIs, and on-site rework hit budgets fast and quietly. <b><i><a href=\"https://fmicorp.com/insights/thought-leadership/beyond-the-buzz-harnessing-the-power-of-data-analytics-in-construction\" rel=\"nofollow\" target=\"_blank\">Industry studies</a> show avoidable data problems cost the construction sector $1.84 trillion, and rework commonly eats 5–10% percent of project value.</i></b></p>"
+          }
         },
         {
           "_key": "b52df16ce0ac",
@@ -56407,68 +59540,12 @@
           "style": "h3"
         },
         {
-          "_key": "fc0d9c8d3432",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "f01607df60a2",
-              "_type": "span",
-              "marks": [],
-              "text": "Rework remains a major cost driver. "
-            },
-            {
-              "_key": "45b6dc287712",
-              "_type": "span",
-              "marks": [
-                "dc7b234b826c"
-              ],
-              "text": "Multiple industry reviews show"
-            },
-            {
-              "_key": "1b015d2d158a",
-              "_type": "span",
-              "marks": [],
-              "text": " rework can range from roughly "
-            },
-            {
-              "_key": "202942218ff4",
-              "_type": "span",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "text": "4–10% of project cost and in outlier cases, much higher"
-            },
-            {
-              "_key": "7adee18cac26",
-              "_type": "span",
-              "marks": [],
-              "text": ". Rework due to poor project data and miscommunication resulted in nearly "
-            },
-            {
-              "_key": "3647c412246e",
-              "_type": "span",
-              "marks": [
-                "217940374a88",
-                "strong",
-                "em"
-              ],
-              "text": "$31.3 billion in losses in the U.S. alone in 2018."
-            }
-          ],
-          "markDefs": [
-            {
-              "_key": "dc7b234b826c",
-              "_type": "link",
-              "href": "https://www.planradar.com/us/cost-of-rework-construction/"
-            },
-            {
-              "_key": "217940374a88",
-              "_type": "link",
-              "href": "https://construction.autodesk.com/resources/guides/connected-construction-a-path-to-collaborating-better-together"
-            }
-          ],
-          "style": "normal"
+          "_key": "b6c1546c1c7e",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>Rework remains a major cost driver. <a href=\"https://www.planradar.com/us/cost-of-rework-construction/\" rel=\"nofollow\" target=\"_blank\">Multiple industry reviews show</a> rework can range from roughly <b><i>4–10% of project cost and in outlier cases, much higher.</b></i> Rework due to poor project data and miscommunication resulted in nearly <b><i><a href=\"https://construction.autodesk.com/resources/guides/connected-construction-a-path-to-collaborating-better-together\" rel=\"nofollow\" target=\"_blank\">$31.3 billion in losses in the U.S. alone in 2018.</a></b></i></p>"
+          }
         },
         {
           "_key": "ded5de072573",
@@ -57119,7 +60196,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57143,7 +60220,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57167,7 +60244,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57191,7 +60268,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57270,7 +60347,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57294,7 +60371,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57318,7 +60395,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57342,7 +60419,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57366,7 +60443,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57648,7 +60725,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57672,7 +60749,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57696,7 +60773,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57720,7 +60797,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -57744,7 +60821,7 @@
             }
           ],
           "level": 1,
-          "listItem": "number",
+          "listItem": "bullet",
           "markDefs": [],
           "style": "normal"
         },
@@ -137298,11 +140375,12 @@
           "style": "normal"
         },
         {
-          "_key": "a0ebbe3c82a1",
-          "_type": "readMore",
-          "label": "looking for a Prefect HVAC shop drawing service",
-          "linkText": "Contact US!",
-          "url": "https://www.virtualbuildingstudio.com/contact-us/"
+          "_key": "06381650bc4e",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nGet expert support for accurate HVAC duct shop drawings and faster project delivery-->\n<a href=\"https://www.virtualbuildingstudio.com/contact-us/\">\nContact US!\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
         },
         {
           "_key": "4f73ec862d2e",
@@ -137509,11 +140587,12 @@
           "style": "normal"
         },
         {
-          "_key": "1399e32b483e",
-          "_type": "readMore",
-          "label": "Download Now",
-          "linkText": "Ultimate HVAC Duct Shop Drawing Checklist",
-          "url": "https://www.virtualbuildingstudio.com/havc-duct-shop-drawing-checklist.pdf"
+          "_key": "f930e2534d2e",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nUltimate HVAC Duct Shop Drawing Checklist-->\n<a href=\"https://www.virtualbuildingstudio.com/havc-duct-shop-drawing-checklist.pdf\">\nDownload Now!\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
         },
         {
           "_key": "10375670c97c",
@@ -138542,11 +141621,12 @@
           "style": "normal"
         },
         {
-          "_key": "d46b607c0561",
-          "_type": "readMore",
-          "label": "Require 3D modeling for seamless HVAC installations?",
-          "linkText": "Contact US!",
-          "url": "https://www.virtualbuildingstudio.com/contact-us/"
+          "_key": "ffd12c95b4f9",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nStart your HVAC coordination with experienced BIM professionals today.\n<a href=\"https://www.virtualbuildingstudio.com/contact-us/\">\nContact US! \n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
         },
         {
           "_key": "126a771cd93a",
@@ -138669,11 +141749,12 @@
           "style": "normal"
         },
         {
-          "_key": "d589b335faad",
-          "_type": "readMore",
-          "label": "Read More",
-          "linkText": "BIM Clash Detection: Process, Advantages and Best Practices",
-          "url": "https://www.virtualbuildingstudio.com/blog/bim-clash-detection-process-advantages-and-practices/"
+          "_key": "0d4da41a457d",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nRead More --> \n<a href=\"https://www.virtualbuildingstudio.com/blog/bim-clash-detection-process-advantages-and-practices/\">\nBIM Clash Detection: Process, Advantages and Best Practices\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
         },
         {
           "_key": "7aeb65bb942e",
@@ -138891,13 +141972,13 @@
           "_type": "cta",
           "buttonText": "Contact Us",
           "buttonUrl": "/contact-us/",
-          "title": "Need Expert Review of Your HVAC Shop Drawings?"
+          "title": "Need accurate HVAC duct shop drawings for your next project?"
         }
       ],
       "categories": [
         {
-          "_id": "c4570779-37fa-4762-8173-57e0a7f8de73",
-          "title": "BIM Modeling "
+          "_id": "022c6bd5-d22b-4747-86aa-0e458ec48619",
+          "title": "MEP "
         }
       ],
       "featuredImage": {
@@ -140809,10 +143890,10 @@
       "_id": "cf4ad7a3-9e5b-458c-a423-dd236adaaebc",
       "body": [
         {
-          "_key": "20323cc34e2e",
+          "_key": "411435ec1328",
           "_type": "image",
           "asset": {
-            "_ref": "image-6a08e12c44545a1f43f7afa77ea7e7f94b880eb4-850x540-webp",
+            "_ref": "image-59db8ba3577fe6b793be4bb47e6892b1fb7ff362-1460x926-jpg",
             "_type": "reference"
           }
         },
@@ -140921,10 +144002,10 @@
           "style": "normal"
         },
         {
-          "_key": "63fe52d71d4f",
+          "_key": "961b06b5ed5b",
           "_type": "image",
           "asset": {
-            "_ref": "image-91e03ec4f30934ba7b1afd7985595f7115d9524e-850x425-webp",
+            "_ref": "image-18ec4aa078c41e0b706b66324c0c622ae28f58c0-1460x926-jpg",
             "_type": "reference"
           }
         },
@@ -140999,30 +144080,10 @@
               "_key": "3a4748c242f5",
               "_type": "span",
               "marks": [],
-              "text": "CAD to BIM services are a critical component of the AEC industry’s digital transformation. These services involve the conversion of "
-            },
-            {
-              "_key": "ac3ddf3b55a8",
-              "_type": "span",
-              "marks": [
-                "4940bb6caafa"
-              ],
-              "text": "2D drawings"
-            },
-            {
-              "_key": "d1f4e123ca38",
-              "_type": "span",
-              "marks": [],
-              "text": " into 3D models."
+              "text": "CAD to BIM services are a critical component of the AEC industry’s digital transformation. These services involve the conversion of 2D drawings into 3D models."
             }
           ],
-          "markDefs": [
-            {
-              "_key": "4940bb6caafa",
-              "_type": "link",
-              "href": "https://www.virtualbuildingstudio.com/cad-drafting-services/2d-drafting-services/"
-            }
-          ],
+          "markDefs": [],
           "style": "normal"
         },
         {
@@ -141077,7 +144138,7 @@
               "_key": "1f26ecd90a03",
               "_type": "span",
               "marks": [],
-              "text": "The CAD to BIM services are an effective and cost-efficient solution to the design and visualization requirements."
+              "text": "The CAD to BIM are an effective and cost-efficient solution to the design and visualization requirements."
             }
           ],
           "level": 1,
@@ -141093,32 +144154,12 @@
               "_key": "d450aa83a4a8",
               "_type": "span",
               "marks": [],
-              "text": "The quality of the construction process and deliverables increases multiple fold with "
-            },
-            {
-              "_key": "57ec01b021e4",
-              "_type": "span",
-              "marks": [
-                "c212b1703644"
-              ],
-              "text": "BIM modeling services"
-            },
-            {
-              "_key": "786fedb1aa82",
-              "_type": "span",
-              "marks": [],
-              "text": "."
+              "text": "The quality of the construction process and deliverables increases multiple fold with BIM modeling services."
             }
           ],
           "level": 1,
           "listItem": "bullet",
-          "markDefs": [
-            {
-              "_key": "c212b1703644",
-              "_type": "link",
-              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/"
-            }
-          ],
+          "markDefs": [],
           "style": "normal"
         },
         {
@@ -141161,7 +144202,7 @@
               "_key": "5a9c096474cb",
               "_type": "span",
               "marks": [],
-              "text": "The design and construction team can coordinate and collaborate better with CAD to BIM services in use."
+              "text": "The design and construction team can coordinate and collaborate better with CAD to BIM in use."
             }
           ],
           "level": 1,
@@ -141198,10 +144239,10 @@
           "style": "normal"
         },
         {
-          "_key": "c142aab95be0",
+          "_key": "0e4e074c8da7",
           "_type": "image",
           "asset": {
-            "_ref": "image-eeadc5541b4d3755f0fef827e6733f8fcb4dfa80-850x540-webp",
+            "_ref": "image-40842ad3ea2ca8c680fa6bdb0c1cda5e2e67843b-1460x926-jpg",
             "_type": "reference"
           }
         },
@@ -141414,10 +144455,30 @@
               "_key": "e4bf5cd1906a",
               "_type": "span",
               "marks": [],
-              "text": "The benefits can be reaped to their maximum by outsourcing appropriate service providers for the project. With the digitization of the AEC sector, every other firm is considering indulging in BIM modeling services for a more manageable and precise project execution."
+              "text": "The benefits can be reaped to their maximum by outsourcing appropriate service providers for the project. With the digitization of the AEC sector, every other firm is considering indulging in "
+            },
+            {
+              "_key": "8770cc397688",
+              "_type": "span",
+              "marks": [
+                "4545f6908e7d"
+              ],
+              "text": "BIM modeling services"
+            },
+            {
+              "_key": "41012b49a101",
+              "_type": "span",
+              "marks": [],
+              "text": " for a more manageable and precise project execution."
             }
           ],
-          "markDefs": [],
+          "markDefs": [
+            {
+              "_key": "4545f6908e7d",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/"
+            }
+          ],
           "style": "normal"
         },
         {
@@ -141593,7 +144654,7 @@
           "_type": "cta",
           "buttonText": "Contact Us",
           "buttonUrl": "/contact-us/",
-          "title": "Hire Expert for CAD to BIM Services"
+          "title": "Elevate Construction Project with CAD to BIM Conversion"
         }
       ],
       "categories": [
@@ -141604,8 +144665,8 @@
       ],
       "featuredImage": {
         "asset": {
-          "originalFilename": "cad-to-bim-in-aec-main-image.webp",
-          "url": "https://cdn.sanity.io/images/rog08jar/production/a6fb90769794c192e13bbf5424e041e82af0b746-945x600.webp"
+          "originalFilename": "cad-to-bim-in-aec-main.jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/59db8ba3577fe6b793be4bb47e6892b1fb7ff362-1460x926.jpg"
         }
       },
       "publishedAt": "2023-11-08",
@@ -149133,1007 +152194,6 @@
         "blog"
       ],
       "title": "[Download FREE] Top 10 Dynamo Scripts for Revit: Supercharge Your Workflows"
-    },
-    {
-      "_id": "18ed7b4f-b82c-44be-9d27-75076d5b6333",
-      "body": [
-        {
-          "_key": "bbc882ce7c1f",
-          "_type": "image",
-          "asset": {
-            "_ref": "image-6ac6bf592296e30a0afe2d608b5e9c13bc85fcd5-1460x926-jpg",
-            "_type": "reference"
-          }
-        },
-        {
-          "_key": "df9fe893c69d",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "75c216286e9d",
-              "_type": "span",
-              "marks": [],
-              "text": "Building Information Modeling (BIM) is the digital representation of any building that allows architects and all related stakeholders to rely upon throughout the building lifecycle. It provides a streamlined workflow and facilitates proper coordination amongst the project team members. The Level of Development in BIM further simplifies the working process through various levels and results in an execution rooted in standards."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "9e8a412da38c",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "d00111d9e7c1",
-              "_type": "span",
-              "marks": [
-                "strong"
-              ],
-              "text": "Origin of Level of Development (LOD)"
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "684d89d1c26c",
-          "_type": "rawHtml",
-          "code": {
-            "_type": "code",
-            "code": "<p>Level of Development (LOD) was first introduced in 2008 by the<a href=\"https://www.aia.org/\" rel=\"nofollow\" target=\"_blank\"> American Institute of Architects</a>, (AIA); the concept was already in use. It defined the five different levels of development to elaborate the stages of detailing in BIM.</P>"
-          }
-        },
-        {
-          "_key": "a8b19debaafc",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "cb9b30cf8147",
-              "_type": "span",
-              "marks": [
-                "strong"
-              ],
-              "text": "Vico Software"
-            },
-            {
-              "_key": "c498d4dad5a2",
-              "_type": "span",
-              "marks": [],
-              "text": " – a construction analysis software company, first used a system similar to LOD, associating the digital models with the project cost."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "1360accf1515",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "08a3eb18bc7d",
-              "_type": "span",
-              "marks": [],
-              "text": "All the parameters and details related to the digital model were made accessible to everyone by the company at different stages of the design process."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "80c13e75e1f1",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "9da218673496",
-              "_type": "span",
-              "marks": [],
-              "text": "What is the Level of development (LOD)?"
-            }
-          ],
-          "markDefs": [],
-          "style": "h2"
-        },
-        {
-          "_key": "48545b92244f",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "749e6688114e",
-              "_type": "span",
-              "marks": [],
-              "text": "Level of Development (LOD) is a set of standards devised for Architectural, Engineering and Construction professionals. It provides the evolutionary analysis of the element’s geometry and related information throughout the process and conveys its reliability to the concerned team for further work at different development stages."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "ded2a2871574",
-          "_type": "image",
-          "asset": {
-            "_ref": "image-76c43bfc3c0a60cff61c2dc9cecb43e68fea6708-850x450-webp",
-            "_type": "reference"
-          }
-        },
-        {
-          "_key": "b6bca88d352f",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "53febba9e46d",
-              "_type": "span",
-              "marks": [],
-              "text": "Also referred to as a lifecycle BIM tool, it helps professionals to document and specify the BIM contents precisely and clearly. It was formulated by AIA to establish a standard framework and develop an efficient communication tool."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "51918657f229",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "b92dbac29097",
-              "_type": "span",
-              "marks": [],
-              "text": "The inherent characteristics of the elements in a model can be defined by the designers with the help of LOD specifications at different stages."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "a969981806a5",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "f273f11b95e1",
-              "_type": "span",
-              "marks": [],
-              "text": "The LOD enhances the BIM planning, allocation, communication, budgeting, collaboration, and scheduling, helping in reducing the possibility of reworking."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "fc9a794300d9",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "248e19966fa5",
-              "_type": "span",
-              "marks": [],
-              "text": "The clarity in illustration provides a depth in the model which equips the user with an understanding of how and at which stage they can rely on the element. The team can communicate with other consultants related to the project, discussing the usability and limitations of the model."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "5f60a1ee9705",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "fe894b494812",
-              "_type": "span",
-              "marks": [],
-              "text": "The AIA defined six levels of development, which state the reliability and complexity of a BIM model on a 100-500 scale. Generally, 80-90% of the elements of a project are expected to reach a minimum of LOD-350. Each level refers to a different stage during the design or construction process."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "6a925d06d6ec",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "dbf3e69a9959",
-              "_type": "span",
-              "marks": [],
-              "text": "The details and level of information for the BIM element increase with the increase in the level of development. The scale facilitates communication between BIM teams and clarifies the details of the components required at each stage."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "4d26028c9bb5",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "8b760e3471fa",
-              "_type": "span",
-              "marks": [
-                "strong"
-              ],
-              "text": "Looking for LOD 100, 200, 300, 350, 400, 500 Modeling Services for your Design and Construction project."
-            },
-            {
-              "_key": "6895071ad351",
-              "_type": "span",
-              "marks": [],
-              "text": " "
-            },
-            {
-              "_key": "efa6cfed98fe",
-              "_type": "span",
-              "marks": [
-                "strong",
-                "df802ea2ff98"
-              ],
-              "text": "Contact us"
-            },
-            {
-              "_key": "a254fd68897b",
-              "_type": "span",
-              "marks": [],
-              "text": " "
-            },
-            {
-              "_key": "c268636dd246",
-              "_type": "span",
-              "marks": [
-                "strong"
-              ],
-              "text": "with your requirements."
-            }
-          ],
-          "markDefs": [
-            {
-              "_key": "df802ea2ff98",
-              "_type": "link",
-              "href": "https://www.virtualbuildingstudio.com/contact-us/"
-            }
-          ],
-          "style": "normal"
-        },
-        {
-          "_key": "8c4b83b0cda4",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "fee44e3a896d",
-              "_type": "span",
-              "marks": [],
-              "text": "Difference between Level of development and Level of detail"
-            }
-          ],
-          "markDefs": [],
-          "style": "h2"
-        },
-        {
-          "_key": "03f138d2fd8a",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "5a13c89b8a0d",
-              "_type": "span",
-              "marks": [],
-              "text": "The level of detail is often perceived as similar to the Level of Development while both being different from each other. The level of detail describes the proportion of details encompassed by the model elements, but the level of development specifies the extent of thought put into developing the specifications and geometry of the elements in a model."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "a01a314ba81e",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "95f244d6d488",
-              "_type": "span",
-              "marks": [],
-              "text": "LOD also entails the degree to which the working team can depend on the information while using the model. In more simplified terms, the level of details can be described as an input to the element and the level of development as the output."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "cae7e1e7ab09",
-          "_type": "readMore",
-          "label": "Read More",
-          "linkText": "Significance of BIM in the AEC Industry",
-          "url": "https://www.virtualbuildingstudio.com/blog/significance-of-bim-in-the-aec-industry/"
-        },
-        {
-          "_key": "a37756311f49",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "2f29f0cb0991",
-              "_type": "span",
-              "marks": [],
-              "text": "Various Levels of development in BIM"
-            }
-          ],
-          "markDefs": [],
-          "style": "h2"
-        },
-        {
-          "_key": "426d07f7ca4c",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "6d724552ff1b",
-              "_type": "span",
-              "marks": [],
-              "text": "Enlisted are the six levels of development as defined by AIA –"
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "e707af38e18f",
-          "_type": "image",
-          "asset": {
-            "_ref": "image-38b4d0f41bbeb340a6012307236faf392a2daaf3-850x450-webp",
-            "_type": "reference"
-          }
-        },
-        {
-          "_key": "55eaa488acdd",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "9684994b1915",
-              "_type": "span",
-              "marks": [],
-              "text": "LOD 100 – Conceptual Design"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "18db542269b2",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "9bde31432f80",
-              "_type": "span",
-              "marks": [],
-              "text": "The model is in the preliminary stage in this model of development, elucidating the parameters such as height, area, volume, location, and orientation."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "5517b31fd0e8",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "b1b1792d0d17",
-              "_type": "span",
-              "marks": [],
-              "text": "The model is simple with no decorative elements or patterns on display in the frame but uses a mass representation to depict the elements of the model."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "be5a583d3101",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "a4037c5f804f",
-              "_type": "span",
-              "marks": [],
-              "text": "The information provided in this stage is perceived as an approximate analysis helping the professionals to understand spatial requirements."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "87f239756cd4",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "32a5e460dd60",
-              "_type": "span",
-              "marks": [],
-              "text": "It involves some primary analysis inclusive of site construction phasing, whole building energy analysis, and conceptual cost."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "de320a67d90e",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "2ba364ca9b43",
-              "_type": "span",
-              "marks": [],
-              "text": "LOD 200 – Schematic Design"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "5cbc4d68867d",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "b8430318131c",
-              "_type": "span",
-              "marks": [],
-              "text": "It is the schematic designing and design development stage of the model taking the longest time among all levels."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "210c73949d80",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "c3c93e6a2f9a",
-              "_type": "span",
-              "marks": [],
-              "text": "The degree of complexity slightly increases in this LOD with the display of geometric features like shapes and dimensions."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "a91f0b30d965",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "1e8a2da515ed",
-              "_type": "span",
-              "marks": [],
-              "text": "This level uses an approximate outline of the model which is further used for construction documentation instead of a mass model."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "71622abfd294",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "d4d9b895e47c",
-              "_type": "span",
-              "marks": [],
-              "text": "The model will include the approximate quantity, size, location and systematic relationship of the objects planned for later installation."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "e4213d64b80c",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "bb275504be01",
-              "_type": "span",
-              "marks": [],
-              "text": "LOD 300 – Detailed Model"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "7e161fe52aa4",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "104587bf7eaf",
-              "_type": "span",
-              "marks": [],
-              "text": "LOD 300 is a detailed representation of the project with accurate dimensions, sizes, quantity, orientation, and location."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "8c560f212ee9",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "fe43958744cc",
-              "_type": "span",
-              "marks": [],
-              "text": "It also includes the details of fabrication, installation and information on assembly with the elimination of rough shapes and exact elements in place for every aspect of the project."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "277dd1656d57",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "409cc238ed79",
-              "_type": "span",
-              "marks": [],
-              "text": "The engineering and architectural drawings are accurate and precise, with appropriate information for use in the construction phase."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "447f008a6c74",
-          "_type": "readMore",
-          "label": "Let’s Connect!",
-          "linkText": "Looking for Level of Development modeling services for your Project?",
-          "url": "https://www.virtualbuildingstudio.com/contact-us/"
-        },
-        {
-          "_key": "805c212dbf48",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "021fe971bf6e",
-              "_type": "span",
-              "marks": [],
-              "text": "LOD 350 – Model ready for construction"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "491b4a670c3c",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "f4caf9e67239",
-              "_type": "span",
-              "marks": [],
-              "text": "The information obtained in this level of development is similar to LOD 300 but its relatability on other components of the building is also defined in this stage."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "c5b38ed9fe2c",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "275b25c20362",
-              "_type": "span",
-              "marks": [],
-              "text": "This level guides the installation know-how for different building components and the ways these components align with other building systems."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "ce52d04276f5",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "0477a6b5ce83",
-              "_type": "span",
-              "marks": [],
-              "text": "The level might also include non-graphical details. The different building parameters can be analyzed without using non-modelled elements."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "c8e49167b4a8",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "922bbb69c551",
-              "_type": "span",
-              "marks": [],
-              "text": "In LOD 350, the model runs the clash detection program and effectively builds connections between building materials by resolving all the clashes with appropriate BIM services."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "616887089d8b",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "24e31157eaf9",
-              "_type": "span",
-              "marks": [],
-              "text": "LOD 400 – Fabrication & Assembly"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "dec79779e7fe",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "4841fe7c8077",
-              "_type": "span",
-              "marks": [],
-              "text": "It is the construction stage of the LOD and outlines details such as fabrication, assembly, and installation of components."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "92741f577a39",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "9e89c6a4a8eb",
-              "_type": "span",
-              "marks": [],
-              "text": "For the majority of projects, LOD 400 is developed by trade partners with inputs from AEC professionals."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "895fe48491f2",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "1d56513d256c",
-              "_type": "span",
-              "marks": [],
-              "text": "The information from this level of development can be given directly to the manufacturers for making building components."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "dc10a9d97ce3",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "c72eb66b5f2f",
-              "_type": "span",
-              "marks": [],
-              "text": "A main difference between the other four levels and LOD 400 is trade scheduling. In all other levels, various trades get completed at different stages, but all trades align together for LOD 400."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "8f0f28157fc6",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "44a1d00043a2",
-              "_type": "span",
-              "marks": [],
-              "text": "LOD 500 – Final model"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "0bf76f8d8f67",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "645457b74a98",
-              "_type": "span",
-              "marks": [],
-              "text": "LOD 500 is the post-construction, as-built stage of the model with verified fields in terms of size, location, quantity, orientation, and shape."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "8c07121126c4",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "2424ba420af0",
-              "_type": "span",
-              "marks": [],
-              "text": "The project managers can later refer to LOD 500 for operation, maintenance and lifecycle management purposes."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "1331821389ed",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "8a50b8e34e0a",
-              "_type": "span",
-              "marks": [],
-              "text": "The LOD 300 model is intertwined with the fabrication data of LOD 400 to achieve the final level of development."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "1eebbb1bb1d1",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "93a97ea4ef42",
-              "_type": "span",
-              "marks": [],
-              "text": "The LOD 500 includes maintenance records, geometric information, and equipment details along with the general details of the building."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "6a6ab13a048b",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "69fb6ba71f82",
-              "_type": "span",
-              "marks": [],
-              "text": "Benefits of Level of Development (LOD) in the AEC Industry"
-            }
-          ],
-          "markDefs": [],
-          "style": "h2"
-        },
-        {
-          "_key": "f3b4d1b7266b",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "7af78ac1d54e",
-              "_type": "span",
-              "marks": [],
-              "text": "LOD is a vital part of the whole BIM process. Any negligence towards it can create difficulties for the team working on the project in coordinating and functioning in alignment with each other."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "9c9d90888c99",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "dbc31ce58f76",
-              "_type": "span",
-              "marks": [],
-              "text": "The proper use of LOD brings ease of communication and collaboration enhancing the pace of work. Some of its benefits are listed below:"
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "a832e692d2e6",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "f252e08b9011",
-              "_type": "span",
-              "marks": [],
-              "text": "1 Enhanced Workflow and Better Communication"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "3011d9347b43",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "7bcd2d437f51",
-              "_type": "span",
-              "marks": [],
-              "text": "The project designers can deliver proper guidelines with detailed information and data about all the elements to their subordinates, ensuring a streamlined workflow and no lapses in the execution and maintenance of the project."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "f8cdded49165",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "d3c11998b0a2",
-              "_type": "span",
-              "marks": [],
-              "text": "The various levels of LOD allow the contractors to conveniently execute all processes as per the BIM model, and designers can easily direct their teams at all stages simultaneously."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "cd520d49ded5",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "73a6047e59c8",
-              "_type": "span",
-              "marks": [],
-              "text": "2 Increased Accuracy of BIM Models"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "b2214eed43c4",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "c2c57224cfc4",
-              "_type": "span",
-              "marks": [],
-              "text": "The accuracy of BIM models is accentuated by the inclusion of LOD in the process. The different team owners associated with specific niches of designing can cater accurately to their design needs using a BIM model and get clarity about the final scope of work."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "1438220ef8b8",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "33358d453109",
-              "_type": "span",
-              "marks": [],
-              "text": "Conclusion"
-            }
-          ],
-          "markDefs": [],
-          "style": "h2"
-        },
-        {
-          "_key": "598ff21dab07",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "ac2d70a1790d",
-              "_type": "span",
-              "marks": [],
-              "text": "With the digital office culture and working procedure of designers, "
-            },
-            {
-              "_key": "cf926f03f194",
-              "_type": "span",
-              "marks": [
-                "e439d756d827"
-              ],
-              "text": "3D BIM modeling"
-            },
-            {
-              "_key": "3d2d4c883486",
-              "_type": "span",
-              "marks": [],
-              "text": " are the major designing tool used critically for all projects. It becomes a tedious task to explain to everyone the project expectations and completion process. Also, different team members perceive the project differently and look forward to different timelines for completion."
-            }
-          ],
-          "markDefs": [
-            {
-              "_key": "e439d756d827",
-              "_type": "link",
-              "href": "https://www.virtualbuildingstudio.com/blog/what-is-bim-3d-modeling-and-why-is-it-important/"
-            }
-          ],
-          "style": "normal"
-        },
-        {
-          "_key": "774ce6681262",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "1afea0d603ef",
-              "_type": "span",
-              "marks": [],
-              "text": "LOD comes into the picture, standardizing the definition of completion and eradicating the possibilities of discrepancies related to project completion. It uses advanced technology that enhances the work quality and introduces design clarity among the team members."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "96b4835216da",
-          "_type": "cta",
-          "buttonText": "Contact Us",
-          "buttonUrl": "/contact-us/",
-          "title": "Optimize Your Construction Project Design With Building Information Modeling"
-        }
-      ],
-      "categories": [
-        {
-          "_id": "c4570779-37fa-4762-8173-57e0a7f8de73",
-          "title": "BIM Modeling "
-        }
-      ],
-      "featuredImage": {
-        "asset": {
-          "originalFilename": "leve-of-development-details-lod.jpg",
-          "url": "https://cdn.sanity.io/images/rog08jar/production/6ac6bf592296e30a0afe2d608b5e9c13bc85fcd5-1460x926.jpg"
-        }
-      },
-      "publishedAt": "2023-08-31",
-      "slug": "bim-level-of-development-an-overview",
-      "tags": [
-        "Blog"
-      ],
-      "title": "Level of Development (LOD) in BIM: 100, 200, 300, 350, 400, 500"
     },
     {
       "_id": "98f142ae-0fc0-440b-ae06-815f0169f7bc",

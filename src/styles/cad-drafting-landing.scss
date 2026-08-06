@@ -1611,6 +1611,10 @@
   }
 
   &.bim-modeling-landing-page {
+    /* Match Figma / doc-systems canvas: 1440px content shell */
+    --vbs-page-max: 1440px;
+    --vbs-content-width: calc(var(--vbs-page-max) - (2 * var(--vbs-page-gutter-md)));
+
     .cad-landing-hero.mep-page-hero {
       .mep-page-hero__title {
         max-width: 640px;

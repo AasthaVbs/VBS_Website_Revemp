@@ -120,7 +120,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 8px !important;
+      gap: 4px !important;
       width: 100%;
     }
 
@@ -128,7 +128,7 @@
       display: block;
       font-size: 14px;
       line-height: 20px;
-      padding: 2px 0;
+      padding: 0;
       word-break: break-word;
     }
 
@@ -272,6 +272,15 @@
   @media (min-width: 1024px) {
     .vbs-site-footer__main {
       gap: 20px;
+    }
+
+    .vbs-site-footer__link-list {
+      gap: 4px !important;
+    }
+
+    .vbs-site-footer__link {
+      padding: 0;
+      line-height: 22px;
     }
 
     .vbs-site-footer__link-columns {

@@ -51,7 +51,7 @@ function FooterLink({ label, href }: { label: string; href: string }) {
     <li>
       <Link
         href={href}
-        className="vbs-site-footer__link inline-flex pb-1 text-[16px] font-normal capitalize leading-6 text-[#CBCCCD] transition-opacity hover:opacity-80"
+        className="vbs-site-footer__link inline-flex text-[16px] font-normal capitalize leading-6 text-[#CBCCCD] transition-opacity hover:opacity-80"
       >
         {label}
       </Link>
@@ -107,7 +107,7 @@ export function SiteFooter() {
               <h4 className="vbs-site-footer__column-title text-[24px] font-normal capitalize leading-tight text-[#CBCCCD]">
                 Quick Links
               </h4>
-              <ul className="vbs-site-footer__link-list flex flex-col items-start gap-3">
+              <ul className="vbs-site-footer__link-list flex flex-col items-start gap-1">
                 {quickLinks.map((item) => (
                   <FooterLink key={item.label} label={item.label} href={item.href} />
                 ))}
@@ -118,7 +118,7 @@ export function SiteFooter() {
               <h4 className="vbs-site-footer__column-title w-full text-[24px] font-normal capitalize leading-tight text-[#CBCCCD]">
                 Resources
               </h4>
-              <ul className="vbs-site-footer__link-list flex flex-col items-start gap-3">
+              <ul className="vbs-site-footer__link-list flex flex-col items-start gap-1">
                 {resourceLinks.map((item) => (
                   <FooterLink key={item.label} label={item.label} href={item.href} />
                 ))}

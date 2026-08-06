@@ -1,6 +1,6 @@
-"use client";
+﻿"use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -8,34 +8,22 @@ import { SiteFooter } from "@/components/sections/site-footer";
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import LandingTopHeader from "@/components/landing/landing-top-header";
 import LandingPdfLeadModal from "@/components/landing/landing-pdf-lead-modal";
-
-const HeroImage = "/image/doc-that-scale-header.png";
-const HeroMobileImage = "/image/doc-that-scale-banner2.png";
-const InfographicImage = "/image/Visualizing%20the%20GAP%20(1).svg";
-const GrowthStageIllustration = "/image/what-changes-during-growth-stage1.jpg";
-const Title1Svg = "/image/Title-1.svg";
-const Title2Svg = "/image/Title-2.svg";
-const WhyAddingMorePeopleImg = "/image/Why%20Adding%20More%20People.png";
-
+import { DocSystemsFigmaSections } from "@/components/landing/doc-systems-figma-sections";
+import "@/styles/doc-systems-figma-sections.scss";
 
 const SCALE_SYSTEM_PDF_URL =
   "https://www.virtualbuildingstudio.com/resources/documentation-systems-that-scale.pdf?utm_source=LP_DocSystems&utm_medium=LPCTA&utm_campaign=T2TOFU";
 const DOC_SYSTEMS_HIDE_CHAT_ICON = "vbs-doc-systems--hide-chat-icon";
 
-/** Primary CTA — brand red pill */
+/** Primary CTA â€” brand red pill (legacy sections) */
 const DOC_LP_BTN_PRIMARY =
   "btn doc-lp-btn-primary text-white text-uppercase px-3 px-lg-4 py-2 rounded-pill fw-semibold d-inline-flex align-items-center justify-content-center text-decoration-none";
 
-const ScaleSystemsMeta = {
-  metaTitle:
-    "Scalable Documentation Systems for Architecture Firms",
-  metaDescription:
-    "Explore documentation systems that help architecture firms scale efficiently, reduce coordination issues, and improve project delivery speed.",
-  metaKeywords:
-    "architecture documentation, documentation systems, growing architecture firms, AEC documentation, BIM documentation, design documentation, construction documentation, drawing review cycles, coordination workflows, architecture firm scaling, senior architect workload, documentation workflow, drawing standards, multidisciplinary coordination",
-  ogImage: null,
-  twitterImage: null,
-};
+
+
+
+
+
 
 /**
  * Section header aligned with documentation-wall LP:
@@ -93,7 +81,9 @@ const DocumentationSystemThatScaleView = () => {
     if (typeof document === "undefined") return;
     const root = document.querySelector("main.doc-systems-page");
     if (!root) return;
-    const sections = Array.from(root.querySelectorAll("section:not(.doc-systems-hero-split)"));
+    const sections = Array.from(
+      root.querySelectorAll("section:not(.doc-systems-hero-split):not(.doc-figma-hero)"),
+    );
 
     if (shouldReduceMotion) {
       sections.forEach((section) => section.classList.add("in-view"));
@@ -122,55 +112,6 @@ const DocumentationSystemThatScaleView = () => {
     };
   }, []);
 
-  const growthInsightWrapRef = useRef(null);
-  const growthInsightGridRef = useRef(null);
-  useEffect(() => {
-    const root = growthInsightWrapRef.current;
-    const gridEl = growthInsightGridRef.current;
-    if (!root || !gridEl) return;
-    const items = Array.from(root.querySelectorAll(".seq-item"));
-    const ids = ["s0", "s1", "s2", "s3", "s4", "s5", "s6", "s7"];
-    const delays = [80, 210, 340, 470, 620, 760, 900, 1040];
-    items.forEach((el) => el.classList.remove("show"));
-    if (shouldReduceMotion) {
-      ids.forEach((id) => {
-        const el = root.querySelector(`#${id}`);
-        if (!el) return;
-        el.classList.add("show");
-      });
-      return;
-    }
-    let started = false;
-    const timers = [];
-    const startSequence = () => {
-      if (started) return;
-      started = true;
-      ids.forEach((id, i) => {
-        const t = window.setTimeout(() => {
-          const el = root.querySelector(`#${id}`);
-          if (!el) return;
-          el.classList.add("show");
-        }, delays[i]);
-        timers.push(t);
-      });
-    };
-    const io = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          startSequence();
-          observer.disconnect();
-        });
-      },
-      { threshold: 0.3, rootMargin: "0px 0px 0px 0px" },
-    );
-    io.observe(gridEl);
-    return () => {
-      io.disconnect();
-      timers.forEach((t) => window.clearTimeout(t));
-    };
-  }, [shouldReduceMotion]);
-
   const scrollToBreakingSection = (e) => {
     e.preventDefault();
     if (typeof document === "undefined") return;
@@ -178,567 +119,11 @@ const DocumentationSystemThatScaleView = () => {
     target?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const hiringImmediate = [
-    "Contributors to each documentation set",
-    "Coordination paths between team members",
-    "Review load as seniors oversee new staff",
-  ];
-  const hiringTakesTime = [
-    "Knowledge transfer about firm standards and client nuances",
-    "Alignment on coordination conventions",
-    "Independent decision-making without senior validation",
-  ];
   return (
-    <main className="doc-systems-page documentation-wall-page">
-      <LandingTopHeader />
-
-      <section className="doc-systems-hero-split doc-systems-hero-premium doc-systems-hero-ref">
-        <div className="doc-systems-hero-ref__blueprint" aria-hidden="true" />
-        <div className="doc-systems-hero-ref__glow doc-systems-hero-ref__glow--image" aria-hidden="true" />
-        <div className="doc-systems-hero-ref__glow doc-systems-hero-ref__glow--cta" aria-hidden="true" />
-        <Container fluid="lg" className="doc-systems-hero-split__container doc-systems-hero-ref__container position-relative">
-          <Row className="align-items-center g-5 g-xl-5 doc-systems-hero-split__row doc-systems-hero-premium__row doc-systems-hero-ref__row">
-            <Col lg={7} className="order-1 order-lg-1">
-              <motion.div className="doc-systems-hero-copy doc-systems-hero-ref__copy doc-systems-reveal doc-systems-reveal--1 position-relative" {...reveal(0.02)}>
-                <h1 className="h1 mb-3">
-                  Why Delivery Starts Slowing Down as Architecture Firms Grow
-                </h1>
-                <p className="lead text-secondary mb-0 doc-systems-hero-ref__body">
-                  As firms grow, review cycles expand, coordination gets heavier, and senior architects stay stuck in documentation longer than expected-despite hiring.
-                </p>
-                <img
-                  src={HeroMobileImage}
-                  alt="Mature architect reviewing documentation and floor plans on a large monitor"
-                  className="doc-systems-hero-mobile-image"
-                  loading="eager"
-                  decoding="async"
-                />
-                <div className="doc-v2-hero-ctas mb-4 mt-4">
-                  <a href="#" className="doc-v2-btn doc-v2-btn-outline" onClick={scrollToBreakingSection}>
-                    <i className="fa-solid fa-magnifying-glass me-2" aria-hidden />
-                    See What's Slowing Your Delivery
-                  </a>
-                  <LandingPdfLeadModal
-                    title="Documentation Systems That Scale"
-                    downloadUrl={SCALE_SYSTEM_PDF_URL}
-                    trigger={(
-                      <a href={SCALE_SYSTEM_PDF_URL} target="_blank" rel="noopener noreferrer" className={DOC_LP_BTN_PRIMARY}>
-                        <i className="fa-solid fa-file-arrow-down me-2" aria-hidden />
-                        Download the Guide
-                        <i className="fa-solid fa-arrow-right-long ms-2" aria-hidden />
-                      </a>
-                    )}
-                  />
-                </div>
-                <p className="lead text-secondary mb-0 doc-systems-hero-ref__body">
-                  Growth doesn&apos;t reduce delivery pressure-it redistributes it.
-                </p>
-
-              </motion.div>
-            </Col>
-          </Row>
-        </Container>
-
-      </section>
-
-      <section className="doc-systems-pattern-narrative doc-v2-pattern-sec doc-systems-band doc-systems-band--pattern py-9 py-lg-10">
-        <Container fluid="lg" className="doc-v2-wrap">
-          <motion.div className="doc-v2-rv" {...reveal(0.04)}>
-            {/* <div className="doc-v2-chip">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-              </svg>
-              Pattern Recognition
-            </div> */}
-            <h2 className="h2 section-title mb-1 doc-systems-heading-single-line">
-              The Pattern Most Architecture Firms <span className="doc-v2-red">Experience</span>
-            </h2>
-            <div className="doc-v2-rule" aria-hidden="true" />
-            <p className="lead text-secondary doc-v2-pattern-intro">
-              You&apos;re running more projects than before-but delivery feels slower.
-              <br />
-              <em className="doc-v2-pattern-intro-em">The pattern starts showing up:</em>
-            </p>
-
-          </motion.div>
-          <div className="doc-v2-cards-2 doc-v2-cards-2--pattern-row">
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d1">
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-              </div>
-              <p className="doc-v2-card-p mb-0">
-                Review cycles that used to take days now take weeks
-              </p>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d2">
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
-              <p className="doc-v2-card-p mb-0">
-                Senior architects are still reviewing almost every drawing set
-              </p>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d3">
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                </svg>
-              </div>
-              <p className="doc-v2-card-p mb-0">
-                RFIs keep increasing-even after hiring more staff
-              </p>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d4">
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <line x1="8" y1="6" x2="21" y2="6" />
-                  <line x1="8" y1="12" x2="21" y2="12" />
-                  <line x1="8" y1="18" x2="21" y2="18" />
-                  <line x1="3" y1="6" x2="3.01" y2="6" />
-                  <line x1="3" y1="12" x2="3.01" y2="12" />
-                  <line x1="3" y1="18" x2="3.01" y2="18" />
-                </svg>
-              </div>
-              <p className="doc-v2-card-p mb-0">
-                Coordination gets heavier, not lighter, across projects
-              </p>
-            </div>
-          </div>
-          <div className="doc-v2-section-closer-wrap doc-v2-section-closer-wrap--in-pattern">
-            <p className="doc-v2-section-closer mb-0">
-              At first, it doesn&apos;t look like a system problem.
-              But over time, it becomes impossible to ignore.
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      <section className="doc-systems-growth-stage doc-v2-growth-sec doc-systems-band doc-systems-band--subtle py-9 py-lg-10">
-        <Container fluid="lg" className="doc-v2-wrap">
-          <motion.div className="doc-v2-growth-intro doc-v2-rv w-100 mb-4 mb-lg-5" {...reveal(0.05)}>
-           
-            <h2 className="h2 section-title mb-1 doc-systems-heading-single-line">
-              What Changes During <span className="doc-v2-red">Growth Stage</span>
-            </h2>
-            <div className="doc-v2-rule" aria-hidden="true" />
-            <p className="lead text-secondary doc-v2-growth-lede">
-              This isn&apos;t about performance.
-              It happens because the structure of delivery changes as firms grow.
-            </p>
-            <ul className="doc-v2-growth-list mb-0">
-              <li>More projects run in parallel</li>
-              <li>More handoffs happen across teams</li>
-              <li>More decisions require coordination</li>
-            </ul>
-
-          </motion.div>
-          <motion.div className="doc-v2-rv" {...reveal(0.12)}>
-            <img
-              src={GrowthStageIllustration}
-              alt="What changes during growth stage: more projects, more handoffs, and more decisions"
-              className="w-100 h-auto"
-              width={1600}
-              height={900}
-              loading="lazy"
-              decoding="async"
-            />
-          </motion.div>
-          <div className="doc-v2-section-closer-wrap">
-            <p className="doc-v2-section-closer mb-0">
-              &quot;Growth increases interdependence-not just workload.&quot;
-            </p>
-          </div>
-
-        </Container>
-      </section>
-
-      <section className="doc-systems-gap-premium doc-systems-band doc-systems-band--white pb-9 pb-lg-10">
-        <Container fluid="lg">
-          {/* <SectionHeadEditorial
-            title="Visualizing the Documentation"
-            titleAccent="Gap"
-            iconClass="fa fa-sitemap"
-            // lead="Most firms think they have a workload problem. What they actually have is a coordination problem."
-            className="doc-systems-section-editorial--center-lg mb-4 mb-lg-5"
-          /> */}
-
-
-
-          <div className="doc-systems-infographic-shell mx-auto mt-5 mt-lg-5">
-            <img src={InfographicImage} alt="Early stage versus growth stage documentation and coordination gap" />
-          </div>
-          <div className="doc-v2-section-closer-wrap doc-v2-section-closer-wrap--gap">
-            <p className="doc-v2-section-closer mb-0">
-              The Gap: Coordination points multiply faster than capacity expands
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      <section id="what-guide" className="doc-v2-guide-sec doc-systems-band doc-systems-band--subtle py-9 py-lg-10 scroll-margin">
-        <Container fluid="lg" className="doc-v2-wrap">
-          <div className="doc-v2-guide-header doc-v2-rv">
-            {/* <div className="doc-v2-chip doc-v2-chip--center">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-              Inside the Guide
-            </div> */}
-            <h2 className="h2 section-title mb-1 doc-systems-heading-single-line">
-              What This Guide Helps You <span className="doc-v2-red">See</span>
-            </h2>
-            <div className="doc-v2-rule" aria-hidden="true" />
-            <p className="lead text-secondary doc-v2-guide-sub">
-              This guide breaks down why delivery starts slowing down-and where documentation begins to become the constraint.
-            </p>
-          </div>
-          <div className="doc-v2-cards-3">
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d1">
-              {/* <div className="doc-v2-card-num">01</div> */}
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                  <polyline points="14 2 14 8 20 8" />
-                  <line x1="16" y1="13" x2="8" y2="13" />
-                  <line x1="16" y1="17" x2="8" y2="17" />
-                </svg>
-              </div>
-              <div className="doc-v2-card-h">Why Informal Documentation Worked</div>
-              <div className="doc-v2-card-p">
-                Why informal documentation worked reliably at smaller scale—and when that changes.
-              </div>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d2">
-              {/* <div className="doc-v2-card-num">02</div> */}
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <rect x="3" y="3" width="7" height="7" />
-                  <rect x="14" y="3" width="7" height="7" />
-                  <rect x="14" y="14" width="7" height="7" />
-                  <rect x="3" y="14" width="7" height="7" />
-                </svg>
-              </div>
-              <div className="doc-v2-card-h">What Changes as Projects Overlap</div>
-              <div className="doc-v2-card-p">What changes as project concurrency increases and overlap grows across teams.</div>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d3">
-              {/* <div className="doc-v2-card-num">03</div> */}
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <line x1="23" y1="11" x2="17" y2="11" />
-                  <line x1="20" y1="8" x2="20" y2="14" />
-                </svg>
-              </div>
-              <div className="doc-v2-card-h">Why Hiring Shifts the Load</div>
-              <div className="doc-v2-card-p">Why hiring shifts the problem instead of solving it—and what to do instead.</div>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d1">
-              {/* <div className="doc-v2-card-num">04</div> */}
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                </svg>
-              </div>
-              <div className="doc-v2-card-h">When Coordination Becomes the Constraint</div>
-              <div className="doc-v2-card-p">Where coordination becomes the constraint—not raw headcount or project volume.</div>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d2">
-              {/* <div className="doc-v2-card-num">05</div> */}
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                  <polyline points="17 6 23 6 23 12" />
-                </svg>
-              </div>
-              <div className="doc-v2-card-h">What Scales</div>
-              <div className="doc-v2-card-p">
-                What scalable firms have in common, and why it&apos;s usually a pattern—not a talent—problem.
-              </div>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d3">
-              {/* <div className="doc-v2-card-num">06</div> */}
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <circle cx="12" cy="12" r="10" />
-                  <line x1="12" y1="8" x2="12" y2="12" />
-                  <line x1="12" y1="16" x2="12.01" y2="16" />
-                </svg>
-              </div>
-              <div className="doc-v2-card-h">Where Firms Stall</div>
-              <div className="doc-v2-card-p">
-                Where growing firms typically get stuck before systems catch up with their delivery demands.
-              </div>
-            </div>
-          </div>
-          <div className="doc-v2-section-closer-wrap doc-v2-section-closer-wrap--hiring">
-            <p className="doc-v2-section-closer mb-0">
-              Hiring doesn&apos;t remove delivery pressure—it redistributes it across the system.
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      <section className="doc-systems-hiring-section doc-growth-insight-section py-8 py-lg-9">
-        <Container fluid="lg" className="doc-growth-insight__container">
-          <div className="doc-growth-insight-wrap" ref={growthInsightWrapRef}>
-            <h2 className="h2 section-title doc-growth-insight__title mb-1">
-              Why Adding More People <span className="doc-growth-insight__title-em">Doesn&apos;t Fix It</span>
-            </h2>
-            <div className="doc-v2-rule" aria-hidden="true" />
-            <p className="lead text-secondary doc-growth-insight__intro mb-0">
-              When delivery starts slowing down, hiring feels like the obvious fix.
-              But adding people changes the system in ways that aren&apos;t immediately visible.
-            </p>
-
-            <div className="doc-growth-insight__grid" ref={growthInsightGridRef}>
-              <div className="doc-growth-insight__col doc-growth-insight__col--left">
-                <div className="seq-item doc-growth-insight__section-label" id="s0">
-                  <div className="doc-growth-insight__title-row">
-                    <img src={Title1Svg} alt="" className="doc-growth-insight__title-glyph" width={64} height={37} decoding="async" />
-                    <h3 className="doc-growth-insight__heading-plain mb-0">What increases immediately</h3>
-                  </div>
-                </div>
-                <ul className="doc-growth-insight__points-list mb-0">
-                  {hiringImmediate.map((text, i) => (
-                    <li key={text} id={`s${i + 1}`} className="seq-item doc-growth-insight__list-point">
-                      {text}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="doc-growth-insight__col doc-growth-insight__col--visual">
-                <img
-                  src={WhyAddingMorePeopleImg}
-                  alt="Team members crowding a stressed lead—adding people increases coordination overhead before benefits appear"
-                  className="doc-growth-insight__center-photo img-fluid"
-                  width={640}
-                  height={480}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-
-              <div className="doc-growth-insight__col doc-growth-insight__col--right">
-                <div className="seq-item doc-growth-insight__section-label" id="s4">
-                  <div className="doc-growth-insight__title-row">
-                    <img src={Title2Svg} alt="" className="doc-growth-insight__title-glyph" width={64} height={59} decoding="async" />
-                    <h3 className="doc-growth-insight__heading-plain mb-0">What takes time</h3>
-                  </div>
-                </div>
-                <ul className="doc-growth-insight__points-list mb-0">
-                  {hiringTakesTime.map((text, i) => (
-                    <li key={text} id={`s${i + 5}`} className="seq-item doc-growth-insight__list-point">
-                      {text}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="doc-systems-senior-time doc-v2-senior-time-sec doc-systems-band doc-systems-band--white pt-8 pb-9 py-lg-10">
-        <Container fluid="lg" className="doc-v2-wrap">
-          <div className="doc-v2-senior-time-header doc-v2-rv mb-4 mb-lg-5">
-            {/* <div className="doc-v2-chip doc-v2-chip--center mx-auto">
-              <i className="fa fa-black-tie" aria-hidden />
-              Senior dynamics
-            </div> */}
-            <h2 className="h2 section-title mb-1 doc-systems-heading-single-line">
-              The Shift in <span className="doc-v2-red">Senior Time</span>
-            </h2>
-            <div className="doc-v2-rule" aria-hidden="true" />
-            <p className="lead text-secondary doc-v2-senior-time-lede mb-0">
-              Principals and project directors are the first to feel it.
-            </p>
-          </div>
-          <div className="doc-v2-cards-3 doc-v2-senior-time-cards">
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d1">
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                  <polyline points="14 2 14 8 20 8" />
-                  <line x1="16" y1="13" x2="8" y2="13" />
-                  <line x1="16" y1="17" x2="8" y2="17" />
-                </svg>
-              </div>
-              <p className="doc-v2-card-p mb-0">
-                More time spent reviewing across multiple projects
-              </p>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d2">
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
-              </div>
-              <p className="doc-v2-card-p mb-0">
-                Less time for design leadership and strategic work
-              </p>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d3">
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
-              <p className="doc-v2-card-p mb-0">
-                Constant involvement in coordination decisions
-              </p>
-            </div>
-          </div>
-          <div className="doc-v2-section-closer-wrap doc-v2-section-closer-wrap--senior">
-            <p className="doc-v2-section-closer mb-0">
-              Leadership time shifts from shaping projects to stabilizing delivery.
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      <section id="doc-breaking" className="doc-systems-breaking-section doc-v2-breaking-sec doc-systems-band doc-systems-band--subtle py-9 py-lg-10 scroll-margin">
-        <Container fluid="lg" className="doc-v2-wrap">
-          <div className="doc-v2-breaking-header doc-v2-rv">
-            {/* <div className="doc-v2-chip doc-v2-chip--center">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" />
-                <line x1="12" y1="8" x2="12" y2="12" />
-                <line x1="12" y1="16" x2="12.01" y2="16" />
-              </svg>
-              Failure Points
-            </div> */}
-            <h2 className="h2 section-title mb-1 doc-systems-heading-single-line">
-              Where It Starts <span className="doc-v2-red">Breaking</span>
-            </h2>
-            <div className="doc-v2-rule" aria-hidden="true" />
-          </div>
-          <div className="doc-v2-cards-2 mb-2">
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d1">
-              {/* <div className="doc-v2-card-num">01</div> */}
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  <line x1="12" y1="8" x2="12" y2="12" />
-                  <line x1="12" y1="16" x2="12.01" y2="16" />
-                </svg>
-              </div>
-              <div className="doc-v2-card-h">Standards Exist-But Fade</div>
-              <div className="doc-v2-card-p">
-                Documentation templates and checklists launch with commitment, then quietly lose consistency as{" "}
-                <span className="doc-v2-red doc-v2-fw-600">enforcement weakens</span>.
-              </div>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d2">
-              {/* <div className="doc-v2-card-num">02</div> */}
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <rect x="2" y="3" width="20" height="14" rx="2" />
-                  <line x1="8" y1="21" x2="16" y2="21" />
-                  <line x1="12" y1="17" x2="12" y2="21" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </div>
-              <div className="doc-v2-card-h">Tools Add Visibility, Not Clarity</div>
-              <div className="doc-v2-card-p">
-                BIM coordination platforms and PM systems get implemented, but{" "}
-                <span className="doc-v2-red doc-v2-fw-600">adoption stays incomplete</span>.
-              </div>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d3">
-              {/* <div className="doc-v2-card-num">03</div> */}
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <polyline points="9 11 12 14 22 4" />
-                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                </svg>
-              </div>
-              <div className="doc-v2-card-h">More Reviews, Slower Decisions</div>
-              <div className="doc-v2-card-p">
-                Additional review layers expand <span className="doc-v2-red doc-v2-fw-600">approval cycles</span> without
-                improving outcomes proportionally.
-              </div>
-            </div>
-            <div className="doc-v2-card doc-v2-rv doc-v2-rv-d4">
-              {/* <div className="doc-v2-card-num">04</div> */}
-              <div className="doc-v2-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
-              <div className="doc-v2-card-h">Seniors Become the Default Safety Net</div>
-              <div className="doc-v2-card-p">
-                Partial delegation leaves principals as permanent <span className="doc-v2-red doc-v2-fw-600">fallback points</span>{" "}
-                instead of true decision-makers.
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section id="doc-cta" className="doc-v2-cta-sec doc-v2-cta-sec--fullbleed doc-v2-cta-sec--compact py-5 py-lg-6 doc-systems-final-cta scroll-margin">
-        <div className="doc-v2-cta-fullwidth">
-          <div className="doc-v2-cta-box doc-v2-rv">
-            <div className="doc-v2-cta-decor-a" aria-hidden="true" />
-            <div className="doc-v2-cta-decor-b" aria-hidden="true" />
-            <div className="doc-v2-cta-icon" aria-hidden="true">
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-            </div>
-            {/* <div className="doc-v2-chip doc-v2-chip--center doc-v2-chip--cta">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              Free Download
-            </div> */}
-            <h2 className="h2 section-title mb-1 doc-v2-cta-h2 doc-systems-heading-single-line">
-              Before You Hire Again, See <span className="doc-v2-red">What&apos;s Slowing Your Delivery</span>
-            </h2>
-            <div className="doc-v2-rule" aria-hidden="true" />
-            <p className="lead text-secondary mb-5">
-              Understand what&apos;s actually slowing your projects before adding more people or restructuring your team.
-            </p>
-            <LandingPdfLeadModal
-              title="Documentation Systems That Scale"
-              downloadUrl={SCALE_SYSTEM_PDF_URL}
-              trigger={(
-                <a
-                  href={SCALE_SYSTEM_PDF_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${DOC_LP_BTN_PRIMARY} doc-v2-cta-btn`}
-                >
-                  <i className="fa-solid fa-file-arrow-down me-2" aria-hidden />
-                  See Where Your Delivery Is Breaking
-                  <i className="fa-solid fa-arrow-right-long ms-2" aria-hidden />
-                </a>
-              )}
-            />
-          </div>
-        </div>
-      </section>
+    <>
+      <LandingTopHeader fixed maxWidth={1440} />
+      <main className="vbs-redesign-page doc-systems-page min-h-screen overflow-x-hidden bg-white">
+      <DocSystemsFigmaSections onSeeSlowing={scrollToBreakingSection} />
 
       <GetInTouchSection />
       <SiteFooter />
@@ -761,11 +146,369 @@ const DocumentationSystemThatScaleView = () => {
       {/* <WebinarHomePopupModal /> */}
 
       <style>{`
+        /* â€”â€” Figma redesign: hero / pattern / growth / gap â€”â€” */
+        .doc-lp-figma-shell {
+          width: 100%;
+          max-width: 1440px;
+          margin: 0 auto;
+          padding-left: clamp(20px, 5vw, 80px);
+          padding-right: clamp(20px, 5vw, 80px);
+        }
+        .doc-lp-figma-heading {
+          margin: 0;
+          font-size: clamp(28px, 4vw, 48px);
+          line-height: 1.15;
+          word-wrap: break-word;
+        }
+        .doc-lp-figma-heading__lead {
+          font-weight: 500;
+          color: #111111;
+        }
+        .doc-lp-figma-heading__accent {
+          font-weight: 300;
+          color: #d70416;
+        }
+        .doc-lp-figma-desc {
+          margin: 0;
+          color: #808080;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+        }
+        .doc-lp-figma-callout {
+          display: inline-flex;
+          padding: 20px;
+          background: rgba(215, 4, 22, 0.06);
+          border-radius: 10px;
+          outline: 1px solid #d70416;
+          outline-offset: -1px;
+          color: #111111;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+        }
+
+        .doc-lp-figma-hero {
+          background: #ffffff;
+          padding: 40px 0 50px;
+          overflow: hidden;
+        }
+        @media (min-width: 992px) {
+          .doc-lp-figma-hero {
+            padding: 70px 0;
+          }
+        }
+        .doc-lp-figma-hero__inner {
+          width: 100%;
+          max-width: 1440px;
+          margin: 0 auto;
+          padding-left: clamp(20px, 5vw, 80px);
+          padding-right: clamp(20px, 5vw, 80px);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 32px;
+        }
+        @media (min-width: 992px) {
+          .doc-lp-figma-hero__inner {
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+          }
+        }
+        .doc-lp-figma-hero__copy {
+          flex: 1 1 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 30px;
+          min-width: 0;
+        }
+        .doc-lp-figma-hero__title {
+          margin: 0;
+          max-width: 623px;
+          font-size: clamp(28px, 4vw, 48px);
+          line-height: 1.15;
+        }
+        .doc-lp-figma-hero__title-lead {
+          font-weight: 500;
+          color: #111111;
+        }
+        .doc-lp-figma-hero__title-accent {
+          font-weight: 300;
+          color: #d70416;
+        }
+        .doc-lp-figma-hero__desc {
+          margin: 0;
+          max-width: 640px;
+          color: #808080;
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .doc-lp-figma-hero__ctas {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          gap: 16px 20px;
+        }
+        .doc-lp-figma-hero__cta-fill {
+          background: #d70416 !important;
+          color: #ffffff !important;
+        }
+        .doc-lp-figma-hero__cta-fill .primary-cta-label {
+          color: #ffffff !important;
+        }
+        .doc-lp-figma-hero__cta-fill:hover {
+          color: #ffffff !important;
+        }
+        .doc-lp-figma-hero__media {
+          width: 100%;
+          max-width: 650px;
+          flex-shrink: 0;
+          border-radius: 10px;
+          overflow: hidden;
+          background: #f4f4f4;
+          box-shadow: 0 0 16.8px rgba(0, 0, 0, 0.15);
+        }
+        .doc-lp-figma-hero__img {
+          display: block;
+          width: 100%;
+          height: auto;
+          aspect-ratio: 650 / 530;
+          object-fit: cover;
+        }
+
+        .doc-lp-figma-pattern {
+          background: #fafafa;
+          padding: 60px 0;
+        }
+        @media (min-width: 992px) {
+          .doc-lp-figma-pattern {
+            padding: 100px 0;
+          }
+        }
+        .doc-lp-figma-pattern__intro {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+          margin-bottom: 40px;
+        }
+        .doc-lp-figma-pattern__intro .doc-lp-figma-heading {
+          max-width: 696px;
+        }
+        .doc-lp-figma-pattern__body {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .doc-lp-figma-pattern__grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        @media (min-width: 640px) {
+          .doc-lp-figma-pattern__grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (min-width: 1100px) {
+          .doc-lp-figma-pattern__grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+        .doc-lp-figma-pattern__card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          padding: 20px;
+          background: #ffffff;
+          border-radius: 10px;
+          outline: 1px solid #cbcccd;
+          outline-offset: -1px;
+        }
+        .doc-lp-figma-pattern__icon {
+          width: 70px;
+          height: 70px;
+          padding: 15px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background: #ffffff;
+          border-radius: 10px;
+          outline: 1px solid #cbcccd;
+          outline-offset: -1px;
+        }
+        .doc-lp-figma-pattern__card-text {
+          margin: 0;
+          width: 100%;
+          text-align: center;
+          color: #808080;
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        .doc-lp-figma-growth {
+          background: #ffffff;
+          padding: 60px 0;
+        }
+        @media (min-width: 992px) {
+          .doc-lp-figma-growth {
+            padding: 80px 0;
+          }
+        }
+        .doc-lp-figma-growth__intro {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+          margin-bottom: 40px;
+        }
+        .doc-lp-figma-growth__list {
+          margin: 0;
+        }
+        .doc-lp-figma-growth__visual {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+        }
+        .doc-lp-figma-growth__img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          display: block;
+        }
+
+        .doc-lp-figma-gap {
+          background: #ffffff;
+          padding: 60px 0 80px;
+        }
+        @media (min-width: 992px) {
+          .doc-lp-figma-gap {
+            padding: 80px 0;
+          }
+        }
+        .doc-lp-figma-gap__header {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 24px;
+          margin-bottom: 40px;
+        }
+        @media (min-width: 992px) {
+          .doc-lp-figma-gap__header {
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 60px;
+          }
+        }
+        .doc-lp-figma-gap__intro {
+          flex: 1 1 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+          min-width: 0;
+        }
+        .doc-lp-figma-gap__stage-label {
+          margin: 0;
+          color: #111111;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+        }
+        .doc-lp-figma-callout--gap {
+          flex-shrink: 0;
+          max-width: 420px;
+        }
+        .doc-lp-figma-gap__compare {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 24px;
+        }
+        @media (min-width: 1100px) {
+          .doc-lp-figma-gap__compare {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+          }
+        }
+        .doc-lp-figma-gap__card {
+          width: 100%;
+          max-width: 511px;
+          padding: 20px;
+          background: #ffffff;
+          border-radius: 10px;
+          outline: 1px solid #cbcccd;
+          outline-offset: -1px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 30px;
+        }
+        .doc-lp-figma-gap__card-img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          object-fit: cover;
+          aspect-ratio: 471 / 340;
+        }
+        .doc-lp-figma-gap__card-title {
+          margin: 0 0 20px;
+          color: #111111;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 28px;
+        }
+        .doc-lp-figma-gap__points {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+        .doc-lp-figma-gap__points li {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          color: #808080;
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .doc-lp-figma-gap__dot {
+          width: 16px;
+          height: 16px;
+          flex-shrink: 0;
+        }
+        .doc-lp-figma-gap__dot--red {
+          background: #d70416;
+        }
+        .doc-lp-figma-gap__dot--green {
+          background: #42aa32;
+        }
+        .doc-lp-figma-gap__arrow {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          transform: rotate(90deg);
+        }
+        @media (min-width: 1100px) {
+          .doc-lp-figma-gap__arrow {
+            transform: none;
+            width: 120px;
+          }
+        }
+
         .doc-systems-page {
           scroll-behavior: smooth;
           background: #ffffff;
           overflow-x: hidden;
-          font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
           --ds-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
           --ds-ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
           --ds-duration: 0.45s;
@@ -777,17 +520,7 @@ const DocumentationSystemThatScaleView = () => {
           --ds-radius: 16px;
           --ds-radius-lg: 24px;
         }
-        .doc-systems-page.documentation-wall-page {
-          height: auto !important;
-          max-height: none !important;
-          min-height: 0 !important;
-          overflow-y: visible !important;
-          overflow: visible !important;
-        }
-        .doc-systems-page,
-        .doc-systems-page * {
-          font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-        }
+        /* Typography: inherit .vbs-redesign-page / homepage Inter — do not override h/p here */
         .doc-systems-page .fab,
         .doc-systems-page .fa-brands {
           font-family: "Font Awesome 6 Brands" !important;
@@ -802,52 +535,9 @@ const DocumentationSystemThatScaleView = () => {
         .doc-systems-page .fa-light {
           font-family: "Font Awesome 6 Free" !important;
         }
-        .doc-systems-page.documentation-wall-page .container-lg {
-          max-width: 1200px !important;
-          margin-left: auto;
-          margin-right: auto;
-        }
         .doc-systems-page a,
         .doc-systems-page button {
           cursor: pointer !important;
-        }
-        .doc-systems-page h1,
-        .doc-systems-page .h1 {
-          line-height: 58px !important;
-          letter-spacing: 0.005em !important;
-        }
-        .doc-systems-page h2,
-        .doc-systems-page .h2 {
-          line-height: 48px !important;
-        }
-        .doc-systems-page h3,
-        .doc-systems-page .h3 {
-          line-height: 34px !important;
-        }
-        .doc-systems-page h4,
-        .doc-systems-page .h4 {
-          line-height: 28px !important;
-        }
-        .doc-systems-page h1,
-        .doc-systems-page h2,
-        .doc-systems-page h3,
-        .doc-systems-page h4,
-        .doc-systems-page h5,
-        .doc-systems-page h6 {
-          font-weight: 600 !important;
-          color: #000000 !important;
-          text-align: left !important;
-        }
-        .doc-systems-page p {
-          font-size: 18px !important;
-          font-weight: 400 !important;
-          line-height: 28px !important;
-          color: #000000;
-        }
-        .doc-systems-page .lead {
-          font-size: 20px !important;
-          font-weight: 400;
-          line-height: 30px !important;
         }
         .doc-systems-page .call-icon {
           display: none !important;
@@ -976,7 +666,7 @@ const DocumentationSystemThatScaleView = () => {
           transition: background-color var(--ds-duration-slow) var(--ds-ease-soft);
         }
 
-        /* —— Premium SaaS layout —— */
+        /* â€”â€” Premium SaaS layout â€”â€” */
         .doc-systems-hero-ref {
           position: relative;
           overflow: hidden;
@@ -1071,7 +761,7 @@ const DocumentationSystemThatScaleView = () => {
         }
         .doc-systems-hero-ref__eyebrow {
           margin: 0 0 0.9rem 0;
-          font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+          font-family: var(--font-inter), Inter, system-ui, sans-serif;
           font-size: 0.78rem !important;
           letter-spacing: 0.18em;
           text-transform: uppercase;
@@ -1084,7 +774,7 @@ const DocumentationSystemThatScaleView = () => {
           max-width: 40rem;
         }
         .doc-systems-hero-ref__actions .btn {
-          font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+          font-family: var(--font-inter), Inter, system-ui, sans-serif;
         }
         .doc-systems-hero-ref__btn-secondary {
           background: #ffffff !important;
@@ -1147,7 +837,7 @@ const DocumentationSystemThatScaleView = () => {
           flex-shrink: 0;
         }
         .doc-systems-trust-badge__text {
-          font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+          font-family: var(--font-inter), Inter, system-ui, sans-serif;
           font-size: 0.9rem;
           font-weight: 600;
           color: #111827;
@@ -1226,14 +916,14 @@ const DocumentationSystemThatScaleView = () => {
           line-height: 1.2;
         }
         .doc-systems-hero-float-card__stat {
-          font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+          font-family: var(--font-inter), Inter, system-ui, sans-serif;
           font-size: 2rem;
           font-weight: 700;
           color: #d70416;
           letter-spacing: -0.02em;
         }
         .doc-systems-hero-float-card__label {
-          font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+          font-family: var(--font-inter), Inter, system-ui, sans-serif;
           font-size: 0.95rem;
           color: #111827;
           opacity: 0.92;
@@ -1259,7 +949,7 @@ const DocumentationSystemThatScaleView = () => {
           flex-shrink: 0;
         }
         .doc-systems-hero-float-card__text {
-          font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+          font-family: var(--font-inter), Inter, system-ui, sans-serif;
           font-size: 0.96rem;
           font-weight: 600;
           color: #111827;
@@ -1633,7 +1323,7 @@ const DocumentationSystemThatScaleView = () => {
           opacity: 0.85;
         }
 
-        /* Hiring paradox — sequential points layout */
+        /* Hiring paradox â€” sequential points layout */
         .doc-growth-insight-section {
           --doc-gi-red: #d70416;
           --doc-gi-dark: #1a1a1a;
@@ -2224,7 +1914,7 @@ const DocumentationSystemThatScaleView = () => {
           break-inside: avoid;
         }
 
-        /* Section headers — same system as documentation-wall LP (section-title + #D70416 underline) */
+        /* Section headers â€” same system as documentation-wall LP (section-title + #D70416 underline) */
         .doc-systems-section-editorial {
           text-align: left;
           margin-bottom: 0;
@@ -2253,7 +1943,7 @@ const DocumentationSystemThatScaleView = () => {
           margin-right: 0;
         }
 
-        /* Pattern — four columns, red icons, red top line L→R on hover/focus */
+        /* Pattern â€” four columns, red icons, red top line Lâ†’R on hover/focus */
         .doc-systems-pattern-editorial__grid {
           display: grid;
           grid-template-columns: 1fr;
@@ -2356,7 +2046,7 @@ const DocumentationSystemThatScaleView = () => {
           }
         }
 
-        /* Hero — split layout; ~40vh cap on large screens, CTAs one row */
+        /* Hero â€” split layout; ~40vh cap on large screens, CTAs one row */
         .doc-systems-hero-split {
           position: relative;
           overflow: hidden;
@@ -2686,7 +2376,7 @@ const DocumentationSystemThatScaleView = () => {
           }
         }
 
-        /* Where It Starts Breaking — 2×2 grid, #D70416 / #222 theme (documentation-wall alignment) */
+        /* Where It Starts Breaking â€” 2Ã—2 grid, #D70416 / #222 theme (documentation-wall alignment) */
         .doc-systems-breaking-section__header {
           max-width: 44rem;
           margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
@@ -2976,7 +2666,7 @@ const DocumentationSystemThatScaleView = () => {
           margin-bottom: 0;
         }
         .doc-systems-chevron-list li::before {
-          content: "›";
+          content: "â€º";
           position: absolute;
           left: 0;
           color: #d70416;
@@ -3021,7 +2711,7 @@ const DocumentationSystemThatScaleView = () => {
           }
         }
         .doc-systems-hiring-col__heading {
-          font-family: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+          font-family: var(--font-inter), Inter, system-ui, sans-serif;
           font-size: 0.95rem;
           font-weight: 700;
           color: #1a1a1a;
@@ -3426,7 +3116,7 @@ const DocumentationSystemThatScaleView = () => {
           }
         }
 
-        /* ── doc-v2 (vbs-documentation-v2.html parity) ── */
+        /* â”€â”€ doc-v2 (vbs-documentation-v2.html parity) â”€â”€ */
         .doc-systems-page .doc-v2-wrap {
           max-width: 1160px !important;
           margin-left: auto !important;
@@ -4140,7 +3830,7 @@ const DocumentationSystemThatScaleView = () => {
           font-size: clamp(11px, 2.6vw, 14px) !important;
         }
         .doc-systems-page .scroll-margin {
-          scroll-margin-top: 96px;
+          scroll-margin-top: calc(var(--landing-top-header-height, 72px) + 16px);
         }
         @media (min-width: 1200px) {
           .doc-systems-page h2.doc-systems-heading-single-line.section-title {
@@ -4149,6 +3839,7 @@ const DocumentationSystemThatScaleView = () => {
         }
       `}</style>
     </main>
+    </>
   );
 };
 

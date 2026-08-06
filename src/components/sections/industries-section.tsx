@@ -75,6 +75,14 @@ export function IndustriesSection({
               </div>
             ))}
           </div>
+          <div
+            className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-4 sm:w-6 lg:w-8 bg-[linear-gradient(90deg,#FAFAFA_30%,rgba(250,250,250,0)_100%)]"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-4 sm:w-6 lg:w-8 bg-[linear-gradient(270deg,#FAFAFA_30%,rgba(250,250,250,0)_100%)]"
+            aria-hidden
+          />
         </div>
       </PageContainer>
     </section>

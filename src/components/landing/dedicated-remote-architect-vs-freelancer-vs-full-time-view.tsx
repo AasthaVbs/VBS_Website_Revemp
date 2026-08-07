@@ -4,8 +4,10 @@ import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 
-import heroImage from "@/assets/images/Adding-People-Should-Reduce-Delivery-Pressure,-But-Why-Does-It-Often-Increase 1.webp";
-import pressureImage from "@/assets/images/When-Work-Increases,-But-Delivery-Pressure-Does-Not-Ease 2.webp";
+import heroImage from "@/assets/images/Adding-People-Should-Reduce-Delivery-Pressure,-But-Why-Does-It-Often-Increase 1 (1).jpg";
+import pressureImage from "@/assets/images/When-Work-Increases,-But-Delivery-Pressure-Does-Not-Ease 1 (1).jpg";
+import matrixEvaluateImage from "@/assets/images/What-This-Matrix-Helps-You-Evaluate-512x470 1 (1).jpg";
+import decisionsWrongImage from "@/assets/images/Where-Most-Decisions-Go-Wrong-512x300 1 (1).jpg";
 import coordinationBeginsIcon from "@/assets/images/cooridntaion begins.svg";
 import dedicatedRemoteArchitectsIcon from "@/assets/images/dedicated-remote-architects-icon.svg";
 import deadlinesBeginsIcon from "@/assets/images/deadlines begins.svg";
@@ -524,22 +526,22 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
           id="capacity-matrix"
           className="scroll-mt-24 bg-white py-16 max-lg:py-12 lg:py-20"
         >
-          <PageContainer className="flex flex-col items-start gap-5 max-lg:gap-5">
-            <header className="flex w-full max-w-[745px] flex-col items-start gap-5">
-              <div className="flex w-full flex-col items-start gap-3">
-                <MepSectionTag label="What This Matrix Helps You Evaluate" />
-                <h2 className="w-full text-section">
-                  <span className="font-medium text-[#111111]">Compare Options Based on </span>
-                  <span className="font-light text-accent">How Work Actually Flows</span>
-                </h2>
-              </div>
-              <p className="max-w-[731px] text-[16px] font-normal leading-6 text-[#808080]">
-                This matrix focuses on delivery behaviour, not hiring theory. It helps you evaluate
-                how each model performs inside live project conditions.
-              </p>
-            </header>
+          <PageContainer className="flex items-start gap-8 max-lg:flex-col max-lg:items-stretch max-lg:gap-8 lg:gap-[60px]">
+            <div className="flex w-full max-w-[670px] flex-col items-start gap-5 max-lg:max-w-full">
+              <header className="flex w-full flex-col items-start gap-5">
+                <div className="flex w-full flex-col items-start gap-3">
+                  <MepSectionTag label="What This Matrix Helps You Evaluate" />
+                  <h2 className="w-full text-section">
+                    <span className="font-medium text-[#111111]">Compare Options Based on </span>
+                    <span className="font-light text-accent">How Work Actually Flows</span>
+                  </h2>
+                </div>
+                <p className="max-w-[731px] text-[16px] font-normal leading-6 text-[#808080]">
+                  This matrix focuses on delivery behaviour, not hiring theory. It helps you evaluate
+                  how each model performs inside live project conditions.
+                </p>
+              </header>
 
-            <div className="flex w-full max-w-[670px] flex-col items-start justify-center gap-5 max-lg:max-w-full">
               <ul className="!m-0 flex w-full !list-none flex-col !p-0 !pl-0">
                 {matrixCriteria.map((item, index) => (
                   <li key={item} className="!m-0 flex flex-col !p-0 !pl-0">
@@ -565,6 +567,16 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
               <CalloutAside>
                 It helps you evaluate impact before committing, not after.
               </CalloutAside>
+            </div>
+
+            <div className="relative h-[470px] w-full max-w-[512px] shrink-0 overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)] max-lg:aspect-[512/470] max-lg:h-auto max-lg:max-w-full">
+              <Image
+                src={matrixEvaluateImage}
+                alt="What this matrix helps you evaluate"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 512px"
+              />
             </div>
           </PageContainer>
         </section>
@@ -609,30 +621,42 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
 
         {/* Where Most Decisions Go Wrong */}
         <section className="bg-white py-16 max-lg:py-12 lg:py-20">
-          <PageContainer className="flex flex-col items-start gap-5">
-            <div className="flex w-full max-w-[680px] flex-col items-start gap-3">
-              <MepSectionTag label="Where Most Decisions Go Wrong" />
-              <h2 className="w-full max-w-[620px] text-section">
-                <span className="font-medium text-[#111111]">Choosing Based on Speed </span>
-                <span className="font-light text-accent">Instead of System Fit</span>
-              </h2>
+          <PageContainer className="flex items-start gap-8 max-lg:flex-col max-lg:items-stretch max-lg:gap-8 lg:gap-[60px]">
+            <div className="flex w-full max-w-[680px] flex-col items-start gap-5 max-lg:max-w-full">
+              <div className="flex w-full flex-col items-start gap-3">
+                <MepSectionTag label="Where Most Decisions Go Wrong" />
+                <h2 className="w-full max-w-[620px] text-section">
+                  <span className="font-medium text-[#111111]">Choosing Based on Speed </span>
+                  <span className="font-light text-accent">Instead of System Fit</span>
+                </h2>
+              </div>
+              <div className="flex w-full flex-col items-start gap-2">
+                <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
+                  In many cases, decisions are made based on urgency. The fastest option gets selected.
+                  The most familiar approach feels safer.
+                </p>
+                <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
+                  But capacity models do not fail because they are wrong.{" "}
+                  <span className="font-medium text-[#111111]">
+                    They fail because they do not fit how the firm&apos;s delivery system really
+                    operates.
+                  </span>
+                </p>
+                <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
+                  If workflows, documentation standards, and review structures are not aligned,
+                  capacity additions can increase coordination effort and slow delivery.
+                </p>
+              </div>
             </div>
-            <div className="flex w-full max-w-[826px] flex-col items-start gap-2">
-              <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
-                In many cases, decisions are made based on urgency. The fastest option gets selected.
-                The most familiar approach feels safer.
-              </p>
-              <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
-                But capacity models do not fail because they are wrong.{" "}
-                <span className="font-medium text-[#111111]">
-                  They fail because they do not fit how the firm&apos;s delivery system really
-                  operates.
-                </span>
-              </p>
-              <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
-                If workflows, documentation standards, and review structures are not aligned,
-                capacity additions can increase coordination effort and slow delivery.
-              </p>
+
+            <div className="relative h-[300px] w-full max-w-[512px] shrink-0 overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)] max-lg:aspect-[512/300] max-lg:h-auto max-lg:max-w-full">
+              <Image
+                src={decisionsWrongImage}
+                alt="Where most capacity decisions go wrong"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 512px"
+              />
             </div>
           </PageContainer>
         </section>

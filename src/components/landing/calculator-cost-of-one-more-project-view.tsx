@@ -6,7 +6,7 @@ import { Modal } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import heroImage from "@/assets/images/calculator-cost-of-one-more-project.png";
+import heroImage from "@/assets/images/calculator-cost-of-one-more-project (1).jpg";
 import { LandingTopHeader } from "@/components/landing/landing-top-header";
 import { PageContainer } from "@/components/layout/page-container";
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import type { MouseEvent, ReactNode } from "react";
 import Image from "next/image";
@@ -7,9 +7,9 @@ import type { StaticImageData } from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import LandingPdfLeadModal from "@/components/landing/landing-pdf-lead-modal";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
-import docThatScaleBanner from "@/assets/images/doc-that-scale-banner2.png";
-import gapEarlyStageImg from "@/assets/images/Rectangle.png";
-import gapGrowthStageImg from "@/assets/images/Rectangle-2.png";
+import docThatScaleBanner from "@/assets/images/doc-that-scale-banner2-51091e21237ec5127e2b77f5b3544fe5 1.jpg";
+import gapEarlyStageImg from "@/assets/images/Rectangle.jpg";
+import gapGrowthStageImg from "@/assets/images/Rectangle-1.jpg";
 import patternReviewIcon from "@/assets/images/doc-pattern-review.svg";
 import patternSeniorIcon from "@/assets/images/doc-pattern-senior.svg";
 import patternRfiIcon from "@/assets/images/doc-pattern-rfi.svg";
@@ -22,7 +22,8 @@ import whatScalesIcon from "@/assets/images/what scales.svg";
 import whereFirmsStallIcon from "@/assets/images/where firms stall.svg";
 import whatIncreasesIcon from "@/assets/images/what incrsse immediatley.svg";
 import whatTakesTimeIcon from "@/assets/images/what takes time.svg";
-import hiringVisualImg from "@/assets/images/doc-hire-visual.png";
+import hiringVisualImg from "@/assets/images/Why Adding More People-14dbcead4e7967eec43cd3c47c04c0dc 1.jpg";
+import growthStageImg from "@/assets/images/what-changes-during-growth-stage1-e901522dccbd79a553dd90077f5d41ef 1.jpg";
 import breakStandardsIcon from "@/assets/images/doc-break-standards.svg";
 import breakToolsIcon from "@/assets/images/doc-break-tools.svg";
 import breakReviewsIcon from "@/assets/images/doc-break-reviews.svg";
@@ -30,8 +31,6 @@ import breakSeniorsIcon from "@/assets/images/doc-break-seniors.svg";
 
 const SCALE_SYSTEM_PDF_URL =
   "https://www.virtualbuildingstudio.com/resources/documentation-systems-that-scale.pdf?utm_source=LP_DocSystems&utm_medium=LPCTA&utm_campaign=T2TOFU";
-
-const GROWTH_STAGE_IMAGE = "/image/what-changes-during-growth-stage1.jpg";
 
 type IconSrc = string | StaticImageData;
 
@@ -305,14 +304,13 @@ export function DocSystemsFigmaSections({ onSeeSlowing }: DocSystemsFigmaSection
             <PointList items={GROWTH_CHANGE_POINTS} />
           </div>
           <div className="doc-figma-stack doc-figma-stack--20">
-            <img
-              src={GROWTH_STAGE_IMAGE}
+            <Image
+              src={growthStageImg}
               alt="What changes during growth stage"
               className="doc-figma-growth__img"
               width={1440}
               height={626}
-              loading="lazy"
-              decoding="async"
+              sizes="100vw"
             />
             <Callout>&quot;Growth increases interdependence-not just workload.&quot;</Callout>
           </div>

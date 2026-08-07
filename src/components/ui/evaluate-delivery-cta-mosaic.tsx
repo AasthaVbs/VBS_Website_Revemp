@@ -2,17 +2,20 @@
 
 import type { CSSProperties } from "react";
 
-import ctaMobileBg from "@/assets/images/CTA Mobile BG.jpg";
+import evaluateCtaMosaic from "@/assets/images/evaluate-cta-mosaic.jpg";
 
-/** Figma mosaic — desktop SVG / mobile uses CTA Mobile BG.jpg */
+/** Shared Evaluate CTA mosaic background (desktop + mobile). */
 export function EvaluateDeliveryCtaMosaic() {
+  const mosaicUrl = `url(${evaluateCtaMosaic.src})`;
+
   return (
     <div
       className="evaluate-delivery-cta-mosaic"
       aria-hidden
       style={
         {
-          "--cta-mosaic-mobile": `url(${ctaMobileBg.src})`,
+          "--cta-mosaic-bg": mosaicUrl,
+          "--cta-mosaic-mobile": mosaicUrl,
         } as CSSProperties
       }
     />

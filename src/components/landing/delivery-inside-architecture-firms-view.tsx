@@ -2,6 +2,13 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
+import heroImage from "@/assets/images/awarness-hero-9601af6a691fd98560490a323edf9c5f 1.jpg";
+import growthImage from "@/assets/images/blueprints-detail-be9fa3a5a7ab2667973337b11a5898ac 1.jpg";
+import scaleSystemsImage from "@/assets/images/doc-that-scale-banner2.png";
+import hiringRemoteImage from "@/assets/images/HIring-vs-remote-architec-09ba07d67300f15927d59fc5598e50d2 1.jpg";
+import burnoutImage from "@/assets/images/How Architecture Firms Avoid Burning Out Their Senior Team0-f4705a7b444de14e1f57cf11d4028efd 1.jpg";
+import helpsImage from "@/assets/images/whatyouwillfind-90c7a2d0ba0213ef47b8013d4c8b5059 1.jpg";
+import documentationWallImage from "@/assets/images/Why-Growing-Firms-Hit-a-Documentation-Wall-6611e6ffa78e228bd0fa436eebb1a12e 1.jpg";
 import { LandingTopHeader } from "@/components/landing/landing-top-header";
 import { PageContainer } from "@/components/layout/page-container";
 import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-delivery-cta-section";
@@ -20,10 +27,10 @@ declare global {
 const RESOURCE_UTM_QUERY = "?utm_source=LP&utm_medium=LPCTA&utm_campaign=T2TOFU";
 
 const RESOURCE_IMAGES = {
-  documentationWall: "/image/Why-Growing-Firms-Hit-a-Documentation-Wall.jpg",
-  hiringRemote: "/image/HIring-vs-remote-architec.jpg",
-  burnout: "/image/How Architecture Firms Avoid Burning Out Their Senior Team0.jpg",
-  scaleSystems: "/image/doc-that-scale-banner2.png",
+  documentationWall: documentationWallImage,
+  hiringRemote: hiringRemoteImage,
+  burnout: burnoutImage,
+  scaleSystems: scaleSystemsImage,
 } as const;
 
 const DELIVERY_INSIDE_LP_HIDE_FLOAT_UI = "vbs-delivery-inside-architecture-firms--hide-float-ui";
@@ -61,7 +68,7 @@ type ResourceCard = {
   title: string;
   description: string;
   downloadUrl: string;
-  cardImage: string;
+  cardImage: { src: string };
   linkedinConversionId?: number;
 };
 
@@ -191,7 +198,7 @@ export function DeliveryInsideArchitectureFirmsView() {
             </div>
             <div className="diaf-hero-media">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/image/awarness-hero.png" alt="Architect reviewing plans under delivery pressure" />
+              <img src={heroImage.src} alt="Architect reviewing plans under delivery pressure" />
             </div>
           </PageContainer>
         </section>
@@ -202,7 +209,7 @@ export function DeliveryInsideArchitectureFirmsView() {
             <div className="diaf-growth-media">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/image/blueprints-detail.jpg"
+                src={growthImage.src}
                 alt="Architecture delivery team coordinating around active project model"
               />
             </div>
@@ -276,7 +283,7 @@ export function DeliveryInsideArchitectureFirmsView() {
             </div>
             <div className="diaf-helps-media">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/image/whatyouwillfind.png" alt="Teams aligning documentation and delivery systems" />
+              <img src={helpsImage.src} alt="Teams aligning documentation and delivery systems" />
             </div>
           </PageContainer>
         </section>
@@ -314,7 +321,7 @@ export function DeliveryInsideArchitectureFirmsView() {
                   >
                     <div className="diaf-resource-card-image">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={r.cardImage} alt="" />
+                      <img src={r.cardImage.src} alt="" />
                     </div>
                     <div className="diaf-resource-card-body">
                       <h3>{r.title}</h3>

@@ -10,9 +10,10 @@ import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 
-import heroImg from "@/assets/images/When-Hiring-Normal.png";
-import reliefImg from "@/assets/images/why-adding-people-doesnt-always-create-relief.png";
-import capacityDecisionsImg from "@/assets/images/a-structured-way-to-evaluate-capacity-decisions.png";
+import heroImg from "@/assets/images/When-Hiring-Normal 1.jpg";
+import reliefImg from "@/assets/images/Why-Adding-People-Doesn\u2019t-Always-Create-Relief 1.jpg";
+import capacityDecisionsImg from "@/assets/images/A-Structured-Way-to-Evaluate-Your-Capacity-Decisions 1.jpg";
+import hiringComparisonImg from "@/assets/images/image 69.jpg";
 import parallelProjectsIcon from "@/assets/images/parallel projects.svg";
 import moreHandoffsIcon from "@/assets/images/more handoffs.svg";
 import decisionBacklogIcon from "@/assets/images/decison backlog.svg";
@@ -29,39 +30,6 @@ import "@/styles/growing-architecture-firms-capacity.scss";
 
 const CAPACITY_GUIDE_PDF_URL =
   "https://www.virtualbuildingstudio.com/resources/when-hiring-breaks.pdf?utm_source=LP_CapacityWithoutChaos&utm_medium=LPCTA&utm_campaign=T2TOFU";
-
-const HIRING_IMMEDIATE = [
-  "More people working on the same set of drawings",
-  "More back-and-forth between team members",
-  "More questions coming to senior architects for clarification",
-  "More time spent reviewing and correcting work",
-] as const;
-
-const HIRING_DELAYED = [
-  "New hires' understanding of your drawing standards",
-  "Learning how your team coordinates across disciplines",
-  "Gaining confidence to make decisions without escalation",
-  "Producing work that requires minimal review and correction",
-] as const;
-
-const HIRING_CARDS = [
-  {
-    tag: "What Increases Immediately",
-    tagClass: "gaf-hiring-tag--red",
-    image: "/image/immediately.png",
-    imageAlt: "Architecture coordination",
-    title: "These costs appear the same day the hire starts",
-    items: HIRING_IMMEDIATE,
-  },
-  {
-    tag: "What Takes Time",
-    tagClass: "gaf-hiring-tag--black",
-    image: "/image/takestime%201.png",
-    imageAlt: "Architecture onboarding",
-    title: "These benefits take weeks or months to arrive",
-    items: HIRING_DELAYED,
-  },
-] as const;
 
 const RELIEF_ITEMS = [
   "Senior architects are still reviewing drawings late into the evening",
@@ -361,24 +329,14 @@ export function GrowingArchitectureFirmsAddCapacityWithoutChaosView() {
               </p>
             </div>
             <div className="gaf-live-body">
-              <div className="gaf-hiring-grid">
-                {HIRING_CARDS.map((card) => (
-                  <article key={card.tag} className="gaf-hiring-card">
-                    <div className="gaf-hiring-image">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={card.image} alt={card.imageAlt} loading="lazy" decoding="async" />
-                      <span className={`gaf-hiring-tag ${card.tagClass}`}>{card.tag}</span>
-                    </div>
-                    <div className="gaf-hiring-card-body">
-                      <h3>{card.title}</h3>
-                      <ul className="gaf-hiring-card-list">
-                        {card.items.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </article>
-                ))}
+              <div className="gaf-live-media">
+                <Image
+                  src={hiringComparisonImg}
+                  alt="What increases immediately when hiring versus what takes time to improve"
+                  width={1200}
+                  height={520}
+                  sizes="(max-width: 900px) 100vw, 1200px"
+                />
               </div>
               <blockquote className="gaf-callout">
                 “Capacity improves slowly. Coordination effort increases right away. That gap is

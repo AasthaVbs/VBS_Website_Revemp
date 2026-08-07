@@ -9,8 +9,8 @@ import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 
-import heroImg from "@/assets/images/bg-hiring-vs-dedicated.png";
-import workCycleImg from "@/assets/images/Work-Cycle.png";
+import heroImg from "@/assets/images/bg-hiring 1.jpg";
+import workCycleImg from "@/assets/images/Work-Cycle 1.jpg";
 import rampUpIcon from "@/assets/images/hvd-ramp-up.svg";
 import knowledgeIcon from "@/assets/images/hvd-knowledge.svg";
 import coordinationIcon from "@/assets/images/hvd-coordination.svg";

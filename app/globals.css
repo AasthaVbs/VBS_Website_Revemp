@@ -539,16 +539,12 @@
 
   .evaluate-delivery-cta-mosaic {
     position: absolute;
-    left: 50%;
-    top: -533px;
-    /* Bleed 1px past card edges so SVG white strokes / AA don’t leave a gap */
-    width: calc(100% + 2px);
-    min-width: calc(100% + 2px);
-    height: 1466.08px;
-    transform: translateX(-50%);
+    inset: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
     user-select: none;
-    background-image: url("/images/figma/evaluate-cta-mosaic.svg");
+    background-image: var(--cta-mosaic-bg, url("/images/figma/evaluate-cta-mosaic.svg"));
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -642,9 +638,9 @@
     }
 
     .evaluate-delivery-cta-mosaic {
-      top: -420px;
+      inset: 0;
       width: 100%;
-      min-width: 100%;
+      height: 100%;
       max-width: none;
     }
   }
@@ -670,7 +666,7 @@
       transform: none;
       background-image: var(
         --cta-mosaic-mobile,
-        url("/images/cta-mobile-bg.jpg")
+        var(--cta-mosaic-bg, url("/images/figma/evaluate-cta-mosaic.svg"))
       ) !important;
       background-size: cover !important;
       background-position: center !important;

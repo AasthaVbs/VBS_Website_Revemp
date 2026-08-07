@@ -9,10 +9,10 @@ import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 
-import heroImg from "@/assets/images/why-growing-architecture-firms-hit-documentation-wall-banner.png";
+import heroImg from "@/assets/images/hero-banner 1.jpg";
 import phasesImg from "@/assets/images/overlapping-project-phases.png";
-import growthCostsImg from "@/assets/images/growth-costs.png";
-import stageImg from "@/assets/images/stage-early-to-growth.png";
+import growthCostsImg from "@/assets/images/growth 1.jpg";
+import stageImg from "@/assets/images/Stage 1.jpg";
 import phasesIcon from "@/assets/images/dw-project-phases.svg";
 import coordinationIcon from "@/assets/images/dw-coordination.svg";
 import documentationIcon from "@/assets/images/dw-documentation.svg";

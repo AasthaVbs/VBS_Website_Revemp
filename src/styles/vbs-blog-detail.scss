@@ -949,10 +949,10 @@ html:has(.vbs-blog-detail-page) body {
         height: 100% !important;
         max-width: none !important;
         transform: none !important;
-        /* Same CTA Mobile BG treatment as home */
+        /* Same mosaic JPG as home Evaluate CTA */
         background-image: var(
           --cta-mosaic-mobile,
-          url("/images/cta-mobile-bg.jpg")
+          var(--cta-mosaic-bg, url("/images/figma/evaluate-cta-mosaic.svg"))
         ) !important;
         background-size: cover !important;
         background-position: center !important;

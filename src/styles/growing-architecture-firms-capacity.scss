@@ -463,6 +463,8 @@
     border-radius: 14px;
     overflow: hidden;
     background: #fff;
+    display: flex;
+    flex-direction: column;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
 
@@ -471,36 +473,29 @@
     transform: translateY(-5px);
   }
 
-  .gaf-hiring-image {
-    position: relative;
-    height: 210px;
-    overflow: hidden;
-    background: var(--gaf-soft);
+  .gaf-hiring-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px 0;
   }
 
-  .gaf-hiring-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    transition: transform 0.8s ease;
-  }
-
-  .gaf-hiring-card:hover .gaf-hiring-image img {
-    transform: scale(1.07);
+  .gaf-hiring-icon {
+    flex-shrink: 0;
   }
 
   .gaf-hiring-tag {
-    position: absolute;
-    top: 14px;
-    left: 14px;
+    display: inline-block;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #fff;
-    padding: 5px 12px;
+    padding: 6px 12px;
     border-radius: 4px;
+    line-height: 1.3;
+    max-width: 58%;
   }
 
   .gaf-hiring-tag--red {
@@ -512,7 +507,8 @@
   }
 
   .gaf-hiring-card-body {
-    padding: 26px 24px;
+    padding: 18px 24px 26px;
+    flex: 1;
   }
 
   .gaf-hiring-card-body h3 {
@@ -877,8 +873,8 @@
       justify-self: stretch;
     }
 
-    .gaf-hiring-image {
-      height: 220px;
+    .gaf-hiring-card-top {
+      padding: 16px 16px 0;
     }
 
     .gaf-callout {
@@ -1020,11 +1016,17 @@
     }
 
     .gaf-hiring-card-body {
-      padding: 20px 16px;
+      padding: 16px 16px 20px;
     }
 
-    .gaf-hiring-image {
-      height: 200px;
+    .gaf-hiring-card-top {
+      padding: 16px 16px 0;
+      gap: 12px;
+    }
+
+    .gaf-hiring-tag {
+      font-size: 10px;
+      padding: 5px 10px;
     }
 
     .gaf-hiring-card-list li {
@@ -1069,10 +1071,6 @@
     .gaf-live-media,
     .gaf-hiring-card {
       border-radius: 8px;
-    }
-
-    .gaf-hiring-image {
-      height: 180px;
     }
 
     .gaf-idea-card {

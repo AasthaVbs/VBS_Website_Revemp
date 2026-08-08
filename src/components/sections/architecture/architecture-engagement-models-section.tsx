@@ -9,7 +9,9 @@ import {
 } from "@/constants/architecture-services-redesign-content";
 import { altFromImageSrc, cn } from "@/lib/utils";
 
-type EngagementCard = (typeof architectureEngagementModelsCards)[number];
+type EngagementCard = (typeof architectureEngagementModelsCards)[number] & {
+  description?: string;
+};
 
 function EngagementCardArticle({ card }: { card: EngagementCard }) {
   const isSolid = card.ctaVariant === "solid";
@@ -37,6 +39,9 @@ function EngagementCardArticle({ card }: { card: EngagementCard }) {
 
       <div className="flex flex-col gap-2.5">
         <p className="text-[20px] font-medium leading-[26px] text-[#111111]">{card.headline}</p>
+        {card.description ? (
+          <p className="text-[16px] font-medium leading-6 text-[#808080]">{card.description}</p>
+        ) : null}
         <div className="flex flex-col gap-2.5">
           <p className="text-[16px] font-medium leading-6 text-[#111111]">{card.idealLabel}</p>
           <ul className="m-0 list-disc space-y-0 pl-6">
@@ -69,7 +74,7 @@ export function ArchitectureEngagementModelsSection({
   cards = architectureEngagementModelsCards,
 }: {
   section?: typeof architectureEngagementModelsSection;
-  cards?: typeof architectureEngagementModelsCards;
+  cards?: readonly EngagementCard[];
 }) {
   return (
     <section id="engagement-models" className="arch-svc-engagement bg-white py-12 sm:py-16 lg:py-[100px]">

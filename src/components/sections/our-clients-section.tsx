@@ -5,7 +5,7 @@ type OurClientsSectionContent = {
   tag: string;
   titleAccent: string;
   titleLead: string;
-  description: string;
+  description?: string;
   /** When false, dark lead renders before accent (default: accent first). */
   titleAccentFirst?: boolean;
   /** Force a line break between the two title parts. */
@@ -63,7 +63,9 @@ export function OurClientsSection({
               )}
             </h2>
           </div>
-          <p className="vbs-our-clients__desc">{section.description}</p>
+          {section.description ? (
+            <p className="vbs-our-clients__desc">{section.description}</p>
+          ) : null}
         </div>
 
         <div className="vbs-our-clients__marquee-wrap">

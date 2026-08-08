@@ -69,10 +69,22 @@ export function ClientSuccessStoriesSection({
   description = clientSuccessStoriesDefaultDescription,
   viewAllHref = ROUTES.testimonials,
   sectionId,
+  tag = "Testimonials",
+  titleLead = "Client Success ",
+  titleAccent = "Stories",
+  showViewAll = true,
+  stories = clientSuccessStories,
+  className,
 }: {
   description?: string;
   viewAllHref?: string;
   sectionId?: string;
+  tag?: string;
+  titleLead?: string;
+  titleAccent?: string;
+  showViewAll?: boolean;
+  stories?: readonly ClientSuccessStory[];
+  className?: string;
 }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const progressTrackRef = useRef<HTMLDivElement>(null);
@@ -182,24 +194,26 @@ export function ClientSuccessStoriesSection({
   const progressOffset = scrollProgress * progressMaxOffset;
 
   return (
-    <section id={sectionId} className="vbs-client-success-stories">
+    <section id={sectionId} className={["vbs-client-success-stories", className].filter(Boolean).join(" ")}>
       <PageContainer className="vbs-client-success-stories__container">
         <header className="vbs-client-success-stories__header">
           <div className="vbs-client-success-stories__intro">
             <div className="vbs-client-success-stories__head">
-              <span className="vbs-client-success-stories__tag">Testimonials</span>
+              <span className="vbs-client-success-stories__tag">{tag}</span>
               <h2 className="vbs-client-success-stories__title">
-                <span className="vbs-client-success-stories__title-dark">Client Success </span>
-                <span className="vbs-client-success-stories__title-accent">Stories</span>
+                <span className="vbs-client-success-stories__title-dark">{titleLead}</span>
+                <span className="vbs-client-success-stories__title-accent">{titleAccent}</span>
               </h2>
             </div>
             <p className="vbs-client-success-stories__description">{description}</p>
           </div>
 
-          <Link href={viewAllHref} className="vbs-client-success-stories__view-all">
-            View All
-            <ChevronRight className="vbs-client-success-stories__view-all-icon" aria-hidden />
-          </Link>
+          {showViewAll ? (
+            <Link href={viewAllHref} className="vbs-client-success-stories__view-all">
+              View All
+              <ChevronRight className="vbs-client-success-stories__view-all-icon" aria-hidden />
+            </Link>
+          ) : null}
         </header>
 
         <div
@@ -215,7 +229,7 @@ export function ClientSuccessStoriesSection({
             ref={trackRef}
             className="vbs-client-success-stories__track client-success-cards-scroll"
           >
-            {clientSuccessStories.map((story) => (
+            {stories.map((story) => (
               <ClientSuccessStoryCard
                 key={story.id}
                 story={story}

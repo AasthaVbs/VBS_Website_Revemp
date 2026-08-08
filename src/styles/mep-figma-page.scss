@@ -5243,12 +5243,12 @@
   .mep-figma-why-choose {
     .mep-figma-why-choose__title {
       width: 100% !important;
-      max-width: 1100px !important;
+      max-width: var(--why-choose-title-max-w, 1100px) !important;
     }
 
     .mep-figma-why-choose__section-desc {
       width: 100% !important;
-      max-width: 900px !important;
+      max-width: var(--why-choose-desc-max-w, 900px) !important;
       text-transform: none !important;
     }
   }
@@ -5418,12 +5418,12 @@
 
   .mep-figma-why-choose__title--parts {
     width: 100% !important;
-    max-width: 817px !important;
+    max-width: var(--why-choose-title-max-w, 817px) !important;
   }
 
   .mep-figma-why-choose__section-desc {
     width: 100% !important;
-    max-width: 780px !important;
+    max-width: var(--why-choose-desc-max-w, 780px) !important;
   }
 
   .mep-engagement-process__steps {

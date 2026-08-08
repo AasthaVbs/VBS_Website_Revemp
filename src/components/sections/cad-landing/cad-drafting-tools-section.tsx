@@ -29,7 +29,9 @@ export function CadDraftingToolsSection({
               </span>
             </h2>
           </div>
-          <p className="cad-landing-tools__desc vbs-our-clients__desc">{section.description}</p>
+          {section.description ? (
+            <p className="cad-landing-tools__desc vbs-our-clients__desc">{section.description}</p>
+          ) : null}
         </div>
 
         <div className="cad-landing-tools__marquee-wrap vbs-our-clients__marquee-wrap">

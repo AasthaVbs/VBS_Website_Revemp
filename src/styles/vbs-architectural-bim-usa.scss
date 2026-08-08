@@ -1,0 +1,847 @@
+/* Architectural BIM Services USA — hero form + trust + clients (mirrors ads-usa patterns) */
+
+/* Key Advantages + Why Choose — force Figma title/desc widths (beat mep !important) */
+.architectural-bim-services-usa-page.mep-bim-services-page {
+  .abs-usa-key-advantages.mep-figma-why-choose {
+    .mep-figma-why-choose__title,
+    .mep-figma-why-choose__title--parts {
+      max-width: 900px !important;
+    }
+
+    .mep-figma-why-choose__section-desc {
+      max-width: 900px !important;
+      width: 100% !important;
+    }
+  }
+
+  .abs-usa-why-choose.mep-figma-why-choose {
+    .mep-figma-why-choose__title,
+    .mep-figma-why-choose__title--parts {
+      max-width: 864px !important;
+    }
+
+    .mep-figma-why-choose__section-desc {
+      max-width: 723px !important;
+      text-transform: capitalize;
+    }
+  }
+}
+
+/* Override mep-bim hub section pad (64px) — keep hero tight under the header */
+.architectural-bim-services-usa-page main > .abs-usa-hero {
+  padding-top: 12px !important;
+  padding-bottom: 24px !important;
+}
+
+@media (min-width: 1024px) {
+  .architectural-bim-services-usa-page main > .abs-usa-hero {
+    padding-top: 8px !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+.abs-usa-hero__media {
+  height: auto;
+  min-height: 0;
+  align-self: center;
+}
+
+@media (min-width: 1024px) {
+  .abs-usa-hero__media {
+    align-self: flex-start;
+  }
+}
+
+/* Trust strip: stack cleanly on small screens */
+.architectural-bim-services-usa-page .abs-usa-trust {
+  .vbs-home-hero-trust {
+    gap: 24px;
+  }
+}
+
+.architectural-bim-services-usa-page .vbs-our-clients__logo {
+  width: 200px !important;
+  height: 72px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+
+.architectural-bim-services-usa-page .vbs-our-clients__marquee-wrap {
+  min-height: 72px !important;
+}
+
+@media (max-width: 767px) {
+  .architectural-bim-services-usa-page .abs-usa-trust {
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    .vbs-home-hero-trust {
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0 !important;
+      text-align: center !important;
+    }
+
+    .vbs-home-hero-trust__divider {
+      display: block !important;
+      width: min(100%, 280px) !important;
+      height: 1.5px !important;
+      margin: 12px auto !important;
+      padding: 0 !important;
+      border: none !important;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        #cbcccd 18%,
+        #cbcccd 82%,
+        transparent 100%
+      ) !important;
+    }
+
+    .vbs-home-hero-trust__item {
+      flex: 0 0 auto !important;
+      width: 100%;
+      max-width: 280px;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      align-self: center !important;
+
+      &::before {
+        display: none !important;
+      }
+    }
+
+    .vbs-home-hero-trust__copy {
+      width: 100%;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+
+    .vbs-home-hero-trust__value,
+    .vbs-home-hero-trust__label {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .vbs-home-hero-trust__label {
+      width: 100% !important;
+      max-width: 240px !important;
+    }
+  }
+
+  /* Tighten title → description spacing on mobile */
+  .architectural-bim-services-usa-page .abs-usa-hero__copy {
+    gap: 10px !important;
+  }
+
+  .architectural-bim-services-usa-page .abs-usa-hero__title-block {
+    gap: 8px !important;
+  }
+
+  .architectural-bim-services-usa-page section {
+    .flex.flex-col.items-start.gap-5,
+    .flex.w-full.flex-col.items-start.gap-5 {
+      gap: 12px !important;
+    }
+
+    .flex.flex-col.items-start.gap-3 {
+      gap: 8px !important;
+    }
+  }
+
+  .architectural-bim-services-usa-page .vbs-our-clients__head,
+  .architectural-bim-services-usa-page .vbs-our-clients__head-top,
+  .architectural-bim-services-usa-page .vbs-client-success-stories__head {
+    gap: 10px !important;
+  }
+
+  .architectural-bim-services-usa-page .vbs-our-clients__title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .architectural-bim-services-usa-page .vbs-our-clients__logo {
+    width: 170px !important;
+    height: 60px !important;
+  }
+
+  .architectural-bim-services-usa-page .abs-usa-overview__card {
+    padding: 20px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .architectural-bim-services-usa-page .abs-usa-trust .vbs-home-hero-trust {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.architectural-bim-services-usa-page .vbs-client-success-stories {
+  background: #fafafa;
+}
+
+#abs-usa-contact {
+  scroll-margin-top: 96px;
+}
+
+.architectural-bim-services-usa-page section[id] {
+  scroll-margin-top: 96px;
+}
+
+/* Hero form — reuses the ads-usa frosted-glass pattern, scoped to this page's class name */
+.abs-usa-hero__form-wrap {
+  width: 100%;
+
+  .services-usa-contact--glass {
+    width: 100%;
+  }
+
+  .services-usa-contact--glass .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 20px !important;
+    border-radius: 10px !important;
+    border: 1px solid #cbcccd !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    background-image: none !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: none !important;
+  }
+
+  .services-usa-contact--glass .form-control::placeholder,
+  .services-usa-contact--glass textarea.form-control::placeholder {
+    color: #808080 !important;
+  }
+
+  .services-usa-contact__title {
+    margin: 0;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+    text-transform: capitalize;
+
+    @media (min-width: 640px) {
+      font-size: 24px;
+    }
+  }
+
+  .services-usa-contact__title-lead {
+    font-weight: 500;
+  }
+
+  .services-usa-contact__title-accent {
+    font-weight: 300;
+  }
+
+  .services-usa-contact__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .services-usa-contact__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px 20px;
+    width: 100%;
+
+    @media (min-width: 640px) {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .services-usa-contact__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .services-usa-contact__req {
+    color: #d70416;
+  }
+
+  .services-usa-contact__error {
+    margin: 0;
+    color: #ffb4b4;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .form-label {
+    margin-bottom: 0 !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    line-height: normal;
+  }
+
+  .form-control,
+  .form-select {
+    height: 50px !important;
+    min-height: 50px !important;
+    padding: 10px !important;
+    border: 1px solid #cbcccd !important;
+    border-radius: 10px !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 16px !important;
+    box-shadow: none !important;
+
+    &:focus {
+      border-color: #2299d6 !important;
+      box-shadow: none !important;
+    }
+
+    &::placeholder {
+      color: #808080 !important;
+      font-size: 16px !important;
+      font-weight: 400 !important;
+    }
+  }
+
+  textarea.form-control {
+    height: 100px !important;
+    min-height: 100px !important;
+    resize: vertical;
+  }
+
+  .form-select {
+    color: #808080 !important;
+
+    &:not([value=""]),
+    &:valid {
+      color: #111111 !important;
+    }
+  }
+
+  .react-tel-input {
+    width: 100%;
+
+    .form-control {
+      width: 100% !important;
+      height: 50px !important;
+      padding-left: 52px !important;
+      border: 1px solid #cbcccd !important;
+      border-radius: 10px !important;
+      background: #ffffff !important;
+      color: #111111 !important;
+
+      &:focus {
+        border-color: #2299d6 !important;
+        box-shadow: none !important;
+      }
+    }
+
+    .flag-dropdown {
+      border: none !important;
+      background: transparent !important;
+      border-radius: 10px 0 0 10px !important;
+
+      &.open-dropdown,
+      &:hover {
+        background: transparent !important;
+      }
+    }
+
+    .selected-flag {
+      background: transparent !important;
+      border-radius: 10px 0 0 10px !important;
+      padding-left: 12px;
+
+      &:hover,
+      &:focus,
+      &.open {
+        background: transparent !important;
+      }
+    }
+  }
+
+  /* ServicesUsaContact hardcodes this class on its glass-variant submit button */
+  .ads-usa-hero__submit.primary-cta {
+    margin-top: 4px;
+
+    .primary-cta-label {
+      color: #ffffff !important;
+      text-transform: capitalize;
+    }
+
+    &:hover:not(:disabled),
+    &:focus-visible:not(:disabled) {
+      background-color: #ffffff !important;
+      border-color: #ffffff !important;
+
+      .primary-cta-label {
+        color: #d70416 !important;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.75;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .abs-usa-hero__form-wrap .services-usa-contact--glass .contact-form {
+    padding: 16px !important;
+  }
+}
+
+/* Services grid — tighten gaps on mobile */
+@media (max-width: 639px) {
+  .architectural-bim-services-usa-page .abs-usa-services__grid {
+    gap: 16px !important;
+  }
+}
+
+/* Case studies — match /landing/professional-architectural-drafting-services */
+.abs-usa-case-studies {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  padding: 64px 0 80px;
+}
+
+@media (min-width: 1024px) {
+  .abs-usa-case-studies {
+    padding: 100px 0;
+  }
+}
+
+.abs-usa-case-studies__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 1024px) {
+  .abs-usa-case-studies__inner {
+    gap: 60px;
+  }
+}
+
+.abs-usa-case-studies__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 720px;
+}
+
+.abs-usa-case-studies__sub {
+  margin: 0;
+  max-width: 494px;
+  color: #808080;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.abs-usa-case-studies__track-wrap {
+  width: 100%;
+  overflow: visible;
+}
+
+.abs-usa-case-studies__track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 4px;
+}
+
+.abs-usa-case-studies__track::-webkit-scrollbar {
+  display: none;
+}
+
+.abs-usa-case-study-card {
+  flex: 0 0 min(1040px, calc(100vw - 48px));
+  width: min(1040px, calc(100vw - 48px));
+  scroll-snap-align: start;
+  background: #fff;
+  border: 1px solid #cbcccd;
+  border-radius: 18px;
+  padding: 24px 0 24px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: visible;
+}
+
+.abs-usa-case-study-card__logo {
+  display: block;
+  height: 32px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  object-position: left center;
+  margin-right: 24px;
+}
+
+.abs-usa-case-study-card__summary {
+  margin: 0 24px 0 0;
+  color: #808080;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.abs-usa-case-study-card__stats {
+  display: flex;
+  gap: 16px;
+  width: auto;
+  margin-right: 24px;
+  padding: 12px 16px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.abs-usa-case-study-card__stat {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.abs-usa-case-study-card__stat + .abs-usa-case-study-card__stat {
+  border-left: 1px solid #e8e8e8;
+  padding-left: 16px;
+}
+
+.abs-usa-case-study-card__stat-label {
+  margin: 0;
+  color: #111;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.abs-usa-case-study-card__stat-value {
+  margin: 0;
+  color: #808080;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  white-space: pre-line;
+}
+
+.abs-usa-case-study-card__body {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.abs-usa-case-study-card__text {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.abs-usa-case-study-card__block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.abs-usa-case-study-card__block h4 {
+  margin: 0;
+  color: #111;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.abs-usa-case-study-card__block p,
+.abs-usa-case-study-card__block ul {
+  margin: 0;
+  color: #808080;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.abs-usa-case-study-card__block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.abs-usa-case-study-card__gallery {
+  flex: 0 0 410px;
+  width: 410px;
+  max-width: 42%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 24px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.abs-usa-case-study-card__main {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 463 / 320;
+  overflow: visible;
+  border-radius: 8px;
+}
+
+.abs-usa-case-study-card__main img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  background: #f3f4f6;
+}
+
+.abs-usa-case-study-card__img-nav {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.abs-usa-case-study-card__img-nav-btn {
+  pointer-events: auto;
+  width: 34px;
+  height: 34px;
+  border: 0.77px solid #fff;
+  border-radius: 8px;
+  background: #d70416;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(215, 4, 22, 0.25);
+}
+
+.abs-usa-case-study-card__img-nav-btn:first-child {
+  transform: translateX(-50%);
+}
+
+.abs-usa-case-study-card__img-nav-btn:last-child {
+  transform: translateX(50%);
+}
+
+.abs-usa-case-study-card__thumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.abs-usa-case-study-card__thumb {
+  position: relative;
+  flex: 0 0 80px;
+  width: 80px;
+  height: 54px;
+  padding: 0;
+  border: 1px solid #cbcccd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f3f4f6;
+  cursor: pointer;
+}
+
+.abs-usa-case-study-card__thumb.is-active {
+  border-color: #d70416;
+}
+
+.abs-usa-case-study-card__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.abs-usa-case-study-card__thumb-more {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.abs-usa-case-studies__controls {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.abs-usa-case-studies__progress {
+  flex: 1 1 0;
+  height: 2px;
+  background: #b1b1b1;
+  position: relative;
+  overflow: hidden;
+}
+
+.abs-usa-case-studies__progress-thumb {
+  width: min(280px, 40%);
+  height: 2px;
+  background: #111;
+  will-change: transform;
+}
+
+.abs-usa-case-studies__nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-shrink: 0;
+}
+
+.abs-usa-case-studies__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  border: 1px solid #cbcccd;
+  border-radius: 10px;
+  background: transparent;
+  color: #808080;
+  cursor: pointer;
+  backdrop-filter: blur(50px);
+}
+
+.abs-usa-case-studies__nav-btn:hover:not(:disabled) {
+  border-color: #808080;
+  color: #111;
+}
+
+.abs-usa-case-studies__nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.abs-usa-case-studies__cta-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.abs-usa-case-studies__fade {
+  position: absolute;
+  top: 180px;
+  width: 120px;
+  height: 520px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.abs-usa-case-studies__fade--right {
+  right: 0;
+  background: linear-gradient(270deg, #fff 56%, rgba(255, 255, 255, 0) 100%);
+  opacity: 1;
+}
+
+.abs-usa-case-studies__fade--left {
+  left: 0;
+  background: linear-gradient(90deg, #fff 56%, rgba(255, 255, 255, 0) 100%);
+}
+
+.abs-usa-case-studies.has-scrolled .abs-usa-case-studies__fade--left {
+  opacity: 1;
+}
+
+@media (max-width: 899px) {
+  .abs-usa-case-study-card {
+    flex-basis: min(100%, calc(100vw - 32px));
+    width: min(100%, calc(100vw - 32px));
+    padding: 20px;
+  }
+
+  .abs-usa-case-study-card__logo,
+  .abs-usa-case-study-card__summary,
+  .abs-usa-case-study-card__stats {
+    margin-right: 0;
+  }
+
+  .abs-usa-case-study-card__body {
+    flex-direction: column;
+  }
+
+  .abs-usa-case-study-card__gallery {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    padding-right: 0;
+  }
+
+  .abs-usa-case-study-card__stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .abs-usa-case-study-card__stat + .abs-usa-case-study-card__stat {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid #e8e8e8;
+    padding-top: 12px;
+  }
+
+  .abs-usa-case-studies__fade {
+    display: none;
+  }
+
+  .abs-usa-case-studies__controls {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .abs-usa-case-studies__nav {
+    gap: 16px;
+  }
+
+  .abs-usa-case-studies__nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+}

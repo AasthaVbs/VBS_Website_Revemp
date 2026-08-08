@@ -1,0 +1,477 @@
+/* Architectural Drafting Services USA — hero form + trust + clients */
+
+/* Override mep-bim hub section pad (64px) — keep hero tight under the header */
+.architectural-drafting-services-usa-page main > .ads-usa-hero {
+  padding-top: 12px !important;
+  padding-bottom: 24px !important;
+}
+
+@media (min-width: 1024px) {
+  .architectural-drafting-services-usa-page main > .ads-usa-hero {
+    padding-top: 8px !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+.ads-usa-hero__media {
+  height: auto;
+  min-height: 0;
+  align-self: center;
+}
+
+@media (min-width: 1024px) {
+  .ads-usa-hero__media {
+    align-self: flex-start;
+  }
+}
+
+/* Trust strip: stack cleanly on small screens */
+.architectural-drafting-services-usa-page .ads-usa-trust {
+  .vbs-home-hero-trust {
+    gap: 24px;
+  }
+}
+
+.architectural-drafting-services-usa-page .vbs-our-clients__logo {
+  width: 200px !important;
+  height: 72px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+
+.architectural-drafting-services-usa-page .vbs-our-clients__marquee-wrap {
+  min-height: 72px !important;
+}
+
+@media (max-width: 767px) {
+  .architectural-drafting-services-usa-page .ads-usa-trust {
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    .vbs-home-hero-trust {
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0 !important;
+      text-align: center !important;
+    }
+
+    .vbs-home-hero-trust__divider {
+      display: block !important;
+      width: min(100%, 280px) !important;
+      height: 1.5px !important;
+      margin: 12px auto !important;
+      padding: 0 !important;
+      border: none !important;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        #cbcccd 18%,
+        #cbcccd 82%,
+        transparent 100%
+      ) !important;
+    }
+
+    .vbs-home-hero-trust__item {
+      flex: 0 0 auto !important;
+      width: 100%;
+      max-width: 280px;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      align-self: center !important;
+
+      &::before {
+        display: none !important;
+      }
+    }
+
+    .vbs-home-hero-trust__copy {
+      width: 100%;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+
+    .vbs-home-hero-trust__value,
+    .vbs-home-hero-trust__label {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .vbs-home-hero-trust__label {
+      width: 100% !important;
+      max-width: 240px !important;
+    }
+  }
+
+  /* Tighten title → description spacing on mobile */
+  .architectural-drafting-services-usa-page .ads-usa-hero__copy {
+    gap: 10px !important;
+  }
+
+  .architectural-drafting-services-usa-page .ads-usa-hero__title-block {
+    gap: 8px !important;
+  }
+
+  .architectural-drafting-services-usa-page section {
+    .flex.flex-col.items-start.gap-5,
+    .flex.w-full.flex-col.items-start.gap-5 {
+      gap: 12px !important;
+    }
+
+    .flex.flex-col.items-start.gap-3 {
+      gap: 8px !important;
+    }
+  }
+
+  .architectural-drafting-services-usa-page .vbs-our-clients__head,
+  .architectural-drafting-services-usa-page .vbs-our-clients__head-top,
+  .architectural-drafting-services-usa-page .vbs-client-success-stories__head {
+    gap: 10px !important;
+  }
+
+  .architectural-drafting-services-usa-page .vbs-our-clients__title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .architectural-drafting-services-usa-page .vbs-our-clients__logo {
+    width: 170px !important;
+    height: 60px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .architectural-drafting-services-usa-page .ads-usa-trust .vbs-home-hero-trust {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.architectural-drafting-services-usa-page .vbs-client-success-stories {
+  background: #fafafa;
+}
+
+.architectural-drafting-services-usa-page .cad-landing-tools__tile-name {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #111111;
+}
+
+@media (min-width: 1024px) {
+  .architectural-drafting-services-usa-page .cad-landing-tools__tile-name {
+    font-size: 20px;
+  }
+}
+
+/* How it Works — side-by-side timeline (Figma 3910:65992) */
+.ads-usa-workflow__timeline {
+  position: relative;
+}
+
+.ads-usa-workflow__axis {
+  position: absolute;
+  left: 37px;
+  width: 2px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(215, 4, 22, 0.35) 0,
+    rgba(215, 4, 22, 0.35) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ads-usa-workflow__axis-progress {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #d70416 0,
+    #d70416 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.ads-usa-workflow__step {
+  position: relative;
+  z-index: 1;
+}
+
+.ads-usa-workflow__badge {
+  width: 76px;
+  min-width: 76px;
+  height: auto;
+  padding: 16px 19px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ads-usa-workflow__badge--active {
+  background: #d70416 !important;
+  border: none !important;
+}
+
+.ads-usa-workflow__badge--inactive {
+  background: #ffffff !important;
+  border: 1px solid #cbcccd !important;
+}
+
+.ads-usa-workflow__badge-number {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.ads-usa-workflow__badge--active .ads-usa-workflow__badge-number {
+  color: #ffffff !important;
+}
+
+.ads-usa-workflow__badge--inactive .ads-usa-workflow__badge-number {
+  color: #111111 !important;
+}
+
+@media (max-width: 639px) {
+  .ads-usa-workflow__axis {
+    left: 27px;
+  }
+
+  .ads-usa-workflow__badge {
+    width: 56px;
+    min-width: 56px;
+    padding: 12px 10px;
+  }
+
+  .ads-usa-workflow__badge-number {
+    font-size: 24px;
+  }
+}
+
+#ads-usa-contact {
+  scroll-margin-top: 96px;
+}
+
+/* Hero form — Figma frosted glass (3910:65611), not legacy blue webinar form */
+.ads-usa-hero__form-wrap {
+  width: 100%;
+
+  .services-usa-contact--glass {
+    width: 100%;
+  }
+
+  .services-usa-contact--glass .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 20px !important;
+    border-radius: 10px !important;
+    border: 1px solid #cbcccd !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    background-image: none !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: none !important;
+  }
+
+  .services-usa-contact--glass .form-control::placeholder,
+  .services-usa-contact--glass textarea.form-control::placeholder {
+    color: #808080 !important;
+  }
+
+  .services-usa-contact__title {
+    margin: 0;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+    text-transform: capitalize;
+
+    @media (min-width: 640px) {
+      font-size: 24px;
+    }
+  }
+
+  .services-usa-contact__title-lead {
+    font-weight: 500;
+  }
+
+  .services-usa-contact__title-accent {
+    font-weight: 300;
+  }
+
+  .services-usa-contact__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .services-usa-contact__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px 20px;
+    width: 100%;
+
+    @media (min-width: 640px) {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .services-usa-contact__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .services-usa-contact__req {
+    color: #d70416;
+  }
+
+  .services-usa-contact__error {
+    margin: 0;
+    color: #ffb4b4;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .form-label {
+    margin-bottom: 0 !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    line-height: normal;
+  }
+
+  .form-control,
+  .form-select {
+    height: 50px !important;
+    min-height: 50px !important;
+    padding: 10px !important;
+    border: 1px solid #cbcccd !important;
+    border-radius: 10px !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 16px !important;
+    box-shadow: none !important;
+
+    &:focus {
+      border-color: #2299d6 !important;
+      box-shadow: none !important;
+    }
+
+    &::placeholder {
+      color: #808080 !important;
+      font-size: 16px !important;
+      font-weight: 400 !important;
+    }
+  }
+
+  textarea.form-control {
+    height: 100px !important;
+    min-height: 100px !important;
+    resize: vertical;
+  }
+
+  .form-select {
+    color: #808080 !important;
+
+    &:not([value=""]),
+    &:valid {
+      color: #111111 !important;
+    }
+  }
+
+  .react-tel-input {
+    width: 100%;
+
+    .form-control {
+      width: 100% !important;
+      height: 50px !important;
+      padding-left: 52px !important;
+      border: 1px solid #cbcccd !important;
+      border-radius: 10px !important;
+      background: #ffffff !important;
+      color: #111111 !important;
+
+      &:focus {
+        border-color: #2299d6 !important;
+        box-shadow: none !important;
+      }
+    }
+
+    .flag-dropdown {
+      border: none !important;
+      background: transparent !important;
+      border-radius: 10px 0 0 10px !important;
+
+      &.open-dropdown,
+      &:hover {
+        background: transparent !important;
+      }
+    }
+
+    .selected-flag {
+      background: transparent !important;
+      border-radius: 10px 0 0 10px !important;
+      padding-left: 12px;
+
+      &:hover,
+      &:focus,
+      &.open {
+        background: transparent !important;
+      }
+    }
+  }
+
+  .ads-usa-hero__submit.primary-cta {
+    margin-top: 4px;
+
+    .primary-cta-label {
+      color: #ffffff !important;
+      text-transform: capitalize;
+    }
+
+    &:hover:not(:disabled),
+    &:focus-visible:not(:disabled) {
+      background-color: #ffffff !important;
+      border-color: #ffffff !important;
+
+      .primary-cta-label {
+        color: #d70416 !important;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.75;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .ads-usa-hero__form-wrap .services-usa-contact--glass .contact-form {
+    padding: 16px !important;
+  }
+}

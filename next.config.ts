@@ -83,6 +83,12 @@ const nextConfig: NextConfig = {
       process.env.GATSBY_GOOGLE_STATIC_MAPS_API_KEY ||
       process.env.GATSBY_GOOGLE_MAPS_API_KEY ||
       "",
+    NEXT_PUBLIC_SERVICE_ID_WEBINAR:
+      process.env.NEXT_PUBLIC_SERVICE_ID_WEBINAR || process.env.SERVICE_ID_WEBINAR || "",
+    NEXT_PUBLIC_TEMPLATE_ID_WEBINAR:
+      process.env.NEXT_PUBLIC_TEMPLATE_ID_WEBINAR || process.env.TEMPLATE_ID_WEBINAR || "",
+    NEXT_PUBLIC_PUBLIC_KEY_WEBINAR:
+      process.env.NEXT_PUBLIC_PUBLIC_KEY_WEBINAR || process.env.PUBLIC_KEY_WEBINAR || "",
   },
   experimental: {
     optimizePackageImports: ["lucide-react"],
@@ -162,18 +168,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/webinar-common-mistakes-to-avoid-when-creating-permit-sets",
-        destination: "/webinar/webinar-common-mistakes-to-avoid-when-creating-permit-sets",
-        permanent: true,
-      },
-      {
-        source: "/webinar-common-mistakes-to-avoid-when-creating-permit-sets/:path*",
-        destination: "/webinar/webinar-common-mistakes-to-avoid-when-creating-permit-sets",
-        permanent: true,
-      },
-      {
         source: "/terms-and-conditions",
         destination: "/terms-of-use",
+        permanent: true,
+      },
+      {
+        source: "/webinar/webinar-common-mistakes-to-avoid-when-creating-permit-sets",
+        destination: "/webinar-common-mistakes-to-avoid-when-creating-permit-sets",
+        permanent: true,
+      },
+      {
+        source: "/webinar/webinar-common-mistakes-to-avoid-when-creating-permit-sets/:path*",
+        destination: "/webinar-common-mistakes-to-avoid-when-creating-permit-sets",
         permanent: true,
       },
       {

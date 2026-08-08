@@ -7,7 +7,7 @@ import {
   DeferredResourcesBrowseSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
-import { buildResourceCatalog } from "@/lib/resource-catalog";
+import { buildResourceCatalogLive } from "@/lib/resource-catalog";
 
 export const metadata: Metadata = {
   title: "Resources | Virtual Building Studio",
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     "Explore blogs, whitepapers, case studies, and insights from Virtual Building Studio on BIM delivery for architecture and engineering firms.",
 };
 
-export default function ResourcesPage() {
-  const initialCatalog = buildResourceCatalog(new Date());
+export default async function ResourcesPage() {
+  const initialCatalog = await buildResourceCatalogLive(new Date());
 
   return (
     <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">

@@ -13,8 +13,13 @@ import type {
   ResourceCatalog,
   ResourceCatalogItem,
 } from "@/lib/resource-catalog-types";
-import { buildSanityWebinarListingItems } from "@/lib/sanity-listing";
-import { getSanityResourceWebinars } from "@/lib/sanity-snapshot";
+import { fetchSanityResourceListing } from "@/lib/sanity-fetch";
+import {
+  buildSanityWebinarListingItems,
+  type SanityPostNode,
+  type SanityWebinarNode,
+} from "@/lib/sanity-listing";
+import { getSanityResourcePosts, getSanityResourceWebinars } from "@/lib/sanity-snapshot";
 
 export type {
   BlogCatalogItem,
@@ -22,6 +27,11 @@ export type {
   ResourceCatalog,
   ResourceCatalogItem,
 } from "@/lib/resource-catalog-types";
+
+export type ResourceCatalogListingInput = {
+  posts?: SanityPostNode[];
+  webinars?: SanityWebinarNode[];
+};
 
 function isNewsItem(item: { tags?: string[]; categoryTitles?: string[] }) {
   const tags = (item.tags || []).map((tag) => String(tag).toLowerCase());
@@ -42,10 +52,16 @@ function toNewsListingItem<T extends Record<string, unknown>>(item: T) {
   };
 }
 
-export function buildResourceCatalog(referenceDate?: Date): ResourceCatalog {
-  const blogItems = mapBlogListingToCatalog();
+/** Snapshot-backed catalog (sync). Prefer `buildResourceCatalogLive` on listing pages. */
+export function buildResourceCatalog(
+  referenceDate?: Date,
+  listing?: ResourceCatalogListingInput,
+): ResourceCatalog {
+  const posts = listing?.posts ?? getSanityResourcePosts();
+  const webinars = listing?.webinars ?? getSanityResourceWebinars();
+  const blogItems = mapBlogListingToCatalog(posts);
   const webinarItems = buildSanityWebinarListingItems(
-    getSanityResourceWebinars(),
+    webinars,
     referenceDate ?? new Date(),
   ).map((item) => ({
     ...item,
@@ -82,4 +98,10 @@ export function buildResourceCatalog(referenceDate?: Date): ResourceCatalog {
       News: newsItems,
     },
   };
+}
+
+/** Live Sanity posts + webinars (snapshot fallback when credentials/API fail). */
+export async function buildResourceCatalogLive(referenceDate?: Date): Promise<ResourceCatalog> {
+  const listing = await fetchSanityResourceListing();
+  return buildResourceCatalog(referenceDate ?? new Date(), listing);
 }

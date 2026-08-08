@@ -1,0 +1,68 @@
+/* VBS cookie banner (react-cookie-consent) — ported from Gatsby/legacy styles */
+
+.CookieConsent {
+  z-index: 2147483647 !important;
+  align-items: center !important;
+  background: rgba(17, 17, 17, 0.96) !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  padding: 16px 24px !important;
+
+  a {
+    color: #fff !important;
+    text-decoration: underline !important;
+  }
+
+  button {
+    flex-shrink: 0;
+  }
+
+  #rcc-decline-button {
+    min-width: 90px;
+  }
+}
+
+/* Zoho SalesIQ chat — stack above cookie strip when banner is visible */
+body:has(.CookieConsent:not(.cookie-consent--hidden)) #zsiq_float,
+body:has(.CookieConsent:not(.cookie-consent--hidden)) .zsiq_floatmain,
+body:has(.CookieConsent:not(.cookie-consent--hidden)) #zsiq_chat_wrap,
+body:has(.CookieConsent:not(.cookie-consent--hidden)) .zsiq-float,
+body:has(.CookieConsent:not(.cookie-consent--hidden)) [class*="zsiq-float"],
+body:has(.CookieConsent:not(.cookie-consent--hidden)) [class*="siqico-chat"],
+body:has(.CookieConsent:not(.cookie-consent--hidden)) [id*="siqico"] {
+  bottom: 92px !important;
+  z-index: 2147483640 !important;
+}
+
+@media (max-width: 767px) {
+  body:has(.CookieConsent:not(.cookie-consent--hidden)) #zsiq_float,
+  body:has(.CookieConsent:not(.cookie-consent--hidden)) .zsiq_floatmain,
+  body:has(.CookieConsent:not(.cookie-consent--hidden)) #zsiq_chat_wrap,
+  body:has(.CookieConsent:not(.cookie-consent--hidden)) .zsiq-float,
+  body:has(.CookieConsent:not(.cookie-consent--hidden)) [class*="zsiq-float"],
+  body:has(.CookieConsent:not(.cookie-consent--hidden)) [class*="siqico-chat"],
+  body:has(.CookieConsent:not(.cookie-consent--hidden)) [id*="siqico"] {
+    bottom: 128px !important;
+  }
+}
+
+.cookie-consent--hidden,
+#onetrust-banner-sdk,
+.onetrust-pc-dark-filter,
+.cky-consent-container,
+.cky-overlay,
+.osano-cm-window,
+#clarity-cb,
+#clarity-consent-banner,
+[id*="clarity-consent" i],
+[class*="clarity-consent" i],
+[id*="cookie-consent" i]:not(.CookieConsent),
+[class*="cookie-consent" i]:not(.CookieConsent) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+}

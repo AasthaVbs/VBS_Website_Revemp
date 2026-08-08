@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 
-import { ZOHO_UTM_LEAD_TRACKING_SCRIPT } from "@/scripts/zoho-utm-lead-tracking";
+import {
+  SiteTrackingNoscript,
+  SiteTrackingScripts,
+} from "@/components/tracking/site-tracking-scripts";
+import {
+  GOOGLE_SITE_VERIFICATION,
+  SITE_URL,
+} from "@/constants/site-tracking";
 
 import "./globals.css";
 import "@/styles/vbs-migrated-pages-shell.scss";
@@ -24,6 +30,7 @@ import "@/styles/vbs-thank-you-page.scss";
 import "@/styles/vbs-mobile-typography.scss";
 import "@/styles/vbs-blog-detail.scss";
 import "@/styles/vbs-webinar-detail-redesign.scss";
+import "@/styles/vbs-cookie-consent.scss";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,8 +41,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Virtual Building Studio",
-  description: "Corporate-ready Next.js starter architecture",
+  description:
+    "Virtual Building Studio: Leading Texas-based BIM company. Hire top 1% architects and engineers in the USA within 3 days of onboarding time. Flexible staffing service with a 30-days money-back guarantee.",
+  verification: {
+    google: GOOGLE_SITE_VERIFICATION,
+  },
+  referrer: "strict-origin-when-cross-origin",
+  openGraph: {
+    type: "website",
+    siteName: "Virtual Building Studio",
+    url: SITE_URL,
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "any" }],
+  },
 };
 
 export default function RootLayout({
@@ -44,12 +68,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html lang="en-US" className={inter.variable} suppressHydrationWarning>
       <body className={inter.className} suppressHydrationWarning>
+        <SiteTrackingNoscript />
         {children}
-        <Script id="zoho-utm-lead-tracking" strategy="lazyOnload">
-          {ZOHO_UTM_LEAD_TRACKING_SCRIPT}
-        </Script>
+        <SiteTrackingScripts />
       </body>
     </html>
   );

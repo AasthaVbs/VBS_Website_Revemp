@@ -44,11 +44,20 @@ export const webinarArchitectureSlugs = new Set([
   "construction-documentation-ai-workflow",
   "why-architecture-firms-struggle-with-profit",
   "webinar-common-mistakes-to-avoid-when-creating-permit-sets",
+  "webinar-challenges-in-design-development-and-how-to-overcome-them",
+  "secure-construction-documents-accuracy-compliance-webinar",
+  "talent-vs-tech-the-secret-boosting-your-architecture",
 ]);
 
 export const webinarHrefBySlug: Record<string, string> = {
   "webinar-common-mistakes-to-avoid-when-creating-permit-sets":
     "/webinar-common-mistakes-to-avoid-when-creating-permit-sets",
+  "webinar-challenges-in-design-development-and-how-to-overcome-them":
+    "/webinar-challenges-in-design-development-and-how-to-overcome-them",
+  "secure-construction-documents-accuracy-compliance-webinar":
+    "/secure-construction-documents-accuracy-compliance-webinar",
+  "talent-vs-tech-the-secret-boosting-your-architecture":
+    "/talent-vs-tech-the-secret-boosting-your-architecture",
 };
 
 export type WebinarListingItem = ResourceListingItem & {
@@ -88,6 +97,48 @@ export const supplementalWebinarListingItems: WebinarListingItem[] = [
     delivery: "On Demand",
     publishedTimestamp: 9500,
     sortOrder: 2,
+  },
+  {
+    id: "webinar-challenges-in-design-development-and-how-to-overcome-them",
+    title: "Top 5 Challenges in Design Development (DD) and How to Overcome Them",
+    excerpt:
+      "Cover the top five hurdles faced during the DD phase and expert strategies to keep design development moving smoothly.",
+    type: "Webinar",
+    service: WEBINAR_SERVICE_ARCHITECTURE,
+    href: "/webinar-challenges-in-design-development-and-how-to-overcome-them",
+    image: "/image/webinar-banner.jpg",
+    badgeLabel: "Webinar",
+    delivery: "On Demand",
+    publishedTimestamp: 9400,
+    sortOrder: 3,
+  },
+  {
+    id: "secure-construction-documents-accuracy-compliance-webinar",
+    title: "3 Key Steps to Secure Construction Documents with Accuracy and Compliance",
+    excerpt:
+      "Learn three essential steps to improve documentation quality, minimize risks, and enhance project success.",
+    type: "Webinar",
+    service: WEBINAR_SERVICE_ARCHITECTURE,
+    href: "/secure-construction-documents-accuracy-compliance-webinar",
+    image: "/image/webinar-banner.jpg",
+    badgeLabel: "Webinar",
+    delivery: "On Demand",
+    publishedTimestamp: 9300,
+    sortOrder: 4,
+  },
+  {
+    id: "talent-vs-tech-the-secret-boosting-your-architecture",
+    title: "Talent vs. Tech—What’s the Secret to Boosting Your Architecture Practice?",
+    excerpt:
+      "Explore how top talent and technology like VBS Virtual Studio and BidLight BIM automation can boost firm efficiency.",
+    type: "Webinar",
+    service: WEBINAR_SERVICE_ARCHITECTURE,
+    href: "/talent-vs-tech-the-secret-boosting-your-architecture",
+    image: "/image/talent-vs-tech-the-secret-boosting-your-architecture.jpg",
+    badgeLabel: "Webinar",
+    delivery: "On Demand",
+    publishedTimestamp: 9200,
+    sortOrder: 5,
   },
 ];
 

@@ -13,6 +13,10 @@ declare global {
     _wfa_track?: {
       wfa_submit?: (event: Event | unknown) => void;
     };
+    /** LinkedIn Insight Tag */
+    lintrk?: ((action: string, payload?: { conversion_id: number }) => void) & {
+      q?: Array<[string, { conversion_id: number } | undefined]>;
+    };
   }
 }
 

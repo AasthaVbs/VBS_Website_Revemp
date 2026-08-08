@@ -29,6 +29,8 @@ type WebinarGatedVideoModalProps = {
   formStorageKey?: string;
   thumbnailAlt?: string;
   modalClassName?: string;
+  /** Matches Gatsby: sidebar | featured | hero */
+  layout?: "sidebar" | "featured" | "hero";
 };
 
 export function WebinarGatedVideoModal({
@@ -38,6 +40,7 @@ export function WebinarGatedVideoModal({
   formStorageKey = ZOHO_MEP_WEBINAR_VIDEO_FORM_SUBMITTED_KEY,
   thumbnailAlt = "Play webinar video",
   modalClassName = "video-modal",
+  layout = "sidebar",
 }: WebinarGatedVideoModalProps) {
   const requiresMepForm = formVariant === "mep";
   const [showModal, setShowModal] = useState(false);
@@ -119,12 +122,19 @@ export function WebinarGatedVideoModal({
       } as CSSProperties)
     : undefined;
 
+  const layoutClass =
+    layout === "featured"
+      ? " webinar-gated-video--featured"
+      : layout === "hero"
+        ? " webinar-gated-video--hero"
+        : "";
+
   return (
     <>
       <div
         role="button"
         tabIndex={0}
-        className="video-box webinar-gated-video h-100 position-relative"
+        className={`video-box webinar-gated-video h-100 position-relative${layoutClass}`}
         style={{ cursor: "pointer" }}
         onClick={handleOpenModal}
         onKeyDown={(event) => {

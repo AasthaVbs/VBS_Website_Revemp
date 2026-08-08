@@ -1,0 +1,423 @@
+/* Architecture & Structure Services — redesigned middle sections
+   Figma-derived: Challenge, Way to Scale, Stage Services, Integrate Workflow,
+   Why Continue, VBS Difference, Engagement Models. */
+
+/* Hero primary CTA — filled red with white label (Figma Variant2) */
+.mep-page-hero__cta--filled.primary-cta {
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #d70416 !important;
+  border-color: #d70416 !important;
+  backdrop-filter: blur(50px);
+
+  .primary-cta-blobs {
+    transform: translate(-32px, -198px);
+  }
+
+  .primary-cta-label {
+    color: #ffffff !important;
+    transition: color 0.65s ease 0.2s;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: #ffffff !important;
+    border-color: #d70416 !important;
+
+    .primary-cta-blobs {
+      transform: translate(-422px, 22px);
+    }
+
+    .primary-cta-label {
+      color: #d70416 !important;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Challenge                                                          */
+/* ------------------------------------------------------------------ */
+
+.arch-svc-challenge__callout {
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Way to Scale — comparison table                                    */
+/* ------------------------------------------------------------------ */
+
+.arch-svc-scale__table-wrap {
+  /* Room for the hovered column to lift upward without clipping. */
+  padding-top: 16px;
+  margin-top: -16px;
+}
+
+.arch-svc-scale__table {
+  overflow: visible;
+}
+
+.arch-svc-scale__cell {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.arch-svc-scale__cell--head {
+  background: #111111;
+  min-height: 64px;
+}
+
+.arch-svc-scale__cell--head-accent {
+  background: #d70416;
+}
+
+.arch-svc-scale__col {
+  cursor: default;
+  position: relative;
+  z-index: 1;
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    min-height 0.3s ease,
+    padding-top 0.3s ease;
+}
+
+/* 3rd column header red when hover classes are re-enabled on markup. */
+.arch-svc-scale__col--2.arch-svc-scale__cell--head {
+  background: #d70416;
+}
+
+/* Hover lift — inactive until arch-svc-scale__col / __col--N are on cells. */
+.arch-svc-scale__table:has(.arch-svc-scale__col--0:hover) .arch-svc-scale__col--0,
+.arch-svc-scale__table:has(.arch-svc-scale__col--1:hover) .arch-svc-scale__col--1,
+.arch-svc-scale__table:has(.arch-svc-scale__col--2:hover) .arch-svc-scale__col--2 {
+  transform: translateY(-12px);
+  box-shadow: 0 12px 28px rgba(17, 17, 17, 0.12);
+  z-index: 3;
+}
+
+.arch-svc-scale__table:has(.arch-svc-scale__col--0:hover)
+  .arch-svc-scale__col--0.arch-svc-scale__cell--head,
+.arch-svc-scale__table:has(.arch-svc-scale__col--1:hover)
+  .arch-svc-scale__col--1.arch-svc-scale__cell--head,
+.arch-svc-scale__table:has(.arch-svc-scale__col--2:hover)
+  .arch-svc-scale__col--2.arch-svc-scale__cell--head {
+  min-height: 76px;
+  padding-top: 1.5rem;
+}
+
+.arch-svc-scale__table:has(.arch-svc-scale__col--0:hover)
+  .arch-svc-scale__col--0:not(.arch-svc-scale__cell--head),
+.arch-svc-scale__table:has(.arch-svc-scale__col--1:hover)
+  .arch-svc-scale__col--1:not(.arch-svc-scale__cell--head),
+.arch-svc-scale__table:has(.arch-svc-scale__col--2:hover)
+  .arch-svc-scale__col--2:not(.arch-svc-scale__cell--head) {
+  background: #fafafa;
+}
+
+/* ------------------------------------------------------------------ */
+/* Stage Services                                                      */
+/* ------------------------------------------------------------------ */
+
+.arch-svc-stages__card {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.arch-svc-stages__card:hover {
+  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------------------ */
+/* Integrate Workflow — four-corner diagram + center ring               */
+/* ------------------------------------------------------------------ */
+
+.arch-svc-workflow__diagram {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.arch-svc-workflow__step {
+  width: 100%;
+  max-width: 480px;
+}
+
+.arch-svc-workflow__step--discover {
+  order: 2;
+}
+
+.arch-svc-workflow__step--integrate {
+  order: 3;
+}
+
+.arch-svc-workflow__step--deliver {
+  order: 4;
+}
+
+.arch-svc-workflow__step--improve {
+  order: 5;
+}
+
+.arch-svc-workflow__circle {
+  order: 1;
+  position: relative;
+  width: min(100%, 320px);
+  height: min(100vw, 320px);
+  max-height: 320px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .arch-svc-workflow__diagram {
+    display: block;
+    position: relative;
+    height: 613px;
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+
+  .arch-svc-workflow__step {
+    position: absolute;
+    width: min(480px, 33.5%);
+    max-width: 480px;
+  }
+
+  .arch-svc-workflow__step--discover {
+    top: 0;
+    left: 0;
+    order: unset;
+  }
+
+  .arch-svc-workflow__step--integrate {
+    top: 0;
+    right: 0;
+    order: unset;
+  }
+
+  .arch-svc-workflow__step--deliver {
+    top: 365px;
+    right: 0;
+    order: unset;
+  }
+
+  .arch-svc-workflow__step--improve {
+    top: 365px;
+    left: 0;
+    order: unset;
+  }
+
+  .arch-svc-workflow__circle {
+    order: unset;
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    max-height: none;
+    transform: translateX(-50%);
+  }
+}
+
+.arch-svc-workflow__rotor {
+  position: absolute;
+  inset: 0;
+  animation: arch-svc-workflow-rotate 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arch-svc-workflow__rotor {
+    animation: none;
+  }
+}
+
+@keyframes arch-svc-workflow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.arch-svc-workflow__ring {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.arch-svc-workflow__circle-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  width: 132px;
+  height: 132px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow:
+    0 4px 9.4px rgba(0, 0, 0, 0.25) inset,
+    0 4px 7.1px rgba(0, 0, 0, 0.25);
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 1024px) {
+  .arch-svc-workflow__circle-center {
+    width: 166px;
+    height: 166px;
+  }
+}
+
+.arch-svc-workflow__tag {
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ */
+/* Why Choose VBS — clickable list + image                            */
+/* ------------------------------------------------------------------ */
+
+.arch-svc-why-continue__item {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.arch-svc-why-continue__chevron {
+  transform: rotate(0deg);
+}
+
+.arch-svc-why-continue__chevron--active {
+  transform: translateX(2px);
+}
+
+.arch-svc-why-continue__visual {
+  min-height: 320px;
+}
+
+@media (min-width: 1024px) {
+  .arch-svc-why-continue__visual {
+    min-height: 480px;
+  }
+}
+
+.arch-svc-why-continue__overlay {
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0) 45%, rgba(17, 17, 17, 0.75) 100%);
+  pointer-events: none;
+}
+
+.arch-svc-why-continue__caption {
+  animation: arch-svc-why-continue-fade 0.35s ease;
+}
+
+@keyframes arch-svc-why-continue-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* The VBS Difference                                                 */
+/* ------------------------------------------------------------------ */
+
+.arch-svc-difference__card {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+/* ------------------------------------------------------------------ */
+/* Engagement Models                                                  */
+/* ------------------------------------------------------------------ */
+
+.arch-svc-engagement__card {
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.arch-svc-engagement__card:hover {
+  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.08);
+  transform: translateY(-2px);
+}
+
+.arch-svc-engagement__card--featured {
+  border-color: #2299d6;
+}
+
+.arch-svc-engagement__badge {
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #2299d6;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.arch-svc-engagement__list-item {
+  position: relative;
+  padding-left: 14px;
+}
+
+.arch-svc-engagement__list-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #808080;
+}
+
+.arch-svc-engagement__cta--filled.primary-cta {
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #d70416 !important;
+  border-color: #d70416 !important;
+}
+
+.arch-svc-engagement__cta--filled.primary-cta .primary-cta-blobs {
+  transform: translate(-32px, -198px);
+}
+
+.arch-svc-engagement__cta--filled.primary-cta .primary-cta-label {
+  color: #ffffff !important;
+}
+
+.arch-svc-engagement__cta--filled.primary-cta:hover,
+.arch-svc-engagement__cta--filled.primary-cta:focus-visible {
+  background-color: #ffffff !important;
+  border-color: #d70416 !important;
+}
+
+.arch-svc-engagement__cta--filled.primary-cta:hover .primary-cta-blobs,
+.arch-svc-engagement__cta--filled.primary-cta:focus-visible .primary-cta-blobs {
+  transform: translate(-422px, 22px);
+}
+
+.arch-svc-engagement__cta--filled.primary-cta:hover .primary-cta-label,
+.arch-svc-engagement__cta--filled.primary-cta:focus-visible .primary-cta-label {
+  color: #d70416 !important;
+}

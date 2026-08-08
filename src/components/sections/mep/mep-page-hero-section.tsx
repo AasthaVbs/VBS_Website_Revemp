@@ -14,11 +14,17 @@ export type MepPageHeroContent = {
   /** When true, accent (red/light) renders before lead (black/medium). */
   titleAccentFirst?: boolean;
   description: string;
+  /** Optional multi-paragraph body; when set, replaces single description. */
+  descriptions?: string[];
   ctaLabel: string;
   imageSrc: string | StaticImageData;
   imageAlt?: string;
   imageSize?: "default" | "compact";
   ctaHref?: string;
+  /** Filled red primary CTA (white label), matching Figma Variant2. */
+  ctaFilled?: boolean;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
   copyMaxWidth?: number;
   descriptionMaxWidth?: number;
   className?: string;
@@ -48,6 +54,101 @@ function HeroFadeRightEdge() {
   );
 }
 
+function HeroTitleLead({ titleLead, titleAccent }: { titleLead: string; titleAccent: string }) {
+  const lines = titleLead.split("\n");
+
+  return (
+    <>
+      {lines.map((line, index) => (
+        <span
+          key={`${line}-${index}`}
+          className="block text-[28px] font-medium leading-[1.15] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[60px]"
+        >
+          {line}
+          {index === lines.length - 1 ? (
+            <span className="font-light text-[#D70416]">{titleAccent}</span>
+          ) : null}
+        </span>
+      ))}
+    </>
+  );
+}
+
+function HeroDescriptions({
+  description,
+  descriptions,
+  descriptionMaxWidth,
+  className,
+}: {
+  description: string;
+  descriptions?: string[];
+  descriptionMaxWidth: number;
+  className?: string;
+}) {
+  const paragraphs = descriptions?.length ? descriptions : [description];
+
+  return (
+    <div
+      className={cn("flex w-full flex-col gap-4 sm:gap-5", className)}
+      style={{ maxWidth: descriptionMaxWidth }}
+    >
+      {paragraphs.map((paragraph) => (
+        <p
+          key={paragraph.slice(0, 48)}
+          className="m-0 w-full text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]"
+        >
+          {paragraph}
+        </p>
+      ))}
+    </div>
+  );
+}
+
+function HeroCtas({
+  ctaLabel,
+  ctaHref,
+  ctaFilled,
+  secondaryCtaLabel,
+  secondaryCtaHref,
+  align = "start",
+}: {
+  ctaLabel: string;
+  ctaHref: string;
+  ctaFilled?: boolean;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
+  align?: "start" | "center";
+}) {
+  return (
+    <div
+      className={cn(
+        "flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:gap-5",
+        align === "center" ? "items-center self-center lg:items-start lg:self-start" : "items-start self-start",
+      )}
+    >
+      <PrimaryCtaButton
+        fullWidth={false}
+        href={ctaHref}
+        className={cn(
+          "!h-[56px] !min-h-[56px] self-start !px-5 capitalize",
+          ctaFilled && "mep-page-hero__cta--filled",
+        )}
+      >
+        {ctaLabel}
+      </PrimaryCtaButton>
+      {secondaryCtaLabel && secondaryCtaHref ? (
+        <PrimaryCtaButton
+          fullWidth={false}
+          href={secondaryCtaHref}
+          className="!h-[56px] !min-h-[56px] self-start !px-5 capitalize"
+        >
+          {secondaryCtaLabel}
+        </PrimaryCtaButton>
+      ) : null}
+    </div>
+  );
+}
+
 /** Shared MEP-style hero — Figma 217:242 / prototype 217:181 */
 export function MepPageHeroSection({
   tag,
@@ -55,11 +156,15 @@ export function MepPageHeroSection({
   titleAccent,
   titleAccentFirst = false,
   description,
+  descriptions,
   ctaLabel,
   imageSrc,
   imageAlt,
   imageSize = "default",
   ctaHref = "#services",
+  ctaFilled = false,
+  secondaryCtaLabel,
+  secondaryCtaHref,
   copyMaxWidth = 779,
   descriptionMaxWidth = 736,
   className,
@@ -75,7 +180,6 @@ export function MepPageHeroSection({
           className={cn("relative py-10 pt-2 sm:py-12 sm:pt-4 lg:py-14", containerClassName)}
         >
           <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:gap-6 xl:gap-10">
-            {/* Copy — vertically centered beside image on desktop */}
             <div
               className="flex w-full min-w-0 shrink flex-col justify-center gap-6 sm:gap-[30px] lg:flex-[0_1_auto]"
               style={{ maxWidth: copyMaxWidth }}
@@ -120,24 +224,22 @@ export function MepPageHeroSection({
                     )}
                   </h1>
                 </div>
-                <p
-                  className="w-full max-w-full text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]"
-                  style={{ maxWidth: descriptionMaxWidth }}
-                >
-                  {description}
-                </p>
+                <HeroDescriptions
+                  description={description}
+                  descriptions={descriptions}
+                  descriptionMaxWidth={descriptionMaxWidth}
+                />
               </div>
 
-              <PrimaryCtaButton
-                fullWidth={false}
-                href={ctaHref}
-                className="!h-[56px] !min-h-[56px] self-start !px-6 capitalize"
-              >
-                {ctaLabel}
-              </PrimaryCtaButton>
+              <HeroCtas
+                ctaLabel={ctaLabel}
+                ctaHref={ctaHref}
+                ctaFilled={ctaFilled}
+                secondaryCtaLabel={secondaryCtaLabel}
+                secondaryCtaHref={secondaryCtaHref}
+              />
             </div>
 
-            {/* Image — compact hero area (≈981×720) */}
             <div className="relative min-w-0 flex-1 lg:flex lg:items-center lg:justify-end">
               <div className="relative ml-auto w-full max-w-[650px] overflow-hidden rounded-[10px] bg-white shadow-[0_0_16.8px_rgba(0,0,0,0.15)] aspect-[981/720]">
                 <Image
@@ -158,7 +260,6 @@ export function MepPageHeroSection({
 
   return (
     <section className="mep-page-hero mep-page-hero--overlay relative flex w-full flex-col overflow-visible bg-white lg:block">
-      {/* Desktop overlay image */}
       <div
         className="mep-page-hero__media pointer-events-none absolute z-0 hidden aspect-[1024/607] max-w-[1080px] lg:right-0 lg:top-0 lg:block lg:w-[min(56%,1080px)]"
         aria-hidden
@@ -186,27 +287,18 @@ export function MepPageHeroSection({
           <div className="flex w-full flex-col items-center gap-4 self-stretch sm:gap-5 lg:items-start">
             <div className="flex flex-col items-center gap-3 lg:items-start">
               <MepSectionTag label={tag} className="max-lg:!self-center" />
-              <h1
-                className="w-full text-[#111111]"
-                style={{ maxWidth: copyMaxWidth }}
-              >
-                <span className="text-[28px] font-medium leading-[1.15] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[60px]">
-                  {titleLead}
-                </span>
-                <span className="text-[28px] font-light leading-[1.15] text-[#D70416] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[60px]">
-                  {titleAccent}
-                </span>
+              <h1 className="w-full text-[#111111]" style={{ maxWidth: copyMaxWidth }}>
+                <HeroTitleLead titleLead={titleLead} titleAccent={titleAccent} />
               </h1>
             </div>
-            <p
-              className="w-full text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]"
-              style={{ maxWidth: descriptionMaxWidth }}
-            >
-              {description}
-            </p>
+            <HeroDescriptions
+              description={description}
+              descriptions={descriptions}
+              descriptionMaxWidth={descriptionMaxWidth}
+              className="items-center text-center lg:items-start lg:text-left"
+            />
           </div>
 
-          {/* Mobile / tablet in-flow image — between description and CTA */}
           <div className="mep-page-hero__media-mobile relative w-full max-w-[560px] overflow-hidden rounded-[10px] bg-white shadow-[0_0_16.8px_rgba(0,0,0,0.12)] lg:hidden">
             <Image
               src={imageSrc}
@@ -219,13 +311,14 @@ export function MepPageHeroSection({
             />
           </div>
 
-          <PrimaryCtaButton
-            fullWidth={false}
-            href={ctaHref}
-            className="!h-[56px] !min-h-[56px] self-center !px-6 capitalize lg:self-start"
-          >
-            {ctaLabel}
-          </PrimaryCtaButton>
+          <HeroCtas
+            ctaLabel={ctaLabel}
+            ctaHref={ctaHref}
+            ctaFilled={ctaFilled}
+            secondaryCtaLabel={secondaryCtaLabel}
+            secondaryCtaHref={secondaryCtaHref}
+            align="center"
+          />
         </div>
       </PageContainer>
     </section>

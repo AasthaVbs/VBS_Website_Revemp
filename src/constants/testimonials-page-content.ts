@@ -1,4 +1,4 @@
-import { testimonialQuote } from "@/constants/shared-sections";
+import { clientSuccessStories } from "@/constants/client-success-stories-content";
 
 export const testimonialsPageHero = {
   tag: "Testimonials",
@@ -15,7 +15,7 @@ export const testimonialsReviewsIntro = {
   titleLead: "Our Success ",
   titleAccent: "Stories and Client Reviews",
   description:
-    "Meet the visionaries and experts who guide Virtual Building Studio's mission to revolutionize the AEC industry through innovation and dedication.",
+    "Hear how architects and firm owners scaled production, reclaimed time, and grew revenue with dedicated BIM support.",
 } as const;
 
 export const testimonialsJoinTeamCta = {
@@ -33,112 +33,13 @@ export type ClientReviewItem = {
   role: string;
   quote: string;
   avatar: string;
-  cover: string;
 };
 
-const reviewCovers = [
-  "/images/figma/resource-1.png",
-  "/images/figma/resource-2.png",
-  "/images/figma/resource-3.png",
-  "/images/figma/industry-1.png",
-  "/images/figma/industry-2.png",
-  "/images/figma/industry-4.png",
-  "/images/figma/industry-6.png",
-  "/images/figma/industry-7.png",
-  "/images/figma/evaluate-cta-1.png",
-  "/images/figma/evaluate-cta-2.png",
-] as const;
-
-/** Figma 948:29976 — base client review cards (cycled across pages) */
-const clientReviewTemplates: Omit<ClientReviewItem, "id">[] = [
-  {
-    name: "Marvin McKinney",
-    role: "CEO at Oceanmtech",
-    quote: testimonialQuote,
-    avatar: "/images/figma/testimonial-1.png",
-    cover: reviewCovers[0],
-  },
-  {
-    name: "Ronald Richards",
-    role: "Binford Ltd.",
-    quote: testimonialQuote,
-    avatar: "/images/figma/testimonial-2.png",
-    cover: reviewCovers[1],
-  },
-  {
-    name: "Jenny Wilson",
-    role: "Binford Ltd.",
-    quote: testimonialQuote,
-    avatar: "/images/figma/testimonial-1.png",
-    cover: reviewCovers[2],
-  },
-  {
-    name: "Dianne Russell",
-    role: "Biffco Enterprises Ltd.",
-    quote: testimonialQuote,
-    avatar: "/images/figma/testimonial-2.png",
-    cover: reviewCovers[3],
-  },
-  {
-    name: "Arlene McCoy",
-    role: "Big Kahuna Burger Ltd.",
-    quote: testimonialQuote,
-    avatar: "/images/figma/testimonial-1.png",
-    cover: reviewCovers[4],
-  },
-  {
-    name: "Theresa Webb",
-    role: "Barone LLC.",
-    quote: testimonialQuote,
-    avatar: "/images/figma/testimonial-2.png",
-    cover: reviewCovers[5],
-  },
-  {
-    name: "Marvin McKinney",
-    role: "Abstergo Ltd.",
-    quote: testimonialQuote,
-    avatar: "/images/figma/testimonial-1.png",
-    cover: reviewCovers[6],
-  },
-  {
-    name: "Cameron Williamson",
-    role: "Abstergo Ltd.",
-    quote: testimonialQuote,
-    avatar: "/images/figma/testimonial-2.png",
-    cover: reviewCovers[7],
-  },
-  {
-    name: "Cody Fisher",
-    role: "Binford Ltd.",
-    quote: testimonialQuote,
-    avatar: "/images/figma/testimonial-1.png",
-    cover: reviewCovers[8],
-  },
-  {
-    name: "Albert Flores",
-    role: "Acme Co.",
-    quote: testimonialQuote,
-    avatar: "/images/figma/testimonial-2.png",
-    cover: reviewCovers[9],
-  },
-];
-
-/** 10 reviews per page × 10 pages (Figma pagination 01…10) */
-export const clientReviewsPerPage = 10;
-export const clientReviewTotalPages = 10;
-
-export const clientReviewItems: ClientReviewItem[] = Array.from(
-  { length: clientReviewsPerPage * clientReviewTotalPages },
-  (_, index) => {
-    const template = clientReviewTemplates[index % clientReviewTemplates.length];
-    return {
-      ...template,
-      id: `review-${index + 1}`,
-      cover: reviewCovers[index % reviewCovers.length],
-      avatar:
-        index % 2 === 0
-          ? "/images/figma/testimonial-1.png"
-          : "/images/figma/testimonial-2.png",
-    };
-  },
-);
+/** Same three Client Success Stories — quote + avatar only (no video). */
+export const clientReviewItems: ClientReviewItem[] = clientSuccessStories.map((story) => ({
+  id: story.id,
+  name: story.name,
+  role: story.role,
+  quote: story.quote,
+  avatar: story.avatar,
+}));

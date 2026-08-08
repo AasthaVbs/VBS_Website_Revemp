@@ -31,6 +31,7 @@ import "@/styles/vbs-mobile-typography.scss";
 import "@/styles/vbs-blog-detail.scss";
 import "@/styles/vbs-webinar-detail-redesign.scss";
 import "@/styles/vbs-cookie-consent.scss";
+import "@/styles/vbs-architecture-services-redesign.scss";
 
 const inter = Inter({
   subsets: ["latin"],

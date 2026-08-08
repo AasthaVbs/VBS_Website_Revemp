@@ -42,7 +42,7 @@ export const clientSuccessStories: ClientSuccessStory[] = [
     role: "Principal Architect at PMPC",
     quote:
       "From constant production pressure to scalable growth—this Chicago-based firm improved turnaround times and supported $1M+ annual revenue with a more efficient delivery model.",
-    avatar: "/icons/Pmpc 1.png",
+    avatar: "/icons/pmpc-logo.png",
     thumbnail: "/images/Image-2-yt-thumbnail.png",
     thumbnailAlt: "Prashanth Mahakali video testimonial for Virtual Building Studio",
     youtubeVideoId: "nHNRCMkaGAk",

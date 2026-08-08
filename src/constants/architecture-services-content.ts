@@ -26,23 +26,30 @@ import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 import { WHY_CHOOSE_ICON_TOP_BIM_EXPERTS } from "@/constants/service-why-choose-icons";
 
 export const architectureStatsStrip = [
-  { value: "2000+", color: "text-vbs-red", label: "Projects Delivered" },
-  { value: "300+", color: "text-vbs-green", label: "Global Clients" },
-  { value: "11+", color: "text-vbs-blue", label: "Years of Experience" },
-  { value: "250+", color: "text-vbs-yellow", label: "US-trained Architects & Engineers" },
+  { value: "400+", color: "text-vbs-red", label: "US Trained Architects & Engineers" },
+  { value: "4000+", color: "text-vbs-green", label: "Projects Delivered" },
+  { value: "500+", color: "text-vbs-blue", label: "Global AEC Clients" },
+  { value: "11+", color: "text-vbs-yellow", label: "Years of Industry Experience" },
 ];
 
 export const architectureHero = {
   tag: "Architecture & Structure",
-  titleLead: "AI-Enhanced Architectural and Structural Services for ",
-  titleAccent: "Faster Project Delivery",
+  titleLead: "Architecture Services That\nScale Your Delivery ",
+  titleAccent: "While Protecting Design Intent",
+  descriptions: [
+    "Growing architecture firms want more than extra production hands. They want a delivery partner who works the way they already do.",
+    "Virtual Building Studio works as an extension of your architecture practice. We fold into your standards, your workflows, and your project teams to support your projects across the whole lifecycle, from the first idea through final delivery, while keeping your design intent fully intact.",
+  ],
   description:
-    "From schematic design to construction documentation, we help AEC firms, architects, structural engineers, and contractors deliver precise, code-compliant BIM models faster.",
-  ctaLabel: "View All Service",
+    "Growing architecture firms want more than extra production hands. They want a delivery partner who works the way they already do.",
+  ctaLabel: "Schedule a Discovery Call",
+  ctaHref: "#architecture-page-contact",
+  secondaryCtaLabel: "Explore Our Services",
+  secondaryCtaHref: "#services",
   imageSrc: architecturalStructuralServiceImg,
   imageAlt: "architectural-structural-service",
-  copyMaxWidth: 753,
-  descriptionMaxWidth: 696,
+  copyMaxWidth: 773,
+  descriptionMaxWidth: 744,
 };
 
 export const architectureIntroFeatures = [

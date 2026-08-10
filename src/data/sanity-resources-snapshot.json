@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-06T15:27:24.509Z",
+  "fetchedAt": "2026-08-10T07:50:52.704Z",
   "posts": [
     {
       "_id": "18ed7b4f-b82c-44be-9d27-75076d5b6333",
@@ -138226,7 +138226,7 @@
               "_key": "72fb3a4768d1",
               "_type": "span",
               "marks": [],
-              "text": "Seamless visualization of spaces"
+              "text": "Seamless Visualization of Spaces"
             }
           ],
           "markDefs": [],
@@ -138276,7 +138276,7 @@
               "_key": "776ea4fe1ded",
               "_type": "span",
               "marks": [],
-              "text": "Assistance in making informed decisions"
+              "text": "Assistance in Making Informed Decisions"
             }
           ],
           "markDefs": [],
@@ -138339,7 +138339,7 @@
               "_key": "c7afc784afdd",
               "_type": "span",
               "marks": [],
-              "text": "Better digital marketing techniques"
+              "text": "Better Digital Marketing Techniques"
             }
           ],
           "markDefs": [],
@@ -138458,7 +138458,7 @@
               "_key": "86c2f50206cc",
               "_type": "span",
               "marks": [],
-              "text": "Efficient and realistic design process"
+              "text": "Efficient and Realistic Design Process"
             }
           ],
           "markDefs": [],
@@ -138514,7 +138514,7 @@
               "_key": "f57502a76881",
               "_type": "span",
               "marks": [],
-              "text": "Cost and time-saving"
+              "text": "Cost and Time-Saving"
             }
           ],
           "markDefs": [],
@@ -184141,6 +184141,190 @@
     }
   ],
   "webinars": [
+    {
+      "_id": "33acd938-5570-4bc2-92ec-ec55ab95442f",
+      "bannerImage": {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/rog08jar/production/9d6bffeaf4829482ea8f59c2fe1123e93e9b0974-1250x700.jpg"
+        }
+      },
+      "body": [
+        {
+          "_key": "a28185b943fd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2cbeb0f712a6",
+              "_type": "span",
+              "marks": [],
+              "text": "Winning new projects is only part of the challenge. Many architecture firms still struggle with disconnected workflows, inconsistent project delivery, growing client expectations, and pressure to adopt AI without disrupting design quality."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f8098ad7ad0b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c65496958d20",
+              "_type": "span",
+              "marks": [],
+              "text": "This webinar brings together practical strategies that successful firms use to strengthen both design and operations. Join us with industry expert Alec Whitten for a discussion on how better information, visualization, digital workflows, AI, and continuous improvement can help architecture practices improve collaboration, protect design intent, and build a resilient business for long-term growth."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "22de51db9fba",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d5334445dc18",
+              "_type": "span",
+              "marks": [],
+              "text": "What You'll Learn"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "ddef4eab445d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e5286a8f84f8",
+              "_type": "span",
+              "marks": [],
+              "text": "Discover what separates high-performing architecture firms from the rest."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ab472581ef78",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7ec492731cf6",
+              "_type": "span",
+              "marks": [],
+              "text": "Learn why better project information leads to better design decisions."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "da1416a63cb1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "85ed193c1bff",
+              "_type": "span",
+              "marks": [],
+              "text": "Understand how visualization supports client communication and faster approvals."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b948b15b424d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "45d98b384c5d",
+              "_type": "span",
+              "marks": [],
+              "text": "See how structured delivery processes protect design intent throughout projects."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c669b8d2acd7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "98282c06570d",
+              "_type": "span",
+              "marks": [],
+              "text": "Explore practical ways AI supports architects without replacing creativity."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8efe50064725",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "10496e69d606",
+              "_type": "span",
+              "marks": [],
+              "text": "Improve collaboration through better standards and connected workflows."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ab0563f1a9bd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3ef0ea6e80a9",
+              "_type": "span",
+              "marks": [],
+              "text": "Identify opportunities to build a scalable, sustainable architecture practice."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "eventDate": "2026-08-26T17:30:00.000Z",
+      "slug": "building-better-architecture-practices",
+      "title": [
+        {
+          "_key": "406d073132fb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d4fe6ad9aa8d",
+              "_type": "span",
+              "marks": [],
+              "text": "Building Better Architecture Practices"
+            }
+          ],
+          "markDefs": [],
+          "style": "h1"
+        }
+      ],
+      "upcomingImage": null,
+      "youtubeThumbnail": null
+    },
     {
       "_id": "d43eb3fa-0b3e-4071-bc8a-29c3357abf97",
       "bannerImage": {

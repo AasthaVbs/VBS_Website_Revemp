@@ -146,6 +146,36 @@ const nextConfig: NextConfig = {
         destination: "/mep-bim-services/mep-coordination-services",
         permanent: true,
       },
+      {
+        source: "/mep-bim-services/mep-calsh-detection-services",
+        destination: "/mep-bim-services/mep-clash-detection-services",
+        permanent: true,
+      },
+      {
+        source: "/mep-bim-services/mep-calsh-detection-services/:path*",
+        destination: "/mep-bim-services/mep-clash-detection-services",
+        permanent: true,
+      },
+      {
+        source: "/aia-conference-event",
+        destination: "/aia-conference-events",
+        permanent: true,
+      },
+      {
+        source: "/aia-conference-event/:path*",
+        destination: "/aia-conference-events",
+        permanent: true,
+      },
+      {
+        source: "/aia-conference",
+        destination: "/aia-conference-events",
+        permanent: true,
+      },
+      {
+        source: "/aia-conference/:path*",
+        destination: "/aia-conference-events",
+        permanent: true,
+      },
       { source: "/portfolio", destination: "/projects", permanent: true },
       { source: "/portfolio/:path*", destination: "/projects/:path*", permanent: true },
       { source: "/success-stories", destination: "/projects", permanent: true },

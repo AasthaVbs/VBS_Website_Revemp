@@ -33,6 +33,7 @@ declare global {
     grecaptcha?: unknown;
     Bookings?: {
       linkModal: (options: { url: string }) => (event?: unknown) => void;
+      inlineEmbed?: (options: { url: string; parent: string; height?: string }) => void;
     };
     zfutm_zfLead?: {
       zfutm_ini?: () => void;

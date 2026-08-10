@@ -176,6 +176,26 @@ const nextConfig: NextConfig = {
         destination: "/aia-conference-events",
         permanent: true,
       },
+      {
+        source: "/landing/cad-drafting-services-usa",
+        destination: "/cad-drafting-services-usa",
+        permanent: true,
+      },
+      {
+        source: "/landing/cad-drafting-services-usa/:path*",
+        destination: "/cad-drafting-services-usa",
+        permanent: true,
+      },
+      {
+        source: "/landing/bim-modeling-services-usa",
+        destination: "/bim-modeling-services-usa",
+        permanent: true,
+      },
+      {
+        source: "/landing/bim-modeling-services-usa/:path*",
+        destination: "/bim-modeling-services-usa",
+        permanent: true,
+      },
       { source: "/portfolio", destination: "/projects", permanent: true },
       { source: "/portfolio/:path*", destination: "/projects/:path*", permanent: true },
       { source: "/success-stories", destination: "/projects", permanent: true },

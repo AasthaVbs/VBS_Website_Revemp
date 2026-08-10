@@ -1,0 +1,241 @@
+/* CAD Drafting Services USA — Figma 3991:*
+ * Heading scale: desktop h1 54px / h2 48px; mobile h1 34px / h2 30px.
+ */
+
+.cad-drafting-services-usa-page {
+  /* No section chips/tags except Get in Touch */
+  .mep-figma-why-choose__tag,
+  .vbs-home-faq__tag {
+    display: none !important;
+  }
+
+  .mep-figma-why-choose__section-desc:empty {
+    display: none;
+  }
+
+  .vbs-get-in-touch-section .text-tag {
+    display: inline-flex !important;
+  }
+
+  /* Why Choose — center-aligned title block */
+  .cad-usa-why-choose {
+    .mep-figma-why-choose__head,
+    .mep-figma-why-choose__head-top {
+      align-items: center !important;
+      text-align: center !important;
+      width: 100%;
+    }
+
+    .mep-figma-why-choose__title {
+      text-align: center !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mep-figma-why-choose__section-desc {
+      text-align: center !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  /* Desktop headings */
+  h1,
+  h1 span,
+  h1 .text-display,
+  h1 .text-display-accent,
+  .cad-usa-hero h1,
+  .cad-usa-hero h1 span {
+    font-size: 54px !important;
+    line-height: 1.15 !important;
+  }
+
+  h2,
+  h2 span,
+  h2 .text-section,
+  h2 .text-accent,
+  .cad-usa-testimonial h2,
+  .cad-usa-testimonial h2 span,
+  .cad-usa-expertise h2,
+  .cad-usa-expertise h2 span,
+  .cad-usa-clients h2,
+  .cad-usa-clients h2 span,
+  .mep-figma-why-choose__title,
+  .mep-figma-why-choose__title-dark,
+  .mep-figma-why-choose__title-accent,
+  .vbs-home-faq__title,
+  .vbs-home-faq__title-dark,
+  .vbs-home-faq__title-accent,
+  .vbs-get-in-touch__info-head h2,
+  .vbs-get-in-touch__info-head .text-section {
+    font-size: 48px !important;
+    line-height: 1.15 !important;
+  }
+
+  .cad-usa-clients__track {
+    animation: cad-usa-clients-marquee 28s linear infinite;
+  }
+
+  .cad-usa-clients__marquee:hover .cad-usa-clients__track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes cad-usa-clients-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cad-drafting-services-usa-page .cad-usa-clients__track {
+    animation: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .cad-drafting-services-usa-page {
+    h1,
+    h1 span,
+    h1 .text-display,
+    h1 .text-display-accent,
+    .cad-usa-hero h1,
+    .cad-usa-hero h1 span {
+      font-size: 34px !important;
+      line-height: 1.15 !important;
+    }
+
+    h2,
+    h2 span,
+    h2 .text-section,
+    h2 .text-accent,
+    .cad-usa-testimonial h2,
+    .cad-usa-testimonial h2 span,
+    .cad-usa-expertise h2,
+    .cad-usa-expertise h2 span,
+    .cad-usa-clients h2,
+    .cad-usa-clients h2 span,
+    .mep-figma-why-choose__title,
+    .mep-figma-why-choose__title-dark,
+    .mep-figma-why-choose__title-accent,
+    .vbs-home-faq__title,
+    .vbs-home-faq__title-dark,
+    .vbs-home-faq__title-accent,
+    .vbs-get-in-touch__info-head h2,
+    .vbs-get-in-touch__info-head .text-section {
+      font-size: 30px !important;
+      line-height: 1.15 !important;
+    }
+
+    /* Why Choose — balanced mobile layout */
+    .cad-usa-why-choose.mep-figma-why-choose {
+      padding-top: 48px !important;
+      padding-bottom: 48px !important;
+
+      .mep-figma-why-choose__container {
+        gap: 28px !important;
+      }
+
+      .mep-figma-why-choose__head,
+      .mep-figma-why-choose__head-top {
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      .mep-figma-why-choose__title {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+      }
+
+      .mep-figma-why-choose__grid {
+        width: 100% !important;
+        gap: 0 !important;
+      }
+
+      .mep-figma-why-choose__row,
+      .mep-figma-why-choose__row--bottom {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+      }
+
+      .mep-figma-why-choose__card,
+      .mep-figma-why-choose__row--bottom .mep-figma-why-choose__card {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 1 1 auto !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 12px !important;
+        padding: 20px 8px !important;
+        border: none !important;
+        border-bottom: 1px solid #e8e8e8 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+
+        &:last-child {
+          border-bottom: none !important;
+        }
+
+        &:hover {
+          border: none !important;
+          border-bottom: 1px solid #e8e8e8 !important;
+          box-shadow: none !important;
+          background: transparent !important;
+        }
+      }
+
+      .mep-figma-why-choose__row:last-child .mep-figma-why-choose__card:last-child {
+        border-bottom: none !important;
+
+        &:hover {
+          border-bottom: none !important;
+        }
+      }
+
+      .mep-figma-why-choose__icon-wrap {
+        width: 56px !important;
+        height: 56px !important;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .mep-figma-why-choose__icon {
+        width: 44px !important;
+        height: 44px !important;
+        max-width: 44px !important;
+        max-height: 44px !important;
+      }
+
+      .mep-figma-why-choose__card-copy {
+        align-items: center !important;
+        text-align: center !important;
+        gap: 8px !important;
+      }
+
+      .mep-figma-why-choose__card-title {
+        font-size: 18px !important;
+        font-weight: 500 !important;
+        text-align: center !important;
+      }
+
+      .mep-figma-why-choose__card-text {
+        max-width: 320px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-size: 15px !important;
+        line-height: 22px !important;
+        text-align: center !important;
+      }
+
+      .primary-cta {
+        margin-top: 8px !important;
+      }
+    }
+  }
+}

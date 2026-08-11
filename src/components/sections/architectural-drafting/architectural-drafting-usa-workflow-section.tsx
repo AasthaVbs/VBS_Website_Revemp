@@ -74,9 +74,11 @@ export function ArchitecturalDraftingUsaWorkflowSection({
               <span className="font-light text-accent">{section.titleLine2}</span>
             </h2>
           </div>
-          <p className="text-[16px] font-normal capitalize leading-6 text-[#808080]">
-            {section.description}
-          </p>
+          {section.description ? (
+            <p className="text-[16px] font-normal capitalize leading-6 text-[#808080]">
+              {section.description}
+            </p>
+          ) : null}
         </div>
 
         <div

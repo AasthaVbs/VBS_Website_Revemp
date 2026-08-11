@@ -122,6 +122,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/revit-architectural-drafting-sevices",
+        destination: "/revit-architectural-drafting-services",
+        permanent: true,
+      },
+      {
+        source: "/revit-architectural-drafting-sevices/:path*",
+        destination: "/revit-architectural-drafting-services",
+        permanent: true,
+      },
+      {
         source: "/mep-bim-modelling/:path*",
         destination: "/mep-bim-services/mep-bim-modeling-services",
         permanent: true,

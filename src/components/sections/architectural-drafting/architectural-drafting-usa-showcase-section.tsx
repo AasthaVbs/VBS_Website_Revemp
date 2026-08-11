@@ -12,7 +12,7 @@ export function ArchitecturalDraftingUsaShowcaseSection({
   section = architecturalDraftingUsaShowcaseSection,
   projects = architecturalDraftingUsaShowcaseProjects,
 }: {
-  section?: typeof architecturalDraftingUsaShowcaseSection;
+  section?: typeof architecturalDraftingUsaShowcaseSection & { titleMaxWidth?: number };
   projects?: typeof architecturalDraftingUsaShowcaseProjects;
 }) {
   return (
@@ -21,8 +21,15 @@ export function ArchitecturalDraftingUsaShowcaseSection({
         <div className="flex w-full flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={section.tag} />
-            <h2 className="text-section w-full max-w-[716px]">
-              <span className="block font-medium text-[#111111]">{section.titleLead}</span>
+            <h2
+              className="text-section w-full"
+              style={
+                section.titleMaxWidth != null
+                  ? { maxWidth: section.titleMaxWidth }
+                  : undefined
+              }
+            >
+              <span className="font-medium text-[#111111]">{section.titleLead}</span>
               <span className="font-light text-accent">{section.titleAccent}</span>
             </h2>
           </div>

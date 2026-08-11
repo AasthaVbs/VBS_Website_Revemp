@@ -72,6 +72,7 @@ export function ClientSuccessStoriesSection({
   tag = "Testimonials",
   titleLead = "Client Success ",
   titleAccent = "Stories",
+  titleMaxWidth,
   showViewAll = true,
   stories = clientSuccessStories,
   className,
@@ -82,6 +83,7 @@ export function ClientSuccessStoriesSection({
   tag?: string;
   titleLead?: string;
   titleAccent?: string;
+  titleMaxWidth?: number;
   showViewAll?: boolean;
   stories?: readonly ClientSuccessStory[];
   className?: string;
@@ -200,7 +202,10 @@ export function ClientSuccessStoriesSection({
           <div className="vbs-client-success-stories__intro">
             <div className="vbs-client-success-stories__head">
               <span className="vbs-client-success-stories__tag">{tag}</span>
-              <h2 className="vbs-client-success-stories__title">
+              <h2
+                className="vbs-client-success-stories__title"
+                style={titleMaxWidth != null ? { maxWidth: `${titleMaxWidth}px` } : undefined}
+              >
                 <span className="vbs-client-success-stories__title-dark">{titleLead}</span>
                 <span className="vbs-client-success-stories__title-accent">{titleAccent}</span>
               </h2>

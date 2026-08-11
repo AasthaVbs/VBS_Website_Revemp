@@ -27,7 +27,7 @@ export function ArchitecturalDraftingUsaWhoWeAreSection({
       <PageContainer>
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between lg:gap-[60px]">
           <div className="flex min-w-0 flex-1 flex-col items-start gap-[30px]">
-            <div className="flex w-full flex-col items-start gap-5">
+            <div className="ads-usa-who__intro flex w-full flex-col items-start gap-5">
               <div className="flex flex-col items-start gap-3">
                 <MepSectionTag label={section.tag} />
                 <h2 className="text-section w-full capitalize">

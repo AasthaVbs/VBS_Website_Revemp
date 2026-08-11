@@ -90,6 +90,11 @@ export function MepWhyChooseSection({
                 "mep-figma-why-choose__title",
                 hasTitleParts && "mep-figma-why-choose__title--parts",
               )}
+              style={
+                section.titleMaxWidth
+                  ? { maxWidth: `${section.titleMaxWidth}px`, width: "100%" }
+                  : undefined
+              }
             >
               {hasTitleParts ? (
                 section.titleParts.map((part, index) => (

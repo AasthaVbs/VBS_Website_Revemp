@@ -13,11 +13,11 @@ type HeroContent = typeof architecturalDraftingUsaHero;
 export function ArchitecturalDraftingUsaHeroSection({
   content = architecturalDraftingUsaHero,
 }: {
-  content?: HeroContent & { formBg: StaticImageData };
+  content?: HeroContent & { formBg: StaticImageData; descMaxWidth?: number };
 }) {
   return (
     <section id="ads-usa-hero" className="ads-usa-hero relative w-full overflow-hidden bg-white">
-      <PageContainer className="py-2 sm:py-3 lg:py-2">
+      <PageContainer className="ads-usa-hero__container py-2 sm:py-3 lg:py-2">
         <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-[40px] xl:gap-[60px]">
           <div
             className="ads-usa-hero__copy flex w-full min-w-0 flex-col items-start gap-5 lg:gap-[30px]"
@@ -34,7 +34,10 @@ export function ArchitecturalDraftingUsaHeroSection({
                 </span>
               </h1>
             </div>
-            <p className="ads-usa-hero__desc w-full text-[15px] font-normal capitalize leading-6 text-[#808080] sm:text-[16px]">
+            <p
+              className="ads-usa-hero__desc w-full text-[15px] font-normal capitalize leading-6 text-[#808080] sm:text-[16px]"
+              style={content.descMaxWidth ? { maxWidth: content.descMaxWidth } : undefined}
+            >
               {content.description}
             </p>
           </div>

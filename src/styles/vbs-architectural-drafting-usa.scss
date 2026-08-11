@@ -6,10 +6,59 @@
   padding-bottom: 24px !important;
 }
 
+/* Beat .mep-bim-services-page main>section:not(...) pad (64px) — 8 :not() classes */
+.revit-architectural-drafting-page.mep-bim-services-page.architectural-drafting-services-usa-page
+  main
+  > section.ads-usa-hero {
+  padding-top: 20px !important;
+  padding-bottom: 16px !important;
+  margin-top: 0 !important;
+}
+
 @media (min-width: 1024px) {
   .architectural-drafting-services-usa-page main > .ads-usa-hero {
     padding-top: 8px !important;
     padding-bottom: 20px !important;
+  }
+
+  .revit-architectural-drafting-page.mep-bim-services-page.architectural-drafting-services-usa-page
+    main
+    > section.ads-usa-hero {
+    padding-top: 28px !important;
+    padding-bottom: 12px !important;
+    margin-top: 0 !important;
+  }
+}
+
+/* Revit drafting hero — pull entire section up; keep copy vertically centered with form */
+.revit-architectural-drafting-page {
+  .ads-usa-hero > .vbs-page-container,
+  .ads-usa-hero > .ads-usa-hero__container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .ads-usa-hero > .vbs-page-container > div,
+  .ads-usa-hero > .ads-usa-hero__container > div {
+    align-items: center !important;
+  }
+
+  .ads-usa-hero__copy {
+    gap: 14px !important;
+    padding-top: 0 !important;
+  }
+
+  .ads-usa-hero__title-block {
+    gap: 10px !important;
+  }
+
+  .ads-usa-hero__desc {
+    max-width: 600px;
+  }
+
+  .ads-usa-hero__media {
+    align-self: center !important;
+    margin-top: 0 !important;
   }
 }
 
@@ -29,6 +78,67 @@
 .architectural-drafting-services-usa-page .ads-usa-trust {
   .vbs-home-hero-trust {
     gap: 24px;
+  }
+}
+
+.revit-architectural-drafting-page.mep-bim-services-page main > .vbs-mep-stats-strip.ads-usa-trust {
+  margin-top: 40px !important;
+}
+
+@media (min-width: 1024px) {
+  .revit-architectural-drafting-page.mep-bim-services-page main > .vbs-mep-stats-strip.ads-usa-trust {
+    margin-top: 48px !important;
+  }
+}
+
+.revit-architectural-drafting-page .ads-usa-workflow {
+  background: #ffffff !important;
+}
+
+.revit-architectural-drafting-page .ads-usa-showcase {
+  > .vbs-page-container {
+    gap: 28px !important;
+  }
+
+  > .vbs-page-container > div:first-child {
+    gap: 10px !important;
+  }
+
+  .grid {
+    gap: 16px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .revit-architectural-drafting-page .ads-usa-showcase {
+    > .vbs-page-container {
+      gap: 36px !important;
+    }
+
+    .grid {
+      gap: 20px !important;
+    }
+  }
+}
+
+.revit-architectural-drafting-page .ads-usa-who__intro {
+  gap: 10px !important;
+}
+
+.revit-architectural-drafting-page .vbs-our-clients__title,
+.revit-architectural-drafting-page .vbs-our-clients__title-dark,
+.revit-architectural-drafting-page .vbs-our-clients__title-accent {
+  font-size: 34px !important;
+  line-height: 1.2 !important;
+}
+
+.revit-architectural-drafting-page.mep-bim-services-page {
+  .mep-figma-why-choose {
+    .mep-figma-why-choose__title,
+    .mep-figma-why-choose__title--parts {
+      max-width: 650px !important;
+      width: 100% !important;
+    }
   }
 }
 

@@ -1,0 +1,174 @@
+/* 3D Rendering Services USA */
+
+.three-d-rendering-services-usa-page.mep-bim-services-page {
+  main > section.trs-usa-hero {
+    padding-top: 8px !important;
+    padding-bottom: 20px !important;
+    margin-top: 0 !important;
+  }
+
+  main > .vbs-mep-stats-strip.trs-usa-trust {
+    margin-top: 24px !important;
+    margin-bottom: 8px !important;
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .three-d-rendering-services-usa-page.mep-bim-services-page {
+    main > section.trs-usa-hero {
+      padding-top: 12px !important;
+      padding-bottom: 16px !important;
+    }
+
+    main > .vbs-mep-stats-strip.trs-usa-trust {
+      margin-top: 32px !important;
+      padding-top: 30px !important;
+      padding-bottom: 30px !important;
+    }
+  }
+}
+
+.trs-usa-showcase__track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.trs-usa-showcase__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid #cbcccd;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(50px);
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    border-color: #111111;
+  }
+}
+
+.trs-usa-showcase__card {
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.trs-usa-project-price__divider {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 8%,
+    #cbcccd 35%,
+    #cbcccd 65%,
+    transparent 92%,
+    transparent 100%
+  );
+}
+
+.three-d-rendering-services-usa-page .trs-usa-pricing {
+  .trs-usa-pricing__title {
+    line-height: 1.15 !important;
+  }
+
+  .trs-usa-pricing__title span {
+    display: inline;
+  }
+
+  .trs-usa-pricing__card {
+    padding: 20px !important;
+    gap: 20px !important;
+  }
+
+  .trs-usa-pricing__price {
+    color: #d70416 !important;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    line-height: 34px !important;
+  }
+
+  .trs-usa-pricing__label {
+    color: #111111 !important;
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    line-height: 30px !important;
+  }
+
+  .trs-usa-pricing__copy {
+    gap: 12px !important;
+  }
+
+  @media (min-width: 1024px) {
+    .trs-usa-pricing__copy {
+      gap: 16px !important;
+    }
+
+    .trs-usa-pricing__title {
+      white-space: nowrap;
+    }
+  }
+}
+
+.three-d-rendering-services-usa-page .trs-usa-clients-say {
+  .trs-usa-clients-say__title {
+    line-height: 1.15 !important;
+  }
+
+  @media (min-width: 1024px) {
+    .trs-usa-clients-say__title {
+      white-space: nowrap;
+    }
+  }
+
+  .trs-usa-clients-say__card {
+    padding: 30px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .trs-usa-why-trust__grid {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #cbcccd;
+      transform: translateX(-0.5px);
+      pointer-events: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: #cbcccd;
+      transform: translateY(-0.5px);
+      pointer-events: none;
+    }
+
+    > article {
+      padding: 8px 20px;
+    }
+  }
+}

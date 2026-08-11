@@ -1102,5 +1102,13 @@
     {
         "oldUrl": "/blog/ultimate-guide-for-hvac-duct-shop-drawings/%EF%BF%BC/",
         "newUrl": "/blog/author/ar-ankit-kansara/"
+    },
+    {
+        "oldUrl": "/mep-bim-services-usa/",
+        "newUrl": "/mep-bim-services-USA/"
+    },
+    {
+        "oldUrl": "/mep-bim-services-usa",
+        "newUrl": "/mep-bim-services-USA/"
     }
 ]

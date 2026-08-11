@@ -39,6 +39,20 @@ export const ZOHO_CONTACT_THANK_YOU_PATH = "/thank-you/";
 export const ZOHO_CONTACT_THANK_YOU_URL =
   "https://www.virtualbuildingstudio.com/thank-you/";
 
+/** MEP landing contact form — /mep-bim-services-USA/ hero only. */
+export const ZOHO_MEP_LANDING_IFRAME_ID = "ziframe_704247";
+
+export const ZOHO_MEP_LANDING_IFRAME_SRC =
+  "https://forms.zohopublic.com/virtualbuildingstudio1/form/MEPLandingpageContactusForm/formperma/1dcuzVdlEFiwXN9jUPDVr8LIW0UL-AQcMSQtw7wqbCE";
+
+export const ZOHO_MEP_LANDING_IFRAME_INITIAL_HEIGHT_PX = 500;
+
+/** Hide duplicate Zoho title inside the MEP landing embed — /mep-bim-services-usa/ hero only. */
+export const ZOHO_MEP_LANDING_HEADER_CROP_PX = 150;
+
+/** Fixed visible iframe container height on the MEP landing hero form. */
+export const ZOHO_MEP_LANDING_VISIBLE_HEIGHT_PX = 583;
+
 /** ACS horizontal contact form — BIM / architectural drafting landing pages. */
 export const ZOHO_ACS_BIM_LANDING_IFRAME_ID = "ziframe_30612";
 

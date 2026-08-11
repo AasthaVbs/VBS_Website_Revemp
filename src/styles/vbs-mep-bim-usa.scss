@@ -1,0 +1,139 @@
+/* MEP BIM Services USA — header + CTA chrome (page body styles remain inline from Gatsby FullPage) */
+
+/* Match site shell: 1440px at ≥1400px (via --vbs-page-max), including Bootstrap header containers */
+.mep-bim-services-usa-page {
+  .mep-header-root .container {
+    max-width: var(--vbs-page-max, 1440px);
+    width: 100%;
+    padding-left: var(--vbs-page-gutter, 12px);
+    padding-right: var(--vbs-page-gutter, 12px);
+  }
+
+  .wrap,
+  .wrap-why-us,
+  .mep-hero-shell,
+  .trust-strip-inner,
+  .mep-hero-v3-inner,
+  #disciplines .disc-tabs,
+  #casestudies .cs-card-wrap,
+  #casestudies .cs-card-footer {
+    max-width: var(--vbs-page-max, 1440px);
+  }
+
+  .wrap,
+  .mep-hero-shell {
+    padding-left: var(--vbs-page-gutter, 12px);
+    padding-right: var(--vbs-page-gutter, 12px);
+  }
+
+  .mep-hero-v3-inner {
+    padding-left: var(--vbs-page-gutter, 12px);
+    padding-right: var(--vbs-page-gutter, 12px);
+  }
+
+  #disciplines .disc-tabs,
+  #casestudies .cs-card-wrap,
+  #casestudies .cs-card-footer {
+    padding-left: var(--vbs-page-gutter, 12px);
+    padding-right: var(--vbs-page-gutter, 12px);
+  }
+}
+
+.mep-bim-services-usa-page,
+body.mep-bim-services-page {
+  .btn-lightblue {
+    background-color: #d70416 !important;
+    color: #fff !important;
+    border-color: #d70416 !important;
+  }
+
+  .btn-lightblue:hover,
+  .btn-lightblue:focus {
+    background-color: #b80312 !important;
+    color: #fff !important;
+    border-color: #b80312 !important;
+  }
+
+  .btn-outline-lightblue {
+    background: transparent !important;
+    color: #111 !important;
+    border-color: #d70416 !important;
+  }
+
+  .btn-outline-lightblue:hover,
+  .btn-outline-lightblue:focus {
+    background: rgba(215, 4, 22, 0.08) !important;
+    color: #d70416 !important;
+    border-color: #d70416 !important;
+  }
+}
+
+.mep-header-root {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: #fff;
+
+  .large-navbar {
+    background: #fff !important;
+    border-bottom: 1px solid #eee !important;
+    display: block;
+  }
+
+  .mobile-navbar {
+    display: none;
+  }
+
+  .header-line {
+    border-bottom: 0 !important;
+  }
+
+  .navbar-brand img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .nav-link {
+    color: #222 !important;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .nav-link:hover {
+    color: #d70416 !important;
+  }
+
+  .fs-4 {
+    font-size: 0.95rem !important;
+  }
+
+  .text-primary {
+    color: #d70416 !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .mep-header-root {
+    .large-navbar {
+      display: none !important;
+    }
+
+    .mobile-navbar {
+      display: block !important;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .navbar-fixed {
+      background: #fff !important;
+    }
+  }
+}
+
+.mep-page-contact-outer {
+  background: #fff;
+  position: relative;
+  z-index: 20;
+  width: 100%;
+}

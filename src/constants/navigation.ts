@@ -28,6 +28,7 @@ export const ROUTES = {
   projects: "/projects",
   successStories: "/projects",
   mepServices: "/mep-bim-services",
+  mepBimUsa: "/mep-bim-services-USA",
   mepModeling: "/mep-bim-services/mep-bim-modeling-services",
   scanToBimServices: "/scan-to-bim-services",
   architectureServices: "/architecture-services",

@@ -18,7 +18,7 @@ export function ArchitecturalBimUsaOverviewSection({
   return (
     <section className="abs-usa-overview bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-start gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[1025px] flex-col items-start gap-5">
+        <div className="abs-usa-overview__intro flex w-full max-w-[1025px] flex-col items-start gap-2.5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={section.tag} />
             <h2 className="text-section w-full max-w-[1025px]">
@@ -27,11 +27,13 @@ export function ArchitecturalBimUsaOverviewSection({
               <span className="font-medium text-[#111111]">{section.titleTrail}</span>
             </h2>
           </div>
-          <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">{section.description}</p>
+          <p className="abs-usa-overview__desc w-full max-w-[680px] text-[16px] font-normal leading-6 text-[#808080]">
+            {section.description}
+          </p>
         </div>
 
         <div className="flex w-full flex-col items-stretch gap-8 lg:flex-row lg:items-start lg:gap-[60px]">
-          <div className="relative aspect-[553/472] w-full shrink-0 overflow-hidden rounded-[10px] bg-[#F4F4F4] lg:w-[553px]">
+          <div className="abs-usa-overview__media relative aspect-[553/510] w-full shrink-0 overflow-hidden rounded-[10px] bg-[#F4F4F4] lg:w-[553px]">
             <Image
               src={section.image}
               alt={section.imageAlt}

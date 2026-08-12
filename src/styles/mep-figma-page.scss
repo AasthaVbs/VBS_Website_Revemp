@@ -3395,7 +3395,7 @@
 .scan-to-bim-services-page {
   --vbs-mep-section-pad-y: 64px;
 
-  main>section:not(.mep-page-hero):not(.mep-figma-services--h-scroll):not(.vbs-mep-stats-strip):not(.mep-trusted-by-strip):not(.mep-figma-what-you-get):not(.mep-figma-overview):not(.mep-figma-ai-bim-workflow):not(.ads-usa-hero):not(.trs-usa-hero) {
+  main>section:not(.mep-page-hero):not(.mep-figma-services--h-scroll):not(.vbs-mep-stats-strip):not(.mep-trusted-by-strip):not(.mep-figma-what-you-get):not(.mep-figma-overview):not(.mep-figma-ai-bim-workflow):not(.ads-usa-hero):not(.abs-usa-hero):not(.trs-usa-hero) {
     padding-top: var(--vbs-mep-section-pad-y) !important;
     padding-bottom: var(--vbs-mep-section-pad-y) !important;
   }

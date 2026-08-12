@@ -86,6 +86,55 @@ export const ZOHO_ACS_BIM_LANDING_VISIBLE_HEIGHT_BUFFER_PX = 0;
 /** High cap so Zoho auto-resize can show the full form without internal scroll. */
 export const ZOHO_ACS_BIM_LANDING_VISIBLE_CAP_PX = 2400;
 
+/**
+ * VBS Inquiry form ACS — hero forms on:
+ * /architectural-drafting-services-usa/
+ * /architectural-bim-services-usa/
+ * /revit-architectural-drafting-services/
+ */
+export const ZOHO_ACS_INQUIRY_IFRAME_ID = "ziframe_877581";
+
+export const ZOHO_ACS_INQUIRY_IFRAME_SRC =
+  "https://forms.zohopublic.com/virtualbuildingstudio1/form/VBSInquiryformACS/formperma/zslwbRb-AN-pxe6rThGRaPvgaup9TYleoufQOA5Tv_g";
+
+export const ZOHO_ACS_INQUIRY_IFRAME_INITIAL_HEIGHT_PX = 660;
+
+/** Visible height for ACS inquiry hero embeds — tall enough to avoid scrollbar. */
+export const ZOHO_ACS_INQUIRY_VISIBLE_HEIGHT_PX = 660;
+
+/** Crop Zoho title / divider chrome above the first field. */
+export const ZOHO_ACS_INQUIRY_HEADER_CROP_PX = 130;
+
+/** Crop Zoho footer / bottom padding from the ACS inquiry hero embed. */
+export const ZOHO_ACS_INQUIRY_FOOTER_CROP_PX = 165;
+
+export const ZOHO_ACS_INQUIRY_HEADER_CROP_MOBILE_PX = 120;
+
+/**
+ * VBS Resource Download Form — /bim-resources and all resource download pages.
+ * Trailing %27 from Zoho paste is invalid (404); use the clean formperma.
+ */
+export const ZOHO_BIM_RESOURCE_DOWNLOAD_IFRAME_ID = "ziframe_975275";
+
+export const ZOHO_BIM_RESOURCE_DOWNLOAD_IFRAME_SRC =
+  "https://forms.zohopublic.com/virtualbuildingstudio1/form/VBSResourceDownloadForm/formperma/H77B13_VAH7CgAlCDGKbl38664ewIPtdIpvoYRMKvKI";
+
+export const ZOHO_BIM_RESOURCE_DOWNLOAD_IFRAME_INITIAL_HEIGHT_PX = 500;
+
+export const ZOHO_BIM_RESOURCE_DOWNLOAD_VISIBLE_HEIGHT_PX = 520;
+
+export const ZOHO_BIM_RESOURCE_DOWNLOAD_HEADER_CROP_PX = 0;
+
+export function getZohoAcsInquiryHeaderCropPx() {
+  if (typeof window === "undefined") {
+    return ZOHO_ACS_INQUIRY_HEADER_CROP_PX;
+  }
+
+  return window.matchMedia("(max-width: 767px)").matches
+    ? ZOHO_ACS_INQUIRY_HEADER_CROP_MOBILE_PX
+    : ZOHO_ACS_INQUIRY_HEADER_CROP_PX;
+}
+
 export function getZohoAcsBimLandingHeaderCropPx() {
   if (typeof window === "undefined") {
     return ZOHO_ACS_BIM_LANDING_HEADER_CROP_PX;

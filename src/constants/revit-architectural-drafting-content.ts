@@ -1,8 +1,8 @@
-import architecturalDraftingPrecisionImg from "@/assets/images/architectural-drafting-precision.png";
-import bariProjectImg from "@/assets/images/architectural-3d-visualization-future-images.png";
-import koRemodelGeorgiaImg from "@/assets/images/ko-remodel-future-images-1.png";
-import koRemodelLaImg from "@/assets/images/ko-remodel-future-images-2.png";
-import heroFormBg from "@/assets/images/revit-architectural-drafting/hero-form-bg.png";
+import bariProjectImg from "@/assets/images/bari-ristorante-italiano.jpg";
+import koRemodelGeorgiaImg from "@/assets/images/ko-remodel.jpg";
+import koRemodelLaImg from "@/assets/images/ko-remodel-losangeles-california.jpg";
+import heroFormBg from "@/assets/images/revit-architectural-drafting-services.jpg";
+import draftingPrecisionImg from "@/assets/images/your-design-our-drafting-precision.jpg";
 import gpArchitectureLogo from "@/assets/images/architectural-drafting-usa/gp-architecture-logo.png";
 import studioSevenLogo from "@/assets/images/architectural-drafting-usa/studio-seven-logo.png";
 import whittenArchitectsLogo from "@/assets/images/architectural-drafting-usa/whitten-architects-logo.png";
@@ -66,8 +66,8 @@ export const revitArchitecturalDraftingWhoWeAreSection = {
     "With Revit and AutoCAD expertise, our Architects and Drafters transform your designs into detailed, code-compliant drawings at every stage.",
   ctaLabel: "Get permit ready drafts free call",
   ctaHref: "#rad-contact",
-  image: architecturalDraftingPrecisionImg,
-  imageAlt: "Architectural drafting precision",
+  image: draftingPrecisionImg,
+  imageAlt: "Your design, our drafting precision",
 };
 
 export const revitArchitecturalDraftingWhoWeAreItems = architecturalDraftingUsaWhoWeAreItems;

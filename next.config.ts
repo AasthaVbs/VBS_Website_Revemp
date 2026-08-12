@@ -108,8 +108,6 @@ const nextConfig: NextConfig = {
       { source: "/blogs/:path*", destination: "/blog/:path*", permanent: true },
       { source: "/contact", destination: "/contact-us", permanent: true },
       { source: "/contact/:path*", destination: "/contact-us", permanent: true },
-      { source: "/bim-resources", destination: "/resources", permanent: true },
-      { source: "/bim-resources/:path*", destination: "/resources", permanent: true },
       { source: "/engagement-model", destination: "/engagement-models", permanent: true },
       { source: "/engagement-model/:path*", destination: "/engagement-models", permanent: true },
       { source: "/mep-engineers", destination: "/mep-bim-services", permanent: true },

@@ -1,7 +1,8 @@
-import architecturalBimImg from "@/assets/images/architectural-bim.png";
-import gpArchitectureLogo from "@/assets/images/architectural-drafting-usa/gp-architecture-logo.png";
-import studioSevenLogo from "@/assets/images/architectural-drafting-usa/studio-seven-logo.png";
-import whittenArchitectsLogo from "@/assets/images/architectural-drafting-usa/whitten-architects-logo.png";
+import architecturalBimHeroImg from "@/assets/images/architectural-bim-services-usa.jpg";
+import architecturalBimOverviewImg from "@/assets/images/architectural-bim-overview.jpg";
+import gpArchitectureLogo from "@/assets/images/gparchitecture.png";
+import sparcDesignLogo from "@/assets/images/sparc-design.png";
+import whittenArchitectsLogo from "@/assets/images/whitten-architects.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { clientSuccessStories } from "@/constants/client-success-stories-content";
 
@@ -25,7 +26,7 @@ export const architecturalBimUsaHero = {
   formTitleLead: "Get Started Your ",
   formTitleAccent: "Project Today!",
   submitLabel: "Offload Your Drafting today",
-  formBg: architecturalBimImg,
+  formBg: architecturalBimHeroImg,
   formBgAlt: "Architectural BIM services USA",
   copyMaxWidth: 609,
 };
@@ -41,7 +42,7 @@ export const architecturalBimUsaOurClientsSection = {
 
 export const architecturalBimUsaOurClientsLogos = [
   { name: "GP Architecture", src: gpArchitectureLogo.src },
-  { name: "Studio Seven Architecture", src: studioSevenLogo.src },
+  { name: "Sparc Design", src: sparcDesignLogo.src },
   { name: "Whitten Architects", src: whittenArchitectsLogo.src },
 ];
 
@@ -61,7 +62,7 @@ export const architecturalBimUsaOverviewSection = {
   titleTrail: " for Fast, Accurate Project Delivery",
   description:
     "Virtual Building Studio provides precision-driven Architectural BIM Modeling Services tailored to the evolving needs of the AEC industry in the USA.",
-  image: architecturalBimImg,
+  image: architecturalBimOverviewImg,
   imageAlt: "Architectural BIM modeling",
   bodyText:
     "As a trusted architectural BIM services provider, we specialize in delivering accurate, code-compliant BIM models and documentation that align with US building codes and project standards. From early-stage design to construction-ready deliverables, our top 1% vetted BIM experts empower architects to work faster, smarter, and more collaboratively.",

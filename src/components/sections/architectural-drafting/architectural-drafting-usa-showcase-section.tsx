@@ -42,7 +42,7 @@ export function ArchitecturalDraftingUsaShowcaseSection({
           {projects.map((project) => (
             <article
               key={`${project.title}-${project.location}`}
-              className="ads-usa-showcase__card flex flex-col items-start gap-5 overflow-hidden rounded-[10px] border border-[#CBCCCD] bg-white p-5 transition-shadow duration-200 hover:shadow-[0px_4px_10px_rgba(0,0,0,0.15)]"
+              className="ads-usa-showcase__card flex flex-col items-start gap-3.5 overflow-hidden rounded-[10px] border border-[#CBCCCD] bg-white p-4 transition-shadow duration-200 hover:shadow-[0px_4px_10px_rgba(0,0,0,0.15)]"
             >
               <div className="relative h-[220px] w-full overflow-hidden rounded-[10px] sm:h-[260px] lg:h-[300px]">
                 <Image
@@ -53,7 +53,7 @@ export function ArchitecturalDraftingUsaShowcaseSection({
                   sizes="(max-width: 1024px) 100vw, 420px"
                 />
               </div>
-              <div className="flex w-full flex-col gap-4">
+              <div className="ads-usa-showcase__card-meta flex w-full flex-col gap-1.5">
                 <h3 className="m-0 text-[22px] font-normal leading-normal text-[#111111] sm:text-[24px]">
                   {project.title}
                 </h3>

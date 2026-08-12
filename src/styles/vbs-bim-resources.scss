@@ -1,0 +1,165 @@
+/* Figma 4344:54318 — beat global `.vbs-redesign-page h1/h2` (60px / 48px) */
+.bim-resources-page.vbs-redesign-page {
+  .bim-resources-section .vbs-page-container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .bim-resources__layout {
+    align-items: flex-start;
+  }
+
+  .bim-resources__sidebar {
+    position: sticky;
+    top: calc(var(--vbs-header-offset, 132px) + 16px);
+    align-self: flex-start;
+    z-index: 2;
+    width: 400px;
+    max-width: 400px;
+  }
+
+  .bim-resources__title {
+    font-family: var(--font-inter), Inter, sans-serif !important;
+    font-size: 36px !important;
+    font-weight: 500 !important;
+    line-height: 46px !important;
+    color: #111111 !important;
+    text-transform: none !important;
+    margin: 0 !important;
+  }
+
+  .bim-resources__section-heading {
+    font-family: var(--font-inter), Inter, sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    color: #d70416 !important;
+    text-transform: capitalize !important;
+    margin: 0 !important;
+  }
+
+  .bim-resources__highlight-title {
+    font-family: var(--font-inter), Inter, sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    color: #111111 !important;
+    text-transform: capitalize !important;
+    margin: 0 !important;
+  }
+
+  .bim-resources__body {
+    font-family: var(--font-inter), Inter, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 28px !important;
+    color: #808080 !important;
+    margin: 0 !important;
+  }
+
+  .bim-resources__form-title {
+    font-family: var(--font-inter), Inter, sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    color: #d70416 !important;
+    text-transform: none !important;
+    margin: 0 !important;
+  }
+
+  .bim-resources__form-desc {
+    font-family: var(--font-inter), Inter, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: #808080 !important;
+    margin: 0 !important;
+  }
+
+  .bim-resources__related-label {
+    font-family: var(--font-inter), Inter, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    color: #2299d6 !important;
+  }
+
+  .bim-resources__related-title {
+    font-family: var(--font-inter), Inter, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: #111111 !important;
+  }
+
+  .bim-resources__zoho-embed {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .bim-resources__zoho-iframe.vbs-zoho-iframe-form {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    height: var(--vbs-zoho-iframe-visible-height, 520px) !important;
+    min-height: var(--vbs-zoho-iframe-visible-height, 520px);
+    max-height: var(--vbs-zoho-iframe-visible-height, 520px);
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .bim-resources__zoho-frame {
+    display: block;
+    width: 99% !important;
+    max-width: 100%;
+    margin: 0;
+    border: none !important;
+    background: transparent !important;
+    height: var(--vbs-zoho-iframe-full-height, 520px) !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .bim-resources-page.vbs-redesign-page {
+    .bim-resources__sidebar {
+      position: static !important;
+      top: auto;
+      width: 100% !important;
+      max-width: none !important;
+    }
+
+    .bim-resources__title {
+      font-size: 32px !important;
+      line-height: 40px !important;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .bim-resources-page.vbs-redesign-page {
+    .bim-resources__title {
+      font-size: 26px !important;
+      line-height: 34px !important;
+    }
+
+    .bim-resources__section-heading,
+    .bim-resources__form-title {
+      font-size: 22px !important;
+    }
+
+    .bim-resources__highlight-title {
+      font-size: 18px !important;
+    }
+
+    .bim-resources__body,
+    .bim-resources__form-desc {
+      font-size: 15px !important;
+      line-height: 26px !important;
+    }
+
+    .bim-resources__hero {
+      border-radius: 14px;
+    }
+  }
+}

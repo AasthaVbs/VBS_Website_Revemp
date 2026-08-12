@@ -8,8 +8,8 @@ import {
   ChevronsRight,
   Search,
 } from "lucide-react";
-import type { ButtonHTMLAttributes, ReactNode } from "react";
-import { useEffect, useMemo, useState } from "react";
+import type { ButtonHTMLAttributes, CSSProperties, ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { ResourceFeedPhoto } from "@/components/ui/resource-feed-photo";
@@ -46,6 +46,94 @@ export type ResourcesBrowseVariant =
   | "case-studies";
 
 const ITEMS_PER_PAGE = 8;
+const FILTER_STICKY_MIN_WIDTH = 800;
+
+function useDesktopStickyFilter() {
+  const sentinelRef = useRef<HTMLDivElement>(null);
+  const asideRef = useRef<HTMLElement>(null);
+  const [stickyStyle, setStickyStyle] = useState<CSSProperties | null>(null);
+  const [placeholderHeight, setPlaceholderHeight] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    const update = () => {
+      const sentinel = sentinelRef.current;
+      const aside = asideRef.current;
+      if (!sentinel || !aside) return;
+
+      if (window.innerWidth < FILTER_STICKY_MIN_WIDTH) {
+        setStickyStyle(null);
+        setPlaceholderHeight(undefined);
+        return;
+      }
+
+      const headerRaw = getComputedStyle(document.documentElement)
+        .getPropertyValue("--vbs-header-offset")
+        .trim();
+      const headerOffset = Number.parseFloat(headerRaw) || 132;
+      const topGap = headerOffset + 16;
+      const layout = sentinel.closest(".resource-browse-anchor__layout") as HTMLElement | null;
+      const sentinelRect = sentinel.getBoundingClientRect();
+      const layoutRect = layout?.getBoundingClientRect();
+      const asideHeight = aside.offsetHeight;
+      const width = sentinel.offsetWidth;
+      const left = sentinelRect.left;
+
+      if (!layoutRect) {
+        setStickyStyle(null);
+        setPlaceholderHeight(undefined);
+        return;
+      }
+
+      const layoutBottomLimit = layoutRect.bottom - 16;
+      const shouldStick = sentinelRect.top <= topGap;
+      const fitsInLayout = topGap + asideHeight <= layoutBottomLimit;
+
+      if (shouldStick && fitsInLayout) {
+        setStickyStyle({
+          position: "fixed",
+          top: topGap,
+          left,
+          width,
+          zIndex: 20,
+        });
+        setPlaceholderHeight(asideHeight);
+        return;
+      }
+
+      if (shouldStick && !fitsInLayout) {
+        const pinnedTop = Math.max(layoutBottomLimit - asideHeight, layoutRect.top);
+        setStickyStyle({
+          position: "fixed",
+          top: pinnedTop,
+          left,
+          width,
+          zIndex: 20,
+        });
+        setPlaceholderHeight(asideHeight);
+        return;
+      }
+
+      setStickyStyle(null);
+      setPlaceholderHeight(undefined);
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+
+    const resizeObserver = new ResizeObserver(update);
+    if (asideRef.current) resizeObserver.observe(asideRef.current);
+    if (sentinelRef.current) resizeObserver.observe(sentinelRef.current);
+
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+      resizeObserver.disconnect();
+    };
+  }, []);
+
+  return { sentinelRef, asideRef, stickyStyle, placeholderHeight };
+}
 
 type CatalogItem = ResourceCatalogItem;
 
@@ -105,10 +193,13 @@ function ResourceCard({
   item,
   hideBadge = false,
   hideMeta = false,
+  mediaSize = "default",
 }: {
   item: CatalogItem;
   hideBadge?: boolean;
   hideMeta?: boolean;
+  /** Taller image containers so cover art is not cropped */
+  mediaSize?: "default" | "blog" | "whitepaper";
 }) {
   const metaPrimary =
     item.publishedAt ||
@@ -117,6 +208,16 @@ function ResourceCard({
     null;
   const metaSecondary = item.category || item.badgeLabel || item.type || null;
   const showMeta = !hideMeta && Boolean(metaPrimary || metaSecondary);
+  const mediaClassName =
+    mediaSize === "blog"
+      ? "resources-browse-card__media relative h-[240px] w-full overflow-hidden rounded-[10px] min-[800px]:h-[280px] min-[1280px]:h-[320px]"
+      : mediaSize === "whitepaper"
+        ? "resources-browse-card__media relative h-[220px] w-full overflow-hidden rounded-[10px] min-[800px]:h-[255px] min-[1280px]:h-[290px]"
+        : "resources-browse-card__media relative h-[198px] w-full overflow-hidden rounded-[10px] min-[800px]:h-[225px] min-[1280px]:h-[260px]";
+  const photoClassName =
+    mediaSize === "default"
+      ? "absolute inset-0 h-full w-full object-cover"
+      : "absolute inset-0 h-full w-full object-cover object-top";
 
   return (
     <Link
@@ -124,11 +225,8 @@ function ResourceCard({
       className="resources-browse-card flex h-full flex-col items-center gap-[10px] overflow-hidden rounded-[10px] bg-white p-2.5 shadow-[0_4px_10px_rgba(0,0,0,0.15)] no-underline transition-[box-shadow,transform] duration-250 hover:-translate-y-1 hover:shadow-[0_10px_24px_rgba(0,0,0,0.12)]"
       aria-label={`Learn more about ${item.title}`}
     >
-      <div className="resources-browse-card__media relative h-[198px] w-full overflow-hidden rounded-[10px] min-[800px]:h-[225px] min-[1280px]:h-[260px]">
-        <ResourceFeedPhoto
-          src={item.image}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+      <div className={mediaClassName}>
+        <ResourceFeedPhoto src={item.image} className={photoClassName} />
         {!hideBadge ? (
           <span className="absolute bottom-3 right-3 rounded-[10px] bg-[#D70416] px-3.5 py-1 text-[13px] text-white">
             {item.badgeLabel || item.type || "Resource"}
@@ -344,6 +442,7 @@ export function ResourcesBrowseSection({
   );
   const cardRows = chunkItems(pageItems, 2);
   const paginationItems = getPaginationItems(safeCurrentPage, totalPages);
+  const { sentinelRef, asideRef, stickyStyle, placeholderHeight } = useDesktopStickyFilter();
 
   const handleTypeChange = (type: string) => {
     setSelectedType(type);
@@ -360,7 +459,16 @@ export function ResourcesBrowseSection({
     >
       <PageContainer className="flex flex-col items-start gap-5 min-[800px]:gap-10">
         <div className="resource-browse-anchor__layout flex w-full flex-col gap-3 min-[800px]:flex-row min-[800px]:items-start min-[800px]:gap-5">
-          <aside className="resource-browse-anchor__aside w-full shrink-0 rounded-[10px] bg-white p-3 shadow-[0_4px_10px_rgba(0,0,0,0.15)] min-[800px]:w-[344px] min-[800px]:max-w-[344px] min-[800px]:p-5">
+          <div
+            ref={sentinelRef}
+            className="resource-browse-anchor__aside-shell w-full shrink-0 min-[800px]:w-[344px] min-[800px]:max-w-[344px]"
+            style={placeholderHeight ? { minHeight: placeholderHeight } : undefined}
+          >
+            <aside
+              ref={asideRef}
+              className="resource-browse-anchor__aside w-full rounded-[10px] bg-white p-3 shadow-[0_4px_10px_rgba(0,0,0,0.15)] min-[800px]:p-5"
+              style={stickyStyle ?? undefined}
+            >
             <div className="flex flex-col gap-3 min-[800px]:gap-5">
               <label className="flex h-[44px] items-center justify-between gap-3 rounded-[10px] border border-[#CBCCCD] bg-[#FAFAFA] px-4 py-2.5 backdrop-blur-[50px] min-[800px]:h-[50px] min-[800px]:px-5 min-[800px]:py-3">
                 <input
@@ -439,7 +547,8 @@ export function ResourcesBrowseSection({
                 </FilterGroup>
               ) : null}
             </div>
-          </aside>
+            </aside>
+          </div>
 
           <div className="flex min-w-0 flex-1 flex-col gap-5">
             {cardRows.length > 0 ? (
@@ -451,6 +560,9 @@ export function ResourcesBrowseSection({
                       item={item}
                       hideBadge={isCaseStudiesPage}
                       hideMeta={isCaseStudiesPage}
+                      mediaSize={
+                        isBlogsPage ? "blog" : isWhitepapersPage ? "whitepaper" : "default"
+                      }
                     />
                   ))}
                 </div>

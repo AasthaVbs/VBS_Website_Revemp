@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/layout/site-header";
+import { CaseStudiesBrowseSection } from "@/components/sections/portfolio/case-studies-browse-section";
 import { PortfolioHeroSection } from "@/components/sections/portfolio/portfolio-hero-section";
 import {
-  DeferredCaseStudiesBrowseSection,
   DeferredGetInTouchSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
@@ -19,11 +19,11 @@ export default function PortfolioPage() {
   const initialCatalog = buildResourceCatalog(new Date());
 
   return (
-    <div className="vbs-redesign-page resources-listing-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page resources-listing-page min-h-screen bg-white">
       <SiteHeader />
       <main>
         <PortfolioHeroSection />
-        <DeferredCaseStudiesBrowseSection initialCatalog={initialCatalog} />
+        <CaseStudiesBrowseSection initialCatalog={initialCatalog} />
         <DeferredGetInTouchSection />
       </main>
       <DeferredSiteFooter />

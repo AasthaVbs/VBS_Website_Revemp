@@ -4,12 +4,26 @@
 
 .vbs-redesign-page {
   .vbs-page-container,
-  .vbs-site-footer__container,
   > .container,
   main .container:not(.vbs-allow-bootstrap),
   .max-w-\[1400px\],
   .max-w-\[1111px\] {
     max-width: var(--vbs-page-max, 1330px) !important;
+  }
+
+  .vbs-page-container,
+  .vbs-site-footer__container,
+  > .container,
+  main .container:not(.vbs-allow-bootstrap) {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Footer matches Figma 4016:56172 (1440 content + 12px gutters) */
+  .vbs-site-footer .vbs-page-container,
+  .vbs-site-footer > .vbs-page-container,
+  .vbs-site-footer__container {
+    max-width: 1440px !important;
   }
 }
 
@@ -28,13 +42,19 @@ html:not(:has(.vbs-redesign-page:not(.vbs-redesign-page--contact-embed))) {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--vbs-legacy-shell-gutter, 12px) !important;
-    padding-right: var(--vbs-legacy-shell-gutter, 12px) !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .vbs-site-footer .vbs-page-container,
+  .vbs-site-footer > .vbs-page-container,
+  .vbs-site-footer__container {
+    max-width: 1440px !important;
   }
 
   .container:not(.container-fluid):not(.vbs-allow-bootstrap) {
     max-width: var(--vbs-legacy-shell-max) !important;
-    padding-left: var(--vbs-legacy-shell-gutter, 12px) !important;
-    padding-right: var(--vbs-legacy-shell-gutter, 12px) !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
 }

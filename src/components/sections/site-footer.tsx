@@ -16,7 +16,6 @@ const footerSocialLinks = [
 ] as const;
 
 const quickLinks = [
-  { label: "Our Capabilities", href: VBS_FOOTER_URLS.capabilities },
   { label: "Engagement Model", href: VBS_FOOTER_URLS.dedicatedTeam },
   { label: "About us", href: VBS_FOOTER_URLS.aboutUs },
   { label: "Leadership Team", href: VBS_FOOTER_URLS.leadershipTeam },
@@ -31,7 +30,6 @@ const resourceLinks = [
   { label: "Webinar", href: VBS_FOOTER_URLS.webinar },
   { label: "Testimonials", href: VBS_FOOTER_URLS.testimonials },
   { label: "Portfolio", href: VBS_FOOTER_URLS.projects },
-  { label: "News", href: VBS_FOOTER_URLS.bimResources },
 ] as const;
 
 const legalLinks = [
@@ -40,18 +38,18 @@ const legalLinks = [
   { label: "Cookie policy", href: VBS_FOOTER_URLS.cookiePolicy },
 ] as const;
 
-const officeLocations = [
+const officeLocations: { label: string; showPin: boolean }[] = [
   { label: "Texas", showPin: true },
-  { label: "New Jersey", showBullet: true },
-  { label: "India", showBullet: true },
-] as const;
+  { label: "New Jersey", showPin: false },
+  { label: "India", showPin: false },
+];
 
 function FooterLink({ label, href }: { label: string; href: string }) {
   return (
     <li>
       <Link
         href={href}
-        className="vbs-site-footer__link inline-flex text-[16px] font-normal capitalize leading-6 text-[#CBCCCD] transition-opacity hover:opacity-80"
+        className="vbs-site-footer__link inline-flex pb-1.5 text-[16px] font-normal capitalize leading-normal text-[#CBCCCD] transition-opacity hover:opacity-80"
       >
         {label}
       </Link>
@@ -72,23 +70,23 @@ export function SiteFooter() {
         aria-hidden
       />
 
-      <PageContainer className="vbs-site-footer__container relative z-[1] flex flex-col gap-8">
-        <div className="vbs-site-footer__main flex w-full flex-col items-start justify-between gap-8 lg:flex-row lg:items-start lg:gap-5">
-          <div className="vbs-site-footer__brand flex max-w-[374px] flex-col items-start gap-5">
+      <PageContainer className="vbs-site-footer__container relative z-[1] flex w-full flex-col">
+        <div className="vbs-site-footer__main flex w-full flex-col items-start justify-between lg:flex-row lg:items-start">
+          <div className="vbs-site-footer__brand flex max-w-[374px] flex-col items-start">
             <Link href="/" className="inline-flex shrink-0" aria-label="Virtual Building Studio home">
               <Image
                 src={footerLogo}
                 alt="Virtual Building Studio"
-                width={301}
-                height={54}
-                className="vbs-site-footer__logo h-[54px] w-auto max-w-[301px]"
+                width={310}
+                height={60}
+                className="vbs-site-footer__logo h-[54px] w-auto max-w-[260px]"
               />
             </Link>
-            <p className="vbs-site-footer__brand-copy max-w-[374px] text-[16px] font-normal leading-6 text-[#CBCCCD]">
+            <p className="vbs-site-footer__brand-copy max-w-[374px] text-[16px] font-normal leading-normal text-[#CBCCCD]">
               Always at the forefront, Virtual Building Studio leads the AEC industry with its
               innovative solution.
             </p>
-            <div className="vbs-site-footer__socials flex max-w-[360px] flex-wrap content-center items-center gap-3">
+            <div className="vbs-site-footer__socials flex max-w-[360px] flex-wrap content-center items-center">
               {footerSocialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -103,22 +101,22 @@ export function SiteFooter() {
           </div>
 
           <div className="vbs-site-footer__link-columns flex w-full flex-row gap-4 sm:gap-6 lg:contents">
-            <div className="vbs-site-footer__column vbs-site-footer__column--quick-links flex min-w-0 flex-1 flex-col items-start gap-4 sm:max-w-[160px] sm:flex-none">
-              <h4 className="vbs-site-footer__column-title text-[24px] font-normal capitalize leading-tight text-[#CBCCCD]">
+            <div className="vbs-site-footer__column vbs-site-footer__column--quick-links flex min-w-0 flex-1 flex-col items-start sm:max-w-[160px] sm:flex-none">
+              <h4 className="vbs-site-footer__column-title text-[24px] font-normal capitalize leading-normal text-[#CBCCCD]">
                 Quick Links
               </h4>
-              <ul className="vbs-site-footer__link-list flex flex-col items-start gap-1">
+              <ul className="vbs-site-footer__link-list flex flex-col items-start">
                 {quickLinks.map((item) => (
                   <FooterLink key={item.label} label={item.label} href={item.href} />
                 ))}
               </ul>
             </div>
 
-            <div className="vbs-site-footer__column vbs-site-footer__column--resources flex min-w-0 flex-1 flex-col items-start gap-4 sm:max-w-[160px] sm:flex-none">
-              <h4 className="vbs-site-footer__column-title w-full text-[24px] font-normal capitalize leading-tight text-[#CBCCCD]">
+            <div className="vbs-site-footer__column vbs-site-footer__column--resources flex min-w-0 flex-1 flex-col items-start sm:max-w-[160px] sm:flex-none">
+              <h4 className="vbs-site-footer__column-title w-full text-[24px] font-normal capitalize leading-normal text-[#CBCCCD]">
                 Resources
               </h4>
-              <ul className="vbs-site-footer__link-list flex flex-col items-start gap-1">
+              <ul className="vbs-site-footer__link-list flex flex-col items-start">
                 {resourceLinks.map((item) => (
                   <FooterLink key={item.label} label={item.label} href={item.href} />
                 ))}
@@ -126,7 +124,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="vbs-site-footer__contact flex w-full max-w-[316px] flex-col items-start gap-3">
+          <div className="vbs-site-footer__contact flex w-full max-w-[316px] flex-col items-start">
             <Image
               src="/icons/circle-flags_us.svg"
               alt="United States"
@@ -134,7 +132,7 @@ export function SiteFooter() {
               height={30}
               className="h-[30px] w-[30px] shrink-0"
             />
-            <p className="vbs-site-footer__address text-[16px] font-normal capitalize leading-6 text-[#CBCCCD]">
+            <p className="vbs-site-footer__address text-[16px] font-normal capitalize leading-normal text-[#CBCCCD]">
               <span className="vbs-site-footer__address-line1 block">
                 1004, 5605 N MacArthur Blvd #1000
               </span>
@@ -142,14 +140,14 @@ export function SiteFooter() {
             </p>
             <a
               href="tel:+14098006601"
-              className="inline-flex items-center gap-2.5 text-[16px] font-normal capitalize leading-6 text-[#CBCCCD] transition-opacity hover:opacity-80"
+              className="inline-flex items-center gap-2.5 text-[16px] font-normal capitalize leading-normal text-[#CBCCCD] transition-opacity hover:opacity-80"
             >
               <Phone className="h-5 w-5 shrink-0 text-[#CBCCCD]" strokeWidth={1.2} aria-hidden />
               +1 (409) 800-6601
             </a>
             <a
               href="mailto:contact@virtualbuildingstudio.com"
-              className="inline-flex items-center gap-2.5 text-[16px] font-normal lowercase leading-6 text-[#CBCCCD] transition-opacity hover:opacity-80"
+              className="inline-flex items-center gap-2.5 text-[16px] font-normal lowercase leading-normal text-[#CBCCCD] transition-opacity hover:opacity-80"
             >
               <Mail className="h-5 w-5 shrink-0 text-[#CBCCCD]" strokeWidth={1.2} aria-hidden />
               contact@virtualbuildingstudio.com
@@ -176,7 +174,7 @@ export function SiteFooter() {
                         •
                       </span>
                     )}
-                    <span className="text-[16px] font-normal capitalize leading-6 text-[#CBCCCD]">
+                    <span className="text-[16px] font-normal capitalize leading-normal text-[#CBCCCD]">
                       {location.label}
                     </span>
                   </li>
@@ -186,8 +184,8 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="vbs-site-footer__bottom flex w-full flex-col items-start justify-between gap-4 border-t border-[#808080] py-5 md:flex-row md:items-center lg:py-6">
-          <p className="text-[16px] font-normal capitalize leading-6 text-[#CBCCCD]">
+        <div className="vbs-site-footer__bottom flex w-full flex-col items-start justify-between gap-4 border-t border-[#808080] md:flex-row md:items-center">
+          <p className="text-[16px] font-normal capitalize leading-normal text-[#CBCCCD]">
             ©2026 Virtual Building Studio Inc.
           </p>
           <div className="vbs-site-footer__legal flex flex-wrap items-center gap-10 lg:gap-[40px]">
@@ -195,7 +193,7 @@ export function SiteFooter() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-[16px] font-normal capitalize leading-6 text-[#CBCCCD] transition-opacity hover:opacity-80"
+                className="text-[16px] font-normal capitalize leading-normal text-[#CBCCCD] transition-opacity hover:opacity-80"
               >
                 {item.label}
               </Link>
@@ -204,7 +202,7 @@ export function SiteFooter() {
         </div>
       </PageContainer>
 
-      <div className="vbs-site-footer__strip relative z-[1] flex h-1 w-full items-stretch">
+      <div className="vbs-site-footer__strip relative z-[1] flex h-[4px] w-full items-stretch overflow-hidden">
         <span className="h-full flex-1 bg-[#D70416]" />
         <span className="h-full flex-1 bg-[#42AA32]" />
         <span className="h-full flex-1 bg-[#F0B300]" />

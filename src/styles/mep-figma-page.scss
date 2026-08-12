@@ -3512,6 +3512,10 @@
     isolation: isolate;
   }
 
+  .mep-page-hero--overlay .mep-page-hero__media {
+    pointer-events: auto;
+  }
+
   /* Overlay hero (MepPageHeroSection) — image beside copy, not grid layout */
   .mep-page-hero--overlay {
     position: relative !important;
@@ -3529,8 +3533,18 @@
       max-width: 1080px !important;
       aspect-ratio: 1024 / 607 !important;
       overflow: visible !important;
-      pointer-events: none !important;
+      pointer-events: auto !important;
       margin: 0 !important;
+    }
+
+    .mep-page-hero__media .mep-page-hero__photo,
+    .mep-page-hero__media img {
+      pointer-events: auto !important;
+      position: relative !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      display: block !important;
     }
 
     .mep-page-hero__media::before,
@@ -4600,12 +4614,28 @@
     }
   }
 
+  @media (min-width: 1024px) {
+    .mep-page-hero--overlay .mep-page-hero__media {
+      height: auto !important;
+      bottom: auto !important;
+    }
+  }
+
   /* Mid laptops (~1200px): keep title readable without colliding with image */
   @media (min-width: 1024px) and (max-width: 1366px) {
     h1,
     .mep-page-hero--overlay h1,
     .mep-page-hero--overlay h1 span {
-      font-size: 42px !important;
+      font-size: 38px !important;
+      line-height: 1.15 !important;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    h1,
+    .mep-page-hero--overlay h1,
+    .mep-page-hero--overlay h1 span {
+      font-size: 34px !important;
       line-height: 1.15 !important;
     }
   }
@@ -4705,8 +4735,8 @@
         max-width: 1100px !important;
         aspect-ratio: 1024 / 607 !important;
         top: 0 !important;
-        bottom: 0 !important;
-        height: 100% !important;
+        bottom: auto !important;
+        height: auto !important;
         margin-top: 0 !important;
 
         img {
@@ -4721,31 +4751,53 @@
       }
     }
 
-    /* Mid laptops (~1200–1250px): balanced copy + image, no collision or large gap */
+    /* Mid laptops (~12"): keep copy clear of hero image, avoid collision */
     @media (min-width: 1024px) and (max-width: 1366px) {
-      min-height: calc(min(56vw, 740px) * 607 / 1024) !important;
+      min-height: calc(min(52vw, 680px) * 607 / 1024) !important;
 
       .mep-page-hero__media {
-        width: min(56%, 740px) !important;
-        max-width: 740px !important;
+        width: min(50%, 640px) !important;
+        max-width: 640px !important;
       }
 
       .mep-page-hero__copy-wrap {
-        padding-top: 72px !important;
-        padding-bottom: 32px !important;
+        padding-top: 56px !important;
+        padding-bottom: 28px !important;
 
         > div {
-          max-width: min(560px, 48%) !important;
+          max-width: min(520px, 46%) !important;
         }
 
         h1,
         p {
-          max-width: min(560px, 100%) !important;
+          max-width: min(520px, 100%) !important;
         }
       }
 
       .mep-page-hero__media > div[aria-hidden] {
-        width: min(48%, 240px) !important;
+        width: min(52%, 220px) !important;
+      }
+    }
+
+    @media (min-width: 1024px) and (max-width: 1199px) {
+      min-height: calc(min(48vw, 560px) * 607 / 1024) !important;
+
+      .mep-page-hero__media {
+        width: min(46%, 520px) !important;
+        max-width: 520px !important;
+      }
+
+      .mep-page-hero__copy-wrap {
+        padding-top: 40px !important;
+
+        > div {
+          max-width: min(460px, 50%) !important;
+        }
+
+        h1,
+        h1 span {
+          font-size: 36px !important;
+        }
       }
     }
   }

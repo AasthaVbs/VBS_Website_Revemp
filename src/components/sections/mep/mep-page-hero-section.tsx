@@ -260,17 +260,15 @@ export function MepPageHeroSection({
 
   return (
     <section className="mep-page-hero mep-page-hero--overlay relative flex w-full flex-col overflow-visible bg-white lg:block">
-      <div
-        className="mep-page-hero__media pointer-events-none absolute z-0 hidden aspect-[1024/607] max-w-[1080px] lg:right-0 lg:top-0 lg:block lg:w-[min(56%,1080px)]"
-        aria-hidden
-      >
+      <div className="mep-page-hero__media absolute z-0 hidden aspect-[1024/607] max-w-[1080px] overflow-hidden lg:right-0 lg:top-0 lg:block lg:w-[min(56%,1080px)]">
         <Image
           src={imageSrc}
           alt={resolvedImageAlt}
-          fill
+          width={HERO_IMAGE_WIDTH}
+          height={HERO_IMAGE_HEIGHT}
           priority
-          sizes="56vw"
-          className="object-contain object-right object-center"
+          sizes="(min-width: 1024px) 56vw, 100vw"
+          className="mep-page-hero__photo h-full w-full object-contain object-right object-center"
         />
         <HeroImageFadeLeft />
       </div>

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/layout/site-header";
+import { WhitepapersBrowseSection } from "@/components/sections/whitepapers/whitepapers-browse-section";
 import { WhitepapersHeroSection } from "@/components/sections/whitepapers/whitepapers-hero-section";
 import {
   DeferredGetInTouchSection,
   DeferredSiteFooter,
-  DeferredWhitepapersBrowseSection,
 } from "@/lib/lazy-page-sections";
 import { buildResourceCatalog } from "@/lib/resource-catalog";
 
@@ -19,11 +19,11 @@ export default function WhitepaperPage() {
   const initialCatalog = buildResourceCatalog(new Date());
 
   return (
-    <div className="vbs-redesign-page resources-listing-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page resources-listing-page min-h-screen bg-white">
       <SiteHeader />
       <main>
         <WhitepapersHeroSection />
-        <DeferredWhitepapersBrowseSection initialCatalog={initialCatalog} />
+        <WhitepapersBrowseSection initialCatalog={initialCatalog} />
         <DeferredGetInTouchSection />
       </main>
       <DeferredSiteFooter />

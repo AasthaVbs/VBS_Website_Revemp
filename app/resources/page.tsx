@@ -19,7 +19,7 @@ export default async function ResourcesPage() {
   const initialCatalog = await buildResourceCatalogLive(new Date());
 
   return (
-    <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page resources-listing-page min-h-screen bg-white">
       <SiteHeader />
       <main>
         <ResourcesHeroSection />

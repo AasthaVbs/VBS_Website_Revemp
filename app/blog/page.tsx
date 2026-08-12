@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 import { SiteHeader } from "@/components/layout/site-header";
+import { BlogsBrowseSection } from "@/components/sections/blogs/blogs-browse-section";
 import { BlogsHeroSection } from "@/components/sections/blogs/blogs-hero-section";
 import {
-  DeferredBlogsBrowseSection,
   DeferredGetInTouchSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
@@ -19,11 +19,11 @@ export default async function BlogPage() {
   const initialCatalog = await buildResourceCatalogLive(new Date());
 
   return (
-    <div className="vbs-redesign-page min-h-screen overflow-x-hidden bg-white">
+    <div className="vbs-redesign-page vbs-blogs-listing-page min-h-screen bg-white">
       <SiteHeader />
       <main>
         <BlogsHeroSection />
-        <DeferredBlogsBrowseSection initialCatalog={initialCatalog} />
+        <BlogsBrowseSection initialCatalog={initialCatalog} />
         <DeferredGetInTouchSection />
       </main>
       <DeferredSiteFooter />

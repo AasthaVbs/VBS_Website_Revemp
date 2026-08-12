@@ -1,6 +1,1090 @@
 {
-  "fetchedAt": "2026-08-11T08:07:16.933Z",
+  "fetchedAt": "2026-08-12T09:17:55.753Z",
   "posts": [
+    {
+      "_id": "23922413-b19d-408b-a7dc-277d06a4d57e",
+      "body": [
+        {
+          "_key": "d4bd509eb794",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-79af189c018a7473efe77537857b6067f88596ef-1460x926-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "6357c38da89f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b160a988637a",
+              "_type": "span",
+              "marks": [],
+              "text": "Renovation teams inherit buildings full of surprises. Original drawings age poorly. Past fitouts shift walls. Slabs deflect across decades. Service routes take detours that paper records miss entirely. Field teams discover these gaps during demolition. The budget already carries the damage by then. Rework arrives as extra labor plus wasted material. Schedules stretch. Owner confidence drains fast."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b4f3ea534ead",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "17ea0396ee90",
+              "_type": "span",
+              "marks": [
+                "a63a3051f275"
+              ],
+              "text": "Point Cloud to BIM"
+            },
+            {
+              "_key": "2d1ee217c237",
+              "_type": "span",
+              "marks": [],
+              "text": " reverses that sequence. Teams measure the building first. Modelers translate those measurements into intelligent geometry. Designers then work against verified conditions from day one. This article explains seven mechanisms that turn measured reality into protected project margins."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "a63a3051f275",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/laser-scan-to-bim/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "885fe368c7da",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7b4017ed9db8",
+              "_type": "span",
+              "marks": [],
+              "text": "What Is Scan to BIM?"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "1c0269116a99",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "60483d4eef51",
+              "_type": "span",
+              "marks": [],
+              "text": "Scan to BIM converts measured site data into an intelligent digital model. Surveyors position a terrestrial laser scanner across planned stations. Each station records millions of coordinates every second. Registration software stitches those stations into one unified point cloud."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1ad5837acee9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e510b0fbf83d",
+              "_type": "span",
+              "marks": [],
+              "text": "Modelers rebuild the geometry inside Revit or ArchiCAD. Walls carry construction layers. Pipes carry diameters plus insulation thickness. Equipment carries asset tags. The finished model behaves as a searchable database of the standing asset."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "77dd277aaa92",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>Two frameworks govern deliverable quality. The USIBD Level of Accuracy specification defines dimensional tolerance. The AIA Level of Development specification defines the depth of information. Renovation teams usually specify <a href=\"https://lidarmag.com/2025/02/09/usibd-a-new-chapter-for-2025/\" rel=\"nofollow\" target=\"_blank\">LOA 30 for coordination work</a>. That band holds the represented geometry within a tolerance of 5 mm to 15 mm.</P>"
+          }
+        },
+        {
+          "_key": "7c24ffeae780",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1d5d661d265c",
+              "_type": "span",
+              "marks": [],
+              "text": ""
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "756064e4128c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "812a02d4a0d0",
+              "_type": "span",
+              "marks": [],
+              "text": "Laser scan to BIM delivery adds the semantics that raw scans lack. ISO 19650 information containers keep file naming consistent across every discipline. IFC exports open the model to owners plus third-party reviewers. A BIM model, therefore, serves design teams far beyond simple visualization."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a6727463e89f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f2e7a07aac4c",
+              "_type": "span",
+              "marks": [],
+              "text": "Common Causes of Rework in Renovation Projects"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "3c6a10b331b7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "685fc06fcddd",
+              "_type": "span",
+              "marks": [],
+              "text": "Rework grows from information gaps. Renovation teams inherit records that describe design intent rather than physical reality. Site conditions drift across every decade of occupancy."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d3320558ae63",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8ca23ae45d87",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "The recurring triggers include:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "93bc2b874165",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8839327d6a05",
+              "_type": "span",
+              "marks": [],
+              "text": "Outdated as-built drawings that skip earlier retrofits."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1b23f562f1c0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8cf553065c0d",
+              "_type": "span",
+              "marks": [],
+              "text": "Tape measure surveys that sample a few points per room."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "06736718379c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "641b64132c21",
+              "_type": "span",
+              "marks": [],
+              "text": "Hidden structures above ceilings and inside service shafts."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8e3287bb7103",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "aee6dc43b0a9",
+              "_type": "span",
+              "marks": [],
+              "text": "Floors that slope beyond the assumed tolerance."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "252be86c7e09",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c29a775fdac2",
+              "_type": "span",
+              "marks": [],
+              "text": "Undocumented service routes added by previous contractors."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a5270282a943",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e8d4f1b39b02",
+              "_type": "span",
+              "marks": [],
+              "text": "Late scope discovery during demolition week."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1faf16e67573",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "53aab7992485",
+              "_type": "span",
+              "marks": [],
+              "text": ""
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "520e88b7e3b8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "154ed6018d0d",
+              "_type": "span",
+              "marks": [],
+              "text": "Existing building surveys performed with tapes deliver a sampled picture. Reality capture services deliver a measured picture. The gap between those two pictures appears during installation."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "721afc4eed8d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "803c581d701a",
+              "_type": "span",
+              "marks": [],
+              "text": "7 Ways Scan to BIM Eliminates Costly Rework"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "37a600d5fa78",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-ef79f9efd9c2b061170b2772a01465340df391b1-1460x803-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "0e28a704aa7d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "922f8a95327c",
+              "_type": "span",
+              "marks": [],
+              "text": "Each mechanism below attacks one root cause. Together they close the loop from measurement through construction."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d04ad04c4d48",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "890305fff9f7",
+              "_type": "span",
+              "marks": [],
+              "text": "1: Captures Accurate Existing Conditions"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "870f675a253d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "02bc318a43c5",
+              "_type": "span",
+              "marks": [],
+              "text": "Accurate capture starts with survey control. Crews set control targets across the site. Scanner stations overlap by 30% to 40% for stable registration. Registration reports record cloud-to-cloud errors for every station pair."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5168fe4477c1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c527dd84fb31",
+              "_type": "span",
+              "marks": [],
+              "text": "Teams verify the assembled cloud against control coordinates. Deviation stays under one centimeter across most commercial interiors. Modelers then trace geometry directly onto that verified cloud. "
+            },
+            {
+              "_key": "51c5b7a3b179",
+              "_type": "span",
+              "marks": [
+                "8a7041969713"
+              ],
+              "text": "Scan to BIM services"
+            },
+            {
+              "_key": "5555f8aff921",
+              "_type": "span",
+              "marks": [],
+              "text": " deliver this measured baseline as a native Revit model."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "8a7041969713",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/scan-to-bim-services/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "b1ed85ace585",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "240fede3d2cd",
+              "_type": "span",
+              "marks": [],
+              "text": "2: Reduces Design Errors"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "7a8dbdd44830",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "09deb7f90901",
+              "_type": "span",
+              "marks": [],
+              "text": "Designers work against measured geometry from the first sketch. Floor deviation maps expose slab dips before flooring specification. Ceiling void heights confirm available duct routing space. Doorhead heights confirm equipment access paths."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "50706d86915f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d6caf114939e",
+              "_type": "span",
+              "marks": [],
+              "text": "Modelers color-code deviation zones in the model. Structural engineers size new openings against verified beam positions. Architects size millwork against actual wall faces."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "66158bfda96b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "006533e147ba",
+              "_type": "span",
+              "marks": [],
+              "text": "Verified inputs remove the guesswork that generates requests for information. Design teams issue fewer clarifications during the tender."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "424f57e55580",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7ba0c15e73d4",
+              "_type": "span",
+              "marks": [],
+              "text": "3: Improves Architectural, Structural, and MEP Coordination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "53eb6b3ed750",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b192969bdced",
+              "_type": "span",
+              "marks": [],
+              "text": "Coordination succeeds when every discipline shares one origin. Teams set the project base point using the survey control network. Each discipline model references the same registered cloud."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d107595af5a9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7e22e0cd1cf3",
+              "_type": "span",
+              "marks": [],
+              "text": "Federated reviews compare architectural partitions against structural framing. MEP engineers route services through verified voids. Clearance zones follow manufacturer maintenance requirements."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "082953cfbb1f",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>A disciplined <a href=\"https://www.scantobim.online/blog/scan-to-bim-workflow-and-accuracy-for-renovation-projects/\" rel=\"nofollow\" target=\"_blank\">Scan to BIM workflow</a> assigns tolerance bands to each class of elements. Structural steel holds tighter bands than architectural finishes. Reviewers judge each element against its band.</P>"
+          }
+        },
+        {
+          "_key": "5cee43d731cf",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "21e496a8b896",
+              "_type": "span",
+              "marks": [],
+              "text": "4: Detects Clashes Before Construction"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "2dc83d7d959c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ba350d7e35c7",
+              "_type": "span",
+              "marks": [],
+              "text": "Clash detection turns coordination into a measurable audit. Teams run rule sets inside Navisworks or Solibri. Hard clashes flag physical overlaps. Clearance clashes flag maintenance access breaches."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4b0b901c15e4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e107f3173c27",
+              "_type": "span",
+              "marks": [],
+              "text": "Renovation projects add a third test class. Teams clash new services against the point cloud itself. That test catches conflicts with existing structures that legacy models omit."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "db1ba55e4d70",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c0afd5242599",
+              "_type": "span",
+              "marks": [],
+              "text": "Each clash receives an owner plus a resolution date. Weekly reports track closure rates across every discipline. Open items stay visible to the whole delivery team."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7c154c6ad9a0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f7583bc00791",
+              "_type": "span",
+              "marks": [],
+              "text": "Tolerance settings matter here. Reviewers set a 25 mm clearance rule for insulated services. Tighter rules generate noise. Looser rules hide genuine access problems."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4101da6d1178",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ac091404ad74",
+              "_type": "span",
+              "marks": [],
+              "text": "5: Minimizes Change Orders and Project Delays"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "77ca77d86ae7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b70cd1c0f05d",
+              "_type": "span",
+              "marks": [],
+              "text": "Change orders grow from surprises. Verified geometry removes the surprise. Contractors bid against quantities extracted from a measured model."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "512d78ab73df",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>Research examined rework across bridge projects using earned value management. <i><strong>The <a href=\"https://www.nature.com/articles/s41598-025-27546-0\" rel=\"nofollow\" target=\"_blank\">study</a> reported time wastage reductions near 70% to 85% for BIM-enabled delivery. Cost savings landed near 65% to 75% across the analyzed case.</strong></i></P>"
+          }
+        },
+        {
+          "_key": "2ed6303902cd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "944bc8e9e4cc",
+              "_type": "span",
+              "marks": [],
+              "text": ""
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8c5e7f92b9a2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "445257a721aa",
+              "_type": "span",
+              "marks": [],
+              "text": "Procurement teams price prefabrication with confidence. Fabricators cut pipe spools to verified dimensions. Installation crews hang assemblies that fit during the first attempt."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f3e69b6b101e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "142b446fdc5b",
+              "_type": "span",
+              "marks": [],
+              "text": "6: Supports Faster Decision Making"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "3eaad4cc884e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2b357601f5bc",
+              "_type": "span",
+              "marks": [],
+              "text": "Owners approve faster once they see measured options. Review teams cut sections anywhere across the model. Virtual walkthroughs replace repeated site visits for remote stakeholders."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "37b8b72922b7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "bc59e3fa38c4",
+              "_type": "span",
+              "marks": [
+                "af669cedb3e3"
+              ],
+              "text": "Scan to CAD conversion"
+            },
+            {
+              "_key": "aa4ddd898b70",
+              "_type": "span",
+              "marks": [],
+              "text": " supports teams that need 2D permit sets from the same capture. Planning authorities receive floor plans traced from the measured geometry. Consultants receive elevations that match the standing structure."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "af669cedb3e3",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/scan-to-cad-services/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "dafb9d41d774",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "60c30488a1a8",
+              "_type": "span",
+              "marks": [],
+              "text": "Option studies run inside hours rather than days. Cost consultants extract quantities directly from model schedules. Renovation planning decisions then follow evidence."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5e9a26e43fb1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b15f823d03c4",
+              "_type": "span",
+              "marks": [],
+              "text": "7: Enhances Facility Management After Renovation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "f14f93037456",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2f53aa3a92b3",
+              "_type": "span",
+              "marks": [],
+              "text": "Value continues past handover. Teams update the model with as-built changes recorded during construction. Asset data flows into the maintenance platform."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2c35c8b442c3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7475a49249bf",
+              "_type": "span",
+              "marks": [],
+              "text": "COBie schedules carry manufacturer details plus warranty dates. Facility teams locate valves through the model rather than through memory. Space managers plan future fitouts against current geometry."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "617151dd0b55",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p><a href=\"https://www.linkedin.com/pulse/how-scan-bim-improving-existing-building-documentation-1qzqe/\" rel=\"nofollow\" target=\"_blank\">Existing building documentation</a> delivered this way becomes a living record. Each future project starts with verified data. Digital construction programs gain a permanent geometric baseline.</P>"
+          }
+        },
+        {
+          "_key": "ff807b43d3b4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9197925f0134",
+              "_type": "span",
+              "marks": [],
+              "text": "Key Benefits of Using Scan to BIM for Renovation Projects"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "2048079088da",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4947e8047176",
+              "_type": "span",
+              "marks": [],
+              "text": "Existing conditions modeling converts survey effort into a reusable project asset. The commercial returns stack across the program:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d50c87e9b47b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ef43efcff8ca",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Measured baseline:"
+            },
+            {
+              "_key": "f1c2829c008a",
+              "_type": "span",
+              "marks": [],
+              "text": " every discipline designs against one verified geometry set."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e757a3aaa01a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "094068083d00",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Tighter pricing:"
+            },
+            {
+              "_key": "9af700c70f94",
+              "_type": "span",
+              "marks": [],
+              "text": " contractors bid confident margins against known conditions."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e4b987e8af6a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d0d401e24250",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Fewer clarifications:"
+            },
+            {
+              "_key": "4ac082b5cd12",
+              "_type": "span",
+              "marks": [],
+              "text": " clarity replaces assumption across the drawing set."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9af0094ff83e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7068a2ace4fc",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Faster schedules:"
+            },
+            {
+              "_key": "9ab505326937",
+              "_type": "span",
+              "marks": [],
+              "text": " prefabrication starts earlier with confident dimensions."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4cc9ebaa027d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d103b67534cd",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Safer sites:"
+            },
+            {
+              "_key": "28b78e8734b7",
+              "_type": "span",
+              "marks": [],
+              "text": " fewer demolition surprises protect working crews."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8a9f5e960be9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cffd0538f870",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Cleaner handover:"
+            },
+            {
+              "_key": "86e5f8a27a87",
+              "_type": "span",
+              "marks": [],
+              "text": " asset data arrives structured for maintenance teams."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2087ff3c59e4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e756eb3c2484",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Heritage protection:"
+            },
+            {
+              "_key": "4e6ba1e37b0a",
+              "_type": "span",
+              "marks": [],
+              "text": " sensitive fabric receives contactless measurement."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f7ca4d9d7abf",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0f55f2c68cca",
+              "_type": "span",
+              "marks": [],
+              "text": ""
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2d28cb6cb646",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5920e01c0d8a",
+              "_type": "span",
+              "marks": [],
+              "text": "Building renovation projects gain the most from this discipline. Their unknowns carry the highest price."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c43d21355d83",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5314bb4902f3",
+              "_type": "span",
+              "marks": [],
+              "text": "Future Trends in Scan to BIM for Renovation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "bfc9eebdc46c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d77141a0ec6d",
+              "_type": "span",
+              "marks": [],
+              "text": "Capture hardware keeps getting lighter. SLAM handheld units map corridors at walking pace. Drone photogrammetry covers facades plus roofs safely. Automation now reaches the modeling stage. Machine learning tools classify pipes and ducts inside raw clouds. Modelers review the classification rather than manually trace every element."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "87465c8426e0",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>Deviation checking grows more routine. Teams compare weekly progress scans against the design model. Dashboards report installation accuracy per zone. Digital twins connect the model to live buildings. systems. Sensor feeds attach to modeled equipment. Owners watch performance against design intent across the whole asset lifecycle. OpenBIM standards from <a href=\"https://www.buildingsmart.org/about/openbim/\" rel=\"nofollow\" target=\"_blank\">buildingSMART</a> keeps these exchanges vendor neutral. IFC 4.3 carries richer asset semantics for existing structures.</P>"
+          }
+        },
+        {
+          "_key": "9f372c8ee3b5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c422619007f7",
+              "_type": "span",
+              "marks": [],
+              "text": "Conclusion"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "cc7f3fcd318d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ac1b619cc4b5",
+              "_type": "span",
+              "marks": [],
+              "text": "Renovation work rewards teams that measure first. Laser capture supplies the geometry. Modeling supplies the meaning. Coordination supplies the confidence to build. The savings appear across procurement, fabrication, and site installation. Owners receive schedules that hold. Contractors receive drawings that match the building. Facility teams receive data that outlives the project itself."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b5cd6321adbb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1821c02775c8",
+              "_type": "span",
+              "marks": [],
+              "text": "Adoption asks for planning. Teams define accuracy targets early. Surveyors plan station coverage against those targets. Modelers agree on the element scope ahead of production. Projects that follow that discipline spend less time correcting work. They spend more time completing it."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b3dff6d74d3a",
+          "_type": "cta",
+          "buttonText": "Contact Us",
+          "buttonUrl": "/contact-us/",
+          "title": "Ready to Reduce Costly Rework on Your Renovation Project?"
+        }
+      ],
+      "categories": [
+        {
+          "_id": "93de7bc6-9b68-4497-9007-dbd8ac5b1266",
+          "title": "Scan to BIM"
+        }
+      ],
+      "featuredImage": {
+        "asset": {
+          "originalFilename": "7 Ways Scan to BIM Eliminates Costly Rework in Renovation Projects.jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/79af189c018a7473efe77537857b6067f88596ef-1460x926.jpg"
+        }
+      },
+      "publishedAt": "2026-08-11",
+      "slug": "how-scan-to-bim-reduces-costly-rework",
+      "tags": null,
+      "title": "7 Ways Scan to BIM Eliminates Costly Rework in Renovation Projects"
+    },
     {
       "_id": "278dcd94-0d3c-4b24-b236-84502cad26c5",
       "body": [
@@ -185157,61 +186241,75 @@
       "_id": "33acd938-5570-4bc2-92ec-ec55ab95442f",
       "bannerImage": {
         "asset": {
-          "url": "https://cdn.sanity.io/images/rog08jar/production/9d6bffeaf4829482ea8f59c2fe1123e93e9b0974-1250x700.jpg"
+          "url": "https://cdn.sanity.io/images/rog08jar/production/631e6808fd36c97388590ceb0f72a1f9dc4c6bd7-1100x620.jpg"
         }
       },
       "body": [
         {
-          "_key": "a28185b943fd",
+          "_key": "19e80734106f",
           "_type": "block",
           "children": [
             {
-              "_key": "2cbeb0f712a6",
+              "_key": "5545b6168d79",
               "_type": "span",
               "marks": [],
-              "text": "Winning new projects is only part of the challenge. Many architecture firms still struggle with disconnected workflows, inconsistent project delivery, growing client expectations, and pressure to adopt AI without disrupting design quality."
+              "text": "Building Better Architecture Practices: How Better Systems, Teams & Technology Create Better Design, Better Delivery, and Sustainable Growth"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "2a8bace8c41d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b6886aac6f03",
+              "_type": "span",
+              "marks": [],
+              "text": "Growing an architecture practice can create a new problem. More people, tools, and capabilities can also mean more complexity."
             }
           ],
           "markDefs": [],
           "style": "normal"
         },
         {
-          "_key": "f8098ad7ad0b",
+          "_key": "47b86a9c7a2a",
           "_type": "block",
           "children": [
             {
-              "_key": "c65496958d20",
+              "_key": "be21dbb9241d",
               "_type": "span",
               "marks": [],
-              "text": "This webinar brings together practical strategies that successful firms use to strengthen both design and operations. Join us with industry expert Alec Whitten for a discussion on how better information, visualization, digital workflows, AI, and continuous improvement can help architecture practices improve collaboration, protect design intent, and build a resilient business for long-term growth."
+              "text": "This webinar explores how firms can build capability without adding unnecessary friction. Alec Whitten will share practical perspectives on integrating people, processes, technology, and external resources into the way a practice already works. The conversation will also examine how visualization, AI, and continuous improvement can reduce repetitive work, strengthen delivery, and give architects more time for design, judgment, creativity, and meaningful client relationships."
             }
           ],
           "markDefs": [],
           "style": "normal"
         },
         {
-          "_key": "22de51db9fba",
+          "_key": "5d61f1851344",
           "_type": "block",
           "children": [
             {
-              "_key": "d5334445dc18",
+              "_key": "be21dbb9241d",
               "_type": "span",
               "marks": [],
-              "text": "What You'll Learn"
+              "text": "What We'll Explore"
             }
           ],
           "markDefs": [],
-          "style": "h3"
+          "style": "h2"
         },
         {
-          "_key": "ddef4eab445d",
+          "_key": "5fc0189053a2",
           "_type": "block",
           "children": [
             {
-              "_key": "e5286a8f84f8",
+              "_key": "14e56f6766cd",
               "_type": "span",
               "marks": [],
-              "text": "Discover what separates high-performing architecture firms from the rest."
+              "text": "How to add capability without creating unnecessary complexity."
             }
           ],
           "level": 1,
@@ -185220,14 +186318,14 @@
           "style": "normal"
         },
         {
-          "_key": "ab472581ef78",
+          "_key": "64c2b0f460bd",
           "_type": "block",
           "children": [
             {
-              "_key": "7ec492731cf6",
+              "_key": "ccc30d61542b",
               "_type": "span",
               "marks": [],
-              "text": "Learn why better project information leads to better design decisions."
+              "text": "The value of integration rather than just new tools or processes."
             }
           ],
           "level": 1,
@@ -185236,14 +186334,14 @@
           "style": "normal"
         },
         {
-          "_key": "da1416a63cb1",
+          "_key": "ab7ea5fff112",
           "_type": "block",
           "children": [
             {
-              "_key": "85ed193c1bff",
+              "_key": "8582021e035f",
               "_type": "span",
               "marks": [],
-              "text": "Understand how visualization supports client communication and faster approvals."
+              "text": "How external resources can be an extension of your practice connected to it"
             }
           ],
           "level": 1,
@@ -185252,14 +186350,14 @@
           "style": "normal"
         },
         {
-          "_key": "b948b15b424d",
+          "_key": "d2224f780635",
           "_type": "block",
           "children": [
             {
-              "_key": "45d98b384c5d",
+              "_key": "49e69453093f",
               "_type": "span",
               "marks": [],
-              "text": "See how structured delivery processes protect design intent throughout projects."
+              "text": "How shared standards, communication, knowledge, and trust support integration."
             }
           ],
           "level": 1,
@@ -185268,14 +186366,14 @@
           "style": "normal"
         },
         {
-          "_key": "c669b8d2acd7",
+          "_key": "4cbdf267107c",
           "_type": "block",
           "children": [
             {
-              "_key": "98282c06570d",
+              "_key": "f931b79fd753",
               "_type": "span",
               "marks": [],
-              "text": "Explore practical ways AI supports architects without replacing creativity."
+              "text": "How visualization, AI and technology can free architects to do more value work."
             }
           ],
           "level": 1,
@@ -185284,14 +186382,14 @@
           "style": "normal"
         },
         {
-          "_key": "8efe50064725",
+          "_key": "5417d3a01094",
           "_type": "block",
           "children": [
             {
-              "_key": "10496e69d606",
+              "_key": "e9c10b1cc6fe",
               "_type": "span",
               "marks": [],
-              "text": "Improve collaboration through better standards and connected workflows."
+              "text": "How continuous feedback can strengthen project delivery and daily workflows."
             }
           ],
           "level": 1,
@@ -185300,14 +186398,30 @@
           "style": "normal"
         },
         {
-          "_key": "ab0563f1a9bd",
+          "_key": "726075adaf83",
           "_type": "block",
           "children": [
             {
-              "_key": "3ef0ea6e80a9",
+              "_key": "c000cc8b75dc",
               "_type": "span",
               "marks": [],
-              "text": "Identify opportunities to build a scalable, sustainable architecture practice."
+              "text": "How firms can build a cycle of Discover, Integrate, Deliver,Improve and Repeat."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f2f7eb41f1f2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d9e29a5370d8",
+              "_type": "span",
+              "marks": [],
+              "text": "What better practice development means for principals, project architects, and emerging architects."
             }
           ],
           "level": 1,

@@ -5,8 +5,8 @@
 .vbs-redesign-page.cad-drafting-landing-page {
   /* Align header + hero content to the same 1400px canvas */
   --vbs-page-max: 1400px;
-  --vbs-page-gutter: 24px;
-  --vbs-page-gutter-md: 32px;
+  --vbs-page-gutter: 12px;
+  --vbs-page-gutter-md: 12px;
   --vbs-content-width: calc(var(--vbs-page-max) - (2 * var(--vbs-page-gutter-md)));
   --cad-landing-header-offset: 80px;
   overflow-x: clip;

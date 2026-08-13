@@ -5,7 +5,7 @@ import { CadToBimPage } from "@/components/vbs/cad-to-bim-page";
 export const metadata: Metadata = {
   title: "CAD to BIM Conversion Services USA | PDF & AutoCAD to Revit",
   description:
-    "US-trained BIM experts convert CAD and PDF drawings into precise Revit models for architecture, structure, and MEP — improving accuracy, coordination, and delivery.",
+    "Turn 2D drawings into intelligent 3D models with our CAD to BIM Services. Trusted by 100+ AEC firms across the USA for PDF to Revit and AutoCAD to Revit Modeling.",
 };
 
 export default function Page() {

@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { MepClashDetectionPage } from "@/components/vbs/mep-clash-detection-page";
 
 export const metadata: Metadata = {
-  title: "MEP Clash Detection Services | Virtual Building Studio",
+  title: "BIM Clash Detection and Coordination Services USA",
   description:
-    "MEP Clash Detection Services in the USA. US-trained BIM specialists identify hard and soft clashes across mechanical, electrical, plumbing, and fire protection systems before construction.",
+    "Avoid costly rework and delays with expert MEP BIM Clash Detection. Fast onboarding, US-trained top 1% BIM experts, working on your timezone.",
 };
 
 export default function MepClashDetectionServicesRoute() {

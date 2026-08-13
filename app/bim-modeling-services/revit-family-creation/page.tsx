@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { RevitFamilyCreationPage } from "@/components/vbs/revit-family-creation-page";
 
 export const metadata: Metadata = {
-  title: "Revit Family Creation Services USA | Parametric BIM Content",
+  title: "Revit Family Creation Services | BIM Object Creation USA",
   description:
-    "Custom Revit Family Creation Services for architecture and structural teams — parametric BIM objects, LOD 100–500, IFC-compliant libraries, and US-trained Revit experts.",
+    "Get code-compliant MEP Family & BIM Content Creation Services from top 1% US-trained licensed BIM experts, ready to integrate into your team in 5 days.",
 };
 
 export default function Page() {

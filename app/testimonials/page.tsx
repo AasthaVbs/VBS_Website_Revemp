@@ -11,9 +11,9 @@ import {
 } from "@/lib/lazy-page-sections";
 
 export const metadata: Metadata = {
-  title: "Testimonials | Virtual Building Studio",
+  title: "Review and Testimonial for our Global Clients – VBS",
   description:
-    "Real feedback from clients who rely on our BIM, Scan to BIM, MEP, and digital construction services.",
+    "Read client reviews and success stories from architecture and engineering firms working with Virtual Building Studio (VBS).",
 };
 
 export default function TestimonialsPage() {

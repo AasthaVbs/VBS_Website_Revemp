@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-12T15:12:44.424Z",
+  "fetchedAt": "2026-08-13T09:59:28.666Z",
   "posts": [
     {
       "_id": "23922413-b19d-408b-a7dc-277d06a4d57e",
@@ -141457,45 +141457,32 @@
               "_key": "402ff2ba16b6",
               "_type": "span",
               "marks": [],
-              "text": "If you ask any construction project executive what keeps them awake at night, ductwork isn’t the obvious answer; until a beam clash halts installation, fabrication has to be redone, the ceiling cavity doesn’t accommodate the main trunk, or airflow tests fail during commissioning.\n\nRecent research backs up what contractors have been shouting for years. A "
-            },
-            {
-              "_key": "673481e52a5f",
-              "_type": "span",
-              "marks": [
-                "6f3792af02a5"
-              ],
-              "text": "2025 Buildings study found"
-            },
-            {
-              "_key": "574e995b7f54",
-              "_type": "span",
-              "marks": [],
-              "text": " that "
-            },
-            {
-              "_key": "7acd0dbbdb68",
-              "_type": "span",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "text": "design errors and communication lapses sit at the top of the rework food chain, especially on projects packed with dense HVAC, plumbing, fire, and electrical systems."
-            },
-            {
-              "_key": "0063cf1b0d83",
-              "_type": "span",
-              "marks": [],
-              "text": " In other words, if the team isn’t aligned early, you’ll pay for it later, usually in labor hours, change orders, and some hurt reputation.\n\nFor HVAC duct shop drawings, this all leads to one simple insight. The earlier the clarity, the cleaner the install. Detailed, accurate duct layouts don’t just help your fabricator; they’re one of the most effective risk-control tools a project manager can have."
+              "text": "If you ask any construction project executive what keeps them awake at night, ductwork isn’t the obvious answer; until a beam clash halts installation, fabrication has to be redone, the ceiling cavity doesn’t accommodate the main trunk, or airflow tests fail during commissioning."
             }
           ],
-          "markDefs": [
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "bd8f622077ee",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>Recent research backs up what contractors have been shouting for years. A <a href=\"https://www.mdpi.com/2075-5309/15/4/606?utm_source\" rel=\"nofollow\" target=\"_blank\">2026 Buildings study found</a>, that <i><strong>design errors and communication lapses sit at the top of the rework food chain, especially on projects packed with dense HVAC, plumbing, fire, and electrical systems.</i></strong>In other words, if the team isn’t aligned early, you’ll pay for it later, usually in labor hours, change orders, and some hurt reputation.\n</P>"
+          }
+        },
+        {
+          "_key": "46c5868dc9c2",
+          "_type": "block",
+          "children": [
             {
-              "_key": "6f3792af02a5",
-              "_type": "link",
-              "href": "https://www.mdpi.com/2075-5309/15/4/606?utm_source"
+              "_key": "402ff2ba16b6",
+              "_type": "span",
+              "marks": [],
+              "text": "For HVAC duct shop drawings, this all leads to one simple insight. The earlier the clarity, the cleaner the install. Detailed, accurate duct layouts don’t just help your fabricator; they’re one of the most effective risk-control tools a project manager can have."
             }
           ],
+          "markDefs": [],
           "style": "normal"
         },
         {
@@ -143663,14 +143650,6 @@
           ],
           "markDefs": [],
           "style": "normal"
-        },
-        {
-          "_key": "0fa0a488dfbb",
-          "_type": "image",
-          "asset": {
-            "_ref": "image-51d99a4b501b82d9fa702bfbd7e2b31e11f5ff53-850x448-webp",
-            "_type": "reference"
-          }
         },
         {
           "_key": "03309d90b289",

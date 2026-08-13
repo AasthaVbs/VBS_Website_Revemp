@@ -18,6 +18,7 @@ import {
   architectureIntroCopy,
   architectureIntroFeatures,
   architectureProjectCta,
+  architectureResourcesSection,
   architectureStatsStrip,
   architectureTestimonialsDescription,
 } from "@/constants/architecture-services-content";
@@ -27,10 +28,14 @@ import {
   DeferredFaqSection,
   DeferredGetInTouchSection,
   DeferredIndustriesSection,
+  DeferredMepResourcesSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
+import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
 
-export function ArchitectureServicesPage() {
+export async function ArchitectureServicesPage() {
+  const resourcesFeed = await getMepResourcesFeedItemsLive();
+
   return (
     <div className="vbs-redesign-page architecture-services-page mep-bim-services-page">
       <SiteHeader />
@@ -48,6 +53,10 @@ export function ArchitectureServicesPage() {
         <ArchitectureWhyContinueSection />
         <ArchitectureVbsDifferenceSection />
         <ArchitectureEngagementModelsSection />
+        <DeferredMepResourcesSection
+          section={architectureResourcesSection}
+          allItems={resourcesFeed}
+        />
         <DeferredIndustriesSection
           intro={architectureIndustriesIntro.description}
           titleLine1={architectureIndustriesIntro.titleLine1}

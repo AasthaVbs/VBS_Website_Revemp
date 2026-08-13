@@ -10,9 +10,9 @@ import {
 import { buildResourceCatalog } from "@/lib/resource-catalog";
 
 export const metadata: Metadata = {
-  title: "White Papers | Virtual Building Studio",
+  title: "White Papers | Virtual Building Studio (VBS)",
   description:
-    "Explore expert-led white papers on BIM delivery, MEP coordination, and digital project workflows from Virtual Building Studio.",
+    "Explore expert-led white papers on MEP coordination, BIM workflows, and digital project delivery from Virtual Building Studio.",
 };
 
 export default function WhitepaperPage() {

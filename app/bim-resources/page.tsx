@@ -6,8 +6,9 @@ import { bimResourcesContent } from "@/constants/bim-resources-content";
 import { DeferredSiteFooter } from "@/lib/lazy-page-sections";
 
 export const metadata: Metadata = {
-  title: bimResourcesContent.meta.title,
-  description: bimResourcesContent.meta.description,
+  title: "BIM Resource Hub - Virtual Building Studio",
+  description:
+    "BIM Resource Hub: Your go-to destination for all things Building Information Modeling. Expert insights, tools, and more!",
 };
 
 export default function BimResourcesPage() {

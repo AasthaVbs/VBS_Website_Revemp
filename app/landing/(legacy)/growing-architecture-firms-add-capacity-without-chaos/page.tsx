@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 import { GrowingArchitectureFirmsAddCapacityWithoutChaosView } from "@/components/landing/growing-architecture-firms-add-capacity-without-chaos-view";
 
 export const metadata: Metadata = {
-  title: "When Hiring Stops Working, What Comes Next? | Virtual Building Studio",
+  title: "Architecture Firm Capacity Guide: Why Hiring Alone Isn't Enough",
   description:
-    "As architecture firms grow, hiring more staff alone can't alleviate capacity pressures. This guide breaks down why and what leaders must look at before making the next capacity decision.",
+    "Is hiring more staff not solving your capacity issues? Discover why architecture firms struggle to scale and learn smarter ways to manage workload, coordination, and delivery with this practical guide.",
   openGraph: {
-    title: "When Hiring Stops Working, What Comes Next? | Virtual Building Studio",
+    title: "Architecture Firm Capacity Guide: Why Hiring Alone Isn't Enough",
     description:
-      "As architecture firms grow, hiring more staff alone can't alleviate capacity pressures. This guide breaks down why and what leaders must look at before making the next capacity decision.",
+      "Is hiring more staff not solving your capacity issues? Discover why architecture firms struggle to scale and learn smarter ways to manage workload, coordination, and delivery with this practical guide.",
     images: [{ url: "/image/When-Hiring-Normal.jpg" }],
   },
 };

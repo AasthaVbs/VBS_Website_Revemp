@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { ScanToBimServicesPage } from "@/components/vbs/scan-to-bim-services-page";
 
 export const metadata: Metadata = {
-  title: "Scan to BIM Services | Virtual Building Studio",
+  title: "Scan to BIM Services | Point Cloud to BIM Modeling USA",
   description:
-    "Point cloud to BIM modeling services for as-built documentation, renovation, and coordination. AI-powered scan-to-BIM workflows with LOD 200–500 capability.",
+    "Plug-in top scan to BIM Services into your team to transform point clouds into detailed BIM - fast, accurate, and trusted by surveyors and architects",
 };
 
 export default function Page() {

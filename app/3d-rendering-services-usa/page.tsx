@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { ThreeDRenderingServicesUsaPage } from "@/components/vbs/3d-rendering-services-usa-page";
 
 export const metadata: Metadata = {
-  title: "3D Rendering Services USA | Project-Based Pricing from $1,600",
+  title: "3D Rendering Services - Architectural Rendering Services",
   description:
-    "One fixed price covers exteriors, interiors & floor plans. Professional 3D rendering for architects and builders — starting at $1,600.",
+    "Bring designs to life with our professional 3D Rendering Services. We deliver high-quality architectural renderings that enhance visualization, accuracy, and client presentations",
   alternates: {
     canonical: "/3d-rendering-services-usa",
   },

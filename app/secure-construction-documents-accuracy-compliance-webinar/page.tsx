@@ -4,7 +4,7 @@ import { SecureConstructionDocumentsWebinarView } from "@/components/sections/we
 
 export const metadata: Metadata = {
   title:
-    "Webinar - 3 Steps to Secure Construction Documents with Accuracy and Compliance | Virtual Building Studio",
+    "Webinar - 3 Steps to Secure Construction Documents with Accuracy and Compliance",
   description:
     "Boost project success! Learn 3 key steps to ensure accuracy, minimize risks, and maintain compliance in your construction documents. Don’t miss this webinar!",
 };

@@ -1,5 +1,7 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { ArchitectureAiBimWorkflowSection } from "@/components/sections/architecture/architecture-ai-bim-workflow-section";
+import { ArchitectureEngagementModelsSection } from "@/components/sections/architecture/architecture-engagement-models-section";
+import { ArchitectureIntegrateWorkflowSection } from "@/components/sections/architecture/architecture-integrate-workflow-section";
 import { BimModelingOverviewSection } from "@/components/sections/bim-modeling/bim-modeling-overview-section";
 import { BimModelingWhyChooseSection } from "@/components/sections/bim-modeling/bim-modeling-why-choose-section";
 import { MepFullSpectrumServicesSection } from "@/components/sections/mep/figma/mep-full-spectrum-services-section";
@@ -12,6 +14,8 @@ import {
   bimModelingAdvantagesSection,
   bimModelingAiBimWorkflowSection,
   bimModelingContactDescription,
+  bimModelingEngagementModelsCards,
+  bimModelingEngagementModelsSection,
   bimModelingFaqSection,
   bimModelingFaqs,
   bimModelingHero,
@@ -26,19 +30,17 @@ import {
   bimModelingTechnologyStackToolsRowOne,
   bimModelingTechnologyStackToolsRowTwo,
   bimModelingTestimonialsDescription,
-  bimModelingWorkflowSection,
-  bimModelingWorkflowSteps,
+  bimModelingWorkflowIntegrateSection,
+  bimModelingWorkflowIntegrateSteps,
 } from "@/constants/bim-modeling-services-content";
 import {
   DeferredClientSuccessStoriesSection,
-  DeferredEngagementModelsSection,
   DeferredEvaluateDeliveryCtaSection,
   DeferredFaqSection,
   DeferredGetInTouchSection,
   DeferredIndustriesSection,
   DeferredMepResourcesSection,
   DeferredMepServiceBenefitsSection,
-  DeferredMepWorkflowSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
 import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
@@ -69,9 +71,10 @@ export async function BimModelingServicesPage() {
         />
         <ArchitectureAiBimWorkflowSection section={bimModelingAiBimWorkflowSection} />
         <BimModelingWhyChooseSection />
-        <DeferredMepWorkflowSection
-          section={bimModelingWorkflowSection}
-          steps={bimModelingWorkflowSteps}
+        <ArchitectureIntegrateWorkflowSection
+          section={bimModelingWorkflowIntegrateSection}
+          steps={bimModelingWorkflowIntegrateSteps}
+          headerAlign="center"
         />
         <MepBimTechnologyStackSection
           section={bimModelingTechnologyStackSection}
@@ -85,7 +88,10 @@ export async function BimModelingServicesPage() {
           section={bimModelingAdvantagesSection}
           cards={bimModelingAdvantagesCards}
         />
-        <DeferredEngagementModelsSection />
+        <ArchitectureEngagementModelsSection
+          section={bimModelingEngagementModelsSection}
+          cards={bimModelingEngagementModelsCards}
+        />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

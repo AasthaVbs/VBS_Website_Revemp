@@ -38,13 +38,13 @@ export function ArchitectureVbsDifferenceSection({
           {cards.map((card) => (
             <article key={card.title} className="flex min-w-0 flex-col items-start gap-5 p-2.5">
               <div className="flex flex-col items-start gap-2.5">
-                <div className="flex h-[60px] w-[60px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] p-[15px]">
+                <div className="flex h-[80px] w-[80px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] p-3">
                   <Image
                     src={card.icon}
                     alt={altFromImageSrc(card.icon)}
-                    width={40}
-                    height={40}
-                    className="h-[40px] w-[40px] object-contain"
+                    width={56}
+                    height={56}
+                    className="h-[56px] w-[56px] object-contain"
                   />
                 </div>
                 <h3 className="text-[24px] font-normal leading-normal text-[#111111]">{card.title}</h3>

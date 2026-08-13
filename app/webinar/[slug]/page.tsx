@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const seo = webinarSeo(webinar);
   return {
-    title: `${seo.title} | Virtual Building Studio`,
+    title: seo.title,
     description: seo.description,
     openGraph: seo.image ? { images: [{ url: seo.image }] } : undefined,
   };

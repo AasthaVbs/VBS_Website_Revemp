@@ -34,6 +34,108 @@
   }
 }
 
+/* Hero — taller container; light left fade; tighter copy↔image gap */
+.architecture-services-page {
+  .mep-page-hero--overlay {
+    @media (min-width: 1024px) {
+      min-height: calc(min(54vw, 1040px) * 640 / 1024) !important;
+
+      .mep-page-hero__media {
+        top: 0 !important;
+        bottom: 0 !important;
+        width: min(48%, 900px) !important;
+        max-width: 900px !important;
+        height: 100% !important;
+        min-height: 100% !important;
+        max-height: none !important;
+        aspect-ratio: auto !important;
+
+        img,
+        .mep-page-hero__photo {
+          position: absolute !important;
+          inset: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: cover !important;
+          object-position: center right !important;
+        }
+
+        /* Light left fade only — soft blend into copy */
+        > div[aria-hidden] {
+          display: block !important;
+          width: min(54%, 300px) !important;
+          background: linear-gradient(
+            90deg,
+            #ffffff 0%,
+            rgba(255, 255, 255, 0.55) 45%,
+            rgba(255, 255, 255, 0) 100%
+          ) !important;
+        }
+      }
+
+      .mep-page-hero__copy-wrap {
+        > div {
+          max-width: min(780px, 56%) !important;
+        }
+
+        h1,
+        h1 span {
+          max-width: min(780px, 100%) !important;
+        }
+      }
+    }
+
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      min-height: calc(min(50vw, 730px) * 640 / 1024) !important;
+
+      .mep-page-hero__media {
+        width: min(44%, 580px) !important;
+        max-width: 580px !important;
+        height: 100% !important;
+        min-height: 100% !important;
+        aspect-ratio: auto !important;
+
+        > div[aria-hidden] {
+          display: block !important;
+          width: min(56%, 240px) !important;
+        }
+      }
+
+      .mep-page-hero__copy-wrap {
+        > div {
+          max-width: min(680px, 54%) !important;
+        }
+
+        h1,
+        h1 span,
+        p {
+          max-width: min(680px, 100%) !important;
+        }
+      }
+    }
+
+    @media (min-width: 1024px) and (max-width: 1199px) {
+      min-height: calc(min(48vw, 600px) * 640 / 1024) !important;
+
+      .mep-page-hero__media {
+        width: min(42%, 460px) !important;
+        max-width: 460px !important;
+      }
+
+      .mep-page-hero__copy-wrap {
+        > div {
+          max-width: min(600px, 56%) !important;
+        }
+
+        h1,
+        h1 span {
+          max-width: min(600px, 100%) !important;
+        }
+      }
+    }
+  }
+}
+
 /* ------------------------------------------------------------------ */
 /* Challenge                                                          */
 /* ------------------------------------------------------------------ */
@@ -139,13 +241,30 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 28px;
 }
 
 .arch-svc-workflow__step {
   width: 100%;
-  max-width: 480px;
+  max-width: none;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+/* Mobile: one continuous wrapping chip row, centered — ignore Figma desktop row splits */
+.arch-svc-workflow__tags--mobile {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: 100%;
+}
+
+.arch-svc-workflow__tags--desktop {
+  display: none !important;
 }
 
 .arch-svc-workflow__step--discover {
@@ -171,6 +290,24 @@
   height: min(100vw, 320px);
   max-height: 320px;
   flex-shrink: 0;
+  align-self: center;
+}
+
+.arch-svc-workflow__tag {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap !important;
+  flex-shrink: 0;
+}
+
+.arch-svc-workflow__note {
+  margin-top: 24px;
+}
+
+@media (min-width: 1024px) {
+  .arch-svc-workflow__note {
+    margin-top: 40px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -186,6 +323,44 @@
     position: absolute;
     width: min(480px, 33.5%);
     max-width: 480px;
+    align-items: unset !important;
+    text-align: unset !important;
+  }
+
+  .arch-svc-workflow__tags--mobile {
+    display: none !important;
+  }
+
+  .arch-svc-workflow__tags--desktop {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .arch-svc-workflow__tag-row {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .arch-svc-workflow__step--discover .arch-svc-workflow__tags--desktop,
+  .arch-svc-workflow__step--improve .arch-svc-workflow__tags--desktop {
+    align-items: flex-end !important;
+  }
+
+  .arch-svc-workflow__step--integrate .arch-svc-workflow__tags--desktop,
+  .arch-svc-workflow__step--deliver .arch-svc-workflow__tags--desktop {
+    align-items: flex-start !important;
+  }
+
+  .arch-svc-workflow__step--discover .arch-svc-workflow__tag-row,
+  .arch-svc-workflow__step--improve .arch-svc-workflow__tag-row {
+    justify-content: flex-end !important;
+  }
+
+  .arch-svc-workflow__step--integrate .arch-svc-workflow__tag-row,
+  .arch-svc-workflow__step--deliver .arch-svc-workflow__tag-row {
+    justify-content: flex-start !important;
   }
 
   .arch-svc-workflow__step--discover {
@@ -221,6 +396,7 @@
     height: 400px;
     max-height: none;
     transform: translateX(-50%);
+    align-self: auto;
   }
 }
 
@@ -253,7 +429,7 @@
 
   .arch-svc-workflow__tag {
     font-size: 12px;
-    white-space: normal;
+    white-space: nowrap !important;
   }
 }
 
@@ -321,18 +497,35 @@
   }
 }
 
-.arch-svc-workflow__tag {
-  white-space: nowrap;
-}
-
 /* ------------------------------------------------------------------ */
 /* Why Choose VBS — clickable list + image                            */
 /* ------------------------------------------------------------------ */
+
+.arch-svc-why-continue__list {
+  gap: 0;
+}
+
+.arch-svc-why-continue__item-wrap {
+  display: flex;
+  flex-direction: column;
+}
 
 .arch-svc-why-continue__item {
   cursor: pointer;
   background: none;
   border: none;
+  padding-block: 24px;
+}
+
+.arch-svc-why-continue__divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    #cbcccd 0%,
+    rgba(203, 204, 205, 0.45) 55%,
+    transparent 100%
+  );
 }
 
 .arch-svc-why-continue__chevron {
@@ -386,6 +579,13 @@
 /* Engagement Models                                                  */
 /* ------------------------------------------------------------------ */
 
+.arch-svc-engagement__section-desc {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  color: #808080 !important;
+}
+
 .arch-svc-engagement__card {
   transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
@@ -401,37 +601,77 @@
 
 .arch-svc-engagement__badge {
   position: absolute;
-  top: -14px;
-  right: 20px;
+  top: -16px;
+  left: 20px;
   z-index: 3;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 30px;
+  height: 32px;
   padding: 6px 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #2299d6;
   color: #ffffff;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1;
+  text-transform: capitalize;
   white-space: nowrap;
 }
 
-.arch-svc-engagement__list-item {
-  position: relative;
-  padding-left: 14px;
+.arch-svc-engagement__card-title {
+  margin: 0 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  color: #d70416 !important;
 }
 
-.arch-svc-engagement__list-item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #808080;
+.arch-svc-engagement__headline {
+  margin: 0 !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  line-height: 26px !important;
+  color: #111111 !important;
+}
+
+.arch-svc-engagement__label {
+  margin: 0 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  color: #111111 !important;
+}
+
+.arch-svc-engagement__muted {
+  margin: 0 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  color: #808080 !important;
+}
+
+.arch-svc-engagement__ideal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.arch-svc-engagement__ideal-item {
+  margin: 0 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  color: #808080 !important;
+}
+
+.arch-svc-engagement__note-text {
+  margin: 0 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  color: #111111 !important;
 }
 
 .arch-svc-engagement__cta--filled.primary-cta {

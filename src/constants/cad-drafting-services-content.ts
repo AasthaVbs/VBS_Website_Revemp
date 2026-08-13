@@ -1,4 +1,16 @@
-import autoCadDraftingServicesImg from "@/assets/images/auto-cad-drafting-services.png";
+import autoCadDraftingOverviewImg from "@/assets/images/auto-cad-drafting-services-overview.jpg";
+import cadConversionImg from "@/assets/images/cad-conversion.jpg";
+import cadDraftingBannerImg from "@/assets/images/cad-drafting-services-banner.jpg";
+import twoDAndThreeDCadDraftingImg from "@/assets/images/2d-and-3d-cad-drafting.jpg";
+import incorporateRedlineMarkupImg from "@/assets/images/incorporate-redline-and-markup.jpg";
+import permitConstructionDrawingSetsImg from "@/assets/images/permit-and-construction-drawing-sets.jpg";
+import architecturalCadDraftingServicesImg from "@/assets/images/architectural-cad-drafting-services.jpg";
+import structuralCadDraftingServicesImg from "@/assets/images/structural-cad-drafting-services.jpg";
+import facadeCadDraftingServicesImg from "@/assets/images/facade-cad-drafting-services.jpg";
+import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
+import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
+import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
+import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -22,7 +34,7 @@ export const cadDraftingHero = {
   description:
     "Our pre-vetted, US-trained CAD drafters will take care of detailed CAD drawing and AutoCAD drafting services for you so your design team can concentrate on core work.",
   ctaLabel: "Connect With Us",
-  imageSrc: "/image/cad-drafting-banner.png",
+  imageSrc: cadDraftingBannerImg,
   imageAlt: "CAD Drafting Services",
   copyMaxWidth: 670,
   descriptionMaxWidth: 670,
@@ -47,7 +59,7 @@ export const cadDraftingIntro = {
     "QA/QC checks are built into every drawing before it gets to your desk",
     "Deliverables from redlines, to permit sets, to full construction documentation",
   ],
-  mainImage: autoCadDraftingServicesImg,
+  mainImage: autoCadDraftingOverviewImg,
   imageAlt: "CAD Drafting overview",
 };
 
@@ -77,40 +89,40 @@ export const cadDraftingServiceCards = [
   {
     title: "CAD Conversion",
     text: "We transform hand sketches, paper drawings, PDFs and scanned images into editable DWG or DXF files. All outputs preserve your layers, dimensions and title blocks for smooth handoffs.",
-    image: "/image/bulk-drawing-conversion-2d-drafting-tabs-img.jpg",
+    image: cadConversionImg.src,
     href: ROUTES.pdfToCad,
   },
   {
     title: "2D and 3D CAD Drafting",
     text: "Our team provides 2D & 3D CAD drawing services throughout all phases of the project from concept to construction. We also deliver clean 2D plans and sections from complex 3D models.",
-    image: encodeURI("/image/2D AutoCAD drawing.jpg"),
+    image: twoDAndThreeDCadDraftingImg.src,
     href: ROUTES.twoDDrafting,
   },
   {
     title: "Incorporate Redline and Markup",
     text: "We are incredibly careful with every detail when we update redlines and markups. We ensure annotation standards and version control are consistent, so the intent of your project remains clear with our AutoCAD drafting services.",
-    image: "/image/auto-cad-drafting-tabs-img.jpg",
+    image: incorporateRedlineMarkupImg.src,
   },
   {
     title: "Permit & Construction Drawing Sets",
     text: "We prepare full permit-ready and construction documentation sets that meet US codes and local jurisdiction rules. When you outsource CAD drafting services in the USA to us, drawings pass inspection the first time.",
-    image: "/image/cad-drafting-services-banner-solutions-1.jpg",
+    image: permitConstructionDrawingSetsImg.src,
   },
   {
     title: "Architectural CAD Drafting Services",
     text: "We handle CAD drawing services for residential, commercial and industrial architecture projects. Deliverables include floor plans, sections, elevations and reflected ceiling plans built to your templates and codes.",
-    image: "/image/architectural-cad-drafting.png",
+    image: architecturalCadDraftingServicesImg.src,
     href: ROUTES.architecturalDrafting,
   },
   {
     title: "Structural CAD Drafting Services",
     text: "From framing plans to reinforcement detailing, our AutoCAD drafting services support structural engineers with clean, coordinated drawings. Every sheet integrates smoothly with your architectural and MEP sets.",
-    image: encodeURI("/image/Structural and Architectural BIM Services.jpg"),
+    image: structuralCadDraftingServicesImg.src,
   },
   {
     title: "Facade CAD Drafting Services",
     text: "Our facade drafting team supports curtain wall and cladding systems with shop drawings, fabrication details and panel layouts. We give complex facade projects the CAD drafting support they need.",
-    image: "/image/cad-elevation-drawings-tabs-img.jpg",
+    image: facadeCadDraftingServicesImg.src,
   },
 ];
 
@@ -176,44 +188,164 @@ export const cadDraftingWhyChooseItems = [
   },
 ] as const;
 
-export const cadDraftingWorkflowSection = {
+export const cadDraftingWorkflowIntegrateSection = {
   tag: "Workflow",
-  titleLine1: "Our Process Flow for ",
-  titleLine2: "CAD Drafting Services",
+  titleParts: [
+    {
+      text: "Our Process Flow for ",
+      className: "text-section font-medium text-[#111111] capitalize",
+    },
+    {
+      text: "CAD Drafting Services",
+      className: "text-section text-accent font-light capitalize",
+    },
+  ],
   description:
-    "For each project, we follow a systematic 6 step process from initial scope to final delivery, with clear checkpoints at each stage.",
+    "For each project, we follow a systematic 4 step process from initial scope to final delivery, with clear checkpoints at each stage.",
+  note: {
+    text: 'Our process is designed to get your projects moving quickly. We don\'t wait until onboarding is "finished" to create value—we begin production as soon as the essential alignment is complete and continue improving the partnership with every project.',
+  },
+  centerLogo: workflowLogo,
 };
 
-export const cadDraftingWorkflowSteps = [
+export const cadDraftingWorkflowIntegrateSteps = [
   {
-    number: "01",
-    title: "Project Scope and Standards Development",
-    text: "Your drawing standards, templates and project requirements are looked at at the start. This step sets clear expectations so drafters can match your format from the very first sheet.",
+    id: "discover",
+    color: "#F0B300",
+    tint: "rgba(240, 179, 0, 0.10)",
+    position: "top-left",
+    number: "01. Discover",
+    title: "Understanding Your Practice",
+    body: "Before production begins, we take time to understand how your team works so we can align with your expectations from day one.",
+    tagRows: [
+      ["Project Goals", "Workflow", "Standards", "QA/QC", "Communication"],
+      ["Technology Stack"],
+    ],
   },
   {
-    number: "02",
-    title: "Drafter Matching and Team Setup",
-    text: "We match your project with drafters who know your discipline and software. Most clients get a dedicated CAD drafter ready to start within 24 hours of approval.",
+    id: "integrate",
+    color: "#2299D6",
+    tint: "rgba(34, 153, 214, 0.10)",
+    position: "top-right",
+    number: "02. Integrate",
+    title: "Align, Onboard & Start Production",
+    body: "We integrate with your team, configure project standards, and begin production as soon as the initial onboarding is complete. From this point forward, delivery and continuous learning happen together.",
+    tagRows: [
+      ["Team Alignment", "Templates", "File Structure", "Pilot Validation"],
+      ["Communication Rhythm", "Production Begins"],
+    ],
   },
   {
-    number: "03",
-    title: "Drafting and Documentation",
-    text: "Our drafters produce your drawings in AutoCAD or Revit, following your layer conventions and title blocks. Every sheet stays consistent with your existing documentation set.",
+    id: "deliver",
+    color: "#D70416",
+    tint: "#FBE6E8",
+    position: "bottom-right",
+    number: "03. Deliver",
+    title: "Reliable Project Delivery",
+    body: "With production underway, we focus on delivering consistent, high-quality work while maintaining complete transparency throughout the project.",
+    tagRows: [
+      [
+        { label: "BIM Production", tint: "#FBE6E8" },
+        { label: "Documentation", tint: "#FBE6E8" },
+        { label: "Coordination", tint: "#FBE6E8" },
+        { label: "QA/QC", tint: "#FBE6E8" },
+      ],
+      [
+        { label: "Milestone Reviews", tint: "rgba(215, 4, 22, 0.10)" },
+        { label: "Progress Updates", tint: "#FBE6E8" },
+      ],
+    ],
   },
   {
-    number: "04",
-    title: "AI powered Quality Checks",
-    text: "We perform a manual review, with AI-assisted checks, to catch clashes, missing dimensions and layer errors early. This step helps us to meet your project schedule and cuts rework.",
+    id: "improve",
+    color: "#42AA32",
+    tint: "rgba(66, 170, 50, 0.10)",
+    position: "bottom-left",
+    number: "04. Improve",
+    title: "Growing Stronger Together",
+    body: "As we complete projects together, we refine workflows, improve efficiency, and expand support making every project smoother than the last.",
+    tagRows: [
+      ["Feedback", "Workflow Optimization", "Efficiency", "Scalability"],
+      ["Continuous Improvement", "Knowledge Sharing"],
+      ["Continuous process refinement"],
+    ],
+  },
+];
+
+export const cadDraftingEngagementModelsSection = {
+  tag: "Engagement Models",
+  titleParts: [
+    {
+      text: "Flexible Engagement Models Built Around ",
+      className: "text-section font-medium text-[#111111] capitalize",
+    },
+    {
+      text: "Your Delivery Needs",
+      className: "text-section text-accent font-light capitalize",
+    },
+  ],
+  description:
+    "Whether you need project-based CAD drafting support, a dedicated remote team, or a fully managed global delivery center, our engagement models are designed to scale with your business.",
+  note: {
+    text: "Every strategic partnership begins with one successful project. Each engagement helps us understand your practice more deeply, making every future collaboration faster, smoother, and more valuable.",
+  },
+};
+
+export const cadDraftingEngagementModelsCards = [
+  {
+    icon: flexibleEngagementModelsIcon,
+    title: "Project Engagement",
+    headline: "Best for immediate project support.",
+    idealLabel: "Ideal for firms that:",
+    idealItems: [
+      "Have won a larger or more complex project.",
+      "Need additional delivery capacity.",
+      "Want to evaluate VBS before expanding.",
+    ],
+    nextLabel: "What happens next?",
+    nextText:
+      "While we deliver your project, we learn your standards, workflows, and preferences—creating a stronger foundation for future collaboration.",
+    ctaLabel: "Start a Project",
+    ctaHref: "#cad-drafting-page-contact",
+    ctaVariant: "outline" as const,
+    featured: false,
   },
   {
-    number: "05",
-    title: "Client Review and Corrections",
-    text: "You annotate changes to drawings on your preferred platform. Our drafters update the changes in real time so that your project continues without any delays.",
+    icon: iconEngageDedicated,
+    title: "Dedicated Architecture Team",
+    headline: "Best when delivery support becomes ongoing.",
+    idealLabel: "Ideal for firms that:",
+    idealItems: [
+      "Consistent project pipelines.",
+      "Multiple active projects.",
+      "Long-term production requirements.",
+    ],
+    nextLabel: "What changes?",
+    nextText:
+      "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
+    ctaLabel: "Build your Team",
+    ctaHref: ROUTES.dedicatedTeam,
+    ctaVariant: "solid" as const,
+    featured: true,
+    badge: "Most Demanding",
   },
   {
-    number: "06",
-    title: "Final Delivery & Handover",
-    text: "We deliver final files in the format you require, fully organized and ready for permit submittal or construction. Your team gets documentation that's clean and clear. No extra cleanup needed.",
+    icon: iconEngageStrategic,
+    title: "Strategic Delivery Partnership",
+    headline: "Built on trust, not contracts.",
+    idealLabel: "Ideal for firms focused on:",
+    idealItems: [
+      "Sustainable growth.",
+      "Standardized delivery.",
+      "Long-term operational scalability.",
+    ],
+    nextLabel: "The result",
+    nextText:
+      "VBS becomes a trusted extension of your practice, helping you increase delivery capability while preserving your firm's identity.",
+    ctaLabel: "Explore GDC Model",
+    ctaHref: ROUTES.engagement,
+    ctaVariant: "outline" as const,
+    featured: false,
   },
 ];
 

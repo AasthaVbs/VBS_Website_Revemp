@@ -4,7 +4,7 @@ import { HiddenCostWhitepaperView } from "@/components/whitepaper/hidden-cost-wh
 import { hiddenCostWhitepaperContent as content } from "@/constants/whitepaper-hidden-cost-content";
 
 export const metadata: Metadata = {
-  title: `${content.seoTitle} | Virtual Building Studio`,
+  title: content.seoTitle,
   description: content.seoDescription,
   openGraph: {
     title: content.seoTitle,

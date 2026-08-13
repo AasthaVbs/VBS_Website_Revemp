@@ -44,12 +44,13 @@ export function ArchitectureWhyContinueSection({
             <ul className="arch-svc-why-continue__list flex w-full flex-col">
               {items.map((item, index) => {
                 const isActive = index === activeIndex;
+                const isLast = index === items.length - 1;
                 return (
-                  <li key={item.title} className="arch-svc-why-continue__item-wrap border-b border-[#CBCCCD] last:border-b-0">
+                  <li key={item.title} className="arch-svc-why-continue__item-wrap">
                     <button
                       type="button"
                       onClick={() => setActiveIndex(index)}
-                      className="arch-svc-why-continue__item flex w-full items-center justify-between gap-4 py-4 text-left"
+                      className="arch-svc-why-continue__item flex w-full items-center justify-between gap-4 text-left"
                       aria-pressed={isActive}
                     >
                       <span
@@ -78,6 +79,9 @@ export function ArchitectureWhyContinueSection({
                         </svg>
                       </span>
                     </button>
+                    {!isLast ? (
+                      <div className="arch-svc-why-continue__divider" aria-hidden />
+                    ) : null}
                   </li>
                 );
               })}

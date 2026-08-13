@@ -96,27 +96,38 @@
     width: 100%;
     min-width: 0;
     overflow: hidden;
+    background: #ffffff;
   }
 
   .bim-resources__zoho-iframe.vbs-zoho-iframe-form {
     position: relative;
     width: 100%;
     min-width: 0;
-    height: var(--vbs-zoho-iframe-visible-height, 520px) !important;
-    min-height: var(--vbs-zoho-iframe-visible-height, 520px);
-    max-height: var(--vbs-zoho-iframe-visible-height, 520px);
+    height: var(--vbs-zoho-iframe-visible-height, 355px) !important;
+    min-height: var(--vbs-zoho-iframe-visible-height, 355px);
+    max-height: var(--vbs-zoho-iframe-visible-height, 355px);
     overflow: hidden;
-    background: transparent;
+    background: #ffffff;
+  }
+
+  /* Shift up to hide Zoho title; widen to clip gray gutters around the form card */
+  .bim-resources__zoho-iframe .vbs-zoho-iframe-form__shift {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    transform: translate3d(0, calc(-1 * var(--vbs-zoho-iframe-header-crop, 140px)), 0);
+    will-change: transform;
+    background: #ffffff;
   }
 
   .bim-resources__zoho-frame {
     display: block;
-    width: 99% !important;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: none;
     margin: 0;
     border: none !important;
-    background: transparent !important;
-    height: var(--vbs-zoho-iframe-full-height, 520px) !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    height: var(--vbs-zoho-iframe-full-height, 640px) !important;
   }
 }
 

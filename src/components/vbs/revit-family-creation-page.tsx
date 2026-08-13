@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { ArchitectureAiBimWorkflowSection } from "@/components/sections/architecture/architecture-ai-bim-workflow-section";
+import { ArchitectureIntegrateWorkflowSection } from "@/components/sections/architecture/architecture-integrate-workflow-section";
 import { BimModelingOverviewSection } from "@/components/sections/bim-modeling/bim-modeling-overview-section";
 import { BimModelingWhyChooseSection } from "@/components/sections/bim-modeling/bim-modeling-why-choose-section";
 import { MepFullSpectrumServicesSection } from "@/components/sections/mep/figma/mep-full-spectrum-services-section";
@@ -29,8 +30,8 @@ import {
   revitFamilyCreationTestimonialsDescription,
   revitFamilyCreationWhyChooseItems,
   revitFamilyCreationWhyChooseSection,
-  revitFamilyCreationWorkflowSection,
-  revitFamilyCreationWorkflowSteps,
+  revitFamilyCreationWorkflowIntegrateSection,
+  revitFamilyCreationWorkflowIntegrateSteps,
 } from "@/constants/revit-family-creation-content";
 import {
   DeferredClientSuccessStoriesSection,
@@ -41,7 +42,6 @@ import {
   DeferredIndustriesSection,
   DeferredMepResourcesSection,
   DeferredMepServiceBenefitsSection,
-  DeferredMepWorkflowSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
 import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
@@ -79,9 +79,10 @@ export async function RevitFamilyCreationPage() {
           items={revitFamilyCreationWhyChooseItems}
           descriptionMaxWidth={revitFamilyCreationWhyChooseSection.descriptionMaxWidth}
         />
-        <DeferredMepWorkflowSection
-          section={revitFamilyCreationWorkflowSection}
-          steps={revitFamilyCreationWorkflowSteps}
+        <ArchitectureIntegrateWorkflowSection
+          section={revitFamilyCreationWorkflowIntegrateSection}
+          steps={revitFamilyCreationWorkflowIntegrateSteps}
+          headerAlign="center"
         />
         <MepBimTechnologyStackSection
           section={revitFamilyCreationTechnologyStackSection}

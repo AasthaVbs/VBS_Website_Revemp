@@ -4,9 +4,9 @@ import { DedicatedRemoteArchitectVsFreelancerVsFullTimeView } from "@/components
 
 export const metadata: Metadata = {
   title:
-    "Dedicated Remote Architect vs Freelancer vs Full-Time | Capacity Decision Framework",
+    "Dedicated Remote Architect vs Freelancer vs Full-Time Hire | VBS",
   description:
-    "Compare how hiring in-house, freelancers, or dedicated remote architects impacts delivery pressure, drawing workflows, and coordination before you add capacity.",
+    "Struggling with delivery pressure? Compare remote architects, freelancers, and in-house hires to choose the right model for faster, more predictable project delivery.",
 };
 
 export default function DedicatedRemoteArchitectVsFreelancerVsFullTimePage() {

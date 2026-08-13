@@ -289,7 +289,7 @@
   }
 
   &--h-scroll &__section-desc {
-    max-width: 833px !important;
+    max-width: var(--services-desc-max-w, 833px) !important;
   }
 
   &--h-scroll &__carousel-viewport {
@@ -401,7 +401,7 @@
   }
 
   &__section-desc {
-    max-width: 833px !important;
+    max-width: var(--services-desc-max-w, 833px) !important;
     padding-top: 4px !important;
     padding-bottom: 4px !important;
     font-size: 16px !important;
@@ -3393,7 +3393,7 @@
 .mep-bim-services-page,
 .architecture-services-page,
 .scan-to-bim-services-page {
-  --vbs-mep-section-pad-y: 64px;
+  --vbs-mep-section-pad-y: 48px;
 
   main>section:not(.mep-page-hero):not(.mep-figma-services--h-scroll):not(.vbs-mep-stats-strip):not(.mep-trusted-by-strip):not(.mep-figma-what-you-get):not(.mep-figma-overview):not(.mep-figma-ai-bim-workflow):not(.ads-usa-hero):not(.abs-usa-hero):not(.trs-usa-hero) {
     padding-top: var(--vbs-mep-section-pad-y) !important;
@@ -4278,7 +4278,7 @@
   }
 
   @media (max-width: 1023px) {
-    --vbs-mep-section-pad-y: 56px;
+    --vbs-mep-section-pad-y: 48px;
 
     .mep-figma-overview,
     .mep-figma-what-you-get,
@@ -4588,6 +4588,11 @@
 
 /* ── Architecture services hero — larger cover image + home-matching type ── */
 .architecture-services-page {
+  /* No right-edge white fade over the hero photo */
+  .mep-page-hero__fade-right {
+    display: none !important;
+  }
+
   /* Match home page heading scale on large desktops */
   h1 {
     font-size: 54px !important;
@@ -4617,16 +4622,18 @@
   @media (min-width: 1024px) {
     .mep-page-hero--overlay .mep-page-hero__media {
       height: auto !important;
+      min-height: 0 !important;
       bottom: auto !important;
+      aspect-ratio: 1024 / 607 !important;
     }
   }
 
-  /* Mid laptops (~1200px): keep title readable without colliding with image */
-  @media (min-width: 1024px) and (max-width: 1366px) {
+  /* Mid laptops (~1200–1440): keep title readable without colliding with image */
+  @media (min-width: 1024px) and (max-width: 1439px) {
     h1,
     .mep-page-hero--overlay h1,
     .mep-page-hero--overlay h1 span {
-      font-size: 38px !important;
+      font-size: 40px !important;
       line-height: 1.15 !important;
     }
   }
@@ -4726,38 +4733,53 @@
     }
 
     @media (min-width: 1024px) {
-      min-height: calc(min(58vw, 1100px) * 607 / 1024) !important;
+      /* Height follows fixed media ratio — never stretch with copy */
+      min-height: calc(min(52vw, 980px) * 607 / 1024) !important;
       padding-bottom: 0 !important;
 
       .mep-page-hero__media {
         display: block !important;
-        width: min(58%, 1100px) !important;
-        max-width: 1100px !important;
+        position: absolute !important;
+        width: min(52%, 980px) !important;
+        max-width: 980px !important;
         aspect-ratio: 1024 / 607 !important;
         top: 0 !important;
+        right: 0 !important;
         bottom: auto !important;
         height: auto !important;
+        max-height: none !important;
+        min-height: 0 !important;
         margin-top: 0 !important;
+        overflow: hidden !important;
 
-        img {
-          object-fit: contain !important;
-          object-position: top right !important;
+        img,
+        .mep-page-hero__photo {
+          position: absolute !important;
+          inset: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          max-width: none !important;
+          object-fit: cover !important;
+          object-position: center right !important;
         }
       }
 
       .mep-page-hero__copy-wrap {
-        padding-top: 100px !important;
+        padding-top: 80px !important;
         padding-bottom: 40px !important;
       }
     }
 
-    /* Mid laptops (~12"): keep copy clear of hero image, avoid collision */
-    @media (min-width: 1024px) and (max-width: 1366px) {
-      min-height: calc(min(52vw, 680px) * 607 / 1024) !important;
+    /* Laptops & small desktops (<1440): keep ratio, shrink media so copy stays clear */
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      min-height: calc(min(46vw, 640px) * 607 / 1024) !important;
 
       .mep-page-hero__media {
-        width: min(50%, 640px) !important;
-        max-width: 640px !important;
+        width: min(46%, 600px) !important;
+        max-width: 600px !important;
+        aspect-ratio: 1024 / 607 !important;
+        height: auto !important;
+        min-height: 0 !important;
       }
 
       .mep-page-hero__copy-wrap {
@@ -4765,33 +4787,34 @@
         padding-bottom: 28px !important;
 
         > div {
-          max-width: min(520px, 46%) !important;
+          max-width: min(560px, 50%) !important;
         }
 
         h1,
         p {
-          max-width: min(520px, 100%) !important;
+          max-width: min(560px, 100%) !important;
         }
       }
 
       .mep-page-hero__media > div[aria-hidden] {
-        width: min(52%, 220px) !important;
+        width: min(48%, 200px) !important;
       }
     }
 
     @media (min-width: 1024px) and (max-width: 1199px) {
-      min-height: calc(min(48vw, 560px) * 607 / 1024) !important;
+      min-height: calc(min(44vw, 520px) * 607 / 1024) !important;
 
       .mep-page-hero__media {
-        width: min(46%, 520px) !important;
-        max-width: 520px !important;
+        width: min(44%, 480px) !important;
+        max-width: 480px !important;
+        aspect-ratio: 1024 / 607 !important;
       }
 
       .mep-page-hero__copy-wrap {
         padding-top: 40px !important;
 
         > div {
-          max-width: min(460px, 50%) !important;
+          max-width: min(460px, 52%) !important;
         }
 
         h1,

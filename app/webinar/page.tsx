@@ -10,9 +10,9 @@ import {
 import { buildResourceCatalogLive } from "@/lib/resource-catalog";
 
 export const metadata: Metadata = {
-  title: "Webinars | Virtual Building Studio",
+  title: "Join our live and On Demand Webinar for Architect & Engineers",
   description:
-    "Watch on-demand and upcoming Virtual Building Studio webinars on BIM, MEP engineering, and delivery for architecture and engineering firms.",
+    "Join free live and on-demand webinars for architects and engineers. Earn AIA HSW credits and stay updated on industry trends anytime.",
 };
 
 export default async function WebinarPage() {

@@ -48,7 +48,7 @@ export const architectureHero = {
   secondaryCtaHref: "#services",
   imageSrc: architecturalStructuralServiceImg,
   imageAlt: "architectural-structural-service",
-  copyMaxWidth: 773,
+  copyMaxWidth: 820,
   descriptionMaxWidth: 744,
 };
 

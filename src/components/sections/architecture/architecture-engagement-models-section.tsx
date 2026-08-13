@@ -1,3 +1,4 @@
+import type { StaticImageData } from "next/image";
 import Image from "next/image";
 
 import { PageContainer } from "@/components/layout/page-container";
@@ -9,17 +10,37 @@ import {
 } from "@/constants/architecture-services-redesign-content";
 import { altFromImageSrc, cn } from "@/lib/utils";
 
-type EngagementCard = (typeof architectureEngagementModelsCards)[number] & {
+export type EngagementModelsCard = {
+  icon: string | StaticImageData;
+  title: string;
+  headline: string;
   description?: string;
+  idealLabel: string;
+  idealItems: string[];
+  nextLabel: string;
+  nextText: string;
+  ctaLabel: string;
+  ctaHref: string;
+  ctaVariant: "outline" | "solid" | string;
+  featured?: boolean;
+  badge?: string;
 };
 
-function EngagementCardArticle({ card }: { card: EngagementCard }) {
+export type EngagementModelsSectionContent = {
+  tag: string;
+  titleParts: { text: string; className: string }[];
+  description: string;
+  descriptionMaxWidth?: number;
+  note?: { text: string };
+};
+
+function EngagementCardArticle({ card }: { card: EngagementModelsCard }) {
   const isSolid = card.ctaVariant === "solid";
 
   return (
     <article
       className={cn(
-        "arch-svc-engagement__card relative flex min-w-0 flex-col gap-5 rounded-[10px] border border-[#CBCCCD] bg-white p-6",
+        "arch-svc-engagement__card relative flex min-w-0 flex-col gap-5 rounded-[10px] border border-[#CBCCCD] bg-white p-5",
         card.featured && "arch-svc-engagement__card--featured",
       )}
     >
@@ -35,47 +56,60 @@ function EngagementCardArticle({ card }: { card: EngagementCard }) {
         />
       </div>
 
-      <p className="text-[16px] font-medium leading-6 text-[#D70416]">{card.title}</p>
+      <p className="arch-svc-engagement__card-title">{card.title}</p>
 
-      <div className="flex flex-col gap-2.5">
-        <p className="text-[20px] font-medium leading-[26px] text-[#111111]">{card.headline}</p>
-        {card.description ? (
-          <p className="text-[16px] font-medium leading-6 text-[#808080]">{card.description}</p>
-        ) : null}
-        <div className="flex flex-col gap-2.5">
-          <p className="text-[16px] font-medium leading-6 text-[#111111]">{card.idealLabel}</p>
-          <ul className="m-0 list-disc space-y-0 pl-6">
-            {card.idealItems.map((item) => (
-              <li key={item} className="text-[16px] leading-[26px] text-[#808080]">
-                {item}
-              </li>
-            ))}
-          </ul>
+      <div className="arch-svc-engagement__card-body flex min-h-0 w-full flex-1 flex-col justify-between gap-5">
+        <div className="flex w-full flex-col gap-2.5">
+          <p className="arch-svc-engagement__headline">{card.headline}</p>
+          {card.description ? (
+            <p className="arch-svc-engagement__muted">{card.description}</p>
+          ) : null}
+
+          <div className="flex w-full flex-col gap-2.5">
+            <p className="arch-svc-engagement__label">{card.idealLabel}</p>
+            <div className="arch-svc-engagement__ideal-list">
+              {card.idealItems.map((item) => (
+                <p key={item} className="arch-svc-engagement__ideal-item">
+                  {item}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex w-full flex-col gap-2.5">
+            <p className="arch-svc-engagement__label">{card.nextLabel}</p>
+            <p className="arch-svc-engagement__muted">{card.nextText}</p>
+          </div>
         </div>
-        <div className="flex flex-col gap-2.5">
-          <p className="text-[16px] font-medium leading-6 text-[#111111]">{card.nextLabel}</p>
-          <p className="text-[16px] font-normal leading-[26px] text-[#808080]">{card.nextText}</p>
-        </div>
+
+        <PrimaryCtaButton
+          fullWidth
+          href={card.ctaHref}
+          className={cn(
+            "arch-svc-engagement__cta",
+            isSolid && "primary-cta--highlighted arch-svc-engagement__cta--filled",
+          )}
+        >
+          {card.ctaLabel}
+        </PrimaryCtaButton>
       </div>
-
-      <PrimaryCtaButton
-        fullWidth
-        href={card.ctaHref}
-        className={cn("arch-svc-engagement__cta", isSolid && "primary-cta--highlighted arch-svc-engagement__cta--filled")}
-      >
-        {card.ctaLabel}
-      </PrimaryCtaButton>
     </article>
   );
 }
 
+/**
+ * Shared 3-card engagement models section.
+ * Pass page-specific `section` + `cards` (defaults = architecture-services).
+ */
 export function ArchitectureEngagementModelsSection({
   section = architectureEngagementModelsSection,
   cards = architectureEngagementModelsCards,
 }: {
-  section?: typeof architectureEngagementModelsSection;
-  cards?: readonly EngagementCard[];
+  section?: EngagementModelsSectionContent;
+  cards?: readonly EngagementModelsCard[];
 }) {
+  const descriptionMaxWidth = section.descriptionMaxWidth ?? 750;
+
   return (
     <section id="engagement-models" className="arch-svc-engagement bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-start gap-10 lg:gap-[60px]">
@@ -90,20 +124,23 @@ export function ArchitectureEngagementModelsSection({
               ))}
             </h2>
           </div>
-          <p className="w-full max-w-[813px] text-[16px] font-normal leading-6 text-[#808080]">
+          <p
+            className="arch-svc-engagement__section-desc w-full"
+            style={{ maxWidth: `${descriptionMaxWidth}px` }}
+          >
             {section.description}
           </p>
         </div>
 
-        <div className="arch-svc-engagement__grid grid w-full grid-cols-1 gap-5 lg:grid-cols-3">
+        <div className="arch-svc-engagement__grid grid w-full grid-cols-1 items-stretch gap-5 lg:grid-cols-3">
           {cards.map((card) => (
             <EngagementCardArticle key={card.title} card={card} />
           ))}
         </div>
 
         {section.note ? (
-          <div className="w-full rounded-[10px] border border-[#42AA32] bg-[#F8FFFA] p-5">
-            <p className="m-0 text-[16px] font-normal leading-6 text-[#111111]">{section.note.text}</p>
+          <div className="arch-svc-engagement__note w-full rounded-[10px] border border-[#42AA32] bg-[#F8FFFA] p-5">
+            <p className="arch-svc-engagement__note-text m-0">{section.note.text}</p>
           </div>
         ) : null}
       </PageContainer>

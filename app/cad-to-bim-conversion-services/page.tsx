@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { CadToBimConversionServicesPage } from "@/components/vbs/cad-to-bim-conversion-services-page";
 
 export const metadata: Metadata = {
-  title: "CAD to BIM Conversion Services | BIM Architects | Virtual Building Studio",
+  title: "CAD to BIM Conversion Services USA",
   description:
-    "CAD to BIM conversion by US-trained BIM architects. Convert 2D/3D CAD and PDF drawings into accurate Revit models for coordination, clash detection, and delivery.",
+    "Expert CAD to BIM Conversion Services: From PDF to BIM, Clash Detection, and BIM Coordination to Lifecycle Modeling and Object Tagging, we ensure accuracy and efficiency in every project.",
 };
 
 export default function Page() {

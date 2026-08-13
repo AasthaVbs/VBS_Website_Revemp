@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, type RefObject } from "react";
+import { useRef, type CSSProperties, type RefObject } from "react";
 import { ChevronRightIcon } from "@/components/icons/chevron-right-icon";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { VbsLink } from "@/components/ui/vbs-link";
@@ -45,6 +45,7 @@ export type StickyServicesSectionContent = {
   ctaHref?: string;
   wideCards?: boolean;
   titleMaxWidth?: number;
+  descriptionMaxWidth?: number;
 };
 
 export type StickyHorizontalServicesSectionProps = {
@@ -216,7 +217,16 @@ function SectionHeader({
           </span>
         </h2>
       </div>
-      <p className={cn("mep-figma-services__section-desc", descriptionClassName)}>
+      <p
+        className={cn("mep-figma-services__section-desc", descriptionClassName)}
+        style={
+          section.descriptionMaxWidth
+            ? ({
+                ["--services-desc-max-w"]: `${section.descriptionMaxWidth}px`,
+              } as CSSProperties)
+            : undefined
+        }
+      >
         {section.description}
       </p>
     </header>

@@ -1,9 +1,25 @@
-import architecturalBimModelingImg from "@/assets/images/architectural-bim-modeling.jpg";
-import cadToBimImg from "@/assets/images/cad-to-bim.jpg";
-import revitFamilyImg from "@/assets/images/revit-family.jpg";
-import structuralArchitecturalBimServicesImg from "@/assets/images/structural-architectural-bim-services-for-project 1.jpg";
-import structuralBimServicesImg from "@/assets/images/structural-bim-services.jpg";
+import threeDVisualizationServiceImg from "@/assets/images/3d-visualization-service.jpg";
+import bimArchitecturalModelingImg from "@/assets/images/bim-architectural-modeling.jpg";
+import bimClashCoordinationImg from "@/assets/images/bim-clash-coordination.jpg";
+import bimModelingBannerImg from "@/assets/images/bim-modeling-banner.jpg";
+import bimModelingOverviewImg from "@/assets/images/bim-modeling-overview.jpg";
+import bimStructuralModelingImg from "@/assets/images/bim-structural-modeling.jpg";
+import bimToCadConversionsImg from "@/assets/images/bim-to-cad-conversions.jpg";
+import creatingFamiliesRevitImg from "@/assets/images/creating-families-revit.jpg";
+import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
+import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
+import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
+import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
+import lodBasedBimModelingImg from "@/assets/images/lod-based-bim-modeling.jpg";
+import shopBuildingDrawingImg from "@/assets/images/shop-building-drawing.jpg";
+import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
+import {
+  mepBimTechnologyStackToolsRowOne,
+  mepBimTechnologyStackToolsRowTwo,
+} from "@/constants/mep-bim-modelling-content";
 import { ROUTES } from "@/constants/navigation";
+import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
 export const bimModelingStatsStrip = [
   { value: "2000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -19,7 +35,7 @@ export const bimModelingHero = {
   description:
     "Our US trained pre-vetted BIM modelers use AI-driven workflow to offer Revit BIM modeling services to meet your needs for compliance, coordination and constructability.",
   ctaLabel: "Contact us Now",
-  imageSrc: "/images/bim-modeling/bim-modeling-hero.jpg",
+  imageSrc: bimModelingBannerImg,
   imageAlt: "BIM Modeling Services residential visualization",
   copyMaxWidth: 670,
   descriptionMaxWidth: 564,
@@ -45,7 +61,7 @@ export const bimModelingIntro = {
     "Automated drawings, quantity take-offs, and schedules via Revit",
     "As-built and FM-ready models compliant with COBie, ISO 19650, and client standards",
   ],
-  mainImage: structuralArchitecturalBimServicesImg,
+  mainImage: bimModelingOverviewImg,
   imageAlt: "3D BIM modeling services overview",
 };
 
@@ -72,48 +88,48 @@ export const bimModelingServiceCards = [
   {
     title: "BIM Architectural Modeling",
     text: "Translate design concepts into intelligent, coordinated Revit models that accurately reflect spatial relationships, design intent, specifications and code requirements for more efficient project execution and documentation.",
-    image: architecturalBimModelingImg.src,
+    image: bimArchitecturalModelingImg.src,
     href: ROUTES.architecturalBim,
   },
   {
     title: "BIM Structural Modeling",
     text: "Coordinate with architectural and MEP disciplines to develop accurate concrete, steel and precast structural models, minimize clashes and enable efficient construction planning.",
-    image: structuralBimServicesImg.src,
+    image: bimStructuralModelingImg.src,
     href: ROUTES.structuralBim,
   },
   {
     title: "LOD-Based BIM Modeling",
     text: "Get BIM models during the whole project life cycle with proper geometric information and fidelity of data according to industry standards.",
-    image: "/images/mep/lod/lod-300-233d41.png",
+    image: lodBasedBimModelingImg.src,
   },
   {
     title: "Creating Families in Revit",
     text: "Custom Parametric Revit Families include accurate geometry and embedded information for better model consistency, scheduling, quantification, coordination and life cycle management.",
-    image: revitFamilyImg.src,
+    image: creatingFamiliesRevitImg.src,
     href: ROUTES.revitFamilies,
   },
   {
     title: "BIM Clash Coordination",
     text: "Resolve multi disciplinary conflicts before construction to reduce field conflicts, avoid costly rework and improve cooperation among project stakeholders.",
-    image: "/images/mep/full-spectrum/mep-clash-detection.png",
+    image: bimClashCoordinationImg.src,
     href: ROUTES.mepCoordination,
   },
   {
     title: "Shop or Building Drawing",
     text: "Generate detailed fabrication shop drawings directly from coordinated BIM models, enhancing constructability, installation accuracy and communication between project teams and trades.",
-    image: "/images/mep/full-spectrum/mep-shop-drawing.png",
+    image: shopBuildingDrawingImg.src,
     href: ROUTES.shopDrawings,
   },
   {
     title: "3D Visualization Service",
     text: "Share design intent through realistic 3D views that let stakeholders experience spaces, spot potential problems and make better informed project decisions earlier.",
-    image: "/images/bim-modeling/bim-modeling-hero.jpg",
+    image: threeDVisualizationServiceImg.src,
     href: ROUTES.visualization,
   },
   {
     title: "BIM to CAD Conversions",
     text: "Convert old CAD drawings into intelligent BIM models to improve collaboration, coordination and accuracy of design through the project life cycle.",
-    image: cadToBimImg.src,
+    image: bimToCadConversionsImg.src,
     href: ROUTES.cadToBim,
   },
 ];
@@ -180,54 +196,166 @@ export const bimModelingWhyChooseItems = [
   },
 ] as const;
 
-export const bimModelingWorkflowSection = {
+export const bimModelingWorkflowIntegrateSection = {
   tag: "Workflow",
-  titleLine1: "Our Process Flow for ",
-  titleLine2: "BIM Modeling Services",
+  titleParts: [
+    {
+      text: "Our Process Flow for ",
+      className: "text-section font-medium text-[#111111] capitalize",
+    },
+    {
+      text: "BIM Modeling Services",
+      className: "text-section text-accent font-light capitalize",
+    },
+  ],
   description:
-    "AI based 6 step BIM workflow that takes project information to create coordinated, data rich models and provides reliable output for design, construction and facility management.",
+    "AI based 4 step BIM workflow that takes project information to create coordinated, data rich models and provides reliable output for design, construction and facility management.",
+  note: {
+    text: 'Our process is designed to get your projects moving quickly. We don\'t wait until onboarding is "finished" to create value—we begin production as soon as the essential alignment is complete and continue improving the partnership with every project.',
+  },
+  centerLogo: workflowLogo,
 };
 
-export const bimModelingWorkflowSteps = [
+export const bimModelingWorkflowIntegrateSteps = [
   {
-    number: "01",
-    title: "Project Kick-Off and BIM Execution Planning",
-    text: "The goal for the modeling is defined by reviewing project requirements, design documents, and CAD files. Set LOD, model standards, coordinate systems, naming conventions and collaboration protocols for consistent project delivery.",
+    id: "discover",
+    color: "#F0B300",
+    tint: "rgba(240, 179, 0, 0.10)",
+    position: "top-left",
+    number: "01. Discover",
+    title: "Understanding Your Practice",
+    body: "Before production begins, we take time to understand how your team works so we can align with your expectations from day one.",
+    tagRows: [
+      ["Project Goals", "Workflow", "Standards", "QA/QC", "Communication"],
+      ["Technology Stack"],
+    ],
   },
   {
-    number: "02",
-    title: "Data Collection and Model Building",
-    text: "The first step of model development is verification of the existing drawings, point cloud data, survey information and project references. Create a common BIM workflow by establishing shared coordinates, levels, grids, worksets and discipline specific templates.",
+    id: "integrate",
+    color: "#2299D6",
+    tint: "rgba(34, 153, 214, 0.10)",
+    position: "top-right",
+    number: "02. Integrate",
+    title: "Align, Onboard & Start Production",
+    body: "We integrate with your team, configure project standards, and begin production as soon as the initial onboarding is complete. From this point forward, delivery and continuous learning happen together.",
+    tagRows: [
+      ["Team Alignment", "Templates", "File Structure", "Pilot Validation"],
+      ["Communication Rhythm", "Production Begins"],
+    ],
   },
   {
-    number: "03",
-    title: "Generation of BIM Model",
-    text: "AI-assisted workflows accelerate BIM model development based on approved documentation and project requirements. Intelligent BIM elements incorporate accurate geometry, embedded information and discipline-specific data for effective project coordination.",
+    id: "deliver",
+    color: "#D70416",
+    tint: "#FBE6E8",
+    position: "bottom-right",
+    number: "03. Deliver",
+    title: "Reliable Project Delivery",
+    body: "With production underway, we focus on delivering consistent, high-quality work while maintaining complete transparency throughout the project.",
+    tagRows: [
+      [
+        { label: "BIM Production", tint: "#FBE6E8" },
+        { label: "Documentation", tint: "#FBE6E8" },
+        { label: "Coordination", tint: "#FBE6E8" },
+        { label: "QA/QC", tint: "#FBE6E8" },
+      ],
+      [
+        { label: "Milestone Reviews", tint: "rgba(215, 4, 22, 0.10)" },
+        { label: "Progress Updates", tint: "#FBE6E8" },
+      ],
+    ],
   },
   {
-    number: "04",
-    title: "Coordination & Clash Detection",
-    text: "Models from several disciplines are federated and checked for spatial conflicts and constructability problems. Clash detection, model audits and coordination reviews are used to identify and resolve potential issues before construction activities begin.",
-  },
-  {
-    number: "05",
-    title: "Quality Assurance and Documentation",
-    text: "BIM models are coordinated and reviewed to project standards, LOD requirements and client specifications. Drawing sheets, schedules, quantity information and model data are delivered under structured quality control processes.",
-  },
-  {
-    number: "06",
-    title: "Final Delivery and Model Transfer",
-    text: "Approved BIM models and project deliverables are created for use in design and construction or facility management. We deliver in RVT, IFC, NWC, DWG & PDF formats along with all documentation and project data required.",
+    id: "improve",
+    color: "#42AA32",
+    tint: "rgba(66, 170, 50, 0.10)",
+    position: "bottom-left",
+    number: "04. Improve",
+    title: "Growing Stronger Together",
+    body: "As we complete projects together, we refine workflows, improve efficiency, and expand support making every project smoother than the last.",
+    tagRows: [
+      ["Feedback", "Workflow Optimization", "Efficiency", "Scalability"],
+      ["Continuous Improvement", "Knowledge Sharing"],
+      ["Continuous process refinement"],
+    ],
   },
 ];
 
-import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
-import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
-import {
-  mepBimTechnologyStackToolsRowOne,
-  mepBimTechnologyStackToolsRowTwo,
-} from "@/constants/mep-bim-modelling-content";
-import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
+export const bimModelingEngagementModelsSection = {
+  tag: "Engagement Models",
+  titleParts: [
+    {
+      text: "Flexible Engagement Models Built Around ",
+      className: "text-section font-medium text-[#111111] capitalize",
+    },
+    {
+      text: "Your Delivery Needs",
+      className: "text-section text-accent font-light capitalize",
+    },
+  ],
+  description:
+    "Whether you need project-based BIM support, a dedicated remote team, or a fully managed global delivery center, our engagement models are designed to scale with your business.",
+  note: {
+    text: "Every strategic partnership begins with one successful project. Each engagement helps us understand your practice more deeply, making every future collaboration faster, smoother, and more valuable.",
+  },
+};
+
+export const bimModelingEngagementModelsCards = [
+  {
+    icon: flexibleEngagementModelsIcon,
+    title: "Project Engagement",
+    headline: "Best for immediate project support.",
+    idealLabel: "Ideal for firms that:",
+    idealItems: [
+      "Have won a larger or more complex project.",
+      "Need additional delivery capacity.",
+      "Want to evaluate VBS before expanding.",
+    ],
+    nextLabel: "What happens next?",
+    nextText:
+      "While we deliver your project, we learn your standards, workflows, and preferences—creating a stronger foundation for future collaboration.",
+    ctaLabel: "Start a Project",
+    ctaHref: "#bim-modeling-page-contact",
+    ctaVariant: "outline" as const,
+    featured: false,
+  },
+  {
+    icon: iconEngageDedicated,
+    title: "Dedicated Architecture Team",
+    headline: "Best when delivery support becomes ongoing.",
+    idealLabel: "Ideal for firms that:",
+    idealItems: [
+      "Consistent project pipelines.",
+      "Multiple active projects.",
+      "Long-term production requirements.",
+    ],
+    nextLabel: "What changes?",
+    nextText:
+      "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
+    ctaLabel: "Build your Team",
+    ctaHref: ROUTES.dedicatedTeam,
+    ctaVariant: "solid" as const,
+    featured: true,
+    badge: "Most Demanding",
+  },
+  {
+    icon: iconEngageStrategic,
+    title: "Strategic Delivery Partnership",
+    headline: "Built on trust, not contracts.",
+    idealLabel: "Ideal for firms focused on:",
+    idealItems: [
+      "Sustainable growth.",
+      "Standardized delivery.",
+      "Long-term operational scalability.",
+    ],
+    nextLabel: "The result",
+    nextText:
+      "VBS becomes a trusted extension of your practice, helping you increase delivery capability while preserving your firm's identity.",
+    ctaLabel: "Explore GDC Model",
+    ctaHref: ROUTES.engagement,
+    ctaVariant: "outline" as const,
+    featured: false,
+  },
+];
 
 export const bimModelingTechnologyStackSection = {
   tag: "Tools & Platforms",

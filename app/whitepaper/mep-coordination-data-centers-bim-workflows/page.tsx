@@ -4,7 +4,7 @@ import { MepDataCentersWhitepaperView } from "@/components/whitepaper/mep-data-c
 import { mepDataCentersWhitepaperContent as content } from "@/constants/whitepaper-mep-data-centers-content";
 
 export const metadata: Metadata = {
-  title: `${content.seoTitle} | Virtual Building Studio`,
+  title: content.seoTitle,
   description: content.seoDescription,
   openGraph: {
     title: content.seoTitle,

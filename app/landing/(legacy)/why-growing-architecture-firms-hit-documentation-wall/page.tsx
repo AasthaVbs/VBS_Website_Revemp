@@ -5,7 +5,7 @@ import { WhyGrowingArchitectureFirmsHitDocumentationWallView } from "@/component
 export const metadata: Metadata = {
   title: "Why Growing Architecture Firms Hit a Documentation Wall | Virtual Building Studio",
   description:
-    "Drawings feel rushed. Reviews pile up. Senior architects become bottlenecks. Even with more staff, the workload feels heavier — not lighter.",
+    "A structural breakdown for architecture firm leaders whose growth is beginning to strain their delivery system.",
 };
 
 export default function WhyGrowingArchitectureFirmsHitDocumentationWallPage() {

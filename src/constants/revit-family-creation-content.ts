@@ -1,3 +1,12 @@
+import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
+import architecturalBimObjectCreationImg from "@/assets/images/architectural-bim-object-creation.jpg";
+import buildingProductManufacturerBimObjectCreationImg from "@/assets/images/building-product-manufacturer-bim-object-creation.jpg";
+import equipmentProductBimObjectCreationImg from "@/assets/images/equipment-product-bim-object-creation.jpg";
+import facadeCurtainWallBimObjectCreationImg from "@/assets/images/facade-curtain-wall-bim-object-creation.jpg";
+import furnitureFfeBimContentCreationImg from "@/assets/images/furniture-ffe-bim-content-creation.jpg";
+import revitContentCreationOverviewImg from "@/assets/images/revit-content-creation-overview.jpg";
+import revitFamilyCreationBannerImg from "@/assets/images/revit-family-creation-banner.jpg";
+import structuralBimObjectCreationImg from "@/assets/images/structural-bim-object-creation.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -5,9 +14,6 @@ import {
   mepBimTechnologyStackToolsRowTwo,
 } from "@/constants/mep-bim-modelling-content";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
-
-/** Temporary placeholders until dedicated art is provided */
-const PLACEHOLDER = "/image/as-built.jpg";
 
 export const revitFamilyCreationStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -27,7 +33,7 @@ export const revitFamilyCreationHero = {
   description:
     "From parametric architectural walls to structural connections, our pre-vetted Revit experts provide AI-powered Revit Family Creation Services to keep your models coordinated and fully code-compliant.",
   ctaLabel: "Connect With Us",
-  imageSrc: PLACEHOLDER,
+  imageSrc: revitFamilyCreationBannerImg,
   imageAlt: "Custom Revit Family Creation Services",
   copyMaxWidth: 677,
   descriptionMaxWidth: 648,
@@ -52,7 +58,7 @@ export const revitFamilyCreationIntro = {
     "Symbolic and model geometry optimized for visual clarity and lightweight files",
     "Code-compliant families tested for performance and function, so they work with any platform",
   ],
-  mainImage: PLACEHOLDER,
+  mainImage: revitContentCreationOverviewImg,
   imageAlt: "Revit Family Creation overview",
 };
 
@@ -80,32 +86,32 @@ export const revitFamilyCreationServiceCards = [
   {
     title: "Architectural BIM Object Creation",
     text: "Our team builds detailed, parametric architectural objects for walls, doors, windows and ceilings. Every BIM Object Creation Services deliverable meets US standards and drops straight into your Revit environment.",
-    image: PLACEHOLDER,
+    image: architecturalBimObjectCreationImg.src,
   },
   {
     title: "Structural BIM Object Creation",
     text: "Our Structural BIM Object Creation covers beams, columns, connections, and custom load-bearing elements. Each family is LOD-specific, clash-free and ready for coordination inside Revit, right from the start.",
-    image: PLACEHOLDER,
+    image: structuralBimObjectCreationImg.src,
   },
   {
     title: "Furniture & FF&E BIM Content Creation",
     text: "We create manufacturer-accurate furniture families built for Revit. Our BIM Content Creation Services support interior designers and FF&E workflows with lightweight, data-rich components that load fast.",
-    image: PLACEHOLDER,
+    image: furnitureFfeBimContentCreationImg.src,
   },
   {
     title: "Facade & Curtain Wall BIM Object Creation",
     text: "Our team models parametric curtain walls, cladding panels and facade systems for Revit. These families carry accurate geometry and metadata ready for coordination across your project.",
-    image: PLACEHOLDER,
+    image: facadeCurtainWallBimObjectCreationImg.src,
   },
   {
     title: "Building Product & Manufacturer BIM Object Creation",
     text: "We build Revit-ready BIM objects for doors, windows and other architectural building elements. Our Revit Content Creation Services help manufacturers distribute lightweight, code-compliant families fast.",
-    image: PLACEHOLDER,
+    image: buildingProductManufacturerBimObjectCreationImg.src,
   },
   {
     title: "Equipment & Product BIM Object Creation",
     text: "Our BIM Object Creation Services turn real-world architectural products into intelligent BIM objects. We support manufacturer branding, IFC compliance and distribution across the globe.",
-    image: PLACEHOLDER,
+    image: equipmentProductBimObjectCreationImg.src,
   },
 ];
 
@@ -172,39 +178,87 @@ export const revitFamilyCreationWhyChooseItems = [
   },
 ] as const;
 
-export const revitFamilyCreationWorkflowSection = {
+export const revitFamilyCreationWorkflowIntegrateSection = {
   tag: "Workflow",
-  titleLine1: "Our Process Flow for ",
-  titleLine2: "Revit Family Creation Services",
+  titleParts: [
+    {
+      text: "Our Process Flow for ",
+      className: "text-section font-medium text-[#111111] capitalize",
+    },
+    {
+      text: "Revit Family Creation Services",
+      className: "text-section text-accent font-light capitalize",
+    },
+  ],
   description:
     "From initial scoping to final delivery, we manage your Revit Family Creation project with clear checkpoints and consistent communication.",
+  note: {
+    text: 'Our process is designed to get your projects moving quickly. We don\'t wait until onboarding is "finished" to create value—we begin production as soon as the essential alignment is complete and continue improving the partnership with every project.',
+  },
+  centerLogo: workflowLogo,
 };
 
-export const revitFamilyCreationWorkflowSteps = [
+export const revitFamilyCreationWorkflowIntegrateSteps = [
   {
-    number: "01",
-    title: "Scope and Requirements Gathering",
-    text: "Your project specs, naming convention and Level of Development needs are reviewed by our team. This sets clear expectations before we start modelling and avoids costly re-work.",
+    id: "discover",
+    color: "#F0B300",
+    tint: "rgba(240, 179, 0, 0.10)",
+    position: "top-left",
+    number: "01. Discover",
+    title: "Understanding Your Practice",
+    body: "Before production begins, we take time to understand how your team works so we can align with your expectations from day one.",
+    tagRows: [
+      ["Project Goals", "Workflow", "Standards", "QA/QC", "Communication"],
+      ["Technology Stack"],
+    ],
   },
   {
-    number: "02",
-    title: "Family Development & Modeling",
-    text: "Our Revit experts use AI-assisted workflows to accelerate parametric family development. Data parameters and metadata are added, and every family is structured for reuse following AIA, BIMForum or your internal standards.",
+    id: "integrate",
+    color: "#2299D6",
+    tint: "rgba(34, 153, 214, 0.10)",
+    position: "top-right",
+    number: "02. Integrate",
+    title: "Align, Onboard & Start Production",
+    body: "We integrate with your team, configure project standards, and begin production as soon as the initial onboarding is complete. From this point forward, delivery and continuous learning happen together.",
+    tagRows: [
+      ["Team Alignment", "Templates", "File Structure", "Pilot Validation"],
+      ["Communication Rhythm", "Production Begins"],
+    ],
   },
   {
-    number: "03",
-    title: "QA & Standard Check",
-    text: "Our quality control team cross checks geometry accuracy, parameter naming convention and metadata structure match your project needs. This catches errors before files enter your Revit environment.",
+    id: "deliver",
+    color: "#D70416",
+    tint: "#FBE6E8",
+    position: "bottom-right",
+    number: "03. Deliver",
+    title: "Reliable Project Delivery",
+    body: "With production underway, we focus on delivering consistent, high-quality work while maintaining complete transparency throughout the project.",
+    tagRows: [
+      [
+        { label: "BIM Production", tint: "#FBE6E8" },
+        { label: "Documentation", tint: "#FBE6E8" },
+        { label: "Coordination", tint: "#FBE6E8" },
+        { label: "QA/QC", tint: "#FBE6E8" },
+      ],
+      [
+        { label: "Milestone Reviews", tint: "rgba(215, 4, 22, 0.10)" },
+        { label: "Progress Updates", tint: "#FBE6E8" },
+      ],
+    ],
   },
   {
-    number: "04",
-    title: "Client review & changes",
-    text: "You look through each family on Autodesk BIM 360 or your favourite platform. We revise in realtime. We keep communication direct and turnaround fast.",
-  },
-  {
-    number: "05",
-    title: "Final Delivery and Support",
-    text: "When approved, we deliver your BIM content ready to be used immediately in your Revit workflow. Our team remains available for future updates, fixes and future family requests.",
+    id: "improve",
+    color: "#42AA32",
+    tint: "rgba(66, 170, 50, 0.10)",
+    position: "bottom-left",
+    number: "04. Improve",
+    title: "Growing Stronger Together",
+    body: "As we complete projects together, we refine workflows, improve efficiency, and expand support making every project smoother than the last.",
+    tagRows: [
+      ["Feedback", "Workflow Optimization", "Efficiency", "Scalability"],
+      ["Continuous Improvement", "Knowledge Sharing"],
+      ["Continuous process refinement"],
+    ],
   },
 ];
 

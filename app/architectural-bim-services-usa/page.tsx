@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { ArchitecturalBimServicesUsaPage } from "@/components/vbs/architectural-bim-services-usa-page";
 
 export const metadata: Metadata = {
-  title: "Architectural BIM Services USA | Hire Top 1% Architects in 5 Days",
+  title: "Architectural BIM Services Company | US-based Revit Experts",
   description:
-    "Trusted by 100+ firms for precise Architectural BIM Modeling Services, backed by 200+ vetted US code-compliant architects. Get started today.",
+    "Trusted Architectural BIM Services provider offering complete BIM Services from top 1% US-trained architects. Scale on your terms, try risk-free.",
 };
 
 export default function Page() {

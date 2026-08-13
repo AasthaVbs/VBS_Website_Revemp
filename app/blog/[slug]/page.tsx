@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (sanityPost) {
     const seo = sanityPostSeo(sanityPost);
     return {
-      title: `${seo.title} | Virtual Building Studio`,
+      title: seo.title,
       description: seo.description,
       openGraph: seo.image ? { images: [{ url: seo.image }] } : undefined,
     };
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Blog | Virtual Building Studio" };
   }
   return {
-    title: `${post.title} | Virtual Building Studio`,
+    title: post.title,
     description: post.excerpt,
   };
 }

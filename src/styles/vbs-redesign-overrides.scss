@@ -478,9 +478,9 @@ html:has(.vbs-redesign-page.build-your-team-page)::-webkit-scrollbar {
 }
 
 /* ── Service hub hero — shared 55/45 layout on all three pages ── */
-.vbs-redesign-page.mep-bim-services-page .mep-page-hero__media,
-.vbs-redesign-page.architecture-services-page .mep-page-hero__media,
-.vbs-redesign-page.scan-to-bim-services-page .mep-page-hero__media {
+.vbs-redesign-page.mep-bim-services-page .mep-page-hero:not(.mep-page-hero--overlay) .mep-page-hero__media,
+.vbs-redesign-page.architecture-services-page .mep-page-hero:not(.mep-page-hero--overlay) .mep-page-hero__media,
+.vbs-redesign-page.scan-to-bim-services-page .mep-page-hero:not(.mep-page-hero--overlay) .mep-page-hero__media {
   @media (min-width: 768px) {
     width: 100%;
     max-width: none;

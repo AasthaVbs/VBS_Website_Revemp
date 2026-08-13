@@ -121,9 +121,14 @@ export const ZOHO_BIM_RESOURCE_DOWNLOAD_IFRAME_SRC =
 
 export const ZOHO_BIM_RESOURCE_DOWNLOAD_IFRAME_INITIAL_HEIGHT_PX = 500;
 
-export const ZOHO_BIM_RESOURCE_DOWNLOAD_VISIBLE_HEIGHT_PX = 520;
+/** Lock base height; visible window = this minus footer crop. */
+export const ZOHO_BIM_RESOURCE_DOWNLOAD_VISIBLE_HEIGHT_PX = 500;
 
-export const ZOHO_BIM_RESOURCE_DOWNLOAD_HEADER_CROP_PX = 0;
+/** Hide "VBS Resource Download Form" title + divider above the first field. */
+export const ZOHO_BIM_RESOURCE_DOWNLOAD_HEADER_CROP_PX = 140;
+
+/** Trim Zoho footer / empty space below the submit button. */
+export const ZOHO_BIM_RESOURCE_DOWNLOAD_FOOTER_CROP_PX = 145;
 
 export function getZohoAcsInquiryHeaderCropPx() {
   if (typeof window === "undefined") {

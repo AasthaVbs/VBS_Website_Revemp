@@ -1,10 +1,22 @@
-import architecturalCadDraftingImg from "@/assets/images/architectural-cad-drafting.png";
-import revitCadDraftingServicesImg from "@/assets/images/revit-cad-drafting-services.jpg";
+import twoDFloorPlanDrawingsServicesImg from "@/assets/images/2d-floor-plan-drawings-services.jpg";
+import architecturalDraftingOverviewImg from "@/assets/images/architectural-drafting-overview.jpg";
+import architectureDraftingBannerImg from "@/assets/images/architecture-drafting-banner.jpg";
+import asBuiltDrawingsServicesImg from "@/assets/images/as-built-drawings-services.jpg";
+import cadConversionServicesImg from "@/assets/images/cad-conversion-services.jpg";
+import constructionDocumentationServicesImg from "@/assets/images/construction-documentation-services.jpg";
+import designDevelopmentDraftingServicesImg from "@/assets/images/design-development-drafting-services.jpg";
+import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
+import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
+import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
+import millworkAndJoineryDrawingsServicesImg from "@/assets/images/millwork-and-joinery-drawings-services.jpg";
+import permitSetDrawingsServicesImg from "@/assets/images/permit-set-drawings-services.jpg";
+import schematicDesignDraftingServicesImg from "@/assets/images/schematic-design-drafting-services.jpg";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
   mepBimTechnologyStackToolsRowOne,
   mepBimTechnologyStackToolsRowTwo,
 } from "@/constants/mep-bim-modelling-content";
+import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
 export const architecturalDraftingStatsStrip = [
@@ -21,7 +33,7 @@ export const architecturalDraftingHero = {
   description:
     "Dedicated Revit drafters combine our AI-powered workflow with your existing one, so your team delivers accurate, code-compliant construction documents on time, every time.",
   ctaLabel: "Connect With Us",
-  imageSrc: "/image/architectural-drafting-banner.png",
+  imageSrc: architectureDraftingBannerImg,
   imageAlt: "Architectural Drafting Services",
   copyMaxWidth: 650,
   descriptionMaxWidth: 670,
@@ -47,7 +59,7 @@ export const architecturalDraftingIntro = {
     "QA checks catch layer, dimension, and annotation errors before delivery. Your review time drops as a result.",
     "Drafters produce plans, elevations, sections, schedules, and RCPs. Your set stays complete without gaps.",
   ],
-  mainImage: architecturalCadDraftingImg,
+  mainImage: architecturalDraftingOverviewImg,
   imageAlt: "Architectural Drafting overview",
 };
 
@@ -75,42 +87,42 @@ export const architecturalDraftingServiceCards = [
   {
     title: "Schematic Design Drafting Services",
     text: "Our remote drafters build scaled layouts, massing studies and preliminary elevations. Integrated CAD Architectural Drafting workflows keep that early communication clear and dimensionally accurate.",
-    image: "/image/schematic-design-drafting-img.jpg",
+    image: schematicDesignDraftingServicesImg.src,
   },
   {
     title: "Design Development Drafting Services",
     text: "Our drafting experts produce coordinated plans, sections and elevations aligned with those systems. Our Architectural Drawings Services carry that alignment through to construction documentation.",
-    image: "/image/design-development-drafting-img.jpg",
+    image: designDevelopmentDraftingServicesImg.src,
   },
   {
     title: "Construction Documentation Services",
     text: "We deliver code-compliant sets, including plans, schedules, sections and reflected ceiling plans. Our CAD Architectural Drafting services build every set for permit-ready submission, so your team avoids rework.",
-    image: revitCadDraftingServicesImg.src,
+    image: constructionDocumentationServicesImg.src,
   },
   {
     title: "2D Floor Plan Drawings Services",
     text: "Our experts create dimensionally accurate, layered 2D floor plans with annotations and area calculations. Our Architectural Drawings Services turn these into contractor-ready layouts for residential and commercial projects.",
-    image: "/image/architectural-cad-drafting.png",
+    image: twoDFloorPlanDrawingsServicesImg.src,
   },
   {
     title: "As-Built Drawings Services",
     text: "Our drafters develop precise as-built documents from field data, surveys and redline markups. Our Architectural Drafting Services support renovations, retrofits and facility management with accurate existing-condition records.",
-    image: "/image/architectural-drafting-precision-img.jpg",
+    image: asBuiltDrawingsServicesImg.src,
   },
   {
     title: "Permit Set Drawings Services",
     text: "Every jurisdiction reviews permit sets against its own local codes. We prepare jurisdiction-specific permit sets compliant with IBC, ADA, NFPA and zoning regulations. Our CAD Architectural Drawing services speed up AHJ approvals.",
-    image: "/image/architectural-drafting-tab-img.jpg",
+    image: permitSetDrawingsServicesImg.src,
   },
   {
     title: "Millwork and Joinery Drawings Services",
     text: "We produce fabrication-ready millwork drawings with material specifications, tolerances and installation details. Our Architectural Drawings Services support cabinetry, interior fit-outs and custom installations.",
-    image: "/image/architectural-cad-drafting-solutions.png",
+    image: millworkAndJoineryDrawingsServicesImg.src,
   },
   {
     title: "CAD Conversion Services",
     text: "We convert old sketches, PDFs and legacy files into editable CAD architectural drafting with accurate layer structuring. Our 2D CAD conversion services fold directly into your existing documentation workflows.",
-    image: "/image/auto-cad-drafting-services.jpg",
+    image: cadConversionServicesImg.src,
   },
 ];
 
@@ -189,6 +201,84 @@ export const architecturalDraftingTechnologyStackToolsRowOne: MepBimTechnologyTo
 
 export const architecturalDraftingTechnologyStackToolsRowTwo: MepBimTechnologyTool[] =
   mepBimTechnologyStackToolsRowTwo;
+
+export const architecturalDraftingEngagementModelsSection = {
+  tag: "Engagement Models",
+  titleParts: [
+    {
+      text: "Flexible Engagement Models Built Around ",
+      className: "text-section font-medium text-[#111111] capitalize",
+    },
+    {
+      text: "Your Delivery Needs",
+      className: "text-section text-accent font-light capitalize",
+    },
+  ],
+  description:
+    "Whether you need project-based BIM support, a dedicated remote team, or a fully managed global delivery center, our engagement models are designed to scale with your business.",
+  descriptionMaxWidth: 750,
+  note: {
+    text: "Every strategic partnership begins with one successful project. Each engagement helps us understand your practice more deeply, making every future collaboration faster, smoother, and more valuable.",
+  },
+};
+
+export const architecturalDraftingEngagementModelsCards = [
+  {
+    icon: flexibleEngagementModelsIcon,
+    title: "Project Engagement",
+    headline: "Best for immediate project support.",
+    idealLabel: "Ideal for firms that:",
+    idealItems: [
+      "Have won a larger or more complex project.",
+      "Need additional delivery capacity.",
+      "Want to evaluate VBS before expanding.",
+    ],
+    nextLabel: "What happens next?",
+    nextText:
+      "While we deliver your project, we learn your standards, workflows, and preferences—creating a stronger foundation for future collaboration.",
+    ctaLabel: "Start a Project",
+    ctaHref: "#architectural-drafting-page-contact",
+    ctaVariant: "outline" as const,
+    featured: false,
+  },
+  {
+    icon: iconEngageDedicated,
+    title: "Dedicated Architecture Team",
+    headline: "Best when delivery support becomes ongoing.",
+    idealLabel: "Ideal for firms that:",
+    idealItems: [
+      "Consistent project pipelines.",
+      "Multiple active projects.",
+      "Long-term production requirements.",
+    ],
+    nextLabel: "What changes?",
+    nextText:
+      "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
+    ctaLabel: "Build your Team",
+    ctaHref: ROUTES.dedicatedTeam,
+    ctaVariant: "solid" as const,
+    featured: true,
+    badge: "Most Demanding",
+  },
+  {
+    icon: iconEngageStrategic,
+    title: "Strategic Delivery Partnership",
+    headline: "Built on trust, not contracts.",
+    idealLabel: "Ideal for firms focused on:",
+    idealItems: [
+      "Sustainable growth.",
+      "Standardized delivery.",
+      "Long-term operational scalability.",
+    ],
+    nextLabel: "The result",
+    nextText:
+      "VBS becomes a trusted extension of your practice, helping you increase delivery capability while preserving your firm's identity.",
+    ctaLabel: "Explore GDC Model",
+    ctaHref: ROUTES.engagement,
+    ctaVariant: "outline" as const,
+    featured: false,
+  },
+];
 
 export const architecturalDraftingProjectCta = {
   titleLine1: "Ready to Close the ",

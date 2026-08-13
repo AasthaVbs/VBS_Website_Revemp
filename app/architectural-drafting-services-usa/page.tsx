@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { ArchitecturalDraftingServicesUsaPage } from "@/components/vbs/architectural-drafting-services-usa-page";
 
 export const metadata: Metadata = {
-  title: "Architectural Drafting Services USA | Permit-Ready Revit & AutoCAD",
+  title: "Top Architectural Drafting Services | US-based CAD Experts",
   description:
-    "Drafting-only support from U.S.-trained architects. Permit-ready, code-compliant drawings in Revit & AutoCAD so your firm stays focused on design.",
+    "Get precise, permit-ready Architectural CAD Drafting Services from top 1% US-trained architects. Fast turnaround, scale on your terms, try risk-free.",
 };
 
 export default function Page() {

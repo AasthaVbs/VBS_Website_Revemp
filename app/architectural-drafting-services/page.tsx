@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { ArchitecturalDraftingServicesPage } from "@/components/vbs/architectural-drafting-services-page";
 
 export const metadata: Metadata = {
-  title: "Architectural Drafting Services USA | Revit & CAD Drafting",
+  title: "Architecture Drafting Service Using AutoCAD & Revit | USA",
   description:
-    "US-trained Revit drafters deliver Architectural Drafting Services for reduced rework and faster approvals — code-compliant construction documents for overloaded AEC teams.",
+    "Get precise, scalable, and efficient CAD Architectural Drafting and Drawing Services for seamless project execution tailored to your needs.",
 };
 
 export default function Page() {

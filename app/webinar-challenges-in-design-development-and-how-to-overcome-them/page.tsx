@@ -4,7 +4,7 @@ import { WebinarChallengesInDesignDevelopmentView } from "@/components/sections/
 
 export const metadata: Metadata = {
   title:
-    "Webinar - Top 5 Challenges in Design Development (DD) and How to Overcome Them | Virtual Building Studio",
+    "Webinar - Top 5 Challenges in Design Development (DD) and How to Overcome Them",
   description:
     'Join our webinar, "Top 5 Challenges in Design Development (DD) and How to Overcome Them," to discover expert strategies for tackling common design hurdles and enhancing project success.',
 };

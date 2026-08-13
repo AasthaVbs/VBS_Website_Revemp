@@ -1,5 +1,7 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { ArchitectureAiBimWorkflowSection } from "@/components/sections/architecture/architecture-ai-bim-workflow-section";
+import { ArchitectureEngagementModelsSection } from "@/components/sections/architecture/architecture-engagement-models-section";
+import { ArchitectureIntegrateWorkflowSection } from "@/components/sections/architecture/architecture-integrate-workflow-section";
 import { BimModelingOverviewSection } from "@/components/sections/bim-modeling/bim-modeling-overview-section";
 import { BimModelingWhyChooseSection } from "@/components/sections/bim-modeling/bim-modeling-why-choose-section";
 import { MepFullSpectrumServicesSection } from "@/components/sections/mep/figma/mep-full-spectrum-services-section";
@@ -10,6 +12,8 @@ import { TrustStripSection } from "@/components/sections/trust-strip-section";
 import {
   cadToBimAiBimWorkflowSection,
   cadToBimContactDescription,
+  cadToBimEngagementModelsCards,
+  cadToBimEngagementModelsSection,
   cadToBimFaqSection,
   cadToBimFaqs,
   cadToBimHero,
@@ -29,19 +33,17 @@ import {
   cadToBimTestimonialsDescription,
   cadToBimWhyChooseItems,
   cadToBimWhyChooseSection,
-  cadToBimWorkflowSection,
-  cadToBimWorkflowSteps,
+  cadToBimWorkflowIntegrateSection,
+  cadToBimWorkflowIntegrateSteps,
 } from "@/constants/cad-to-bim-content";
 import {
   DeferredClientSuccessStoriesSection,
-  DeferredEngagementModelsSection,
   DeferredEvaluateDeliveryCtaSection,
   DeferredFaqSection,
   DeferredGetInTouchSection,
   DeferredIndustriesSection,
   DeferredMepResourcesSection,
   DeferredMepServiceBenefitsSection,
-  DeferredMepWorkflowSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
 import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
@@ -74,10 +76,12 @@ export async function CadToBimPage() {
         <BimModelingWhyChooseSection
           section={cadToBimWhyChooseSection}
           items={cadToBimWhyChooseItems}
+          descriptionMaxWidth={cadToBimWhyChooseSection.descriptionMaxWidth}
         />
-        <DeferredMepWorkflowSection
-          section={cadToBimWorkflowSection}
-          steps={cadToBimWorkflowSteps}
+        <ArchitectureIntegrateWorkflowSection
+          section={cadToBimWorkflowIntegrateSection}
+          steps={cadToBimWorkflowIntegrateSteps}
+          headerAlign="center"
         />
         <MepBimTechnologyStackSection
           section={cadToBimTechnologyStackSection}
@@ -91,7 +95,10 @@ export async function CadToBimPage() {
           section={cadToBimKeyPointsSection}
           cards={cadToBimKeyPointsCards}
         />
-        <DeferredEngagementModelsSection />
+        <ArchitectureEngagementModelsSection
+          section={cadToBimEngagementModelsSection}
+          cards={cadToBimEngagementModelsCards}
+        />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

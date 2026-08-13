@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { ScanToCadServicesPage } from "@/components/vbs/scan-to-cad-services-page";
 
 export const metadata: Metadata = {
-  title: "Scan to CAD Conversion Services | Point Cloud to DWG | VBS",
+  title: "Hire Dedicated Architects and Engineers | Scan to CAD Service Specialists",
   description:
-    "Convert laser scans and legacy drawings into build-ready CAD files. AI-powered scan to CAD drafting, floor plans, RCP, structural and MEP drawings for AEC teams.",
+    "Hire Architects and Engineers from us for your Scan to CAD Service and projects in USA using Our DRM Solution. Onboard in Just 3 Days and Try 30-days Money back guarantee.",
 };
 
 export default function Page() {

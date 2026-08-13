@@ -1,5 +1,7 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { ArchitectureAiBimWorkflowSection } from "@/components/sections/architecture/architecture-ai-bim-workflow-section";
+import { ArchitectureEngagementModelsSection } from "@/components/sections/architecture/architecture-engagement-models-section";
+import { ArchitectureIntegrateWorkflowSection } from "@/components/sections/architecture/architecture-integrate-workflow-section";
 import { BimModelingOverviewSection } from "@/components/sections/bim-modeling/bim-modeling-overview-section";
 import { BimModelingWhyChooseSection } from "@/components/sections/bim-modeling/bim-modeling-why-choose-section";
 import { MepFullSpectrumServicesSection } from "@/components/sections/mep/figma/mep-full-spectrum-services-section";
@@ -12,7 +14,8 @@ import {
   cadDraftingAdvantagesSection,
   cadDraftingAiBimWorkflowSection,
   cadDraftingContactDescription,
-  cadDraftingEngagementDescription,
+  cadDraftingEngagementModelsCards,
+  cadDraftingEngagementModelsSection,
   cadDraftingFaqSection,
   cadDraftingFaqs,
   cadDraftingHero,
@@ -30,19 +33,17 @@ import {
   cadDraftingTestimonialsDescription,
   cadDraftingWhyChooseItems,
   cadDraftingWhyChooseSection,
-  cadDraftingWorkflowSection,
-  cadDraftingWorkflowSteps,
+  cadDraftingWorkflowIntegrateSection,
+  cadDraftingWorkflowIntegrateSteps,
 } from "@/constants/cad-drafting-services-content";
 import {
   DeferredClientSuccessStoriesSection,
-  DeferredEngagementModelsSection,
   DeferredEvaluateDeliveryCtaSection,
   DeferredFaqSection,
   DeferredGetInTouchSection,
   DeferredIndustriesSection,
   DeferredMepResourcesSection,
   DeferredMepServiceBenefitsSection,
-  DeferredMepWorkflowSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
 import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
@@ -58,7 +59,7 @@ export async function CadDraftingServicesPage() {
           {...cadDraftingHero}
           imageSize="compact"
           ctaHref="#cad-drafting-page-contact"
-          containerClassName="!pt-0 sm:!pt-1 lg:!pt-4"
+          containerClassName="!pt-0 !pb-6 sm:!pt-0 sm:!pb-8 lg:!pt-0 lg:!pb-10"
         />
         <TrustStripSection
           stats={cadDraftingStatsStrip}
@@ -76,9 +77,10 @@ export async function CadDraftingServicesPage() {
           section={cadDraftingWhyChooseSection}
           items={cadDraftingWhyChooseItems}
         />
-        <DeferredMepWorkflowSection
-          section={cadDraftingWorkflowSection}
-          steps={cadDraftingWorkflowSteps}
+        <ArchitectureIntegrateWorkflowSection
+          section={cadDraftingWorkflowIntegrateSection}
+          steps={cadDraftingWorkflowIntegrateSteps}
+          headerAlign="center"
         />
         <MepBimTechnologyStackSection
           section={cadDraftingTechnologyStackSection}
@@ -92,7 +94,10 @@ export async function CadDraftingServicesPage() {
           section={cadDraftingAdvantagesSection}
           cards={cadDraftingAdvantagesCards}
         />
-        <DeferredEngagementModelsSection description={cadDraftingEngagementDescription} />
+        <ArchitectureEngagementModelsSection
+          section={cadDraftingEngagementModelsSection}
+          cards={cadDraftingEngagementModelsCards}
+        />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

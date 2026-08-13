@@ -4,7 +4,7 @@ import { TalentVsTechWebinarView } from "@/components/sections/webinar/talent-vs
 
 export const metadata: Metadata = {
   title:
-    "Webinar - Talent vs. Tech—What’s the Secret to Boosting Your Architecture Practice | Virtual Building Studio",
+    "Webinar - Talent vs. Tech—What’s the Secret to Boosting Your Architecture Practice",
   description:
     "Discover how top talent and tech like VBS’s Virtual Studio & BidLight’s BIM automation can boost your architecture firm. Join the exclusive webinar now!",
 };

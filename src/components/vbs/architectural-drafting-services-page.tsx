@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { ArchitectureAiBimWorkflowSection } from "@/components/sections/architecture/architecture-ai-bim-workflow-section";
+import { ArchitectureEngagementModelsSection } from "@/components/sections/architecture/architecture-engagement-models-section";
 import { BimModelingOverviewSection } from "@/components/sections/bim-modeling/bim-modeling-overview-section";
 import { BimModelingWhyChooseSection } from "@/components/sections/bim-modeling/bim-modeling-why-choose-section";
 import { MepFullSpectrumServicesSection } from "@/components/sections/mep/figma/mep-full-spectrum-services-section";
@@ -10,6 +11,8 @@ import { TrustStripSection } from "@/components/sections/trust-strip-section";
 import {
   architecturalDraftingAiBimWorkflowSection,
   architecturalDraftingContactDescription,
+  architecturalDraftingEngagementModelsCards,
+  architecturalDraftingEngagementModelsSection,
   architecturalDraftingFaqSection,
   architecturalDraftingFaqs,
   architecturalDraftingHero,
@@ -30,7 +33,6 @@ import {
 } from "@/constants/architectural-drafting-services-content";
 import {
   DeferredClientSuccessStoriesSection,
-  DeferredEngagementModelsSection,
   DeferredEvaluateDeliveryCtaSection,
   DeferredFaqSection,
   DeferredGetInTouchSection,
@@ -78,7 +80,10 @@ export async function ArchitecturalDraftingServicesPage() {
           titleLayout="stacked"
           descriptionMaxWidth={539}
         />
-        <DeferredEngagementModelsSection />
+        <ArchitectureEngagementModelsSection
+          section={architecturalDraftingEngagementModelsSection}
+          cards={architecturalDraftingEngagementModelsCards}
+        />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

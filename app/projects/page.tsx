@@ -10,9 +10,9 @@ import {
 import { buildResourceCatalog } from "@/lib/resource-catalog";
 
 export const metadata: Metadata = {
-  title: "Case Studies | Virtual Building Studio",
+  title: "Our Successfully Completed BIM Projects | Virtual Building Studio",
   description:
-    "Discover how Virtual Building Studio helps clients improve accuracy, accelerate delivery, and optimize project outcomes across diverse building projects.",
+    "Our portfolio offers a wide range of projects for AEC professionals, including Scan to BIM, CAD to BIM conversions, Clash Detection & Co-Ordination, Value Engineering, 4D simulations, 5D Quantity Take-Offs, and captivating 3D rendering and walkthroughs for architecture, structure, and MEPF disciplines.",
 };
 
 export default function PortfolioPage() {

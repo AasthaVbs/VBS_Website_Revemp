@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { BimModelingServicesUsaPage } from "@/components/vbs/bim-modeling-services-usa-page";
 
 export const metadata: Metadata = {
-  title: "BIM Modeling Services USA | BIM Architects & Engineers | Virtual Building Studio",
+  title: "BIM Modeling Services USA | Architectural , Structure, HVAC",
   description:
-    "BIM modeling services by US-trained BIM architects and engineers. Architectural, structural, and MEP/HVAC Revit models for coordination, documentation, and delivery.",
+    "Expert BIM Modeling Services,: Architectural, Structural, and MEP/HVAC BIM Modeling, to enhance accuracy, coordination, and efficiency in your projects.",
 };
 
 export default function Page() {

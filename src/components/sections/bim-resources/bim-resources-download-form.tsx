@@ -7,6 +7,7 @@ import {
 } from "@/constants/bim-resources-content";
 import { cn } from "@/lib/utils";
 import {
+  ZOHO_BIM_RESOURCE_DOWNLOAD_FOOTER_CROP_PX,
   ZOHO_BIM_RESOURCE_DOWNLOAD_HEADER_CROP_PX,
   ZOHO_BIM_RESOURCE_DOWNLOAD_IFRAME_ID,
   ZOHO_BIM_RESOURCE_DOWNLOAD_IFRAME_SRC,
@@ -45,8 +46,10 @@ export function BimResourcesDownloadForm({
           title="VBS Resource Download Form"
           initialHeight={ZOHO_BIM_RESOURCE_DOWNLOAD_VISIBLE_HEIGHT_PX}
           headerCropPx={ZOHO_BIM_RESOURCE_DOWNLOAD_HEADER_CROP_PX}
+          footerCropPx={ZOHO_BIM_RESOURCE_DOWNLOAD_FOOTER_CROP_PX}
           cropHeader=""
           lockHeight
+          transparentBackground
           loadPriority="high"
           className="bim-resources__zoho-iframe"
           frameClassName="bim-resources__zoho-frame"

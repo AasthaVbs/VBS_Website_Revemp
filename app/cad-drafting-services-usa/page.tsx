@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { CadDraftingServicesUsaPage } from "@/components/vbs/cad-drafting-services-usa-page";
 
 export const metadata: Metadata = {
-  title: "CAD Drafting Services USA | On-Demand Remote Architects",
+  title: "Cad Drafting Services USA |  CAD Drawings in Autocad",
   description:
-    "On-demand CAD drafting by remote Architect Level I, II & III. US-trained talent for AutoCAD drafting, elevations, conversions, and redline markups.",
+    "Get precise and efficient CAD Drafting Services for architecture, engineering, and construction. Enhance accuracy, streamline workflows, and accelerate project delivery. ",
 };
 
 export default function Page() {

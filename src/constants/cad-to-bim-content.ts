@@ -1,7 +1,17 @@
-import architecturalBimModelingImg from "@/assets/images/architectural-bim-modeling.jpg";
-import cadToBimImg from "@/assets/images/cad-to-bim.jpg";
-import cadToBimConversionServicesImg from "@/assets/images/cad-to-bim-conversion-services.png";
-import structuralBimServicesImg from "@/assets/images/structural-bim-services.jpg";
+import twoDToThreeDFloorPlanConversionImg from "@/assets/images/2d-to-3d-floor-plan-conversion.jpg";
+import architecturalCadToBimServiceImg from "@/assets/images/architectural-cad-to-bim-service.jpg";
+import asBuiltCadDrawingToBimConversionImg from "@/assets/images/as-built-cad-drawing-to-bim-conversion.jpg";
+import autocadToBimConversionImg from "@/assets/images/autocad-to-bim-conversion.jpg";
+import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
+import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
+import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
+import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
+import cadToBimBannerImg from "@/assets/images/cad-to-bim-banner.jpg";
+import cadToBimConversionServicesOverviewImg from "@/assets/images/cad-to-bim-conversion-services-overview.jpg";
+import constructionDocumentationImg from "@/assets/images/construction-documentation.jpg";
+import pdfToRevitConversionImg from "@/assets/images/pdf-to-revit-conversion.jpg";
+import quantityTakeOffsBoqsFromCadImg from "@/assets/images/quantity-take-offs-boqs-from-cad.jpg";
+import structuralCadToBimConversionImg from "@/assets/images/structural-cad-to-bim-conversion.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { bimModelingStatsStrip } from "@/constants/bim-modeling-services-content";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
@@ -22,7 +32,7 @@ export const cadToBimHero = {
   description:
     "Our pre-vetted BIM experts convert your CAD and PDF drawings into accurate Revit models. Teams get faster decisions, fewer clashes, and stronger stakeholder trust.",
   ctaLabel: "Connect With Us",
-  imageSrc: cadToBimImg,
+  imageSrc: cadToBimBannerImg,
   imageAlt: "CAD to BIM Conversion Services",
   copyMaxWidth: 683,
   descriptionMaxWidth: 670,
@@ -31,8 +41,9 @@ export const cadToBimHero = {
 export const cadToBimIntro = {
   tag: "Overview",
   titleLead: "Integrating Intelligence ",
-  titleAccent: "into Every Drawing",
+  titleAccent: "Into Every Drawing",
   titleStacked: false,
+  titleMaxWidth: 620,
   description:
     "A 2D drawing tells you what a wall looks like. A BIM model tells your whole team how it behaves, connects, and performs across the project.",
   sideDescription:
@@ -47,7 +58,7 @@ export const cadToBimIntro = {
     "Improved collaboration with multi-discipline integration and less RFIs.",
     "Deliverables produced for design development, construction and facilities management.",
   ],
-  mainImage: cadToBimConversionServicesImg,
+  mainImage: cadToBimConversionServicesOverviewImg,
   imageAlt: "CAD to BIM overview",
 };
 
@@ -63,6 +74,8 @@ export const cadToBimServicesSection = {
   tag: "Our Services",
   titleLine1: "Our Comprehensive Range of ",
   titleLine2: "CAD to BIM Modeling Services",
+  titleMaxWidth: 700,
+  descriptionMaxWidth: 700,
   description:
     "Our support covers your project from the first drawing set through construction documentation and final handover.",
   ctaLabel: "let's Talk Now",
@@ -74,46 +87,46 @@ export const cadToBimServiceCards = [
   {
     title: "Architectural CAD to BIM Service",
     text: "We convert 2D architectural drawings into full 3D Revit models. Walls, floors and building elements come out accurate and ready to build from.",
-    image: architecturalBimModelingImg.src,
+    image: architecturalCadToBimServiceImg.src,
     href: ROUTES.architecturalBim,
   },
   {
     title: "Structural CAD to BIM Conversion",
     text: "Structural CAD files become coordinated models covering framing, foundations and load paths. Engineers get a model that matches the real structure.",
-    image: structuralBimServicesImg.src,
+    image: structuralCadToBimConversionImg.src,
     href: ROUTES.structuralBim,
   },
   {
     title: "As-Built CAD Drawing to BIM Conversion",
     text: "Existing site drawings become accurate as-built models. Renovation and retrofit teams get a clear picture of the current structure.",
-    image: "/images/mep/full-spectrum/mep-scan-to-bim.png",
+    image: asBuiltCadDrawingToBimConversionImg.src,
     href: ROUTES.asBuiltModeling,
   },
   {
     title: "AutoCAD to BIM Conversion",
     text: "AutoCAD files convert into intelligent Revit models with real building data. Every wall and system carries information your team can use.",
-    image: cadToBimImg.src,
+    image: autocadToBimConversionImg.src,
   },
   {
     title: "PDF to Revit Conversion",
     text: "Turn scanned PDFs or legacy drawings into accurate editable Revit models. Ensuring design accuracy, reduced errors and reliable digital workflows.",
-    image: "/images/mep/full-spectrum/mep-bim-modeling.png",
+    image: pdfToRevitConversionImg.src,
     href: ROUTES.pdfToCad,
   },
   {
     title: "2D to 3D Floor Plan Conversion",
     text: "Transform 2D CAD drawings into 3D models with detailed, accurate and spatial layouts to improve dialogue with clients and stakeholders through visual clarity.",
-    image: "/images/mep/lod/lod-200-56586a.png",
+    image: twoDToThreeDFloorPlanConversionImg.src,
   },
   {
     title: "Construction Documentation",
     text: "Coordinated drawing sets and schedules come ready for permitting. Contractors get documents built for construction, not just design review.",
-    image: "/images/mep/full-spectrum/mep-shop-drawing.png",
+    image: constructionDocumentationImg.src,
   },
   {
     title: "Quantity Take-Offs & BOQs from CAD",
     text: "Using CAD-based inputs for a BIM-based workflow, create accurate quantities and Bills of Quantities (BOQs). Utilize for cost estimating, procurement and resource planning.",
-    image: "/images/mep/full-spectrum/mep-bom.png",
+    image: quantityTakeOffsBoqsFromCadImg.src,
   },
 ];
 
@@ -140,6 +153,7 @@ export const cadToBimWhyChooseSection = {
   titleAccent: "CAD to BIM Service Provider?",
   description:
     "Our top 1% BIM specialists use AI-driven workflows and standard processes to provide you with the most accurate and high-quality CAD to BIM Services in the USA.",
+  descriptionMaxWidth: 780,
   ctaLabel: "Start New Project",
   ctaHref: "#cad-to-bim-page-contact",
 };
@@ -179,49 +193,164 @@ export const cadToBimWhyChooseItems = [
   },
 ] as const;
 
-export const cadToBimWorkflowSection = {
+export const cadToBimWorkflowIntegrateSection = {
   tag: "Workflow",
-  titleLine1: "Our Workflow for ",
-  titleLine2: "CAD to BIM Conversion",
+  titleParts: [
+    {
+      text: "Our Workflow for ",
+      className: "text-section font-medium text-[#111111] capitalize",
+    },
+    {
+      text: "CAD to BIM Conversion",
+      className: "text-section text-accent font-light capitalize",
+    },
+  ],
   description:
-    "Every CAD to BIM project moves through clear 7 stages, from file review to final output",
+    "Every CAD to BIM project moves through clear 4 stages, from file review to final output",
+  note: {
+    text: 'Our process is designed to get your projects moving quickly. We don\'t wait until onboarding is "finished" to create value—we begin production as soon as the essential alignment is complete and continue improving the partnership with every project.',
+  },
+  centerLogo: workflowLogo,
 };
 
-export const cadToBimWorkflowSteps = [
+export const cadToBimWorkflowIntegrateSteps = [
   {
-    number: "01",
-    title: "Drawing Review and Scoping",
-    text: "Our team reviews your CAD or PDF files first. We check for missing details, gaps and scope before confirming the conversion plan with your team.",
+    id: "discover",
+    color: "#F0B300",
+    tint: "rgba(240, 179, 0, 0.10)",
+    position: "top-left",
+    number: "01. Discover",
+    title: "Understanding Your Practice",
+    body: "Before production begins, we take time to understand how your team works so we can align with your expectations from day one.",
+    tagRows: [
+      ["Project Goals", "Workflow", "Standards", "QA/QC", "Communication"],
+      ["Technology Stack"],
+    ],
   },
   {
-    number: "02",
-    title: "Standards and LOD Alignment",
-    text: "We align on the Level of Development your project needs. Setting this early keeps the model focused on what your team will actually use it for.",
+    id: "integrate",
+    color: "#2299D6",
+    tint: "rgba(34, 153, 214, 0.10)",
+    position: "top-right",
+    number: "02. Integrate",
+    title: "Align, Onboard & Start Production",
+    body: "We integrate with your team, configure project standards, and begin production as soon as the initial onboarding is complete. From this point forward, delivery and continuous learning happen together.",
+    tagRows: [
+      ["Team Alignment", "Templates", "File Structure", "Pilot Validation"],
+      ["Communication Rhythm", "Production Begins"],
+    ],
   },
   {
-    number: "03",
-    title: "Model Development",
-    text: "Our BIM professionals use an AI-powered workflow to accelerate Revit model development discipline by discipline. Walls, systems and structural elements take shape based on your original drawings.",
+    id: "deliver",
+    color: "#D70416",
+    tint: "#FBE6E8",
+    position: "bottom-right",
+    number: "03. Deliver",
+    title: "Reliable Project Delivery",
+    body: "With production underway, we focus on delivering consistent, high-quality work while maintaining complete transparency throughout the project.",
+    tagRows: [
+      [
+        { label: "BIM Production", tint: "#FBE6E8" },
+        { label: "Documentation", tint: "#FBE6E8" },
+        { label: "Coordination", tint: "#FBE6E8" },
+        { label: "QA/QC", tint: "#FBE6E8" },
+      ],
+      [
+        { label: "Milestone Reviews", tint: "rgba(215, 4, 22, 0.10)" },
+        { label: "Progress Updates", tint: "#FBE6E8" },
+      ],
+    ],
   },
   {
-    number: "04",
-    title: "Discipline Coordination",
-    text: "Architectural, structural and MEP models come together into one coordinated file. Clash checks run at this stage to catch conflicts early.",
+    id: "improve",
+    color: "#42AA32",
+    tint: "rgba(66, 170, 50, 0.10)",
+    position: "bottom-left",
+    number: "04. Improve",
+    title: "Growing Stronger Together",
+    body: "As we complete projects together, we refine workflows, improve efficiency, and expand support making every project smoother than the last.",
+    tagRows: [
+      ["Feedback", "Workflow Optimization", "Efficiency", "Scalability"],
+      ["Continuous Improvement", "Knowledge Sharing"],
+      ["Continuous process refinement"],
+    ],
+  },
+];
+
+export const cadToBimEngagementModelsSection = {
+  tag: "Engagement Models",
+  titleParts: [
+    {
+      text: "Flexible Engagement Models Built Around ",
+      className: "text-section font-medium text-[#111111] capitalize",
+    },
+    {
+      text: "Your Delivery Needs",
+      className: "text-section text-accent font-light capitalize",
+    },
+  ],
+  description:
+    "Whether you need project-based BIM support, a dedicated remote team, or a fully managed global delivery center, our engagement models are designed to scale with your business.",
+  note: {
+    text: "Every strategic partnership begins with one successful project. Each engagement helps us understand your practice more deeply, making every future collaboration faster, smoother, and more valuable.",
+  },
+};
+
+export const cadToBimEngagementModelsCards = [
+  {
+    icon: flexibleEngagementModelsIcon,
+    title: "Project Engagement",
+    headline: "Best for immediate project support.",
+    idealLabel: "Ideal for firms that:",
+    idealItems: [
+      "Have won a larger or more complex project.",
+      "Need additional delivery capacity.",
+      "Want to evaluate VBS before expanding.",
+    ],
+    nextLabel: "What happens next?",
+    nextText:
+      "While we deliver your project, we learn your standards, workflows, and preferences—creating a stronger foundation for future collaboration.",
+    ctaLabel: "Start a Project",
+    ctaHref: "#cad-to-bim-page-contact",
+    ctaVariant: "outline" as const,
+    featured: false,
   },
   {
-    number: "05",
-    title: "Quality Assurance Review",
-    text: "Every model goes through a detailed QA and QC check against the source drawings. This step make sure accuracy before anything reaches your desk.",
+    icon: iconEngageDedicated,
+    title: "Dedicated Architecture Team",
+    headline: "Best when delivery support becomes ongoing.",
+    idealLabel: "Ideal for firms that:",
+    idealItems: [
+      "Consistent project pipelines.",
+      "Multiple active projects.",
+      "Long-term production requirements.",
+    ],
+    nextLabel: "What changes?",
+    nextText:
+      "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
+    ctaLabel: "Build your Team",
+    ctaHref: ROUTES.dedicatedTeam,
+    ctaVariant: "solid" as const,
+    featured: true,
+    badge: "Most Demanding",
   },
   {
-    number: "06",
-    title: "Client Review and Revisions",
-    text: "We share the model with your team for review. Any changes you request get done quickly without any delay to your timeline.",
-  },
-  {
-    number: "07",
-    title: "Final Output and Handover",
-    text: "You receive the final Revit model along with coordinated drawing package and clash reports. Your team can move straight into the next project phase.",
+    icon: iconEngageStrategic,
+    title: "Strategic Delivery Partnership",
+    headline: "Built on trust, not contracts.",
+    idealLabel: "Ideal for firms focused on:",
+    idealItems: [
+      "Sustainable growth.",
+      "Standardized delivery.",
+      "Long-term operational scalability.",
+    ],
+    nextLabel: "The result",
+    nextText:
+      "VBS becomes a trusted extension of your practice, helping you increase delivery capability while preserving your firm's identity.",
+    ctaLabel: "Explore GDC Model",
+    ctaHref: ROUTES.engagement,
+    ctaVariant: "outline" as const,
+    featured: false,
   },
 ];
 

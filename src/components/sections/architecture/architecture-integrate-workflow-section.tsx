@@ -1,5 +1,6 @@
 "use client";
 
+import type { StaticImageData } from "next/image";
 import Image from "next/image";
 
 import { PageContainer } from "@/components/layout/page-container";
@@ -10,8 +11,26 @@ import {
 } from "@/constants/architecture-services-redesign-content";
 import { cn } from "@/lib/utils";
 
-type WorkflowStep = (typeof architectureWorkflowIntegrateSteps)[number];
 type WorkflowTag = string | { label: string; tint?: string };
+
+export type IntegrateWorkflowStep = {
+  id: string;
+  color: string;
+  tint: string;
+  position: "top-left" | "top-right" | "bottom-right" | "bottom-left" | string;
+  number: string;
+  title: string;
+  body: string;
+  tagRows: WorkflowTag[][];
+};
+
+export type IntegrateWorkflowSection = {
+  tag: string;
+  titleParts: { text: string; className: string }[];
+  description: string;
+  note?: { text: string };
+  centerLogo: string | StaticImageData;
+};
 
 const POSITION_CLASS: Record<string, string> = {
   "top-left": "arch-svc-workflow__step--discover",
@@ -105,15 +124,16 @@ function resolveTag(tag: WorkflowTag) {
   return tag;
 }
 
-function WorkflowStepCard({ step }: { step: WorkflowStep }) {
+function WorkflowStepCard({ step }: { step: IntegrateWorkflowStep }) {
   const alignRight = TEXT_ALIGN_RIGHT.has(step.position);
+  const flatTags = step.tagRows.flat();
 
   return (
     <div
       className={cn(
-        "arch-svc-workflow__step flex flex-col gap-5",
+        "arch-svc-workflow__step flex flex-col gap-5 items-start text-left",
         POSITION_CLASS[step.position],
-        alignRight ? "items-end text-right" : "items-start text-left",
+        alignRight && "lg:items-end lg:text-right",
       )}
     >
       <h3 className="w-full text-[24px] font-medium leading-normal" style={{ color: step.color }}>
@@ -123,18 +143,44 @@ function WorkflowStepCard({ step }: { step: WorkflowStep }) {
         <p className="w-full text-[16px] font-normal leading-6 text-[#111111]">{step.title}</p>
         <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">{step.body}</p>
       </div>
-      <div className={cn("flex w-full flex-col gap-2.5", alignRight ? "items-end" : "items-start")}>
+
+      {/* Mobile: single centered wrap so chips fill the row without fake breaks */}
+      <div className="arch-svc-workflow__tags arch-svc-workflow__tags--mobile flex w-full flex-wrap items-center justify-center gap-2.5 lg:hidden">
+        {flatTags.map((tag) => {
+          const resolved = resolveTag(tag);
+          return (
+            <span
+              key={`m-${resolved.label}`}
+              className="arch-svc-workflow__tag inline-flex shrink-0 items-center whitespace-nowrap rounded-[10px] px-1.5 py-1.5 text-[14px] font-normal text-[#111111]"
+              style={{ backgroundColor: resolved.tint ?? step.tint }}
+            >
+              {resolved.label}
+            </span>
+          );
+        })}
+      </div>
+
+      {/* Desktop: Figma rows — left steps right-align chips, right steps left-align chips */}
+      <div
+        className={cn(
+          "arch-svc-workflow__tags arch-svc-workflow__tags--desktop hidden w-full flex-col gap-2.5 lg:flex",
+          alignRight ? "items-end" : "items-start",
+        )}
+      >
         {step.tagRows.map((row, rowIndex) => (
           <div
             key={`${step.id}-row-${rowIndex}`}
-            className={cn("flex flex-wrap gap-2.5", alignRight ? "justify-end" : "justify-start")}
+            className={cn(
+              "arch-svc-workflow__tag-row flex flex-wrap gap-2.5",
+              alignRight ? "justify-end" : "justify-start",
+            )}
           >
             {row.map((tag) => {
-              const resolved = resolveTag(tag as WorkflowTag);
+              const resolved = resolveTag(tag);
               return (
                 <span
                   key={resolved.label}
-                  className="arch-svc-workflow__tag inline-flex items-center rounded-[10px] px-1.5 py-1.5 text-[14px] font-normal text-[#111111]"
+                  className="arch-svc-workflow__tag inline-flex shrink-0 items-center whitespace-nowrap rounded-[10px] px-1.5 py-1.5 text-[14px] font-normal text-[#111111]"
                   style={{ backgroundColor: resolved.tint ?? step.tint }}
                 >
                   {resolved.label}
@@ -148,20 +194,37 @@ function WorkflowStepCard({ step }: { step: WorkflowStep }) {
   );
 }
 
+/**
+ * Shared Discover → Integrate → Deliver → Improve workflow diagram.
+ * Pass page-specific `section` + `steps` (defaults = architecture-services).
+ */
 export function ArchitectureIntegrateWorkflowSection({
   section = architectureWorkflowIntegrateSection,
   steps = architectureWorkflowIntegrateSteps,
+  headerAlign = "start",
 }: {
-  section?: typeof architectureWorkflowIntegrateSection;
-  steps?: typeof architectureWorkflowIntegrateSteps;
+  section?: IntegrateWorkflowSection;
+  steps?: readonly IntegrateWorkflowStep[];
+  /** Architecture page is left-aligned; CAD Figma centers the intro block. */
+  headerAlign?: "start" | "center";
 }) {
+  const isCentered = headerAlign === "center";
+
   return (
     <section className="arch-svc-workflow bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[883px] flex-col items-start gap-5 self-start">
-          <div className="flex flex-col items-start gap-3">
-            <SectionTag label={section.tag} />
-            <h2 className="text-section w-full">
+        <div
+          className={cn(
+            "flex w-full max-w-[890px] flex-col gap-5",
+            isCentered ? "items-center self-center text-center" : "items-start self-start text-left",
+          )}
+        >
+          <div className={cn("flex flex-col gap-3", isCentered ? "items-center" : "items-start")}>
+            <SectionTag
+              label={section.tag}
+              className={isCentered ? "self-center" : "self-start"}
+            />
+            <h2 className={cn("text-section w-full", isCentered && "max-w-[702px]")}>
               {section.titleParts.map((part, index) => (
                 <span key={`${part.text}-${index}`} className={part.className}>
                   {part.text}
@@ -169,7 +232,12 @@ export function ArchitectureIntegrateWorkflowSection({
               ))}
             </h2>
           </div>
-          <p className="w-full max-w-[850px] text-[16px] font-normal leading-6 text-[#808080]">
+          <p
+            className={cn(
+              "w-full text-[16px] font-normal leading-6 text-[#808080]",
+              isCentered ? "max-w-[586px]" : "max-w-[850px]",
+            )}
+          >
             {section.description}
           </p>
         </div>
@@ -196,7 +264,7 @@ export function ArchitectureIntegrateWorkflowSection({
         </div>
 
         {section.note ? (
-          <div className="w-full rounded-[10px] border border-[#42AA32] bg-[#F8FFFA] p-5">
+          <div className="arch-svc-workflow__note w-full rounded-[10px] border border-[#42AA32] bg-[#F8FFFA] p-5">
             <p className="m-0 text-[16px] font-normal leading-6 text-[#111111]">{section.note.text}</p>
           </div>
         ) : null}

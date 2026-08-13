@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { MepShopDrawingPage } from "@/components/vbs/mep-shop-drawing-page";
 
 export const metadata: Metadata = {
-  title: "MEP Shop Drawing Services | Virtual Building Studio",
+  title: "Shop Drawing Services | Fabrication Drawing ",
   description:
-    "High-quality MEP Shop Drawing Services to minimize field rework. Revit shop drawings for HVAC, mechanical, electrical, and plumbing systems.",
+    "Get on-demand US-trained top 1% architects for accurate architectural Shop Drawing & Fabrication Drawings, ensuring precise fabrication, seamless installation, and faster delivery.",
 };
 
 export default function MepShopDrawingServicesRoute() {

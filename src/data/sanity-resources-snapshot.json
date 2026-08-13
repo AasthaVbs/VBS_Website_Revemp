@@ -1,6 +1,2450 @@
 {
-  "fetchedAt": "2026-08-13T09:59:28.666Z",
+  "fetchedAt": "2026-08-13T14:19:54.985Z",
   "posts": [
+    {
+      "_id": "a5c28aec-4bed-4856-b8e1-6ebfa366ab6b",
+      "body": [
+        {
+          "_key": "665a19639cb3",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-e71912db132797368eb58592cb00dd31a37262f2-1460x926-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "362ee51559a6",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>A data center project can lose days from one coordination error. Dense power systems, cooling equipment, cable trays, fire protection and structural elements compete for limited space. When drawings do not show these relationships clearly, field teams discover conflicts after installation starts. That creates RFIs, redesigns, material changes, and schedule pressure. <strong><i>The research report cites<a href=\"https://www.construction-institute.org/an-investigation-of-field-rework-in-industrial-construction\" rel=\"nofollow\" target=\"_blank\"> Construction Industry Institute</a> findings that field rework can represent 5% to 15% of project costs.</i></strong></P>\n "
+          }
+        },
+        {
+          "_key": "5ab8a6d7c34a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8b684cfac992",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM for data center construction gives project teams a shared digital environment for reviewing these conditions before construction. Teams can coordinate disciplines, test construction sequences, review quantities, and prepare components for fabrication."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "598f1bca25de",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f2ce9f52f9b3",
+              "_type": "span",
+              "marks": [],
+              "text": "The value extends beyond design coordination. BIM can connect construction information with commissioning and facility operations."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a1e399931c79",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d960472cba89",
+              "_type": "span",
+              "marks": [],
+              "text": "What Is BIM in Data Center Construction?"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "8161957416ae",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "58718285bcd9",
+              "_type": "span",
+              "marks": [],
+              "text": "Traditional drawings describe individual building systems. Data center projects need teams to understand how those systems occupy the same physical space."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3676c08398f4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "86445904cfe3",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "BIM in data center construction"
+            },
+            {
+              "_key": "f6003f338947",
+              "_type": "span",
+              "marks": [],
+              "text": " creates an intelligent 3D representation of the facility. The model can contain geometry, equipment information, clearances, quantities, and other project data."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1aaabed778e9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1a59aec3f265",
+              "_type": "span",
+              "marks": [],
+              "text": "The model also develops as project requirements become more defined."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "023b6ad7063d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7e85a35c9c26",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 100 provides early massing and space planning."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "309e9d12adff",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "af56fe32311e",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 200 represents approx sizes and locations."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "28f714e89c5e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a73c8d514e68",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 300 adds accurate dimensions, quantities and coordinates."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a6c3c85b40df",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "497c061ac208",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 350 adds connection and support information."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "93509eb59257",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b7e099ef79a2",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 400 helps in fabrication and assembly."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "556c5fc4dad1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "74b9a171ebbe",
+              "_type": "span",
+              "marks": [],
+              "text": "LOD 500 records verified conditions for operations."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c401aa6f90f3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4e59997f495f",
+              "_type": "span",
+              "marks": [],
+              "text": "This progression gives teams information suited to each project stage. BIM modeling for data centers therefore supports more than visualization. It connects design information with construction and operational decisions."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ffbb467cc8c0",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nLearn About Level of Development (LOD) in BIM  --> \n<a href=\"https://www.virtualbuildingstudio.com/blog/bim-level-of-development-an-overview/\">\n LOD 100, 200, 300, 350, 400, 500\n</a>\n</div>\n \n<style>\n\n.highlight-note {\n\n  border-left: 5px solid #d70416;\n\n  background-color: #f5f5f4;\n\n  padding: 12px 16px;\n\n  margin: 20px 0;\n\n  font-size: 17px;\n\n  line-height: 1.6;\n\n  color: #333;\n\n  font-style: italic;\n\n}\n \n.highlight-note a {\n\n  color: #1e73be;\n\n  font-weight: 600;\n\n  text-decoration: underline;\n\n}\n \n.highlight-note a:hover {\n\n  text-decoration: none;\n\n}\n</style>\n "
+          }
+        },
+        {
+          "_key": "d13d8da3c562",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4eef2e8e2b7a",
+              "_type": "span",
+              "marks": [],
+              "text": "Challenges in Traditional Data Center Construction"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "09a43852a10b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6c6ca62e8ece",
+              "_type": "span",
+              "marks": [],
+              "text": "The need for coordinated modeling becomes clearer when teams examine conventional delivery methods."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3c080aa8e55b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "bbcf91d58dd2",
+              "_type": "span",
+              "marks": [],
+              "text": "Data centers use many systems within tightly controlled spaces. Separate discipline drawings can describe those systems individually, but they provide limited visibility into their three-dimensional relationships."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b9fa4f9a35aa",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e0d76664a969",
+              "_type": "span",
+              "marks": [],
+              "text": "High Infrastructure Density"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "0bebd531ae07",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "de42f5f3af43",
+              "_type": "span",
+              "marks": [],
+              "text": "Server halls may contain high-voltage equipment, busways, cable trays, chilled-water piping, containment systems, fiber routes, and fire protection. Small elevation differences can create physical conflicts between these systems. Traditional 2D drawings make those conflicts harder to identify during design review."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "be08ad565697",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "27873b4f8b5a",
+              "_type": "span",
+              "marks": [],
+              "text": "High RFI and Rework Volumes"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "973603ad8bdc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "dbf87058b794",
+              "_type": "span",
+              "marks": [],
+              "text": "Field teams issue RFI’s when there are missing, unclear or conflicting information in the drawings. The resulting review cycle can stop installation while engineers determine the correct solution. Those RFIs can create delays, downtime and additional project costs."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "bbf53c9833a4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a2b97bd3afb9",
+              "_type": "span",
+              "marks": [],
+              "text": "Equipment Coordination Problems"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "1d7be177c8ef",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a12dd7ef2e11",
+              "_type": "span",
+              "marks": [],
+              "text": "Data centers depend on large generators, UPS systems, cooling equipment, and prefabricated assemblies. Incorrect equipment dimensions or connection locations can create problems when components reach the site."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3a025ab518ae",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f4ccbf38b3d9",
+              "_type": "span",
+              "marks": [],
+              "text": "Handover Data Gaps"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "cf457f4b356e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d7d596a4a738",
+              "_type": "span",
+              "marks": [],
+              "text": "Traditional handovers may leave owners with PDFs, spreadsheets, drawings, and separate equipment records. That makes maintenance and future modifications harder for facility teams."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c0d9f55442ad",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "259657412daf",
+              "_type": "span",
+              "marks": [],
+              "text": "These challenges create a clear need for earlier coordination and better project information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2a215582d6d7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4547271ed867",
+              "_type": "span",
+              "marks": [],
+              "text": "How BIM Is Transforming Data Center Construction"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "66899a2cac11",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "652ec7b84632",
+              "_type": "span",
+              "marks": [],
+              "text": "Fragmented workflows have limitations which cause problems in design and construction. For data center construction, BIM solves these problems with interconnected modeling, coordination, scheduling, cost planning and fabrication workflows."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ad475b81d221",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a807fb3a4478",
+              "_type": "span",
+              "marks": [],
+              "text": "Digital Design Collaboration"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "d0003e3a7850",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a641d9da896a",
+              "_type": "span",
+              "marks": [],
+              "text": "Data center projects bring together architects, structural engineers, MEP specialists, contractors, equipment vendors and owners. These participants may work from different locations and manage different project responsibilities."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6dc6b9f9cd6e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "394c9ca10fc9",
+              "_type": "span",
+              "marks": [],
+              "text": "A Common Data Environment gives teams one controlled location for models, documents, issues, and project information. Autodesk Construction Cloud supports centralized project information and collaboration across design and construction workflows. Teams can then review current information before making coordination decisions. That matters when equipment locations, service routes, or room layouts change during design."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5ad589ba8ec5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "10e20f043fc0",
+              "_type": "span",
+              "marks": [],
+              "text": "Cloud collaboration also reduces the risk of teams working from outdated files."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d1e1ffd19c59",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b91305bb8c1f",
+              "_type": "span",
+              "marks": [],
+              "text": "Integrated Architectural, Structural & MEP Models"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "01a3c3b9bda4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0b1492377f16",
+              "_type": "span",
+              "marks": [],
+              "text": "Data center systems cannot be coordinated independently. Architectural models define rooms, walls, doors, security areas, and spatial requirements. Structural models define slabs, framing, equipment supports, and load conditions. MEP models then place electrical, mechanical, plumbing, fire protection, and related infrastructure within those boundaries."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "89772c0955d6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b0782fb4183c",
+              "_type": "span",
+              "marks": [
+                "cdc720ea05f7"
+              ],
+              "text": "Architectural BIM services"
+            },
+            {
+              "_key": "3f043041ff08",
+              "_type": "span",
+              "marks": [],
+              "text": " can help generate the building model that supports this coordination."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "cdc720ea05f7",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/architectural-bim-services"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "3e976903ac07",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "26c94cb3c44a",
+              "_type": "span",
+              "marks": [],
+              "text": "The combined model gives teams a clearer view of crowded service areas. It also helps engineers review equipment access, routing, supports and clearances before installation."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "06a872b9cff3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b3b2de9cae1c",
+              "_type": "span",
+              "marks": [],
+              "text": "Clash Detection & Coordination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "568e8fe8326b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0bf00cf79ce4",
+              "_type": "span",
+              "marks": [],
+              "text": "Model coordination becomes more useful when teams can identify conflicts before crews reach the site."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "66477bf07fe6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "62a114311f52",
+              "_type": "span",
+              "marks": [],
+              "text": "Navisworks can aggregate discipline models and help teams review different conflict types."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a59d075c79b7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "04bde5ad2dba",
+              "_type": "span",
+              "marks": [],
+              "text": "Hard clashes: Two physical components occupy the same space."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4e79f9512b7b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d9d294c1ee77",
+              "_type": "span",
+              "marks": [],
+              "text": "Soft clashes: A component violates a required clearance."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "16299074d414",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ac02f8a2e79d",
+              "_type": "span",
+              "marks": [],
+              "text": "4D clashes: Temporary work or construction activities conflict with planned installation."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c7f2f475c12a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4c999dcfd11e",
+              "_type": "span",
+              "marks": [],
+              "text": "A chilled-water pipe passing through structural steel creates a hard clash. A cable tray blocking transformer access creates a clearance issue."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "be20b0bce04c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a52635f33f7f",
+              "_type": "span",
+              "marks": [],
+              "text": "The project teams can review these conditions digitally and assign corrective actions before fabrication."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c2e4fcdf54b2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ebefa3c22a4f",
+              "_type": "span",
+              "marks": [
+                "em"
+              ],
+              "text": "The research report cites "
+            },
+            {
+              "_key": "d3d51dca3d81",
+              "_type": "span",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "text": "Dodge Data & Analytics research"
+            },
+            {
+              "_key": "075346c7b39f",
+              "_type": "span",
+              "marks": [
+                "em"
+              ],
+              "text": " showing "
+            },
+            {
+              "_key": "cc2920bef939",
+              "_type": "span",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "text": "BIM coordination can reduce onsite design clashes by up to 40%."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "859e9cdfaf74",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9264c22c2f96",
+              "_type": "span",
+              "marks": [],
+              "text": "4D Construction Scheduling"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "5ff4648baef7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e8bd4e6596af",
+              "_type": "span",
+              "marks": [],
+              "text": "A 4D model connects building elements with construction activities and planned dates. Construction managers can review how crews will install major equipment and systems over time."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5d082ce9b657",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "feff32a10c46",
+              "_type": "span",
+              "marks": [],
+              "text": "The same review can cover crane locations, equipment access routes, temporary work areas, and installation sequences. This gives project teams a clearer view of work-area conflicts before field activities begin."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cd434800d404",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "16d9dbe6dfea",
+              "_type": "span",
+              "marks": [],
+              "text": "5D Cost Estimation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "61d703e89542",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8d353a04e850",
+              "_type": "span",
+              "marks": [],
+              "text": "Cost planning becomes more useful when quantities connect with model components. A change to server hall size, generator capacity or cooling equipment can change material quantities. Teams can then review the cost impact before procurement decisions become difficult to change."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9f1c4a9742c8",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p><i><a href=\"https://www.mckinsey.com/capabilities/operations/our-insights/decoding-digital-transformation-in-construction\" rel=\"nofollow\" target=\"_blank\">McKinsey reports</a> that 5D BIM can support savings through clash detection, better visualization and improved material planning. The research report also cites <strong>construction digitalization studies showing potential project cost reductions by 20%.</strong></i></P>"
+          }
+        },
+        {
+          "_key": "d468b64965a7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "eefd3d197e9d",
+              "_type": "span",
+              "marks": [],
+              "text": "Construction Documentation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "5e84dcf5636e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0cd97d60f889",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM models can generate plans, sections, elevations, details and fabrication drawings. This approach gives teams a common source for model information and construction documentation."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0fd8ab9d17c9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4004cf3734ad",
+              "_type": "span",
+              "marks": [],
+              "text": "When a model change impacts a drawing, teams can review the documentation for a drawing before it is released. This reduces the risk that contractors will receive drawings with contradictory dimensions or obsolete layouts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2d3f2f66aa8a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "dc15e375371d",
+              "_type": "span",
+              "marks": [],
+              "text": "Prefabrication & Modular Construction"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "16715171713c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "32b4e70b9b4d",
+              "_type": "span",
+              "marks": [],
+              "text": "Data center developers face strong pressure to reduce onsite installation time. Fabrication-level models provide manufacturers with detailed information for building electrical houses, cooling skids, pipe assemblies, and other components. Teams can manufacture these assemblies while other construction activities continue at the site. This creates parallel work instead of placing every installation activity on the critical path."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a49bacf421c0",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p><i>The <a href=\"https://theaecassociates.com/blog/bim-for-data-centers/\" rel=\"nofollow\" target=\"_blank\">research report</a>, cites a U.S. hyperscale project where <strong>model-based prefabrication shortened overall delivery by 25%.</strong></i></P>"
+          }
+        },
+        {
+          "_key": "8fe234b0a753",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "86fba8925699",
+              "_type": "span",
+              "marks": [],
+              "text": "Digital Twin Integration"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "6cce91bfc542",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "90e1a3174e94",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM can continue supporting the facility after construction. An LOD 500 model provides the foundation for a Digital Twin connected to facility systems and sensor data. Operations teams can use this information to review equipment status, temperatures, power use, maintenance records and other facility conditions."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7d301dbf5315",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f6f534658b3b",
+              "_type": "span",
+              "marks": [],
+              "text": "This gives owners a structured digital record instead of disconnected handover documents."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0c146e4e5e07",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3a3e3782bd40",
+              "_type": "span",
+              "marks": [],
+              "text": "Key Benefits of BIM for Data Centers"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "70c2e77cf2e0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "42df3f705319",
+              "_type": "span",
+              "marks": [],
+              "text": "The previous workflows show how BIM affects specific project activities. Those improvements also create measurable benefits for owners, designers, and contractor."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "83dd02ad0f5f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a4cd9c9df91c",
+              "_type": "span",
+              "marks": [],
+              "text": "Faster project delivery"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "8e5860da96b3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "dd01f2e84820",
+              "_type": "span",
+              "marks": [],
+              "text": "Model coordination, 4D planning, and prefabrication can reduce installation time. "
+            },
+            {
+              "_key": "c24ff15e0864",
+              "_type": "span",
+              "marks": [
+                "em"
+              ],
+              "text": "The research report cites "
+            },
+            {
+              "_key": "458e95aeff20",
+              "_type": "span",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "text": "project delivery improvements of up to 25%."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8dc00f9ea7ba",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5886e23c4e2e",
+              "_type": "span",
+              "marks": [],
+              "text": "Reduced RFIs"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "a689c2228e85",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "294519013fcd",
+              "_type": "span",
+              "marks": [],
+              "text": "Early design coordination reduces questions caused by unclear or conflicting information. "
+            },
+            {
+              "_key": "2faaf35dc423",
+              "_type": "span",
+              "marks": [
+                "em"
+              ],
+              "text": "Autodesk research cited in the report "
+            },
+            {
+              "_key": "eb3d3f204ec3",
+              "_type": "span",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "text": "indicates RFI reductions of 10% to 25%."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0fa019b908e2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3e95811c014c",
+              "_type": "span",
+              "marks": [],
+              "text": "Better coordination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "a7679e75d0e5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3791dfaccd46",
+              "_type": "span",
+              "marks": [],
+              "text": "A shared model gives architects, engineers, contractors and vendors access to coordinated project information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "95d9d55e4455",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "da4d47d36006",
+              "_type": "span",
+              "marks": [],
+              "text": "Fewer clashes"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "42e8e33a8367",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b459a760dda3",
+              "_type": "span",
+              "marks": [],
+              "text": "Teams can identify spatial conflicts before they become field problems."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8ce20e203807",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "979d8de05893",
+              "_type": "span",
+              "marks": [],
+              "text": "Lower construction costs"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "22e5bde89788",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "01eb98a5f6db",
+              "_type": "span",
+              "marks": [],
+              "text": "Less rework, better quantity control and fewer delays can reduce project costs."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7050a43e03a0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "320a4d482dbc",
+              "_type": "span",
+              "marks": [],
+              "text": "Improved quality"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "1425615e3a88",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f46f7b0fed0e",
+              "_type": "span",
+              "marks": [],
+              "text": "Model-driven fabrication gives manufacturers-controlled conditions for complex assemblies."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "389661a72f32",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ba8d20ad2c64",
+              "_type": "span",
+              "marks": [],
+              "text": "Better decision making"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "9d2f0d7ebec7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "178873947ea1",
+              "_type": "span",
+              "marks": [],
+              "text": "Revit modeling services enable teams to compare layouts, equipment arrangements, structural requirements and operational considerations."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c3595d5c8b67",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "04ad387d6510",
+              "_type": "span",
+              "marks": [],
+              "text": "Increased productivity"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "4063f2054574",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9f529bcf5d02",
+              "_type": "span",
+              "marks": [],
+              "text": "Clear installation drawings reduce uncertainty for onsite staffs and make it easier to plan work."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "352e1d990980",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "108359133115",
+              "_type": "span",
+              "marks": [],
+              "text": "Enhanced sustainability"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "cf6e97030cb0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "10f30451fc16",
+              "_type": "span",
+              "marks": [],
+              "text": "Teams can use BIM-based analysis to evaluate energy, airflow, water use and material impacts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c1f617e090e4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "50db47c876cd",
+              "_type": "span",
+              "marks": [],
+              "text": "Reduced project risks"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "15e194a53e05",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f3310831aaea",
+              "_type": "span",
+              "marks": [],
+              "text": "Virtual coordination moves many design and installation risks into an environment where teams can address them earlier."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e54fe08d0de0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "dc6320cca5d6",
+              "_type": "span",
+              "marks": [],
+              "text": "These benefits make BIM useful across the entire facility lifecycle, from early planning through future expansion."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "57350071aba7",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nLearn more about --> \n<a href=\"https://www.virtualbuildingstudio.com/blog/architectural-bim-data-center-construction/\">\nHow Architectural BIM Improve Data Center Construction Projects\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
+        },
+        {
+          "_key": "1115704c7c94",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2532d263164e",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Applications Across the Data Center Lifecycle"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "918867546d4e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "16c6ad0506c7",
+              "_type": "span",
+              "marks": [],
+              "text": "These benefits become more valuable when teams use BIM beyond detailed design."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4abd7f4abf58",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ed844b97a96c",
+              "_type": "span",
+              "marks": [],
+              "text": "Planning"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "2be8e529baf4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "77b9b8a597e7",
+              "_type": "span",
+              "marks": [],
+              "text": "Teams can evaluate site conditions, utility connections, flood risks, zoning requirements, solar exposure and microclimate factors."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "db811133c943",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d45b01d0754f",
+              "_type": "span",
+              "marks": [],
+              "text": "Concept Design"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "59ada9cb415a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "957ef93ee85a",
+              "_type": "span",
+              "marks": [],
+              "text": "Designers can compare massing options, server capacity, infrastructure ratios and early energy considerations."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "835bcdda765e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "99a42de3f267",
+              "_type": "span",
+              "marks": [],
+              "text": "Detailed Engineering"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "56f84cd8a11e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ee3a3dd0a235",
+              "_type": "span",
+              "marks": [],
+              "text": "Teams develop detailed models for structural validation, equipment placement, cable routing, cooling paths and cross-discipline coordination."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "129fdf7b33c8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e5d8b89362a5",
+              "_type": "span",
+              "marks": [],
+              "text": "Architectural BIM services helps generate model while engineering teams develop detailed system information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b584925a765f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d53e2fd94aa3",
+              "_type": "span",
+              "marks": [],
+              "text": "Construction"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "b6499249041c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "49a4f1ae8bca",
+              "_type": "span",
+              "marks": [],
+              "text": "Contractors can use federated models for clash detection, 4D planning, cost control, logistics and prefabrication."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "75175133d2c1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7426f687b3e1",
+              "_type": "span",
+              "marks": [],
+              "text": "Commissioning"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "700b00291868",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "267b91e76dd2",
+              "_type": "span",
+              "marks": [],
+              "text": "Field teams can connect installed assets with model information. They can record inspections, testing, calibration and sign-offs against those assets."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "90b55ca4bc62",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "dc2586c6be78",
+              "_type": "span",
+              "marks": [],
+              "text": "Facility Management"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "694a4351e799",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "689dc0343c75",
+              "_type": "span",
+              "marks": [],
+              "text": "Owners can use the completed model to access equipment records, warranties, maintenance information and system documentation."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "061cb94db021",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4a4c3d2fd7a7",
+              "_type": "span",
+              "marks": [],
+              "text": "Renovation & Expansion"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "adee6ffee123",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "04170b8ad30f",
+              "_type": "span",
+              "marks": [],
+              "text": "Existing data centers create a different coordination challenge. Engineers need accurate existing conditions before modifying active spaces."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f1ed1840730f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2d4e321a75ac",
+              "_type": "span",
+              "marks": [],
+              "text": "Laser scanning can capture existing conditions before design begins. Point cloud data is then used for model creation for upgrades such as liquid cooling systems or higher density server deployments."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4acd8e9a0b39",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-562667186c53d97d639bb069ea4a0c051de6b377-1536x1024-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "a566ef2f044d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8fce567cbe9c",
+              "_type": "span",
+              "marks": [],
+              "text": "This scan to BIM workflow reduces uncertainty when teams modify facilities that must continue operating."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8e8f47f82360",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "310e65dfbdd7",
+              "_type": "span",
+              "marks": [],
+              "text": "Essential BIM Technologies Used for Data Center Projects"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "d6c2e75724f8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7e7afa279d75",
+              "_type": "span",
+              "marks": [],
+              "text": "The lifecycle workflows depend on several connected technologies. Each tool addresses a specific part of the project process."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "26345a0d6fc4",
+          "_type": "table",
+          "columnWidths": [
+            "30%",
+            "70%"
+          ],
+          "rows": [
+            {
+              "_key": "8a4a9070e46e",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "b6b3aa92ff66",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "BIM Tools and Processes",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "af0e5b8e3e65",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Primary Purpose in Data Center Projects",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "da05f1f0df3e",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "5f6138980624",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Autodesk Revit",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "b09f99f1532b",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Creates coordinated architectural, structural and MEP models for design and engineering.",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "e784dea8fdca",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "47545026ef1c",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Navisworks",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "b76ece97ca33",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Combines discipline models for clash detection, coordination and construction sequence reviews.",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "c256187ee3d3",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "d652fbe5763d",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Autodesk Construction Cloud",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "8ff278466164",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Centralizes models, documents, RFIs, submittals and project information for team collaboration.",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "0b6868888baf",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "1f2e86893a37",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "ReCap",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "4e3934195f0d",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Processes and registers point cloud data captured during reality-capture workflows.",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "d7f97ca63c2a",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "57734fb4f902",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Point Cloud to BIM",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "e915f1615e74",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Converts point cloud data into intelligent BIM models for accurate existing-condition documentation.",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "57ce57004dba",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "51cd8851ca99",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Laser Scanning",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "4acef599ace0",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Captures existing building conditions for new construction, renovation and expansion projects.",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "d73810316572",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "b7d6467ddb1a",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Digital Twins",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "ec32de588f27",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Connects as-built BIM information with operational and sensor data for facility management.",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "83a6fcae53cb",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "84f8df925baf",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "AI-Powered BIM",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "5fe4b1e211a3",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Helps teams analyze layouts, identify patterns, prioritize clashes and automate selected modeling tasks.",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "966ceb75382e",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "d543392c1595",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "BIM 360",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "e40528f6ec90",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Supports cloud-based model sharing, issue tracking and collaboration across project teams.",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "7fdae77d7cfc",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "6451554e535d",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Cloud Collaboration",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "efb58f1faea0",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Gives distributed teams access to shared project models, documents and current project information.",
+                  "rowspan": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_key": "33d1e600789f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0effe5853d7c",
+              "_type": "span",
+              "marks": [],
+              "text": "Firms may also use "
+            },
+            {
+              "_key": "d731250056fb",
+              "_type": "span",
+              "marks": [
+                "6ce30d06c2ba"
+              ],
+              "text": "CAD in BIM services"
+            },
+            {
+              "_key": "c5501559576e",
+              "_type": "span",
+              "marks": [],
+              "text": " in case older 2D drawings have to be converted into smart models. BIM modeling services in USA help supplement production capacity when internal teams have project workload constraints."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "6ce30d06c2ba",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/cad-to-bim/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "de738edb709a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2dfbc76b2e51",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM and AI: The Future of Smarter Data Centers"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "779124f2f2c3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c7b1d6a1530c",
+              "_type": "span",
+              "marks": [
+                "6e78492a780d"
+              ],
+              "text": "AI in Construction"
+            },
+            {
+              "_key": "41b17504c455",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": " "
+            },
+            {
+              "_key": "ed4b200c06a7",
+              "_type": "span",
+              "marks": [],
+              "text": "adds another layer to BIM processes. It helps teams analyze large amount of project information. AI tools can help teams evaluate design issues and generate layout options based on power density, cooling requirements, structural limits and clearances. Data center architects prioritize clash reports to allow teams to resolve higher impact clashes first."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "6e78492a780d",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/blog/ai-in-construction/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "b906e8ecdfa0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "46f0c26a2ca2",
+              "_type": "span",
+              "marks": [],
+              "text": "Industry research report describes AI-supported CFD analysis that can help teams evaluate thermal conditions as layouts change."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0c5afaf2a283",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6412b457b06e",
+              "_type": "span",
+              "marks": [],
+              "text": "Operational Digital Twins can take this further. It analyzes sensor data for temperature, vibration and electrical conditions. Those insights help facilities teams identify unusual equipment behavior and plan maintenance before systems fail."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4451ccb45295",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b0f3f4b8f9c4",
+              "_type": "span",
+              "marks": [],
+              "text": "Real-World BIM Applications in Data Center Construction"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "42609635c0d9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c1b45b1136f9",
+              "_type": "span",
+              "marks": [],
+              "text": "Real projects show how connected BIM workflows can support large-scale data center delivery."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d91f8732fb5a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2cf5b5928d71",
+              "_type": "span",
+              "marks": [],
+              "text": "Start Campus is developing the Sines Data Campus in Portugal with a planned capacity of 1.2 GW. Autodesk reports that the project uses Forma for planning and other Autodesk tools for modeling, collaboration, clash detection, and document management."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fb787a4d8c84",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0bc420c27526",
+              "_type": "span",
+              "marks": [],
+              "text": "The project currently reports a PUE of 1.1 and WUE of 0. The research report also describes a U.S. hyperscale project where Revit-based MEP skid modeling supported offsite fabrication."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cd836e447555",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "49f4d26b9638",
+              "_type": "span",
+              "marks": [],
+              "text": "These cases explains how digital coordination can connect design decisions with construction and operational goals."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "60a8ab363d8e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "46240e0036f8",
+              "_type": "span",
+              "marks": [],
+              "text": "Best Practices for Successful BIM Implementation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "74b3dfb95273",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "38b30f1de035",
+              "_type": "span",
+              "marks": [],
+              "text": "The technology works best when project teams establish clear processes before modeling begins."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8ac1588858d3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ba264b071e2d",
+              "_type": "span",
+              "marks": [],
+              "text": "Create a BIM Execution Plan"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "61ec3f5ccdd6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ae3c7a06ab15",
+              "_type": "span",
+              "marks": [],
+              "text": "A BIM Execution Plan should define project goals, software, file formats, coordinate systems, model exchanges and responsibilities."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5d703ef59bdf",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "09392bb10df9",
+              "_type": "span",
+              "marks": [],
+              "text": "Define LOD Requirements"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "1f7e1d413b3f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4159c79f42c3",
+              "_type": "span",
+              "marks": [],
+              "text": "Teams should establish the required information for LOD 300, LOD 350, LOD 400 and LOD 500 deliverables. Clear requirements help teams avoid both missing information and unnecessary modeling work."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b6acd77a324b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b94e541c0cef",
+              "_type": "span",
+              "marks": [],
+              "text": "Use One Common Data Environment"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "76bbf6cd819d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "07f10daa3376",
+              "_type": "span",
+              "marks": [],
+              "text": "Project participants should use one controlled environment for current models and project documents."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "416723da73f5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "fab31788c2ad",
+              "_type": "span",
+              "marks": [],
+              "text": "Train Project Teams"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "38b2b20d9f5c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "37482f4e952d",
+              "_type": "span",
+              "marks": [],
+              "text": "Architects, engineers, contractors, and field supervisors need practical training in Revit, Navisworks, model review, and cloud collaboration. Firms can also use BIM consulting services when projects need specialist coordination or BIM management support."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "65768fe29871",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "713e352110fb",
+              "_type": "span",
+              "marks": [],
+              "text": "Use Reality Capture for Existing Facilities"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "d7c222710d64",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6f4f60842db3",
+              "_type": "span",
+              "marks": [],
+              "text": "Retrofit projects should start with accurate existing-condition information. Many industry research reports recommend laser scanning and defined USIBD LOA standards for Scan to BIM projects."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a5af255a71b7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "49412721c48f",
+              "_type": "span",
+              "marks": [],
+              "text": "Teams can then use CAD to BIM services for legacy drawings and Scan to "
+            },
+            {
+              "_key": "02b440949c14",
+              "_type": "span",
+              "marks": [
+                "d10d6f2da72d"
+              ],
+              "text": "Revit modeling services"
+            },
+            {
+              "_key": "b7e8d0c2e3b1",
+              "_type": "span",
+              "marks": [],
+              "text": " for verified field conditions."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "d10d6f2da72d",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "1e4063083ff6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cb9137c9a0d1",
+              "_type": "span",
+              "marks": [],
+              "text": "Future Trends in Data Center BIM"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "aa3a56c6871e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a62c12176f70",
+              "_type": "span",
+              "marks": [],
+              "text": "Data center requirements will push BIM toward greater automation and operational intelligence. As facilities get more complicated, BIM will evolve from a coordination tool to a decision support system that directs design, construction and operations."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0da2ede1a2b3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "71bb630961bc",
+              "_type": "span",
+              "marks": [],
+              "text": "AI-based tools will assess layouts against cooling, power, cost and carbon targets, allowing real time comparison and optimisation for efficiency, resilience and sustainability."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ab9f3fc864d1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "12d04fcdcb25",
+              "_type": "span",
+              "marks": [],
+              "text": "Major technical changes are:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7d5d4ec2682b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "93330c4d118f",
+              "_type": "span",
+              "marks": [],
+              "text": "Demand for liquid cooling is being driven by higher server densities which requires detailed BIM components for manifolds, cooling units and piping systems."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a5816cced0a3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "bc6ba4225de9",
+              "_type": "span",
+              "marks": [],
+              "text": "Direct-to-factory workflows linking BIM models with CNC and robotic fabrication to minimise manual translation."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6d42b8b23d04",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f9848635bf3f",
+              "_type": "span",
+              "marks": [],
+              "text": "Use of BIM coordinates for accurate layout and to reduce installation errors for onsite robotics."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "770c18b64107",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f675511510a8",
+              "_type": "span",
+              "marks": [],
+              "text": "On operations, Digital Twins will create value through sensor integration enabling real-time monitoring and tighter feedback between design intent and building performance."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fbb7b83e6705",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c631a9606055",
+              "_type": "span",
+              "marks": [],
+              "text": "The report also highlights dynamic embodied-carbon tracking as an emerging capability for teams to measure and adjust environmental impact across the life cycle."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9e49b5228e32",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1c3c98c41650",
+              "_type": "span",
+              "marks": [],
+              "text": "Together, these advances will connect design, fabrication, construction, and operations into a continuous, data-driven data center ecosystem."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "33c47412137e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9aa795e0ed71",
+              "_type": "span",
+              "marks": [],
+              "text": "Conclusion"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "cea47e4b3dbc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "adfe90e88cb3",
+              "_type": "span",
+              "marks": [],
+              "text": "Data center delivery depends on coordination across many systems, teams, and project stages. The research shows that BIM modeling for data centers can give teams a structured environment for design coordination, clash detection, scheduling, cost planning, fabrication, and handover."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a002214fce89",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "af25bf198a39",
+              "_type": "span",
+              "marks": [],
+              "text": "Data center BIM services can support these workflows when firms need additional modeling or coordination capacity. The value increases when teams connect BIM with reality capture, cloud collaboration, AI, prefabrication, and Digital Twins."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c47aa02a4ef7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "80365a1a6512",
+              "_type": "span",
+              "marks": [],
+              "text": "For architecture firms and data center project decision makers, the practical benefit is better information before decisions reach the field. BIM in Data Center Construction gives teams more opportunities to identify conflicts, review options, and coordinate work before those issues affect construction."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c0e3cd16e4d3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f593bda3071d",
+              "_type": "span",
+              "marks": [],
+              "text": "As data center projects become denser and schedules become more demanding, "
+            },
+            {
+              "_key": "66152007a8f5",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "BIM for data center construction "
+            },
+            {
+              "_key": "e085587f01b8",
+              "_type": "span",
+              "marks": [],
+              "text": "will have a larger role in planning and delivery."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "23cf1f3fd714",
+          "_type": "cta",
+          "buttonText": "Contact Us",
+          "buttonUrl": "/contact-us/",
+          "title": "Plan, Coordinate and Build Your Data Center With One Connected BIM Workflow"
+        }
+      ],
+      "categories": [
+        {
+          "_id": "c4570779-37fa-4762-8173-57e0a7f8de73",
+          "title": "BIM Modeling "
+        }
+      ],
+      "featuredImage": {
+        "asset": {
+          "originalFilename": "bim-data-centre-construction.jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/e71912db132797368eb58592cb00dd31a37262f2-1460x926.jpg"
+        }
+      },
+      "publishedAt": "2026-08-13",
+      "slug": "bim-data-centre-construction",
+      "tags": null,
+      "title": "How BIM Is Transforming Smarter Data Centre Construction"
+    },
     {
       "_id": "23922413-b19d-408b-a7dc-277d06a4d57e",
       "body": [
@@ -141428,24 +143872,10 @@
       "_id": "f686b3f4-2f37-4775-9dfa-544bf36042fb",
       "body": [
         {
-          "_key": "ce26aaf549de",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "f122461c230b",
-              "_type": "span",
-              "marks": [],
-              "text": ""
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "8efb3a437afa",
+          "_key": "60e46051c24f",
           "_type": "image",
           "asset": {
-            "_ref": "image-dcc8a3a4089870630e09724e34294f311c238f53-850x540-webp",
+            "_ref": "image-1623aca38bd0b9ab67f11ac4480826c416d59bfb-1460x926-jpg",
             "_type": "reference"
           }
         },
@@ -141514,10 +143944,10 @@
           "style": "normal"
         },
         {
-          "_key": "8ade1b6efe6c",
+          "_key": "bbbb7f63060c",
           "_type": "image",
           "asset": {
-            "_ref": "image-730a8088aad492c5c2d41242266260305a17072c-850x472-webp",
+            "_ref": "image-49cf2b52ab3cae878056719365caac1268405f50-1460x815-jpg",
             "_type": "reference"
           }
         },
@@ -142562,10 +144992,10 @@
           "style": "normal"
         },
         {
-          "_key": "eb752804d9d1",
+          "_key": "63377f656dc0",
           "_type": "image",
           "asset": {
-            "_ref": "image-9aeb60f70385003480d901c92adeaf150564d514-850x541-webp",
+            "_ref": "image-85d6ee28069b115860a25f8f3c6d83d7844d0c50-1460x901-jpg",
             "_type": "reference"
           }
         },
@@ -143758,10 +146188,10 @@
           "style": "normal"
         },
         {
-          "_key": "9a331eabd7cd",
+          "_key": "f8e9d4ebdf36",
           "_type": "image",
           "asset": {
-            "_ref": "image-f1ebba2d53506a87ef75dec22947863de4da5c85-850x638-webp",
+            "_ref": "image-02fdfa52db3650e0660ca266612e7587ae2f414d-1460x1096-jpg",
             "_type": "reference"
           }
         },
@@ -144056,8 +146486,8 @@
       ],
       "featuredImage": {
         "asset": {
-          "originalFilename": "comprehensive-hvac-duct-shop-drawings-featured.webp",
-          "url": "https://cdn.sanity.io/images/rog08jar/production/a63cb02113f028e41c94f0798bc663ec7905e392-945x600.webp"
+          "originalFilename": "HVAC Duct Shop Drawings.jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/1623aca38bd0b9ab67f11ac4480826c416d59bfb-1460x926.jpg"
         }
       },
       "publishedAt": "2023-12-14",

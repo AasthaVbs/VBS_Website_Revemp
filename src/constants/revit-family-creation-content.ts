@@ -281,7 +281,7 @@ export const revitFamilyCreationKeyPointsSection = {
   titleLine1: "Advantages of Outsourcing ",
   titleLine2: "Revit Family Creation Services",
   titleMaxWidth: 724,
-  descriptionMaxWidth: 687,
+  descriptionMaxWidth: 880,
   description:
     "Parametric content in Revit helps architecture and structural teams fasten workflows, sharpen model accuracy and scale BIM assets without added rework.",
   ctaLabel: "Contact Now",
@@ -346,7 +346,7 @@ export const revitFamilyCreationIndustriesIntro = {
   titleLine1: "Industries We Support with ",
   titleLine2: "Revit Family Creation Expertise",
   titleMaxWidth: 706,
-  introMaxWidth: 780,
+  introMaxWidth: 790,
   description:
     "From iconic high-rises to large-scale infrastructure, our Revit family services empower diverse industries with smart, scalable solutions tailored to their unique project goals and challenges.",
 };

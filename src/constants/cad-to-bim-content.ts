@@ -373,7 +373,7 @@ export const cadToBimKeyPointsSection = {
   titleLine1: "Advantages of Outsourcing ",
   titleLine2: "CAD to BIM Services",
   titleMaxWidth: 661,
-  descriptionMaxWidth: 598,
+  descriptionMaxWidth: 880,
   description:
     "Outsourcing conversion work gives your in-house team back the hours they used to spend cleaning up drawings manually.",
   ctaLabel: "Contact Now",

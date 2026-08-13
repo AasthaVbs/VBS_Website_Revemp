@@ -376,7 +376,7 @@ export const bimModelingAdvantagesSection = {
   titleLine1: "Top Advantages to Choose\n",
   titleLine2: "BIM Modeling Services",
   titleMaxWidth: 746,
-  descriptionMaxWidth: 581,
+  descriptionMaxWidth: 880,
   description:
     "Use Revit BIM Services to lower project risks, enhance collaboration and ease delivery from design to construction.",
   ctaLabel: "Contact Now",

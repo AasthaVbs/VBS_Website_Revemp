@@ -202,13 +202,17 @@ export function ArchitectureIntegrateWorkflowSection({
   section = architectureWorkflowIntegrateSection,
   steps = architectureWorkflowIntegrateSteps,
   headerAlign = "start",
+  descriptionMaxWidth,
 }: {
   section?: IntegrateWorkflowSection;
   steps?: readonly IntegrateWorkflowStep[];
   /** Architecture page is left-aligned; CAD Figma centers the intro block. */
   headerAlign?: "start" | "center";
+  descriptionMaxWidth?: number;
 }) {
   const isCentered = headerAlign === "center";
+  const resolvedDescriptionMaxWidth =
+    descriptionMaxWidth ?? (isCentered ? 672 : 850);
 
   return (
     <section className="arch-svc-workflow bg-white py-12 sm:py-16 lg:py-[100px]">
@@ -224,19 +228,20 @@ export function ArchitectureIntegrateWorkflowSection({
               label={section.tag}
               className={isCentered ? "self-center" : "self-start"}
             />
-            <h2 className={cn("text-section w-full", isCentered && "max-w-[702px]")}>
+            <h2 className="text-section w-full">
               {section.titleParts.map((part, index) => (
-                <span key={`${part.text}-${index}`} className={part.className}>
-                  {part.text}
+                <span
+                  key={`${part.text}-${index}`}
+                  className={cn(part.className, "block")}
+                >
+                  {part.text.trimEnd()}
                 </span>
               ))}
             </h2>
           </div>
           <p
-            className={cn(
-              "w-full text-[16px] font-normal leading-6 text-[#808080]",
-              isCentered ? "max-w-[586px]" : "max-w-[850px]",
-            )}
+            className="w-full text-[16px] font-normal leading-6 text-[#808080]"
+            style={{ maxWidth: resolvedDescriptionMaxWidth }}
           >
             {section.description}
           </p>

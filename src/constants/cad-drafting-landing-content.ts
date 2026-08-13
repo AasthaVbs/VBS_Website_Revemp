@@ -218,7 +218,7 @@ export const cadDraftingLandingToolLogos = [
   { name: "AutoCAD", src: toolImg("AutoCAD-logo-1.jpg") },
   { name: "Navisworks", src: toolImg("autodesk-navisworks-1.jpg") },
   { name: "Revit", src: toolImg("autodesk-revit-logo-png_seeklogo-482393-1.jpg") },
-  { name: "BIM 360", src: toolImg("BIM-360.jpg") },
+  { name: "BIM 360", src: toolImg("bim-360.png") },
   { name: "Bluebeam", src: toolImg("bluebeam-inc-vector-logo-1.jpg") },
   { name: "Lumion", src: toolImg("Lumion.jpg") },
   {

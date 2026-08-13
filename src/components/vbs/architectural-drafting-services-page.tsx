@@ -89,6 +89,7 @@ export async function ArchitecturalDraftingServicesPage() {
           title={
             <>
               <span className="font-medium">{architecturalDraftingProjectCta.titleLine1}</span>
+              <br />
               <span className="font-light">{architecturalDraftingProjectCta.titleLine2}</span>
             </>
           }
@@ -103,6 +104,7 @@ export async function ArchitecturalDraftingServicesPage() {
           titleLine1={architecturalDraftingIndustriesIntro.titleLine1}
           titleLine2={architecturalDraftingIndustriesIntro.titleLine2}
           titleMaxWidth={architecturalDraftingIndustriesIntro.titleMaxWidth}
+          introMaxWidth={790}
           breakTitle
         />
         <DeferredMepResourcesSection

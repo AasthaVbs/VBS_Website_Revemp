@@ -34,8 +34,28 @@ export const DeferredIndustriesSection = createDeferredSection(
   { minHeight: 480 },
 );
 
-export const DeferredMepResourcesSection = createDeferredSection(
-  () => import("@/components/sections/mep/mep-resources-section"),
+type MepResourcesSectionProps = {
+  section?: {
+    tag: string;
+    titleLine1: string;
+    titleLine2: string;
+    description: string;
+    viewAllHref: string;
+    serviceFilter?: string;
+  };
+  filters?: readonly string[];
+  allItems?: unknown[];
+  serviceFilter?: string;
+  badgeStyles?: Record<string, { bg: string; color: string; border: string }>;
+  sectionId?: string;
+  sectionClassName?: string;
+};
+
+export const DeferredMepResourcesSection = createDeferredSection<MepResourcesSectionProps>(
+  () =>
+    import("@/components/sections/mep/mep-resources-section") as unknown as Promise<
+      Record<string, import("react").ComponentType<MepResourcesSectionProps>>
+    >,
   "MepResourcesSection",
   { minHeight: 560 },
 );

@@ -107,6 +107,7 @@ export async function ArchitecturalBimServicesPage() {
           titleLine1={architecturalBimIndustriesIntro.titleLine1}
           titleLine2={architecturalBimIndustriesIntro.titleLine2}
           titleMaxWidth={architecturalBimIndustriesIntro.titleMaxWidth}
+          introMaxWidth={790}
           breakTitle
         />
         <DeferredMepResourcesSection

@@ -149,7 +149,7 @@ export const architectureFullSpectrumCards = [
     title: "Schematic Design",
     text: "Establish a clear project direction through conceptual layouts, spatial planning, and early-stage design studies. Schematic design deliverables help evaluate design alternatives, assess project feasibility, and align stakeholders before advancing into detailed development.",
     image: schematicDesignImg.src,
-    href: "#",
+    href: ROUTES.schematicDesign,
   },
   {
     title: "Design Development",
@@ -161,7 +161,7 @@ export const architectureFullSpectrumCards = [
     title: "Construction Documentation",
     text: "Support permitting, bidding, and construction activities with comprehensive documentation packages developed for clarity and accuracy. Detailed plans, elevations, sections, schedules, and construction details help reduce ambiguities, improve communication, and facilitate efficient project delivery.",
     image: revitCadDraftingServicesImg.src,
-    href: "#",
+    href: ROUTES.constructionDocumentation,
   },
   {
     title: "Architectural BIM Modeling",

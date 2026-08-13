@@ -1,9 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import {
+  Children,
+  isValidElement,
+  type ButtonHTMLAttributes,
+  type MouseEvent,
+  type ReactNode,
+} from "react";
 
+import {
+  handleInPageHashClick,
+  isBookMeetingCtaHref,
+  isBookMeetingCtaLabel,
+  isSamePageHashLink,
+} from "@/hooks/scrollToPageSection";
 import { cn } from "@/lib/utils";
+import { openBookMeetingModal } from "@/utils/nimbus-booking";
 
 type PrimaryCtaButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
@@ -24,6 +37,21 @@ function PrimaryCtaBlobs() {
   );
 }
 
+function flattenLabel(node: ReactNode): string {
+  return Children.toArray(node)
+    .map((child) => {
+      if (typeof child === "string" || typeof child === "number") {
+        return String(child);
+      }
+      if (isValidElement<{ children?: ReactNode }>(child)) {
+        return flattenLabel(child.props.children);
+      }
+      return "";
+    })
+    .join("")
+    .trim();
+}
+
 export function PrimaryCtaButton({
   children,
   className,
@@ -31,6 +59,7 @@ export function PrimaryCtaButton({
   stripedLong = false,
   href,
   type = "button",
+  onClick,
   ...props
 }: PrimaryCtaButtonProps) {
   const classes = cn(
@@ -52,8 +81,39 @@ export function PrimaryCtaButton({
     </>
   );
 
+  const label = flattenLabel(children);
+  const opensMeeting = isBookMeetingCtaLabel(label) || isBookMeetingCtaHref(href);
+
+  const handleMeetingClick = (event: MouseEvent<HTMLElement>) => {
+    void openBookMeetingModal(event);
+    onClick?.(event as MouseEvent<HTMLButtonElement>);
+  };
+
+  const handleHashClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!href) return;
+    handleInPageHashClick(event, href, onClick as ((e: { preventDefault: () => void }) => void) | undefined, {
+      updateHash: false,
+    });
+  };
+
+  if (opensMeeting) {
+    return (
+      <button type={type} className={classes} onClick={handleMeetingClick} {...props}>
+        {content}
+      </button>
+    );
+  }
+
   if (href) {
-    if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+    if (href.startsWith("#") || isSamePageHashLink(href)) {
+      return (
+        <a href={href} className={classes} onClick={handleHashClick}>
+          {content}
+        </a>
+      );
+    }
+
+    if (href.startsWith("mailto:") || href.startsWith("tel:")) {
       return (
         <a href={href} className={classes}>
           {content}
@@ -69,11 +129,7 @@ export function PrimaryCtaButton({
   }
 
   return (
-    <button
-      type={type}
-      className={classes}
-      {...props}
-    >
+    <button type={type} className={classes} onClick={onClick} {...props}>
       {content}
     </button>
   );

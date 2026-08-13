@@ -1,34 +1,66 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 import videoFillIcon from "@/assets/images/video-fill-icon.svg";
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
+import { TestimonialVideoModal } from "@/components/sections/testimonial-video-modal";
 import { architectureAiBimWorkflowSection } from "@/constants/architecture-services-content";
 import { altFromImageSrc } from "@/lib/utils";
 
+/** Shared AI + BIM Experts demo — https://www.youtube.com/watch?v=lQFR-Cs-0Qs */
+export const AI_BIM_WORKFLOW_YOUTUBE_VIDEO_ID = "lQFR-Cs-0Qs";
+
 type AiBimWorkflowSectionContent = typeof architectureAiBimWorkflowSection & {
   posterSrc?: string;
+  youtubeVideoId?: string;
   videoHref?: string;
   onPlay?: () => void;
 };
 
+function youtubeThumbnailUrl(videoId: string) {
+  return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+}
+
 /**
  * AI-BIM Workflow — video CTA between Services and Core Points.
+ * Click opens a YouTube popup with autoplay.
  */
 export function ArchitectureAiBimWorkflowSection({
   section = architectureAiBimWorkflowSection,
 }: {
   section?: AiBimWorkflowSectionContent;
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const youtubeVideoId = section.youtubeVideoId ?? AI_BIM_WORKFLOW_YOUTUBE_VIDEO_ID;
+  // Prefer the real YouTube thumbnail whenever a video is wired.
+  const posterSrc = youtubeVideoId
+    ? youtubeThumbnailUrl(youtubeVideoId)
+    : section.posterSrc;
+  const canPlay = Boolean(youtubeVideoId || section.videoHref || section.onPlay);
+
+  const openVideo = () => {
+    if (section.onPlay) {
+      section.onPlay();
+      return;
+    }
+    if (youtubeVideoId) {
+      setIsOpen(true);
+    }
+  };
+
   const media = (
     <div className="architecture-ai-bim-workflow__media relative w-full max-w-[640px] overflow-hidden rounded-[10px] aspect-[800/558] lg:w-[640px] lg:max-w-none lg:shrink-0">
-      {section.posterSrc ? (
+      {posterSrc ? (
         <Image
-          src={section.posterSrc}
-          alt={altFromImageSrc(section.posterSrc)}
+          src={posterSrc}
+          alt={altFromImageSrc(posterSrc)}
           fill
           className="object-cover"
           sizes="(max-width: 1024px) 100vw, 640px"
+          unoptimized={posterSrc.includes("img.youtube.com")}
         />
       ) : (
         <div className="absolute inset-0 bg-[#1a1a1a]" aria-hidden />
@@ -67,22 +99,15 @@ export function ArchitectureAiBimWorkflowSection({
             </p>
           </div>
 
-          {section.videoHref || section.onPlay ? (
-            <a
-              href={section.videoHref || "#"}
-              onClick={
-                section.onPlay
-                  ? (event) => {
-                      event.preventDefault();
-                      section.onPlay?.();
-                    }
-                  : undefined
-              }
-              className="architecture-ai-bim-workflow__media-link relative block w-full max-w-[640px] outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-[#D70416] focus-visible:ring-offset-2 lg:w-auto lg:shrink-0"
+          {canPlay ? (
+            <button
+              type="button"
+              onClick={openVideo}
+              className="architecture-ai-bim-workflow__media-link relative block w-full max-w-[640px] cursor-pointer border-0 bg-transparent p-0 text-left outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-[#D70416] focus-visible:ring-offset-2 lg:w-auto lg:shrink-0"
               aria-label={section.videoAriaLabel}
             >
               {media}
-            </a>
+            </button>
           ) : (
             <div
               className="architecture-ai-bim-workflow__media-link relative w-full max-w-[640px] lg:w-auto lg:shrink-0"
@@ -94,6 +119,14 @@ export function ArchitectureAiBimWorkflowSection({
           )}
         </div>
       </PageContainer>
+
+      {isOpen && youtubeVideoId ? (
+        <TestimonialVideoModal
+          youtubeVideoId={youtubeVideoId}
+          title={section.videoAriaLabel}
+          onClose={() => setIsOpen(false)}
+        />
+      ) : null}
     </section>
   );
 }

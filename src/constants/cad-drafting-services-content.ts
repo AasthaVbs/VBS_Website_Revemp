@@ -378,7 +378,7 @@ export const cadDraftingAdvantagesSection = {
   titleLine1: "Advantages of ",
   titleLine2: "CAD Drafting Outsourcing Services",
   titleMaxWidth: 700,
-  descriptionMaxWidth: 700,
+  descriptionMaxWidth: 880,
   description:
     "Outsourcing CAD drafting work allows AEC firms to improve drawing quality, reduce rework and accelerate delivery without increasing full-time headcount to their payroll.",
   ctaLabel: "Contact Now",
@@ -440,7 +440,7 @@ export const cadDraftingIndustriesIntro = {
   titleLine1: "Industries We Support with ",
   titleLine2: "CAD Drafting Expertise",
   titleMaxWidth: 706,
-  descriptionMaxWidth: 720,
+  descriptionMaxWidth: 790,
   description:
     "From iconic high-rises to large-scale infrastructure, our CAD drawing services empower diverse industries with smart, scalable solutions tailored to their unique project goals and challenges.",
 };

@@ -265,7 +265,7 @@ const toolImg = (filename: string) => encodeURI(`/image/${filename}`);
 export const bimModelingLandingToolLogos = [
   { name: "Revit", src: toolImg("autodesk-revit-logo-png_seeklogo-482393-1.jpg") },
   { name: "Navisworks", src: toolImg("autodesk-navisworks-1.jpg") },
-  { name: "BIM 360", src: toolImg("BIM-360.jpg") },
+  { name: "BIM 360", src: toolImg("bim-360.png") },
   { name: "AutoCAD", src: toolImg("AutoCAD-logo-1.jpg") },
   {
     name: "ReCap Pro",

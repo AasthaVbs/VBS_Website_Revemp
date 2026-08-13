@@ -97,6 +97,7 @@ export async function BimModelingServicesPage() {
           title={
             <>
               <span className="font-medium">{bimModelingProjectCta.titleLine1}</span>
+              <br />
               <span className="font-light">{bimModelingProjectCta.titleLine2}</span>
             </>
           }
@@ -111,6 +112,7 @@ export async function BimModelingServicesPage() {
           titleLine1={bimModelingIndustriesIntro.titleLine1}
           titleLine2={bimModelingIndustriesIntro.titleLine2}
           titleMaxWidth={bimModelingIndustriesIntro.titleMaxWidth}
+          introMaxWidth={790}
           breakTitle
         />
         <DeferredMepResourcesSection

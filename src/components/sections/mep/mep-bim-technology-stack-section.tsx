@@ -17,6 +17,7 @@ export function MepBimTechnologyStackSection({
   toolsRowTwo = mepBimTechnologyStackToolsRowTwo,
   titleLayout = "stacked",
   descriptionMaxWidth = 591,
+  titleMaxWidth = 798,
 }: {
   section?: {
     tag: string;
@@ -28,6 +29,7 @@ export function MepBimTechnologyStackSection({
   toolsRowTwo?: MepBimTechnologyTool[];
   titleLayout?: "stacked" | "inline";
   descriptionMaxWidth?: number;
+  titleMaxWidth?: number;
 } = {}) {
   const { tag, titleLine1, titleAccent, description } = section;
 
@@ -35,9 +37,12 @@ export function MepBimTechnologyStackSection({
     <section className="overflow-hidden bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
         <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
-          <div className="flex max-w-[898px] flex-col items-start gap-3">
+          <div
+            className="flex flex-col items-start gap-3"
+            style={{ maxWidth: Math.max(titleMaxWidth, 898) }}
+          >
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading max-w-[798px]">
+            <h2 className="mep-section-heading" style={{ maxWidth: titleMaxWidth }}>
               <span className="font-medium">{titleLine1}</span>
               {titleLayout === "stacked" ? <br /> : " "}
               <span className="text-accent font-light">{titleAccent}</span>

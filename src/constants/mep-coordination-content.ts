@@ -1,7 +1,7 @@
 import accurateShopDrawingsIcon from "@/assets/images/accurate-shop-drawings-icon 1.png";
 import autocadIcon from "@/assets/images/autocad-icon.png";
 import autodeskRevitIcon from "@/assets/images/autodesk-revit-icon.png";
-import bim360Icon from "@/assets/images/bim-360-icon.png";
+import bim360Icon from "@/assets/images/bim-360-icons.png";
 import bluebeamIcon from "@/assets/images/bluebeam-icon.png";
 import clashDetectionResolution from "@/assets/images/clash-detection-resolution.jpg";
 import complexHighRiseProjectsIcon from "@/assets/images/complex-high-rise-projects-icon 1.png";

@@ -43,6 +43,7 @@ export type MepTrustedByContent = {
   >;
 };
 
+import bim360Icon from "@/assets/images/bim-360-icons.png";
 import mepBimModelingOverview from "@/assets/images/mep-bim-modeling-overview.png";
 
 export const mepBimModellingIntro = {
@@ -280,7 +281,7 @@ export const mepBimTechnologyStackToolsRowOne: MepBimTechnologyTool[] = [
     iconWidth: 71,
     iconHeight: 66,
   },
-  { name: "BIM 360", icon: "/image/bim-360.png", iconWidth: 66, iconHeight: 79 },
+  { name: "BIM 360", icon: bim360Icon.src, iconWidth: 66, iconHeight: 79 },
 ];
 
 export const mepBimTechnologyStackToolsRowTwo: MepBimTechnologyTool[] = [

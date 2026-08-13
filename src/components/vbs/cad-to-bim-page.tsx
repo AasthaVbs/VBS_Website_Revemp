@@ -119,6 +119,7 @@ export async function CadToBimPage() {
           titleLine1={cadToBimIndustriesIntro.titleLine1}
           titleLine2={cadToBimIndustriesIntro.titleLine2}
           titleMaxWidth={cadToBimIndustriesIntro.titleMaxWidth}
+          introMaxWidth={790}
           breakTitle
         />
         <DeferredMepResourcesSection

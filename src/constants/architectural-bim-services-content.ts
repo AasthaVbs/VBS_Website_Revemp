@@ -209,7 +209,7 @@ export const architecturalBimAdvantagesSection = {
   titleLine1: "Key Advantages of ",
   titleLine2: "Architectural Outsourcing Services",
   titleMaxWidth: 746,
-  descriptionMaxWidth: 673,
+  descriptionMaxWidth: 880,
   description:
     "Our architects make sure assured quality and up to code, helping your team design better, work together smoothly and build with confidence.",
   ctaLabel: "Contact Now",

@@ -29,6 +29,8 @@ export type EngagementModelsCard = {
 export type EngagementModelsSectionContent = {
   tag: string;
   titleParts: { text: string; className: string }[];
+  /** When true (default), each title part is on its own line. */
+  stackTitle?: boolean;
   description: string;
   descriptionMaxWidth?: number;
   note?: { text: string };
@@ -109,6 +111,7 @@ export function ArchitectureEngagementModelsSection({
   cards?: readonly EngagementModelsCard[];
 }) {
   const descriptionMaxWidth = section.descriptionMaxWidth ?? 750;
+  const stackTitle = section.stackTitle !== false;
 
   return (
     <section id="engagement-models" className="arch-svc-engagement bg-white py-12 sm:py-16 lg:py-[100px]">
@@ -118,8 +121,11 @@ export function ArchitectureEngagementModelsSection({
             <SectionTag label={section.tag} />
             <h2 className="text-section w-full">
               {section.titleParts.map((part, index) => (
-                <span key={`${part.text}-${index}`} className={part.className}>
-                  {part.text}
+                <span
+                  key={`${part.text}-${index}`}
+                  className={cn(part.className, stackTitle && "block")}
+                >
+                  {stackTitle ? part.text.trimEnd() : part.text}
                 </span>
               ))}
             </h2>

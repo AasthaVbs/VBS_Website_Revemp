@@ -113,7 +113,6 @@ export async function MepCoordinationPage() {
           columnsPerRow={3}
           descriptionMaxWidth={683}
         />
-        {/* @ts-expect-error -- mep-resources-section uses @ts-nocheck so props infer as object */}
         <DeferredMepResourcesSection section={mepCoordinationResourcesSection} allItems={resourcesFeed} />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile

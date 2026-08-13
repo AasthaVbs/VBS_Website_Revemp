@@ -1,34 +1,96 @@
-﻿// @ts-nocheck
-function normalizePath(pathname) {
+﻿type ScrollToPageSectionOptions = {
+  behavior?: ScrollBehavior;
+  updateHash?: boolean;
+  /** Retry while deferred sections mount (default 40 × 100ms). */
+  retries?: number;
+  retryDelayMs?: number;
+};
+
+function normalizePath(pathname: string) {
   if (!pathname) return "/";
   const trimmed = pathname.replace(/\/$/, "");
   return trimmed || "/";
 }
 
-/**
- * Smooth-scroll to an in-page section.
- * @param {{ behavior?: ScrollBehavior, updateHash?: boolean }} options
- *   When updateHash is true, the URL hash is set (e.g. #services). Otherwise it is cleared.
- */
-export function scrollToPageSection(hash, { behavior = "smooth", updateHash = false } = {}) {
-  if (typeof window === "undefined" || !hash) return false;
-
-  const id = hash.startsWith("#") ? hash.slice(1) : hash;
-  if (!id) return false;
-
-  const el = document.getElementById(id);
-  if (!el) return false;
-
-  el.scrollIntoView({ behavior, block: "start" });
-
-  const baseUrl = `${window.location.pathname}${window.location.search}`;
-  const nextUrl = updateHash ? `${baseUrl}#${id}` : baseUrl;
-  window.history.replaceState(null, "", nextUrl);
-
-  return true;
+function resolveSectionId(hash: string) {
+  return hash.startsWith("#") ? hash.slice(1) : hash;
 }
 
-export function isSamePageHashLink(target) {
+function findScrollTarget(id: string): HTMLElement | null {
+  const byId = document.getElementById(id);
+  if (byId) return byId;
+
+  const escaped =
+    typeof CSS !== "undefined" && typeof CSS.escape === "function"
+      ? CSS.escape(id)
+      : id.replace(/"/g, '\\"');
+
+  return document.querySelector<HTMLElement>(`[data-deferred-section-id="${escaped}"]`);
+}
+
+function scrollElementIntoView(el: HTMLElement, behavior: ScrollBehavior) {
+  el.scrollIntoView({ behavior, block: "start" });
+}
+
+function isDeferredHost(el: HTMLElement) {
+  return el.classList.contains("deferred-section-host");
+}
+
+/**
+ * Smooth-scroll to an in-page section.
+ * Retries so viewport-deferred sections can mount before scrolling.
+ */
+export function scrollToPageSection(
+  hash: string,
+  {
+    behavior = "smooth",
+    updateHash = false,
+    retries = 40,
+    retryDelayMs = 100,
+  }: ScrollToPageSectionOptions = {},
+) {
+  if (typeof window === "undefined" || !hash) return false;
+
+  const id = resolveSectionId(hash);
+  if (!id) return false;
+
+  if (updateHash) {
+    const baseUrl = `${window.location.pathname}${window.location.search}`;
+    window.history.replaceState(null, "", `${baseUrl}#${id}`);
+  }
+
+  // Force matching deferred hosts to mount even when replaceState skips hashchange.
+  window.dispatchEvent(
+    new CustomEvent("vbs:force-deferred-load", { detail: { id } }),
+  );
+
+  const attempt = (remaining: number): boolean => {
+    const el = findScrollTarget(id);
+    if (el) {
+      scrollElementIntoView(el, remaining === retries ? behavior : "auto");
+
+      const settled = !isDeferredHost(el) && el.id === id;
+      if (settled || remaining <= 0) {
+        if (behavior === "smooth" && remaining !== retries) {
+          scrollElementIntoView(el, "smooth");
+        }
+        return true;
+      }
+    }
+
+    if (remaining <= 0) return Boolean(el);
+
+    window.setTimeout(() => {
+      attempt(remaining - 1);
+    }, retryDelayMs);
+
+    return true;
+  };
+
+  return attempt(retries);
+}
+
+export function isSamePageHashLink(target: string) {
   if (typeof window === "undefined" || typeof target !== "string" || !target.includes("#")) {
     return false;
   }
@@ -45,7 +107,12 @@ export function isSamePageHashLink(target) {
   return targetPath === currentPath;
 }
 
-export function handleInPageHashClick(event, target, onClick, { updateHash = false } = {}) {
+export function handleInPageHashClick(
+  event: { preventDefault: () => void },
+  target: string,
+  onClick?: (event: { preventDefault: () => void }) => void,
+  { updateHash = false }: { updateHash?: boolean } = {},
+) {
   if (!isSamePageHashLink(target)) {
     onClick?.(event);
     return;
@@ -59,4 +126,19 @@ export function handleInPageHashClick(event, target, onClick, { updateHash = fal
   }
 
   onClick?.(event);
+}
+
+export function isBookMeetingCtaLabel(label: string) {
+  return /book\s*a\s*meeting/i.test(label.trim());
+}
+
+export function isBookMeetingCtaHref(href?: string | null) {
+  if (!href) return false;
+  const normalized = href.trim().toLowerCase();
+  return (
+    normalized === "#book-meeting" ||
+    normalized === "#meeting" ||
+    normalized === "meeting" ||
+    normalized.endsWith("#book-meeting")
+  );
 }

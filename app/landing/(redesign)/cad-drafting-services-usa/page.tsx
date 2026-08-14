@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Cad Drafting Services USA |  CAD Drawings in Autocad",
   description:
     "Get precise and efficient CAD Drafting Services for architecture, engineering, and construction. Enhance accuracy, streamline workflows, and accelerate project delivery. ",
-  robots: { index: false, follow: true },
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Cad Drafting Services USA |  CAD Drawings in Autocad",
     description:

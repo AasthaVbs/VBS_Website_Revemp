@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { TwoDDraftingServicesPage } from "@/components/vbs/2d-drafting-services-page";
 
 export const metadata: Metadata = {
-  title: "2D Drafting Services | 2D CAD Drawing Services USA",
+  title: "Hire 2D Drafting Experts | 2D Drafting Services Specialists",
   description:
-    "Expand your documentation capacity with AI-assisted 2D Drafting Services. Pre-vetted architects and engineers deliver fast, error-free 2D CAD drawings on time.",
+    "Get Dedicated 2D Drafting Experts for your 2D Drafting Service and Projects. Onboard in Just 3 Days and Try 30-days Money back guarantee.",
 };
 
 export default function Page() {

@@ -203,12 +203,15 @@ export function ArchitectureIntegrateWorkflowSection({
   steps = architectureWorkflowIntegrateSteps,
   headerAlign = "start",
   descriptionMaxWidth,
+  stackTitleParts = true,
 }: {
   section?: IntegrateWorkflowSection;
   steps?: readonly IntegrateWorkflowStep[];
   /** Architecture page is left-aligned; CAD Figma centers the intro block. */
   headerAlign?: "start" | "center";
   descriptionMaxWidth?: number;
+  /** Stack each title part on its own line. Set false for inline wrapping titles. */
+  stackTitleParts?: boolean;
 }) {
   const isCentered = headerAlign === "center";
   const resolvedDescriptionMaxWidth =
@@ -232,9 +235,9 @@ export function ArchitectureIntegrateWorkflowSection({
               {section.titleParts.map((part, index) => (
                 <span
                   key={`${part.text}-${index}`}
-                  className={cn(part.className, "block")}
+                  className={cn(part.className, stackTitleParts && "block")}
                 >
-                  {part.text.trimEnd()}
+                  {stackTitleParts ? part.text.trimEnd() : part.text}
                 </span>
               ))}
             </h2>

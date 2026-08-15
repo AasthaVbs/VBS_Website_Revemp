@@ -176,6 +176,11 @@ export function MepServiceBenefitsSection({
             </Fragment>
           ))}
         </div>
+        {section.note?.text ? (
+          <div className="w-full rounded-[10px] bg-[rgba(215,4,22,0.06)] p-5 outline outline-1 outline-[#D70416] outline-offset-[-1px]">
+            <p className="m-0 text-[16px] font-normal leading-6 text-[#111111]">{section.note.text}</p>
+          </div>
+        ) : null}
         {showCta && section.ctaLabel ? (
           <PrimaryCtaButton fullWidth={false} href={section.ctaHref}>
             {section.ctaLabel}

@@ -11,6 +11,7 @@ type OurClientsSectionContent = {
   /** Force a line break between the two title parts. */
   breakTitle?: boolean;
   titleMaxWidth?: number;
+  descriptionMaxWidth?: number;
 };
 
 type OurClientsLogo = {
@@ -37,7 +38,14 @@ export function OurClientsSection({
   return (
     <section className="vbs-our-clients">
       <PageContainer className="vbs-our-clients__container">
-        <div className="vbs-our-clients__head">
+        <div
+          className="vbs-our-clients__head"
+          style={
+            section.descriptionMaxWidth
+              ? { ["--our-clients-head-max-w"]: `${section.descriptionMaxWidth}px` }
+              : undefined
+          }
+        >
           <div className="vbs-our-clients__head-top">
             <span className="vbs-our-clients__tag">{section.tag}</span>
             <h2
@@ -64,7 +72,16 @@ export function OurClientsSection({
             </h2>
           </div>
           {section.description ? (
-            <p className="vbs-our-clients__desc">{section.description}</p>
+            <p
+              className="vbs-our-clients__desc"
+              style={
+                section.descriptionMaxWidth
+                  ? { maxWidth: `${section.descriptionMaxWidth}px` }
+                  : undefined
+              }
+            >
+              {section.description}
+            </p>
           ) : null}
         </div>
 

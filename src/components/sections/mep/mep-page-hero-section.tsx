@@ -27,8 +27,14 @@ export type MepPageHeroContent = {
   secondaryCtaHref?: string;
   copyMaxWidth?: number;
   descriptionMaxWidth?: number;
+  /** Compact hero only: title width; defaults to copyMaxWidth. */
+  titleMaxWidth?: number;
   className?: string;
   containerClassName?: string;
+  /** Compact hero only: extra classes on the copy/image row (e.g. tighter gap). */
+  rowClassName?: string;
+  /** Compact hero only: extra classes on the copy column. */
+  copyClassName?: string;
 };
 
 const HERO_IMAGE_WIDTH = 1082;
@@ -167,8 +173,11 @@ export function MepPageHeroSection({
   secondaryCtaHref,
   copyMaxWidth = 779,
   descriptionMaxWidth = 736,
+  titleMaxWidth,
   className,
   containerClassName,
+  rowClassName,
+  copyClassName,
 }: MepPageHeroContent) {
   const isCompact = imageSize === "compact";
   const resolvedImageAlt = imageAlt ?? altFromImageSrc(imageSrc);
@@ -180,9 +189,17 @@ export function MepPageHeroSection({
         <PageContainer
           className={cn("relative py-10 pt-2 sm:py-12 sm:pt-4 lg:py-14", containerClassName)}
         >
-          <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:gap-6 xl:gap-10">
+          <div
+            className={cn(
+              "flex flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:gap-6 xl:gap-9",
+              rowClassName,
+            )}
+          >
             <div
-              className="flex w-full min-w-0 shrink flex-col justify-center gap-6 sm:gap-[30px] lg:flex-[0_1_auto]"
+              className={cn(
+                "flex w-full min-w-0 shrink flex-col justify-center gap-6 sm:gap-[30px] lg:flex-[0_1_auto]",
+                copyClassName,
+              )}
               style={{ maxWidth: copyMaxWidth }}
             >
               <div className="flex w-full max-w-full flex-col items-start gap-4 sm:gap-5">
@@ -190,7 +207,7 @@ export function MepPageHeroSection({
                   <MepSectionTag label={tag} />
                   <h1
                     className="w-full max-w-full text-[#111111]"
-                    style={{ maxWidth: copyMaxWidth }}
+                    style={{ maxWidth: titleMaxWidth ?? copyMaxWidth }}
                   >
                     {titleAccentFirst ? (
                       <span className="text-[32px] leading-[1.15] sm:text-[40px] lg:text-[48px]">

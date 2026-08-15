@@ -55,7 +55,7 @@
 
   &__title {
     width: 100% !important;
-    max-width: 800px !important;
+    max-width: var(--engagement-title-max-w, 800px) !important;
     margin: 0 !important;
     font-family: var(--font-inter), "Inter 18pt", Inter, system-ui, sans-serif !important;
     font-size: clamp(28px, 7.5vw, 48px) !important;
@@ -92,7 +92,7 @@
   }
 
   &__description {
-    max-width: 750px;
+    max-width: var(--engagement-desc-max-w, 750px);
     margin: 0;
     font-size: 16px;
     font-weight: 400;

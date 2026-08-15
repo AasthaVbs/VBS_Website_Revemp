@@ -67,6 +67,7 @@ export function BimModelingWhyChooseSection({
   section = bimModelingWhyChooseSection,
   items = bimModelingWhyChooseItems,
   descriptionMaxWidth = 571,
+  titleMaxWidth = 704,
 }: {
   section?: {
     tag: string;
@@ -78,6 +79,7 @@ export function BimModelingWhyChooseSection({
   };
   items?: readonly WhyChooseItem[];
   descriptionMaxWidth?: number;
+  titleMaxWidth?: number;
 } = {}) {
   const rowOne = items.slice(0, 2);
   const rowTwo = items.slice(2, 4);
@@ -86,7 +88,10 @@ export function BimModelingWhyChooseSection({
     <section id="why-choose-us" className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
         <header className="flex w-full flex-col items-start gap-5">
-          <div className="flex w-full max-w-[704px] flex-col items-start gap-3">
+          <div
+            className="flex w-full flex-col items-start gap-3"
+            style={{ maxWidth: `${titleMaxWidth}px` }}
+          >
             <MepSectionTag label={section.tag} />
             <h2 className="w-full">
               <span className="text-section font-medium text-[#111111]">{section.titleLead}</span>

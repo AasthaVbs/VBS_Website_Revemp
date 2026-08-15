@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 import { PageContainer } from "@/components/layout/page-container";
 import { EngagementModelIcon } from "@/components/sections/engagement-models/engagement-model-icons";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
@@ -16,6 +18,8 @@ export type EngagementModelsSectionProps = {
   titleLine1?: string;
   titleAccent?: string;
   description?: string;
+  titleMaxWidth?: number;
+  descriptionMaxWidth?: number;
   cards?: readonly EngagementModelCard[];
   sectionClassName?: string;
 };
@@ -90,6 +94,8 @@ export function EngagementModelsSection({
   titleLine1 = defaultEngagementModelsHeader.titleLine1,
   titleAccent = defaultEngagementModelsHeader.titleAccent,
   description = defaultEngagementModelsHeader.description,
+  titleMaxWidth,
+  descriptionMaxWidth,
   cards = engagementModelCards,
   sectionClassName,
 }: EngagementModelsSectionProps) {
@@ -99,12 +105,28 @@ export function EngagementModelsSection({
         <header className="vbs-engagement-models-section__header">
           <div className="vbs-engagement-models-section__title-block">
             <span className="vbs-engagement-models-section__tag">{tag}</span>
-            <h2 className="vbs-engagement-models-section__title">
+            <h2
+              className="vbs-engagement-models-section__title"
+              style={
+                titleMaxWidth
+                  ? ({ ["--engagement-title-max-w"]: `${titleMaxWidth}px` } as CSSProperties)
+                  : undefined
+              }
+            >
               <span className="vbs-engagement-models-section__title-dark">{titleLine1} </span>
               <span className="vbs-engagement-models-section__title-accent">{titleAccent}</span>
             </h2>
           </div>
-          <p className="vbs-engagement-models-section__description">{description}</p>
+          <p
+            className="vbs-engagement-models-section__description"
+            style={
+              descriptionMaxWidth
+                ? ({ ["--engagement-desc-max-w"]: `${descriptionMaxWidth}px` } as CSSProperties)
+                : undefined
+            }
+          >
+            {description}
+          </p>
         </header>
 
         <div className="vbs-engagement-models-section__cards">

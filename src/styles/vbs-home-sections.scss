@@ -1174,7 +1174,7 @@
 
   &__head {
     display: flex !important;
-    width: 484px !important;
+    width: var(--our-clients-head-max-w, 484px) !important;
     max-width: 100% !important;
     flex-shrink: 0 !important;
     flex-direction: column !important;

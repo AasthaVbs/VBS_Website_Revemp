@@ -18,6 +18,7 @@ type AiBimWorkflowSectionContent = typeof architectureAiBimWorkflowSection & {
   youtubeVideoId?: string;
   videoHref?: string;
   onPlay?: () => void;
+  titleMaxWidth?: number;
 };
 
 function youtubeThumbnailUrl(videoId: string) {
@@ -84,9 +85,15 @@ export function ArchitectureAiBimWorkflowSection({
       <PageContainer>
         <div className="flex w-full flex-col items-center gap-[40px] lg:flex-row lg:items-center lg:gap-[60px]">
           <div className="flex min-w-0 flex-[1.35] flex-col items-start gap-5">
-            <div className="flex w-full max-w-[720px] flex-col items-start gap-3">
+            <div
+              className="flex w-full max-w-[720px] flex-col items-start gap-3"
+              style={section.titleMaxWidth ? { maxWidth: section.titleMaxWidth } : undefined}
+            >
               <MepSectionTag label={section.tag} />
-              <h2 className="architecture-ai-bim-workflow__title w-full max-w-[720px]">
+              <h2
+                className="architecture-ai-bim-workflow__title w-full max-w-[720px]"
+                style={section.titleMaxWidth ? { maxWidth: section.titleMaxWidth } : undefined}
+              >
                 {section.titleParts.map((part) => (
                   <span key={part.text} className={part.className}>
                     {part.text}

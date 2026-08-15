@@ -12,6 +12,7 @@ type BimModelingIntroContent = {
   /** Stack title lines (default) vs inline lead + accent. */
   titleStacked?: boolean;
   titleMaxWidth?: number;
+  descriptionMaxWidth?: number;
   description: string;
   sideDescription: string;
   featuresTitle: string;
@@ -33,6 +34,7 @@ export function BimModelingOverviewSection({
     titleStacked = true,
     titleMaxWidth = 750,
     description,
+    descriptionMaxWidth = 874,
     sideDescription,
     featuresTitle,
     features,
@@ -59,7 +61,10 @@ export function BimModelingOverviewSection({
               </span>
             </h2>
           </div>
-          <p className="w-full max-w-[874px] text-[16px] font-normal leading-6 text-[#808080]">
+          <p
+            className="w-full text-[16px] font-normal leading-6 text-[#808080]"
+            style={{ maxWidth: `${descriptionMaxWidth}px` }}
+          >
             {description}
           </p>
         </div>

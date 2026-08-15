@@ -1,7 +1,6 @@
 // @ts-nocheck
 import designSupportDocumentationIcon from "@/assets/images/design-support-documentation.png";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
-import challengeOverviewImg from "@/assets/images/architecture-services/challenge-overview.png";
 import iconBim from "@/assets/images/architecture-services/icon-bim.svg";
 import iconCa from "@/assets/images/architecture-services/icon-ca.svg";
 import iconCd from "@/assets/images/architecture-services/icon-cd.svg";
@@ -10,7 +9,6 @@ import iconEngageDedicated from "@/assets/images/architecture-services/icon-enga
 import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
 import iconPreDesign from "@/assets/images/architecture-services/icon-pre-design.svg";
 import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
-import whyChooseVisualImg from "@/assets/images/architecture-services/why-choose-visual.png";
 import logoIcon from "@/assets/images/logo-icon.svg";
 import { ROUTES } from "@/constants/navigation";
 
@@ -59,7 +57,7 @@ export const architectureChallengeSection = {
   callout: {
     text: "Growing your team is the simple part. Growing your delivery capability takes much more.",
   },
-  image: challengeOverviewImg,
+  image: "/image/architecture-services/challenge-overview.png",
   imageAlt: "Architect working on BIM project delivery",
 };
 
@@ -310,7 +308,7 @@ export const architectureWhyContinueSection = {
   ],
   description:
     "We measure our success by the confidence our clients feel to take on more projects, far more than by the number of drawings we produce.",
-  image: whyChooseVisualImg,
+  image: "/image/architecture-services/why-choose-visual.png",
   imageAlt: "Architecture delivery partnership outcomes",
   defaultCaption: WHY_CONTINUE_DEFAULT_CAPTION,
 };
@@ -345,32 +343,38 @@ export const architectureDifferenceSection = {
 
 export const architectureDifferenceCards = [
   {
-    icon: workflowLogo,
+    icon: logoIcon,
+    iconHover: workflowLogo,
     title: "Protect Your Design Intent",
     body: "Your firm's design philosophy is central to every project. By following your standards, your workflows, and your review process, we help keep your documentation true to your design intent.",
   },
   {
     icon: logoIcon,
+    iconHover: workflowLogo,
     title: "Scale Without Hiring",
     body: "Grow your delivery capacity while you skip the delays, overhead, and guesswork that come with recruiting, onboarding, and managing extra in-house staff.",
   },
   {
     icon: logoIcon,
+    iconHover: workflowLogo,
     title: "Reduce Review Cycles",
     body: "Because our team keeps learning your standards and preferences, deliverables need lighter explanation, fewer revisions, and grow more predictable over time.",
   },
   {
     icon: logoIcon,
+    iconHover: workflowLogo,
     title: "Flexible Delivery Capacity",
     body: "Whether you need support for one project, a dedicated team, or extra capacity during busy stretches, our engagement models adapt to your business, and you remain in control.",
   },
   {
     icon: logoIcon,
+    iconHover: workflowLogo,
     title: "Support Across The Project Lifecycle",
     body: "We support projects end to end, from pre-design to construction administration, adding delivery capacity exactly where your team needs it most.",
   },
   {
     icon: logoIcon,
+    iconHover: workflowLogo,
     title: "Focus on Higher Value Work",
     body: "By owning production support and documentation, we free your architects to spend more time on design leadership, client collaboration, fresh ideas, and project decisions.",
   },

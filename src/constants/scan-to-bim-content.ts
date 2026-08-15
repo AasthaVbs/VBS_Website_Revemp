@@ -1,14 +1,4 @@
 // @ts-nocheck
-import laserScanningServicesImage from "@/assets/images/3d-laser-scanning-services.jpg";
-import asBuiltDrawingServicesImage from "@/assets/images/as-built-drawing-services.jpg";
-import pointCloudTo3dMeshesImage from "@/assets/images/point-cloud-to-3d-meshes.jpg";
-import scanToArchicadImage from "@/assets/images/scab-to-archicad.jpg";
-import scanTo3dModelingServicesImage from "@/assets/images/scan-to-3d-modeling-services.jpg";
-import scanToAsBuiltServicesOverviewImage from "@/assets/images/scan-to-as-built-services-overview.jpg";
-import scanToBimBannerImage from "@/assets/images/scan-to-bim-banner.png";
-import scanToCadConversionImage from "@/assets/images/scan-to-cad-conversion.jpg";
-import scanToRevitFamilyImage from "@/assets/images/scan-to-revit-family.jpg";
-import scanToVisualizationImage from "@/assets/images/scan-to-visualization.jpg";
 import aiPoweredScanIcon from "@/assets/images/ai-owered-scan.svg";
 import fasterProjectKickoffIcon from "@/assets/images/faster-project-kickoff-icon.png";
 import fasterStakeholderIcon from "@/assets/images/faster-stakeholder-icon.png";
@@ -29,7 +19,7 @@ export const scanToBimHero = {
   description:
     "We convert point cloud data into construction-ready scan-to-BIM models in Revit for renovation, coordination, and facility management, be it heritage restoration or complex MEP retrofits.",
   ctaLabel: "Claim Your Free Pilot",
-  imageSrc: scanToBimBannerImage,
+  imageSrc: "/image/scan-to-bim-banner-2.png",
   copyMaxWidth: 660,
   descriptionMaxWidth: 620,
 };
@@ -62,7 +52,7 @@ export const scanToBimIntroCopy = {
   ],
   description:
     "Laser scanning technologies give highly detailed point cloud data. Converting that data into actionable project information requires specialized BIM expertise. Our scan to BIM team converts point cloud data into coordinated BIM models. We serve architects, surveyors, and contractors in the USA, UK, and European countries. From as-built documentation to renovation planning, we deliver 3D scan to Revit models faster. We provide accurate, project-ready deliverables for scan-to-BIM projects in the USA.",
-  mainImage: scanToAsBuiltServicesOverviewImage,
+  mainImage: "/image/scan-to-as-built-services-overview.jpg",
 };
 
 export const scanToBimWhatYouGetSection = {
@@ -133,50 +123,50 @@ export const scanToBimFullSpectrumCards = [
   {
     title: "3D Laser Scanning Services",
     text: "Stop relying on outdated drawings and incomplete site data. We scan your building or site with high-definition LiDAR equipment, giving your team verified, millimeter-accurate point cloud data. Every project starts with a reliable foundation.",
-    image: laserScanningServicesImage.src,
+    image: "/image/3d-laser-scanning-services.jpg",
     elevated: true,
     href: "#",
   },
   {
     title: "Scan to 3D Modeling Services",
     text: "Turn your scan data into models your team can actually use. We convert point clouds into accurate, construction-ready 3D models across architectural, structural, and MEP disciplines. Every model is QA-checked before it reaches you.",
-    image: scanTo3dModelingServicesImage.src,
+    image: "/image/scan-to-3d-modeling-services.jpg",
     href: "https://www.scantobim.online/3d-modeling-services/",
   },
   {
     title: "As-built Drawing Services",
     text: "Our scan to BIM specialists convert your scan data into an accurate as-built Revit model. Floor plans, sections, and elevations are then extracted directly from that model. Your team gets dimensioned, annotated drawings ready for design, permits, and contractor coordination.",
-    image: asBuiltDrawingServicesImage.src,
+    image: "/image/as-built-drawing-services.jpg",
     href: "/as-built-modeling-services",
   },
   {
     title: "Point Cloud to BIM",
     text: "When standard BIM models are not enough, we deliver high-resolution BIM that preserves every surface, texture, and geometric detail from your scan. Ideal for heritage projects, facade assessments, and visual condition reporting.",
-    image: pointCloudTo3dMeshesImage.src,
+    image: "/image/point-cloud-to-3d-meshes.jpg",
     href: "https://www.scantobim.online/point-cloud-to-bim-services/",
   },
   {
     title: "Scan to 3D Visualization",
     text: "Help your clients and stakeholders see exactly what exists before design decisions are made. We take your scan data and convert it into photorealistic visualization outputs. That 3D walkthrough makes existing conditions easy to understand and communicate.",
-    image: scanToVisualizationImage.src,
+    image: "/image/scan-to-visualization-2.jpg",
     href: "https://www.scantobim.online/resource/scan-to-bim-videos/",
   },
   {
     title: "Scan to Revit Family Creation",
     text: "Legacy equipment and non-standard building components should not slow your BIM workflow. We build custom parametric Revit families from your scan geometry, so every unique element is accurately represented and ready for coordination.",
-    image: scanToRevitFamilyImage.src,
+    image: "/image/scan-to-revit-family-2.jpg",
     href: "https://www.scantobim.online/ai-tool/",
   },
   {
     title: "Scan to CAD Conversion",
     text: "Your team needs accurate site data in the format they already work with. We convert your point cloud data into layered DWG files that are ready for design renovation and documentation workflows. Your team gets reliable CAD deliverables that fit straight into your existing process.",
-    image: scanToCadConversionImage.src,
+    image: "/image/scan-to-cad-conversion.jpg",
     href: "https://www.scantobim.online/portfolio/scan-to-cad-conversion-for-metro-station/",
   },
   {
     title: "Scan to Archicad",
     text: "ArchiCAD teams get the same scan accuracy without leaving their preferred platform. We convert your point cloud data directly into accurate ArchiCAD models that fit your existing workflow. Every model is ready for renovation design and as-built documentation from day one.",
-    image: scanToArchicadImage.src,
+    image: "/image/scab-to-archicad.jpg",
     href: "#",
   },
 ];

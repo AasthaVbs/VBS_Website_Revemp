@@ -1,13 +1,3 @@
-import architecturalBimBannerImg from "@/assets/images/architectural-bim-banner.jpg";
-import architecturalBimOverviewImg from "@/assets/images/architectural-bim-services-overview.jpg";
-import architectural3dVisualizationImg from "@/assets/images/architectural-3d-visualization.jpg";
-import cadToBimServicesImg from "@/assets/images/cad-to-bim-services.jpg";
-import clashDetectionBimCoordinationImg from "@/assets/images/clash-detection-bim-coordination.jpg";
-import constructionDocumentationImg from "@/assets/images/construction-documentation.jpg";
-import designDevelopmentSupportImg from "@/assets/images/design-development-support.jpg";
-import parametricRevitFamilyCreationImg from "@/assets/images/parametric-revit-family-creation.jpg";
-import revitArchitectureServicesImg from "@/assets/images/revit-architecture-services.jpg";
-import shopDrawingGenerationImg from "@/assets/images/shop-drawing-generation.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -31,7 +21,7 @@ export const architecturalBimHero = {
   description:
     "When deadlines pile up, BIM production becomes the bottleneck. Our US-trained architects help your firm deliver Architectural BIM Modeling Services faster without compromising design quality.",
   ctaLabel: "Connect With Us",
-  imageSrc: architecturalBimBannerImg,
+  imageSrc: "/image/architectural-bim-banner.jpg",
   imageAlt: "Architectural BIM Services",
   copyMaxWidth: 670,
   descriptionMaxWidth: 608,
@@ -57,7 +47,7 @@ export const architecturalBimIntro = {
     "Using Revit to automatically produce drawings, schedules and quantity takeoffs.",
     "Asbuilt and COBie compliant architectural BIM models delivered following ISO 19650 and client specific guidelines.",
   ],
-  mainImage: architecturalBimOverviewImg,
+  mainImage: "/image/architectural-bim-services-overview.jpg",
   imageAlt: "Architectural BIM overview",
 };
 
@@ -84,46 +74,46 @@ export const architecturalBimServiceCards = [
   {
     title: "Revit Architecture Services",
     text: "Our BIM architects deliver 3D Revit Modeling Services keeping in mind the US building codes requirements to facilitate cross disciplinary teamwork throughout the entire project development period.",
-    image: revitArchitectureServicesImg.src,
+    image: "/image/revit-architecture-services.jpg",
   },
   {
     title: "Design Development Support",
     text: "We support architectural firms in the USA by refining their concepts into detailed, buildable models aligned with industry standards, design intent and supporting seamless team coordination.",
-    image: designDevelopmentSupportImg.src,
+    image: "/image/design-development-support.jpg",
   },
   {
     title: "Architectural 3D Visualization",
     text: "Our trained architects use AI-powered workflow to deliver high-quality architectural visualizations that include renderings and walkthroughs that help in effective communication of your design vision.",
-    image: architectural3dVisualizationImg.src,
+    image: "/image/architectural-3d-visualization-card.jpg",
     href: ROUTES.visualization,
   },
   {
     title: "Construction Documentation",
     text: "We use the BIM model to prepare fully coordinated CD sets that follow AIA, ADA and local building codes to speed up review and approval process.",
-    image: constructionDocumentationImg.src,
+    image: "/image/construction-documentation.jpg",
   },
   {
     title: "Clash Detection & BIM Coordination",
     text: "Our on demand Revit architects use Navisworks and Solibri to deliver BIM coordination services. It helps in minimizing rework and maintain project timelines.",
-    image: clashDetectionBimCoordinationImg.src,
+    image: "/image/clash-detection-bim-coordination.jpg",
     href: ROUTES.mepCoordination,
   },
   {
     title: "Shop Drawing Generation",
     text: "Our BIM architects create coordinated prefab drawings which include everything from plans and elevations to sections, dimensions, details, schedules and specifications.",
-    image: shopDrawingGenerationImg.src,
+    image: "/image/shop-drawing-generation.jpg",
     href: ROUTES.shopDrawings,
   },
   {
     title: "Parametric Revit Family Creation",
     text: "Our skilled team prepares custom Revit families that make sure quality assurance and keep models consistent, flexible and compatible across different BIM platforms.",
-    image: parametricRevitFamilyCreationImg.src,
+    image: "/image/parametric-revit-family-creation.jpg",
     href: ROUTES.revitFamilies,
   },
   {
     title: "CAD to BIM Services",
     text: "Our US project trained BIM architects take CAD drawings and turn them into fully coordinated BIM models. This really helps cut down on mistakes and speeds up how efficiently the project gets delivered.",
-    image: cadToBimServicesImg.src,
+    image: "/image/cad-to-bim-services.jpg",
     href: ROUTES.cadToBim,
   },
 ];

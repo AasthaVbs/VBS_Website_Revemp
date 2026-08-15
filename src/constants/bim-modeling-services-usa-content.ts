@@ -1,5 +1,3 @@
-import heroImage from "@/assets/images/bim-modeling-services-usa/hero.png";
-import expertiseArchitectural from "@/assets/images/bim-modeling-services-usa/expertise-architectural-bim.png";
 import {
   cadDraftingUsaClientLogos,
   cadDraftingUsaClientsSection,
@@ -15,7 +13,7 @@ export const bimModelingUsaHero = {
   titleAccent: "BIM Architects & Engineers",
   ctaLabel: "Connect with our BIM Experts",
   ctaHref: `#${BIM_USA_CONTACT_ID}`,
-  image: heroImage,
+  image: "/image/bim-modeling-services-usa/hero.png",
   imageAlt:
     "BIM architect reviewing a 3D structural model on screen in a professional studio",
 };
@@ -32,7 +30,7 @@ export const bimModelingUsaExpertiseItems = [
     title: "Architectural BIM Services",
     caption:
       "Our Level I, II, and III architects provide drafting, SD to CD stage documentation, and rendering to ensure project excellence.",
-    image: expertiseArchitectural,
+    image: "/image/bim-modeling-services-usa/expertise-architectural-bim.png",
   },
   {
     title: "Structural BIM Services",

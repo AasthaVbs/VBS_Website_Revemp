@@ -1,17 +1,7 @@
-import fourDBimPlanningSchedulingImg from "@/assets/images/4d-bim-planning-and-scheduling.jpg";
-import fiveDQuantityTakeoffsCostEstimationImg from "@/assets/images/5d-quantity-takeoffs-cost-estimation.jpg";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
 import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
 import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
 import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
-import precastConcreteModelingDetailingImg from "@/assets/images/precast-concrete-modeling-detailing.jpg";
-import rebarDetailingBarBendingScheduleImg from "@/assets/images/rebar-detailing-bar-bending-schedule.jpg";
-import reinforcedConcreteModelingImg from "@/assets/images/reinforced-concrete-modeling.jpg";
-import structural3dModelingImg from "@/assets/images/structural-3d-modeling.jpg";
-import structuralBimBannerImg from "@/assets/images/structural-bim-banner.jpg";
-import structuralBimOverviewImg from "@/assets/images/structural-bim-overview.jpg";
-import structuralFabricationShopDrawingsImg from "@/assets/images/structural-fabrication-shop-drawings.jpg";
-import structuralSteelDetailingImg from "@/assets/images/structural-steel-detailing.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -35,7 +25,7 @@ export const structuralBimHero = {
   description:
     "Our BIM specialists merge Revit structural modeling with AI-driven workflows for quicker, code-compliant models.",
   ctaLabel: "Connect With Us",
-  imageSrc: structuralBimBannerImg,
+  imageSrc: "/image/structural-bim-banner.jpg",
   imageAlt: "Structural BIM Services",
   copyMaxWidth: 670,
   descriptionMaxWidth: 557,
@@ -60,7 +50,7 @@ export const structuralBimIntro = {
     "QA and QC checks at each LOD milestone before handover",
     "Deliverables will consist of coordinated models, shop drawings, rebar schedules, and quantity takeoffs",
   ],
-  mainImage: structuralBimOverviewImg,
+  mainImage: "/image/structural-bim-overview.jpg",
   imageAlt: "Structural BIM overview",
 };
 
@@ -89,42 +79,42 @@ export const structuralBimServiceCards = [
   {
     title: "Structural 3D Modeling",
     text: "Our structural BIM modeling team builds coordinated 3D models covering steel, concrete, and foundation systems. BIM structural modeling gives firms clash-checked, construction-ready models at any LOD stage.",
-    image: structural3dModelingImg.src,
+    image: "/image/structural-3d-modeling.jpg",
   },
   {
     title: "Structural Steel Detailing",
     text: "Our detailers model steel connections, beams and columns down to fabrication-level detail. Revit structural modeling supports bolted and welded connections that shop teams can build from directly.",
-    image: structuralSteelDetailingImg.src,
+    image: "/image/structural-steel-detailing.jpg",
   },
   {
     title: "Rebar Detailing & Bar Bending Schedule",
     text: "Our rebar detailers produce reinforcement layouts, splice details and bar bending schedules for slabs, beams and columns. Every schedule follows ACI 318 for cutting and placement on site.",
-    image: rebarDetailingBarBendingScheduleImg.src,
+    image: "/image/rebar-detailing-bar-bending-schedule.jpg",
   },
   {
     title: "Structural Fabrication Shop Drawings",
     text: "Our team generates shop-ready drawings straight from the coordinated model for fabricators and erectors. Connection details, bolt lists and piece marks stay consistent across every sheet.",
-    image: structuralFabricationShopDrawingsImg.src,
+    image: "/image/structural-fabrication-shop-drawings.jpg",
   },
   {
     title: "Precast Concrete Modeling & Detailing",
     text: "Our modelers build precast panels, beams and connections with embed and lifting details included. Erection drawings and piece schedules ship ready for plant production and site sequencing.",
-    image: precastConcreteModelingDetailingImg.src,
+    image: "/image/precast-concrete-modeling-detailing.jpg",
   },
   {
     title: "Reinforced Concrete Modeling",
     text: "Our engineers model cast-in-place walls, slabs, columns and foundations with full rebar coordination built in. Our team catches formwork clashes early, before pours start on site.",
-    image: reinforcedConcreteModelingImg.src,
+    image: "/image/reinforced-concrete-modeling.jpg",
   },
   {
     title: "4D BIM Planning & Scheduling",
     text: "Our planners link construction sequences to the structural model so teams can see the build order early. Our team catches scheduling conflicts well before the crew arrives on site.",
-    image: fourDBimPlanningSchedulingImg.src,
+    image: "/image/4d-bim-planning-and-scheduling.jpg",
   },
   {
     title: "5D Quantity Takeoffs & Cost Estimation",
     text: "Our estimators pull material quantities straight from the coordinated model for steel, concrete and rebar. Cost teams get reliable numbers without counting manually from drawings for every bid.",
-    image: fiveDQuantityTakeoffsCostEstimationImg.src,
+    image: "/image/5d-quantity-takeoffs-cost-estimation.jpg",
   },
 ];
 
@@ -143,7 +133,7 @@ export const structuralBimAiBimWorkflowSection = {
   description:
     "Explore the workflow that combines proprietary AI tools with expert BIM oversight to accelerate production, maintain quality and support scalable project delivery.",
   videoAriaLabel: "Play AI-driven BIM workflow video",
-  posterSrc: structuralBimBannerImg.src,
+  posterSrc: "/image/structural-bim-banner.jpg",
 };
 
 export const structuralBimWhyChooseSection = {

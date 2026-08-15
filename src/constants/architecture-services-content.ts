@@ -2,21 +2,12 @@
 import threeDayOnboardingIcon from "@/assets/images/3-day-onboarding.svg";
 import aiPowerWorkflowIcon from "@/assets/images/ai-power-workflow.png";
 import aiPoweredScanIcon from "@/assets/images/ai-owered-scan.svg";
-import architecturalBimModelingImg from "@/assets/images/architectural-bim-modeling.jpg";
-import architecturalStructuralServiceImg from "@/assets/images/architectural-structural-service.png";
 import bimModelingCoordinationIcon from "@/assets/images/bim-modeling-coordination.png";
-import bimSupportSdDdImg from "@/assets/images/bim-support-sd-dd.jpg";
-import cadToBimImg from "@/assets/images/cad-to-bim.jpg";
 import dedicatedTeamReadyIcon from "@/assets/images/dedicated-team-ready.png";
 import designSupportDocumentationIcon from "@/assets/images/design-support-documentation.png";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
 import projectSupportHandoverIcon from "@/assets/images/project-support-handover.png";
-import revitCadDraftingServicesImg from "@/assets/images/revit-cad-drafting-services.jpg";
-import revitFamilyImg from "@/assets/images/revit-family.jpg";
 import riskFreeTrialIcon from "@/assets/images/risk-free-trial.png";
-import schematicDesignImg from "@/assets/images/schemetic-design.jpg";
-import structuralArchitecturalBimServicesImg from "@/assets/images/structural-architectural-bim-services-for-project 1.jpg";
-import structuralBimServicesImg from "@/assets/images/structural-bim-services.jpg";
 import topBimExpertIcon from "@/assets/images/top-bim-expert.png";
 import usCodeCompliantDeliveryIcon from "@/assets/images/us-code-compliant-delivery.png";
 import usCodeCompliantModelsIcon from "@/assets/images/us-code-complaints-models.svg";
@@ -46,7 +37,7 @@ export const architectureHero = {
   ctaHref: "#architecture-page-contact",
   secondaryCtaLabel: "Explore Our Services",
   secondaryCtaHref: "#services",
-  imageSrc: architecturalStructuralServiceImg,
+  imageSrc: "/image/architectural-structural-service.png",
   imageAlt: "architectural-structural-service",
   copyMaxWidth: 820,
   descriptionMaxWidth: 744,
@@ -82,7 +73,7 @@ export const architectureIntroCopy = {
     "AI-assisted BIM generation and automation workflows streamline model development and reduce manual drafting effort. The result is faster delivery of accurate, code-compliant architectural and structural documentation.",
     "As a trusted Structural and Architecture Services Provider in the USA, we ensure every deliverable aligns with IBC, ADA, and local jurisdiction standards.",
   ],
-  mainImage: structuralArchitecturalBimServicesImg,
+  mainImage: "/image/structural-architectural-bim-services-for-project-1.jpg",
 };
 
 export const architectureWhatYouGetSection = {
@@ -148,43 +139,43 @@ export const architectureFullSpectrumCards = [
   {
     title: "Schematic Design",
     text: "Establish a clear project direction through conceptual layouts, spatial planning, and early-stage design studies. Schematic design deliverables help evaluate design alternatives, assess project feasibility, and align stakeholders before advancing into detailed development.",
-    image: schematicDesignImg.src,
+    image: "/image/schemetic-design.jpg",
     href: ROUTES.schematicDesign,
   },
   {
     title: "Design Development",
     text: "Transform approved concepts into coordinated, technically detailed designs ready for documentation and construction planning. Design development workflows refine building systems, material selections, and project requirements while maintaining alignment between architectural intent and structural performance.",
-    image: bimSupportSdDdImg.src,
+    image: "/image/bim-support-sd-dd.jpg",
     href: "#",
   },
   {
     title: "Construction Documentation",
     text: "Support permitting, bidding, and construction activities with comprehensive documentation packages developed for clarity and accuracy. Detailed plans, elevations, sections, schedules, and construction details help reduce ambiguities, improve communication, and facilitate efficient project delivery.",
-    image: revitCadDraftingServicesImg.src,
+    image: "/image/revit-cad-drafting-services.jpg",
     href: ROUTES.constructionDocumentation,
   },
   {
     title: "Architectural BIM Modeling",
     text: "Improve design accuracy, visualization, and multidisciplinary coordination with intelligent architectural BIM models developed to LOD 200-500 requirements. Supporting new construction, renovation, and expansion projects, these models enable better design validation, streamlined documentation, and a reliable foundation for project execution.",
-    image: architecturalBimModelingImg.src,
+    image: "/image/architectural-bim-modeling-2.jpg",
     href: "/bim-modeling-services/architectural-bim-services/",
   },
   {
     title: "Structural BIM Modeling",
     text: "Gain a coordinated digital representation of structural systems, including steel, concrete, rebar, timber, and foundation elements. Detailed structural BIM models support constructability reviews, clash-free coordination, fabrication planning, and accurate documentation throughout the design and construction process.",
-    image: structuralBimServicesImg.src,
+    image: "/image/structural-bim-services.jpg",
     href: "#",
   },
   {
     title: "Revit Family Creation",
     text: "Enhance BIM efficiency and model consistency with custom Revit families developed to project and organizational standards. Parametric architectural, structural, and manufacturer-specific families support standardized modeling workflows, accurate documentation, and long-term BIM library management.",
-    image: revitFamilyImg.src,
+    image: "/image/revit-family-2.jpg",
     href: "/bim-modeling-services/revit-family-creation/",
   },
   {
     title: "CAD to BIM Conversion",
     text: "Convert legacy 2D architectural and structural drawings into coordinated BIM models that support modern project workflows. CAD-to-BIM conversion improves design coordination, enhances visualization, streamlines documentation, and creates data-rich digital assets for future project phases.",
-    image: cadToBimImg.src,
+    image: "/image/cad-to-bim-2.jpg",
     href: "/bim-modeling-services/cad-to-bim/",
   },
 ];

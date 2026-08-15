@@ -1,5 +1,3 @@
-import heroImage from "@/assets/images/cad-to-bim-conversion-services/hero.png";
-import expertiseCadToBim from "@/assets/images/cad-to-bim-conversion-services/expertise-cad-to-bim.png";
 import {
   cadDraftingUsaClientLogos,
   cadDraftingUsaClientsSection,
@@ -15,7 +13,7 @@ export const cadToBimConversionHero = {
   titleAccent: "BIM Architects",
   ctaLabel: "Connect with our BIM Experts",
   ctaHref: `#${CAD_TO_BIM_CONTACT_ID}`,
-  image: heroImage,
+  image: "/image/cad-to-bim-conversion-services/hero.png",
   imageAlt: "CAD to BIM conversion — 2D drawings transformed into 3D BIM models",
 };
 
@@ -31,7 +29,7 @@ export const cadToBimConversionExpertiseItems = [
     title: "CAD to BIM Conversion",
     caption:
       "We convert 2D or 3D CAD data into detailed, accurate BIM models using Revit or AutoCAD to enhance project efficiency.",
-    image: expertiseCadToBim,
+    image: "/image/cad-to-bim-conversion-services/expertise-cad-to-bim.png",
   },
   {
     title: "PDF to BIM Conversion",

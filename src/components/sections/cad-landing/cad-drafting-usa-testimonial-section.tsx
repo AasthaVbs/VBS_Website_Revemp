@@ -43,6 +43,7 @@ export function CadDraftingUsaTestimonialSection({
               alt={content.imageAlt}
               fill
               className="object-cover"
+              unoptimized={typeof content.image === "string"}
               sizes="(max-width: 1024px) 100vw, 690px"
             />
           </button>

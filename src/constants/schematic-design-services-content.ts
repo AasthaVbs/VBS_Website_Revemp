@@ -1,15 +1,7 @@
-import twoDThreeDFloorPlansImg from "@/assets/images/2d-3d-floor-plans.jpg";
-import threeDVisualizationsImg from "@/assets/images/3d-visualizations.jpg";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
 import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
 import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
 import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
-import buildingElevationsImg from "@/assets/images/building-elevations.jpg";
-import preliminaryStructuralSystemCoordinationImg from "@/assets/images/preliminary-structural-system-coordination.jpg";
-import programmingSpacePlanningImg from "@/assets/images/programming-space-planning.jpg";
-import schematicDesignBannerImg from "@/assets/images/schematic-design-services-banner.jpg";
-import schematicDesignOverviewImg from "@/assets/images/schematic-design-services-overview.jpg";
-import sitePlansPreliminaryCodeAnalysisImg from "@/assets/images/site-plans-preliminary-code-analysis.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -33,7 +25,7 @@ export const schematicDesignHero = {
   description:
     "Your team loses time to tight deadlines during early design work. Our pre-vetted architects use AI-assisted workflows for fast, code-compliant schematic design services.",
   ctaLabel: "Connect With Us",
-  imageSrc: schematicDesignBannerImg,
+  imageSrc: "/image/schematic-design-services-banner.jpg",
   imageAlt: "Schematic Design Services",
   copyMaxWidth: 680,
   descriptionMaxWidth: 670,
@@ -59,7 +51,7 @@ export const schematicDesignIntro = {
     "QA leads run milestone checks before every deliverable reaches your team",
     "Your team receives floor plans, elevations, site plans and 3D visuals",
   ],
-  mainImage: schematicDesignOverviewImg,
+  mainImage: "/image/schematic-design-services-overview.jpg",
   imageAlt: "Schematic design overview",
 };
 
@@ -88,32 +80,32 @@ export const schematicDesignServiceCards = [
   {
     title: "Site Plans & Preliminary Code Analysis",
     text: "We map site boundaries, setbacks, and zoning constraints early. Our team checks IBC and ADA requirements before design work advances, that saves your firm from rework later.",
-    image: sitePlansPreliminaryCodeAnalysisImg.src,
+    image: "/image/site-plans-preliminary-code-analysis.jpg",
   },
   {
     title: "2D & 3D Floor Plans",
     text: "Our architects draft clear floor layouts in both 2D and 3D formats. They resolve space planning, room adjacencies and circulation paths before your team moves into design development.",
-    image: twoDThreeDFloorPlansImg.src,
+    image: "/image/2d-3d-floor-plans.jpg",
   },
   {
     title: "Building Elevations",
     text: "We draft exterior elevations that show massing, proportions, and material intent from the earliest design stage. Your reviewers see the building's character well before construction documents begin.",
-    image: buildingElevationsImg.src,
+    image: "/image/building-elevations.jpg",
   },
   {
     title: "3D Visualizations",
     text: "Our team turns concept models into clear 3D visuals for fast client review. These visuals help your team make early decisions and speed up clients' approvals.",
-    image: threeDVisualizationsImg.src,
+    image: "/image/3d-visualizations.jpg",
   },
   {
     title: "Programming & Space Planning",
     text: "Our team analyzes your program needs and turns them into workable spatial layouts. We confirm room counts, adjacencies and square footage targets before detailed design.",
-    image: programmingSpacePlanningImg.src,
+    image: "/image/programming-space-planning.jpg",
   },
   {
     title: "Preliminary Structural System Coordination",
     text: "Our structural team reviews early architectural layouts and flags framing, span and foundation concerns before design development begins. This keeps structural feasibility in view from day one.",
-    image: preliminaryStructuralSystemCoordinationImg.src,
+    image: "/image/preliminary-structural-system-coordination.jpg",
   },
 ];
 
@@ -132,7 +124,7 @@ export const schematicDesignAiBimWorkflowSection = {
   description:
     "Explore the workflow that combines proprietary AI tools with expert BIM oversight to accelerate production, maintain quality and support scalable project delivery.",
   videoAriaLabel: "Play AI-driven BIM workflow video",
-  posterSrc: schematicDesignBannerImg.src,
+  posterSrc: "/image/schematic-design-services-banner.jpg",
 };
 
 export const schematicDesignWhyChooseSection = {

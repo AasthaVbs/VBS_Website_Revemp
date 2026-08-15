@@ -5,8 +5,6 @@ import highRfiVolumeOnActiveProjectsIcon from "@/assets/images/high-rfi-volume-o
 import inHouseBimCapacityOverloadedIcon from "@/assets/images/in-house-bim-capacity-overloaded-icon.png";
 import maintenanceAccessibilityIcon from "@/assets/images/maintenance-accessibility-icon.png";
 import majorDesignChangeOrdersIcon from "@/assets/images/major-design-change-orders-icon.png";
-import mepClashDetectionBanner from "@/assets/images/mep-clash-detection-banner.jpg";
-import mepClashDetectionOverview from "@/assets/images/mep-clash-detection-overview.jpg";
 import optimizedInstallationSequencingIcon from "@/assets/images/optimized-installation-sequencing-icon.png";
 import preConstructionCoordinationPhaseIcon from "@/assets/images/pre-construction-coordination-phase-icon.png";
 import preFabricationModelReleaseIcon from "@/assets/images/pre-fabrication-model-release-icon.png";
@@ -29,7 +27,7 @@ export const mepClashDetectionHero = {
   description:
     "Our BIM Experts provide MEP Clash Detection Services in USA. They help teams coordinate mechanical, electrical, plumbing and fire protection systems early.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: mepClashDetectionBanner,
+  imageSrc: "/image/mep-clash-detection-banner.jpg",
   imageAlt: "mep-clash-detection-banner",
   copyMaxWidth: 730,
   descriptionMaxWidth: 699,
@@ -61,7 +59,7 @@ export const mepClashDetectionIntro: MepOverviewIntroContent = {
   paragraph3Bold: "prioritize issues",
   paragraph3Tail:
     " by severity to enable faster coordination and construction decisions.",
-  mainImage: mepClashDetectionOverview.src,
+  mainImage: "/image/mep-clash-detection-overview.jpg",
   imageAlt: "mep-clash-detection-overview",
 };
 

@@ -1,17 +1,7 @@
-import architecturalConstructionDrawingsImg from "@/assets/images/architectural-construction-drawings.jpg";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
 import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
 import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
 import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
-import buildingEnvelopeDrawingsImg from "@/assets/images/building-envelope-drawings-wall-section.jpg";
-import constructionDetailDrawingsImg from "@/assets/images/construction-detail-drawings.jpg";
-import constructionDocumentationBannerImg from "@/assets/images/construction-documentation-services-banner.jpg";
-import constructionDocumentationOverviewImg from "@/assets/images/construction-documentation-overview.jpg";
-import doorWindowFinishSchedulesImg from "@/assets/images/door-window-finish-schedules.jpg";
-import millworkInteriorDetailDrawingsImg from "@/assets/images/millwork-interior-detail-drawings.jpg";
-import permitDrawingSetsImg from "@/assets/images/permit-drawing-sets.jpg";
-import redlineDrawingsImg from "@/assets/images/redline-drawings.jpg";
-import structuralConstructionDrawingsImg from "@/assets/images/structural-construction-drawings.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -35,7 +25,7 @@ export const constructionDocumentationHero = {
   description:
     "Your team needs permit-ready drawings fast, but limited team strength slows every submission. Our BIM experts run AI-assisted workflows to cut production time without hurting quality.",
   ctaLabel: "Connect With Us",
-  imageSrc: constructionDocumentationBannerImg,
+  imageSrc: "/image/construction-documentation-services-banner.jpg",
   imageAlt: "Construction Documentation Services",
   copyMaxWidth: 675,
   descriptionMaxWidth: 624,
@@ -62,7 +52,7 @@ export const constructionDocumentationIntro = {
     "Structured QA/QC review on every drawing set before delivery",
     "Architectural CD set services, structural drawings, schedules and detail sheets",
   ],
-  mainImage: constructionDocumentationOverviewImg,
+  mainImage: "/image/construction-documentation-overview.jpg",
   imageAlt: "Construction documentation overview",
 };
 
@@ -91,42 +81,42 @@ export const constructionDocumentationServiceCards = [
   {
     title: "Architectural Construction Drawings",
     text: "Our architects produce floor plans, elevations, sections and building envelope details built to your project standards. Every sheet is coordinated with structural and site conditions for permit-ready submission.",
-    image: architecturalConstructionDrawingsImg.src,
+    image: "/image/architectural-construction-drawings.jpg",
   },
   {
     title: "Structural Construction Drawings",
     text: "Our structural team details framing, foundations and load paths for steel, concrete and timber systems. They coordinate closely with architectural models to remove clashes early in the process.",
-    image: structuralConstructionDrawingsImg.src,
+    image: "/image/structural-construction-drawings.jpg",
   },
   {
     title: "Permit Ready Drawing Sets",
     text: "Permit Ready Drawing Sets meet IBC, ADA and local AHJ requirements before submission. Our permit set services help your team clear plan check faster and move approvals along.",
-    image: permitDrawingSetsImg.src,
+    image: "/image/permit-drawing-sets.jpg",
   },
   {
     title: "Redline Drawings",
     text: "Our team turns your markups and review comments into updated, coordinated construction sets fast. We track every revision so your team always works from the latest approved version.",
-    image: redlineDrawingsImg.src,
+    image: "/image/redline-drawings.jpg",
   },
   {
     title: "Construction Detail Drawings",
     text: "Our detailers resolve wall assemblies, roof transitions and connection details before they reach the job site. Contractors get fewer RFIs and keep projects moving without delays.",
-    image: constructionDetailDrawingsImg.src,
+    image: "/image/construction-detail-drawings.jpg",
   },
   {
     title: "Door, Window & Finish Schedules",
     text: "We pull every schedule directly from your coordinated model, so quantities and specifications always match the drawings. This keeps procurement and bidding on solid ground from day one.",
-    image: doorWindowFinishSchedulesImg.src,
+    image: "/image/door-window-finish-schedules.jpg",
   },
   {
     title: "Building Envelope Drawings and Wall Section",
     text: "Our team documents insulation, flashing and material transitions for code compliance. This documentation protects building performance and reduces callbacks after construction begins.",
-    image: buildingEnvelopeDrawingsImg.src,
+    image: "/image/building-envelope-drawings-wall-section.jpg",
   },
   {
     title: "Millwork & Interior Detail Drawings",
     text: "Our detailers capture custom casework, trim and finish details down to the fraction of an inch. Fabricators get exactly what they need to build it right.",
-    image: millworkInteriorDetailDrawingsImg.src,
+    image: "/image/millwork-interior-detail-drawings.jpg",
   },
 ];
 
@@ -145,7 +135,7 @@ export const constructionDocumentationAiBimWorkflowSection = {
   description:
     "Explore the workflow that combines proprietary AI tools with expert BIM oversight to accelerate production, maintain quality and support scalable project delivery.",
   videoAriaLabel: "Play AI-driven BIM workflow video",
-  posterSrc: constructionDocumentationBannerImg.src,
+  posterSrc: "/image/construction-documentation-services-banner.jpg",
 };
 
 export const constructionDocumentationWhyChooseSection = {

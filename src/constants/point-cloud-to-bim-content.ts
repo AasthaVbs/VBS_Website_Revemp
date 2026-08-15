@@ -1,13 +1,3 @@
-import asBuiltDocumentationImg from "@/assets/images/as-built-documentation.png";
-import clashDetectionCoordinationImg from "@/assets/images/clash-detection-and-coordination.png";
-import deviationAnalysisImg from "@/assets/images/deviation-analysis.png";
-import pointCloudModelingInRevitImg from "@/assets/images/point-cloud-modeling-in-revit.png";
-import pointCloudTo3dWalkthroughImg from "@/assets/images/point-cloud-to-3d-walkthrough.png";
-import pointCloudToBimConversionImg from "@/assets/images/point-cloud-to-bim-conversion.png";
-import pointCloudToBimBannerImg from "@/assets/images/point-cloud-to-bim-services-banner.png";
-import pointCloudToBimOverviewImg from "@/assets/images/point-cloud-to-bim-services-overview.png";
-import pointCloudToCadConversionImg from "@/assets/images/point-cloud-to-cad-conversion.png";
-import scanRegistrationCleanupImg from "@/assets/images/scan-registration-and-cleanup.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -30,7 +20,7 @@ export const pointCloudToBimHero = {
   description:
     "Messy point cloud data slows every project down. Our BIM experts use an AI-powered workflow to convert scans into reliable models fast, without compromising quality.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: pointCloudToBimBannerImg,
+  imageSrc: "/image/point-cloud-to-bim-services-banner.png",
   imageAlt: "Point Cloud to BIM Services",
   copyMaxWidth: 699,
   descriptionMaxWidth: 699,
@@ -55,7 +45,7 @@ export const pointCloudToBimIntro = {
     "Every deliverable passes through 100+ automated QC points before it reaches you.",
     "We deliver drawings, Revit models, schedules and point cloud to CAD model files as needed.",
   ],
-  mainImage: pointCloudToBimOverviewImg,
+  mainImage: "/image/point-cloud-to-bim-services-overview.png",
   imageAlt: "Point Cloud to BIM overview",
 };
 
@@ -85,42 +75,42 @@ export const pointCloudToBimServiceCards = [
   {
     title: "Point Cloud to BIM Conversion",
     text: "We convert point cloud to 3D model outputs that capture every wall, beam and duct with reliable, field-matched geometry ready for design work.",
-    image: pointCloudToBimConversionImg.src,
+    image: "/image/point-cloud-to-bim-conversion.png",
   },
   {
     title: "Deviation Analysis",
     text: "We compare your point cloud to BIM model against the original design intent, flagging shifts in walls, columns or ductwork before they become site issues.",
-    image: deviationAnalysisImg.src,
+    image: "/image/deviation-analysis.png",
   },
   {
     title: "Point Cloud to CAD Conversion",
     text: "When your team needs 2D output, we complete conversion of point cloud to CAD model for floor plans, sections, and elevation drawings your architects can use right away.",
-    image: pointCloudToCadConversionImg.src,
+    image: "/image/point-cloud-to-cad-conversion.png",
   },
   {
     title: "Point Cloud Modeling in Revit",
     text: "Our specialists handle point cloud modeling in Revit, building intelligent families and components that support clash checks, quantity takeoffs and future renovations.",
-    image: pointCloudModelingInRevitImg.src,
+    image: "/image/point-cloud-modeling-in-revit.png",
   },
   {
     title: "Scan Registration and Cleanup",
     text: "Prior to modeling, we register and clean raw scan data by removing noise so your point cloud to BIM model accurately represents real site conditions.",
-    image: scanRegistrationCleanupImg.src,
+    image: "/image/scan-registration-and-cleanup.png",
   },
   {
     title: "Clash Detection and Coordination",
     text: "We run all the models through Navisworks to catch conflicts between architecture, structure and MEP, before your crews hit the site.",
-    image: clashDetectionCoordinationImg.src,
+    image: "/image/clash-detection-and-coordination.png",
   },
   {
     title: "As-Built Documentation",
     text: "Renovation and retrofit teams are provided with reliable as-built drawings and models that reflect existing conditions, reducing guess work in design and construction.",
-    image: asBuiltDocumentationImg.src,
+    image: "/image/as-built-documentation.png",
   },
   {
     title: "Point Cloud to 3D Walkthrough",
     text: "We generate interactive point cloud to 3D walkthroughs from your scan data so stakeholders are able to explore the space, confirm clearances and identify issues before construction starts.",
-    image: pointCloudTo3dWalkthroughImg.src,
+    image: "/image/point-cloud-to-3d-walkthrough.png",
   },
 ];
 

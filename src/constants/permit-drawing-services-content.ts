@@ -1,15 +1,7 @@
-import commercialPermitDrawingsImg from "@/assets/images/commercial-permit-drawings.jpg";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
 import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
 import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
 import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
-import newConstructionPermitDrawingsImg from "@/assets/images/new-construction-permit-drawings.jpg";
-import permitDrawingsBannerImg from "@/assets/images/permit-drawings-banner.jpg";
-import permitDrawingsOverviewImg from "@/assets/images/permit-drarings-overview.jpg";
-import permitRevisionResubmissionSupportImg from "@/assets/images/permit-revision-and-resubmission-support.jpg";
-import permitSetPreparationServicesImg from "@/assets/images/permit-set-preparation-services.jpg";
-import renovationAndAdditionPermitDrawingsImg from "@/assets/images/renovation-and-addition-permit-drawings.jpg";
-import residentialPermitDrawingsImg from "@/assets/images/residential-permit-drawings.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -33,7 +25,7 @@ export const permitDrawingHero = {
   description:
     "Our pre-vetted BIM architects and engineers use AI-assisted workflows to produce building permit drawings that get through review faster.",
   ctaLabel: "Connect With Us",
-  imageSrc: permitDrawingsBannerImg,
+  imageSrc: "/image/permit-drawings-banner.jpg",
   imageAlt: "Permit Drawing Services",
   copyMaxWidth: 675,
   descriptionMaxWidth: 624,
@@ -58,7 +50,7 @@ export const permitDrawingIntro = {
     "Every sheet passes a three-stage QA review before a senior BIM lead signs off.",
     "You receive complete permit sets that includes plans, sections, details, schedules and code compliant notes.",
   ],
-  mainImage: permitDrawingsOverviewImg,
+  mainImage: "/image/permit-drarings-overview.jpg",
   imageAlt: "Permit drawings overview",
 };
 
@@ -87,32 +79,32 @@ export const permitDrawingServiceCards = [
   {
     title: "Commercial Permit Drawings",
     text: "We prepare permit-ready sets for offices, retail centers and mixed-use buildings. Our team follows zoning and IBC codes, so your commercial permit drawings clear plan review without any delay.",
-    image: commercialPermitDrawingsImg.src,
+    image: "/image/commercial-permit-drawings.jpg",
   },
   {
     title: "Residential Permit Drawings",
     text: "Single-family homes, additions, and multi-unit residences all need clean permit sets. We draft residential permit drawings that meet building codes, so homeowners and builders avoid rejected applications.",
-    image: residentialPermitDrawingsImg.src,
+    image: "/image/residential-permit-drawings.jpg",
   },
   {
     title: "Permit Set Preparation Services",
     text: "A complete permit set needs more than floor plans. Our permit set preparation services include elevations, sections, schedules and code notes. We package each set the way your jurisdiction expects.",
-    image: permitSetPreparationServicesImg.src,
+    image: "/image/permit-set-preparation-services.jpg",
   },
   {
     title: "New Construction Permit Drawings",
     text: "New builds face the strictest review since inspectors check every system from the ground up. We prepare permit drawings that includes foundations, framing and life safety details for smooth submission.",
-    image: newConstructionPermitDrawingsImg.src,
+    image: "/image/new-construction-permit-drawings.jpg",
   },
   {
     title: "Renovation and Addition Permit Drawings",
     text: "Renovations and additions must tie into the building information that already exists. So one needs to be more careful while drawing. We record the current situation and prepare permit sets to satisfy the inspectors' demands without delay.",
-    image: renovationAndAdditionPermitDrawingsImg.src,
+    image: "/image/renovation-and-addition-permit-drawings.jpg",
   },
   {
     title: "Permit Revision and Resubmission Support",
     text: "Plan reviewers sometimes send back comments that need quick fixes. Our team handles permit revisions and resubmissions, so a round of corrections does not turn into months of back and forth.",
-    image: permitRevisionResubmissionSupportImg.src,
+    image: "/image/permit-revision-and-resubmission-support.jpg",
   },
 ];
 
@@ -131,7 +123,7 @@ export const permitDrawingAiBimWorkflowSection = {
   description:
     "Explore the workflow that combines proprietary AI tools with expert BIM oversight to accelerate production, maintain quality and support scalable project delivery.",
   videoAriaLabel: "Play AI-driven BIM workflow video",
-  posterSrc: permitDrawingsBannerImg.src,
+  posterSrc: "/image/permit-drawings-banner.jpg",
 };
 
 export const permitDrawingWhyChooseSection = {

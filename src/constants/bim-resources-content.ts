@@ -1,12 +1,3 @@
-import type { StaticImageData } from "next/image";
-
-import bimExecutionPlanHeroImage from "@/assets/images/bim-execution-plan.jpg";
-import dynamoScriptsHeroImage from "@/assets/images/dynamo-scripts-for-revit.jpg";
-import hvacEstimationHeroImage from "@/assets/images/hvac-estimation-templates.jpg";
-import mechanicalPipingHeroImage from "@/assets/images/mechanical-piping-estimations-templates.jpg";
-import plumbingEstimationHeroImage from "@/assets/images/plumbing-estimation-templates.jpg";
-import revitFamiliesHeroImage from "@/assets/images/revit-families.jpg";
-
 export type BimResourcesHighlight = {
   title: string;
   body: string;
@@ -22,7 +13,7 @@ export type BimResourcesRelatedLink = {
 export type BimResourcePageContent = {
   title: string;
   description: string;
-  heroImage: StaticImageData | string;
+  heroImage: string;
   heroImageAlt: string;
   highlightsHeading: string | null;
   highlights: BimResourcesHighlight[];
@@ -69,7 +60,7 @@ export const bimResourcesContent: BimResourcePageContent = {
   title: "2,200+ Revit Families for Your Design Projects",
   description:
     "Elevate your Revit design projects with a diverse collection of over 2,200 Revit families spanning various categories such as architecture, furniture, MEPF, and more. Boost your creative potential today.",
-  heroImage: revitFamiliesHeroImage,
+  heroImage: "/image/revit-families.jpg",
   heroImageAlt: "Revit Families for Your Design Projects download box mockup",
   highlightsHeading: "Key Highlights:",
   highlights: [
@@ -129,7 +120,7 @@ export const bimResourceMechanicalPipingContent: BimResourcePageContent = {
   title: "Optimized Mechanical/Piping Estimations with FREE Contractor Templates",
   description:
     "Enhance your mechanical and piping contracting process with our FREE estimation templates. Achieve precision, efficiency, and a competitive edge in your bids for mechanical and piping projects.",
-  heroImage: mechanicalPipingHeroImage,
+  heroImage: "/image/mechanical-piping-estimations-templates.jpg",
   heroImageAlt: "Mechanical and piping estimation templates",
   highlightsHeading: "Key Highlights:",
   highlights: [
@@ -177,7 +168,7 @@ export const bimResourcePlumbingEstimationContent: BimResourcePageContent = {
   title: "Streamlined Plumbing Estimations with FREE Contractor Templates",
   description:
     "Simplify your plumbing contracting process with our FREE estimation templates. Achieve precision, efficiency, and a competitive edge in your plumbing bids.",
-  heroImage: plumbingEstimationHeroImage,
+  heroImage: "/image/plumbing-estimation-templates.jpg",
   heroImageAlt: "Plumbing estimation templates",
   highlightsHeading: "Key Highlights:",
   highlights: [
@@ -225,7 +216,7 @@ export const bimResourceHvacEstimationContent: BimResourcePageContent = {
   title: "[Download FREE] HVAC Estimation Templates for Contractors",
   description:
     "Streamline your contracting process with our FREE HVAC estimation templates. Achieve accuracy, efficiency, and competitive advantage in your bids.",
-  heroImage: hvacEstimationHeroImage,
+  heroImage: "/image/hvac-estimation-templates.jpg",
   heroImageAlt: "HVAC estimation templates",
   highlightsHeading: "Key Highlights:",
   highlights: [
@@ -273,7 +264,7 @@ export const bimResourceBimExecutionPlanContent: BimResourcePageContent = {
   title: "[Download FREE] BIM Execution Plan (BEP)",
   description:
     "This BIM Execution Plan (BEP) is your comprehensive guide to achieving excellence in construction. It’s meticulously prepared by Virtual Building Studio (VBS) and offers a streamlined approach to project management, enhanced collaboration among stakeholders, and unmatched precision in project execution. Here’s what you will find in the BEP:",
-  heroImage: bimExecutionPlanHeroImage,
+  heroImage: "/image/bim-execution-plan.jpg",
   heroImageAlt: "BIM Execution Plan download",
   highlightsHeading: null,
   highlights: [
@@ -337,7 +328,7 @@ export const bimResourceDynamoScriptsContent: BimResourcePageContent = {
   title: "Top 10 Dynamo Scripts for Revit",
   description:
     "Explore these top 10 Dynamo scripts to enhance your Autodesk Revit experience. These scripts offer valuable solutions to common design and project management challenges, making your workflow more efficient and productive.",
-  heroImage: dynamoScriptsHeroImage,
+  heroImage: "/image/dynamo-scripts-for-revit.jpg",
   heroImageAlt: "Dynamo scripts for Revit",
   highlightsHeading: null,
   highlights: [

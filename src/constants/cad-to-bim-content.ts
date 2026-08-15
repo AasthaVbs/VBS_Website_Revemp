@@ -1,17 +1,7 @@
-import twoDToThreeDFloorPlanConversionImg from "@/assets/images/2d-to-3d-floor-plan-conversion.jpg";
-import architecturalCadToBimServiceImg from "@/assets/images/architectural-cad-to-bim-service.jpg";
-import asBuiltCadDrawingToBimConversionImg from "@/assets/images/as-built-cad-drawing-to-bim-conversion.jpg";
-import autocadToBimConversionImg from "@/assets/images/autocad-to-bim-conversion.jpg";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
 import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
 import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
 import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
-import cadToBimBannerImg from "@/assets/images/cad-to-bim-banner.jpg";
-import cadToBimConversionServicesOverviewImg from "@/assets/images/cad-to-bim-conversion-services-overview.jpg";
-import constructionDocumentationImg from "@/assets/images/construction-documentation.jpg";
-import pdfToRevitConversionImg from "@/assets/images/pdf-to-revit-conversion.jpg";
-import quantityTakeOffsBoqsFromCadImg from "@/assets/images/quantity-take-offs-boqs-from-cad.jpg";
-import structuralCadToBimConversionImg from "@/assets/images/structural-cad-to-bim-conversion.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { bimModelingStatsStrip } from "@/constants/bim-modeling-services-content";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
@@ -32,7 +22,7 @@ export const cadToBimHero = {
   description:
     "Our pre-vetted BIM experts convert your CAD and PDF drawings into accurate Revit models. Teams get faster decisions, fewer clashes, and stronger stakeholder trust.",
   ctaLabel: "Connect With Us",
-  imageSrc: cadToBimBannerImg,
+  imageSrc: "/image/cad-to-bim-banner.jpg",
   imageAlt: "CAD to BIM Conversion Services",
   copyMaxWidth: 683,
   descriptionMaxWidth: 670,
@@ -58,7 +48,7 @@ export const cadToBimIntro = {
     "Improved collaboration with multi-discipline integration and less RFIs.",
     "Deliverables produced for design development, construction and facilities management.",
   ],
-  mainImage: cadToBimConversionServicesOverviewImg,
+  mainImage: "/image/cad-to-bim-conversion-services-overview.jpg",
   imageAlt: "CAD to BIM overview",
 };
 
@@ -87,46 +77,46 @@ export const cadToBimServiceCards = [
   {
     title: "Architectural CAD to BIM Service",
     text: "We convert 2D architectural drawings into full 3D Revit models. Walls, floors and building elements come out accurate and ready to build from.",
-    image: architecturalCadToBimServiceImg.src,
+    image: "/image/architectural-cad-to-bim-service.jpg",
     href: ROUTES.architecturalBim,
   },
   {
     title: "Structural CAD to BIM Conversion",
     text: "Structural CAD files become coordinated models covering framing, foundations and load paths. Engineers get a model that matches the real structure.",
-    image: structuralCadToBimConversionImg.src,
+    image: "/image/structural-cad-to-bim-conversion.jpg",
     href: ROUTES.structuralBim,
   },
   {
     title: "As-Built CAD Drawing to BIM Conversion",
     text: "Existing site drawings become accurate as-built models. Renovation and retrofit teams get a clear picture of the current structure.",
-    image: asBuiltCadDrawingToBimConversionImg.src,
+    image: "/image/as-built-cad-drawing-to-bim-conversion.jpg",
     href: ROUTES.asBuiltModeling,
   },
   {
     title: "AutoCAD to BIM Conversion",
     text: "AutoCAD files convert into intelligent Revit models with real building data. Every wall and system carries information your team can use.",
-    image: autocadToBimConversionImg.src,
+    image: "/image/autocad-to-bim-conversion.jpg",
   },
   {
     title: "PDF to Revit Conversion",
     text: "Turn scanned PDFs or legacy drawings into accurate editable Revit models. Ensuring design accuracy, reduced errors and reliable digital workflows.",
-    image: pdfToRevitConversionImg.src,
+    image: "/image/pdf-to-revit-conversion.jpg",
     href: ROUTES.pdfToCad,
   },
   {
     title: "2D to 3D Floor Plan Conversion",
     text: "Transform 2D CAD drawings into 3D models with detailed, accurate and spatial layouts to improve dialogue with clients and stakeholders through visual clarity.",
-    image: twoDToThreeDFloorPlanConversionImg.src,
+    image: "/image/2d-to-3d-floor-plan-conversion.jpg",
   },
   {
     title: "Construction Documentation",
     text: "Coordinated drawing sets and schedules come ready for permitting. Contractors get documents built for construction, not just design review.",
-    image: constructionDocumentationImg.src,
+    image: "/image/construction-documentation.jpg",
   },
   {
     title: "Quantity Take-Offs & BOQs from CAD",
     text: "Using CAD-based inputs for a BIM-based workflow, create accurate quantities and Bills of Quantities (BOQs). Utilize for cost estimating, procurement and resource planning.",
-    image: quantityTakeOffsBoqsFromCadImg.src,
+    image: "/image/quantity-take-offs-boqs-from-cad.jpg",
   },
 ];
 

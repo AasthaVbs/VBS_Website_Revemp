@@ -1,7 +1,5 @@
 import type { StatItem } from "@/constants/shared-sections";
 
-import mepBimServiceBanner from "@/assets/images/mep-bim-service-banner.jpg";
-import mepBimServicesForProject from "@/assets/images/mep-bim-services-for-project.jpg";
 import threeDayOnboardingIcon from "@/assets/images/3-day-onboarding.svg";
 import endToEndBimSupportIcon from "@/assets/images/end-to=end-bim-support-icon.svg";
 import fastTurnaroundCycleIcon from "@/assets/images/fast-turnaround-cycle-icon.svg";
@@ -29,7 +27,7 @@ export const mepEngineersHero = {
   description:
     "From pre-bid estimation to clash-free coordination and as-built models we help contractors and AEC firms deliver projects faster and more efficiently.",
   ctaLabel: "View All Service",
-  imageSrc: mepBimServiceBanner,
+  imageSrc: "/image/mep-bim-service-banner.jpg",
 };
 
 export const mepIntroPoints = [
@@ -70,7 +68,7 @@ export const mepIntroCopy = {
   ],
   description:
     "We are a USA-focused MEP BIM service provider supporting AEC firms and contractors across the project lifecycle. From MEP BIM modeling and pre-bid estimation to clash-free coordination, shop drawings, and as-built documentation, we deliver accurate, code-compliant Revit and Navisworks models that keep projects moving efficiently.",
-  mainImage: mepBimServicesForProject,
+  mainImage: "/image/mep-bim-services-for-project.jpg",
 };
 
 export const mepWhatYouGetSection = {

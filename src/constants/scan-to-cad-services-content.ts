@@ -1,11 +1,3 @@
-import cadAsBuiltDocumentationImg from "@/assets/images/cad-as-built-documentation.png";
-import pointCloudToCadDraftingImg from "@/assets/images/point-cloud-to-cad-drafting.png";
-import reflectedCeilingPlanDraftingImg from "@/assets/images/reflected-ceiling-plan-drafting.png";
-import scanPdfLegacyDrawingConversionImg from "@/assets/images/scan-pdf-and-legacy-drawing-conversion.png";
-import scanTo2d3dFloorPlanImg from "@/assets/images/scan-to-2d-and-3d-floor-plan-in-cad.png";
-import scanToCadBannerImg from "@/assets/images/scan-to-cad-conversion-services-banner.png";
-import scanToCadOverviewImg from "@/assets/images/scan-to-cad-overview.png";
-import structuralAndMepCadDrawingImg from "@/assets/images/structural-and-mep-cad-drawing.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -28,7 +20,7 @@ export const scanToCadHero = {
   description:
     "Manual drafting from scan data slows your project and includes unpredicted errors. Our CAD experts run an AI-powered workflow that converts scans into build-ready CAD drawings.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: scanToCadBannerImg,
+  imageSrc: "/image/scan-to-cad-conversion-services-banner.png",
   imageAlt: "Scan to CAD Conversion Services",
   copyMaxWidth: 701,
   descriptionMaxWidth: 701,
@@ -53,7 +45,7 @@ export const scanToCadIntro = {
     "Each file passes through documented quality checks, that include manual review of point clouds in AutoCAD.",
     "Deliverables include DWG, DXF, PDF and RVT files, formatted to convert point cloud to 3D model AutoCAD projects can use right away.",
   ],
-  mainImage: scanToCadOverviewImg,
+  mainImage: "/image/scan-to-cad-overview.png",
   imageAlt: "Scan to CAD overview",
 };
 
@@ -83,32 +75,32 @@ export const scanToCadServiceCards = [
   {
     title: "Point Cloud to CAD Drafting",
     text: "We convert point cloud to CAD drawings covering floor plans, elevations and sections, processing LiDAR scan to CAD data from Leica, FARO and other scanners.",
-    image: pointCloudToCadDraftingImg.src,
+    image: "/image/point-cloud-to-cad-drafting.png",
   },
   {
     title: "Scan PDF and Legacy Drawing Conversion",
     text: "Our scan to DWG converter workflow brings outdated PDFs and legacy drawings into editable, layered CAD files that match your current standards and naming conventions.",
-    image: scanPdfLegacyDrawingConversionImg.src,
+    image: "/image/scan-pdf-and-legacy-drawing-conversion.png",
   },
   {
     title: "Reflected Ceiling Plan Drafting",
     text: "We extract ceiling grids, MEP fixtures and lighting layouts from scan data, giving coordination teams a clear, structured reference before construction begins.",
-    image: reflectedCeilingPlanDraftingImg.src,
+    image: "/image/reflected-ceiling-plan-drafting.png",
   },
   {
     title: "Structural and MEP CAD Drawing",
     text: "We map columns, beams, duct runs and pipe routing from your scan into structured CAD files your engineering team can use right away for coordination.",
-    image: structuralAndMepCadDrawingImg.src,
+    image: "/image/structural-and-mep-cad-drawing.png",
   },
   {
     title: "Scan to 2D and 3D Floor Plan in CAD",
     text: "We turn your 3D scan to 2D drawing outputs into clean floor plans and sections, capturing every wall, opening and structural element your team needs.",
-    image: scanTo2d3dFloorPlanImg.src,
+    image: "/image/scan-to-2d-and-3d-floor-plan-in-cad.png",
   },
   {
     title: "CAD As-built Documentation",
     text: "We deliver annotated, dimensioned existing conditions drawings that reflect actual site conditions, not original design intent, ready for renovation and permit submission.",
-    image: cadAsBuiltDocumentationImg.src,
+    image: "/image/cad-as-built-documentation.png",
   },
 ];
 

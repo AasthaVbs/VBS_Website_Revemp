@@ -1,17 +1,7 @@
-import threeDVisualizationServiceImg from "@/assets/images/3d-visualization-service.jpg";
-import bimArchitecturalModelingImg from "@/assets/images/bim-architectural-modeling.jpg";
-import bimClashCoordinationImg from "@/assets/images/bim-clash-coordination.jpg";
-import bimModelingBannerImg from "@/assets/images/bim-modeling-banner.jpg";
-import bimModelingOverviewImg from "@/assets/images/bim-modeling-overview.jpg";
-import bimStructuralModelingImg from "@/assets/images/bim-structural-modeling.jpg";
-import bimToCadConversionsImg from "@/assets/images/bim-to-cad-conversions.jpg";
-import creatingFamiliesRevitImg from "@/assets/images/creating-families-revit.jpg";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
 import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
 import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
 import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
-import lodBasedBimModelingImg from "@/assets/images/lod-based-bim-modeling.jpg";
-import shopBuildingDrawingImg from "@/assets/images/shop-building-drawing.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -35,7 +25,7 @@ export const bimModelingHero = {
   description:
     "Our US trained pre-vetted BIM modelers use AI-driven workflow to offer Revit BIM modeling services to meet your needs for compliance, coordination and constructability.",
   ctaLabel: "Contact us Now",
-  imageSrc: bimModelingBannerImg,
+  imageSrc: "/image/bim-modeling-banner.jpg",
   imageAlt: "BIM Modeling Services residential visualization",
   copyMaxWidth: 670,
   descriptionMaxWidth: 564,
@@ -61,7 +51,7 @@ export const bimModelingIntro = {
     "Automated drawings, quantity take-offs, and schedules via Revit",
     "As-built and FM-ready models compliant with COBie, ISO 19650, and client standards",
   ],
-  mainImage: bimModelingOverviewImg,
+  mainImage: "/image/bim-modeling-overview.jpg",
   imageAlt: "3D BIM modeling services overview",
 };
 
@@ -88,48 +78,48 @@ export const bimModelingServiceCards = [
   {
     title: "BIM Architectural Modeling",
     text: "Translate design concepts into intelligent, coordinated Revit models that accurately reflect spatial relationships, design intent, specifications and code requirements for more efficient project execution and documentation.",
-    image: bimArchitecturalModelingImg.src,
+    image: "/image/bim-architectural-modeling.jpg",
     href: ROUTES.architecturalBim,
   },
   {
     title: "BIM Structural Modeling",
     text: "Coordinate with architectural and MEP disciplines to develop accurate concrete, steel and precast structural models, minimize clashes and enable efficient construction planning.",
-    image: bimStructuralModelingImg.src,
+    image: "/image/bim-structural-modeling.jpg",
     href: ROUTES.structuralBim,
   },
   {
     title: "LOD-Based BIM Modeling",
     text: "Get BIM models during the whole project life cycle with proper geometric information and fidelity of data according to industry standards.",
-    image: lodBasedBimModelingImg.src,
+    image: "/image/lod-based-bim-modeling.jpg",
   },
   {
     title: "Creating Families in Revit",
     text: "Custom Parametric Revit Families include accurate geometry and embedded information for better model consistency, scheduling, quantification, coordination and life cycle management.",
-    image: creatingFamiliesRevitImg.src,
+    image: "/image/creating-families-revit.jpg",
     href: ROUTES.revitFamilies,
   },
   {
     title: "BIM Clash Coordination",
     text: "Resolve multi disciplinary conflicts before construction to reduce field conflicts, avoid costly rework and improve cooperation among project stakeholders.",
-    image: bimClashCoordinationImg.src,
+    image: "/image/bim-clash-coordination.jpg",
     href: ROUTES.mepCoordination,
   },
   {
     title: "Shop or Building Drawing",
     text: "Generate detailed fabrication shop drawings directly from coordinated BIM models, enhancing constructability, installation accuracy and communication between project teams and trades.",
-    image: shopBuildingDrawingImg.src,
+    image: "/image/shop-building-drawing.jpg",
     href: ROUTES.shopDrawings,
   },
   {
     title: "3D Visualization Service",
     text: "Share design intent through realistic 3D views that let stakeholders experience spaces, spot potential problems and make better informed project decisions earlier.",
-    image: threeDVisualizationServiceImg.src,
+    image: "/image/3d-visualization-service.jpg",
     href: ROUTES.visualization,
   },
   {
     title: "BIM to CAD Conversions",
     text: "Convert old CAD drawings into intelligent BIM models to improve collaboration, coordination and accuracy of design through the project life cycle.",
-    image: bimToCadConversionsImg.src,
+    image: "/image/bim-to-cad-conversions.jpg",
     href: ROUTES.cadToBim,
   },
 ];

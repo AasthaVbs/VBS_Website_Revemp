@@ -1,6 +1,6 @@
 "use client";
 
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
@@ -13,7 +13,7 @@ type HeroContent = typeof architecturalDraftingUsaHero;
 export function ArchitecturalDraftingUsaHeroSection({
   content = architecturalDraftingUsaHero,
 }: {
-  content?: HeroContent & { formBg: StaticImageData; descMaxWidth?: number };
+  content?: HeroContent & { descMaxWidth?: number };
 }) {
   return (
     <section id="ads-usa-hero" className="ads-usa-hero relative w-full overflow-hidden bg-white">
@@ -46,6 +46,7 @@ export function ArchitecturalDraftingUsaHeroSection({
                 alt={content.formBgAlt}
                 fill
                 priority
+                unoptimized={typeof content.formBg === "string"}
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover object-center"
               />

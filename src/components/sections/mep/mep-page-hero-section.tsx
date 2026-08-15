@@ -172,6 +172,7 @@ export function MepPageHeroSection({
 }: MepPageHeroContent) {
   const isCompact = imageSize === "compact";
   const resolvedImageAlt = imageAlt ?? altFromImageSrc(imageSrc);
+  const keepOriginalFormat = typeof imageSrc === "string";
 
   if (isCompact) {
     return (
@@ -247,6 +248,7 @@ export function MepPageHeroSection({
                   alt={resolvedImageAlt}
                   fill
                   priority
+                  unoptimized={keepOriginalFormat}
                   sizes="(max-width: 1024px) 100vw, 650px"
                   className="object-cover"
                 />
@@ -267,6 +269,7 @@ export function MepPageHeroSection({
           width={HERO_IMAGE_WIDTH}
           height={HERO_IMAGE_HEIGHT}
           priority
+          unoptimized={keepOriginalFormat}
           sizes="(min-width: 1024px) 56vw, 100vw"
           className="mep-page-hero__photo h-full w-full object-contain object-right object-center"
         />
@@ -304,6 +307,7 @@ export function MepPageHeroSection({
               width={HERO_IMAGE_WIDTH}
               height={HERO_IMAGE_HEIGHT}
               priority
+              unoptimized={keepOriginalFormat}
               sizes="(max-width: 1024px) 100vw, 560px"
               className="block h-auto w-full object-cover"
             />

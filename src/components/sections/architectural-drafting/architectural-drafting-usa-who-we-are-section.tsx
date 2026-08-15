@@ -46,6 +46,7 @@ export function ArchitecturalDraftingUsaWhoWeAreSection({
                 alt={section.imageAlt}
                 width={540}
                 height={420}
+                unoptimized={typeof section.image === "string"}
                 className="block h-auto w-full object-cover"
                 sizes="(max-width: 1024px) 100vw, 540px"
               />

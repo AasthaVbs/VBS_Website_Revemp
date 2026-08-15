@@ -74,6 +74,7 @@ export const ROUTES = {
   whitepaperMepDc: "/whitepaper/mep-coordination-data-centers-bim-workflows",
   whitepaperHiddenCost: "/whitepaper/hidden-cost-of-late-stage-mep-coordination-failures",
   aiaConference: "/aia-conference-events",
+  practice: "/practice",
   sixtyMinutesTeam: "/60-minutes-team",
   privacy: "/privacy-policy",
   terms: "/terms-of-use",

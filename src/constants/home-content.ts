@@ -1,16 +1,5 @@
 import { ROUTES } from "@/constants/navigation";
 
-import architectureStructureImg from "@/assets/images/architecture-structure.png";
-import architecturalDraftingImg from "@/assets/images/architectural-drafting.png";
-import bimServicesImg from "@/assets/images/bim-services.png";
-import engineeringConstructionImg from "@/assets/images/engineering-construction.jpg";
-import infrastructureDeliveryAboutImg from "@/assets/images/infrastructure-delivery-model-about-us.jpg";
-import mechanicalBimServicesImg from "@/assets/images/mechanical-bim-services.png";
-import mepServicesImg from "@/assets/images/mep-services.png";
-import pointCloudToBimImg from "@/assets/images/point-cloud-to-bim.png";
-import realityCaptureSurveyImg from "@/assets/images/reality-capture-survey.png";
-import scanToBimImg from "@/assets/images/scan-to-bim.png";
-
 export const navLinks = [
   "What We Do",
   "Success Stories",
@@ -48,7 +37,7 @@ export const homeAboutSection = {
   paragraph1Emphasis: "200+ dedicated remote BIM modelers.",
   paragraph2:
     "As a specialized MEP BIM modeling service provider in the USA, we ensure your building systems are clash-free and fabrication-ready.",
-  videoImage: infrastructureDeliveryAboutImg.src,
+  videoImage: "/image/infrastructure-delivery-model-about-us.jpg",
   youtubeVideoId: "uyaBPQrNhW0",
 };
 
@@ -90,7 +79,7 @@ export type HomeCapabilityCard = {
 
 export const homeCapabilityCards: HomeCapabilityCard[] = [
   {
-    image: architectureStructureImg.src,
+    image: "/image/architecture-structure.png",
     title: "Architecture & Structure",
     href: "/architecture-services",
     summary: "Architectural BIM Modeling Services, Documentation, And Design Support",
@@ -98,7 +87,7 @@ export const homeCapabilityCards: HomeCapabilityCard[] = [
       "An integrated BIM Modeling Company functioning as a technical infrastructure layer, allowing principals to focus on design leadership and client engagement.",
   },
   {
-    image: engineeringConstructionImg.src,
+    image: "/image/engineering-construction.jpg",
     title: "Engineering & Construction",
     href: ROUTES.mepServices,
     summary: "MEP, Structural, And Construction Documentation Support",
@@ -106,7 +95,7 @@ export const homeCapabilityCards: HomeCapabilityCard[] = [
       "Clash detection, coordination, and constructability reviews with fabrication-ready MEP modeling aligned to your engineering workflows.",
   },
   {
-    image: realityCaptureSurveyImg.src,
+    image: "/image/reality-capture-survey.png",
     title: "Reality Capture & Survey",
     href: "/scan-to-bim-services",
     summary: "Scan-To-BIM Modeling, Survey Data Integration, And Capture Deliverables",
@@ -117,15 +106,15 @@ export const homeCapabilityCards: HomeCapabilityCard[] = [
 
 /** Home hero scrolling media — left column (3) / right column (3), no duplicates. */
 export const homeHeroMediaLeft = [
-  architecturalDraftingImg.src,
-  bimServicesImg.src,
-  mechanicalBimServicesImg.src,
+  "/image/architectural-drafting.png",
+  "/image/bim-services.png",
+  "/image/mechanical-bim-services.png",
 ] as const;
 
 export const homeHeroMediaRight = [
-  mepServicesImg.src,
-  pointCloudToBimImg.src,
-  scanToBimImg.src,
+  "/image/mep-services-2.png",
+  "/image/point-cloud-to-bim.png",
+  "/image/scan-to-bim.png",
 ] as const;
 
 /** Figma 1-2925 — Our Clients marquee. */

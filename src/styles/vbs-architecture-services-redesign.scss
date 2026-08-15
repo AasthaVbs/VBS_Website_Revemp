@@ -501,69 +501,163 @@
 /* Why Choose VBS — clickable list + image                            */
 /* ------------------------------------------------------------------ */
 
+.arch-svc-why-continue__body {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.arch-svc-why-continue__row {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
 .arch-svc-why-continue__list {
-  gap: 0;
+  display: flex;
+  width: 100%;
+  max-width: 416px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .arch-svc-why-continue__item-wrap {
   display: flex;
+  width: 100%;
+  flex-shrink: 0;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .arch-svc-why-continue__item {
+  display: flex;
+  flex-shrink: 0;
   cursor: pointer;
+  align-items: center;
   background: none;
   border: none;
-  padding-block: 24px;
+  padding: 0;
+  text-align: left;
 }
 
 .arch-svc-why-continue__divider {
-  height: 1px;
+  display: flex;
   width: 100%;
+  flex: 1 0 0;
+  align-items: center;
+  align-self: stretch;
+  min-height: 1px;
+}
+
+.arch-svc-why-continue__divider::after {
+  display: block;
+  width: 100%;
+  height: 1px;
   background: linear-gradient(
     to right,
-    #cbcccd 0%,
-    rgba(203, 204, 205, 0.45) 55%,
-    transparent 100%
+    rgba(203, 204, 205, 0) 0%,
+    #cbcccd 50%,
+    rgba(203, 204, 205, 0) 100%
   );
+  content: "";
 }
 
 .arch-svc-why-continue__chevron {
-  transform: rotate(0deg);
+  display: flex;
+  height: 24px;
+  width: 24px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.arch-svc-why-continue__chevron--active {
-  transform: translateX(2px);
+.arch-svc-why-continue__chevron img {
+  height: 24px;
+  width: 24px;
+  filter: brightness(0);
 }
 
 .arch-svc-why-continue__visual {
-  min-height: 320px;
+  position: relative;
+  width: 100%;
+  max-width: 710px;
+  aspect-ratio: 710 / 446;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffffff;
 }
 
-@media (min-width: 1024px) {
-  .arch-svc-why-continue__visual {
-    min-height: 480px;
-  }
+.arch-svc-why-continue__photo {
+  position: absolute;
+  top: calc(-158 / 446 * 100%);
+  left: 0;
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .arch-svc-why-continue__overlay {
-  background: linear-gradient(180deg, rgba(17, 17, 17, 0) 45%, rgba(17, 17, 17, 0.75) 100%);
   pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0) 54%, #111111 83%);
 }
 
 .arch-svc-why-continue__caption {
+  position: absolute;
+  top: calc(404 / 446 * 100%);
+  left: 30px;
+  width: calc(100% - 60px);
+  max-width: 650px;
+  transform: translateY(-50%);
   animation: arch-svc-why-continue-fade 0.35s ease;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+@media (min-width: 1024px) {
+  .arch-svc-why-continue__body {
+    gap: 60px;
+  }
+
+  .arch-svc-why-continue__list {
+    width: 416px;
+    height: 410px;
+    gap: 20px;
+  }
+
+  .arch-svc-why-continue__visual {
+    width: 710px;
+    height: 446px;
+    flex-shrink: 0;
+    aspect-ratio: auto;
+  }
 }
 
 @keyframes arch-svc-why-continue-fade {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(calc(-50% + 6px));
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-50%);
   }
 }
 
@@ -572,7 +666,46 @@
 /* ------------------------------------------------------------------ */
 
 .arch-svc-difference__card {
+  cursor: pointer;
   transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.arch-svc-difference__icon-wrap {
+  position: relative;
+  display: flex;
+  height: 80px;
+  width: 80px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.arch-svc-difference__icon {
+  display: block;
+  height: 56px;
+  width: 56px;
+  flex-shrink: 0;
+  object-fit: contain;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.arch-svc-difference__icon--colored {
+  position: absolute;
+  opacity: 0;
+}
+
+.arch-svc-difference__card:hover .arch-svc-difference__icon--muted,
+.arch-svc-difference__card:focus-within .arch-svc-difference__icon--muted {
+  opacity: 0;
+}
+
+.arch-svc-difference__card:hover .arch-svc-difference__icon--colored,
+.arch-svc-difference__card:focus-within .arch-svc-difference__icon--colored {
+  opacity: 1;
+  transform: scale(1.02);
 }
 
 /* ------------------------------------------------------------------ */

@@ -46,6 +46,7 @@ export function ThreeDRenderingUsaHeroSection({
               alt={content.imageAlt}
               fill
               priority
+              unoptimized={typeof content.image === "string"}
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 650px"
             />

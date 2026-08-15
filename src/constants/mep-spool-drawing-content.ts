@@ -1,23 +1,13 @@
-import calloutsForInsulationTracing from "@/assets/images/callouts-for-insulation-tracing.jpg";
 import complexMechanicalRoomsIcon from "@/assets/images/complex-mechanical-rooms-icon.png";
 import fastTrackProjectsIcon from "@/assets/images/fast-track-projects-icon.png";
-import hangerSupportLocations from "@/assets/images/hanger-support-locations.jpg";
-import isometricSpoolConversion from "@/assets/images/isometric-spool-conversion.jpg";
-import jointAndWeldLocations from "@/assets/images/joint-and-weld-locations.jpg";
 import largeScaleIndustrialWorksIcon from "@/assets/images/large-scale-industrial-works-icon.png";
-import materialSpecificationsBom from "@/assets/images/material-specifications-bom.jpg";
 import correctMaterialSpecificationsIcon from "@/assets/images/mep-spool-drawing/correct-material-specifications-icon.png";
 import detailedDimensionsAndSpoolIdsIcon from "@/assets/images/mep-spool-drawing/detailed-dimensions-and-spool-ids-icon.png";
 import fabricationReadySpoolDrawingsIcon from "@/assets/images/mep-spool-drawing/fabrication-ready-spool-drawings-icon.png";
 import fasterPrefabricationTurnaroundIcon from "@/assets/images/mep-spool-drawing/faster-prefabrication-turnaround-icon.png";
 import reducedInstallationErrorsIcon from "@/assets/images/mep-spool-drawing/reduced-installation-errors-icon.png";
 import standardizedDrawingFormatIcon from "@/assets/images/mep-spool-drawing/standardized-drawing-format-icon.png";
-import nozzleFlangeOrientationDetails from "@/assets/images/nozzle-flange-orientation-details.jpg";
-import pipeSegmentDetailing from "@/assets/images/pipe-segment-detailing.jpg";
 import prefabricationStageIcon from "@/assets/images/prefabrication-stage-icon.png";
-import revisionControlBuiltUpdate from "@/assets/images/revision-control-built-update.jpg";
-import spoolDrawingServicesBanner from "@/assets/images/spool-drawing-services-banner.jpg";
-import spoolDrawingServicesOverview from "@/assets/images/spool-drawing-services-overview.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
   MepBimFeatureCard,
@@ -35,7 +25,7 @@ export const mepSpoolDrawingHero = {
   description:
     "Our pre-vetted MEP engineers prepare high quality 2D and 3D piping spool drawings to help AEC teams fasten project timelines and ensure better fabrication.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: spoolDrawingServicesBanner,
+  imageSrc: "/image/spool-drawing-services-banner.jpg",
   imageAlt: "spool-drawing-services-banner",
   copyMaxWidth: 699,
   descriptionMaxWidth: 699,
@@ -64,7 +54,7 @@ export const mepSpoolDrawingIntro: MepOverviewIntroContent = {
   paragraph2Bold: "MEP team converts",
   paragraph2Tail:
     " your 3D pipe models, isometric piping drawings, or P&IDs into ISO-compliant, shop-ready fabrication drawings. Our fabrication drawings services give you buildable spools, correct dimensions, and coordinated details your team can trust.",
-  mainImage: spoolDrawingServicesOverview.src,
+  mainImage: "/image/spool-drawing-services-overview.jpg",
   imageAlt: "spool-drawing-services-overview",
 };
 
@@ -132,42 +122,42 @@ export const mepSpoolDrawingServiceCards = [
   {
     title: "Pipe Segment Detailing",
     text: "We segment piping runs into fabricable spool units. Each unit lists cut lengths, offset dimensions and straight pipe quantities based on shop capability.",
-    image: pipeSegmentDetailing.src,
+    image: "/image/pipe-segment-detailing.jpg",
   },
   {
     title: "Joint and Weld Locations",
     text: "MEP engineers mark field welds, shop welds and flanged joints with AWS and ASME compliant symbols. Clear symbols reduce fabrication misinterpretation.",
-    image: jointAndWeldLocations.src,
+    image: "/image/joint-and-weld-locations.jpg",
   },
   {
     title: "Material Specifications and BOM",
     text: "We tie a bill of materials to each spool. Every BOM lists pipe grades, schedule ratings and fitting standards under ASME B16.9 and B16.5.",
-    image: materialSpecificationsBom.src,
+    image: "/image/material-specifications-bom.jpg",
   },
   {
     title: "Isometric to Spool Conversion",
     text: "We convert engineering isometrics and P&ID references into dimensioned fabrication spools. Our team uses AutoCAD Plant 3D, SP3D, or Revit MEP.",
-    image: isometricSpoolConversion.src,
+    image: "/image/isometric-spool-conversion.jpg",
   },
   {
     title: "Nozzle and Flange Orientation Details",
     text: "Our MEP BIM team verify flange face orientation, bolt hole rotation and nozzle projection dimensions against vendor data sheets and structural tie-in drawings.",
-    image: nozzleFlangeOrientationDetails.src,
+    image: "/image/nozzle-flange-orientation-details.jpg",
   },
   {
     title: "Hanger and Support Locations",
     text: "On each drawing we indicate pipe support locations, hanger types and the positions of spring can. They are designed for structural attachment points for installation.",
-    image: hangerSupportLocations.src,
+    image: "/image/hanger-support-locations.jpg",
   },
   {
     title: "Callouts for Insulation and Tracing",
     text: "For our US project, engineers mark the insulation thickness, cladding type and heat tracing requirements according to the line class specifications. These callouts help with better procurement and installation planning.",
-    image: calloutsForInsulationTracing.src,
+    image: "/image/callouts-for-insulation-tracing.jpg",
   },
   {
     title: "Revision Control and As-Built Update",
     text: "We track revisions with cloud markups and delta schedules. This allows drawings to remain accurate as design changes and site condition updates are made.",
-    image: revisionControlBuiltUpdate.src,
+    image: "/image/revision-control-built-update.jpg",
   },
 ];
 

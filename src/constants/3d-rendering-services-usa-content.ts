@@ -1,17 +1,9 @@
-import type { StaticImageData } from "next/image";
-
 import alecWhittenImg from "@/assets/images/3d-rendering-services-usa/alec-whitten.png";
-import heroCollageImg from "@/assets/images/3d-rendering-services-usa/hero-collage.png";
 import iconDelivery from "@/assets/images/3d-rendering-services-usa/icons/delivery.svg";
 import iconExteriors from "@/assets/images/3d-rendering-services-usa/icons/exteriors.svg";
 import iconFloorPlans from "@/assets/images/3d-rendering-services-usa/icons/floor-plans.svg";
 import iconInteriors from "@/assets/images/3d-rendering-services-usa/icons/interiors.svg";
 import iconQuality from "@/assets/images/3d-rendering-services-usa/icons/quality.svg";
-import showcase1827 from "@/assets/images/3d-rendering-services-usa/showcase-1827-8th-street.png";
-import showcase16Old from "@/assets/images/3d-rendering-services-usa/showcase-16-old-smalleytown.png";
-import showcaseEventCentre from "@/assets/images/3d-rendering-services-usa/showcase-event-centre.png";
-import showcaseK24 from "@/assets/images/3d-rendering-services-usa/showcase-k24.png";
-import showcaseZhongda from "@/assets/images/3d-rendering-services-usa/showcase-zhongda-residence.png";
 import whittenLogoImg from "@/assets/images/3d-rendering-services-usa/whitten-logo.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 
@@ -23,7 +15,7 @@ export const threeDRenderingUsaHero = {
   titlePriceNow: "$1,600",
   description:
     "One price covers exteriors, interiors & floor plans – no per-image cost, no surprises.",
-  image: heroCollageImg,
+  image: "/image/3d-rendering-services-usa/hero-collage.png",
   imageAlt: "3D rendering collage of exterior, interiors, and floor plan",
 };
 
@@ -43,13 +35,13 @@ export const threeDRenderingUsaShowcaseSection = {
 export const threeDRenderingUsaShowcaseProjects: {
   title: string;
   category: string;
-  image: StaticImageData;
+  image: string;
 }[] = [
-  { title: "16 Old Smalleytown", category: "Exterior", image: showcase16Old },
-  { title: "1827 8th Street", category: "Exterior", image: showcase1827 },
-  { title: "Event Centre", category: "Interior", image: showcaseEventCentre },
-  { title: "Zhongda Residence", category: "Interior", image: showcaseZhongda },
-  { title: "K24", category: "Exterior", image: showcaseK24 },
+  { title: "16 Old Smalleytown", category: "Exterior", image: "/image/3d-rendering-services-usa/showcase-16-old-smalleytown.png" },
+  { title: "1827 8th Street", category: "Exterior", image: "/image/3d-rendering-services-usa/showcase-1827-8th-street.png" },
+  { title: "Event Centre", category: "Interior", image: "/image/3d-rendering-services-usa/showcase-event-centre.png" },
+  { title: "Zhongda Residence", category: "Interior", image: "/image/3d-rendering-services-usa/showcase-zhongda-residence.png" },
+  { title: "K24", category: "Exterior", image: "/image/3d-rendering-services-usa/showcase-k24.png" },
 ];
 
 export const threeDRenderingUsaProjectPriceSection = {

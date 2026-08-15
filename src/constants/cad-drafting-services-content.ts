@@ -1,12 +1,3 @@
-import autoCadDraftingOverviewImg from "@/assets/images/auto-cad-drafting-services-overview.jpg";
-import cadConversionImg from "@/assets/images/cad-conversion.jpg";
-import cadDraftingBannerImg from "@/assets/images/cad-drafting-services-banner.jpg";
-import twoDAndThreeDCadDraftingImg from "@/assets/images/2d-and-3d-cad-drafting.jpg";
-import incorporateRedlineMarkupImg from "@/assets/images/incorporate-redline-and-markup.jpg";
-import permitConstructionDrawingSetsImg from "@/assets/images/permit-and-construction-drawing-sets.jpg";
-import architecturalCadDraftingServicesImg from "@/assets/images/architectural-cad-drafting-services.jpg";
-import structuralCadDraftingServicesImg from "@/assets/images/structural-cad-drafting-services.jpg";
-import facadeCadDraftingServicesImg from "@/assets/images/facade-cad-drafting-services.jpg";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
 import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
 import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
@@ -34,7 +25,7 @@ export const cadDraftingHero = {
   description:
     "Our pre-vetted, US-trained CAD drafters will take care of detailed CAD drawing and AutoCAD drafting services for you so your design team can concentrate on core work.",
   ctaLabel: "Connect With Us",
-  imageSrc: cadDraftingBannerImg,
+  imageSrc: "/image/cad-drafting-services-banner-2.jpg",
   imageAlt: "CAD Drafting Services",
   copyMaxWidth: 670,
   descriptionMaxWidth: 670,
@@ -59,7 +50,7 @@ export const cadDraftingIntro = {
     "QA/QC checks are built into every drawing before it gets to your desk",
     "Deliverables from redlines, to permit sets, to full construction documentation",
   ],
-  mainImage: autoCadDraftingOverviewImg,
+  mainImage: "/image/auto-cad-drafting-services-overview.jpg",
   imageAlt: "CAD Drafting overview",
 };
 
@@ -89,40 +80,40 @@ export const cadDraftingServiceCards = [
   {
     title: "CAD Conversion",
     text: "We transform hand sketches, paper drawings, PDFs and scanned images into editable DWG or DXF files. All outputs preserve your layers, dimensions and title blocks for smooth handoffs.",
-    image: cadConversionImg.src,
+    image: "/image/cad-conversion.jpg",
     href: ROUTES.pdfToCad,
   },
   {
     title: "2D and 3D CAD Drafting",
     text: "Our team provides 2D & 3D CAD drawing services throughout all phases of the project from concept to construction. We also deliver clean 2D plans and sections from complex 3D models.",
-    image: twoDAndThreeDCadDraftingImg.src,
+    image: "/image/2d-and-3d-cad-drafting.jpg",
     href: ROUTES.twoDDrafting,
   },
   {
     title: "Incorporate Redline and Markup",
     text: "We are incredibly careful with every detail when we update redlines and markups. We ensure annotation standards and version control are consistent, so the intent of your project remains clear with our AutoCAD drafting services.",
-    image: incorporateRedlineMarkupImg.src,
+    image: "/image/incorporate-redline-and-markup.jpg",
   },
   {
     title: "Permit & Construction Drawing Sets",
     text: "We prepare full permit-ready and construction documentation sets that meet US codes and local jurisdiction rules. When you outsource CAD drafting services in the USA to us, drawings pass inspection the first time.",
-    image: permitConstructionDrawingSetsImg.src,
+    image: "/image/permit-and-construction-drawing-sets.jpg",
   },
   {
     title: "Architectural CAD Drafting Services",
     text: "We handle CAD drawing services for residential, commercial and industrial architecture projects. Deliverables include floor plans, sections, elevations and reflected ceiling plans built to your templates and codes.",
-    image: architecturalCadDraftingServicesImg.src,
+    image: "/image/architectural-cad-drafting-services.jpg",
     href: ROUTES.architecturalDrafting,
   },
   {
     title: "Structural CAD Drafting Services",
     text: "From framing plans to reinforcement detailing, our AutoCAD drafting services support structural engineers with clean, coordinated drawings. Every sheet integrates smoothly with your architectural and MEP sets.",
-    image: structuralCadDraftingServicesImg.src,
+    image: "/image/structural-cad-drafting-services.jpg",
   },
   {
     title: "Facade CAD Drafting Services",
     text: "Our facade drafting team supports curtain wall and cladding systems with shop drawings, fabrication details and panel layouts. We give complex facade projects the CAD drafting support they need.",
-    image: facadeCadDraftingServicesImg.src,
+    image: "/image/facade-cad-drafting-services.jpg",
   },
 ];
 

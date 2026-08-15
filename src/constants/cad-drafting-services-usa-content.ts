@@ -1,6 +1,3 @@
-import heroImage from "@/assets/images/cad-drafting-services-usa/hero.png";
-import testimonialCard from "@/assets/images/cad-drafting-services-usa/testimonial-card.png";
-import expertiseAutocad from "@/assets/images/cad-drafting-services-usa/expertise-autocad.png";
 import clientGlabeTaylor from "@/assets/images/cad-drafting-services-usa/client-glabe-taylor.png";
 import clientGp from "@/assets/images/cad-drafting-services-usa/client-gp.png";
 import clientLexent from "@/assets/images/cad-drafting-services-usa/client-lexent.png";
@@ -18,7 +15,7 @@ export const cadDraftingUsaHero = {
   titleAccent: "Remote Architect Level I, II & III",
   ctaLabel: "Connect with our CAD Experts",
   ctaHref: `#${CAD_USA_CONTACT_ID}`,
-  image: heroImage,
+  image: "/image/cad-drafting-services-usa/hero.png",
   imageAlt: "Remote CAD drafting experts collaborating on architectural drawings",
 };
 
@@ -28,7 +25,7 @@ export const cadDraftingUsaTestimonial = {
   description:
     "From absorbing full production workloads to building a true right-hand partner. A Los Angeles architecture firm streamlined production with one dedicated resource—cutting delivery time by 75% and improving operational efficiency.",
   ctaLabel: "Book a Meeting",
-  image: testimonialCard,
+  image: "/image/cad-drafting-services-usa/testimonial-card.png",
   imageAlt: "Alec Whitten testimonial for Virtual Building Studio",
   youtubeVideoId: clientSuccessStories[0]?.youtubeVideoId ?? "2NsLtpdtMto",
 };
@@ -43,7 +40,7 @@ export const cadDraftingUsaExpertiseItems = [
     title: "AutoCAD Drafting",
     caption:
       "Professional-grade AutoCAD drafting is provided by Top 1% CAD experts, ensuring compliance with US standards and high-quality results.",
-    image: expertiseAutocad,
+    image: "/image/cad-drafting-services-usa/expertise-autocad.png",
   },
   {
     title: "3D and 2D Drawings",

@@ -90,6 +90,7 @@ function LodInfoCard({ card, isActive }: { card: StickyServicesCard; isActive: b
           src={card.image}
           alt={card.title}
           fill
+          unoptimized={card.image.startsWith("/image/")}
           className="object-cover object-center"
           sizes="460px"
         />

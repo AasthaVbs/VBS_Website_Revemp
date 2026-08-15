@@ -1,0 +1,529 @@
+.vbs-redesign-page.practice-section-page,
+.practice-page {
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+.practice-hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.practice-hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.practice-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 8, 8, 0.62) 0%,
+    rgba(8, 8, 8, 0.72) 45%,
+    rgba(8, 8, 8, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+.practice-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 560px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.practice-hero__copy {
+  width: 100%;
+  max-width: 920px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.vbs-redesign-page .practice-hero__title,
+.practice-hero__title {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff !important;
+  font-family: var(--font-inter), "Inter 18pt", Inter, system-ui, sans-serif !important;
+  font-size: 48px !important;
+  line-height: 1.2 !important;
+  letter-spacing: normal !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.vbs-redesign-page .practice-hero__title-light,
+.practice-hero__title-light,
+.vbs-redesign-page .practice-hero__title-medium,
+.practice-hero__title-medium {
+  display: block;
+  color: #fff !important;
+  font-family: var(--font-inter), "Inter 18pt", Inter, system-ui, sans-serif !important;
+  font-size: 48px !important;
+  line-height: 1.2 !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.vbs-redesign-page .practice-hero__title-light,
+.practice-hero__title-light {
+  font-weight: 300 !important;
+}
+
+.vbs-redesign-page .practice-hero__title-medium,
+.practice-hero__title-medium {
+  font-weight: 500 !important;
+}
+
+.vbs-redesign-page .practice-hero__topics,
+.practice-hero__topics,
+.vbs-redesign-page .practice-hero__intro,
+.practice-hero__intro {
+  margin: 0;
+  color: #fff !important;
+  font-family: var(--font-inter), "Inter 18pt", Inter, system-ui, sans-serif;
+  word-wrap: break-word;
+}
+
+.vbs-redesign-page .practice-hero__topics,
+.practice-hero__topics {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.vbs-redesign-page .practice-hero__intro,
+.practice-hero__intro {
+  max-width: 720px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.practice-page .primary-cta {
+  width: auto;
+  align-self: flex-start;
+}
+
+.practice-hero__copy .primary-cta {
+  align-self: center;
+  margin-top: 8px;
+}
+
+.practice-hero__copy .practice-hero__cta.primary-cta {
+  background: transparent !important;
+  border-color: #fff !important;
+  color: #fff !important;
+  backdrop-filter: none;
+  box-shadow: none;
+
+  .primary-cta-blobs {
+    display: none;
+  }
+
+  .primary-cta-label {
+    color: #fff !important;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: #d70416 !important;
+    border-color: #d70416 !important;
+    color: #fff !important;
+
+    .primary-cta-label {
+      color: #fff !important;
+    }
+  }
+}
+
+.practice-events,
+.practice-meet {
+  background: #fff;
+  padding: 80px 0;
+}
+
+.practice-events__grid {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.practice-event-card {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.practice-event-card__media {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 420px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f3f4f5;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+.practice-event-card__body {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+
+  h2 {
+    margin: 0;
+    align-self: stretch;
+    color: #111111 !important;
+    font-family: var(--font-inter), "Inter 18pt", Inter, system-ui, sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    line-height: 1.3 !important;
+    text-transform: capitalize;
+    word-wrap: break-word;
+  }
+
+  p {
+    margin: 0;
+    font-family: var(--font-inter), "Inter 18pt", Inter, system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+  }
+}
+
+.vbs-redesign-page .practice-event-card__lead,
+.practice-event-card__lead {
+  color: #111111 !important;
+  font-family: var(--font-inter), "Inter 18pt", Inter, system-ui, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  word-wrap: break-word;
+}
+
+.vbs-redesign-page .practice-event-card__body h2 {
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  color: #111111 !important;
+}
+
+.practice-event-card__note {
+  align-self: stretch;
+  color: #808080;
+  text-transform: capitalize;
+}
+
+.practice-meet__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 480px;
+  grid-template-areas:
+    "heading portrait"
+    "body portrait";
+  column-gap: 60px;
+  row-gap: 20px;
+  align-items: center;
+}
+
+.practice-meet__heading {
+  grid-area: heading;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.practice-meet__body {
+  grid-area: body;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 0;
+
+  p {
+    margin: 0;
+    max-width: 820px;
+    color: #808080;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+
+.practice-meet__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid #2299d6;
+  background: rgba(34, 153, 214, 0.1);
+  color: #2299d6;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+.vbs-redesign-page .practice-meet__title,
+.practice-meet__title {
+  margin: 0;
+  color: #111;
+  font-family: var(--font-inter), "Inter 18pt", Inter, system-ui, sans-serif !important;
+  font-size: 40px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+}
+
+.practice-meet__title-dark {
+  color: #111;
+  font-weight: 500;
+}
+
+.practice-meet__title-accent {
+  color: #d70416;
+  font-weight: 300;
+}
+
+.practice-meet__title-role {
+  display: block;
+  margin-top: 8px;
+}
+
+.practice-meet__portrait {
+  grid-area: portrait;
+  position: relative;
+  width: 480px;
+  height: 450px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(196deg, #aaaaaa 0%, #444444 100%);
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .practice-events,
+  .practice-meet {
+    padding: 64px 0;
+  }
+
+  .practice-meet__layout {
+    grid-template-columns: minmax(0, 1fr) 400px;
+    column-gap: 40px;
+  }
+
+  .practice-meet__portrait {
+    width: 400px;
+    height: 390px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .practice-hero,
+  .practice-hero__inner {
+    min-height: 420px;
+  }
+
+  .vbs-redesign-page .practice-hero__title,
+  .practice-hero__title {
+    font-size: 32px !important;
+    line-height: 1.25 !important;
+  }
+
+  .vbs-redesign-page .practice-hero__title-light,
+  .practice-hero__title-light,
+  .vbs-redesign-page .practice-hero__title-medium,
+  .practice-hero__title-medium {
+    display: inline;
+    font-size: 32px !important;
+    line-height: 1.25 !important;
+    margin-left: 0.25em;
+  }
+
+  .practice-hero__copy {
+    gap: 12px;
+  }
+
+  .vbs-redesign-page .practice-hero__topics,
+  .practice-hero__topics {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+  }
+
+  .vbs-redesign-page .practice-hero__intro,
+  .practice-hero__intro {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 22px !important;
+    color: rgba(255, 255, 255, 0.72) !important;
+    max-width: 340px;
+  }
+
+  .practice-events__grid {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 48px;
+  }
+
+  .practice-meet__layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heading"
+      "portrait"
+      "body";
+    row-gap: 24px;
+    justify-items: center;
+  }
+
+  .practice-meet__heading,
+  .practice-meet__body {
+    width: 100%;
+  }
+
+  .practice-event-card__media {
+    height: 280px;
+  }
+
+  .vbs-redesign-page .practice-meet__title,
+  .practice-meet__title {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+  }
+
+  .practice-meet__portrait {
+    width: 100%;
+    max-width: 320px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .practice-hero,
+  .practice-hero__inner {
+    min-height: 260px;
+  }
+
+  .practice-hero__inner {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .vbs-redesign-page .practice-hero__title,
+  .practice-hero__title {
+    font-size: 28px !important;
+    line-height: 1.28 !important;
+  }
+
+  .vbs-redesign-page .practice-hero__title-light,
+  .practice-hero__title-light,
+  .vbs-redesign-page .practice-hero__title-medium,
+  .practice-hero__title-medium {
+    display: inline;
+    font-size: 28px !important;
+    line-height: 1.28 !important;
+    margin-left: 0.25em;
+  }
+
+  .vbs-redesign-page .practice-hero__topics,
+  .practice-hero__topics {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 18px !important;
+  }
+
+  .vbs-redesign-page .practice-hero__intro,
+  .practice-hero__intro {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 21px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .practice-events,
+  .practice-meet {
+    padding: 48px 0;
+  }
+
+  .practice-event-card {
+    gap: 20px;
+  }
+
+  .practice-event-card__body {
+    gap: 16px;
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  .practice-event-card__media {
+    height: 250px;
+  }
+
+  .vbs-redesign-page .practice-meet__title,
+  .practice-meet__title {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+  }
+
+  .practice-meet__portrait {
+    height: 260px;
+    max-width: 280px;
+  }
+}

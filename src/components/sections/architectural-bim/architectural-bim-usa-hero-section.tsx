@@ -1,6 +1,6 @@
 "use client";
 
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
@@ -13,7 +13,7 @@ type HeroContent = typeof architecturalBimUsaHero;
 export function ArchitecturalBimUsaHeroSection({
   content = architecturalBimUsaHero,
 }: {
-  content?: HeroContent & { formBg: StaticImageData };
+  content?: HeroContent;
 }) {
   return (
     <section id="abs-usa-hero" className="abs-usa-hero relative w-full overflow-hidden bg-white">
@@ -43,6 +43,7 @@ export function ArchitecturalBimUsaHeroSection({
                 alt={content.formBgAlt}
                 fill
                 priority
+                unoptimized={typeof content.formBg === "string"}
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover object-center"
               />

@@ -1,7 +1,5 @@
 import budgetValidationIcon from "@/assets/images/budget-validation-icon.png";
 import complexMepProjectsIcon from "@/assets/images/complex-mep-projects-icon.png";
-import preBidEstimationBanner from "@/assets/images/pre-bid-estimation-service-banner.png";
-import preConstructionBidEstimationOverview from "@/assets/images/pre-construction-bid-estimation-overview.png";
 import resourceConstraintsIcon from "@/assets/images/resource-constraints-icon.png";
 import tenderStageIcon from "@/assets/images/tender-stage-icon.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
@@ -25,7 +23,7 @@ export const mepPreBidHero = {
   description:
     "Get bid-ready cost estimates from experienced estimators using accurate quantity takeoffs, current pricing and trade-specific expertise.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: preBidEstimationBanner,
+  imageSrc: "/image/pre-bid-estimation-service-banner.png",
   imageAlt: "Pre-Bid Estimation Services",
   copyMaxWidth: 608,
   descriptionMaxWidth: 558,
@@ -53,7 +51,7 @@ export const mepPreBidIntro: MepOverviewIntroContent = {
   paragraph2Bold: "MEP Estimating Services",
   paragraph2Tail:
     " in USA using BIM-supported workflows and SMACNA, NEC and CSI standards. All our pre-bid estimations for MEP and HVAC systems include local labor rates, material pricing and project scope for reliable bid submissions.",
-  mainImage: preConstructionBidEstimationOverview.src,
+  mainImage: "/image/pre-construction-bid-estimation-overview.png",
   imageAlt: "Pre-Construction Bid Estimation overview",
 };
 

@@ -1,17 +1,7 @@
-import architecturalPdfToCadImg from "@/assets/images/architectural-pdf-to-cad-conversion.jpg";
-import twoDTo3dCadConversionImg from "@/assets/images/2d-to-3d-cad-conversion.jpg";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
 import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
 import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
 import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
-import paperToCadConversionImg from "@/assets/images/paper-to-cad-conversion-services.jpg";
-import pdfToAutocadConversionImg from "@/assets/images/pdf-to-autocad-conversion.jpg";
-import pdfToCadBannerImg from "@/assets/images/pdf-to-cad-conversion-banner.jpg";
-import pdfToCadOverviewImg from "@/assets/images/pdf-to-cad-conversion-services-overiew.jpg";
-import pdfToCadDraftingImg from "@/assets/images/pdf-to-cad-drafting-services.jpg";
-import pdfToDwgConversionImg from "@/assets/images/pdf-to-dwg-conversion.jpg";
-import pdfToDxfConversionImg from "@/assets/images/pdf-to-dxf-conversion.jpg";
-import structuralPdfToCadImg from "@/assets/images/structural-pdf-to-cad-conversion.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -37,7 +27,7 @@ export const pdfToCadHero = {
   description:
     "Our AutoCAD specialists use AI-powered workflows to convert PDF files into accurate CAD drawings with a faster turnaround, reliable quality and production support that scales to your workload.",
   ctaLabel: "Connect With Us",
-  imageSrc: pdfToCadBannerImg,
+  imageSrc: "/image/pdf-to-cad-conversion-banner.jpg",
   imageAlt: "PDF to CAD Conversion Services",
   copyMaxWidth: 670,
   descriptionMaxWidth: 661,
@@ -61,7 +51,7 @@ export const pdfToCadIntro = {
     "Perform QA/QC reviews to ensure accuracy in drawings, dimensions, layers, line weights, symbols, text and more prior to handing over.",
     "DWG, DXF, CAD editable plotting sheets, plans, drawings and design work ready documentation.",
   ],
-  mainImage: pdfToCadOverviewImg,
+  mainImage: "/image/pdf-to-cad-conversion-services-overiew.jpg",
   imageAlt: "PDF to CAD conversion overview",
 };
 
@@ -93,42 +83,42 @@ export const pdfToCadServiceCards = [
   {
     title: "Architectural PDF to CAD Conversion",
     text: "Turn architectural floor plans, elevations, roof plans, sections and reflected ceiling plans into editable CAD drawings with accurate layers, dimensions, symbols and annotations for renovation, design development and construction documentation.",
-    image: architecturalPdfToCadImg.src,
+    image: "/image/architectural-pdf-to-cad-conversion.jpg",
   },
   {
     title: "Structural PDF to CAD Conversion",
     text: "Organize structural plans, framing layouts, foundation drawings, beam schedules, and structural details into CAD files that help engineers with revising designs, coordinating documentation, and maintaining consistency within the drawings.",
-    image: structuralPdfToCadImg.src,
+    image: "/image/structural-pdf-to-cad-conversion.jpg",
   },
   {
     title: "PDF to AutoCAD Conversion",
     text: "Convert raster or vector PDF drawings to editable AutoCAD files without compromising drawing scale, geometry, annotations, layers and title blocks for quicker revisions throughout the project lifecycle.",
-    image: pdfToAutocadConversionImg.src,
+    image: "/image/pdf-to-autocad-conversion.jpg",
   },
   {
     title: "Paper to CAD Conversion Services",
     text: "Scan documents, hand marked drawings, printed blueprints and archived plans to accurate CAD files to simplify document management and extend the value of legacy project records.",
-    image: paperToCadConversionImg.src,
+    image: "/image/paper-to-cad-conversion-services.jpg",
   },
   {
     title: "PDF to DWG Conversion",
     text: "We turn your architectural and structural PDFs into clean DWG files with organised layer structures, editable linework, dimensions, text and drawing elements ready for production.",
-    image: pdfToDwgConversionImg.src,
+    image: "/image/pdf-to-dwg-conversion.jpg",
   },
   {
     title: "PDF to DXF Conversion",
     text: "Our CAD drafters prepare editable DXF files for CAD interoperability between different design platforms, easing the exchange of architectural and structural drawing data between project teams.",
-    image: pdfToDxfConversionImg.src,
+    image: "/image/pdf-to-dxf-conversion.jpg",
   },
   {
     title: "PDF to CAD Drafting Services",
     text: "Redraw poor-quality or marked-up PDF drawings into production-ready CAD documentation representing current project revisions and client drafting standards.",
-    image: pdfToCadDraftingImg.src,
+    image: "/image/pdf-to-cad-drafting-services.jpg",
   },
   {
     title: "2D to 3D CAD Conversion Services",
     text: "We transform your approved 2D architectural and structural CAD drawings into 3D CAD models for visualization, design validation, planning and future BIM development.",
-    image: twoDTo3dCadConversionImg.src,
+    image: "/image/2d-to-3d-cad-conversion.jpg",
   },
 ];
 

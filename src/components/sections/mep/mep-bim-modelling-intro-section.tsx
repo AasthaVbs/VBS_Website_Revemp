@@ -46,6 +46,7 @@ export function MepBimModellingIntroSection({
               alt={imageAlt ?? altFromImageSrc(mainImage)}
               width={650}
               height={530}
+              unoptimized={typeof mainImage === "string"}
               className="mep-figma-overview__photo block h-full w-full object-cover"
               sizes="(max-width: 1024px) 100vw, 650px"
               priority

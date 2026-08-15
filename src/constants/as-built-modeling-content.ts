@@ -1,4 +1,3 @@
-import asBuiltDrawingServicesImg from "@/assets/images/as-built-drawing-services.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
@@ -45,7 +44,7 @@ export const asBuiltModelingIntro = {
     "Automated QA/QC checks run through 100+ points before delivery",
     "Deliverables include architectural, structural and MEPF as-built BIM models",
   ],
-  mainImage: asBuiltDrawingServicesImg,
+  mainImage: "/image/as-built-drawing-services.jpg",
   imageAlt: "As-Built BIM modeling overview",
 };
 

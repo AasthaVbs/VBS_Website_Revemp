@@ -80,6 +80,7 @@ export function CadDraftingUsaExpertiseSection({
                 src={activeItem.image}
                 alt={activeItem.title}
                 fill
+                unoptimized={typeof activeItem.image === "string"}
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 710px"
               />

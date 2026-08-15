@@ -1,16 +1,6 @@
-import twoDFloorPlanDrawingsServicesImg from "@/assets/images/2d-floor-plan-drawings-services.jpg";
-import architecturalDraftingOverviewImg from "@/assets/images/architectural-drafting-overview.jpg";
-import architectureDraftingBannerImg from "@/assets/images/architecture-drafting-banner.jpg";
-import asBuiltDrawingsServicesImg from "@/assets/images/as-built-drawings-services.jpg";
-import cadConversionServicesImg from "@/assets/images/cad-conversion-services.jpg";
-import constructionDocumentationServicesImg from "@/assets/images/construction-documentation-services.jpg";
-import designDevelopmentDraftingServicesImg from "@/assets/images/design-development-drafting-services.jpg";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
 import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
 import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
-import millworkAndJoineryDrawingsServicesImg from "@/assets/images/millwork-and-joinery-drawings-services.jpg";
-import permitSetDrawingsServicesImg from "@/assets/images/permit-set-drawings-services.jpg";
-import schematicDesignDraftingServicesImg from "@/assets/images/schematic-design-drafting-services.jpg";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
   mepBimTechnologyStackToolsRowOne,
@@ -33,7 +23,7 @@ export const architecturalDraftingHero = {
   description:
     "Dedicated Revit drafters combine our AI-powered workflow with your existing one, so your team delivers accurate, code-compliant construction documents on time, every time.",
   ctaLabel: "Connect With Us",
-  imageSrc: architectureDraftingBannerImg,
+  imageSrc: "/image/architecture-drafting-banner.jpg",
   imageAlt: "Architectural Drafting Services",
   copyMaxWidth: 650,
   descriptionMaxWidth: 670,
@@ -59,7 +49,7 @@ export const architecturalDraftingIntro = {
     "QA checks catch layer, dimension, and annotation errors before delivery. Your review time drops as a result.",
     "Drafters produce plans, elevations, sections, schedules, and RCPs. Your set stays complete without gaps.",
   ],
-  mainImage: architecturalDraftingOverviewImg,
+  mainImage: "/image/architectural-drafting-overview.jpg",
   imageAlt: "Architectural Drafting overview",
 };
 
@@ -87,42 +77,42 @@ export const architecturalDraftingServiceCards = [
   {
     title: "Schematic Design Drafting Services",
     text: "Our remote drafters build scaled layouts, massing studies and preliminary elevations. Integrated CAD Architectural Drafting workflows keep that early communication clear and dimensionally accurate.",
-    image: schematicDesignDraftingServicesImg.src,
+    image: "/image/schematic-design-drafting-services.jpg",
   },
   {
     title: "Design Development Drafting Services",
     text: "Our drafting experts produce coordinated plans, sections and elevations aligned with those systems. Our Architectural Drawings Services carry that alignment through to construction documentation.",
-    image: designDevelopmentDraftingServicesImg.src,
+    image: "/image/design-development-drafting-services.jpg",
   },
   {
     title: "Construction Documentation Services",
     text: "We deliver code-compliant sets, including plans, schedules, sections and reflected ceiling plans. Our CAD Architectural Drafting services build every set for permit-ready submission, so your team avoids rework.",
-    image: constructionDocumentationServicesImg.src,
+    image: "/image/construction-documentation-services.jpg",
   },
   {
     title: "2D Floor Plan Drawings Services",
     text: "Our experts create dimensionally accurate, layered 2D floor plans with annotations and area calculations. Our Architectural Drawings Services turn these into contractor-ready layouts for residential and commercial projects.",
-    image: twoDFloorPlanDrawingsServicesImg.src,
+    image: "/image/2d-floor-plan-drawings-services.jpg",
   },
   {
     title: "As-Built Drawings Services",
     text: "Our drafters develop precise as-built documents from field data, surveys and redline markups. Our Architectural Drafting Services support renovations, retrofits and facility management with accurate existing-condition records.",
-    image: asBuiltDrawingsServicesImg.src,
+    image: "/image/as-built-drawings-services.jpg",
   },
   {
     title: "Permit Set Drawings Services",
     text: "Every jurisdiction reviews permit sets against its own local codes. We prepare jurisdiction-specific permit sets compliant with IBC, ADA, NFPA and zoning regulations. Our CAD Architectural Drawing services speed up AHJ approvals.",
-    image: permitSetDrawingsServicesImg.src,
+    image: "/image/permit-set-drawings-services.jpg",
   },
   {
     title: "Millwork and Joinery Drawings Services",
     text: "We produce fabrication-ready millwork drawings with material specifications, tolerances and installation details. Our Architectural Drawings Services support cabinetry, interior fit-outs and custom installations.",
-    image: millworkAndJoineryDrawingsServicesImg.src,
+    image: "/image/millwork-and-joinery-drawings-services.jpg",
   },
   {
     title: "CAD Conversion Services",
     text: "We convert old sketches, PDFs and legacy files into editable CAD architectural drafting with accurate layer structuring. Our 2D CAD conversion services fold directly into your existing documentation workflows.",
-    image: cadConversionServicesImg.src,
+    image: "/image/cad-conversion-services.jpg",
   },
 ];
 

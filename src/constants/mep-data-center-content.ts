@@ -4,13 +4,10 @@ import clashDetectionAndCoordinationIcon from "@/assets/images/Label/clash-detec
 import fabricationSpoolDrawingsIcon from "@/assets/images/Label/fabrication-spool-drawings-icon.png";
 import fabricationModelingApproachIcon from "@/assets/images/fabrication-modeling-approach-icons.png";
 import globalBimStandardsComplianceIcon from "@/assets/images/global-bim-standards-compliance-icons.png";
-import mepBimModelingIcon from "@/assets/images/Label/mep-bim-modeling-icon.png";
 import multiTimeZoneAvailabilityIcon from "@/assets/images/multi-time-zone-availability-icon.png";
 import prefabricationModularBimIcon from "@/assets/images/Label/prefabrication-modular-bim-icon.png";
 import scanToBimAsBuiltModelingIcon from "@/assets/images/Label/scan-to-bim-as-built-modeling-icon.png";
 import scalableTeamsForAnyProjectSizeIcon from "@/assets/images/scalable-teams-for-any-project-size-icons.png";
-import dataCenterMepBimOverview from "@/assets/images/data-center-mep-bim-overview.png";
-import mepBimDataCanterBanner from "@/assets/images/mep-bim-data-canter-banner.png";
 import upscaleImageIcon from "@/assets/images/source/upscale_image [Upscaled].png";
 import topMepBimExpertsIcon from "@/assets/images/top-mep-bim-experts-icons.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
@@ -29,7 +26,7 @@ export const mepDataCenterHero = {
   description:
     "Our pre-vetted BIM team helps contractors, consultants, and developers deliver mission-critical facilities with coordinated MEP models built for construction, fabrication, and long-term operations.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: mepBimDataCanterBanner,
+  imageSrc: "/image/mep-bim-data-canter-banner.png",
   imageAlt: "mep-bim-data-canter-banner",
   copyMaxWidth: 550,
   descriptionMaxWidth: 580,
@@ -55,7 +52,7 @@ export const mepDataCenterIntro: MepOverviewIntroContent = {
   paragraph2Lead: "What Our Data Center MEP BIM Services Deliver: ",
   paragraph2Tail:
     "Clash-free coordination across MEP, structural, and architectural systems; fabrication-ready BIM models developed to LOD 300 and LOD 400; optimized layouts for high-density equipment environments; faster project execution with reduced site rework and coordination delays.",
-  mainImage: dataCenterMepBimOverview.src,
+  mainImage: "/image/data-center-mep-bim-overview.png",
   imageAlt: "data-center-mep-bim-overview",
 };
 

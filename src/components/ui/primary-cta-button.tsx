@@ -24,6 +24,8 @@ type PrimaryCtaButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   /** Full-width Submit Now / Apply Now — white + red text; hover solid red + white text */
   stripedLong?: boolean;
   href?: string;
+  target?: string;
+  rel?: string;
 };
 
 function PrimaryCtaBlobs() {
@@ -58,6 +60,8 @@ export function PrimaryCtaButton({
   fullWidth = true,
   stripedLong = false,
   href,
+  target,
+  rel,
   type = "button",
   onClick,
   ...props
@@ -121,8 +125,16 @@ export function PrimaryCtaButton({
       );
     }
 
+    if (href.startsWith("http://") || href.startsWith("https://")) {
+      return (
+        <a href={href} className={classes} target={target} rel={rel}>
+          {content}
+        </a>
+      );
+    }
+
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} target={target} rel={rel}>
         {content}
       </Link>
     );

@@ -3,28 +3,18 @@ import autocadIcon from "@/assets/images/autocad-icon.png";
 import autodeskRevitIcon from "@/assets/images/autodesk-revit-icon.png";
 import bim360Icon from "@/assets/images/bim-360-icons.png";
 import bluebeamIcon from "@/assets/images/bluebeam-icon.png";
-import clashDetectionResolution from "@/assets/images/clash-detection-resolution.jpg";
 import complexHighRiseProjectsIcon from "@/assets/images/complex-high-rise-projects-icon 1.png";
 import coordinatedMultiDisciplineModelsIcon from "@/assets/images/coordinated-multi-discipline-models-icon 1.png";
-import coordinationDrawingProduction from "@/assets/images/coordination-drawing-production.jpg";
-import designChangeIntegration from "@/assets/images/design-change-integration.jpg";
 import fastTrackConstructionSchedulesIcon from "@/assets/images/fast-track-construction-schedules-icon 1.png";
 import fasterCoordinationCyclesIcon from "@/assets/images/faster-coordination-cycles-icon 1.png";
 import improvedConstructabilityReviewIcon from "@/assets/images/improved-constructability-review-icon 1.png";
 import inHouseCapacityConstraintsIcon from "@/assets/images/in-house capacity-constraints-icon 1.png";
-import interdisciplinaryMepCoordination from "@/assets/images/interdisciplinary-mep-coordination.jpg";
 import lumionIcon from "@/assets/images/lumion-icon.png";
-import mepCoordinationsBanner from "@/assets/images/mep-coordinations-banner.jpg";
-import mepCoordinationsOverview from "@/assets/images/mep-coordinations-overview.jpg";
-import mepVsArchitecturalCoordination from "@/assets/images/mep-vs-architectural-coordination.jpg";
-import mepVsStructuralCoordination from "@/assets/images/mep-vs-structural-coordination .jpg";
 import navisworksIcon from "@/assets/images/navisworks-icon.png";
 import preFabricationModularGoalsIcon from "@/assets/images/pre-fabrication-&-modular-goals-icon 1.png";
-import prefabricationFabricationSupport from "@/assets/images/prefabrication-fabrication-support.jpg";
 import recapProIcon from "@/assets/images/recap-pro-icon.png";
 import reducedReworkChangeOrdersIcon from "@/assets/images/reduced-rework-&-change-orders-icon 1.png";
 import reviztoIcon from "@/assets/images/revizto-icon.png";
-import systemsPrioritizationRoutingStrategy from "@/assets/images/systems-prioritization-routing-strategy.jpg";
 import transparentIssueTrackingIcon from "@/assets/images/transparent-issue-tracking-icon 1.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
@@ -42,7 +32,7 @@ export const mepCoordinationHero = {
   description:
     "Our BIM experts offer MEP Coordination Services to coordinate all the disciplines ahead of construction to help your team reduce rework, avoid delays, and keep projects on schedule.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: mepCoordinationsBanner,
+  imageSrc: "/image/mep-coordinations-banner.jpg",
   imageAlt: "mep-coordinations-banner",
   copyMaxWidth: 730,
   descriptionMaxWidth: 699,
@@ -70,7 +60,7 @@ export const mepCoordinationIntro: MepOverviewIntroContent = {
   paragraph2Bold: "LOD 200 to LOD 400",
   paragraph2Tail:
     " according to SMACNA, NEC, ASHRAE, and project specifications. We offer services that allow accurate fabrication, easier installation and successful field coordination.",
-  mainImage: mepCoordinationsOverview.src,
+  mainImage: "/image/mep-coordinations-overview.jpg",
   imageAlt: "mep-coordinations-overview",
 };
 
@@ -138,42 +128,42 @@ export const mepCoordinationServiceCards = [
   {
     title: "MEP vs. Architectural Coordination",
     text: "Our team coordinates mechanical, electrical, plumbing and fire protection routing with architectural ceilings, walls, floors and finish clearances according to project specifications.",
-    image: mepVsArchitecturalCoordination.src,
+    image: "/image/mep-vs-architectural-coordination.jpg",
   },
   {
     title: "MEP vs. Structural Coordination",
     text: "We validate duct runs, pipe sleeves, conduit paths and equipment locations relative to structural beams, columns and slabs with full penetration and sleeve coordination.",
-    image: mepVsStructuralCoordination.src,
+    image: "/image/mep-vs-structural-coordination.jpg",
   },
   {
     title: "Interdisciplinary MEP Coordination",
     text: "Our coordinators spatially resolve mechanical ductwork, plumbing lines, electrical conduit, and fire suppression piping against one another while maintaining all required clearances.",
-    image: interdisciplinaryMepCoordination.src,
+    image: "/image/interdisciplinary-mep-coordination.jpg",
   },
   {
     title: "Clash Detection & Resolution",
     text: "Our team runs Navisworks-based hard, soft, and clearance clash detection per trade, categorizing and tracking every clash to full resolution through structured coordination logs.",
-    image: clashDetectionResolution.src,
+    image: "/image/clash-detection-resolution.jpg",
   },
   {
     title: "Systems Routing & Prioritization Approach",
     text: "For the routing hierarchy, we established trade prioritization matrices early to efficiently use space and meet installation sequences and maintenance access requirements.",
-    image: systemsPrioritizationRoutingStrategy.src,
+    image: "/image/systems-prioritization-routing-strategy.jpg",
   },
   {
     title: "Coordination Drawing Production",
     text: "Our experts develop construction-ready drawings from section cuts, plan views and enlarged details extracted from coordinated models for use in the field and by subcontractors.",
-    image: coordinationDrawingProduction.src,
+    image: "/image/coordination-drawing-production.jpg",
   },
   {
     title: "Design Integration Change",
     text: "We systematically reintroduce revised architectural, structural, and MEP design inputs into the live coordination model to ensure full integrity throughout the coordination cycle.",
-    image: designChangeIntegration.src,
+    image: "/image/design-change-integration.jpg",
   },
   {
     title: "Fabrication & Prefabrication Assistance",
     text: "We obtain data from coordinated models on spooling, hanger layouts and offsets in support of off-site prefabrication programs and reduction of on-site assembly time.",
-    image: prefabricationFabricationSupport.src,
+    image: "/image/prefabrication-fabrication-support.jpg",
   },
 ];
 

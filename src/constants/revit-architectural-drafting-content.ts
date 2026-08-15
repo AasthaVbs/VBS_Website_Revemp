@@ -1,11 +1,3 @@
-import bariProjectImg from "@/assets/images/bari-ristorante-italiano.jpg";
-import koRemodelGeorgiaImg from "@/assets/images/ko-remodel.jpg";
-import koRemodelLaImg from "@/assets/images/ko-remodel-losangeles-california.jpg";
-import heroFormBg from "@/assets/images/revit-architectural-drafting-services.jpg";
-import draftingPrecisionImg from "@/assets/images/your-design-our-drafting-precision.jpg";
-import gpArchitectureLogo from "@/assets/images/architectural-drafting-usa/gp-architecture-logo.png";
-import studioSevenLogo from "@/assets/images/architectural-drafting-usa/studio-seven-logo.png";
-import whittenArchitectsLogo from "@/assets/images/architectural-drafting-usa/whitten-architects-logo.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { clientSuccessStories } from "@/constants/client-success-stories-content";
 import {
@@ -27,7 +19,7 @@ export const revitArchitecturalDraftingHero = {
   formTitleLead: "Get a ",
   formTitleAccent: "Drafting Estimate",
   submitLabel: "Offload Your Drafting today",
-  formBg: heroFormBg,
+  formBg: "/image/revit-architectural-drafting-services.jpg",
   formBgAlt: "Revit architectural drafting estimate",
   copyMaxWidth: 640,
   descMaxWidth: 600,
@@ -43,9 +35,9 @@ export const revitArchitecturalDraftingOurClientsSection = {
 };
 
 export const revitArchitecturalDraftingOurClientsLogos = [
-  { name: "GP Architecture", src: gpArchitectureLogo.src },
-  { name: "Studio Seven Architecture", src: studioSevenLogo.src },
-  { name: "Whitten Architects", src: whittenArchitectsLogo.src },
+  { name: "GP Architecture", src: "/image/architectural-drafting-usa/gp-architecture-logo.png" },
+  { name: "Studio Seven Architecture", src: "/image/architectural-drafting-usa/studio-seven-logo.png" },
+  { name: "Whitten Architects", src: "/image/architectural-drafting-usa/whitten-architects-logo.png" },
 ];
 
 export const revitArchitecturalDraftingTestimonials = {
@@ -66,7 +58,7 @@ export const revitArchitecturalDraftingWhoWeAreSection = {
     "With Revit and AutoCAD expertise, our Architects and Drafters transform your designs into detailed, code-compliant drawings at every stage.",
   ctaLabel: "Get permit ready drafts free call",
   ctaHref: "#rad-contact",
-  image: draftingPrecisionImg,
+  image: "/image/your-design-our-drafting-precision.jpg",
   imageAlt: "Your design, our drafting precision",
 };
 
@@ -84,17 +76,17 @@ export const revitArchitecturalDraftingShowcaseProjects = [
   {
     title: "Bari Ristorante Italiano",
     location: "Houston, Texas",
-    image: bariProjectImg,
+    image: "/image/bari-ristorante-italiano.jpg",
   },
   {
     title: "KO Remodel",
     location: "Conyers, Georgia",
-    image: koRemodelGeorgiaImg,
+    image: "/image/ko-remodel.jpg",
   },
   {
     title: "KO Remodel",
     location: "Los Angeles, California",
-    image: koRemodelLaImg,
+    image: "/image/ko-remodel-losangeles-california.jpg",
   },
 ];
 

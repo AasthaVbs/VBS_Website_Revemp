@@ -44,8 +44,6 @@ export type MepTrustedByContent = {
 };
 
 import bim360Icon from "@/assets/images/bim-360-icons.png";
-import mepBimModelingOverview from "@/assets/images/mep-bim-modeling-overview.png";
-
 export const mepBimModellingIntro = {
   tag: "Overview",
   titleLead: "High Fidelity MEP Modeling Services for ",
@@ -55,7 +53,7 @@ export const mepBimModellingIntro = {
   paragraph1Bold: " 150+ dedicated remote BIM modelers.",
   paragraph2:
     "As a specialized MEP BIM modeling service provider based in Houston, TX, we ensure your building systems are clash-free and fabrication-ready.",
-  mainImage: mepBimModelingOverview.src,
+  mainImage: "/image/mep-bim-modeling-overview.png",
   imageAlt: "mep-bim-modeling-overview",
 } as const;
 

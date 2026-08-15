@@ -36,6 +36,7 @@ export function CadDraftingUsaHeroSection({
               alt={hero.imageAlt}
               fill
               priority
+              unoptimized={typeof hero.image === "string"}
               className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 650px"
             />

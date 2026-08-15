@@ -70,6 +70,7 @@ export function BimModelingOverviewSection({
               src={mainImage}
               alt={imageAlt ?? altFromImageSrc(mainImage)}
               fill
+              unoptimized={typeof mainImage === "string"}
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />

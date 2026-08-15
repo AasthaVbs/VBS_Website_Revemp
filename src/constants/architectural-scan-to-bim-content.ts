@@ -1,4 +1,3 @@
-import architecturalScanToBimOverviewImg from "@/assets/images/architectural-scan-to-bim-overview.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -50,7 +49,7 @@ export const architecturalScanToBimIntro = {
     "Our AI-powered workflow helps BIM experts to convert 10,000 sq.ft. of scans into a BIM model in a day.",
     "Deliverables include Revit models, 2D drawings, registered point cloud files and coordination sheets.",
   ],
-  mainImage: architecturalScanToBimOverviewImg,
+  mainImage: "/image/architectural-scan-to-bim-overview.png",
   imageAlt: "Architectural Scan to BIM overview",
 };
 

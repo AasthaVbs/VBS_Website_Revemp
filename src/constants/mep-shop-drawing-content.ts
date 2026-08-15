@@ -1,10 +1,3 @@
-import complexAssemblyDrawings from "@/assets/images/complex-assembly-drawings.jpg";
-import detailedSectionElevationViews from "@/assets/images/detailed-section-elevation-views.jpg";
-import electricalShopDrawings from "@/assets/images/electrical-shop-drawings.jpg";
-import fabricationReadyMepShopDrawingsOverview from "@/assets/images/fabrication-ready-mep-shop-drawings-overview.jpg";
-import hvacDuctShopDrawings from "@/assets/images/hvac-duct-shop-drawings.jpg";
-import integratedLayoutDrawings from "@/assets/images/integrated-layout-drawings.jpg";
-import mechanicalShopDrawings from "@/assets/images/mechanical-shop-drawings.jpg";
 import accurateDimensionsAndLayoutsIcon from "@/assets/images/mep-shop-drawing/accurate-dimensions-and-layouts-icon.png";
 import acceleratedConstructionTimelinesIcon from "@/assets/images/mep-shop-drawing/accelerated-construction-timelines-icon.png";
 import contractorAndTradeSynchronizationIcon from "@/assets/images/mep-shop-drawing/contractor-and-trade-synchronization-icon.png";
@@ -13,9 +6,6 @@ import fabricationReadyDocumentationIcon from "@/assets/images/mep-shop-drawing/
 import offsiteFabricationAndSpoolingIcon from "@/assets/images/mep-shop-drawing/offsite-fabrication-and-spooling-icon.png";
 import preInstallationFieldCoordinationIcon from "@/assets/images/mep-shop-drawing/pre-installation-field-coordination-icon.png";
 import reducedSiteErrorsIcon from "@/assets/images/mep-shop-drawing/reduced-site-errors-icon.png";
-import mepShopDrawingBanner from "@/assets/images/mep-shop-drawing-banner.jpg";
-import plumbingShopDrawings from "@/assets/images/plumbing-shop-drawings.jpg";
-import sleeveHangerDetails from "@/assets/images/sleeve-hanger-details.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
   MepBimFeatureCard,
@@ -33,7 +23,7 @@ export const mepShopDrawingHero = {
   description:
     "Our pre-vetted MEP specialists develop Revit shop drawings for MEP that help field teams reduce rework, improve installation accuracy and remain on schedule.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: mepShopDrawingBanner,
+  imageSrc: "/image/mep-shop-drawing-banner.jpg",
   imageAlt: "mep-shop-drawing-banner",
   copyMaxWidth: 638,
   descriptionMaxWidth: 638,
@@ -60,7 +50,7 @@ export const mepShopDrawingIntro: MepOverviewIntroContent = {
     "MEP shop drawing services for mechanical, electrical, plumbing and HVAC shop drawings for USA and other global projects",
   paragraph2:
     "Our MEP engineers prepare coordinated shop drawings with detailed routing, dimensions and installation details. Each drawing helps in fabrication, enhances coordination between trades and assures contractors to install with confidence.",
-  mainImage: fabricationReadyMepShopDrawingsOverview.src,
+  mainImage: "/image/fabrication-ready-mep-shop-drawings-overview.jpg",
   imageAlt: "fabrication-ready-mep-shop-drawings-overview",
 };
 
@@ -116,42 +106,42 @@ export const mepShopDrawingServiceCards = [
   {
     title: "Shop Drawing for HVAC Ductwork",
     text: "Correct HVAC Duct Shop Drawings enable duct routing according to the approved design. Installation support through flange details, damper locations and fabrication information that is consistent with SMACNA standards.",
-    image: hvacDuctShopDrawings.src,
+    image: "/image/hvac-duct-shop-drawings.jpg",
   },
   {
     title: "Mechanical Shop Drawings",
     text: "Mechanical Shop Drawings are well coordinated for easy installation of piping systems, chiller and boiler rooms. Proper location and routing of equipment will reduce field adjustments and will assist in future maintenance.",
-    image: mechanicalShopDrawings.src,
+    image: "/image/mechanical-shop-drawings.jpg",
   },
   {
     title: "Electrical Shop Drawings",
     text: "Clear Electrical Shop Drawings help contractors install conduits, cable trays and panels without any confusion. Every layout follows NEC requirements and supports safe power distribution.",
-    image: electricalShopDrawings.src,
+    image: "/image/electrical-shop-drawings.jpg",
   },
   {
     title: "Plumbing Shop Drawings",
     text: "Plumbing shop drawings, drainage, waste and vent systems complying with IPC and UPC requirements including slope, pipe sizing, vent routing and coordinated installation details.",
-    image: plumbingShopDrawings.src,
+    image: "/image/plumbing-shop-drawings.jpg",
   },
   {
     title: "Integrated Layout Diagrams",
     text: "Master plans that bring together all trades into one coordinated view, giving field teams a clear roadmap for where to allocate space and install.",
-    image: integratedLayoutDrawings.src,
+    image: "/image/integrated-layout-drawings.jpg",
   },
   {
     title: "Detailed Section and Elevation Views",
     text: "Vertical cut-throughs at a high resolution to clarify system stacking, clearances, and interface conditions for complex building zones.",
-    image: detailedSectionElevationViews.src,
+    image: "/image/detailed-section-elevation-views.jpg",
   },
   {
     title: "Sleeve & Hanger Information",
     text: "Code-compliant sleeve locations and engineered hanger or support systems designed per load requirements and installation standards.",
-    image: sleeveHangerDetails.src,
+    image: "/image/sleeve-hanger-details.jpg",
   },
   {
     title: "Complex Assembly Drawing",
     text: "Fabrication drawings with tagged components, spool breakdowns and connection details to facilitate off site manufacture and on site assembly.",
-    image: complexAssemblyDrawings.src,
+    image: "/image/complex-assembly-drawings.jpg",
   },
 ];
 

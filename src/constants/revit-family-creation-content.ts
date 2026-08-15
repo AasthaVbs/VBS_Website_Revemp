@@ -1,12 +1,4 @@
 import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
-import architecturalBimObjectCreationImg from "@/assets/images/architectural-bim-object-creation.jpg";
-import buildingProductManufacturerBimObjectCreationImg from "@/assets/images/building-product-manufacturer-bim-object-creation.jpg";
-import equipmentProductBimObjectCreationImg from "@/assets/images/equipment-product-bim-object-creation.jpg";
-import facadeCurtainWallBimObjectCreationImg from "@/assets/images/facade-curtain-wall-bim-object-creation.jpg";
-import furnitureFfeBimContentCreationImg from "@/assets/images/furniture-ffe-bim-content-creation.jpg";
-import revitContentCreationOverviewImg from "@/assets/images/revit-content-creation-overview.jpg";
-import revitFamilyCreationBannerImg from "@/assets/images/revit-family-creation-banner.jpg";
-import structuralBimObjectCreationImg from "@/assets/images/structural-bim-object-creation.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -33,7 +25,7 @@ export const revitFamilyCreationHero = {
   description:
     "From parametric architectural walls to structural connections, our pre-vetted Revit experts provide AI-powered Revit Family Creation Services to keep your models coordinated and fully code-compliant.",
   ctaLabel: "Connect With Us",
-  imageSrc: revitFamilyCreationBannerImg,
+  imageSrc: "/image/revit-family-creation-banner.jpg",
   imageAlt: "Custom Revit Family Creation Services",
   copyMaxWidth: 677,
   descriptionMaxWidth: 648,
@@ -58,7 +50,7 @@ export const revitFamilyCreationIntro = {
     "Symbolic and model geometry optimized for visual clarity and lightweight files",
     "Code-compliant families tested for performance and function, so they work with any platform",
   ],
-  mainImage: revitContentCreationOverviewImg,
+  mainImage: "/image/revit-content-creation-overview.jpg",
   imageAlt: "Revit Family Creation overview",
 };
 
@@ -86,32 +78,32 @@ export const revitFamilyCreationServiceCards = [
   {
     title: "Architectural BIM Object Creation",
     text: "Our team builds detailed, parametric architectural objects for walls, doors, windows and ceilings. Every BIM Object Creation Services deliverable meets US standards and drops straight into your Revit environment.",
-    image: architecturalBimObjectCreationImg.src,
+    image: "/image/architectural-bim-object-creation.jpg",
   },
   {
     title: "Structural BIM Object Creation",
     text: "Our Structural BIM Object Creation covers beams, columns, connections, and custom load-bearing elements. Each family is LOD-specific, clash-free and ready for coordination inside Revit, right from the start.",
-    image: structuralBimObjectCreationImg.src,
+    image: "/image/structural-bim-object-creation.jpg",
   },
   {
     title: "Furniture & FF&E BIM Content Creation",
     text: "We create manufacturer-accurate furniture families built for Revit. Our BIM Content Creation Services support interior designers and FF&E workflows with lightweight, data-rich components that load fast.",
-    image: furnitureFfeBimContentCreationImg.src,
+    image: "/image/furniture-ffe-bim-content-creation.jpg",
   },
   {
     title: "Facade & Curtain Wall BIM Object Creation",
     text: "Our team models parametric curtain walls, cladding panels and facade systems for Revit. These families carry accurate geometry and metadata ready for coordination across your project.",
-    image: facadeCurtainWallBimObjectCreationImg.src,
+    image: "/image/facade-curtain-wall-bim-object-creation.jpg",
   },
   {
     title: "Building Product & Manufacturer BIM Object Creation",
     text: "We build Revit-ready BIM objects for doors, windows and other architectural building elements. Our Revit Content Creation Services help manufacturers distribute lightweight, code-compliant families fast.",
-    image: buildingProductManufacturerBimObjectCreationImg.src,
+    image: "/image/building-product-manufacturer-bim-object-creation.jpg",
   },
   {
     title: "Equipment & Product BIM Object Creation",
     text: "Our BIM Object Creation Services turn real-world architectural products into intelligent BIM objects. We support manufacturer branding, IFC compliance and distribution across the globe.",
-    image: equipmentProductBimObjectCreationImg.src,
+    image: "/image/equipment-product-bim-object-creation.jpg",
   },
 ];
 

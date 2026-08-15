@@ -60,7 +60,7 @@ export function ArchitectureAiBimWorkflowSection({
           fill
           className="object-cover"
           sizes="(max-width: 1024px) 100vw, 640px"
-          unoptimized={posterSrc.includes("img.youtube.com")}
+          unoptimized={typeof posterSrc === "string"}
         />
       ) : (
         <div className="absolute inset-0 bg-[#1a1a1a]" aria-hidden />

@@ -186,6 +186,7 @@ export function ThreeDRenderingUsaShowcaseSection({
                     src={project.image}
                     alt={`${project.title} — ${project.category}`}
                     fill
+                    unoptimized={typeof project.image === "string"}
                     className="object-cover"
                     sizes="420px"
                   />

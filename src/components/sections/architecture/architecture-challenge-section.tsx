@@ -25,6 +25,7 @@ export function ArchitectureChallengeSection({
               alt={section.imageAlt ?? altFromImageSrc(section.image)}
               width={520}
               height={480}
+              unoptimized={typeof section.image === "string"}
               className="block h-full w-full object-cover"
               sizes="(max-width: 1024px) 100vw, 520px"
             />

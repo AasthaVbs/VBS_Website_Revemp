@@ -86,6 +86,7 @@ export function ListingPageHeroSection({
               src={image}
               alt={imageAlt}
               fill
+              unoptimized={typeof image === "string"}
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 589px"
               priority

@@ -9,14 +9,6 @@ import optimizingModelingVelocityIcon from "@/assets/images/mep-revit-family/opt
 import professionalRevitLibrariesScaleIcon from "@/assets/images/mep-revit-family/professional-revit-libraries-scale-icon.png";
 import standardComponentsForMepIcon from "@/assets/images/mep-revit-family/standard-components-for-mep-icon.png";
 import unifyingDistributedTeamWorkflowsIcon from "@/assets/images/mep-revit-family/unifying-distributed-team-workflows-icon.png";
-import mepRevitFamilyCreationBanner from "@/assets/images/mep-revit-family-creation-banner.jpg";
-import mepRevitFamilyCreationOverview from "@/assets/images/mep-revit-family-creation-overview.jpg";
-import parametricEquipmentSupports from "@/assets/images/parametric-equipment-supports.jpg";
-import revitElectricalFamilyCreation from "@/assets/images/revit-electrical-family-creation.jpg";
-import revitFirefightingFamilyCreation from "@/assets/images/revit-firefighting-family-creation.jpg";
-import revitHvacFamilyCreation from "@/assets/images/revit-hvac-family-creation.jpg";
-import revitMechanicalFamilyCreation from "@/assets/images/revit-mechanical-family-creation.jpg";
-import revitPlumbingFamilyCreation from "@/assets/images/revit-plumbing-family-creation.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
   MepBimFeatureCard,
@@ -34,7 +26,7 @@ export const mepRevitFamilyCreationHero = {
   description:
     "Our pre-vetted Revit expert provide custom Revit families and helping project teams maintain parametric accuracy, faster coordination and consistent BIM workflows.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: mepRevitFamilyCreationBanner,
+  imageSrc: "/image/mep-revit-family-creation-banner.jpg",
   imageAlt: "mep-revit-family-creation-banner",
   copyMaxWidth: 703,
   descriptionMaxWidth: 699,
@@ -63,7 +55,7 @@ export const mepRevitFamilyCreationIntro: MepOverviewIntroContent = {
   paragraph2Bold: "MEP Revit family creation",
   paragraph2Tail:
     " company in the USA, we build MEP Family that match your project standards and modeling requirements. Our Revit experts create structured parameters, optimized geometry and reusable content that enable accurate scheduling, reliable coordination and stable model performance.",
-  mainImage: mepRevitFamilyCreationOverview.src,
+  mainImage: "/image/mep-revit-family-creation-overview.jpg",
   imageAlt: "mep-revit-family-creation-overview",
 };
 
@@ -143,32 +135,32 @@ export const mepRevitFamilyCreationServiceCards = [
   {
     title: "Revit HVAC Family Creation",
     text: "We develop Revit HVAC Family Creation content with AHUs, VAV boxes and terminal units using correctly configured mechanical connectors for dependable airflow calculations and system coordination.",
-    image: revitHvacFamilyCreation.src,
+    image: "/image/revit-hvac-family-creation.jpg",
   },
   {
     title: "Revit Mechanical Family Creation",
     text: "Our Revit Mechanical Family Creation services include pumps, valves, chillers, and related equipment with structured parameters, nested components and reusable metadata.",
-    image: revitMechanicalFamilyCreation.src,
+    image: "/image/revit-mechanical-family-creation.jpg",
   },
   {
     title: "Revit Plumbing Family Creation",
     text: "Our Revit plumbing family creation includes fixtures, specialty valves and piping accessories with correctly positioned connectors that support slope calculations and fixture unit analysis.",
-    image: revitPlumbingFamilyCreation.src,
+    image: "/image/revit-plumbing-family-creation.jpg",
   },
   {
     title: "Revit Electrical Family Creation",
     text: "We build distribution panels, switchgear, lighting fixtures and electrical equipment with voltage, phase and load parameters that support circuiting and scheduling.",
-    image: revitElectricalFamilyCreation.src,
+    image: "/image/revit-electrical-family-creation.jpg",
   },
   {
     title: "Firefighting Family Creation in Revit",
     text: "Our Revit firefighting family creation services include sprinklers, fire pumps, valves and alarm devices. The BIM contents are set up to meet system connectivity and design requirements of NFPA.",
-    image: revitFirefightingFamilyCreation.src,
+    image: "/image/revit-firefighting-family-creation.jpg",
   },
   {
     title: "Parametric Equipment Supports",
     text: "We develop custom hanger families and seismic bracing families with common parameters and configurable options suitable for coordination and material schedules.",
-    image: parametricEquipmentSupports.src,
+    image: "/image/parametric-equipment-supports.jpg",
   },
 ];
 

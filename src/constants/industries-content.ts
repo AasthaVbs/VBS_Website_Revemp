@@ -1,58 +1,47 @@
-import type { StaticImageData } from "next/image";
-
-import civicGovernmentInfrastructureImg from "@/assets/images/civic-government-infrastructure.png";
-import commercialMixedUseImg from "@/assets/images/commercial-mixed-use.png";
-import educationalImg from "@/assets/images/educational.png";
-import healthcareImg from "@/assets/images/healthcare.png";
-import heritageReligiousCulturalSpacesImg from "@/assets/images/heritage-religious-cultural-spaces.png";
-import hospitalityResidentialImg from "@/assets/images/hospitality-residential.png";
-import industrialManufacturingImg from "@/assets/images/industrial-manufacturing.png";
-import missionCriticalImg from "@/assets/images/mission-critical.png";
-
 export type IndustryMarqueeItem = {
-  src: StaticImageData;
+  src: string;
   title: string;
   alt: string;
 };
 
 export const industriesMarqueeItems: IndustryMarqueeItem[] = [
   {
-    src: commercialMixedUseImg,
+    src: "/image/commercial-mixed-use.png",
     title: "Commercial & Mixed-Use",
     alt: "Aerial view of commercial mixed-use buildings under construction with cranes",
   },
   {
-    src: healthcareImg,
+    src: "/image/healthcare.png",
     title: "Healthcare",
     alt: "Healthcare facility building with a large red medical cross on the facade",
   },
   {
-    src: educationalImg,
+    src: "/image/educational.png",
     title: "Educational",
     alt: "Educational campus building with formal lawn, flags, and institutional facade",
   },
   {
-    src: missionCriticalImg,
+    src: "/image/mission-critical.png",
     title: "Mission Critical",
     alt: "Mission-critical industrial facility with distillation towers, storage tanks, and piping",
   },
   {
-    src: hospitalityResidentialImg,
+    src: "/image/hospitality-residential.png",
     title: "Hospitality & Residential",
     alt: "Modern high-rise hospitality and residential building with glass facade at dusk",
   },
   {
-    src: industrialManufacturingImg,
+    src: "/image/industrial-manufacturing.png",
     title: "Industrial & Manufacturing",
     alt: "Industrial manufacturing facility with storage silos and red-panelled warehouse",
   },
   {
-    src: civicGovernmentInfrastructureImg,
+    src: "/image/civic-government-infrastructure.png",
     title: "Civic & Government Infrastructure",
     alt: "Neoclassical civic government building with stone columns and American flag",
   },
   {
-    src: heritageReligiousCulturalSpacesImg,
+    src: "/image/heritage-religious-cultural-spaces.png",
     title: "Heritage, Religious & Cultural Spaces",
     alt: "Ornate heritage sandstone palace with carved balconies and domes against blue sky",
   },

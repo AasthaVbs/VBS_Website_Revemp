@@ -49,6 +49,7 @@ export function ArchitecturalDraftingUsaShowcaseSection({
                   src={project.image}
                   alt={`${project.title} — ${project.location}`}
                   fill
+                  unoptimized={typeof project.image === "string"}
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 420px"
                 />

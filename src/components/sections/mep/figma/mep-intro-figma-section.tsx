@@ -44,6 +44,7 @@ export function MepIntroSection({
                 alt={copy.imageAlt ?? altFromImageSrc(copy.mainImage)}
                 width={isScanVariant ? 564 : 580}
                 height={isScanVariant ? 483 : 460}
+                unoptimized={typeof copy.mainImage === "string"}
                 className="mep-figma-overview__photo block h-full w-full object-cover"
                 sizes={isScanVariant ? "(max-width: 1024px) 100vw, 560px" : "(max-width: 1024px) 100vw, 580px"}
               />

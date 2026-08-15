@@ -38,6 +38,7 @@ export function ArchitecturalBimUsaOverviewSection({
               src={section.image}
               alt={section.imageAlt}
               fill
+              unoptimized={typeof section.image === "string"}
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 553px"
             />

@@ -18,7 +18,7 @@ export function ArchitectureScaleComparisonSection({
   return (
     <section className="arch-svc-scale bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-start gap-8 sm:gap-10 lg:gap-10">
-        <div className="flex w-full max-w-[1017px] flex-col items-start gap-5">
+        <div className="flex w-full max-w-[1027px] flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <SectionTag label={section.tag} />
             <h2 className="text-section w-full">

@@ -110,13 +110,13 @@ export function ArchitectureEngagementModelsSection({
   section?: EngagementModelsSectionContent;
   cards?: readonly EngagementModelsCard[];
 }) {
-  const descriptionMaxWidth = section.descriptionMaxWidth ?? 750;
+  const descriptionMaxWidth = section.descriptionMaxWidth ?? 840;
   const stackTitle = section.stackTitle !== false;
 
   return (
     <section id="engagement-models" className="arch-svc-engagement bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-start gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[884px] flex-col items-start gap-5">
+        <div className="flex w-full max-w-[840px] flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <SectionTag label={section.tag} />
             <h2 className="text-section w-full">

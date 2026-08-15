@@ -1,14 +1,7 @@
-import fourDBimServiceBannerImg from "@/assets/images/4d-bim-service-banner.jpg";
-import fourDBimServiceOverviewImg from "@/assets/images/4d-bim-service-overview.jpg";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
 import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
 import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
 import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
-import plannedVsActualProgressMonitoringImg from "@/assets/images/planned-vs-actual-progress-monitoring.jpg";
-import scheduleIntegrationInBimImg from "@/assets/images/schedule-integration-in-bim.jpg";
-import siteLogisticsTemporaryWorksPlanningImg from "@/assets/images/site-logistics-temporary-works-planning.jpg";
-import spatialTemporalClashDetectionImg from "@/assets/images/spatial-temporal-clash-detection.jpg";
-import structuralErectionSequencingImg from "@/assets/images/structural-erection-sequencing.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -32,7 +25,7 @@ export const fourDBimSchedulingHero = {
   description:
     "Tight schedules and last-minute changes slow construction down. Our BIM experts use an AI-powered workflow to produce reliable 4D BIM Scheduling Services.",
   ctaLabel: "Connect With Us",
-  imageSrc: fourDBimServiceBannerImg,
+  imageSrc: "/image/4d-bim-service-banner.jpg",
   imageAlt: "4D BIM Scheduling Simulation Services",
   copyMaxWidth: 670,
   descriptionMaxWidth: 670,
@@ -58,7 +51,7 @@ export const fourDBimSchedulingIntro = {
     "Milestone-based schedule reviews before every delivery",
     "4D simulations, sequence videos, schedule-linked models and reports",
   ],
-  mainImage: fourDBimServiceOverviewImg,
+  mainImage: "/image/4d-bim-service-overview.jpg",
   imageAlt: "4D BIM scheduling overview",
 };
 
@@ -85,27 +78,27 @@ export const fourDBimSchedulingServiceCards = [
   {
     title: "Structural Erection Sequencing",
     text: "Our structural team sequences steel, concrete and precast erection stages inside the model. This shows crews the safest and fastest installation order for every phase.",
-    image: structuralErectionSequencingImg.src,
+    image: "/image/structural-erection-sequencing.jpg",
   },
   {
     title: "Site Logistics & Temporary Works Planning",
     text: "Site activities required careful planning to avoid delays and safety issues. We create 4D visualizations. This helps site teams plan access, storage, and safety zones without delays.",
-    image: siteLogisticsTemporaryWorksPlanningImg.src,
+    image: "/image/site-logistics-temporary-works-planning.jpg",
   },
   {
     title: "Schedule Integration in BIM",
     text: "We connect your Primavera or MS Project schedule directly to the coordinated model. This keeps every task, milestone and update linked to the right element.",
-    image: scheduleIntegrationInBimImg.src,
+    image: "/image/schedule-integration-in-bim.jpg",
   },
   {
     title: "Spatial-Temporal Clash Detection",
     text: "We check the model for clashes that only appear at specific points in the schedule. This catches sequencing conflicts that standard clash detection misses entirely.",
-    image: spatialTemporalClashDetectionImg.src,
+    image: "/image/spatial-temporal-clash-detection.jpg",
   },
   {
     title: "Planned vs. Actual Progress Monitoring",
     text: "We compare your planned 4D sequence against real site progress on a regular basis. This gives your team early warning when work starts falling behind schedule.",
-    image: plannedVsActualProgressMonitoringImg.src,
+    image: "/image/planned-vs-actual-progress-monitoring.jpg",
   },
 ];
 
@@ -124,7 +117,7 @@ export const fourDBimSchedulingAiBimWorkflowSection = {
   description:
     "Explore the workflow that combines proprietary AI tools with expert BIM oversight to accelerate production, maintain quality and support scalable project delivery.",
   videoAriaLabel: "Play AI-driven BIM workflow video",
-  posterSrc: fourDBimServiceBannerImg,
+  posterSrc: "/image/4d-bim-service-banner.jpg",
 };
 
 export const fourDBimSchedulingWhyChooseSection = {

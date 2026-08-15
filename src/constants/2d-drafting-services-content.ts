@@ -1,15 +1,7 @@
-import twoDAsBuiltDrawingsImg from "@/assets/images/2d-as-built-drawings.jpg";
-import twoDDraftingBannerImg from "@/assets/images/2d-drafting-services-banner.jpg";
-import twoDDraftingOverviewImg from "@/assets/images/2d-drafting-services-overview.jpg";
-import architectural2dDraftingImg from "@/assets/images/architectural-2d-drafting.jpg";
 import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
 import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
 import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
 import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
-import constructionDocumentationDraftingImg from "@/assets/images/construction-documentation-drafting.jpg";
-import designDevelopmentDrawingsImg from "@/assets/images/design-development-drawings.jpg";
-import permitDrawingProductionImg from "@/assets/images/permit-drawing-production.jpg";
-import structural2dDrawingImg from "@/assets/images/structural-2d-drawing.jpg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -33,7 +25,7 @@ export const twoDDraftingHero = {
   description:
     "Rework and missed deadlines happen when drafting capacity runs short. Our pre-vetted architects and engineers use an AI-assisted workflow to deliver fast, error-free 2D CAD drawings on time.",
   ctaLabel: "Connect With Us",
-  imageSrc: twoDDraftingBannerImg,
+  imageSrc: "/image/2d-drafting-services-banner.jpg",
   imageAlt: "2D Drafting Services",
   copyMaxWidth: 670,
   descriptionMaxWidth: 582,
@@ -58,7 +50,7 @@ export const twoDDraftingIntro = {
     "Dedicated architects trained on US projects who integrate directly into your team's culture and toolsets.",
     "Outputs as per your project needs in DWG, PDF or Revit format.",
   ],
-  mainImage: twoDDraftingOverviewImg,
+  mainImage: "/image/2d-drafting-services-overview.jpg",
   imageAlt: "2D Drafting Services overview",
 };
 
@@ -90,35 +82,35 @@ export const twoDDraftingServiceCards = [
   {
     title: "Architectural 2D Drafting",
     text: "We prepare clean architectural drawings that follow your design intent through every sheet. Our team develops plans, elevations and sections that meet US building construction standards from day one.",
-    image: architectural2dDraftingImg.src,
+    image: "/image/architectural-2d-drafting.jpg",
     href: ROUTES.architecturalDrafting,
   },
   {
     title: "Structural 2D Drawing",
     text: "We provide 2D structural drawings that clearly detail each beam, column and connection point. Skilled drafters prepare framing and reinforcement layouts that let your team coordinate with other trades.",
-    image: structural2dDrawingImg.src,
+    image: "/image/structural-2d-drawing.jpg",
   },
   {
     title: "Construction Documentation Drafting",
     text: "We turn early design concepts into detailed drawings your contractor can build from. Coordinated construction documents help your team cut RFIs, speed up approvals and clarify conditions on site.",
-    image: constructionDocumentationDraftingImg.src,
+    image: "/image/construction-documentation-drafting.jpg",
     href: ROUTES.constructionDocumentation,
   },
   {
     title: "Permit Drawing Production",
     text: "We prepare permit-ready drawings as per local authority requirements and industry standards. You do not have to wait for approval as all sheets are checked for compliance before they are submitted.",
-    image: permitDrawingProductionImg.src,
+    image: "/image/permit-drawing-production.jpg",
     href: ROUTES.permitDrawing,
   },
   {
     title: "2D As-Built Drawings",
     text: "We convert field changes into accurate as-built drawings that represent actual conditions on the project. These records are a reference for your team to rely on for years to come, and support future renovations.",
-    image: twoDAsBuiltDrawingsImg.src,
+    image: "/image/2d-as-built-drawings.jpg",
   },
   {
     title: "Design Development Drawings",
     text: "We take schematic concepts and turn them into design development drawings that have specific dimensions and material callouts. This step connects concept design with construction documentation so your project continues forward.",
-    image: designDevelopmentDrawingsImg.src,
+    image: "/image/design-development-drawings.jpg",
   },
 ];
 

@@ -42,6 +42,7 @@ export function BimResourcesSection({
                 alt={heroImageAlt}
                 fill
                 priority
+                unoptimized={typeof heroImage === "string"}
                 sizes="(max-width: 1024px) calc(100vw - 24px), 1010px"
                 className="object-cover object-center"
               />

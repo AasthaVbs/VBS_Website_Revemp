@@ -19,6 +19,7 @@ export const ROUTES = {
   resources: "/resources",
   about: "/about-us",
   ourExpertise: "/our-expertise",
+  locations: "/locations",
   contact: "/contact-us",
   blog: "/blog",
   webinar: "/webinar",

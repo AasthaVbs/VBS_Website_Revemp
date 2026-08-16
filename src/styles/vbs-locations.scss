@@ -1,0 +1,73 @@
+/* Locations hub — Figma 4135:50998 */
+
+.locations-page {
+  .vbs-trust-strip-section .vbs-home-hero-trust {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .vbs-get-in-touch__info-head h2,
+  .vbs-get-in-touch__info-head .text-section {
+    font-size: 48px !important;
+    line-height: 1.15 !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .locations-page {
+    main > .vbs-trust-strip-section {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    .vbs-trust-strip-section .vbs-home-hero-trust {
+      padding-top: 8px !important;
+      padding-bottom: 16px !important;
+    }
+
+    h1,
+    h1 span {
+      font-size: 40px !important;
+      line-height: 1.2 !important;
+    }
+
+    .locations-near-you h2,
+    .locations-near-you h2 span,
+    .vbs-get-in-touch__info-head h2,
+    .vbs-get-in-touch__info-head .text-section {
+      font-size: 36px !important;
+      line-height: 1.2 !important;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .locations-page {
+    h1,
+    h1 span {
+      font-size: 32px !important;
+      line-height: 1.2 !important;
+    }
+
+    .locations-near-you h2,
+    .locations-near-you h2 span,
+    .vbs-get-in-touch__info-head h2,
+    .vbs-get-in-touch__info-head .text-section {
+      font-size: 28px !important;
+      line-height: 1.2 !important;
+    }
+
+    .locations-near-you {
+      padding-top: 48px !important;
+      padding-bottom: 48px !important;
+    }
+
+    .locations-near-you h3 {
+      font-size: 20px !important;
+    }
+
+    .vbs-get-in-touch__info-head {
+      text-align: center;
+    }
+  }
+}

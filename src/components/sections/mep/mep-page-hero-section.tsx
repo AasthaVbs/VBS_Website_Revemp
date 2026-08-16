@@ -35,6 +35,12 @@ export type MepPageHeroContent = {
   rowClassName?: string;
   /** Compact hero only: extra classes on the copy column. */
   copyClassName?: string;
+  /** Compact hero only: extra classes on the image frame. */
+  imageFrameClassName?: string;
+  /** Compact hero only: extra classes on the image. */
+  imageClassName?: string;
+  /** Compact hero only: put the red accent on its own line. */
+  breakTitle?: boolean;
   /** Compact hero only: title + description, then image, then CTA on mobile. */
   mobileLayout?: "default" | "copy-image-cta";
 };
@@ -183,6 +189,9 @@ export function MepPageHeroSection({
   containerClassName,
   rowClassName,
   copyClassName,
+  imageFrameClassName,
+  imageClassName,
+  breakTitle = false,
   mobileLayout = "default",
 }: MepPageHeroContent) {
   const isCompact = imageSize === "compact";
@@ -249,6 +258,15 @@ export function MepPageHeroSection({
                           ),
                         )}
                       </span>
+                    ) : breakTitle ? (
+                      <>
+                        <span className="block text-[32px] font-medium leading-[1.15] sm:text-[40px] lg:text-[48px]">
+                          {titleLead.replace(/\n+$/, "")}
+                        </span>
+                        <span className="block text-[32px] font-light leading-[1.15] text-[#D70416] sm:text-[40px] lg:text-[48px]">
+                          {titleAccent}
+                        </span>
+                      </>
                     ) : (
                       titleLead.split("\n").map((line, index, lines) => (
                         <span
@@ -293,6 +311,7 @@ export function MepPageHeroSection({
                 className={cn(
                   "relative ml-auto w-full max-w-[650px] overflow-hidden rounded-[10px] bg-white shadow-[0_0_16.8px_rgba(0,0,0,0.15)] aspect-[981/720]",
                   copyImageCta && "max-lg:mx-auto",
+                  imageFrameClassName,
                 )}
               >
                 <Image
@@ -302,7 +321,7 @@ export function MepPageHeroSection({
                   priority
                   unoptimized={keepOriginalFormat}
                   sizes="(max-width: 1024px) 100vw, 650px"
-                  className="object-cover"
+                  className={cn("object-cover", imageClassName)}
                 />
               </div>
             </div>

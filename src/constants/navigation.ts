@@ -18,6 +18,7 @@ export const ROUTES = {
   engagement: "/engagement-models",
   resources: "/resources",
   about: "/about-us",
+  ourExpertise: "/our-expertise",
   contact: "/contact-us",
   blog: "/blog",
   webinar: "/webinar",
@@ -101,6 +102,7 @@ export const MAIN_NAV = [
 
 export const ABOUT_DROPDOWN_LINKS: NavDropdownLink[] = [
   { label: "About VBS", href: ROUTES.about },
+  { label: "Our Expertise", href: ROUTES.ourExpertise },
   { label: "Leadership Team", href: ROUTES.leadership },
   { label: "Careers", href: ROUTES.careers },
   { label: "Life at VBS", href: ROUTES.lifeAtVbs },
@@ -179,6 +181,7 @@ export const CAPABILITY_CATEGORIES: CapabilityCategory[] = [
           label: "Architectural Scan to BIM",
           href: ROUTES.scanToBimArchitectural,
         },
+        { label: "Laser Scan to BIM", href: ROUTES.laserScanning },
       ],
       [{ label: "MEP Scan to BIM", href: ROUTES.scanToBimMepf, external: true }],
     ],

@@ -5792,3 +5792,17 @@
     }
   }
 }
+
+/* ── Laser Scan to BIM — tighter hero → trust strip gap on mobile ── */
+.laser-scan-to-bim-page {
+  @media (max-width: 1023px) {
+    main > .vbs-mep-stats-strip {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    .vbs-mep-stats-strip .vbs-home-hero-trust {
+      padding-top: 0 !important;
+    }
+  }
+}

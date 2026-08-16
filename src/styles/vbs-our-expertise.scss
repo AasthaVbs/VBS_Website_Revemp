@@ -1,0 +1,156 @@
+/* Our Expertise — Figma compact 48px headings, clients marquee, hidden tags */
+
+.our-expertise-page {
+  .vbs-home-faq__tag,
+  .vbs-engagement-models-section__tag {
+    display: none !important;
+  }
+
+  .vbs-home-faq__desc:empty {
+    display: none;
+  }
+
+  h1,
+  h1 span,
+  .cad-usa-hero h1,
+  .cad-usa-hero h1 span {
+    font-size: 48px !important;
+    line-height: 1.15 !important;
+  }
+
+  h2,
+  h2 span,
+  h2 .text-section,
+  h2 .text-accent,
+  .cad-usa-testimonial h2,
+  .cad-usa-testimonial h2 span,
+  .cad-usa-clients h2,
+  .cad-usa-clients h2 span,
+  .vbs-home-faq__title,
+  .vbs-home-faq__title-dark,
+  .vbs-home-faq__title-accent,
+  .vbs-get-in-touch__info-head h2,
+  .vbs-get-in-touch__info-head .text-section {
+    font-size: 48px !important;
+    line-height: 1.15 !important;
+  }
+
+  .vbs-engagement-models-section__description {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    text-transform: none !important;
+  }
+
+  .cad-usa-clients__track {
+    animation: our-expertise-clients-marquee 28s linear infinite;
+  }
+
+  .cad-usa-clients__marquee:hover .cad-usa-clients__track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes our-expertise-clients-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .our-expertise-page .cad-usa-clients__track {
+    animation: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .our-expertise-page {
+    h1,
+    h1 span,
+    .cad-usa-hero h1,
+    .cad-usa-hero h1 span {
+      font-size: 40px !important;
+      line-height: 1.2 !important;
+    }
+
+    h2,
+    h2 span,
+    h2 .text-section,
+    h2 .text-accent,
+    .cad-usa-testimonial h2,
+    .cad-usa-testimonial h2 span,
+    .cad-usa-clients h2,
+    .cad-usa-clients h2 span,
+    .vbs-home-faq__title,
+    .vbs-home-faq__title-dark,
+    .vbs-home-faq__title-accent,
+    .vbs-get-in-touch__info-head h2,
+    .vbs-get-in-touch__info-head .text-section,
+    .vbs-engagement-models-section__title,
+    .vbs-engagement-models-section__title-dark,
+    .vbs-engagement-models-section__title-accent {
+      font-size: 36px !important;
+      line-height: 1.2 !important;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .our-expertise-page {
+    h1,
+    h1 span,
+    .cad-usa-hero h1,
+    .cad-usa-hero h1 span {
+      font-size: 32px !important;
+      line-height: 1.2 !important;
+    }
+
+    h2,
+    h2 span,
+    h2 .text-section,
+    h2 .text-accent,
+    .cad-usa-testimonial h2,
+    .cad-usa-testimonial h2 span,
+    .cad-usa-clients h2,
+    .cad-usa-clients h2 span,
+    .vbs-home-faq__title,
+    .vbs-home-faq__title-dark,
+    .vbs-home-faq__title-accent,
+    .vbs-get-in-touch__info-head h2,
+    .vbs-get-in-touch__info-head .text-section,
+    .vbs-engagement-models-section__title,
+    .vbs-engagement-models-section__title-dark,
+    .vbs-engagement-models-section__title-accent {
+      font-size: 28px !important;
+      line-height: 1.2 !important;
+    }
+
+    .vbs-engagement-models-section__header,
+    .vbs-engagement-models-section__title-block {
+      align-items: center;
+      text-align: center;
+    }
+
+    .vbs-engagement-models-section__title,
+    .vbs-engagement-models-section__description {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .vbs-engagement-models-section__title br {
+      display: none;
+    }
+
+    .vbs-get-in-touch__info-head {
+      text-align: center;
+    }
+
+    .cad-usa-clients h2 {
+      text-align: center;
+      margin-inline: auto;
+    }
+  }
+}

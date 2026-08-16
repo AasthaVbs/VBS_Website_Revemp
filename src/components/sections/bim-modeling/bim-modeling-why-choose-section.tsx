@@ -62,12 +62,13 @@ function WhyChooseCard({ item }: { item: WhyChooseItem }) {
   );
 }
 
-/** Why Choose Us — Figma 1822:16671 numbered 2×2 grid */
+/** Why Choose Us — numbered 2×2 by default, 3-column rows when more than 4 items */
 export function BimModelingWhyChooseSection({
   section = bimModelingWhyChooseSection,
   items = bimModelingWhyChooseItems,
   descriptionMaxWidth = 571,
   titleMaxWidth = 704,
+  breakTitle = false,
 }: {
   section?: {
     tag: string;
@@ -80,9 +81,13 @@ export function BimModelingWhyChooseSection({
   items?: readonly WhyChooseItem[];
   descriptionMaxWidth?: number;
   titleMaxWidth?: number;
+  breakTitle?: boolean;
 } = {}) {
-  const rowOne = items.slice(0, 2);
-  const rowTwo = items.slice(2, 4);
+  const columns = items.length > 4 ? 3 : 2;
+  const rows: WhyChooseItem[][] = [];
+  for (let index = 0; index < items.length; index += columns) {
+    rows.push([...items.slice(index, index + columns)]);
+  }
 
   return (
     <section id="why-choose-us" className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
@@ -95,6 +100,7 @@ export function BimModelingWhyChooseSection({
             <MepSectionTag label={section.tag} />
             <h2 className="w-full">
               <span className="text-section font-medium text-[#111111]">{section.titleLead}</span>
+              {breakTitle ? <br /> : null}
               <span className="text-section font-light text-accent">{section.titleAccent}</span>
             </h2>
           </div>
@@ -107,25 +113,19 @@ export function BimModelingWhyChooseSection({
         </header>
 
         <div className="flex w-full flex-col items-center gap-8 lg:gap-10">
-          <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-5">
-            {rowOne.map((item, index) => (
-              <Fragment key={item.title}>
-                {index > 0 ? <VerticalDivider /> : null}
-                <WhyChooseCard item={item} />
-              </Fragment>
-            ))}
-          </div>
-
-          <HorizontalDivider />
-
-          <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-5">
-            {rowTwo.map((item, index) => (
-              <Fragment key={item.title}>
-                {index > 0 ? <VerticalDivider /> : null}
-                <WhyChooseCard item={item} />
-              </Fragment>
-            ))}
-          </div>
+          {rows.map((row, rowIndex) => (
+            <Fragment key={row[0]?.title ?? rowIndex}>
+              {rowIndex > 0 ? <HorizontalDivider /> : null}
+              <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-5">
+                {row.map((item, index) => (
+                  <Fragment key={item.title}>
+                    {index > 0 ? <VerticalDivider /> : null}
+                    <WhyChooseCard item={item} />
+                  </Fragment>
+                ))}
+              </div>
+            </Fragment>
+          ))}
         </div>
 
         {section.ctaLabel ? (

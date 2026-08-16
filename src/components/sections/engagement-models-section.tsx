@@ -18,6 +18,7 @@ export type EngagementModelsSectionProps = {
   titleLine1?: string;
   titleAccent?: string;
   description?: string;
+  breakTitle?: boolean;
   titleMaxWidth?: number;
   descriptionMaxWidth?: number;
   cards?: readonly EngagementModelCard[];
@@ -96,6 +97,7 @@ export function EngagementModelsSection({
   description = defaultEngagementModelsHeader.description,
   titleMaxWidth,
   descriptionMaxWidth,
+  breakTitle = false,
   cards = engagementModelCards,
   sectionClassName,
 }: EngagementModelsSectionProps) {
@@ -104,7 +106,7 @@ export function EngagementModelsSection({
       <PageContainer className="vbs-engagement-models-section__container">
         <header className="vbs-engagement-models-section__header">
           <div className="vbs-engagement-models-section__title-block">
-            <span className="vbs-engagement-models-section__tag">{tag}</span>
+            {tag ? <span className="vbs-engagement-models-section__tag">{tag}</span> : null}
             <h2
               className="vbs-engagement-models-section__title"
               style={
@@ -114,6 +116,7 @@ export function EngagementModelsSection({
               }
             >
               <span className="vbs-engagement-models-section__title-dark">{titleLine1} </span>
+              {breakTitle ? <br /> : null}
               <span className="vbs-engagement-models-section__title-accent">{titleAccent}</span>
             </h2>
           </div>

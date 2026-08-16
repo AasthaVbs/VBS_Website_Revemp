@@ -3,29 +3,54 @@
 import Image from "next/image";
 import { useState } from "react";
 
+import videoFillIcon from "@/assets/images/video-fill-icon.svg";
 import { PageContainer } from "@/components/layout/page-container";
 import { TestimonialVideoModal } from "@/components/sections/testimonial-video-modal";
 import { BookMeetingButton } from "@/components/ui/book-meeting-button";
 import { cadDraftingUsaTestimonial } from "@/constants/cad-drafting-services-usa-content";
+import { cn } from "@/lib/utils";
+
+export type CadDraftingUsaTestimonialContent = {
+  titleLead: string;
+  titleAccent: string;
+  description: string;
+  ctaLabel: string;
+  image: string;
+  imageAlt: string;
+  youtubeVideoId: string;
+  breakTitle?: boolean;
+};
 
 /** Figma 3991:46364 — Whitten Architects / Alec Whitten testimonial */
 export function CadDraftingUsaTestimonialSection({
   content = cadDraftingUsaTestimonial,
+  className,
+  descriptionClassName,
+  mobileCentered = false,
 }: {
-  content?: typeof cadDraftingUsaTestimonial;
+  content?: CadDraftingUsaTestimonialContent;
+  className?: string;
+  descriptionClassName?: string;
+  mobileCentered?: boolean;
 } = {}) {
   const [videoOpen, setVideoOpen] = useState(false);
 
   return (
-    <section className="cad-usa-testimonial bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
+    <section className={cn("cad-usa-testimonial bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]", className)}>
       <PageContainer>
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-[60px]">
-          <div className="flex min-w-0 flex-1 flex-col items-start gap-5">
+          <div
+            className={cn(
+              "flex min-w-0 flex-1 flex-col items-start gap-5",
+              mobileCentered && "max-lg:items-center max-lg:text-center",
+            )}
+          >
             <h2 className="w-full capitalize text-section">
               <span className="text-section font-medium text-[#111111]">{content.titleLead}</span>
+              {content.breakTitle ? <br /> : null}
               <span className="text-section text-accent font-light">{content.titleAccent}</span>
             </h2>
-            <p className="w-full text-body">{content.description}</p>
+            <p className={cn("w-full text-body", descriptionClassName)}>{content.description}</p>
             <BookMeetingButton
               fullWidth={false}
               className="!h-auto !min-h-[56px] !px-5 !py-4 capitalize"
@@ -46,6 +71,18 @@ export function CadDraftingUsaTestimonialSection({
               unoptimized={typeof content.image === "string"}
               sizes="(max-width: 1024px) 100vw, 690px"
             />
+            <span
+              className="pointer-events-none absolute left-1/2 top-1/2 z-[1] h-[72px] w-[72px] -translate-x-1/2 -translate-y-1/2 sm:h-[88px] sm:w-[88px] lg:h-[100px] lg:w-[100px]"
+              aria-hidden
+            >
+              <Image
+                src={videoFillIcon}
+                alt=""
+                width={100}
+                height={100}
+                className="h-full w-full"
+              />
+            </span>
           </button>
         </div>
       </PageContainer>

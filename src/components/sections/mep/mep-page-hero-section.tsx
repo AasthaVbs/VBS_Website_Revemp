@@ -35,6 +35,8 @@ export type MepPageHeroContent = {
   rowClassName?: string;
   /** Compact hero only: extra classes on the copy column. */
   copyClassName?: string;
+  /** Compact hero only: title + description, then image, then CTA on mobile. */
+  mobileLayout?: "default" | "copy-image-cta";
 };
 
 const HERO_IMAGE_WIDTH = 1082;
@@ -117,6 +119,7 @@ function HeroCtas({
   secondaryCtaLabel,
   secondaryCtaHref,
   align = "start",
+  className,
 }: {
   ctaLabel: string;
   ctaHref: string;
@@ -124,12 +127,14 @@ function HeroCtas({
   secondaryCtaLabel?: string;
   secondaryCtaHref?: string;
   align?: "start" | "center";
+  className?: string;
 }) {
   return (
     <div
       className={cn(
         "flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:gap-5",
         align === "center" ? "items-center self-center lg:items-start lg:self-start" : "items-start self-start",
+        className,
       )}
     >
       <PrimaryCtaButton
@@ -178,8 +183,10 @@ export function MepPageHeroSection({
   containerClassName,
   rowClassName,
   copyClassName,
+  mobileLayout = "default",
 }: MepPageHeroContent) {
   const isCompact = imageSize === "compact";
+  const copyImageCta = mobileLayout === "copy-image-cta";
   const resolvedImageAlt = imageAlt ?? altFromImageSrc(imageSrc);
   const keepOriginalFormat = typeof imageSrc === "string";
 
@@ -192,21 +199,36 @@ export function MepPageHeroSection({
           <div
             className={cn(
               "flex flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:gap-6 xl:gap-9",
+              copyImageCta && "max-lg:items-center max-lg:gap-6",
               rowClassName,
             )}
           >
             <div
               className={cn(
                 "flex w-full min-w-0 shrink flex-col justify-center gap-6 sm:gap-[30px] lg:flex-[0_1_auto]",
+                copyImageCta && "max-lg:contents",
                 copyClassName,
               )}
               style={{ maxWidth: copyMaxWidth }}
             >
-              <div className="flex w-full max-w-full flex-col items-start gap-4 sm:gap-5">
-                <div className="flex w-full max-w-full flex-col items-start gap-3">
-                  <MepSectionTag label={tag} />
+              <div
+                className={cn(
+                  "flex w-full max-w-full flex-col items-start gap-4 sm:gap-5",
+                  copyImageCta && "max-lg:order-1 max-lg:items-center max-lg:text-center",
+                )}
+              >
+                <div
+                  className={cn(
+                    "flex w-full max-w-full flex-col items-start gap-3",
+                    copyImageCta && "max-lg:items-center",
+                  )}
+                >
+                  <MepSectionTag label={tag} className={copyImageCta ? "max-lg:!self-center" : undefined} />
                   <h1
-                    className="w-full max-w-full text-[#111111]"
+                    className={cn(
+                      "w-full max-w-full text-[#111111]",
+                      copyImageCta && "max-lg:mx-auto",
+                    )}
                     style={{ maxWidth: titleMaxWidth ?? copyMaxWidth }}
                   >
                     {titleAccentFirst ? (
@@ -246,6 +268,7 @@ export function MepPageHeroSection({
                   description={description}
                   descriptions={descriptions}
                   descriptionMaxWidth={descriptionMaxWidth}
+                  className={copyImageCta ? "max-lg:mx-auto max-lg:items-center max-lg:text-center" : undefined}
                 />
               </div>
 
@@ -255,11 +278,23 @@ export function MepPageHeroSection({
                 ctaFilled={ctaFilled}
                 secondaryCtaLabel={secondaryCtaLabel}
                 secondaryCtaHref={secondaryCtaHref}
+                align={copyImageCta ? "center" : "start"}
+                className={copyImageCta ? "max-lg:order-3" : undefined}
               />
             </div>
 
-            <div className="relative min-w-0 flex-1 lg:flex lg:items-center lg:justify-end">
-              <div className="relative ml-auto w-full max-w-[650px] overflow-hidden rounded-[10px] bg-white shadow-[0_0_16.8px_rgba(0,0,0,0.15)] aspect-[981/720]">
+            <div
+              className={cn(
+                "relative min-w-0 flex-1 lg:flex lg:items-center lg:justify-end",
+                copyImageCta && "max-lg:order-2 w-full",
+              )}
+            >
+              <div
+                className={cn(
+                  "relative ml-auto w-full max-w-[650px] overflow-hidden rounded-[10px] bg-white shadow-[0_0_16.8px_rgba(0,0,0,0.15)] aspect-[981/720]",
+                  copyImageCta && "max-lg:mx-auto",
+                )}
+              >
                 <Image
                   src={imageSrc}
                   alt={resolvedImageAlt}

@@ -119,6 +119,103 @@
   }
 }
 
+/*
+ * Laptops / smaller desktops (<1440px): h1 already scales down on many pages,
+ * but h2/h3 stay at the 1440 Figma size (48px / 24px) and look oversized.
+ * Keep ≥1440px unchanged. Mobile (≤767) uses the block above.
+ */
+@media (min-width: 768px) and (max-width: 1439px) {
+  .vbs-redesign-page {
+    --vbs-laptop-h2-size: 40px;
+    --vbs-laptop-h2-line: 1.15;
+    --vbs-laptop-h3-size: 20px;
+    --vbs-laptop-h3-line: 1.3;
+  }
+
+  .vbs-redesign-page h2,
+  .vbs-redesign-page h2 span,
+  .vbs-redesign-page h2 .text-section,
+  .vbs-redesign-page h2 .text-accent,
+  .vbs-redesign-page .h2,
+  .vbs-redesign-page .text-section,
+  .vbs-redesign-page .mep-section-heading,
+  .vbs-redesign-page .mep-section-heading .text-section,
+  .vbs-redesign-page .mep-section-heading .text-accent,
+  .vbs-redesign-page .vbs-home-capabilities__title,
+  .vbs-redesign-page .vbs-home-about__title,
+  .vbs-redesign-page .vbs-our-clients__title,
+  .vbs-redesign-page .vbs-our-clients__title-accent,
+  .vbs-redesign-page .vbs-our-clients__title-dark,
+  .vbs-redesign-page .vbs-best-benefits__title,
+  .vbs-redesign-page .vbs-best-benefits__title-dark,
+  .vbs-redesign-page .vbs-best-benefits__title-accent,
+  .vbs-redesign-page .vbs-home-faq__title,
+  .vbs-redesign-page .vbs-home-faq__title-dark,
+  .vbs-redesign-page .vbs-home-faq__title-accent,
+  .vbs-redesign-page .vbs-engagement-models-section__title,
+  .vbs-redesign-page .vbs-client-success-stories__title,
+  .vbs-redesign-page .vbs-client-success-stories__title-dark,
+  .vbs-redesign-page .vbs-client-success-stories__title-accent,
+  .vbs-redesign-page .mep-figma-overview h2 .text-section,
+  .vbs-redesign-page .mep-figma-overview h2 .text-accent,
+  .vbs-redesign-page .mep-figma-what-you-get h2 .text-section,
+  .vbs-redesign-page .mep-figma-what-you-get h2 .text-accent,
+  .vbs-redesign-page .mep-figma-services__title,
+  .vbs-redesign-page .mep-figma-services__title-dark,
+  .vbs-redesign-page .mep-figma-services__title-accent,
+  .vbs-redesign-page .mep-figma-disciplines h2 .text-section,
+  .vbs-redesign-page .mep-figma-disciplines h2 .text-accent,
+  .vbs-redesign-page .mep-figma-workflow__title,
+  .vbs-redesign-page .mep-figma-workflow__title-dark,
+  .vbs-redesign-page .mep-figma-workflow__title-accent,
+  .vbs-redesign-page .mep-figma-qa__title-dark,
+  .vbs-redesign-page .mep-figma-qa__title-accent,
+  .vbs-redesign-page .mep-figma-qa__title-heading,
+  .vbs-redesign-page .mep-figma-qa__title-heading span,
+  .vbs-redesign-page .mep-figma-benefits__title,
+  .vbs-redesign-page .mep-figma-benefits__title-dark,
+  .vbs-redesign-page .mep-figma-benefits__title-accent,
+  .vbs-redesign-page .mep-figma-why-choose__title,
+  .vbs-redesign-page .mep-figma-why-choose__title-dark,
+  .vbs-redesign-page .mep-figma-why-choose__title-accent,
+  .vbs-redesign-page .mep-figma-resources__title,
+  .vbs-redesign-page .mep-figma-resources__title-dark,
+  .vbs-redesign-page .mep-figma-resources__title-accent,
+  .vbs-redesign-page .architecture-ai-bim-workflow h2 .text-section,
+  .vbs-redesign-page .architecture-ai-bim-workflow h2 .text-accent,
+  .vbs-redesign-page .vbs-get-in-touch__info-head .text-section,
+  .vbs-redesign-page .vbs-get-in-touch__info-head h2,
+  .vbs-redesign-page .vbs-listing-hero__title,
+  .vbs-redesign-page .evaluate-delivery-cta-panel h2,
+  .vbs-redesign-page .evaluate-delivery-cta-panel h2 .text-section,
+  .vbs-redesign-page .evaluate-delivery-cta-panel h2 .text-accent,
+  .vbs-redesign-page .evaluate-delivery-cta-panel h2 span {
+    font-size: var(--vbs-laptop-h2-size) !important;
+    line-height: var(--vbs-laptop-h2-line) !important;
+  }
+
+  .vbs-redesign-page .mep-figma-resources__title,
+  .vbs-redesign-page .mep-figma-resources__title-dark,
+  .vbs-redesign-page .mep-figma-resources__title-accent {
+    width: 620px !important;
+    max-width: 100% !important;
+  }
+
+  .vbs-redesign-page h3,
+  .vbs-redesign-page h3 span,
+  .vbs-redesign-page .h3,
+  .vbs-redesign-page .text-card-title,
+  .vbs-redesign-page .vbs-leadership-team__card-name,
+  .vbs-redesign-page .arch-svc-workflow__step h3,
+  .vbs-redesign-page .mep-figma-workflow__step-title,
+  .vbs-redesign-page .resources-browse-card h3,
+  .vbs-redesign-page .vbs-capability-card h3,
+  .vbs-redesign-page .vbs-engagement-models-section__card-title {
+    font-size: var(--vbs-laptop-h3-size) !important;
+    line-height: var(--vbs-laptop-h3-line) !important;
+  }
+}
+
 /* Section / filter chips — smaller below desktop only */
 @media (max-width: 1023px) {
   .vbs-redesign-page .text-tag,

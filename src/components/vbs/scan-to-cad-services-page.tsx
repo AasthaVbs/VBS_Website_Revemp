@@ -56,6 +56,10 @@ export async function ScanToCadServicesPage() {
           {...scanToCadHero}
           imageSize="compact"
           ctaHref="#scan-to-cad-page-contact"
+          className="scan-to-cad-hero"
+          copyClassName="scan-to-cad-hero__copy"
+          rowClassName="scan-to-cad-hero__row"
+          imageFrameClassName="scan-to-cad-hero__image"
           containerClassName="!pt-0 sm:!pt-1 lg:!pt-4"
         />
         <TrustStripSection

@@ -24,15 +24,16 @@ export const scanToCadStatsStrip = [
 
 export const scanToCadHero = {
   tag: "Scan to CAD Conversion",
-  titleLead: "Mitigate Drafting Delays\nwith Our ",
+  titleLead: "Mitigate Drafting Delays with Our ",
   titleAccent: "Scan to CAD Conversion Services",
   description:
     "Manual drafting from scan data slows your project and includes unpredicted errors. Our CAD experts run an AI-powered workflow that converts scans into build-ready CAD drawings.",
   ctaLabel: "Get a Free Quote",
   imageSrc: scanToCadBanner,
   imageAlt: "Scan to CAD conversion from point cloud to 2D and 3D drawings",
-  copyMaxWidth: 701,
+  copyMaxWidth: 860,
   descriptionMaxWidth: 701,
+  titleMaxWidth: 860,
 };
 
 export const scanToCadIntro = {

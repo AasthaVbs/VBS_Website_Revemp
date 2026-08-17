@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/styles/vbs-legacy-projects.scss";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 /** AIA Conference Events — Bootstrap + legacy video/modal styles. */
 export default function AiaConferenceEventsLayout({ children }: { children: ReactNode }) {

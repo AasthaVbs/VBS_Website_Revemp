@@ -170,7 +170,6 @@ export const CAPABILITY_CATEGORIES: CapabilityCategory[] = [
     services: [
       [
         { label: "Laser Scan to BIM", href: ROUTES.laserScanning },
-        { label: "Reality Capture & Survey Companies", href: ROUTES.scanToBimServices },
         { label: "Point Cloud to BIM", href: ROUTES.scanToBimPointCloud },
         { label: "Scan to CAD", href: ROUTES.scanToCad },
       ],

@@ -4196,7 +4196,7 @@
   }
 
   /* Smaller laptops: keep featured (left) visible beside the list */
-  @media (min-width: 1024px) and (max-width: 1366px) {
+  @media (min-width: 1024px) and (max-width: 1399px) {
     .mep-figma-resources__content {
       flex-direction: row !important;
       flex-wrap: nowrap !important;
@@ -4221,7 +4221,11 @@
     }
 
     .mep-figma-resources__featured-media {
-      height: 380px !important;
+      height: 260px !important;
+    }
+
+    .mep-figma-resources__featured-photo {
+      object-position: center top !important;
     }
 
     .mep-figma-resources__compact-media {
@@ -5379,7 +5383,7 @@
   }
 
   main > .mep-figma-overview--scan-to-bim + .mep-figma-what-you-get {
-    padding-top: 30px !important;
+    padding-top: 16px !important;
   }
 
   .mep-page-hero--overlay {
@@ -5394,7 +5398,7 @@
   }
 
   .mep-figma-overview--scan-to-bim {
-    padding-bottom: 36px !important;
+    padding-bottom: 16px !important;
 
     .mep-figma-overview__layout {
       gap: 24px !important;
@@ -5483,11 +5487,11 @@
     }
 
     .mep-figma-overview--scan-to-bim {
-      padding-bottom: 28px !important;
+      padding-bottom: 12px !important;
     }
 
     main > .mep-figma-overview--scan-to-bim + .mep-figma-what-you-get {
-      padding-top: 28px !important;
+      padding-top: 12px !important;
     }
   }
 

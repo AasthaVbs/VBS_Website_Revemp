@@ -5,8 +5,8 @@
   .mep-header-root .container {
     max-width: var(--vbs-page-max, 1440px);
     width: 100%;
-    padding-left: var(--vbs-page-gutter, 12px);
-    padding-right: var(--vbs-page-gutter, 12px);
+    padding-left: var(--vbs-page-gutter, 16px);
+    padding-right: var(--vbs-page-gutter, 16px);
   }
 
   .wrap,
@@ -22,20 +22,20 @@
 
   .wrap,
   .mep-hero-shell {
-    padding-left: var(--vbs-page-gutter, 12px);
-    padding-right: var(--vbs-page-gutter, 12px);
+    padding-left: var(--vbs-page-gutter, 16px);
+    padding-right: var(--vbs-page-gutter, 16px);
   }
 
   .mep-hero-v3-inner {
-    padding-left: var(--vbs-page-gutter, 12px);
-    padding-right: var(--vbs-page-gutter, 12px);
+    padding-left: var(--vbs-page-gutter, 16px);
+    padding-right: var(--vbs-page-gutter, 16px);
   }
 
   #disciplines .disc-tabs,
   #casestudies .cs-card-wrap,
   #casestudies .cs-card-footer {
-    padding-left: var(--vbs-page-gutter, 12px);
-    padding-right: var(--vbs-page-gutter, 12px);
+    padding-left: var(--vbs-page-gutter, 16px);
+    padding-right: var(--vbs-page-gutter, 16px);
   }
 }
 

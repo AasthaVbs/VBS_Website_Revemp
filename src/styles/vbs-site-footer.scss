@@ -1,4 +1,4 @@
-/* Site footer — Figma 4016:56172 (12px L/R gutters) */
+/* Site footer — Figma 4016:56172 (16px L/R gutters) */
 
 .vbs-site-footer {
   position: relative;
@@ -33,7 +33,7 @@
     padding: 0;
   }
 
-  /* Figma 4016:56172 — 1440 content width, fixed 12px L/R gutters */
+  /* Figma 4016:56172 — 1440 content width, fixed 16px L/R gutters */
   > .vbs-page-container,
   > .vbs-site-footer__container,
   .vbs-page-container.vbs-site-footer__container {
@@ -43,8 +43,8 @@
     max-width: 1440px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
     box-sizing: border-box !important;
   }
 

@@ -5,7 +5,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-/** Shared /landing shell — no global Bootstrap (breaks redesign hero layouts). */
-export default function LandingLayout({ children }: { children: ReactNode }) {
+export default function BimResourcesLayout({ children }: { children: ReactNode }) {
   return children;
 }

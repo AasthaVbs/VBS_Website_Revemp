@@ -1,0 +1,752 @@
+/* AIA Conference Events — Figma 4157:57052 (1440px + mobile) */
+
+.aia-conference-events-page {
+  .vbs-our-clients,
+  .aia-team,
+  .aia-split,
+  .vbs-client-success-stories,
+  .aia-engage,
+  .vbs-evaluate-cta,
+  .vbs-home-faq {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+
+    @media (min-width: 1024px) {
+      padding-top: 56px !important;
+      padding-bottom: 56px !important;
+    }
+  }
+
+  .aia-callout {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px;
+    background: #f8fffa;
+    border: 1px solid #42aa32;
+    border-radius: 10px;
+  }
+
+  .aia-callout__text {
+    margin: 0;
+    color: #111111 !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+  }
+
+  h1,
+  h2,
+  .text-section,
+  .vbs-client-success-stories__title,
+  .vbs-home-faq__title,
+  .evaluate-delivery-cta-panel h2 {
+    text-transform: capitalize !important;
+  }
+
+  .vbs-client-success-stories__description {
+    width: 1200px !important;
+    max-width: 100% !important;
+  }
+}
+
+.aia-conference-events-page .aia-hero {
+  padding-top: 24px !important;
+  padding-bottom: 48px !important;
+
+  @media (min-width: 1024px) {
+    padding-top: 32px !important;
+    padding-bottom: 64px !important;
+  }
+}
+
+.aia-hero__row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.aia-hero__copy {
+  display: flex;
+  width: 100%;
+  max-width: 637px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.aia-hero__intro {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.aia-hero__headline {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.aia-hero__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.aia-conference-events-page .aia-hero h1 {
+  font-size: 48px !important;
+  line-height: 1.15 !important;
+}
+
+.aia-hero__media {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 650px;
+  height: 530px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f4f4f4;
+  box-shadow: 0 0 16.8px rgba(0, 0, 0, 0.15);
+}
+
+.aia-hero__carousel,
+.aia-hero__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.aia-hero__slide {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.aia-hero__slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.aia-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 17, 0) 49%,
+    rgba(17, 17, 17, 0.2) 70%,
+    rgba(17, 17, 17, 0.8) 88%
+  );
+}
+
+.aia-hero__caption {
+  position: absolute;
+  z-index: 3;
+  left: 27px;
+  right: 27px;
+  bottom: 48px;
+  margin: 0;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+}
+
+.aia-hero__dots {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 30px;
+  display: flex;
+  width: 260px;
+  height: 4px;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  transform: translateX(-50%);
+}
+
+.aia-hero__dot {
+  flex: 1 1 0;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  background: #cbcccd;
+  cursor: pointer;
+}
+
+.aia-hero__dot.is-active {
+  background: #d70416;
+}
+
+.aia-clients {
+  position: relative;
+}
+
+.aia-clients__copy {
+  display: flex;
+  width: 100%;
+  max-width: 720px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.aia-clients__title {
+  max-width: 720px;
+}
+
+.aia-clients__desc {
+  max-width: 700px;
+}
+
+.aia-clients__fade {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: min(240px, 18vw);
+  height: 100%;
+  background: linear-gradient(270deg, #ffffff 56%, rgba(255, 255, 255, 0) 100%);
+}
+
+.aia-team__intro {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.aia-team__inner {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.aia-team__headline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.aia-team__grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+}
+
+.aia-team .vbs-leadership-team__card {
+  max-width: none;
+}
+
+.aia-team .vbs-leadership-team__card-media {
+  height: 380px;
+}
+
+.aia-team .vbs-leadership-team__card:hover .vbs-leadership-team__card-media,
+.aia-team .vbs-leadership-team__card:focus-within .vbs-leadership-team__card-media {
+  background: #f4f4f4;
+}
+
+.aia-split__row {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  gap: 40px;
+}
+
+.aia-split__media {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #cbcccd;
+  aspect-ratio: 700 / 640;
+}
+
+.aia-split--pressure .aia-split__media {
+  max-width: 520px;
+  flex: 0 1 520px;
+  aspect-ratio: 520 / 460;
+}
+
+.aia-split--pressure .aia-split__copy {
+  max-width: none;
+}
+
+.aia-split__media--walk {
+  aspect-ratio: 700 / 590;
+}
+
+.aia-split__media img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aia-split__copy {
+  display: flex;
+  width: 100%;
+  max-width: 710px;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.aia-pressure__list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.aia-pressure__item {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 16px;
+}
+
+.aia-pressure__rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(203, 204, 205, 0) 0%,
+    #cbcccd 14%,
+    #cbcccd 42%,
+    rgba(203, 204, 205, 0) 100%
+  );
+}
+
+.aia-pressure__row {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.aia-pressure__bullet {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  margin-top: 9px;
+  border-radius: 999px;
+  background: #808080;
+}
+
+.aia-pressure__text {
+  margin: 0;
+  flex: 1 1 0;
+  min-width: 0;
+  color: #808080;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.aia-engage__row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 60px;
+}
+
+.aia-engage__intro {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.aia-engage__cards {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.aia-engage__card {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 20px 40px;
+  overflow: hidden;
+  border: 1px solid #cbcccd;
+  border-radius: 10px;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.aia-engage__card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.aia-engage__card-copy {
+  display: flex;
+  width: min(408px, 100%);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.aia-engage__card-label {
+  color: #111111;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.aia-engage__card-title {
+  color: #111111;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.aia-engage__card-cta {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  align-self: center;
+  gap: 6px;
+  color: #2299d6;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.aia-conference-events-page .aia-cta-booth {
+  margin: 0;
+  color: #111111 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+}
+
+.aia-booking-modal .modal-content {
+  background: #fff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 14px !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2) !important;
+}
+
+.aia-booking-modal .modal-header {
+  background: #fff !important;
+  border-bottom: 1px solid #eef1f4 !important;
+  padding: 14px 18px !important;
+}
+
+.aia-booking-modal .modal-title {
+  color: #111827 !important;
+  font-size: 26px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+}
+
+.aia-booking-modal .modal-body {
+  background: #fff !important;
+  padding: 14px 18px 18px !important;
+}
+
+.aia-booking-modal .aia-nimbus-modal-body .aia-nimbus-embed-host {
+  min-height: 520px;
+  width: 100%;
+}
+
+@media (min-width: 1280px) and (max-width: 1399px) {
+  .aia-hero__row,
+  .aia-split__row,
+  .aia-engage__row {
+    gap: 28px;
+  }
+
+  .aia-hero__media {
+    height: auto;
+    max-width: 520px;
+    aspect-ratio: 650 / 480;
+  }
+
+  .aia-conference-events-page .aia-hero h1 {
+    font-size: 40px !important;
+  }
+
+  .aia-team .vbs-leadership-team__card-media {
+    height: 300px;
+  }
+
+  .aia-team__grid {
+    gap: 24px;
+  }
+
+  .aia-split--pressure .aia-split__media {
+    max-width: 440px;
+    flex-basis: 440px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .aia-split__row,
+  .aia-split__row--walk,
+  .aia-hero__row,
+  .aia-engage__row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .aia-hero__copy,
+  .aia-hero__intro,
+  .aia-hero__headline,
+  .aia-hero__cta,
+  .aia-clients__copy,
+  .aia-team__intro,
+  .aia-team__inner,
+  .aia-team__headline,
+  .aia-split__copy,
+  .aia-engage__intro {
+    align-items: center !important;
+    text-align: center;
+    max-width: none;
+    width: 100%;
+  }
+
+  .aia-hero__media,
+  .aia-split__media,
+  .aia-split__copy,
+  .aia-clients__copy {
+    max-width: none;
+  }
+
+  .aia-conference-events-page .text-tag {
+    align-self: center !important;
+  }
+
+  .aia-hero__copy > .flex,
+  .aia-clients__copy > .flex,
+  .aia-split__copy > .flex,
+  .aia-engage__intro > .flex {
+    align-items: center !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  .aia-hero h1,
+  .aia-hero p,
+  .aia-clients__title,
+  .aia-clients__desc,
+  .aia-team h2,
+  .aia-team__intro p,
+  .aia-split h2,
+  .aia-split__copy > p,
+  .aia-engage h2,
+  .aia-engage__intro p,
+  .aia-conference-events-page .vbs-client-success-stories__title,
+  .aia-conference-events-page .vbs-client-success-stories__description,
+  .aia-conference-events-page .vbs-home-faq__title,
+  .aia-conference-events-page .vbs-home-faq__desc {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .aia-conference-events-page .vbs-our-clients__container {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 40px !important;
+  }
+
+  .aia-conference-events-page .vbs-our-clients__marquee-wrap {
+    width: 100% !important;
+    flex: 0 0 auto !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .aia-conference-events-page .vbs-client-success-stories__container,
+  .aia-conference-events-page .vbs-client-success-stories__header,
+  .aia-conference-events-page .vbs-client-success-stories__intro,
+  .aia-conference-events-page .vbs-client-success-stories__head,
+  .aia-conference-events-page .vbs-home-faq__container,
+  .aia-conference-events-page .vbs-home-faq__head,
+  .aia-conference-events-page .vbs-home-faq__head-top {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .aia-conference-events-page .vbs-home-faq__container {
+    flex-direction: column !important;
+  }
+
+  .aia-conference-events-page .vbs-home-faq__head,
+  .aia-conference-events-page .vbs-home-faq__list {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .aia-conference-events-page .vbs-client-success-stories__header {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .aia-hero__media {
+    height: auto;
+    width: 100%;
+    max-width: 650px;
+    aspect-ratio: 650 / 530;
+  }
+
+  .aia-split--pressure .aia-split__media,
+  .aia-split__media--walk {
+    min-height: 0;
+    max-width: 640px;
+    width: 100%;
+    flex: 0 1 auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .aia-team__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-items: center;
+    gap: 24px;
+  }
+
+  .aia-team .vbs-leadership-team__card-media {
+    height: 300px;
+  }
+
+  .aia-pressure__list,
+  .aia-pressure__item,
+  .aia-callout {
+    text-align: left;
+  }
+
+  .aia-engage__cards {
+    width: 100%;
+  }
+
+  .aia-clients__fade {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .aia-team__grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 28px;
+  }
+
+  .aia-team .vbs-leadership-team__card {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .aia-team .vbs-leadership-team__card-media {
+    height: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .aia-conference-events-page .vbs-our-clients,
+  .aia-conference-events-page .aia-team,
+  .aia-conference-events-page .aia-split,
+  .aia-conference-events-page .vbs-client-success-stories,
+  .aia-conference-events-page .aia-engage,
+  .aia-conference-events-page .vbs-home-faq,
+  .aia-conference-events-page .vbs-evaluate-cta {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .aia-conference-events-page .aia-hero h1,
+  .aia-conference-events-page .aia-hero h1 span {
+    font-size: var(--vbs-mobile-h1-size, 32px) !important;
+    line-height: var(--vbs-mobile-h1-line, 1.15) !important;
+  }
+
+  .aia-hero__row,
+  .aia-split__row,
+  .aia-engage__row {
+    gap: 24px;
+  }
+
+  .aia-hero__caption {
+    left: 16px;
+    right: 16px;
+    bottom: 36px;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    text-align: center !important;
+  }
+
+  .aia-hero__dots {
+    width: min(260px, calc(100% - 48px));
+    bottom: 16px;
+  }
+
+  .aia-team .vbs-leadership-team__card-media {
+    height: 260px;
+  }
+
+  .aia-engage__card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 16px;
+  }
+
+  .aia-engage__card-copy {
+    width: 100%;
+    align-items: center;
+  }
+
+  .aia-engage__card-cta {
+    align-self: center;
+  }
+
+  .aia-engage__card-title {
+    font-size: 20px;
+  }
+
+  .aia-callout {
+    justify-content: center;
+  }
+}

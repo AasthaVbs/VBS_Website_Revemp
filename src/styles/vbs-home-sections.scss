@@ -988,7 +988,7 @@
     flex-shrink: 0 !important;
   }
 
-  @media (min-width: 1024px) and (max-width: 1366px) {
+  @media (min-width: 1024px) and (max-width: 1399px) {
     .mep-figma-resources__content {
       flex-direction: row !important;
       flex-wrap: nowrap !important;
@@ -1012,7 +1012,11 @@
     }
 
     .mep-figma-resources__featured-media {
-      height: 380px !important;
+      height: 320px !important;
+    }
+
+    .mep-figma-resources__featured-photo {
+      object-position: center top !important;
     }
 
     .mep-figma-resources__compact-media {

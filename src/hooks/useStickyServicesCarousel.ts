@@ -18,13 +18,13 @@ const COMPACT_VIEWPORT_MAX = 820;
 const CARD_HEIGHT_MAX = 560;
 const CARD_HEIGHT_MIN = 300;
 /** More horizontal travel per vertical scroll — shorter pin runway */
-const HOVER_SCROLL_RATIO = 1.25;
+const HOVER_SCROLL_RATIO = 1.05;
 /**
  * Cards-only pin: denser mapping (less vertical travel per card).
  * Runway must stay maxScroll / ratio — never cap below that, or the pin
  * releases and the page scrolls down before the last card is shown.
  */
-const CARDS_ONLY_SCROLL_RATIO = 2.6;
+const CARDS_ONLY_SCROLL_RATIO = 1.7;
 const CARDS_ONLY_SMOOTHING = 0.42;
 const HOVER_SCROLL_SMOOTHING = 0.28;
 

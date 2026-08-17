@@ -33,7 +33,7 @@ export function BimResourcesSection({
       className="bim-resources-section bg-white py-8 sm:py-10 lg:py-[60px]"
       aria-labelledby="bim-resources-title"
     >
-      <PageContainer className="!px-3">
+      <PageContainer className="!px-4">
         <div className="bim-resources__layout flex flex-col items-stretch gap-6 sm:gap-8 lg:flex-row lg:items-start lg:gap-[30px]">
           <div className="flex min-w-0 flex-1 flex-col gap-6 sm:gap-8 lg:gap-[30px]">
             <div className="bim-resources__hero relative aspect-[1010/640] w-full overflow-hidden rounded-[16px] bg-[#f5f5f5] sm:rounded-[21px] lg:h-[640px] lg:aspect-auto">

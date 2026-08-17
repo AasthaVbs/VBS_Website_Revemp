@@ -15,8 +15,8 @@
   --text-secondary: #808080;
   --text-accent: #d70416;
   --vbs-page-max: 1400px;
-  --vbs-page-gutter: 12px;
-  --vbs-page-gutter-md: 12px;
+  --vbs-page-gutter: 16px;
+  --vbs-page-gutter-md: 16px;
 }
 
 * {
@@ -936,15 +936,15 @@ body {
 }
 
 /*
- * Site-wide shell gutters — fixed 12px left/right on ALL devices
+ * Site-wide shell gutters — fixed 16px left/right on ALL devices
  * (phones, 12" laptops, desktops). Keeps content off the viewport edges.
  */
 :root {
-  --vbs-page-gutter: 12px;
-  --vbs-page-gutter-md: 12px;
-  --vbs-page-gutter-lg: 12px;
-  --vbs-legacy-shell-gutter: 12px;
-  --vbs-legacy-shell-gutter-md: 12px;
+  --vbs-page-gutter: 16px;
+  --vbs-page-gutter-md: 16px;
+  --vbs-page-gutter-lg: 16px;
+  --vbs-legacy-shell-gutter: 16px;
+  --vbs-legacy-shell-gutter-md: 16px;
 }
 
 .vbs-page-container,
@@ -956,8 +956,8 @@ body {
 .vbs-redesign-page .container:not(.container-fluid):not(.vbs-allow-bootstrap),
 body > .container:not(.container-fluid):not(.vbs-allow-bootstrap),
 main .container:not(.container-fluid):not(.vbs-allow-bootstrap) {
-  padding-left: 12px !important;
-  padding-right: 12px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
 }
 
 @media (min-width: 768px) {
@@ -970,7 +970,7 @@ main .container:not(.container-fluid):not(.vbs-allow-bootstrap) {
   .vbs-redesign-page .container:not(.container-fluid):not(.vbs-allow-bootstrap),
   body > .container:not(.container-fluid):not(.vbs-allow-bootstrap),
   main .container:not(.container-fluid):not(.vbs-allow-bootstrap) {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 }

@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-phone-input-2/lib/bootstrap.css";
 import "@/styles/roi-calculator.scss";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 /** ROI Calculator — Bootstrap + phone-input for legacy calculator UI. */
 export default function RoiCalculatorLayout({ children }: { children: ReactNode }) {

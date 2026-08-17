@@ -1,11 +1,3 @@
-import accurateDimensionsAndLayoutsIcon from "@/assets/images/mep-shop-drawing/accurate-dimensions-and-layouts-icon.png";
-import acceleratedConstructionTimelinesIcon from "@/assets/images/mep-shop-drawing/accelerated-construction-timelines-icon.png";
-import contractorAndTradeSynchronizationIcon from "@/assets/images/mep-shop-drawing/contractor-and-trade-synchronization-icon.png";
-import detailedInstallationDrawingsIcon from "@/assets/images/mep-shop-drawing/detailed-installation-drawings-icon.png";
-import fabricationReadyDocumentationIcon from "@/assets/images/mep-shop-drawing/fabrication-ready-documentation-icon.png";
-import offsiteFabricationAndSpoolingIcon from "@/assets/images/mep-shop-drawing/offsite-fabrication-and-spooling-icon.png";
-import preInstallationFieldCoordinationIcon from "@/assets/images/mep-shop-drawing/pre-installation-field-coordination-icon.png";
-import reducedSiteErrorsIcon from "@/assets/images/mep-shop-drawing/reduced-site-errors-icon.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
   MepBimFeatureCard,
@@ -15,6 +7,15 @@ import type {
   MepOverviewIntroContent,
   MepTrustedByContent,
 } from "@/constants/mep-bim-modelling-content";
+
+const accurateDimensionsAndLayoutsIcon = "/image/mep-shop-drawing/accurate-dimensions-and-layouts-icon.png";
+const acceleratedConstructionTimelinesIcon = "/image/mep-shop-drawing/accelerated-construction-timelines-icon.png";
+const contractorAndTradeSynchronizationIcon = "/image/mep-shop-drawing/contractor-and-trade-synchronization-icon.png";
+const detailedInstallationDrawingsIcon = "/image/mep-shop-drawing/detailed-installation-drawings-icon.png";
+const fabricationReadyDocumentationIcon = "/image/mep-shop-drawing/fabrication-ready-documentation-icon.png";
+const offsiteFabricationAndSpoolingIcon = "/image/mep-shop-drawing/offsite-fabrication-and-spooling-icon.png";
+const preInstallationFieldCoordinationIcon = "/image/mep-shop-drawing/pre-installation-field-coordination-icon.png";
+const reducedSiteErrorsIcon = "/image/mep-shop-drawing/reduced-site-errors-icon.png";
 
 export const mepShopDrawingHero = {
   tag: "MEP Shop Drawing",
@@ -68,25 +69,25 @@ export const mepShopDrawingServiceFeatureCards: MepBimFeatureCard[] = [
     title: "Detailed Installation Drawings",
     description:
       "Receive trade-specific Revit shop drawings for MEP developed to SMACNA, NFPA and ASHRAE standards. Clear sections, elevations, hanger layouts and support details help your field teams install systems without rework.",
-    icon: detailedInstallationDrawingsIcon.src,
+    icon: detailedInstallationDrawingsIcon,
   },
   {
     title: "Exact Measurements & Layouts",
     description:
       "Get dimensionally accurate layouts meeting NEC, IPC and IMC requirements. Proper clearances, routing and coordinated system placement minimize installation conflicts across all trades.",
-    icon: accurateDimensionsAndLayoutsIcon.src,
+    icon: accurateDimensionsAndLayoutsIcon,
   },
   {
     title: "Fabrication Documentation Ready",
     description:
       "Get full Revit MEP shop drawings including spool drawings, component tagging and bill of materials. You have all the documentation in place and ready to start production with your fabrication teams.",
-    icon: fabricationReadyDocumentationIcon.src,
+    icon: fabricationReadyDocumentationIcon,
   },
   {
     title: "Less Site Errors",
     description:
       "Coordinated shop drawings for MEP systems to prevent construction installation problems. Early resolution of clashes leads to reduced field changes, reduced rework and your project keeps moving.",
-    icon: reducedSiteErrorsIcon.src,
+    icon: reducedSiteErrorsIcon,
   },
 ];
 
@@ -187,7 +188,7 @@ export const mepShopDrawingDeliverablesCards = [
 export const mepShopDrawingTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "MEP Shop Drawing",
+  titleAccent: "MEP Shop Drawing Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 } as const;
@@ -271,25 +272,25 @@ export const mepShopDrawingOutsourcingGuideCards: MepBimUseCaseCard[] = [
     title: "Site Coordination Before Installation",
     description:
       "Installation problems solved before construction starts makes construction go more quickly. Coordinated layouts reduce spatial conflicts and allow crews to install systems without rework.",
-    icon: preInstallationFieldCoordinationIcon.src,
+    icon: preInstallationFieldCoordinationIcon,
   },
   {
     title: "Offsite Fabrication and Spooling",
     description:
       "Clear and error-free documentation is much needed for fabrication to avoid delays in production. Fabrication-ready MEP Shop Drawings and spool sheets enable shops to construct components confidently.",
-    icon: offsiteFabricationAndSpoolingIcon.src,
+    icon: offsiteFabricationAndSpoolingIcon,
   },
   {
     title: "Contractor and Trade Synchronization",
     description:
       "Multiple trades need a common reference throughout construction. Coordinated Revit shop drawings for MEP help mechanical, electrical and plumbing contractors work from the same information.",
-    icon: contractorAndTradeSynchronizationIcon.src,
+    icon: contractorAndTradeSynchronizationIcon,
   },
   {
     title: "Fast Track Construction Scheduling",
     description:
       "There is little chance for design changes during construction because the schedule is very tight. Stringent production support continues to keep delivery in line with project milestones and installation activities.",
-    icon: acceleratedConstructionTimelinesIcon.src,
+    icon: acceleratedConstructionTimelinesIcon,
   },
 ];
 

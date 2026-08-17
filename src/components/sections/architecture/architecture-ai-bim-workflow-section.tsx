@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { useState } from "react";
-
-import videoFillIcon from "@/assets/images/video-fill-icon.svg";
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { TestimonialVideoModal } from "@/components/sections/testimonial-video-modal";
 import { architectureAiBimWorkflowSection } from "@/constants/architecture-services-content";
 import { altFromImageSrc } from "@/lib/utils";
+
+const videoFillIcon = "/image/video-fill-icon.svg";
 
 /** Shared AI + BIM Experts demo — https://www.youtube.com/watch?v=lQFR-Cs-0Qs */
 export const AI_BIM_WORKFLOW_YOUTUBE_VIDEO_ID = "lQFR-Cs-0Qs";

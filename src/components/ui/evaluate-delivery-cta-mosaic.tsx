@@ -2,11 +2,11 @@
 
 import type { CSSProperties } from "react";
 
-import evaluateCtaMosaic from "@/assets/images/evaluate-cta-mosaic.jpg";
+const evaluateCtaMosaic = "/image/evaluate-cta-mosaic.jpg";
 
 /** Shared Evaluate CTA mosaic background (desktop + mobile). */
 export function EvaluateDeliveryCtaMosaic() {
-  const mosaicUrl = `url(${evaluateCtaMosaic.src})`;
+  const mosaicUrl = `url(${evaluateCtaMosaic})`;
 
   return (
     <div

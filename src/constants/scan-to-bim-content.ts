@@ -1,14 +1,15 @@
 // @ts-nocheck
-import aiPoweredScanIcon from "@/assets/images/ai-owered-scan.svg";
-import fasterProjectKickoffIcon from "@/assets/images/faster-project-kickoff-icon.png";
-import fasterStakeholderIcon from "@/assets/images/faster-stakeholder-icon.png";
-import lod200To500Icon from "@/assets/images/lod200-500.svg";
-import lowerOperationalIcon from "@/assets/images/lower-operational-icon.png";
-import reductionInFieldReworkIcon from "@/assets/images/reduction-in-field-rework-icon.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { mepStatsStrip } from "@/constants/mep-engineers-content";
 import { ROUTES } from "@/constants/navigation";
 import { allServicesResourcesSection } from "@/constants/shared-sections";
+
+const aiPoweredScanIcon = "/image/ai-owered-scan.svg";
+const fasterProjectKickoffIcon = "/image/faster-project-kickoff-icon.png";
+const fasterStakeholderIcon = "/image/faster-stakeholder-icon.png";
+const lod200To500Icon = "/image/lod200-500.svg";
+const lowerOperationalIcon = "/image/lower-operational-icon.png";
+const reductionInFieldReworkIcon = "/image/reduction-in-field-rework-icon.png";
 
 export { mepStatsStrip as scanToBimStatsStrip };
 

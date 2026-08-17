@@ -43,6 +43,8 @@ export type MepPageHeroContent = {
   breakTitle?: boolean;
   /** Compact hero only: title + description, then image, then CTA on mobile. */
   mobileLayout?: "default" | "copy-image-cta";
+  /** Compact hero only: keep `\n` in titleLead as a break on desktop, wrap naturally on mobile. */
+  collapseTitleBreakOnMobile?: boolean;
 };
 
 const HERO_IMAGE_WIDTH = 1082;
@@ -76,8 +78,9 @@ function HeroTitleLead({ titleLead, titleAccent }: { titleLead: string; titleAcc
       {lines.map((line, index) => (
         <span
           key={`${line}-${index}`}
-          className="block text-[28px] font-medium leading-[1.15] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[60px]"
+          className="text-[28px] font-medium leading-[1.15] sm:text-[36px] md:text-[40px] lg:block lg:text-[48px] xl:text-[60px]"
         >
+          {index > 0 ? <span className="lg:hidden"> </span> : null}
           {line}
           {index === lines.length - 1 ? (
             <span className="font-light text-[#D70416]">{titleAccent}</span>
@@ -192,7 +195,8 @@ export function MepPageHeroSection({
   imageFrameClassName,
   imageClassName,
   breakTitle = false,
-  mobileLayout = "default",
+  mobileLayout = "copy-image-cta",
+  collapseTitleBreakOnMobile = true,
 }: MepPageHeroContent) {
   const isCompact = imageSize === "compact";
   const copyImageCta = mobileLayout === "copy-image-cta";
@@ -251,8 +255,14 @@ export function MepPageHeroSection({
                           ) : (
                             <span
                               key={`${line}-${index}`}
-                              className="block font-medium text-[#111111]"
+                              className={cn(
+                                "font-medium text-[#111111]",
+                                collapseTitleBreakOnMobile ? "lg:block" : "block",
+                              )}
                             >
+                              {collapseTitleBreakOnMobile ? (
+                                <span className="lg:hidden"> </span>
+                              ) : null}
                               {line}
                             </span>
                           ),
@@ -271,8 +281,14 @@ export function MepPageHeroSection({
                       titleLead.split("\n").map((line, index, lines) => (
                         <span
                           key={`${line}-${index}`}
-                          className="block text-[32px] font-medium leading-[1.15] sm:text-[40px] lg:text-[48px]"
+                          className={cn(
+                            "text-[32px] font-medium leading-[1.15] sm:text-[40px] lg:text-[48px]",
+                            collapseTitleBreakOnMobile ? "lg:block" : "block",
+                          )}
                         >
+                          {collapseTitleBreakOnMobile && index > 0 ? (
+                            <span className="lg:hidden"> </span>
+                          ) : null}
                           {line}
                           {index === lines.length - 1 ? (
                             <span className="font-light text-[#D70416]">{titleAccent}</span>

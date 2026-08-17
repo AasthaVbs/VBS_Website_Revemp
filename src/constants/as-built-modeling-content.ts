@@ -2,8 +2,14 @@ import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons"
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
-/** Temporary placeholders until service/hero art is provided */
-const asBuiltPlaceholderImg = "/image/as-built.jpg";
+const asBuiltModelingBanner = "/image/as-built-modeling-banner.jpg";
+const asBuiltBimModelingOverview = "/image/as-built-bim-modeling-services-overview.jpg";
+const architecturalAsBuiltModelingImg = "/image/architectural-as-built-modeling.jpg";
+const structuralAsBuiltModelingImg = "/image/structural-as-built-modeling.jpg";
+const mepfAsBuiltModelingImg = "/image/mepf-as-built-modeling.jpg";
+const constructionAsBuiltsPlansImg = "/image/construction-as-builts-as-built-plans.jpg";
+const asBuiltDraftingServicesImg = "/image/as-built-drafting-services.jpg";
+const cadToBimAsBuiltDocumentationImg = "/image/cad-to-bim-conversion-for-as-built-documentation.jpg";
 
 export const asBuiltModelingStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -19,8 +25,8 @@ export const asBuiltModelingHero = {
   description:
     "It can take weeks of manual effort to turn raw scan data into usable drawings. Our BIM experts use an AI-enabled workflow to produce code-compliant coordinated as-built models.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: asBuiltPlaceholderImg,
-  imageAlt: "As Built BIM Modeling Services",
+  imageSrc: asBuiltModelingBanner,
+  imageAlt: "As-built BIM model of a multi-level interior atrium",
   copyMaxWidth: 716,
   descriptionMaxWidth: 699,
 };
@@ -44,8 +50,8 @@ export const asBuiltModelingIntro = {
     "Automated QA/QC checks run through 100+ points before delivery",
     "Deliverables include architectural, structural and MEPF as-built BIM models",
   ],
-  mainImage: "/image/as-built-drawing-services.jpg",
-  imageAlt: "As-Built BIM modeling overview",
+  mainImage: asBuiltBimModelingOverview,
+  imageAlt: "As-built BIM model of an existing residential building",
 };
 
 export const asBuiltModelingOurClientsSection = {
@@ -74,32 +80,32 @@ export const asBuiltModelingServiceCards = [
   {
     title: "Architectural As-Built Modeling",
     text: "We model walls, doors, windows, floors and finishes exactly as they exist on site. Every set of architectural as built drawings reflects true building conditions for renovation and facility use.",
-    image: asBuiltPlaceholderImg,
+    image: architecturalAsBuiltModelingImg,
   },
   {
     title: "Structural As-Built Modeling",
     text: "We model columns, beams, slabs and foundations from your scan data. This gives structural teams a reliable base for retrofit, expansion, and renovation planning across every project.",
-    image: asBuiltPlaceholderImg,
+    image: structuralAsBuiltModelingImg,
   },
   {
     title: "MEPF As-Built Modeling",
     text: "Our engineers model HVAC, plumbing, electrical and fire protection systems from scan data. This delivers coordinated MEPF models that your maintenance and construction teams can trust.",
-    image: asBuiltPlaceholderImg,
+    image: mepfAsBuiltModelingImg,
   },
   {
     title: "Construction As-Builts & As-Built Plans",
     text: "We prepare construction as builts and as built plans that match real site conditions. Contractors and owners get documents they can trust for every decision.",
-    image: asBuiltPlaceholderImg,
+    image: constructionAsBuiltsPlansImg,
   },
   {
     title: "As-Built Drafting Services",
     text: "Our as built drafting services turn scan data and field notes into clean drawings. Your architects and engineers get code-compliant construction as built drawings ready to use.",
-    image: asBuiltPlaceholderImg,
+    image: asBuiltDraftingServicesImg,
   },
   {
     title: "CAD to BIM Conversion for As-Built Documentation",
     text: "We convert your existing 2D drawings into accurate 3D as-built BIM models. This turns older as built documents into a usable, modern set of construction as built drawings.",
-    image: asBuiltPlaceholderImg,
+    image: cadToBimAsBuiltDocumentationImg,
   },
 ];
 
@@ -194,7 +200,7 @@ export const asBuiltModelingWorkflowSteps = [
 export const asBuiltModelingTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "BIM Modeling Services",
+  titleAccent: "As-Built Modeling Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 };

@@ -1,4 +1,3 @@
-import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -6,6 +5,8 @@ import {
   mepBimTechnologyStackToolsRowTwo,
 } from "@/constants/mep-bim-modelling-content";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
+
+const workflowLogo = "/image/architecture-services/workflow-logo.svg";
 
 export const revitFamilyCreationStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -257,7 +258,7 @@ export const revitFamilyCreationWorkflowIntegrateSteps = [
 export const revitFamilyCreationTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "Revit Family Creation",
+  titleAccent: "Revit Family Creation Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 };

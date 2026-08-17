@@ -1,11 +1,12 @@
-import alecWhittenImg from "@/assets/images/3d-rendering-services-usa/alec-whitten.png";
-import iconDelivery from "@/assets/images/3d-rendering-services-usa/icons/delivery.svg";
-import iconExteriors from "@/assets/images/3d-rendering-services-usa/icons/exteriors.svg";
-import iconFloorPlans from "@/assets/images/3d-rendering-services-usa/icons/floor-plans.svg";
-import iconInteriors from "@/assets/images/3d-rendering-services-usa/icons/interiors.svg";
-import iconQuality from "@/assets/images/3d-rendering-services-usa/icons/quality.svg";
-import whittenLogoImg from "@/assets/images/3d-rendering-services-usa/whitten-logo.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+
+const alecWhittenImg = "/image/3d-rendering-services-usa/alec-whitten.png";
+const iconDelivery = "/image/3d-rendering-services-usa/icons/delivery.svg";
+const iconExteriors = "/image/3d-rendering-services-usa/icons/exteriors.svg";
+const iconFloorPlans = "/image/3d-rendering-services-usa/icons/floor-plans.svg";
+const iconInteriors = "/image/3d-rendering-services-usa/icons/interiors.svg";
+const iconQuality = "/image/3d-rendering-services-usa/icons/quality.svg";
+const whittenLogoImg = "/image/3d-rendering-services-usa/whitten-logo.png";
 
 export const threeDRenderingUsaHero = {
   tag: "3D Rendering",

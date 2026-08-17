@@ -1,4 +1,3 @@
-import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import {
   engagementModelCards,
@@ -11,8 +10,17 @@ import {
 } from "@/constants/mep-bim-modelling-content";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
-/** Temporary shared photo until data-center ACS assets are ready. */
-export const bimForDataCenterPlaceholderImage = "/image/data-center-mep-bim-overview.png";
+const workflowLogo = "/image/architecture-services/workflow-logo.svg";
+
+const dataCenterBanner = "/image/data-center-for-architecture-banner.jpg";
+const dataCenterOverview = "/image/data-center-for-architecture-overview.jpg";
+const schematicDesignSupportImg = "/image/schematic-design-support.jpg";
+const designServicesImg = "/image/design-services.jpg";
+const healthcareDataCenterBimImg = "/image/healthcare-data-center-bim-services.jpg";
+const dataCenterConstructionDocsImg = "/image/data-center-construction-documentation.jpg";
+const permitDrawingImg = "/image/permit-drawing.jpg";
+const asBuiltDraftingImg = "/image/as-built-drafting.jpg";
+const dataCenterRevitDocsImg = "/image/data-center-revit-construction-documents.jpg";
 
 export const BIM_FOR_DATA_CENTER_CONTACT_HASH = "#bim-for-data-center-page-contact";
 
@@ -30,8 +38,8 @@ export const bimForDataCenterHero = {
   description:
     "Data center deadlines leave no buffer for rework or missed coordination. Our pre-vetted BIM architects run AI-assisted workflows to close staffing gaps, tighten cross-discipline coordination and move permit sets through review faster.",
   ctaLabel: "Connect With Us",
-  imageSrc: bimForDataCenterPlaceholderImage,
-  imageAlt: "Data center BIM services for architecture firms",
+  imageSrc: dataCenterBanner,
+  imageAlt: "Cutaway BIM model of a data center showing server halls, cooling, and power systems",
   copyMaxWidth: 670,
   descriptionMaxWidth: 670,
   titleMaxWidth: 661,
@@ -57,8 +65,8 @@ export const bimForDataCenterIntro = {
     "QA/QC checks at every phase to catch clashes before they reach the field",
     "Data Center Drafting Services covering floor plans, sections, elevations and equipment layouts ready for coordination",
   ],
-  mainImage: bimForDataCenterPlaceholderImage,
-  imageAlt: "Data centre architectural BIM services overview",
+  mainImage: dataCenterOverview,
+  imageAlt: "Exploded BIM view of a data center with roof mechanical units, MEP systems, and server floor",
 };
 
 export const bimForDataCenterOurClientsSection = {
@@ -90,37 +98,37 @@ export const bimForDataCenterServiceCards = [
   {
     title: "Schematic Design Support",
     text: "Our BIM architects interpret your initial ideas and develop them into coordinated floor plans and massing studies for data center facilities. This groundwork sets clear space planning, security zoning and structural clearances before the design development process begins.",
-    image: bimForDataCenterPlaceholderImage,
+    image: schematicDesignSupportImg,
   },
   {
     title: "Design Services Development",
     text: "As layouts are finalized we refine structural coordination, equipment room clearances and life safety egress paths. Design development services carry your project from concept intent into buildable construction documents ready for engineering handoff.",
-    image: bimForDataCenterPlaceholderImage,
+    image: designServicesImg,
   },
   {
     title: "Healthcare Data Center BIM Services",
     text: "Our Hospital Data Center BIM Modeling covers server rooms, imaging support spaces and record storage areas. Medical Data Center Design Support keeps every model aligned with clinical, security and code requirements.",
-    image: bimForDataCenterPlaceholderImage,
+    image: healthcareDataCenterBimImg,
   },
   {
     title: "Data Center Construction Documentation",
     text: "Data Center Construction Documentation covers detailed floor plans, wall sections, equipment layouts and finish schedules ready for permit submission. Every sheet follows your firm's drawing standards and local jurisdiction requirements before it reaches the field.",
-    image: bimForDataCenterPlaceholderImage,
+    image: dataCenterConstructionDocsImg,
   },
   {
     title: "Permit Drawing Services",
     text: "Permit rejections cost weeks on a data center schedule. Our permit drawing services check code compliance early. This keeps your data center design and construction timeline on track from the first submission.",
-    image: bimForDataCenterPlaceholderImage,
+    image: permitDrawingImg,
   },
   {
     title: "As-Built Drafting Services",
     text: "Field conditions change during construction, especially in retrofit, renovation and expansion projects. Our data center drafting services document existing conditions in detail, giving your team a reliable base for future modifications.",
-    image: bimForDataCenterPlaceholderImage,
+    image: asBuiltDraftingImg,
   },
   {
     title: "Data Center Revit Construction Documents",
     text: "Data Center Revit Construction Documents keep every architectural, structural and civil discipline working from a single coordinated model. This reduces version conflicts and helps your team catch clashes before construction begins on site.",
-    image: bimForDataCenterPlaceholderImage,
+    image: dataCenterRevitDocsImg,
   },
 ];
 
@@ -139,7 +147,7 @@ export const bimForDataCenterAiBimWorkflowSection = {
   description:
     "Technology should accelerate production, not eliminate the technical expertise. Our AI-powered workflows automate repetitive modeling tasks, while experienced BIM architects manage model development, coordination, QC and final handover to make sure each project follows your standards and project requirements.",
   videoAriaLabel: "Play AI-assisted BIM delivery video",
-  posterSrc: bimForDataCenterPlaceholderImage,
+  posterSrc: dataCenterBanner,
 };
 
 export const bimForDataCenterWhyChooseSection = {
@@ -276,7 +284,7 @@ export const bimForDataCenterWorkflowIntegrateSteps = [
 export const bimForDataCenterTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "CAD Drafting Services",
+  titleAccent: "Data Center for Architecture",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 };

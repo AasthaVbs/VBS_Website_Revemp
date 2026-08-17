@@ -1,7 +1,3 @@
-import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
-import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
-import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
-import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -10,6 +6,11 @@ import {
 } from "@/constants/mep-bim-modelling-content";
 import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
+
+const flexibleEngagementModelsIcon = "/image/flexible-engagement-models.png";
+const iconEngageDedicated = "/image/architecture-services/icon-engage-dedicated.svg";
+const iconEngageStrategic = "/image/architecture-services/icon-engage-strategic.svg";
+const workflowLogo = "/image/architecture-services/workflow-logo.svg";
 
 export const PDF_TO_CAD_CONTACT_SECTION_ID = "pdf-to-cad-page-contact";
 
@@ -271,8 +272,8 @@ export const pdfToCadWorkflowIntegrateSteps = [
 
 export const pdfToCadTechnologyStackSection = {
   tag: "Tools & Platforms",
-  titleLine1: "We Use to Deliver",
-  titleAccent: "CAD Drafting Services",
+  titleLine1: "We Use to Deliver ",
+  titleAccent: "PDF to CAD Conversion Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 };

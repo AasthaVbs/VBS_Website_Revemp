@@ -1,34 +1,33 @@
 "use client";
 
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import { useState } from "react";
-
 import { SiteHeader } from "@/components/layout/site-header";
 import { PageContainer } from "@/components/layout/page-container";
 import {
   DeferredGetInTouchSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
-
-import img1 from "@/assets/images/hospitality-case/1.jpg";
-import img2 from "@/assets/images/hospitality-case/2.jpg";
-import img3 from "@/assets/images/hospitality-case/3.jpg";
-import img4 from "@/assets/images/hospitality-case/4.jpg";
-import img5 from "@/assets/images/hospitality-case/5.jpg";
-import img6 from "@/assets/images/hospitality-case/6.jpg";
-import img7 from "@/assets/images/hospitality-case/7.jpg";
-import img8 from "@/assets/images/hospitality-case/8.jpg";
-import img9 from "@/assets/images/hospitality-case/9.jpg";
-import img10 from "@/assets/images/hospitality-case/10.jpg";
-import img11 from "@/assets/images/hospitality-case/11.jpg";
-import img12 from "@/assets/images/hospitality-case/12.jpg";
-import heroBanner from "@/assets/images/hospitality-case/hospitality-banner.jpg";
-import overviewImage from "@/assets/images/hospitality-case/hospitality-project-overview.jpg";
-
 import "@/styles/vbs-hospitality-case-page.scss";
 
+const img1 = "/image/hospitality-case/1.jpg";
+const img2 = "/image/hospitality-case/2.jpg";
+const img3 = "/image/hospitality-case/3.jpg";
+const img4 = "/image/hospitality-case/4.jpg";
+const img5 = "/image/hospitality-case/5.jpg";
+const img6 = "/image/hospitality-case/6.jpg";
+const img7 = "/image/hospitality-case/7.jpg";
+const img8 = "/image/hospitality-case/8.jpg";
+const img9 = "/image/hospitality-case/9.jpg";
+const img10 = "/image/hospitality-case/10.jpg";
+const img11 = "/image/hospitality-case/11.jpg";
+const img12 = "/image/hospitality-case/12.jpg";
+const heroBanner = "/image/hospitality-case/hospitality-banner.jpg";
+const overviewImage = "/image/hospitality-case/hospitality-project-overview.jpg";
+
+
 type GalleryItem = {
-  src: StaticImageData;
+  src: string;
   alt: string;
 };
 
@@ -241,7 +240,7 @@ export function HospitalityCaseStudyPage() {
               {GALLERY.map((item) => (
                 <figure className="hyatt-gallery__item" key={item.alt}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={item.src.src} alt={item.alt} />
+                  <img src={item.src} alt={item.alt} />
                 </figure>
               ))}
             </div>

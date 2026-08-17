@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-16T17:01:41.969Z",
+  "fetchedAt": "2026-08-17T13:44:55.824Z",
   "posts": [
     {
       "_id": "a5c28aec-4bed-4856-b8e1-6ebfa366ab6b",
@@ -188646,6 +188646,174 @@
     }
   ],
   "webinars": [
+    {
+      "_id": "df09a546-1315-4286-9792-1bcbcbec2536",
+      "bannerImage": {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/rog08jar/production/da41aaf5198d8e9ddce38da97cbd8ed37ca62162-1250x700.jpg"
+        }
+      },
+      "body": [
+        {
+          "_key": "37590c26fb5f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "32bf720ad14f",
+              "_type": "span",
+              "marks": [],
+              "text": "Designing only to meet ADA requirements can leave real accessibility challenges unresolved. Many buildings technically comply with regulations while still creating barriers for users with different abilities, ages, and mobility needs."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0401911c36d7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "86b21c88eb24",
+              "_type": "span",
+              "marks": [],
+              "text": "This webinar explains how architects, designers, facility owners, and project teams can move beyond minimum compliance and create spaces that work better for everyone. Join us to learn practical strategies, real-world examples, and inclusive design principles that improve user experience, increase participation, and reduce costly design changes in the future."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "877b453ae329",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "949953ef666a",
+              "_type": "span",
+              "marks": [],
+              "text": "What You'll Learn"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "2ebce9c4d653",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "02ddd0a6eb4d",
+              "_type": "span",
+              "marks": [],
+              "text": "Understand the difference between ADA compliance, accessibility, Universal Design, and Inclusive Design."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2ccfbbd32ef5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3c5b7d871e0a",
+              "_type": "span",
+              "marks": [],
+              "text": "Identify common barriers that affect safety, independence, and everyday user experience."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a8bae36149ca",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8e0645b842fb",
+              "_type": "span",
+              "marks": [],
+              "text": "Learn how inclusive design creates better spaces for people of all ages and abilities."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5738e26e6714",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ec4965e7a50e",
+              "_type": "span",
+              "marks": [],
+              "text": "Explore the social and business benefits of accessible and inclusive environments."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "67188bf622b5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a54ff7b7631c",
+              "_type": "span",
+              "marks": [],
+              "text": "Apply inclusive design principles early to reduce future modifications and improve project outcomes."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9efa4065a923",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b44e2b4bd29b",
+              "_type": "span",
+              "marks": [],
+              "text": "See how lived experiences and real-world examples lead to better design decisions."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "eventDate": "2026-09-23T14:30:00.000Z",
+      "slug": "beyond-ada-compliance-inclusive-design",
+      "title": [
+        {
+          "_key": "5c36c20be17a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f98740e2ee04",
+              "_type": "span",
+              "marks": [],
+              "text": "Why Access Matters: Moving Beyond ADA Compliance to Inclusive Design"
+            }
+          ],
+          "markDefs": [],
+          "style": "h1"
+        }
+      ],
+      "upcomingImage": null,
+      "youtubeThumbnail": null
+    },
     {
       "_id": "33acd938-5570-4bc2-92ec-ec55ab95442f",
       "bannerImage": {

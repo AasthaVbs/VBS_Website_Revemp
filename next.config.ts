@@ -209,6 +209,7 @@ const nextConfig: NextConfig = {
       { source: "/portfolio", destination: "/projects", permanent: true },
       { source: "/portfolio/:path*", destination: "/projects/:path*", permanent: true },
       { source: "/success-stories", destination: "/projects", permanent: true },
+      { source: "/success-stories/:path*", destination: "/projects", permanent: true },
       { source: "/case-study", destination: "/projects", permanent: true },
       { source: "/case-study/:path*", destination: "/projects/:path*", permanent: true },
       { source: "/dedicated-resource", destination: "/engagement-models", permanent: true },

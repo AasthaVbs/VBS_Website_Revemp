@@ -1,7 +1,3 @@
-import budgetValidationIcon from "@/assets/images/budget-validation-icon.png";
-import complexMepProjectsIcon from "@/assets/images/complex-mep-projects-icon.png";
-import resourceConstraintsIcon from "@/assets/images/resource-constraints-icon.png";
-import tenderStageIcon from "@/assets/images/tender-stage-icon.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
   MepBimFeatureCard,
@@ -15,6 +11,11 @@ import {
   mepBimTechnologyStackToolsRowOne,
   mepBimTechnologyStackToolsRowTwo,
 } from "@/constants/mep-bim-modelling-content";
+
+const budgetValidationIcon = "/image/budget-validation-icon.png";
+const complexMepProjectsIcon = "/image/complex-mep-projects-icon.png";
+const resourceConstraintsIcon = "/image/resource-constraints-icon.png";
+const tenderStageIcon = "/image/tender-stage-icon.png";
 
 export const mepPreBidHero = {
   tag: "Pre-Bid Estimation",
@@ -241,25 +242,25 @@ export const mepPreBidWhyChooseCards: MepBimUseCaseCard[] = [
     title: "Stage Tender",
     description:
       "Reliable cost estimating to prepare competitive bids for government and private sector projects.",
-    icon: tenderStageIcon.src,
+    icon: tenderStageIcon,
   },
   {
     title: "Resource Constraints",
     description:
       "Bid deadlines are tight and your in-house estimating team is stretched thin.",
-    icon: resourceConstraintsIcon.src,
+    icon: resourceConstraintsIcon,
   },
   {
     title: "Complex MEP Projects",
     description:
       "Support detailed estimating by trade for HVAC, electrical and plumbing bids.",
-    icon: complexMepProjectsIcon.src,
+    icon: complexMepProjectsIcon,
   },
   {
     title: "Validation of the budget",
     description:
       "Have internal estimates checked by an independent review before submitting the final bid.",
-    icon: budgetValidationIcon.src,
+    icon: budgetValidationIcon,
   },
 ];
 

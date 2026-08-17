@@ -1,4 +1,3 @@
-import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import {
   engagementModelCards,
@@ -11,8 +10,18 @@ import {
 } from "@/constants/mep-bim-modelling-content";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
-/** Temporary shared photo until 3D rendering ACS assets are ready. */
-export const threeDRenderingPlaceholderImage = "/image/3d-Rendering.jpg";
+const workflowLogo = "/image/architecture-services/workflow-logo.svg";
+
+const renderingBanner = "/image/3d-rendering-services-banner.jpg";
+const renderingOverview = "/image/3d-rendering-services-overview.jpg";
+const exteriorRenderingImg = "/image/3d-exterior-rendering.jpg";
+const interiorRenderingImg = "/image/3d-interior-rendering.jpg";
+const architecturalWalkthroughImg = "/image/3d-architectural-walkthrough.jpg";
+const vr360PanoramaImg = "/image/vr-and-360-panorama-rendering.jpg";
+const aerialSiteContextImg = "/image/aerial-and-site-context-rendering.jpg";
+const conceptDesignDevelopmentImg = "/image/concept-and-design-development-rendering.jpg";
+const realEstateMarketingImg = "/image/real-estate-marketing-rendering.jpg";
+const interiorDesignPresentationImg = "/image/interior-design-presentation-rendering.jpg";
 
 export const THREE_D_RENDERING_CONTACT_HASH = "#3d-rendering-page-contact";
 
@@ -30,8 +39,8 @@ export const threeDRenderingHero = {
   description:
     "Our US-trained BIM experts use AI-powered workflows to deliver exterior, interior and walkthrough visuals faster, without losing design quality.",
   ctaLabel: "Connect With Us",
-  imageSrc: threeDRenderingPlaceholderImage,
-  imageAlt: "3D rendering services for architecture firms",
+  imageSrc: renderingBanner,
+  imageAlt: "Photorealistic 3D rendering of a modern house at dusk",
   copyMaxWidth: 670,
   descriptionMaxWidth: 605,
   titleMaxWidth: 567,
@@ -57,8 +66,8 @@ export const threeDRenderingIntro = {
     "Every render goes through a QA/QC review before it reaches your inbox",
     "Deliverables include stills, animations, 360 panoramas, VR walkthroughs and print-ready files",
   ],
-  mainImage: threeDRenderingPlaceholderImage,
-  imageAlt: "Architectural 3D rendering overview",
+  mainImage: renderingOverview,
+  imageAlt: "3D architectural rendering overview of a modern house",
 };
 
 export const threeDRenderingOurClientsSection = {
@@ -90,42 +99,42 @@ export const threeDRenderingServiceCards = [
   {
     title: "3D Exterior Rendering",
     text: "Our 3D exterior rendering services show your building's facade, materials and site context under daylight, dusk or night lighting. Clients see the finished look early, ask fewer questions, and approve designs faster.",
-    image: threeDRenderingPlaceholderImage,
+    image: exteriorRenderingImg,
   },
   {
     title: "3D Interior Rendering",
     text: "Our 3D interior rendering services capture room layouts, finishes, furniture and lighting so clients can picture the space before it exists. Interior designers use these renders to test material and color choices.",
-    image: threeDRenderingPlaceholderImage,
+    image: interiorRenderingImg,
   },
   {
     title: "3D Architectural Walkthrough",
     text: "Our 3D architectural walkthrough services turn static floor plans into moving tours through hallways, lobbies and rooms. Buyers and stakeholders understand flow and scale better than they do from flat drawings.",
-    image: threeDRenderingPlaceholderImage,
+    image: architecturalWalkthroughImg,
   },
   {
     title: "VR and 360 Panorama Rendering",
     text: "VR and 360 panorama renders let clients look around a room or site from any angle on a phone or headset. This helps remote stakeholders join design reviews without traveling to the site.",
-    image: threeDRenderingPlaceholderImage,
+    image: vr360PanoramaImg,
   },
   {
     title: "Aerial and Site Context Rendering",
     text: "Aerial renders place your building within its neighborhood. These renders show roads, landscaping and neighboring structures from above. Planning boards, investors and city reviewers use these views to judge site fit.",
-    image: threeDRenderingPlaceholderImage,
+    image: aerialSiteContextImg,
   },
   {
     title: "Concept and Design Development Rendering",
     text: "Concept renders help architects test massing, materials and layout ideas before design development locks in. Design teams use quick renders to compare options, get client buy-in, and pick a direction early.",
-    image: threeDRenderingPlaceholderImage,
+    image: conceptDesignDevelopmentImg,
   },
   {
     title: "Real Estate Marketing Rendering",
     text: "Marketing renders give developers and brokers sale-ready images before a single unit is built. These visuals appear in brochures, listing sites and sales galleries, helping teams drive early reservations.",
-    image: threeDRenderingPlaceholderImage,
+    image: realEstateMarketingImg,
   },
   {
     title: "Interior Design Presentation Rendering",
     text: "Interior design renders show furniture layouts, finishes and color palettes for client presentations and mood boards. Designers use these visuals to get sign-off before ordering materials or starting construction.",
-    image: threeDRenderingPlaceholderImage,
+    image: interiorDesignPresentationImg,
   },
 ];
 
@@ -144,7 +153,7 @@ export const threeDRenderingAiBimWorkflowSection = {
   description:
     "Technology should accelerate production, not replace technical expertise. Our AI-assisted workflows automate repetitive modeling tasks, while experienced rendering specialists oversee model development, coordination, quality reviews, and final deliverables to ensure every project meets your standards and project requirements.",
   videoAriaLabel: "Play AI-assisted rendering delivery video",
-  posterSrc: threeDRenderingPlaceholderImage,
+  posterSrc: renderingBanner,
   titleMaxWidth: 590,
 };
 
@@ -282,7 +291,7 @@ export const threeDRenderingWorkflowIntegrateSteps = [
 export const threeDRenderingTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "CAD Drafting Services",
+  titleAccent: "3D Rendering Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 };

@@ -1,4 +1,4 @@
-import logoIcon from "@/assets/images/logo-icon.svg";
+const logoIcon = "/image/logo-icon.svg";
 
 /** Default (muted) — VBS logo outline icon; colored fill on hover. */
 export const benefitIconMuted = logoIcon;

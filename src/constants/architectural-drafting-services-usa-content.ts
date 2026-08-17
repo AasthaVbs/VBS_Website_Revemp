@@ -1,8 +1,9 @@
-import threeDayOnboardingIcon from "@/assets/images/3-day-onboarding.svg";
-import riskFreeTrialIcon from "@/assets/images/risk-free-trial.png";
-import flexibleEngagementIcon from "@/assets/images/flexible-engagement-models.png";
-import timezoneIcon from "@/assets/images/multi-time-zone-availability-icon.png";
 import { clientSuccessStories } from "@/constants/client-success-stories-content";
+
+const threeDayOnboardingIcon = "/image/3-day-onboarding.svg";
+const riskFreeTrialIcon = "/image/risk-free-trial.png";
+const flexibleEngagementIcon = "/image/flexible-engagement-models.png";
+const timezoneIcon = "/image/multi-time-zone-availability-icon.png";
 
 export const architecturalDraftingUsaStatsStrip = [
   { value: "1000+", color: "text-vbs-red", label: "Firms Trust Our Drafting Services" },

@@ -5,16 +5,16 @@ import Image from "next/image";
 import { Modal } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-import heroImage from "@/assets/images/calculator-cost-of-one-more-project (1).jpg";
 import { LandingTopHeader } from "@/components/landing/landing-top-header";
 import { PageContainer } from "@/components/layout/page-container";
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { ZohoWebToLeadToolPage } from "@/components/zoho/zoho-web-to-lead-tool-page";
-
 import "@/styles/calculator-cost-of-one-more-project.scss";
+
+const heroImage = encodeURI("/image/calculator-cost-of-one-more-project (1).jpg");
+
 
 const BASE = 22;
 

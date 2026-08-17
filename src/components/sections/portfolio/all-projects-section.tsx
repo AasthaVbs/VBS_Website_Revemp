@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-
-import portfolioBannerImg from "@/assets/images/portfolio-banner.jpg";
 import { PageContainer } from "@/components/layout/page-container";
 import { PortfolioProjectCard } from "@/components/sections/portfolio/portfolio-project-card";
 import { SectionTag } from "@/components/sections/section-primitives";
@@ -9,6 +7,8 @@ import {
   allProjectsIntro,
 } from "@/constants/portfolio-page-content";
 import { allPortfolioProjectCards } from "@/lib/portfolio-catalog";
+
+const portfolioBannerImg = "/image/portfolio-banner.jpg";
 
 /** Figma 948:26341 — flex two-column layout; sticky left; all cards in document flow */
 export function AllProjectsSection() {

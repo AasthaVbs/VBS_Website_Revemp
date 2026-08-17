@@ -58,6 +58,8 @@ export async function FloorPlanServicesPage() {
         <MepPageHeroSection
           {...floorPlanHero}
           imageSize="compact"
+          mobileLayout="copy-image-cta"
+          collapseTitleBreakOnMobile
           ctaHref="#floor-plan-page-contact"
           containerClassName="!pt-0 sm:!pt-1 lg:!pt-4"
         />
@@ -87,7 +89,7 @@ export async function FloorPlanServicesPage() {
           toolsRowOne={floorPlanTechnologyStackToolsRowOne}
           toolsRowTwo={floorPlanTechnologyStackToolsRowTwo}
           titleLayout="stacked"
-          titleMaxWidth={615}
+          titleMaxWidth={800}
           descriptionMaxWidth={579}
         />
         <DeferredMepServiceBenefitsSection

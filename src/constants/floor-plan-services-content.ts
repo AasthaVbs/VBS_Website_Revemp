@@ -1,7 +1,3 @@
-import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
-import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
-import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
-import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -11,8 +7,19 @@ import {
 import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
-/** Temporary shared photo until floor-plan-specific assets are ready. */
-export const floorPlanPlaceholderImage = "/image/2d-3d-floor-plans.jpg";
+const flexibleEngagementModelsIcon = "/image/flexible-engagement-models.png";
+const iconEngageDedicated = "/image/architecture-services/icon-engage-dedicated.svg";
+const iconEngageStrategic = "/image/architecture-services/icon-engage-strategic.svg";
+const workflowLogo = "/image/architecture-services/workflow-logo.svg";
+
+const floorPlanBanner = "/image/2d-3d-floor-plan-banner.jpg";
+const floorPlanOverview = "/image/2d-3d-floor-plan-overview.jpg";
+const sitePlanRenderingImg = "/image/2d-3d-site-plan-rendering-services.jpg";
+const twoDFloorPlanServiceImg = "/image/2d-floor-plan-service.jpg";
+const twoDToThreeDFloorPlanConversionImg = "/image/2d-to-3d-floor-plan-conversion.jpg";
+const threeDExteriorRenderingImg = "/image/3d-exterior-rendering-services.jpg";
+const threeDFloorPlanServicesImg = "/image/3d-floor-plan-services.jpg";
+const threeDInteriorRenderingImg = "/image/3d-interior-rendering-services.jpg";
 
 export const floorPlanStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -28,8 +35,8 @@ export const floorPlanHero = {
   description:
     "Manual floor plans slow approvals and confuse buyers. With AI-assisted workflows, our BIM architects provide accurate quality assured floor plans faster.",
   ctaLabel: "Connect With Us",
-  imageSrc: floorPlanPlaceholderImage,
-  imageAlt: "2D and 3D Floor Plan Services",
+  imageSrc: floorPlanBanner,
+  imageAlt: "2D and 3D floor plan views of a modern apartment layout",
   copyMaxWidth: 780,
   descriptionMaxWidth: 650,
   titleMaxWidth: 780,
@@ -55,8 +62,8 @@ export const floorPlanIntro = {
     "Every drawing passes proven QC process before a senior reviewer signs off.",
     "Deliverables include plans, elevations, schedules and 3D renders in RVT, DWG or PDF.",
   ],
-  mainImage: floorPlanPlaceholderImage,
-  imageAlt: "Floor plan services overview",
+  mainImage: floorPlanOverview,
+  imageAlt: "2D office floor plan with matching 3D interior views",
 };
 
 export const floorPlanOurClientsSection = {
@@ -87,32 +94,32 @@ export const floorPlanServiceCards = [
   {
     title: "2D Floor Plan Service",
     text: "Our BIM experts draft clean, dimensioned 2D Floor Plan Service layouts from sketches, surveys or CAD files. All plans comply with your scale, symbols and annotation standards for permit or listing use.",
-    image: floorPlanPlaceholderImage,
+    image: twoDFloorPlanServiceImg,
   },
   {
     title: "3D Floor Plan Services",
     text: "Our 3D Floor Plan Services translate flat layouts into furnished, true to scale spaces that buyers and stakeholders can visualize instantly. These renders are used by teams for listings, presentations and design reviews.",
-    image: floorPlanPlaceholderImage,
+    image: threeDFloorPlanServicesImg,
   },
   {
     title: "2D to 3D Floor Plan Conversion",
     text: "We convert 2D floor plan to 3D model, making sure no new site visits or redesign work are necessary. This conversion allows remodelers, agents and developers to visualize a space before construction begins.",
-    image: floorPlanPlaceholderImage,
+    image: twoDToThreeDFloorPlanConversionImg,
   },
   {
     title: "3D Exterior Rendering Services",
     text: "Our team creates photorealistic exterior renders to show massing, materials and planting areas before the build. These renders assist with marketing, investor presentations and design approval meetings.",
-    image: floorPlanPlaceholderImage,
+    image: threeDExteriorRenderingImg,
   },
   {
     title: "3D Interior Rendering Services",
     text: "We model interiors with finishes, furniture and lighting so clients can test layouts before committing budget. With interior renderings, designers can try out material selections and spatial flow at an early stage.",
-    image: floorPlanPlaceholderImage,
+    image: threeDInteriorRenderingImg,
   },
   {
     title: "2D & 3D Site Plan Rendering Services",
     text: "Our teams prepare detailed 2D and 3D site plans covering all aspects of grading, planting areas, parking and utility layouts. These plans support your permitting, zoning and stakeholder presentations.",
-    image: floorPlanPlaceholderImage,
+    image: sitePlanRenderingImg,
   },
 ];
 
@@ -131,7 +138,7 @@ export const floorPlanAiBimWorkflowSection = {
   description:
     "Explore the workflow that combines proprietary AI tools with expert BIM oversight to accelerate production, maintain quality and support scalable project delivery.",
   videoAriaLabel: "Play AI-driven BIM workflow video",
-  posterSrc: floorPlanPlaceholderImage,
+  posterSrc: floorPlanBanner,
 };
 
 export const floorPlanWhyChooseSection = {
@@ -268,7 +275,7 @@ export const floorPlanWorkflowIntegrateSteps = [
 export const floorPlanTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "2D and 3D Floor Plan Services",
+  titleAccent: "2D and 3D Floor Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated 2D and 3D floor plans for architecture, real estate and construction teams.",
 };

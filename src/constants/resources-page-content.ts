@@ -1,3 +1,11 @@
+import { FIGMA_RESOURCE_EXCERPT, FIGMA_RESOURCE_IMAGES } from "@/constants/resource-figma-assets";
+import {
+  extendedWhitepaperListingItems,
+  caseStudyListingItems,
+  portfolioListingItems,
+  testimonialListingItems,
+} from "@/constants/resource-catalog-content";
+
 export const resourcesPageHero = {
   tag: "Resources",
   titleLead: "About ",
@@ -51,7 +59,6 @@ export const resourceSubServiceFilters = [
   "5D BIM Cost Estimation",
 ] as const;
 
-import { FIGMA_RESOURCE_EXCERPT, FIGMA_RESOURCE_IMAGES } from "@/constants/resource-figma-assets";
 
 export { FIGMA_RESOURCE_EXCERPT, FIGMA_RESOURCE_IMAGES };
 
@@ -167,12 +174,6 @@ export const figmaBlogListingItems: ResourceListingItem[] = [
   },
 ];
 
-import {
-  extendedWhitepaperListingItems,
-  caseStudyListingItems,
-  portfolioListingItems,
-  testimonialListingItems,
-} from "@/constants/resource-catalog-content";
 
 export type ExtendedWhitepaperListingItem = ResourceListingItem & {
   services?: ResourceService[];

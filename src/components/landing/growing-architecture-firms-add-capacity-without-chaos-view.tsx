@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-
 import LandingPdfLeadModal from "@/components/landing/landing-pdf-lead-modal";
 import { LandingTopHeader } from "@/components/landing/landing-top-header";
 import { PageContainer } from "@/components/layout/page-container";
@@ -9,25 +8,25 @@ import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-deliv
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
-
-import heroImg from "@/assets/images/When-Hiring-Normal 1.jpg";
-import reliefImg from "@/assets/images/Why-Adding-People-Doesn\u2019t-Always-Create-Relief 1.jpg";
-import capacityDecisionsImg from "@/assets/images/A-Structured-Way-to-Evaluate-Your-Capacity-Decisions 1.jpg";
-import hiringImmediateIcon from "@/assets/images/what incrsse immediatley.svg";
-import hiringTakesTimeIcon from "@/assets/images/what takes time.svg";
-import parallelProjectsIcon from "@/assets/images/parallel projects.svg";
-import moreHandoffsIcon from "@/assets/images/more handoffs.svg";
-import decisionBacklogIcon from "@/assets/images/decison backlog.svg";
-import structuralIssueIcon from "@/assets/images/structural issue.svg";
-import reviewTrapIcon from "@/assets/images/gaf-review-trap.svg";
-import coordinationPullIcon from "@/assets/images/gaf-coordination-pull.svg";
-import decisionRedundancyIcon from "@/assets/images/gaf-decision-redundancy.svg";
-import defaultCheckpointIcon from "@/assets/images/gaf-default-checkpoint.svg";
-import workflowFitIcon from "@/assets/images/gaf-workflow-fit.svg";
-import decisionFlowIcon from "@/assets/images/gaf-decision-flow.svg";
-import capacityPathsIcon from "@/assets/images/gaf-capacity-paths.svg";
-
 import "@/styles/growing-architecture-firms-capacity.scss";
+
+const heroImg = encodeURI("/image/When-Hiring-Normal 1.jpg");
+const reliefImg = encodeURI("/image/Why-Adding-People-Doesn’t-Always-Create-Relief 1.jpg");
+const capacityDecisionsImg = encodeURI("/image/A-Structured-Way-to-Evaluate-Your-Capacity-Decisions 1.jpg");
+const hiringImmediateIcon = encodeURI("/image/what incrsse immediatley.svg");
+const hiringTakesTimeIcon = encodeURI("/image/what takes time.svg");
+const parallelProjectsIcon = encodeURI("/image/parallel projects.svg");
+const moreHandoffsIcon = encodeURI("/image/more handoffs.svg");
+const decisionBacklogIcon = encodeURI("/image/decison backlog.svg");
+const structuralIssueIcon = encodeURI("/image/structural issue.svg");
+const reviewTrapIcon = "/image/gaf-review-trap.svg";
+const coordinationPullIcon = "/image/gaf-coordination-pull.svg";
+const decisionRedundancyIcon = "/image/gaf-decision-redundancy.svg";
+const defaultCheckpointIcon = "/image/gaf-default-checkpoint.svg";
+const workflowFitIcon = "/image/gaf-workflow-fit.svg";
+const decisionFlowIcon = "/image/gaf-decision-flow.svg";
+const capacityPathsIcon = "/image/gaf-capacity-paths.svg";
+
 
 const CAPACITY_GUIDE_PDF_URL =
   "https://www.virtualbuildingstudio.com/resources/when-hiring-breaks.pdf?utm_source=LP_CapacityWithoutChaos&utm_medium=LPCTA&utm_campaign=T2TOFU";

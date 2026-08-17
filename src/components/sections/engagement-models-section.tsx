@@ -17,6 +17,8 @@ export type EngagementModelsSectionProps = {
   tag?: string;
   titleLine1?: string;
   titleAccent?: string;
+  /** Optional dark text after the accent (e.g. " in 3 Steps"). */
+  titleTrail?: string;
   description?: string;
   breakTitle?: boolean;
   titleMaxWidth?: number;
@@ -94,6 +96,7 @@ export function EngagementModelsSection({
   tag = defaultEngagementModelsHeader.tag,
   titleLine1 = defaultEngagementModelsHeader.titleLine1,
   titleAccent = defaultEngagementModelsHeader.titleAccent,
+  titleTrail,
   description = defaultEngagementModelsHeader.description,
   titleMaxWidth,
   descriptionMaxWidth,
@@ -118,6 +121,9 @@ export function EngagementModelsSection({
               <span className="vbs-engagement-models-section__title-dark">{titleLine1} </span>
               {breakTitle ? <br /> : null}
               <span className="vbs-engagement-models-section__title-accent">{titleAccent}</span>
+              {titleTrail ? (
+                <span className="vbs-engagement-models-section__title-dark">{titleTrail}</span>
+              ) : null}
             </h2>
           </div>
           <p

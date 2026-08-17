@@ -91,7 +91,7 @@ export async function BimForDataCenterPage() {
           toolsRowOne={bimForDataCenterTechnologyStackToolsRowOne}
           toolsRowTwo={bimForDataCenterTechnologyStackToolsRowTwo}
           titleLayout="stacked"
-          titleMaxWidth={615}
+          titleMaxWidth={920}
           descriptionMaxWidth={539}
         />
         <DeferredMepServiceBenefitsSection

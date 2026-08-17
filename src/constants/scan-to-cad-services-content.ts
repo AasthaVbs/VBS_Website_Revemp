@@ -6,6 +6,15 @@ import {
 } from "@/constants/mep-bim-modelling-content";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
+const scanToCadBanner = "/image/scan-to-cad-conversion-services-banner.jpg";
+const scanToCadOverview = "/image/scan-to-cad-conversion-services-overview.jpg";
+const pointCloudToCadDraftingImg = "/image/point-cloud-to-cad-drafting.jpg";
+const scanPdfLegacyDrawingImg = "/image/scan-pdf-and-legacy-drawing-conversion.jpg";
+const reflectedCeilingPlanDraftingImg = "/image/reflected-ceiling-plan-drafting.jpg";
+const structuralMepCadDrawingImg = "/image/structural-and-mep-cad-drawing.jpg";
+const scanTo2d3dFloorPlanCadImg = "/image/scan-to-2d-and-3d-floor-plan-in-cad.jpg";
+const cadAsBuiltDocumentationImg = "/image/cad-as-built-documentation.jpg";
+
 export const scanToCadStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
   { value: "300+", color: "text-vbs-green", label: "Global Clients" },
@@ -20,8 +29,8 @@ export const scanToCadHero = {
   description:
     "Manual drafting from scan data slows your project and includes unpredicted errors. Our CAD experts run an AI-powered workflow that converts scans into build-ready CAD drawings.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: "/image/scan-to-cad-conversion-services-banner.png",
-  imageAlt: "Scan to CAD Conversion Services",
+  imageSrc: scanToCadBanner,
+  imageAlt: "Scan to CAD conversion from point cloud to 2D and 3D drawings",
   copyMaxWidth: 701,
   descriptionMaxWidth: 701,
 };
@@ -45,8 +54,8 @@ export const scanToCadIntro = {
     "Each file passes through documented quality checks, that include manual review of point clouds in AutoCAD.",
     "Deliverables include DWG, DXF, PDF and RVT files, formatted to convert point cloud to 3D model AutoCAD projects can use right away.",
   ],
-  mainImage: "/image/scan-to-cad-overview.png",
-  imageAlt: "Scan to CAD overview",
+  mainImage: scanToCadOverview,
+  imageAlt: "Point cloud scan converted into a CAD as-built drawing",
 };
 
 export const scanToCadOurClientsSection = {
@@ -75,32 +84,32 @@ export const scanToCadServiceCards = [
   {
     title: "Point Cloud to CAD Drafting",
     text: "We convert point cloud to CAD drawings covering floor plans, elevations and sections, processing LiDAR scan to CAD data from Leica, FARO and other scanners.",
-    image: "/image/point-cloud-to-cad-drafting.png",
+    image: pointCloudToCadDraftingImg,
   },
   {
     title: "Scan PDF and Legacy Drawing Conversion",
     text: "Our scan to DWG converter workflow brings outdated PDFs and legacy drawings into editable, layered CAD files that match your current standards and naming conventions.",
-    image: "/image/scan-pdf-and-legacy-drawing-conversion.png",
+    image: scanPdfLegacyDrawingImg,
   },
   {
     title: "Reflected Ceiling Plan Drafting",
     text: "We extract ceiling grids, MEP fixtures and lighting layouts from scan data, giving coordination teams a clear, structured reference before construction begins.",
-    image: "/image/reflected-ceiling-plan-drafting.png",
+    image: reflectedCeilingPlanDraftingImg,
   },
   {
     title: "Structural and MEP CAD Drawing",
     text: "We map columns, beams, duct runs and pipe routing from your scan into structured CAD files your engineering team can use right away for coordination.",
-    image: "/image/structural-and-mep-cad-drawing.png",
+    image: structuralMepCadDrawingImg,
   },
   {
     title: "Scan to 2D and 3D Floor Plan in CAD",
     text: "We turn your 3D scan to 2D drawing outputs into clean floor plans and sections, capturing every wall, opening and structural element your team needs.",
-    image: "/image/scan-to-2d-and-3d-floor-plan-in-cad.png",
+    image: scanTo2d3dFloorPlanCadImg,
   },
   {
     title: "CAD As-built Documentation",
     text: "We deliver annotated, dimensioned existing conditions drawings that reflect actual site conditions, not original design intent, ready for renovation and permit submission.",
-    image: "/image/cad-as-built-documentation.png",
+    image: cadAsBuiltDocumentationImg,
   },
 ];
 
@@ -200,7 +209,7 @@ export const scanToCadWorkflowSteps = [
 export const scanToCadTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "BIM Modeling Services",
+  titleAccent: "Scan to CAD Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 };

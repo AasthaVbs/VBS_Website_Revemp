@@ -3,19 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-
 import { LandingTopHeader } from "@/components/landing/landing-top-header";
 import { PageContainer } from "@/components/layout/page-container";
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
-
-import heroImg from "@/assets/images/delivery-capacity-hero.png";
-import productionIcon from "@/assets/images/dc-production.svg";
-import coordinationIcon from "@/assets/images/dc-coordination.svg";
-import controlIcon from "@/assets/images/dc-control.svg";
-
 import "@/styles/delivery-capacity-in-architecture-firms.scss";
+
+const heroImg = "/image/delivery-capacity-hero.png";
+const productionIcon = "/image/dc-production.svg";
+const coordinationIcon = "/image/dc-coordination.svg";
+const controlIcon = "/image/dc-control.svg";
+
 
 const FAMILIAR_SIGNALS = [
   "You've added staff, yet deadlines still feel compressed, and fire drills are the norm.",

@@ -9,8 +9,16 @@ import { allServicesResourcesSection } from "@/constants/shared-sections";
 export const LASER_SCAN_TO_BIM_CONTACT_ID = "laser-scan-to-bim-page-contact";
 export const LASER_SCAN_TO_BIM_CONTACT_HASH = `#${LASER_SCAN_TO_BIM_CONTACT_ID}`;
 
-/** Temporary placeholders until dedicated art is provided */
-const laserScanPlaceholderImg = "/image/as-built.jpg";
+const laserScanBanner = "/image/laser-scan-to-bim-banner.jpg";
+const laserScanOverview = "/image/laser-scan-to-bim-Overview.jpg";
+const architecturalScanToBimImg = "/image/architectural-scan-to-bim.jpg";
+const structuralScanToBimImg = "/image/structural-scan-to-bim.jpg";
+const mepScanToBimImg = "/image/mep-scan-to-bim.jpg";
+const pointCloudToBimModelingImg = "/image/point-cloud-to-bim-modeling.jpg";
+const scanToRevitModelingImg = "/image/scan-to-revit-modeling.jpg";
+const asBuiltBimModelingImg = "/image/as-built-bim-modeling.jpg";
+const scanToCadConversionImg = "/image/scan-to-cad-conversion.jpg";
+const clashDetectionCoordinationImg = "/image/clash-detection-and-coordination.jpg";
 
 export const laserScanToBimStatsStrip = [
   { value: "1000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -26,8 +34,8 @@ export const laserScanToBimHero = {
   description:
     "Our Top 1% US-Trained Experts Convert Point Clouds into Revit or CAD Models with 99% Accuracy – Speed Up Project Timelines, and Bring Clarity to Your Renovation and Retrofit Workflows.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: laserScanPlaceholderImg,
-  imageAlt: "AI-powered Laser Scan to BIM Services",
+  imageSrc: laserScanBanner,
+  imageAlt: "Point cloud scan of a building converted into a clean Scan to BIM model",
   copyMaxWidth: 760,
   descriptionMaxWidth: 760,
   titleMaxWidth: 638,
@@ -45,6 +53,7 @@ export const laserScanToBimIntro = {
   sideDescription:
     "The deliverables adhere to project-specific requirements, and supporting facility management workflows with minimal data loss or rework.",
   featuresTitle: "Pre-vetted Scan to BIM Experts Ready to Deliver Precision from Day 1",
+  featuresTitleClassName: "text-[24px] sm:text-[28px]",
   features: [
     "Geometrically accurate Scan to BIM Revit models developed from registered point cloud data (E57, RCP, or LAS)",
     "Discipline-specific modeling for architectural, structural, and MEP components based on scan density and required LOD (LOD 300 for coordination or LOD 400 for fabrication)",
@@ -54,8 +63,8 @@ export const laserScanToBimIntro = {
     "As-built modeling for existing conditions, suitable for construction documentation, permit sets, and facility asset mapping",
     "File deliverables in RVT, DWG, NWC, and IFC formats for downstream compatibility with design, coordination, and FM platforms",
   ],
-  mainImage: laserScanPlaceholderImg,
-  imageAlt: "Laser Scan to BIM overview",
+  mainImage: laserScanOverview,
+  imageAlt: "Laser scanner converting a building point cloud into a Revit BIM model",
 };
 
 export const laserScanToBimOurClientsSection = {
@@ -85,42 +94,42 @@ export const laserScanToBimServiceCards = [
   {
     title: "Architectural Scan to BIM",
     text: "We recreate building envelopes and interiors such as walls, windows, doors, ceilings, stairs, and finish materials, with high geometric fidelity. Our Scan to BIM Revit Services supports accurate area calculations, quantity takeoffs, and design planning.",
-    image: laserScanPlaceholderImg,
+    image: architecturalScanToBimImg,
   },
   {
     title: "Structural Scan to BIM",
     text: "Our Scan to BIM Conversion Services include detailed modeling of Structural elements like columns, beams, foundations, and load-bearing walls with correct profiles and materials. We ensure alignment with grid systems, level definitions, and construction sequencing needs.",
-    image: laserScanPlaceholderImg,
+    image: structuralScanToBimImg,
   },
   {
     title: "MEP Scan to BIM",
     text: "We extract and model visible HVAC, electrical, plumbing, and fire protection systems from the scan data. The output includes system-wise separation, accurate routing, and clearance zones to support design or coordination.",
-    image: laserScanPlaceholderImg,
+    image: mepScanToBimImg,
   },
   {
     title: "Point Cloud to BIM Modeling",
     text: "We convert registered point cloud files such as E57, RCP, etc., into precise 3D BIM models in Revit. Our Scan to BIM Conversion Services ensure geometry is extracted and modeled based on real-world dimensions, ensuring alignment with project coordinates and control points.",
-    image: laserScanPlaceholderImg,
+    image: pointCloudToBimModelingImg,
   },
   {
     title: "Scan to Revit Modeling",
     text: "Using Autodesk Revit, we develop native parametric models from point cloud inputs with discipline-specific detail. Our models include correct element categorization, phase settings, and levels aligned to US construction standards.",
-    image: laserScanPlaceholderImg,
+    image: scanToRevitModelingImg,
   },
   {
     title: "As-Built BIM Modeling",
     text: "We generate detailed models that reflect actual built conditions, incorporating structural, architectural, and MEP components as found onsite. These models support retrofit design, permit drawings, and facility lifecycle management.",
-    image: laserScanPlaceholderImg,
+    image: asBuiltBimModelingImg,
   },
   {
     title: "Scan to CAD Conversion",
     text: "Point cloud data is processed into 2D CAD deliverables, including floor plans, elevations, and sections. Our workflow ensures geometry is traceable and layered according to AIA or client-specific CAD standards.",
-    image: laserScanPlaceholderImg,
+    image: scanToCadConversionImg,
   },
   {
     title: "Clash Detection & Coordination",
     text: "We run clash detection between point cloud to BIM models and new design elements using Navisworks or Revit. Conflicts across architectural, structural, and MEP systems are identified early, ensuring smooth coordination and reducing costly rework during construction.",
-    image: laserScanPlaceholderImg,
+    image: clashDetectionCoordinationImg,
   },
 ];
 
@@ -219,7 +228,7 @@ export const laserScanToBimWhyChooseItems = [
 export const laserScanToBimTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "BIM Modeling Services",
+  titleAccent: "Laser Scan to BIM Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 };

@@ -1,6 +1,7 @@
-import caseStudyBannerImg from "@/assets/images/case-study-banner.jpg";
 import { ListingPageHeroSection } from "@/components/sections/listing-page-hero-section";
 import { portfolioPageHero } from "@/constants/portfolio-page-content";
+
+const caseStudyBannerImg = "/image/case-study-banner.jpg";
 
 /** Case Study listing hero — same pattern as /blog (ListingPageHeroSection). */
 export function PortfolioHeroSection() {

@@ -1,23 +1,22 @@
 "use client";
 
 import Image from "next/image";
-
 import LandingPdfLeadModal from "@/components/landing/landing-pdf-lead-modal";
 import { LandingTopHeader } from "@/components/landing/landing-top-header";
 import { PageContainer } from "@/components/layout/page-container";
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
-
-import heroImg from "@/assets/images/bg-hiring 1.jpg";
-import workCycleImg from "@/assets/images/Work-Cycle 1.jpg";
-import rampUpIcon from "@/assets/images/hvd-ramp-up.svg";
-import knowledgeIcon from "@/assets/images/hvd-knowledge.svg";
-import coordinationIcon from "@/assets/images/hvd-coordination.svg";
-import delayedReliefIcon from "@/assets/images/hvd-delayed-relief.svg";
-import questionArrowIcon from "@/assets/images/hvd-question-arrow.svg";
-
 import "@/styles/hiring-vs-dedicated-remote-architect.scss";
+
+const heroImg = encodeURI("/image/bg-hiring 1.jpg");
+const workCycleImg = encodeURI("/image/Work-Cycle 1.jpg");
+const rampUpIcon = "/image/hvd-ramp-up.svg";
+const knowledgeIcon = "/image/hvd-knowledge.svg";
+const coordinationIcon = "/image/hvd-coordination.svg";
+const delayedReliefIcon = "/image/hvd-delayed-relief.svg";
+const questionArrowIcon = "/image/hvd-question-arrow.svg";
+
 
 const HIRING_PDF_URL =
   "https://www.virtualbuildingstudio.com/resources/hiring-vs-dedicated-remote-architect.pdf?utm_source=LP_HireVsDRA&utm_medium=LPCTA&utm_campaign=T2TOFU";

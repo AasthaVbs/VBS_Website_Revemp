@@ -1,6 +1,7 @@
-import blogBannerImg from "@/assets/images/blog-banner.jpg";
 import { ListingPageHeroSection } from "@/components/sections/listing-page-hero-section";
 import { blogsPageHero } from "@/constants/blogs-page-content";
+
+const blogBannerImg = "/image/blog-banner.jpg";
 
 /** Figma node 405:73045 — Blogs hero */
 export function BlogsHeroSection() {

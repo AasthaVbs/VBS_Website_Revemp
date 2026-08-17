@@ -1,15 +1,3 @@
-import codeCompliantFireSeparationIcon from "@/assets/images/code-compliant-fire-separation-icon.png";
-import complexMultiTenantProjectsIcon from "@/assets/images/complex-multi-tenant-projects-icon.png";
-import gravityFeedValidationIcon from "@/assets/images/gravity-feed-validation-icon.png";
-import highRfiVolumeOnActiveProjectsIcon from "@/assets/images/high-rfi-volume-on-active-projects-icon.png";
-import inHouseBimCapacityOverloadedIcon from "@/assets/images/in-house-bim-capacity-overloaded-icon.png";
-import maintenanceAccessibilityIcon from "@/assets/images/maintenance-accessibility-icon.png";
-import majorDesignChangeOrdersIcon from "@/assets/images/major-design-change-orders-icon.png";
-import optimizedInstallationSequencingIcon from "@/assets/images/optimized-installation-sequencing-icon.png";
-import preConstructionCoordinationPhaseIcon from "@/assets/images/pre-construction-coordination-phase-icon.png";
-import preFabricationModelReleaseIcon from "@/assets/images/pre-fabrication-model-release-icon.png";
-import precisionSeismicBracingIcon from "@/assets/images/precision-seismic-bracing-icon.png";
-import zeroInterferenceRoutingIcon from "@/assets/images/zero-interference-routing-icon.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
   MepBimFeatureCard,
@@ -19,6 +7,19 @@ import type {
   MepOverviewIntroContent,
   MepTrustedByContent,
 } from "@/constants/mep-bim-modelling-content";
+
+const codeCompliantFireSeparationIcon = "/image/code-compliant-fire-separation-icon.png";
+const complexMultiTenantProjectsIcon = "/image/complex-multi-tenant-projects-icon.png";
+const gravityFeedValidationIcon = "/image/gravity-feed-validation-icon.png";
+const highRfiVolumeOnActiveProjectsIcon = "/image/high-rfi-volume-on-active-projects-icon.png";
+const inHouseBimCapacityOverloadedIcon = "/image/in-house-bim-capacity-overloaded-icon.png";
+const maintenanceAccessibilityIcon = "/image/maintenance-accessibility-icon.png";
+const majorDesignChangeOrdersIcon = "/image/major-design-change-orders-icon.png";
+const optimizedInstallationSequencingIcon = "/image/optimized-installation-sequencing-icon.png";
+const preConstructionCoordinationPhaseIcon = "/image/pre-construction-coordination-phase-icon.png";
+const preFabricationModelReleaseIcon = "/image/pre-fabrication-model-release-icon.png";
+const precisionSeismicBracingIcon = "/image/precision-seismic-bracing-icon.png";
+const zeroInterferenceRoutingIcon = "/image/zero-interference-routing-icon.png";
 
 export const mepClashDetectionHero = {
   tag: "MEP Clash Detection",
@@ -77,37 +78,37 @@ export const mepClashDetectionServiceFeatureCards: MepBimFeatureCard[] = [
     title: "Routing Without Interference",
     description:
       "Our Mechanical Clash Detection process checks HVAC ductwork and hydronic piping for SMACNA standards. The review removes physical intersections before the install reaches the site.",
-    icon: zeroInterferenceRoutingIcon.src,
+    icon: zeroInterferenceRoutingIcon,
   },
   {
     title: "Maintenance Accessibility",
     description:
       "Electrical equipment shall have adequate working space for inspection and maintenance. Our specialists will check NEC clearance requirements to help contractors avoid accessibility issues after installation.",
-    icon: maintenanceAccessibilityIcon.src,
+    icon: maintenanceAccessibilityIcon,
   },
   {
     title: "Gravity Feed Validation",
     description:
       "Proper pipe slopes are the key to successful plumbing clash detection. We review the sanitary and domestic piping so that it follows IPC requirements. We verify the adjacent structural and electrical systems.",
-    icon: gravityFeedValidationIcon.src,
+    icon: gravityFeedValidationIcon,
   },
   {
     title: "Code Compliance with Fire Separation",
     description:
       "We take care that the MEP penetrations shall maintain the integrity of fire rated assemblies. We check that routing decisions continue to follow NFPA 101 life safety requirements during coordination.",
-    icon: codeCompliantFireSeparationIcon.src,
+    icon: codeCompliantFireSeparationIcon,
   },
   {
     title: "Precision Seismic Bracing",
     description:
       "Seismic support locations compete with MEP systems in dense service zones. We review ASCE 7 bracing requirements and identify conflicts before fabrication begins.",
-    icon: precisionSeismicBracingIcon.src,
+    icon: precisionSeismicBracingIcon,
   },
   {
     title: "Optimized Installation Sequencing",
     description:
       "Physical clashes are only one coordination challenge. We also identify workflow conflicts between trades so construction teams can complete installations with fewer site interruptions.",
-    icon: optimizedInstallationSequencingIcon.src,
+    icon: optimizedInstallationSequencingIcon,
   },
 ];
 
@@ -191,7 +192,7 @@ export const mepClashDetectionDeliverablesCards = [
 export const mepClashDetectionTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "MEP Clash Detection",
+  titleAccent: "MEP Clash Detection Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 } as const;
@@ -275,37 +276,37 @@ export const mepClashDetectionOutsourcingGuideCards: MepBimUseCaseCard[] = [
     title: "Pre-Construction Coordination Phase",
     description:
       "Construction documents need coordinated models before they reach the field. Outsourcing MEP clash detection services gives your team an independent review before issuing construction drawings.",
-    icon: preConstructionCoordinationPhaseIcon.src,
+    icon: preConstructionCoordinationPhaseIcon,
   },
   {
     title: "Pre-Fabrication Model Release",
     description:
       "Fabrication starts with coordinated models. We review MEP systems before release so fabricators get models with fewer unresolved clashes and routing conflicts.",
-    icon: preFabricationModelReleaseIcon.src,
+    icon: preFabricationModelReleaseIcon,
   },
   {
     title: "Major Design Change Orders",
     description:
       "Design changes involving many disciplines can create new coordination problems. We take a look at the revised routing, new conflicts and then move on with updated models.",
-    icon: majorDesignChangeOrdersIcon.src,
+    icon: majorDesignChangeOrdersIcon,
   },
   {
     title: "High RFI Volume on Active Projects",
     description:
       "A growing number of installation RFIs usually points to coordination gaps. We review the latest models to identify root causes and reduce repeated field conflicts.",
-    icon: highRfiVolumeOnActiveProjectsIcon.src,
+    icon: highRfiVolumeOnActiveProjectsIcon,
   },
   {
     title: "Complex Multi-Tenant",
     description:
       "Building services become harder to coordinate as project density increases. Our specialists review high-congestion areas to help project teams maintain constructability across every discipline.",
-    icon: complexMultiTenantProjectsIcon.src,
+    icon: complexMultiTenantProjectsIcon,
   },
   {
     title: "In-House BIM Capacity Overloaded",
     description:
       "Project workloads change throughout the year. As an experienced MEP clash detection services provider, we work as an extension to your BIM team when additional coordination support is needed.",
-    icon: inHouseBimCapacityOverloadedIcon.src,
+    icon: inHouseBimCapacityOverloadedIcon,
   },
 ];
 

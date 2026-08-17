@@ -1,7 +1,3 @@
-import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
-import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
-import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
-import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -11,8 +7,19 @@ import {
 import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
-/** Temporary shared photo until as-built-drafting-specific assets are ready. */
-export const asBuiltDraftingPlaceholderImage = "/image/commercial-mixed-use.png";
+const flexibleEngagementModelsIcon = "/image/flexible-engagement-models.png";
+const iconEngageDedicated = "/image/architecture-services/icon-engage-dedicated.svg";
+const iconEngageStrategic = "/image/architecture-services/icon-engage-strategic.svg";
+const workflowLogo = "/image/architecture-services/workflow-logo.svg";
+
+const architecturalAsBuiltDrawingsImg = "/image/architectural-as-built-drawings.jpg";
+const asBuiltDraftingBanner = "/image/as-built-drafting-services-banner.jpg";
+const asBuiltDraftingOverview = "/image/as-built-drafting-services-overview.jpg";
+const asBuiltForPermitsComplianceImg = "/image/as-built-for-permits-compliance.jpg";
+const bomaAreaCalculationImg = "/image/boma-area-calculation.jpg";
+const facilityManagementAsBuiltDrawingsImg = "/image/facility-management-as-built-drawings.jpg";
+const renovationRetrofitAsBuiltDocumentationImg = "/image/renovation-retrofit-as-built-documentation.jpg";
+const structuralAsBuiltDrawingsImg = "/image/structural-as-built-drawings.jpg";
 
 export const asBuiltDraftingStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -28,8 +35,8 @@ export const asBuiltDraftingHero = {
   description:
     "Old drawings stop matching the building as work moves forward. Our BIM experts use AI-assisted workflows to produce reliable as-built drawings, fast and code-ready.",
   ctaLabel: "Connect With Us",
-  imageSrc: asBuiltDraftingPlaceholderImage,
-  imageAlt: "As-Built Drafting Services",
+  imageSrc: asBuiltDraftingBanner,
+  imageAlt: "Architectural floor plan and elevations for as-built drafting services",
   copyMaxWidth: 670,
   descriptionMaxWidth: 670,
   titleMaxWidth: 657,
@@ -55,8 +62,8 @@ export const asBuiltDraftingIntro = {
     "Multi stage QA and QC checks catch dimensional errors before drawings reach your desk.",
     "Outputs include plans, elevations, sections, schedules and BIM models in RVT, DWG and PDF formats.",
   ],
-  mainImage: asBuiltDraftingPlaceholderImage,
-  imageAlt: "As-built drafting overview",
+  mainImage: asBuiltDraftingOverview,
+  imageAlt: "Set of architectural drawings including floor plans, elevations, and wall sections",
 };
 
 export const asBuiltDraftingOurClientsSection = {
@@ -87,32 +94,32 @@ export const asBuiltDraftingServiceCards = [
   {
     title: "Architectural As-built Drawings",
     text: "Our crew visits the site to see if it fits with the original plans. Drawing plans, sections and elevations are amended to reflect how the arrangement of walls, finishes and rooms looks now.",
-    image: asBuiltDraftingPlaceholderImage,
+    image: architecturalAsBuiltDrawingsImg,
   },
   {
     title: "Structural As-built Drawings",
     text: "The sizes of beams, locations of columns and other construction details are verified according to existing field conditions. The updated structural plans will provide engineers and contractors with a good reference for future repair or building works.",
-    image: asBuiltDraftingPlaceholderImage,
+    image: structuralAsBuiltDrawingsImg,
   },
   {
     title: "BOMA Area Calculation",
     text: "Both gross and rentable areas are estimated according to BOMA standards for leasing and assessing values. These calculations provide assistance to such people as property managers, brokers, and owners in the process of lease negotiating.",
-    image: asBuiltDraftingPlaceholderImage,
+    image: bomaAreaCalculationImg,
   },
   {
     title: "As-Built for Permits & Compliance",
     text: "The drawings are done in order to provide proof of the actual conditions of the site for building permits submission and code inspection. This documentation allows the building department to make sure everything complies with the requirements of IBC and ADA.",
-    image: asBuiltDraftingPlaceholderImage,
+    image: asBuiltForPermitsComplianceImg,
   },
   {
     title: "Renovation & Retrofit As-Built Documentation",
     text: "The original conditions are documented before the renovation or retrofit process. The modified drawings provide designers with a good basis for their work before it begins.",
-    image: asBuiltDraftingPlaceholderImage,
+    image: renovationRetrofitAsBuiltDocumentationImg,
   },
   {
     title: "Facility Management As-Built Drawings",
     text: "Coordinated as built drawings are provided to assist facility teams in asset management after the project handover. These drawings are useful for planning maintenance activities, tracking space usage and for facilitating operations.",
-    image: asBuiltDraftingPlaceholderImage,
+    image: facilityManagementAsBuiltDrawingsImg,
   },
 ];
 
@@ -131,7 +138,7 @@ export const asBuiltDraftingAiBimWorkflowSection = {
   description:
     "Explore the workflow that combines proprietary AI tools with expert BIM oversight to accelerate production, maintain quality and support scalable project delivery.",
   videoAriaLabel: "Play AI-driven BIM workflow video",
-  posterSrc: asBuiltDraftingPlaceholderImage,
+  posterSrc: asBuiltDraftingBanner,
 };
 
 export const asBuiltDraftingWhyChooseSection = {
@@ -267,7 +274,7 @@ export const asBuiltDraftingWorkflowIntegrateSteps = [
 export const asBuiltDraftingTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "As-Built Drafting Services",
+  titleAccent: "As-built Drafting Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible as-built drawings and models for complex projects.",
 };

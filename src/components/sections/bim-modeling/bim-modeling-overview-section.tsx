@@ -3,7 +3,7 @@ import Image, { type StaticImageData } from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { bimModelingIntro } from "@/constants/bim-modeling-services-content";
-import { altFromImageSrc } from "@/lib/utils";
+import { altFromImageSrc, cn } from "@/lib/utils";
 
 type BimModelingIntroContent = {
   tag: string;
@@ -16,6 +16,7 @@ type BimModelingIntroContent = {
   description: string;
   sideDescription: string;
   featuresTitle: string;
+  featuresTitleClassName?: string;
   features: readonly string[];
   mainImage: string | StaticImageData;
   imageAlt?: string;
@@ -37,6 +38,7 @@ export function BimModelingOverviewSection({
     descriptionMaxWidth = 874,
     sideDescription,
     featuresTitle,
+    featuresTitleClassName,
     features,
     mainImage,
     imageAlt,
@@ -85,7 +87,12 @@ export function BimModelingOverviewSection({
             <p className="text-[16px] font-normal leading-6 text-[#808080]">{sideDescription}</p>
 
             <div className="flex w-full flex-col items-start gap-6 rounded-[10px] bg-white p-5 shadow-[0_0_20px_rgba(0,0,0,0.20)]">
-              <h3 className="text-[22px] font-normal leading-[1.35] text-[#111111] sm:text-[24px]">
+              <h3
+                className={cn(
+                  "text-[22px] font-normal leading-[1.35] text-[#111111] sm:text-[24px]",
+                  featuresTitleClassName,
+                )}
+              >
                 {featuresTitle}
               </h3>
               <ul className="flex w-full flex-col items-start gap-4">

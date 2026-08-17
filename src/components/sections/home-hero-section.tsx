@@ -4,25 +4,25 @@ import { LazyImg } from "@/components/ui/lazy-img";
 import { homeHeroTrustStats } from "@/constants/home-content";
 import { TrustStripItems } from "@/components/sections/trust-strip-section";
 
-import architecturalDraftingImg from "@/assets/images/architectural-drafting.png";
-import bimServicesImg from "@/assets/images/bim-services.png";
-import mechanicalBimServicesImg from "@/assets/images/mechanical-bim-services.png";
-import mepServicesImg from "@/assets/images/mep-services.png";
-import pointCloudToBimImg from "@/assets/images/point-cloud-to-bim.png";
-import scanToBimImg from "@/assets/images/scan-to-bim.png";
+const architecturalDraftingImg = "/image/architectural-drafting.png";
+const bimServicesImg = "/image/bim-services.png";
+const mechanicalBimServicesImg = "/image/mechanical-bim-services.png";
+const mepServicesImg = "/image/mep-services.png";
+const pointCloudToBimImg = "/image/point-cloud-to-bim.png";
+const scanToBimImg = "/image/scan-to-bim.png";
 
 /** Left track — 3 unique images (set is repeated only for seamless loop). */
 const HOME_HERO_MEDIA_LEFT = [
   {
-    src: architecturalDraftingImg.src,
+    src: architecturalDraftingImg,
     alt: "Architect working on BIM software for architectural drafting",
   },
   {
-    src: bimServicesImg.src,
+    src: bimServicesImg,
     alt: "Professional reviewing a 3D structural BIM model on desktop monitors",
   },
   {
-    src: mechanicalBimServicesImg.src,
+    src: mechanicalBimServicesImg,
     alt: "Color-coded mechanical BIM model with MEP ductwork and piping",
   },
 ] as const;
@@ -30,15 +30,15 @@ const HOME_HERO_MEDIA_LEFT = [
 /** Right track — 3 unique images (set is repeated only for seamless loop). */
 const HOME_HERO_MEDIA_RIGHT = [
   {
-    src: mepServicesImg.src,
+    src: mepServicesImg,
     alt: "Multi-story building cutaway showing coordinated MEP BIM systems",
   },
   {
-    src: pointCloudToBimImg.src,
+    src: pointCloudToBimImg,
     alt: "Point cloud to BIM overlay of interior structural and piping systems",
   },
   {
-    src: scanToBimImg.src,
+    src: scanToBimImg,
     alt: "Scan to BIM comparison of point cloud data and finished building model",
   },
 ] as const;

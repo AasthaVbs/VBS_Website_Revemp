@@ -3,18 +3,6 @@
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
-
-import heroImage from "@/assets/images/Adding-People-Should-Reduce-Delivery-Pressure,-But-Why-Does-It-Often-Increase 1 (1).jpg";
-import pressureImage from "@/assets/images/When-Work-Increases,-But-Delivery-Pressure-Does-Not-Ease 1 (1).jpg";
-import matrixEvaluateImage from "@/assets/images/What-This-Matrix-Helps-You-Evaluate-512x470 1 (1).jpg";
-import decisionsWrongImage from "@/assets/images/Where-Most-Decisions-Go-Wrong-512x300 1 (1).jpg";
-import coordinationBeginsIcon from "@/assets/images/cooridntaion begins.svg";
-import dedicatedRemoteArchitectsIcon from "@/assets/images/dedicated-remote-architects-icon.svg";
-import deadlinesBeginsIcon from "@/assets/images/deadlines begins.svg";
-import freelancersIcon from "@/assets/images/freelancers-icon.svg";
-import fullTimeHiresIcon from "@/assets/images/full-time-hires-icon.svg";
-import reviewCyclesIcon from "@/assets/images/review cycles.svg";
-import seniorArchitectsIcon from "@/assets/images/senior architects.svg";
 import LandingPdfLeadModal from "@/components/landing/landing-pdf-lead-modal";
 import { LandingTopHeader } from "@/components/landing/landing-top-header";
 import { PageContainer } from "@/components/layout/page-container";
@@ -23,6 +11,18 @@ import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { cn } from "@/lib/utils";
+
+const heroImage = encodeURI("/image/Adding-People-Should-Reduce-Delivery-Pressure,-But-Why-Does-It-Often-Increase 1 (1).jpg");
+const pressureImage = encodeURI("/image/When-Work-Increases,-But-Delivery-Pressure-Does-Not-Ease 1 (1).jpg");
+const matrixEvaluateImage = encodeURI("/image/What-This-Matrix-Helps-You-Evaluate-512x470 1 (1).jpg");
+const decisionsWrongImage = encodeURI("/image/Where-Most-Decisions-Go-Wrong-512x300 1 (1).jpg");
+const coordinationBeginsIcon = encodeURI("/image/cooridntaion begins.svg");
+const dedicatedRemoteArchitectsIcon = "/image/dedicated-remote-architects-icon.svg";
+const deadlinesBeginsIcon = encodeURI("/image/deadlines begins.svg");
+const freelancersIcon = "/image/freelancers-icon.svg";
+const fullTimeHiresIcon = "/image/full-time-hires-icon.svg";
+const reviewCyclesIcon = encodeURI("/image/review cycles.svg");
+const seniorArchitectsIcon = encodeURI("/image/senior architects.svg");
 
 /** Local gated PDF (copied from src/assets/resources) + same UTM as Gatsby LP */
 const COMPARISON_GUIDE_PDF_URL =

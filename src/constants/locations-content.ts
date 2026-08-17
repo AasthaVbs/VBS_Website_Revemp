@@ -1,9 +1,11 @@
 import { ROUTES } from "@/constants/navigation";
 
+const locationBanner = "/image/location-banner.jpg";
+
 export const LOCATIONS_CONTACT_ID = "locations-page-contact";
 export const LOCATIONS_CONTACT_HASH = `#${LOCATIONS_CONTACT_ID}`;
 
-const locationServiceHref = (serviceSlug: string, locationSlug: string) =>
+export const locationServiceHref = (serviceSlug: string, locationSlug: string) =>
   `${ROUTES.locations}/${serviceSlug}-${locationSlug}`;
 
 const LOCATION_SERVICES = [
@@ -20,7 +22,7 @@ export const locationsHero = {
   description:
     "Balancing design, coordination, and documentation isn't that easy. Our dedicated CAD and BIM experts take care of your SD to CD, 2D to BIM with accuracy, so you can breathe easier and focus on creating great designs.",
   ctaLabel: "Contact us Now",
-  imageSrc: "/image/Locations-Banner.jpg",
+  imageSrc: locationBanner,
   imageAlt: "3D map of the United States showing Virtual Building Studio locations",
   copyMaxWidth: 635,
   descriptionMaxWidth: 635,

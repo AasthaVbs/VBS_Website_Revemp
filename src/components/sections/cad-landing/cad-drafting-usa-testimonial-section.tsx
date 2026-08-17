@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { useState } from "react";
-
-import videoFillIcon from "@/assets/images/video-fill-icon.svg";
 import { PageContainer } from "@/components/layout/page-container";
 import { TestimonialVideoModal } from "@/components/sections/testimonial-video-modal";
 import { BookMeetingButton } from "@/components/ui/book-meeting-button";
 import { cadDraftingUsaTestimonial } from "@/constants/cad-drafting-services-usa-content";
 import { cn } from "@/lib/utils";
+
+const videoFillIcon = "/image/video-fill-icon.svg";
 
 export type CadDraftingUsaTestimonialContent = {
   titleLead: string;

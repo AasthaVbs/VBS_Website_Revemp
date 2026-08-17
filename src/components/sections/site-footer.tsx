@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-
-import footerBgImg from "@/assets/images/BG Image Footer 1.png";
-import footerLogo from "@/assets/images/VBS_white.png";
 import { PageContainer } from "@/components/layout/page-container";
 import { VBS_FOOTER_URLS } from "@/constants/navigation";
+
+const footerBgImg = encodeURI("/image/BG Image Footer 1.png");
+const footerLogo = "/image/VBS_white.png";
 
 const footerSocialLinks = [
   { label: "Twitter", href: "#", icon: "/icons/social/twitter.svg" },

@@ -323,8 +323,21 @@
     position: absolute;
     width: min(480px, 33.5%);
     max-width: 480px;
-    align-items: unset !important;
-    text-align: unset !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .arch-svc-workflow__step--discover,
+  .arch-svc-workflow__step--improve {
+    align-items: flex-end !important;
+    text-align: right !important;
+  }
+
+  .arch-svc-workflow__step--discover h3,
+  .arch-svc-workflow__step--discover p,
+  .arch-svc-workflow__step--improve h3,
+  .arch-svc-workflow__step--improve p {
+    text-align: right !important;
   }
 
   .arch-svc-workflow__tags--mobile {

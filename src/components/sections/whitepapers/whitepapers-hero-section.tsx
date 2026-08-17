@@ -1,6 +1,7 @@
-import whitePaperBannerImg from "@/assets/images/white-paper-banner.jpg";
 import { ListingPageHeroSection } from "@/components/sections/listing-page-hero-section";
 import { whitepapersPageHero } from "@/constants/whitepapers-page-content";
+
+const whitePaperBannerImg = "/image/white-paper-banner.jpg";
 
 export function WhitepapersHeroSection() {
   const { tag, titleLead, titleAccent, description, ctaLabel, imageAlt } = whitepapersPageHero;

@@ -1,12 +1,13 @@
-import clientGlabeTaylor from "@/assets/images/cad-drafting-services-usa/client-glabe-taylor.png";
-import clientGp from "@/assets/images/cad-drafting-services-usa/client-gp.png";
-import clientLexent from "@/assets/images/cad-drafting-services-usa/client-lexent.png";
-import clientRenz from "@/assets/images/cad-drafting-services-usa/client-renz.png";
-import clientDownload3 from "@/assets/images/cad-drafting-services-usa/client-download-3.png";
-import clientDownload5 from "@/assets/images/cad-drafting-services-usa/client-download-5.png";
-import clientWhitten from "@/assets/images/cad-drafting-services-usa/client-whitten.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { clientSuccessStories } from "@/constants/client-success-stories-content";
+
+const clientGlabeTaylor = "/image/cad-drafting-services-usa/client-glabe-taylor.png";
+const clientGp = "/image/cad-drafting-services-usa/client-gp.png";
+const clientLexent = "/image/cad-drafting-services-usa/client-lexent.png";
+const clientRenz = "/image/cad-drafting-services-usa/client-renz.png";
+const clientDownload3 = "/image/cad-drafting-services-usa/client-download-3.png";
+const clientDownload5 = "/image/cad-drafting-services-usa/client-download-5.png";
+const clientWhitten = "/image/cad-drafting-services-usa/client-whitten.png";
 
 export const CAD_USA_CONTACT_ID = "cad-usa-contact";
 

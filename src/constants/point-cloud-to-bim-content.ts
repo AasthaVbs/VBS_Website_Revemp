@@ -215,7 +215,7 @@ export const pointCloudToBimWorkflowSteps = [
 export const pointCloudToBimTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "BIM Modeling Services",
+  titleAccent: "Point Cloud to BIM Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 };

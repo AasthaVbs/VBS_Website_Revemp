@@ -43,7 +43,7 @@ export type MepTrustedByContent = {
   >;
 };
 
-import bim360Icon from "@/assets/images/bim-360-icons.png";
+const bim360Icon = "/image/bim-360-icons.png";
 export const mepBimModellingIntro = {
   tag: "Overview",
   titleLead: "High Fidelity MEP Modeling Services for ",
@@ -279,7 +279,7 @@ export const mepBimTechnologyStackToolsRowOne: MepBimTechnologyTool[] = [
     iconWidth: 71,
     iconHeight: 66,
   },
-  { name: "BIM 360", icon: bim360Icon.src, iconWidth: 66, iconHeight: 79 },
+  { name: "BIM 360", icon: bim360Icon, iconWidth: 66, iconHeight: 79 },
 ];
 
 export const mepBimTechnologyStackToolsRowTwo: MepBimTechnologyTool[] = [

@@ -1,14 +1,3 @@
-import accurateSchedulingDocumentationIcon from "@/assets/images/mep-revit-family/accurate-scheduling-documentation-icon.png";
-import catalogsOfTypesScalableDeploymentIcon from "@/assets/images/mep-revit-family/catalogs-of-types-scalable-deployment-icon.png";
-import codeComplianceDataIntegrationIcon from "@/assets/images/mep-revit-family/code-compliance-data-integration-icon.png";
-import establishingRobustBimStandardsIcon from "@/assets/images/mep-revit-family/establishing-robust-bim-standards-icon.png";
-import fullyParametricRevitFamilyIcon from "@/assets/images/mep-revit-family/fully-parametric-revit-family-icon.png";
-import improvedModelPerformanceIcon from "@/assets/images/mep-revit-family/improved-model-performance-icon.png";
-import lodAndBepComplianceIcon from "@/assets/images/mep-revit-family/lod-and-bep-compliance-icon.png";
-import optimizingModelingVelocityIcon from "@/assets/images/mep-revit-family/optimizing-modeling-velocity-icon.png";
-import professionalRevitLibrariesScaleIcon from "@/assets/images/mep-revit-family/professional-revit-libraries-scale-icon.png";
-import standardComponentsForMepIcon from "@/assets/images/mep-revit-family/standard-components-for-mep-icon.png";
-import unifyingDistributedTeamWorkflowsIcon from "@/assets/images/mep-revit-family/unifying-distributed-team-workflows-icon.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
   MepBimFeatureCard,
@@ -18,6 +7,18 @@ import type {
   MepOverviewIntroContent,
   MepTrustedByContent,
 } from "@/constants/mep-bim-modelling-content";
+
+const accurateSchedulingDocumentationIcon = "/image/mep-revit-family/accurate-scheduling-documentation-icon.png";
+const catalogsOfTypesScalableDeploymentIcon = "/image/mep-revit-family/catalogs-of-types-scalable-deployment-icon.png";
+const codeComplianceDataIntegrationIcon = "/image/mep-revit-family/code-compliance-data-integration-icon.png";
+const establishingRobustBimStandardsIcon = "/image/mep-revit-family/establishing-robust-bim-standards-icon.png";
+const fullyParametricRevitFamilyIcon = "/image/mep-revit-family/fully-parametric-revit-family-icon.png";
+const improvedModelPerformanceIcon = "/image/mep-revit-family/improved-model-performance-icon.png";
+const lodAndBepComplianceIcon = "/image/mep-revit-family/lod-and-bep-compliance-icon.png";
+const optimizingModelingVelocityIcon = "/image/mep-revit-family/optimizing-modeling-velocity-icon.png";
+const professionalRevitLibrariesScaleIcon = "/image/mep-revit-family/professional-revit-libraries-scale-icon.png";
+const standardComponentsForMepIcon = "/image/mep-revit-family/standard-components-for-mep-icon.png";
+const unifyingDistributedTeamWorkflowsIcon = "/image/mep-revit-family/unifying-distributed-team-workflows-icon.png";
 
 export const mepRevitFamilyCreationHero = {
   tag: "MEP Revit Family Creation",
@@ -73,25 +74,25 @@ export const mepRevitFamilyCreationServiceFeatureCards: MepBimFeatureCard[] = [
     title: "Standard components for MEP",
     description:
       "Design reusable families to your company standards. The same components are used in different BIM projects by each project team.",
-    icon: standardComponentsForMepIcon.src,
+    icon: standardComponentsForMepIcon,
   },
   {
     title: "Fully Parametric Revit Family",
     description:
       "Flexible family with adjustable sizes and controlled parameters. It allows designers to switch configurations without having to rebuild components.",
-    icon: fullyParametricRevitFamilyIcon.src,
+    icon: fullyParametricRevitFamilyIcon,
   },
   {
     title: "Improved Model Performance",
     description:
       "Lightweight geometry and controlled detail keep Revit models responsive. Smaller families mean less loading time and better collaboration.",
-    icon: improvedModelPerformanceIcon.src,
+    icon: improvedModelPerformanceIcon,
   },
   {
     title: "Accurate Scheduling & Documentation",
     description:
       "Use structured parameters that support reliable schedules, quantity takeoffs and construction documentation for the whole project.",
-    icon: accurateSchedulingDocumentationIcon.src,
+    icon: accurateSchedulingDocumentationIcon,
   },
   {
     title: "Connectivity of Intelligent Systems",
@@ -103,19 +104,19 @@ export const mepRevitFamilyCreationServiceFeatureCards: MepBimFeatureCard[] = [
     title: "Scalable Deployment Catalogs",
     description:
       "Create different sizes and specifications of type catalogs. Families do not need to be duplicated as project teams can select the configuration they require.",
-    icon: catalogsOfTypesScalableDeploymentIcon.src,
+    icon: catalogsOfTypesScalableDeploymentIcon,
   },
   {
     title: "LOD and BEP Compliance",
     description:
       "Develop families that comply with the BIM Execution Plans and comply with LOD 300 or LOD 400 Revit families requirements and support NBIMS-US standards.",
-    icon: lodAndBepComplianceIcon.src,
+    icon: lodAndBepComplianceIcon,
   },
   {
     title: "Code-Compliance Data Integration",
     description:
       "Embed structured metadata to help meet NFPA, NEC and IPC requirements so project teams can complete reviews with accurate project data.",
-    icon: codeComplianceDataIntegrationIcon.src,
+    icon: codeComplianceDataIntegrationIcon,
   },
 ];
 
@@ -206,7 +207,7 @@ export const mepRevitFamilyCreationDeliverablesCards = [
 export const mepRevitFamilyCreationTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "MEP Revit Family Creation",
+  titleAccent: "MEP Revit Family Creation Services",
   description:
     "We use industry leading BIM software for accurate, coordinated and construction ready MEP families for complex projects.",
 } as const;
@@ -290,25 +291,25 @@ export const mepRevitFamilyCreationOutsourcingGuideCards: MepBimUseCaseCard[] = 
     title: "Establishing Robust BIM Standards",
     description:
       "A new BIM standard needs more than a naming convention. We develop standardized families, parameters, and templates that give every project team a consistent starting point.",
-    icon: establishingRobustBimStandardsIcon.src,
+    icon: establishingRobustBimStandardsIcon,
   },
   {
     title: "Professional Revit Libraries on a Larger Scale",
     description:
       "Revit libraries age and outdated content can slow down project delivery. We create manufacturer specific families that are consistent with current product data and your internal BIM standards.",
-    icon: professionalRevitLibrariesScaleIcon.src,
+    icon: professionalRevitLibrariesScaleIcon,
   },
   {
     title: "Optimizing Modeling Velocity",
     description:
       "Project deadlines leave little time for repetitive family creation. Our team develops ready to use parametric content, allowing your modelers to focus on design and coordination.",
-    icon: optimizingModelingVelocityIcon.src,
+    icon: optimizingModelingVelocityIcon,
   },
   {
     title: "Unifying Distributed Team Workflows",
     description:
       "Multiple offices need the same family standards to maintain consistency. We build centralized Revit libraries that support common naming conventions, parameters and modeling practices.",
-    icon: unifyingDistributedTeamWorkflowsIcon.src,
+    icon: unifyingDistributedTeamWorkflowsIcon,
   },
 ];
 

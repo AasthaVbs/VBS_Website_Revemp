@@ -1,22 +1,22 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-
-import heroImage from "@/assets/images/awarness-hero-9601af6a691fd98560490a323edf9c5f 1.jpg";
-import growthImage from "@/assets/images/blueprints-detail-be9fa3a5a7ab2667973337b11a5898ac 1.jpg";
-import scaleSystemsImage from "@/assets/images/doc-that-scale-banner2.png";
-import hiringRemoteImage from "@/assets/images/HIring-vs-remote-architec-09ba07d67300f15927d59fc5598e50d2 1.jpg";
-import burnoutImage from "@/assets/images/How Architecture Firms Avoid Burning Out Their Senior Team0-f4705a7b444de14e1f57cf11d4028efd 1.jpg";
-import helpsImage from "@/assets/images/whatyouwillfind-90c7a2d0ba0213ef47b8013d4c8b5059 1.jpg";
-import documentationWallImage from "@/assets/images/Why-Growing-Firms-Hit-a-Documentation-Wall-6611e6ffa78e228bd0fa436eebb1a12e 1.jpg";
 import { LandingTopHeader } from "@/components/landing/landing-top-header";
 import { PageContainer } from "@/components/layout/page-container";
 import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-delivery-cta-section";
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
-
 import "@/styles/delivery-inside-architecture-firms.scss";
+
+const heroImage = encodeURI("/image/awarness-hero-9601af6a691fd98560490a323edf9c5f 1.jpg");
+const growthImage = encodeURI("/image/blueprints-detail-be9fa3a5a7ab2667973337b11a5898ac 1.jpg");
+const scaleSystemsImage = "/image/doc-that-scale-banner2.png";
+const hiringRemoteImage = encodeURI("/image/HIring-vs-remote-architec-09ba07d67300f15927d59fc5598e50d2 1.jpg");
+const burnoutImage = encodeURI("/image/How Architecture Firms Avoid Burning Out Their Senior Team0-f4705a7b444de14e1f57cf11d4028efd 1.jpg");
+const helpsImage = encodeURI("/image/whatyouwillfind-90c7a2d0ba0213ef47b8013d4c8b5059 1.jpg");
+const documentationWallImage = encodeURI("/image/Why-Growing-Firms-Hit-a-Documentation-Wall-6611e6ffa78e228bd0fa436eebb1a12e 1.jpg");
+
 
 declare global {
   interface Window {
@@ -68,7 +68,7 @@ type ResourceCard = {
   title: string;
   description: string;
   downloadUrl: string;
-  cardImage: { src: string };
+  cardImage: string;
   linkedinConversionId?: number;
 };
 
@@ -198,7 +198,7 @@ export function DeliveryInsideArchitectureFirmsView() {
             </div>
             <div className="diaf-hero-media">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={heroImage.src} alt="Architect reviewing plans under delivery pressure" />
+              <img src={heroImage} alt="Architect reviewing plans under delivery pressure" />
             </div>
           </PageContainer>
         </section>
@@ -209,7 +209,7 @@ export function DeliveryInsideArchitectureFirmsView() {
             <div className="diaf-growth-media">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={growthImage.src}
+                src={growthImage}
                 alt="Architecture delivery team coordinating around active project model"
               />
             </div>
@@ -283,7 +283,7 @@ export function DeliveryInsideArchitectureFirmsView() {
             </div>
             <div className="diaf-helps-media">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={helpsImage.src} alt="Teams aligning documentation and delivery systems" />
+              <img src={helpsImage} alt="Teams aligning documentation and delivery systems" />
             </div>
           </PageContainer>
         </section>
@@ -321,7 +321,7 @@ export function DeliveryInsideArchitectureFirmsView() {
                   >
                     <div className="diaf-resource-card-image">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={r.cardImage.src} alt="" />
+                      <img src={r.cardImage} alt="" />
                     </div>
                     <div className="diaf-resource-card-body">
                       <h3>{r.title}</h3>

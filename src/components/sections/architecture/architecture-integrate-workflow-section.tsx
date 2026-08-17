@@ -39,8 +39,6 @@ const POSITION_CLASS: Record<string, string> = {
   "bottom-left": "arch-svc-workflow__step--improve",
 };
 
-const TEXT_ALIGN_RIGHT = new Set(["top-left", "bottom-left"]);
-
 /** Thin circular ring — continuous yellow / blue / red / green with mid-arc clockwise arrows. */
 function WorkflowRing({ className }: { className?: string }) {
   const cx = 200;
@@ -125,7 +123,7 @@ function resolveTag(tag: WorkflowTag) {
 }
 
 function WorkflowStepCard({ step }: { step: IntegrateWorkflowStep }) {
-  const alignRight = TEXT_ALIGN_RIGHT.has(step.position);
+  const alignRight = step.position === "top-left" || step.position === "bottom-left";
   const flatTags = step.tagRows.flat();
 
   return (
@@ -136,12 +134,32 @@ function WorkflowStepCard({ step }: { step: IntegrateWorkflowStep }) {
         alignRight && "lg:items-end lg:text-right",
       )}
     >
-      <h3 className="w-full text-[24px] font-medium leading-normal" style={{ color: step.color }}>
+      <h3
+        className={cn(
+          "w-full text-[24px] font-medium leading-normal",
+          alignRight ? "lg:text-right" : "text-left",
+        )}
+        style={{ color: step.color }}
+      >
         {step.number}
       </h3>
-      <div className="flex w-full flex-col gap-2.5">
-        <p className="w-full text-[16px] font-normal leading-6 text-[#111111]">{step.title}</p>
-        <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">{step.body}</p>
+      <div className={cn("flex w-full flex-col gap-2.5", alignRight ? "lg:items-end lg:text-right" : "text-left")}>
+        <p
+          className={cn(
+            "w-full text-[16px] font-normal leading-6 text-[#111111]",
+            alignRight ? "lg:text-right" : "text-left",
+          )}
+        >
+          {step.title}
+        </p>
+        <p
+          className={cn(
+            "w-full text-[16px] font-normal leading-6 text-[#808080]",
+            alignRight ? "lg:text-right" : "text-left",
+          )}
+        >
+          {step.body}
+        </p>
       </div>
 
       {/* Mobile: single centered wrap so chips fill the row without fake breaks */}
@@ -160,7 +178,7 @@ function WorkflowStepCard({ step }: { step: IntegrateWorkflowStep }) {
         })}
       </div>
 
-      {/* Desktop: Figma rows — left steps right-align chips, right steps left-align chips */}
+      {/* Desktop: left steps right-align chips toward the ring; right steps stay left-aligned */}
       <div
         className={cn(
           "arch-svc-workflow__tags arch-svc-workflow__tags--desktop hidden w-full flex-col gap-2.5 lg:flex",

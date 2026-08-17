@@ -1,7 +1,3 @@
-import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
-import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
-import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
-import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -10,6 +6,11 @@ import {
 } from "@/constants/mep-bim-modelling-content";
 import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
+
+const flexibleEngagementModelsIcon = "/image/flexible-engagement-models.png";
+const iconEngageDedicated = "/image/architecture-services/icon-engage-dedicated.svg";
+const iconEngageStrategic = "/image/architecture-services/icon-engage-strategic.svg";
+const workflowLogo = "/image/architecture-services/workflow-logo.svg";
 
 export const twoDDraftingStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -264,7 +265,7 @@ export const twoDDraftingWorkflowIntegrateSteps = [
 export const twoDDraftingTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleLine2: "CAD Drafting Services",
+  titleAccent: "2D Drafting Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 };

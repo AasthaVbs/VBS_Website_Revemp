@@ -1,6 +1,7 @@
-import webinarBannerImg from "@/assets/images/webinar-banner.jpg";
 import { ListingPageHeroSection } from "@/components/sections/listing-page-hero-section";
 import { webinarPageHero } from "@/constants/webinar-page-content";
+
+const webinarBannerImg = "/image/webinar-banner.jpg";
 
 /** Figma node 405:73954 — Webinars hero */
 export function WebinarHeroSection() {

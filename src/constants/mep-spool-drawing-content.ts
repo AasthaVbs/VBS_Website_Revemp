@@ -1,13 +1,3 @@
-import complexMechanicalRoomsIcon from "@/assets/images/complex-mechanical-rooms-icon.png";
-import fastTrackProjectsIcon from "@/assets/images/fast-track-projects-icon.png";
-import largeScaleIndustrialWorksIcon from "@/assets/images/large-scale-industrial-works-icon.png";
-import correctMaterialSpecificationsIcon from "@/assets/images/mep-spool-drawing/correct-material-specifications-icon.png";
-import detailedDimensionsAndSpoolIdsIcon from "@/assets/images/mep-spool-drawing/detailed-dimensions-and-spool-ids-icon.png";
-import fabricationReadySpoolDrawingsIcon from "@/assets/images/mep-spool-drawing/fabrication-ready-spool-drawings-icon.png";
-import fasterPrefabricationTurnaroundIcon from "@/assets/images/mep-spool-drawing/faster-prefabrication-turnaround-icon.png";
-import reducedInstallationErrorsIcon from "@/assets/images/mep-spool-drawing/reduced-installation-errors-icon.png";
-import standardizedDrawingFormatIcon from "@/assets/images/mep-spool-drawing/standardized-drawing-format-icon.png";
-import prefabricationStageIcon from "@/assets/images/prefabrication-stage-icon.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
   MepBimFeatureCard,
@@ -17,6 +7,17 @@ import type {
   MepOverviewIntroContent,
   MepTrustedByContent,
 } from "@/constants/mep-bim-modelling-content";
+
+const complexMechanicalRoomsIcon = "/image/complex-mechanical-rooms-icon.png";
+const fastTrackProjectsIcon = "/image/fast-track-projects-icon.png";
+const largeScaleIndustrialWorksIcon = "/image/large-scale-industrial-works-icon.png";
+const correctMaterialSpecificationsIcon = "/image/mep-spool-drawing/correct-material-specifications-icon.png";
+const detailedDimensionsAndSpoolIdsIcon = "/image/mep-spool-drawing/detailed-dimensions-and-spool-ids-icon.png";
+const fabricationReadySpoolDrawingsIcon = "/image/mep-spool-drawing/fabrication-ready-spool-drawings-icon.png";
+const fasterPrefabricationTurnaroundIcon = "/image/mep-spool-drawing/faster-prefabrication-turnaround-icon.png";
+const reducedInstallationErrorsIcon = "/image/mep-spool-drawing/reduced-installation-errors-icon.png";
+const standardizedDrawingFormatIcon = "/image/mep-spool-drawing/standardized-drawing-format-icon.png";
+const prefabricationStageIcon = "/image/prefabrication-stage-icon.png";
 
 export const mepSpoolDrawingHero = {
   tag: "Spool Drawing",
@@ -72,37 +73,37 @@ export const mepSpoolDrawingServiceFeatureCards: MepBimFeatureCard[] = [
     title: "Fabrication-Ready Spool Drawings",
     description:
       "We produce LOD 400 drawings with cut lengths, bevel angles and weld symbols. Your shop floor can fabricate without calling us to clarify details.",
-    icon: fabricationReadySpoolDrawingsIcon.src,
+    icon: fabricationReadySpoolDrawingsIcon,
   },
   {
     title: "Detailed Dimensions and Spool IDs",
     description:
       "Each spool carries a unique ID, exact dimensions and flange face orientation. These data align with your isometric and piping drawings.",
-    icon: detailedDimensionsAndSpoolIdsIcon.src,
+    icon: detailedDimensionsAndSpoolIdsIcon,
   },
   {
     title: "Reduced Installation Errors",
     description:
       "We create 3D piping spool drawings and cross reference them against structural and civil models. This removes clash-driven rework during installation and prefabrication.",
-    icon: reducedInstallationErrorsIcon.src,
+    icon: reducedInstallationErrorsIcon,
   },
   {
     title: "Faster Prefabrication Turnaround",
     description:
       "Pre-coordinated, clash-free spool packages cut shop floor hold time. Your team can fabricate multiple spool groups in parallel without sequencing conflicts.",
-    icon: fasterPrefabricationTurnaroundIcon.src,
+    icon: fasterPrefabricationTurnaroundIcon,
   },
   {
     title: "Correct Material Specifications",
     description:
       "Each drawing lists pipe schedules, fitting grades, types of gasket and bolt specifications according to ASME B31.3. Procurement teams can match orders to engineering design intent.",
-    icon: correctMaterialSpecificationsIcon.src,
+    icon: correctMaterialSpecificationsIcon,
   },
   {
     title: "Standardized Drawing Format",
     description:
       "Every spool drawing adhere to the same layout, symbols and naming guide. Your team gets consistent, easy to read drawings across the entire project.",
-    icon: standardizedDrawingFormatIcon.src,
+    icon: standardizedDrawingFormatIcon,
   },
 ];
 
@@ -287,25 +288,25 @@ export const mepSpoolDrawingOutsourcingGuideCards: MepBimUseCaseCard[] = [
     title: "Prefabrication Stage",
     description:
       "Bring us in when you move from design to shop production. We optimize every pipe segment for off-site manufacturing.",
-    icon: prefabricationStageIcon.src,
+    icon: prefabricationStageIcon,
   },
   {
     title: "Fast-Track Projects",
     description:
       "Partner with our team when tight schedules demand fast isometric spool drawings. Your fabrication facility keeps running without gaps.",
-    icon: fastTrackProjectsIcon.src,
+    icon: fastTrackProjectsIcon,
   },
   {
     title: "Complex Mechanical Rooms",
     description:
       "Call on us when congested MEP spaces need 3D coordination. We help you avoid clashes between piping, ductwork, and electrical trays.",
-    icon: complexMechanicalRoomsIcon.src,
+    icon: complexMechanicalRoomsIcon,
   },
   {
     title: "Large-Scale Industrial Works",
     description:
       "Outsource piping spool drawing services when refineries or plants need high-volume spooling. We hold consistent quality across thousands of unique pipe segments.",
-    icon: largeScaleIndustrialWorksIcon.src,
+    icon: largeScaleIndustrialWorksIcon,
   },
 ];
 

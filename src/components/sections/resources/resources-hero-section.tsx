@@ -1,6 +1,7 @@
-import resourceBannerImg from "@/assets/images/resource-banner.jpg";
 import { ListingPageHeroSection } from "@/components/sections/listing-page-hero-section";
 import { resourcesPageHero } from "@/constants/resources-page-content";
+
+const resourceBannerImg = "/image/resource-banner.jpg";
 
 /** Figma node 337:36551 — Resources hero */
 export function ResourcesHeroSection() {

@@ -1,16 +1,17 @@
 // @ts-nocheck
-import designSupportDocumentationIcon from "@/assets/images/design-support-documentation.png";
-import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
-import iconBim from "@/assets/images/architecture-services/icon-bim.svg";
-import iconCa from "@/assets/images/architecture-services/icon-ca.svg";
-import iconCd from "@/assets/images/architecture-services/icon-cd.svg";
-import iconDesignDev from "@/assets/images/architecture-services/icon-design-dev.svg";
-import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
-import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
-import iconPreDesign from "@/assets/images/architecture-services/icon-pre-design.svg";
-import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
-import logoIcon from "@/assets/images/logo-icon.svg";
 import { ROUTES } from "@/constants/navigation";
+
+const designSupportDocumentationIcon = "/image/design-support-documentation.png";
+const flexibleEngagementModelsIcon = "/image/flexible-engagement-models.png";
+const iconBim = "/image/architecture-services/icon-bim.svg";
+const iconCa = "/image/architecture-services/icon-ca.svg";
+const iconCd = "/image/architecture-services/icon-cd.svg";
+const iconDesignDev = "/image/architecture-services/icon-design-dev.svg";
+const iconEngageDedicated = "/image/architecture-services/icon-engage-dedicated.svg";
+const iconEngageStrategic = "/image/architecture-services/icon-engage-strategic.svg";
+const iconPreDesign = "/image/architecture-services/icon-pre-design.svg";
+const workflowLogo = "/image/architecture-services/workflow-logo.svg";
+const logoIcon = "/image/logo-icon.svg";
 
 /* ------------------------------------------------------------------ */
 /* Challenge — Figma 3627:56808                                        */

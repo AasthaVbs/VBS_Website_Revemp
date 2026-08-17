@@ -21,9 +21,10 @@ export function LocationsPage() {
           mobileLayout="copy-image-cta"
           breakTitle
           ctaHref={`#${LOCATIONS_CONTACT_ID}`}
-          containerClassName="max-lg:!pt-2 max-lg:!pb-6 lg:!py-[100px]"
+          containerClassName="max-lg:!pt-0 max-lg:!pb-0 lg:!pt-4 lg:!pb-0"
           rowClassName="lg:!gap-[60px] xl:!gap-[60px]"
           imageFrameClassName="!bg-[#6D6D6D] !aspect-[650/530]"
+          imageClassName="object-contain"
         />
         <TrustStripSection
           stats={locationsStatsStrip}

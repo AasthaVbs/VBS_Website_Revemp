@@ -1,7 +1,3 @@
-import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
-import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
-import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
-import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -11,8 +7,21 @@ import {
 import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
-/** Temporary shared photo until visualization-specific assets are ready. */
-export const visualizationPlaceholderImage = "/image/3d-visualization-service.jpg";
+const flexibleEngagementModelsIcon = "/image/flexible-engagement-models.png";
+const iconEngageDedicated = "/image/architecture-services/icon-engage-dedicated.svg";
+const iconEngageStrategic = "/image/architecture-services/icon-engage-strategic.svg";
+const workflowLogo = "/image/architecture-services/workflow-logo.svg";
+
+const visualizationBanner = "/image/3d-visualisation-banner.jpg";
+const visualizationOverview = "/image/3d-visualization-services-overview.jpg";
+const exteriorRenderingImg = "/image/exterior-rendering.jpg";
+const interiorRenderingImg = "/image/interior-rendering.jpg";
+const walkthroughsFlythroughsImg = "/image/architectural-walkthroughs-flythroughs.jpg";
+const panoramicVirtualToursImg = "/image/360-degree-panoramic-views-virtual-tours.jpg";
+const urbanDesignMasterPlanImg = "/image/urban-design-visualization-master-plan.jpg";
+const materialFinishSimulationsImg = "/image/material-finish-simulations.jpg";
+const bim3dVisualizationImg = "/image/bim-3d-visualization.jpg";
+const mechanicalPartAssemblyImg = "/image/mechanical-part-and-assembley.jpg";
 
 export const visualizationStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -28,8 +37,8 @@ export const visualizationHero = {
   description:
     "Our pre-vetted visualization architects combine their expert skills with AI-assisted workflow to prepare photorealistic renders that help stakeholders to get design approval faster.",
   ctaLabel: "Connect With Us",
-  imageSrc: visualizationPlaceholderImage,
-  imageAlt: "Architectural 3D visualization services",
+  imageSrc: visualizationBanner,
+  imageAlt: "Photorealistic dusk rendering of a modern house for 3D visualization services",
   copyMaxWidth: 695,
   descriptionMaxWidth: 695,
   titleMaxWidth: 630,
@@ -55,8 +64,8 @@ export const visualizationIntro = {
     "Multi-stage QA/QC checks before every render leaves our studio",
     "Deliverables include stills, animations, 360° tours and VR/AR-ready files",
   ],
-  mainImage: visualizationPlaceholderImage,
-  imageAlt: "Photorealistic architectural 3D visualization",
+  mainImage: visualizationOverview,
+  imageAlt: "Aerial 3D visualization of a commercial building and landscaped site",
 };
 
 export const visualizationOurClientsSection = {
@@ -88,42 +97,42 @@ export const visualizationServiceCards = [
   {
     title: "Exterior Rendering",
     text: "We build lifelike exteriors, showing facades, landscaping and surrounding context in daylight and after dark. Before construction clients, investors and planning authorities have a clear view.",
-    image: visualizationPlaceholderImage,
+    image: exteriorRenderingImg,
   },
   {
     title: "Interior Rendering",
     text: "Our team prepares renders for interiors with realistic lighting, textures and furniture layouts. Residential, commercial and hospitality clients use these renders to confirm design direction and win approval.",
-    image: visualizationPlaceholderImage,
+    image: interiorRenderingImg,
   },
   {
     title: "Architectural Walkthroughs & Flythroughs",
     text: "We create cinematic walkthroughs that let stakeholders move through a space before it exists. These animations work well for client presentations and marketing campaigns alike.",
-    image: visualizationPlaceholderImage,
+    image: walkthroughsFlythroughsImg,
   },
   {
     title: "360 Degree Panoramic Views & Virtual Tours",
     text: "Our experts develop interactive 360 degree tours that facilitate clients to see every angle of a project from any device. These tours work on VR headsets and regular web browsers.",
-    image: visualizationPlaceholderImage,
+    image: panoramicVirtualToursImg,
   },
   {
     title: "Urban Design Visualization & Master Plan",
     text: "We present large scale developments in full context, with site layouts, green spaces and surrounding infrastructure. Planning submissions and investor presentations both benefit from this clarity.",
-    image: visualizationPlaceholderImage,
+    image: urbanDesignMasterPlanImg,
   },
   {
     title: "Material & Finish Simulations",
     text: "Our team shows multiple material, texture and color options for walls, floors and furnishings side by side. This helps your clients to make faster, better design choices.",
-    image: visualizationPlaceholderImage,
+    image: materialFinishSimulationsImg,
   },
   {
     title: "BIM 3D Visualization",
     text: "We convert BIM data into detailed, presentation-ready renders that stay true to the underlying model. This closes the gap between technical data and easy to understand client-facing visuals.",
-    image: visualizationPlaceholderImage,
+    image: bim3dVisualizationImg,
   },
   {
     title: "Mechanical Part & Assembly Visualization",
     text: "Our specialists produce detailed 3D visuals for mechanical components and assemblies, including day and night lighting studies where needed. Manufacturers use these renders to review designs and get further approvals.",
-    image: visualizationPlaceholderImage,
+    image: mechanicalPartAssemblyImg,
   },
 ];
 
@@ -142,7 +151,7 @@ export const visualizationAiBimWorkflowSection = {
   description:
     "Explore the workflow that combines proprietary AI tools with expert BIM oversight to accelerate production, maintain quality and support scalable project delivery.",
   videoAriaLabel: "Play AI-driven BIM workflow video",
-  posterSrc: visualizationPlaceholderImage,
+  posterSrc: visualizationBanner,
 };
 
 export const visualizationWhyChooseSection = {
@@ -279,7 +288,7 @@ export const visualizationWorkflowIntegrateSteps = [
 export const visualizationTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "CAD Drafting Services",
+  titleAccent: "3D Visualization Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 };

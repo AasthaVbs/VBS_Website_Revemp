@@ -1,7 +1,3 @@
-import costEstimationDuringPreConstructionIcon from "@/assets/images/cost-estimation-during-pre-construction-icon.png";
-import largeScaleProcurementIcon from "@/assets/images/large-scale-procurement-icon.png";
-import mepCoordinationComplexIcon from "@/assets/images/mep-coordination-complex-icon.png";
-import modelingForFabricationIcon from "@/assets/images/modeling-for-fabrication-icon.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
   MepBimFeatureCard,
@@ -15,6 +11,11 @@ import {
   mepBimTechnologyStackToolsRowOne,
   mepBimTechnologyStackToolsRowTwo,
 } from "@/constants/mep-bim-modelling-content";
+
+const costEstimationDuringPreConstructionIcon = "/image/cost-estimation-during-pre-construction-icon.png";
+const largeScaleProcurementIcon = "/image/large-scale-procurement-icon.png";
+const mepCoordinationComplexIcon = "/image/mep-coordination-complex-icon.png";
+const modelingForFabricationIcon = "/image/modeling-for-fabrication-icon.png";
 
 export const mepBomHero = {
   tag: "Bill of Material (BOM)",
@@ -254,25 +255,25 @@ export const mepBomOutsourcingGuideCards: MepBimUseCaseCard[] = [
     title: "Cost Estimation During Pre-construction",
     description:
       "Collaborate when true and accurate 5D cost baseline is needed for high fidelity Quantity Takeoff and to minimize cost risk in competitive bidding.",
-    icon: costEstimationDuringPreConstructionIcon.src,
+    icon: costEstimationDuringPreConstructionIcon,
   },
   {
     title: "Complex MEP Coordination",
     description:
       "Engage when complex MEP systems require micro level tracking of subcomponents to make sure spatial coordination aligns with actual procurement and installation.",
-    icon: mepCoordinationComplexIcon.src,
+    icon: mepCoordinationComplexIcon,
   },
   {
     title: "Large Scale Procurement",
     description:
       "Use BOM services to source long-lead equipment and bulk material orders with validated parametric data to help avoid costly logistical delays and overages.",
-    icon: largeScaleProcurementIcon.src,
+    icon: largeScaleProcurementIcon,
   },
   {
     title: "Modeling for Fabrication",
     description:
       "Work together when moving to LOD 400 to create accurate cut-lists and assembly schedules, increasing off-site assembly and reducing waste on the job site.",
-    icon: modelingForFabricationIcon.src,
+    icon: modelingForFabricationIcon,
   },
 ];
 

@@ -1,15 +1,3 @@
-import bimForFacilityManagementIcon from "@/assets/images/Label/bim-for-facility-managementicon-icon.png";
-import cableTrayRoutingOptimizationIcon from "@/assets/images/Label/cable-tray-routing-optimization-icon.png";
-import clashDetectionAndCoordinationIcon from "@/assets/images/Label/clash-detection and coordination-icon.png";
-import fabricationSpoolDrawingsIcon from "@/assets/images/Label/fabrication-spool-drawings-icon.png";
-import fabricationModelingApproachIcon from "@/assets/images/fabrication-modeling-approach-icons.png";
-import globalBimStandardsComplianceIcon from "@/assets/images/global-bim-standards-compliance-icons.png";
-import multiTimeZoneAvailabilityIcon from "@/assets/images/multi-time-zone-availability-icon.png";
-import prefabricationModularBimIcon from "@/assets/images/Label/prefabrication-modular-bim-icon.png";
-import scanToBimAsBuiltModelingIcon from "@/assets/images/Label/scan-to-bim-as-built-modeling-icon.png";
-import scalableTeamsForAnyProjectSizeIcon from "@/assets/images/scalable-teams-for-any-project-size-icons.png";
-import upscaleImageIcon from "@/assets/images/source/upscale_image [Upscaled].png";
-import topMepBimExpertsIcon from "@/assets/images/top-mep-bim-experts-icons.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
   MepBimFeatureCard,
@@ -18,6 +6,19 @@ import type {
   MepOverviewIntroContent,
   MepTrustedByContent,
 } from "@/constants/mep-bim-modelling-content";
+
+const bimForFacilityManagementIcon = "/image/Label/bim-for-facility-managementicon-icon.png";
+const cableTrayRoutingOptimizationIcon = "/image/Label/cable-tray-routing-optimization-icon.png";
+const clashDetectionAndCoordinationIcon = encodeURI("/image/Label/clash-detection and coordination-icon.png");
+const fabricationSpoolDrawingsIcon = "/image/Label/fabrication-spool-drawings-icon.png";
+const fabricationModelingApproachIcon = "/image/fabrication-modeling-approach-icons.png";
+const globalBimStandardsComplianceIcon = "/image/global-bim-standards-compliance-icons.png";
+const multiTimeZoneAvailabilityIcon = "/image/multi-time-zone-availability-icon.png";
+const prefabricationModularBimIcon = "/image/Label/prefabrication-modular-bim-icon.png";
+const scanToBimAsBuiltModelingIcon = "/image/Label/scan-to-bim-as-built-modeling-icon.png";
+const scalableTeamsForAnyProjectSizeIcon = "/image/scalable-teams-for-any-project-size-icons.png";
+const upscaleImageIcon = encodeURI("/image/source/upscale_image [Upscaled].png");
+const topMepBimExpertsIcon = "/image/top-mep-bim-experts-icons.png";
 
 export const mepDataCenterHero = {
   tag: "MEP BIM for data Canters",
@@ -70,43 +71,43 @@ export const mepDataCenterServiceFeatureCards: MepBimFeatureCard[] = [
     title: "MEP BIM Modeling (LOD 300–400)",
     description:
       "Our dedicated MEP BIM engineers deliver detailed data center HVAC BIM modeling along with electrical infrastructure, precision cooling, mechanical piping, and support system modeling at LOD 300-400.",
-    icon: upscaleImageIcon.src,
+    icon: upscaleImageIcon,
   },
   {
     title: "Clash Detection and Coordination",
     description:
       "Our US-trained MEP BIM coordinators run iterative clash detection across MEP systems, structural elements, and architecture, including rack-level clearance validation and overhead cable tray verification.",
-    icon: clashDetectionAndCoordinationIcon.src,
+    icon: clashDetectionAndCoordinationIcon,
   },
   {
     title: "Fabrication and Spool Drawings",
     description:
       "Our team of BIM experts produces piping spool drawings, electrical shop drawings, and hanger and support detailing so prefabrication and installation teams can work from fabrication-ready outputs directly.",
-    icon: fabricationSpoolDrawingsIcon.src,
+    icon: fabricationSpoolDrawingsIcon,
   },
   {
     title: "Prefabrication and Modular BIM",
     description:
       "Our MEP BIM team models skid-based assemblies, modular rack systems, and prefabricated pipe spools while producing detailed documentation that off-site fabrication teams use for accurate on-site installation.",
-    icon: prefabricationModularBimIcon.src,
+    icon: prefabricationModularBimIcon,
   },
   {
     title: "Cable Tray & Routing Optimization",
     description:
       "Cable tray congestion is a major coordination challenge, but our teams optimize layouts for better constructability and access, keeping installation electrical standards compliant.",
-    icon: cableTrayRoutingOptimizationIcon.src,
+    icon: cableTrayRoutingOptimizationIcon,
   },
   {
     title: "Scan to BIM As-Built Modeling",
     description:
       "For existing facilities, retrofits, and phased upgrades, our team processes point cloud data into high-accuracy BIM models that give operators and engineers a reliable foundation to plan renovations.",
-    icon: scanToBimAsBuiltModelingIcon.src,
+    icon: scanToBimAsBuiltModelingIcon,
   },
   {
     title: "BIM for Facility Management and Digital Twin",
     description:
       "Our engineers structure models with asset tagging and system attribute data so facility management teams can support CMMS integration, digital twin programs, and lifecycle operations.",
-    icon: bimForFacilityManagementIcon.src,
+    icon: bimForFacilityManagementIcon,
   },
 ];
 
@@ -209,7 +210,7 @@ export const mepDataCenterWhoWeHelpCards: MepDataCenterWhoWeHelpCard[] = [
 export const mepDataCenterTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "MEP for Data Centers",
+  titleAccent: "MEP Data Center Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 } as const;
@@ -288,31 +289,31 @@ export const mepDataCenterWhyChooseCards = [
     title: "Top-tier MEP BIM Experts",
     description:
       "Our engineers are selected from over 20,000 applicants annually and trained specifically for high-density MEP coordination projects.",
-    icon: topMepBimExpertsIcon.src,
+    icon: topMepBimExpertsIcon,
   },
   {
     title: "Fabrication-First Modeling Approach",
     description:
       "Every model our team produces is structured to support shop floor production and field installation, not just spatial coordination.",
-    icon: fabricationModelingApproachIcon.src,
+    icon: fabricationModelingApproachIcon,
   },
   {
     title: "Multi-Time-Zone Availability",
     description:
       "Comprehensive interference audits and resolution logs providing a verified clash-free environment before site mobilization.",
-    icon: multiTimeZoneAvailabilityIcon.src,
+    icon: multiTimeZoneAvailabilityIcon,
   },
   {
     title: "Scalable Teams for Any Project Size",
     description:
       "Whether you need a single-hall coordination team or a full hyperscale campus crew, we scale resources to match project demand.",
-    icon: scalableTeamsForAnyProjectSizeIcon.src,
+    icon: scalableTeamsForAnyProjectSizeIcon,
   },
   {
     title: "Global BIM Standards Compliance",
     description:
       "Our engineers have delivered projects to US, UK, Australian, and Singapore BIM standards, adapting to your environment from day one.",
-    icon: globalBimStandardsComplianceIcon.src,
+    icon: globalBimStandardsComplianceIcon,
   },
 ] as const;
 

@@ -1,21 +1,3 @@
-import accurateShopDrawingsIcon from "@/assets/images/accurate-shop-drawings-icon 1.png";
-import autocadIcon from "@/assets/images/autocad-icon.png";
-import autodeskRevitIcon from "@/assets/images/autodesk-revit-icon.png";
-import bim360Icon from "@/assets/images/bim-360-icons.png";
-import bluebeamIcon from "@/assets/images/bluebeam-icon.png";
-import complexHighRiseProjectsIcon from "@/assets/images/complex-high-rise-projects-icon 1.png";
-import coordinatedMultiDisciplineModelsIcon from "@/assets/images/coordinated-multi-discipline-models-icon 1.png";
-import fastTrackConstructionSchedulesIcon from "@/assets/images/fast-track-construction-schedules-icon 1.png";
-import fasterCoordinationCyclesIcon from "@/assets/images/faster-coordination-cycles-icon 1.png";
-import improvedConstructabilityReviewIcon from "@/assets/images/improved-constructability-review-icon 1.png";
-import inHouseCapacityConstraintsIcon from "@/assets/images/in-house capacity-constraints-icon 1.png";
-import lumionIcon from "@/assets/images/lumion-icon.png";
-import navisworksIcon from "@/assets/images/navisworks-icon.png";
-import preFabricationModularGoalsIcon from "@/assets/images/pre-fabrication-&-modular-goals-icon 1.png";
-import recapProIcon from "@/assets/images/recap-pro-icon.png";
-import reducedReworkChangeOrdersIcon from "@/assets/images/reduced-rework-&-change-orders-icon 1.png";
-import reviztoIcon from "@/assets/images/revizto-icon.png";
-import transparentIssueTrackingIcon from "@/assets/images/transparent-issue-tracking-icon 1.png";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type {
   MepBimFeatureCard,
@@ -24,6 +6,25 @@ import type {
   MepOverviewIntroContent,
   MepTrustedByContent,
 } from "@/constants/mep-bim-modelling-content";
+
+const accurateShopDrawingsIcon = encodeURI("/image/accurate-shop-drawings-icon 1.png");
+const autocadIcon = "/image/autocad-icon.png";
+const autodeskRevitIcon = "/image/autodesk-revit-icon.png";
+const bim360Icon = "/image/bim-360-icons.png";
+const bluebeamIcon = "/image/bluebeam-icon.png";
+const complexHighRiseProjectsIcon = encodeURI("/image/complex-high-rise-projects-icon 1.png");
+const coordinatedMultiDisciplineModelsIcon = encodeURI("/image/coordinated-multi-discipline-models-icon 1.png");
+const fastTrackConstructionSchedulesIcon = encodeURI("/image/fast-track-construction-schedules-icon 1.png");
+const fasterCoordinationCyclesIcon = encodeURI("/image/faster-coordination-cycles-icon 1.png");
+const improvedConstructabilityReviewIcon = encodeURI("/image/improved-constructability-review-icon 1.png");
+const inHouseCapacityConstraintsIcon = encodeURI("/image/in-house capacity-constraints-icon 1.png");
+const lumionIcon = "/image/lumion-icon.png";
+const navisworksIcon = "/image/navisworks-icon.png";
+const preFabricationModularGoalsIcon = encodeURI("/image/pre-fabrication-&-modular-goals-icon 1.png");
+const recapProIcon = "/image/recap-pro-icon.png";
+const reducedReworkChangeOrdersIcon = encodeURI("/image/reduced-rework-&-change-orders-icon 1.png");
+const reviztoIcon = "/image/revizto-icon.png";
+const transparentIssueTrackingIcon = encodeURI("/image/transparent-issue-tracking-icon 1.png");
 
 export const mepCoordinationHero = {
   tag: "MEP Coordination",
@@ -78,37 +79,37 @@ export const mepCoordinationServiceFeatureCards: MepBimFeatureCard[] = [
     title: "Fully Integrated Multi Discipline Models",
     description:
       "All trade patterns must fit within the building envelope. Our BIM team creates Revit models from LOD 350 to LOD 400 with resolved clashes on MEP (mechanical, electrical, plumbing and fire protection) systems.",
-    icon: coordinatedMultiDisciplineModelsIcon.src,
+    icon: coordinatedMultiDisciplineModelsIcon,
   },
   {
     title: "Enhanced Constructability Review",
     description:
       "Coordination is not just for clash detection. Our specialists review installation sequences, maintenance access and code requirements prior to construction, minimizing RFIs and approval delays.",
-    icon: improvedConstructabilityReviewIcon.src,
+    icon: improvedConstructabilityReviewIcon,
   },
   {
     title: "Rapid Coordination Cycles",
     description:
       "Big projects produce hundreds of coordination problems. Our team leverages structured Navisworks clash detection workflows to minimize the number of coordination cycles and eliminate unnecessary review meetings between trades.",
-    icon: fasterCoordinationCyclesIcon.src,
+    icon: fasterCoordinationCyclesIcon,
   },
   {
     title: "Lower Field Rework and Change Orders",
     description:
       "It costs more to resolve conflicts in the field than in the design office. Our coordination experts locate spatial problems in the BIM model prior to installation, minimizing field changes, change orders, and schedule disruptions.",
-    icon: reducedReworkChangeOrdersIcon.src,
+    icon: reducedReworkChangeOrdersIcon,
   },
   {
     title: "Accurate Shop Drawings at Fabrication Level",
     description:
       "The fabrication relies on good coordination data. We extract hanger layouts, spool and equipment clearance drawings directly from coordinated BIM models for accurate offsite production.",
-    icon: accurateShopDrawingsIcon.src,
+    icon: accurateShopDrawingsIcon,
   },
   {
     title: "Transparent Documentation and Issue Tracking",
     description:
       "Successful coordination requires total transparency. All clashes, resolutions and design decisions are logged by our coordinators in structured issue logs with markup, providing all stakeholders with a clear record of coordination.",
-    icon: transparentIssueTrackingIcon.src,
+    icon: transparentIssueTrackingIcon,
   },
 ];
 
@@ -215,24 +216,24 @@ export const mepCoordinationTechnologyStackSection = {
 } as const;
 
 export const mepCoordinationTechnologyStackToolsRowOne: MepBimTechnologyTool[] = [
-  { name: "Autodesk Revit", icon: autodeskRevitIcon.src, iconWidth: 84, iconHeight: 84 },
-  { name: "Lumion", icon: lumionIcon.src, iconWidth: 74, iconHeight: 74 },
-  { name: "AutoCAD", icon: autocadIcon.src, iconWidth: 84, iconHeight: 84 },
+  { name: "Autodesk Revit", icon: autodeskRevitIcon, iconWidth: 84, iconHeight: 84 },
+  { name: "Lumion", icon: lumionIcon, iconWidth: 74, iconHeight: 74 },
+  { name: "AutoCAD", icon: autocadIcon, iconWidth: 84, iconHeight: 84 },
   {
     name: "ReCap Pro",
-    icon: recapProIcon.src,
+    icon: recapProIcon,
     iconWidth: 71,
     iconHeight: 66,
   },
-  { name: "BIM 360", icon: bim360Icon.src, iconWidth: 66, iconHeight: 79 },
+  { name: "BIM 360", icon: bim360Icon, iconWidth: 66, iconHeight: 79 },
 ];
 
 export const mepCoordinationTechnologyStackToolsRowTwo: MepBimTechnologyTool[] = [
-  { name: "Navis works", icon: navisworksIcon.src, iconWidth: 55, iconHeight: 85 },
-  { name: "Revizto", icon: reviztoIcon.src, iconWidth: 75, iconHeight: 75 },
+  { name: "Navis works", icon: navisworksIcon, iconWidth: 55, iconHeight: 85 },
+  { name: "Revizto", icon: reviztoIcon, iconWidth: 75, iconHeight: 75 },
   {
     name: "Bluebeam",
-    icon: bluebeamIcon.src,
+    icon: bluebeamIcon,
     iconWidth: 85,
     iconHeight: 91,
   },
@@ -293,25 +294,25 @@ export const mepCoordinationOutsourcingGuideCards = [
     title: "Complex High-Rise Projects",
     description:
       "Engage with our expert team to navigate tight plenum spaces and dense MEP requirements, preventing impossible manual detection and structural interferences.",
-    icon: complexHighRiseProjectsIcon.src,
+    icon: complexHighRiseProjectsIcon,
   },
   {
     title: "Fast-Track Construction Schedules",
     description:
       "When it’s time to parallel track design and fabrication, our specialists can be a reliable partner for fast, clash-free shop drawing outputs.",
-    icon: fastTrackConstructionSchedulesIcon.src,
+    icon: fastTrackConstructionSchedulesIcon,
   },
   {
     title: "Goals for Modular and Pre-Fabrication",
     description:
       "Our BIM consultants work with off-site manufacturing projects that require LOD 400 precision to ensure the modules fit perfectly when they arrive.",
-    icon: preFabricationModularGoalsIcon.src,
+    icon: preFabricationModularGoalsIcon,
   },
   {
     title: "In-House Capacity Limitations",
     description:
       "When your own staff is stretched too thin and you need specialized expertise to efficiently coordinate across disciplines, turn to our seasoned engineers.",
-    icon: inHouseCapacityConstraintsIcon.src,
+    icon: inHouseCapacityConstraintsIcon,
   },
 ];
 

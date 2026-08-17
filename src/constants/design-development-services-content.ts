@@ -1,7 +1,3 @@
-import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
-import iconEngageDedicated from "@/assets/images/architecture-services/icon-engage-dedicated.svg";
-import iconEngageStrategic from "@/assets/images/architecture-services/icon-engage-strategic.svg";
-import workflowLogo from "@/assets/images/architecture-services/workflow-logo.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
@@ -11,8 +7,19 @@ import {
 import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
-/** Temporary shared photo until design-development-specific assets are ready. */
-export const designDevelopmentPlaceholderImage = "/image/commercial-mixed-use.png";
+const flexibleEngagementModelsIcon = "/image/flexible-engagement-models.png";
+const iconEngageDedicated = "/image/architecture-services/icon-engage-dedicated.svg";
+const iconEngageStrategic = "/image/architecture-services/icon-engage-strategic.svg";
+const workflowLogo = "/image/architecture-services/workflow-logo.svg";
+
+const architecturalDesignDevelopmentImg = "/image/architectural-design-development.jpg";
+const architecturalStructuralBimModelingImg = "/image/architectural-structural-bim-modeling.jpg";
+const buildingCodeZoningComplianceReviewImg = "/image/building-code-zoning-compliance-review.jpg";
+const designDevelopmentBanner = "/image/design-development-banner.jpg";
+const designDevelopmentOverview = "/image/design-development-overview.jpg";
+const designValidationClashDetectionImg = "/image/design-validation-clash-detection.jpg";
+const materialBuildingSystemDevelopmentImg = "/image/material-building-system-development.jpg";
+const structuralDesignDevelopmentImg = "/image/structural-design-development.jpg";
 
 export const designDevelopmentStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -28,8 +35,8 @@ export const designDevelopmentHero = {
   description:
     "Our US-trained BIM architects and engineers run AI-driven workflows that speed up design development phase in architecture while keeping quality and expertise front and center.",
   ctaLabel: "Connect With Us",
-  imageSrc: designDevelopmentPlaceholderImage,
-  imageAlt: "Design Development Services",
+  imageSrc: designDevelopmentBanner,
+  imageAlt: "Architectural section drawing of a multi-story building for design development services",
   copyMaxWidth: 750,
   descriptionMaxWidth: 750,
   titleMaxWidth: 700,
@@ -54,8 +61,8 @@ export const designDevelopmentIntro = {
     "Multi-stage QA/QC review before every deliverable ships",
     "Design Development Drawings, schedules and coordinated models ready for construction planning",
   ],
-  mainImage: designDevelopmentPlaceholderImage,
-  imageAlt: "Design development overview",
+  mainImage: designDevelopmentOverview,
+  imageAlt: "Architectural design studio with scale model, drawings, and material samples",
 };
 
 export const designDevelopmentOurClientsSection = {
@@ -85,32 +92,32 @@ export const designDevelopmentServiceCards = [
   {
     title: "Architectural Design Development",
     text: "Approved schematic layouts move into detailed Revit models with wall assemblies, door and window schedules, material callouts and interior component coordination ready for construction planning.",
-    image: designDevelopmentPlaceholderImage,
+    image: architecturalDesignDevelopmentImg,
   },
   {
     title: "Structural Design Development",
     text: "Early structural concepts are developed into coordinated Revit models including framing, foundations, columns and load paths. These models are coordinated with the architectural geometry before documentation and construction planning begins.",
-    image: designDevelopmentPlaceholderImage,
+    image: structuralDesignDevelopmentImg,
   },
   {
     title: "Architectural & Structural BIM Modeling",
     text: "One coordinated model for architectural and structural systems helps in detecting conflicts early and maintain design intent throughout the entire set of drawings.",
-    image: designDevelopmentPlaceholderImage,
+    image: architecturalStructuralBimModelingImg,
   },
   {
     title: "Material & Building System Development",
     text: "Material selections, wall assemblies, roofing systems and envelope details are refined and documented providing clear direction for construction pricing, specification and procurement planning for your team.",
-    image: designDevelopmentPlaceholderImage,
+    image: materialBuildingSystemDevelopmentImg,
   },
   {
     title: "Design Validation & Clash Detection",
     text: "Structured Clash Checks in Navisworks are done with coordinated Architectural and Structural models, identifying conflicts early and ensuring that design development drawings are ready for construction documentation without re-work.",
-    image: designDevelopmentPlaceholderImage,
+    image: designValidationClashDetectionImg,
   },
   {
     title: "Building Code & Zoning Compliance Review",
     text: "Every model and drawing set are checked against IBC, ADA and local zoning requirements so that your Design Development Drawings move through permitting and review without delay.",
-    image: designDevelopmentPlaceholderImage,
+    image: buildingCodeZoningComplianceReviewImg,
   },
 ];
 
@@ -129,7 +136,7 @@ export const designDevelopmentAiBimWorkflowSection = {
   description:
     "Explore the workflow that combines proprietary AI tools with expert BIM oversight to accelerate production, maintain quality and support scalable project delivery.",
   videoAriaLabel: "Play AI-driven BIM workflow video",
-  posterSrc: designDevelopmentPlaceholderImage,
+  posterSrc: designDevelopmentBanner,
 };
 
 export const designDevelopmentWhyChooseSection = {

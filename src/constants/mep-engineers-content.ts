@@ -1,17 +1,17 @@
 import type { StatItem } from "@/constants/shared-sections";
-
-import threeDayOnboardingIcon from "@/assets/images/3-day-onboarding.svg";
-import endToEndBimSupportIcon from "@/assets/images/end-to=end-bim-support-icon.svg";
-import fastTurnaroundCycleIcon from "@/assets/images/fast-turnaround-cycle-icon.svg";
-import fastTurnaroundIcon from "@/assets/images/fast-turnaround.svg";
-import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models-icon.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
-import usCodeCompliantDeliveryIcon from "@/assets/images/us-code-complinat-delivery-icon.svg";
-import usCodeCompliantModelsIcon from "@/assets/images/us-code-complaints-models.svg";
 import { ROUTES } from "@/constants/navigation";
 import {
   WHY_CHOOSE_ICON_TOP_BIM_EXPERTS,
 } from "@/constants/service-why-choose-icons";
+
+const threeDayOnboardingIcon = "/image/3-day-onboarding.svg";
+const endToEndBimSupportIcon = "/image/end-to=end-bim-support-icon.svg";
+const fastTurnaroundCycleIcon = "/image/fast-turnaround-cycle-icon.svg";
+const fastTurnaroundIcon = "/image/fast-turnaround.svg";
+const flexibleEngagementModelsIcon = "/image/flexible-engagement-models-icon.svg";
+const usCodeCompliantDeliveryIcon = "/image/us-code-complinat-delivery-icon.svg";
+const usCodeCompliantModelsIcon = "/image/us-code-complaints-models.svg";
 
 export const mepStatsStrip: StatItem[] = [
   { value: "2000+", color: "text-vbs-red", label: "Projects Delivered" },

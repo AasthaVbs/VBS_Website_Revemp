@@ -1,24 +1,23 @@
 "use client";
 
 import Image from "next/image";
-
 import LandingPdfLeadModal from "@/components/landing/landing-pdf-lead-modal";
 import { LandingTopHeader } from "@/components/landing/landing-top-header";
 import { PageContainer } from "@/components/layout/page-container";
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
-
-import heroImg from "@/assets/images/hero-banner 1.jpg";
-import phasesImg from "@/assets/images/overlapping-project-phases.png";
-import growthCostsImg from "@/assets/images/growth 1.jpg";
-import stageImg from "@/assets/images/Stage 1.jpg";
-import phasesIcon from "@/assets/images/dw-project-phases.svg";
-import coordinationIcon from "@/assets/images/dw-coordination.svg";
-import documentationIcon from "@/assets/images/dw-documentation.svg";
-import questionArrowIcon from "@/assets/images/hvd-question-arrow.svg";
-
 import "@/styles/why-growing-architecture-firms-hit-documentation-wall.scss";
+
+const heroImg = encodeURI("/image/hero-banner 1.jpg");
+const phasesImg = "/image/overlapping-project-phases.png";
+const growthCostsImg = encodeURI("/image/growth 1.jpg");
+const stageImg = encodeURI("/image/Stage 1.jpg");
+const phasesIcon = "/image/dw-project-phases.svg";
+const coordinationIcon = "/image/dw-coordination.svg";
+const documentationIcon = "/image/dw-documentation.svg";
+const questionArrowIcon = "/image/hvd-question-arrow.svg";
+
 
 const DOC_WALL_PDF_URL =
   "https://www.virtualbuildingstudio.com/resources/documentation-wall-architecture-firms.pdf?utm_source=LP_DocumentationWall&utm_medium=LPCTA&utm_campaign=T2TOFU";

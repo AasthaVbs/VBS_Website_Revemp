@@ -1,6 +1,7 @@
-import testimonialsBannerImg from "@/assets/images/testimonials-banner.png";
 import { ListingPageHeroSection } from "@/components/sections/listing-page-hero-section";
 import { testimonialsPageHero } from "@/constants/testimonials-page-content";
+
+const testimonialsBannerImg = "/image/testimonials-banner.png";
 
 /** Figma — Testimonials hero */
 export function TestimonialsHeroSection() {

@@ -6,8 +6,14 @@ import {
 } from "@/constants/mep-bim-modelling-content";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
-/** Temporary placeholders until dedicated art is provided */
-const archScanPlaceholderImg = "/image/as-built.jpg";
+const architecturalScanToBimBanner = "/image/architectural-scan-to-bim-banner.jpg";
+const architecturalScanToBimOverview = "/image/architecture-scan-to-bim-services-overview.jpg";
+const pointCloudRegistrationCleanupImg = "/image/point-cloud-registration-and-cleanup.jpg";
+const lod200400BimModelingImg = "/image/lod-200-400-bim-modeling.jpg";
+const asBuiltDocumentationImg = "/image/as-built-documentation.jpg";
+const scanToCadDraftingImg = "/image/scan-to-cad-drafting.jpg";
+const floorPlansRcpsElevationsImg = "/image/floor-plans-rcps-and-elevations.jpg";
+const facadeEnvelopeModelingImg = "/image/facade-and-envelope-modeling.jpg";
 
 export const architecturalScanToBimStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -23,8 +29,8 @@ export const architecturalScanToBimHero = {
   description:
     "In-house teams fall behind when point cloud data piles up. Our BIM professionals use AI-driven workflows to provide quality assured scan to BIM outsourcing services.",
   ctaLabel: "Get a Free Quote",
-  imageSrc: archScanPlaceholderImg,
-  imageAlt: "Architectural Scan to BIM Services",
+  imageSrc: architecturalScanToBimBanner,
+  imageAlt: "Architectural Scan to BIM model of a commercial building facade",
   copyMaxWidth: 716,
   descriptionMaxWidth: 652,
 };
@@ -49,8 +55,8 @@ export const architecturalScanToBimIntro = {
     "Our AI-powered workflow helps BIM experts to convert 10,000 sq.ft. of scans into a BIM model in a day.",
     "Deliverables include Revit models, 2D drawings, registered point cloud files and coordination sheets.",
   ],
-  mainImage: "/image/architectural-scan-to-bim-overview.png",
-  imageAlt: "Architectural Scan to BIM overview",
+  mainImage: architecturalScanToBimOverview,
+  imageAlt: "Architectural Scan to BIM model of an existing brick building",
 };
 
 export const architecturalScanToBimOurClientsSection = {
@@ -79,32 +85,32 @@ export const architecturalScanToBimServiceCards = [
   {
     title: "Point Cloud Registration and Cleanup",
     text: "Our teams align raw scan data from multiple stations into one clean point cloud, removing noise so modelers can build directly from reliable, clean site data.",
-    image: archScanPlaceholderImg,
+    image: pointCloudRegistrationCleanupImg,
   },
   {
     title: "LOD 200-400 BIM Modeling",
     text: "Select the Level of Development your project requires from basic massing at LOD 200 to full detailed models with material data at LOD 400.",
-    image: archScanPlaceholderImg,
+    image: lod200400BimModelingImg,
   },
   {
     title: "As-Built Documentation",
     text: "Our architectural scanning services capture existing conditions with reality capture architecture tools that gives your team a reliable record prior to renovation or retrofit.",
-    image: archScanPlaceholderImg,
+    image: asBuiltDocumentationImg,
   },
   {
     title: "Scan to CAD Drafting",
     text: "We turn point cloud data into 2D CAD drawings, so drafting teams get clean floor plans without manual field measurement.",
-    image: archScanPlaceholderImg,
+    image: scanToCadDraftingImg,
   },
   {
     title: "Floor Plans, RCPs and Elevations",
     text: "Get annotated floor plans, reflected ceiling plans and elevations pulled straight from scan data, ready for coordination and permitting.",
-    image: archScanPlaceholderImg,
+    image: floorPlansRcpsElevationsImg,
   },
   {
     title: "Facade and Envelope Modeling",
     text: "Our modelers capture exterior geometry, cladding details and window openings that help your design teams plan restoration or renovation work with confidence.",
-    image: archScanPlaceholderImg,
+    image: facadeEnvelopeModelingImg,
   },
 ];
 
@@ -209,7 +215,7 @@ export const architecturalScanToBimWorkflowSteps = [
 export const architecturalScanToBimTechnologyStackSection = {
   tag: "Tools & Platforms",
   titleLine1: "We Use to Deliver ",
-  titleAccent: "BIM Modeling Services",
+  titleAccent: "Architectural Scan to BIM Services",
   description:
     "Leveraging industry-leading BIM software to create accurate, coordinated, and constructible MEP models for complex projects.",
 };

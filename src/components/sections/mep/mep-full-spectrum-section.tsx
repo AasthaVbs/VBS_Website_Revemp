@@ -4,8 +4,6 @@
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { useRef } from "react";
-
-// @ts-nocheck
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
@@ -15,6 +13,8 @@ import {
 } from "@/constants/mep-engineers-content";
 import { useHorizontalCarouselWheel } from "@/hooks/use-horizontal-carousel-wheel";
 import { cn } from "@/lib/utils";
+
+// @ts-nocheck
 
 /** Figma node 265:67257 — Our Full-Spectrum MEP Services carousel */
 export function MepFullSpectrumSection() {

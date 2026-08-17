@@ -1,7 +1,7 @@
-import overviewLodIcon from "@/assets/images/Capa_1.svg";
-import overviewAreaIcon from "@/assets/images/svg2433.svg";
-import overviewLocationIcon from "@/assets/images/svg3447.svg";
-import overviewManpowerIcon from "@/assets/images/svg1113.svg";
+const overviewLodIcon = "/image/Capa_1.svg";
+const overviewAreaIcon = "/image/svg2433.svg";
+const overviewLocationIcon = "/image/svg3447.svg";
+const overviewManpowerIcon = "/image/svg1113.svg";
 
 export const overviewChipIcons = {
   lod: overviewLodIcon,

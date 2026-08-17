@@ -1,20 +1,21 @@
 // @ts-nocheck
-import threeDayOnboardingIcon from "@/assets/images/3-day-onboarding.svg";
-import aiPowerWorkflowIcon from "@/assets/images/ai-power-workflow.png";
-import aiPoweredScanIcon from "@/assets/images/ai-owered-scan.svg";
-import bimModelingCoordinationIcon from "@/assets/images/bim-modeling-coordination.png";
-import dedicatedTeamReadyIcon from "@/assets/images/dedicated-team-ready.png";
-import designSupportDocumentationIcon from "@/assets/images/design-support-documentation.png";
-import flexibleEngagementModelsIcon from "@/assets/images/flexible-engagement-models.png";
-import projectSupportHandoverIcon from "@/assets/images/project-support-handover.png";
-import riskFreeTrialIcon from "@/assets/images/risk-free-trial.png";
-import topBimExpertIcon from "@/assets/images/top-bim-expert.png";
-import usCodeCompliantDeliveryIcon from "@/assets/images/us-code-compliant-delivery.png";
-import usCodeCompliantModelsIcon from "@/assets/images/us-code-complaints-models.svg";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 import { WHY_CHOOSE_ICON_TOP_BIM_EXPERTS } from "@/constants/service-why-choose-icons";
+
+const threeDayOnboardingIcon = "/image/3-day-onboarding.svg";
+const aiPowerWorkflowIcon = "/image/ai-power-workflow.png";
+const aiPoweredScanIcon = "/image/ai-owered-scan.svg";
+const bimModelingCoordinationIcon = "/image/bim-modeling-coordination.png";
+const dedicatedTeamReadyIcon = "/image/dedicated-team-ready.png";
+const designSupportDocumentationIcon = "/image/design-support-documentation.png";
+const flexibleEngagementModelsIcon = "/image/flexible-engagement-models.png";
+const projectSupportHandoverIcon = "/image/project-support-handover.png";
+const riskFreeTrialIcon = "/image/risk-free-trial.png";
+const topBimExpertIcon = "/image/top-bim-expert.png";
+const usCodeCompliantDeliveryIcon = "/image/us-code-compliant-delivery.png";
+const usCodeCompliantModelsIcon = "/image/us-code-complaints-models.svg";
 
 export const architectureStatsStrip = [
   { value: "400+", color: "text-vbs-red", label: "US Trained Architects & Engineers" },

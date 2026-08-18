@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { LocationsPage } from "@/components/vbs/locations-page";
 
 export const metadata: Metadata = {
-  title: "CAD Drafting and BIM Services Near You | Virtual Building Studio",
+  title: "Locations | Virtual Building Studio Inc.",
   description:
-    "Find Virtual Building Studio CAD drafting and BIM services near you in New York, California, and Texas. Dedicated architects and engineers for code-compliant drawings and models.",
+    "Access US-trained licensed architects & engineers for CAD/BIM services. Get clash-free, code-compliant models on time -without hiring hassle.",
 };
 
 export default function Page() {

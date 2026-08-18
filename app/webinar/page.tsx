@@ -12,7 +12,7 @@ import { buildResourceCatalogLive } from "@/lib/resource-catalog";
 export const metadata: Metadata = {
   title: "Join our live and On Demand Webinar for Architect & Engineers",
   description:
-    "Join free live and on-demand webinars for architects and engineers. Earn AIA HSW credits and stay updated on industry trends anytime.",
+    "Join free live and on-demand webinars for architects and engineers. Learn, earn AIA HSW credits, and stay updated on the latest industry trends anytime, anywhere!",
 };
 
 export default async function WebinarPage() {

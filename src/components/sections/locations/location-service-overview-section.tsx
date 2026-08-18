@@ -41,7 +41,7 @@ export function LocationServiceOverviewSection({
         <div className="flex min-w-0 flex-1 flex-col items-start gap-5">
           <div className="flex w-full flex-col items-start gap-3">
             <MepSectionTag label={tag} />
-            <h2 className="m-0 w-full text-[32px] leading-[1.15] sm:text-[40px] lg:text-[48px]">
+            <h2 className="m-0 w-full text-[32px] leading-[1.15] sm:text-[40px] min-[1440px]:text-[48px]">
               {titleLines.map((line) => (
                 <span
                   key={line.text}

@@ -445,21 +445,34 @@ export const cadToBimFaqs = [
   },
   {
     q: "How accurate are the BIM models created from the CAD files?",
-    a: "Our CAD to BIM conversion process follows international standards like LOD 300–500, ensuring precise geometry, parametric data, and alignment with project specifications. Every model undergoes strict quality checks before delivery.",
+    a: "With respect to CAD to BIM protocols, we produce models to international standards including LOD 300–500; therefore, geometry, parametric information, and project specifications have a reliable basis for use in BIM. We conduct all models through a rigorous quality check prior to handing them over to the customer.",
   },
   {
     q: "How quickly can your team be integrated into a project?",
-    a: "We can integrate into your workflows within 5 business days, allowing you to scale BIM resources quickly without lengthy hiring or training processes.",
+    a: "We are able to enter into your workflows within 3 business days, which allows you to scale BIM resources and take on more work with no HR investments and without having to hire and train new staff.",
   },
   {
     q: "Do you provide Quantity Take-Offs and BOQs from CAD drawings?",
-    a: "Yes. Our CAD to BIM workflows support automated Quantity Take-Offs (QTO) and accurate BOQs, giving project teams reliable data for budgeting, procurement, and cost planning.",
+    a: "Yes. We provide CAD to BIM workflows that already offer automated Quantity Take-Offs (QTO) and BOQs with accurate quantities to allow project teams to utilize reliable information as part of budgeting, procurement and cost planning.",
   },
   {
     q: "How do you ensure quality when using AI?",
-    a: "AI accelerates model generation and repetitive tasks, while US-trained BIM experts review geometry, data, and coordination through structured QA so every deliverable meets project standards before release.",
+    a: "Every deliverable passes through our structured quality assurance process. Senior BIM leads verify models, drawings and documentation before project delivery. We make sure the final output meets client standards and project requirements.",
   },
 ];
+
+export const cadToBimFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: cadToBimFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const cadToBimContactDescription =
   "Tell us about your CAD or PDF drawings, target LOD, and delivery timeline. Our team will align the right US-trained BIM experts for accurate Revit conversion.";

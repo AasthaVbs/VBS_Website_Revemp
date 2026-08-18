@@ -22,7 +22,7 @@ export function LocationServiceNearYouSection({
       <PageContainer className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:gap-[60px]">
         <div className="w-full shrink-0 lg:w-[min(676px,48%)]">
           <h2
-            className="m-0 w-full capitalize text-[32px] font-medium leading-[1.15] text-[#111111] sm:text-[40px] lg:text-[48px]"
+            className="m-0 w-full capitalize text-[32px] font-medium leading-[1.15] text-[#111111] sm:text-[40px] min-[1440px]:text-[48px]"
             style={{ maxWidth: titleMaxWidth }}
           >
             <span>{titleLead}</span>

@@ -12,7 +12,7 @@ import { buildResourceCatalogLive } from "@/lib/resource-catalog";
 export const metadata: Metadata = {
   title: "BIM Central | Virtual Building Studio (VBS)",
   description:
-    "Welcome to BIM Central - your go-to source for all things Building Information Modeling (BIM). Stay updated with the latest news, events, expert insights, and valuable tips in the world of virtual construction. ",
+    "Welcome to BIM Central, your source for BIM news, events, insights, and tips. Stay updated on the latest trends in virtual construction and BIM technology.",
 };
 
 export default async function BlogPage() {

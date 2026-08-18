@@ -403,18 +403,31 @@ export const mepCoordinationFaqs = [
   },
   {
     q: "How do you organize the MEP coordination workflow and assign responsibilities to each trade?",
-    a: "We assign a dedicated BIM coordinator who manages trade sequencing, zone-based reviews, and clash ownership. Each discipline is mapped to clear responsibilities in Navisworks and Revit, with escalation paths defined during kickoff so architectural, structural, and MEP teams know who resolves what.",
+    a: "At kick-off we established a coordination matrix, with model ownership per trade. First, gravity systems are installed then ductwork, plumbing, fire protection, electrical and structure. Every fight is brought to a conclusion.",
   },
   {
     q: "What MEP coordination software platforms do you use, and how will we be able to access models, markups and issue logs?",
-    a: "We work in Revit, Navisworks Manage, BIM 360/ACC, and Bluebeam for clash detection, markup, and issue tracking. Clients access federated models, markups, and live issue logs through your preferred cloud collaboration hub with role-based permissions.",
+    a: "Our primary platforms are Revit, Navisworks Manage and BIM 360. We also support Bentley ProjectWise and Solibri. All Models, markups and issue logs are issued through project Common Data Environment.",
   },
   {
     q: "How do you coordinate day-to-day? What meetings are there, who is there, and how do you track open issues?",
-    a: "We run scheduled coordination meetings with defined agendas, maintain a centralized clash matrix, and track open issues with assigned owners and due dates. Progress is reviewed in weekly or bi-weekly sessions depending on project phase, with same-day updates shared via Slack, Teams, or ACC.",
+    a: "We perform weekly clash detection against current trade models. A 60-s90 minute coordination meeting with subcontractor and the GC’s BIM Manager. A live register tracks the status and ownership of each open issue.",
   },
   {
-    q: "How do you deal with design changes and late inputs during coordination to keep model and drawings in sync?",
-    a: "When new inputs arrive, we version-control trade models, re-run clash detection on affected zones, and update coordination drawings and issue logs in the same cycle. This keeps federated models, shop drawings, and resolution records synchronized so field teams always work from the latest coordinated deliverables.",
+    q: "How do you deal with design changes and late inputs during coordination to keep model and drawings in sync??",
+    a: "All modifications of the design are recorded and their impact on the coordinated model is promptly evaluated. The affected areas are re-coordinated before next round. To avoid version conflicts we batch the changes and re-issue them with updated drawings.",
   },
 ] as const;
+
+export const mepCoordinationFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: mepCoordinationFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};

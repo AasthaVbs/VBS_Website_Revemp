@@ -350,5 +350,18 @@ export const laserScanToBimFaqs = [
   },
 ];
 
+export const laserScanToBimFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: laserScanToBimFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export const laserScanToBimContactDescription =
   "Share your point cloud files, LOD requirements, and delivery timeline. Our Scan to BIM specialists will align the right dedicated resource for your renovation or retrofit project.";

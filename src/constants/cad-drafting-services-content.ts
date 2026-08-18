@@ -451,25 +451,38 @@ export const cadDraftingFaqSection = {
 export const cadDraftingFaqs = [
   {
     q: "Do you deliver CAD drawings directly?",
-    a: "No. We do not deliver CAD drawings as just a service. We give you access to expert CAD drafters who join your team and follow your standards, templates and existing workflows closely.",
+    a: "No. We do not deliver CAD drawings as just a service. We give you access to expert CAD drafters who join your team and follow your standards, templates, and existing workflows closely.",
   },
   {
     q: "What kind of CAD drafting professionals do you offer?",
-    a: "We provide US-trained CAD drafters experienced across architectural, structural, and MEP documentation — including AutoCAD, Revit support, permit sets, redlines, and construction documentation.",
+    a: "We give you access to the top 1% of US-trained CAD drafters, skilled in architectural, structural, MEP, and facade work. They know AutoCAD, Revit, and other standard tools.",
   },
   {
     q: "Can your drafters work on our internal systems and templates?",
-    a: "Yes. Our drafters work inside your preferred platforms, layer standards, title blocks, and templates so deliverables match your office conventions from day one.",
+    a: "Yes. Our drafters quickly get up to speed with your CAD standards, layering conventions, title blocks, and project protocols. This keeps their work integrated with your existing workflow from day one.",
   },
   {
     q: "Can we bring on your drafters on a short-term basis?",
-    a: "Yes. Flexible engagement models support short-term surge capacity, pilot projects, and longer dedicated-resource arrangements based on your pipeline.",
+    a: "Yes, we provide flexible engagement models, from short-term support during project peaks to long-term engagements. There is no long-term contract that locks you into a fixed team size.",
   },
   {
     q: "How do your drafters communicate with our in-house team?",
-    a: "Drafters communicate through your existing channels — Slack, Asana, email, or project management tools — so coordination stays inside your current workflow.",
+    a: "Our drafters work as an extension of your in-house team. They use your preferred tools, such as email, Slack, Microsoft Teams, Asana, and Trello, to communicate and collaborate with your team.",
   },
 ];
+
+export const cadDraftingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: cadDraftingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const cadDraftingContactDescription =
   "Tell us about your CAD drafting scope, standards, and delivery timeline. Our team will align the right US-trained CAD drafters for your firm.";

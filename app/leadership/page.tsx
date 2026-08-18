@@ -5,7 +5,7 @@ import { VbsLeadershipPage } from "@/components/vbs/leadership-page";
 export const metadata: Metadata = {
   title: "Leadership Team | Virtual Building Studio Inc.",
   description:
-    "Meet our leadership team at Virtual Building Studio. Our experienced board of directors, operations team, and sales & marketing leaders driving innovation in BIM and AEC services.",
+    "Meet VBS leaders driving innovation in BIM and AEC services. Discover our experienced board, operations, sales, and marketing teams shaping the future.",
 };
 
 export default function LeadershipPage() {

@@ -112,7 +112,7 @@ export const bimResourceRevitFamiliesContent: BimResourcePageContent = {
   meta: {
     title: "[Download FREE] 2,200+ Revit Families for Your Design Projects",
     description:
-      "Elevate your Revit design projects with a diverse collection of over 2,200 Revit families spanning various categories such as architecture, furniture, MEPF, and more.",
+      "Elevate Revit design projects with 2,200+ Revit families across architecture, furniture, MEPF, and more. Find versatile BIM content for every project.",
   },
 };
 
@@ -320,7 +320,7 @@ export const bimResourceBimExecutionPlanContent: BimResourcePageContent = {
   meta: {
     title: "[Download FREE] BIM Execution Plan (BEP)",
     description:
-      "Elevate construction excellence with BIM Execution Plan (BEP). This comprehensive guide streamlines project management, fosters collaboration, and ensures precision.",
+      "Elevate construction excellence with a BIM Execution Plan (BEP) guide that streamlines project management, improves collaboration, and ensures precision.",
   },
 };
 
@@ -393,6 +393,6 @@ export const bimResourceDynamoScriptsContent: BimResourcePageContent = {
   meta: {
     title: "[Download FREE] Top 10 Dynamo Scripts for Revit",
     description:
-      "Boost your Revit experience with these 10 essential Dynamo scripts for better project organization and efficiency",
+      "Boost your Revit experience with these 10 essential Dynamo scripts for better project organization, efficiency, automation, and productivity.",
   },
 };

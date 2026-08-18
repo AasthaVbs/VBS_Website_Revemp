@@ -23,7 +23,7 @@ const PROJECT_SEO_TITLES: Record<string, string> = {
   "mepf-bim-coordination-for-industrial-office-building":
     "MEPF BIM Coordination for Industrial Office Building, Florida, USA",
   "hvac-bim-coordination-for-school-building-austin":
-    "HVAC BIM Coordination for School Building, Austin, TX | Virtual Building Studio",
+    "HVAC BIM Coordination for School Building, Austin, TX",
   "coordination-plumbing-bim-modeling-for-sport-club-facility-usa":
     "Coordinated Plumbing BIM Modeling for Sports Club Facility | Iowa, USA",
   "clash-free-bim-modeling-for-mechanical-plant-rom":
@@ -31,41 +31,43 @@ const PROJECT_SEO_TITLES: Record<string, string> = {
   "bim-coordination-for-beachside-resort-hawaii":
     "Clash-Free BIM Coordination for Beachside Resort | Hawaii, USA",
   "architectural-visualization-residential-villa-dubai":
-    "Architectural Visualization for Residential Villa in Dubai ",
+    "Architectural Visualization for Residential Villa in Dubai",
   "multi-family-apartment-bim-visualization-las-vegas":
     "Multi-Family Apartment BIM Visualization | Las Vegas, USA",
   "bim-3d-model-clash-detection-and-coordination-for-government-building":
-    "3D BIM Model Clash Detection Coordination Government Building",
+    "Clash Detection, Coordination & 3D Modeling | Infrastructure",
+  "3d-bim-model-clash-detection-and-coordination-for-government-building":
+    "Clash Detection, Coordination & 3D Modeling | Infrastructure",
   "architectural-structural-mepf-modeling-for-a-commercial-tower":
-    "Architectural, Structural and MEPF Modeling for a Commercial Tower",
+    "Architecture, Structure & MEPF Modeling | Commercial Building",
   "mepf-model-with-clash-detection-coordination-for-defence-institute":
-    "MEPF Model with Clash Detection Coordination for Defense Institute USA",
+    "Shop Drawings, Clash Detection & MEPF Modeling | Commercial",
   "cad-to-bim-conversion-for-a-commercial-project-in-new-york":
-    "CAD to BIM Conversion for a Commercial Project in New York",
+    "CAD to BIM Conversion & MEP Modeling | Commercial Building",
   "mepf-modeling-with-clash-detection-coordination-for-healthcare-institute":
-    "MEPF Modeling with Clash Detection Coordination - Healthcare",
+    "Clash Detection, MEPF Coordination & Modeling | Healthcare",
   "3d-modeling-renderings-for-convention-center-in-minnesota":
-    "3D Modeling Renderings for Convention Center in Minnesota",
+    "3D Modeling & Rendering | Commercial Building",
   "schematic-design-to-construction-for-heritage-building-redevelopment":
-    "Schematic Design to Construction for Heritage Building Redevelopment",
+    "Architecture, Structure & 3D Modeling | Historical Building",
   "architectural-and-structural-model-service-for-residential-project-usa":
-    "Architectural & Structural Model Service for Residential Project USA",
+    "Architecture, Structure 3D Model & Exterior Rendering | Residential",
   "3d-modeling-clash-detection-bim-coordination-for-a-metro-station":
-    "3D Model Clash Detection Coordination Metro Station Malaysia",
+    "Clash Detection & Structural Facade 3D Model | Infrastructure",
   "cad-to-bim-conversion-for-resort-adventure-park-uk":
-    "CAD to BIM Conversion for Resort and Adventure Park UK- VBS",
+    "CAD to BIM Conversion & 3D Modelling | Commercial Building",
   "cad-to-bim-conversion-for-a-construction-project-scarborough":
-    "CAD to BIM Conversion for a Construction Project In Canada",
+    "Architecture, Structure & MEPF Modeling | Residential Building",
   "cad-to-bim-conversion-for-residential-project-usa":
-    "CAD to BIM Conversion for Residential Project USA- VBS",
+    "Cad to BIM Conversion & 3D Modeling | Residential Building",
   "3d-bim-modeling-with-clash-detection-coordination-for-residential-project":
-    "3D BIM Modeling with Clash Detection & Coordination for Residential Project",
+    "Clash Detection, Coordination & 3D Modeling | Residential",
   "cad-to-bim-modeling-with-clash-detection-coordination-for-commercial-project":
-    "CAD to BIM with Clash Detection & Coordination for Commercial Project",
+    "CAD to BIM Conversion & 3D Modeling | Commercial Building",
   "3d-bim-model-clash-detection-coordination-for-nyc-school":
-    "3D BIM Model & Clash Detection and Coordination for NYC School",
+    "Clash Detection, Coordination & 3D BIM Modeling | Commercial Building",
   "structural-bim-modeling-quantity-take-off-for-road-infrastructure":
-    "Structural BIM Modeling - Quantity Take-off for Public Road Infrastructure",
+    "Structural 3D BIM Modeling | Infrastructure Building",
 };
 
 const PROJECT_SEO_DESCRIPTIONS: Record<string, string> = {
@@ -92,39 +94,41 @@ const PROJECT_SEO_DESCRIPTIONS: Record<string, string> = {
   "architectural-visualization-residential-villa-dubai":
     "Discover high-quality 3D interior and exterior rendering for a 10,000 sq. ft. Dubai villa. Photorealistic visuals, walkthroughs, and fast delivery.",
   "multi-family-apartment-bim-visualization-las-vegas":
-    "Learn how a Nevada-based architectural firm improved coordination and design clarity using our documentation support and 3D visualization for a 225,624 sq.ft. project. ",
+    "Learn how a Nevada-based architectural firm improved coordination and design clarity using our documentation support and 3D visualization for a 225,624 sq.ft. project.",
   "bim-3d-model-clash-detection-and-coordination-for-government-building":
-    "Virtual Building Studio successfully delivered LOD 500 As-built model for a Government Building. Our services included inter-discipline clash detection and coordination, 5D quantity take-off, and CAD to BIM conversion.",
+    "Explore completed infrastructure projects featuring Clash Detection, Coordination & 3D Modeling by top 1% architects and engineers. Onboard in just 1 days.",
+  "3d-bim-model-clash-detection-and-coordination-for-government-building":
+    "Explore completed infrastructure projects featuring Clash Detection, Coordination & 3D Modeling by top 1% architects and engineers. Onboard in just 1 days.",
   "architectural-structural-mepf-modeling-for-a-commercial-tower":
-    "Virtual Building Studio successfully delivered LOD 400 MEPF Modeling for Commercial Tower in India. Detailed models with clash detection, 4D simulation, and construction documentation for efficient project management and execution.",
+    "Explore successful commercial projects with Architecture, Structural & MEPF BIM by top 1% architects and engineers. Onboard in 1 days with a 30-day guarantee.",
   "mepf-model-with-clash-detection-coordination-for-defence-institute":
-    "Virtual Building Studio successfully delivered LOD 400 Mechanical, Electrical, Plumbing, and Firefighting BIM modeling services for a Defense Institute in USA.",
+    "Explore completed commercial projects with Shop Drawings, Clash Detection & MEPF Modeling by top 1% architects and engineers. Onboard in 1 days.",
   "cad-to-bim-conversion-for-a-commercial-project-in-new-york":
-    "Virtual Building Studio provided CAD to BIM services, delivering a coordinated LOD 400 model integrating architectural, structural, and MEPF elements. Our detailed shop drawings, hanger drawings, and sleeve drawings ensured precise fabrication, installation, and coordination of MEPF systems.",
+    "Explore completed commercial projects featuring CAD to BIM Conversion & MEPF Modeling by top 1% architects and engineers. Onboard in just 1 days.",
   "mepf-modeling-with-clash-detection-coordination-for-healthcare-institute":
-    "Virtual Building Studio successfully delivered LOD 300 MEPF BIM modeling services for a Healthcare Institute in the USA. Our team conducted inter-discipline clash detection and coordination, creating detailed shop drawings and fabrication drawings.",
+    "Explore completed healthcare projects featuring Clash Detection, Coordination & MEPF Modeling by top 1% architects and engineers. Onboard in 1 days.",
   "3d-modeling-renderings-for-convention-center-in-minnesota":
-    "Using CAD to BIM conversion, Virtual Building Studio delivered a comprehensive LOD 450 BIM model for a venue, accurately representing its architecture and interior spaces. Our visually stunning renderings and immersive walkthrough video showcase the intricate design details.",
+    "Explore completed commercial projects featuring 3D Modeling & Rendering by top 1% architects and engineers. Onboard in just 1 days with a 30-day guarantee.",
   "schematic-design-to-construction-for-heritage-building-redevelopment":
-    "Virtual Building Studio delivered LOD 300 BIM modeling services for a Heritage Building Redevelopment. Our detailed 3D models facilitated effective coordination and documentation. Collaborative design changes, accurate quantity estimation, and high-quality renderings enhanced the project's success.",
+    "Explore completed historical building projects featuring Architecture, Structural & 3D Modeling by top 1% architects and engineers. Onboard in just 1 days.",
   "architectural-and-structural-model-service-for-residential-project-usa":
-    "Virtual Building Studio successfully delivered LOD 300 Architecture, Structure BIM modeling services for a Residential Project in the USA. Our comprehensive services included CAD to BIM conversion, rigorous clash detection, and interior and exterior rendering.",
+    "Explore completed residential projects featuring Architecture, Structure, 3D Modeling & Exterior Rendering by top 1% architects and engineers. Onboard in 1 days.",
   "3d-modeling-clash-detection-bim-coordination-for-a-metro-station":
-    "Virtual Building Studio successfully delivered LOD 400 Architecture, Structure, and Facade BIM modeling services for a Metro Station in Malaysia. Our detailed 3D modelling facilitated coordination and clash detection, ensuring constructability and reducing conflicts on-site. Accurate material estimation supported cost planning and procurement.",
+    "Explore completed infrastructure projects featuring Clash Detection, Coordination & Structural Facade 3D Modeling by top 1% architects and engineers. Onboard in 1 days.",
   "cad-to-bim-conversion-for-resort-adventure-park-uk":
-    "Virtual Building Studio delivered CAD to BIM, LOD 400 Architecture BIM modeling for UK Resort & Adventure Park. Detailed model with parametric data for efficient..",
+    "Explore completed infrastructure projects featuring CAD to BIM Conversion & 3D Modeling by top 1% architects and engineers. Onboard in just 1 days.",
   "cad-to-bim-conversion-for-a-construction-project-scarborough":
-    "Virtual Building Studio successfully delivered CAD to BIM LOD 300 model for Construction Project to Architecture, Structure, and MEPF. Detailed construction documents, accurate quantity extraction for cost estimation and procurement. Experience our expertise in streamlined project coordination.",
+    "Explore completed residential projects featuring Architecture, Structure & MEPF Modeling by top 1% architects and engineers. Onboard in just 1 days.",
   "cad-to-bim-conversion-for-residential-project-usa":
-    "Virtual Building Studio created a comprehensive 3D BIM model for a residential building Project in the USA, capturing detailed architectural components…",
+    "Explore completed residential projects featuring CAD to BIM Conversion & 3D Modeling by top 1% architects and engineers. Onboard in just 3 days.",
   "3d-bim-modeling-with-clash-detection-coordination-for-residential-project":
-    "Virtual Building Studio successfully delivered LOD 350 Architecture, Structure, and MEPF BIM modeling services for a Residential Township Project. Our expert team created a detailed model from CAD files, incorporating Clash Detection, Interdisciplinary Coordination, Construction Scheduling, and Project Tracking for enhanced project management.",
+    "Explore completed residential projects featuring Clash Detection, Coordination & 3D Modeling by top 1% architects and engineers. Onboard in just 1 days.",
   "cad-to-bim-modeling-with-clash-detection-coordination-for-commercial-project":
-    "Virtual Building Studio provided CAD to BIM LOD 300 MEP BIM modeling services for a UK-based Commercial Project. our detailed model incorporated clash detection",
+    "Explore completed commercial projects featuring CAD to BIM Conversion & 3D Modeling by top 1% architects and engineers. Onboard in just 1 days.",
   "3d-bim-model-clash-detection-coordination-for-nyc-school":
-    "Virtual Building Studio successfully delivered LOD 300 MEPF BIM Modeling for a New York school project. Accurate spatial information, clash detection, and coordination resolution for precise construction planning and execution.",
+    "Explore completed commercial projects featuring Clash Detection, Coordination & 3D BIM Modeling by top 1% architects and engineers. Onboard in just 1 days.",
   "structural-bim-modeling-quantity-take-off-for-road-infrastructure":
-    "Virtual Building Studio successfully delivered LOD 350 Structure BIM Modeling for Public Road Infrastructure. Integrated 4D simulation for construction visualization and clash detection. Accurate quantity take-offs for cost estimation and resource planning.",
+    "Explore completed infrastructure projects featuring Structural 3D BIM Modeling by top 1% architects and engineers. Onboard in just 1 days with a 30-day guarantee.",
 };
 
 function projectMetaForSlug(slug: string) {

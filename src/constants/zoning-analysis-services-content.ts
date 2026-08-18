@@ -450,25 +450,38 @@ export const zoningAnalysisFaqs = [
   },
   {
     q: "How long does a typical zoning report take to complete?",
-    a: "Most zoning reports are completed in a few business days once survey data and the site address are in hand. Complex multi-parcel or overlay districts can take longer, and rush support is available when site decisions cannot wait.",
+    a: "Most zoning report services take three to five business days. Timelines depend on jurisdiction complexity and how quickly county records become available for your project.",
   },
   {
     q: "Do you offer Zoning Consulting Services for projects in multiple jurisdictions?",
-    a: "Yes. We research and report against each city, county, and AHJ separately, so multi-site or multi-jurisdiction work stays aligned with local codes instead of a one-size-fits-all summary.",
+    a: "Yes, our Zoning Consulting Services support projects across multiple counties and states. Each jurisdiction gets researched individually to confirm correct, current requirements apply to your site.",
   },
   {
     q: "What does Survey Data Analysis involve in zoning research?",
-    a: "We compare survey drawings, legal descriptions, and current zoning requirements to confirm lot area, setbacks, easements, and existing site conditions before design starts. Any gaps or discrepancies are flagged early.",
+    a: "Survey Data Analysis compares your existing survey against current zoning requirements. This step determines lot area, setbacks and existing site conditions must match official county records.",
   },
   {
     q: "Can you handle zoning research services for out-of-state projects?",
-    a: "Yes. Our team researches municipal and county records remotely for projects anywhere in the US, then delivers a code-verified report your design team can use from any office.",
+    a: "Yes. Our zoning research services cover jurisdictions across the United States. Remote research through county portals and GIS data keeps projects moving regardless of location.",
   },
   {
     q: "What format do your Zoning Report Services come in?",
-    a: "Deliverables typically include a PDF zoning report, coverage and FAR calculation sheets, and development standard summaries ready for your design team. CAD or BIM files can be included when the project needs them.",
+    a: "Zoning Report Services are delivered as clear PDF reports with supporting maps, calculation sheets and source citations. Visuals and massing models in Revit are also available on request for your team.",
   },
 ];
+
+export const zoningAnalysisFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: zoningAnalysisFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const zoningAnalysisContactDescription =
   "Tell us about your site and jurisdiction. Our BIM architects will help you turn scattered zoning data into a permit-ready report.";

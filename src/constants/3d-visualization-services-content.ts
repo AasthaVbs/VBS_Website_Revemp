@@ -464,21 +464,34 @@ export const visualizationFaqs = [
   },
   {
     q: "Can you match our project's technical and branding requirements?",
-    a: "Yes. Renders are built to match your CAD and BIM source files exactly, and we collaborate through your preferred file-sharing and review platforms so visuals stay aligned with your standards.",
+    a: "Yes. Our on-demand resource model helps you ramp up pretty fast to big portfolios or those ongoing visualization needs, without sacrificing the steady quality and keeping delivery timelines in line.",
   },
   {
     q: "How do you ensure quality when using AI?",
-    a: "AI-assisted workflows increase production capacity, and every render still goes through multi-stage QA/QC checks by visualization specialists before it leaves our studio.",
+    a: "All deliverables are subject to our structured quality assurance process. Senior BIM leads review models, drawings and documentation prior to project delivery. We make sure that the final output meets the project requirements and the client’s standards.",
   },
   {
     q: "Do you support both architectural and product visualization?",
-    a: "Yes. We cover architectural visualization from exteriors and interiors to walkthroughs and 360° tours, plus mechanical part and assembly visualization for manufacturers.",
+    a: "Yes, we do both. We provide services for a wide variety of visualization needs from building exterior and interior visualization to detailed product rendering and animation.",
   },
   {
     q: "What software and tools do you use for 3D visualization?",
-    a: "Work is delivered in Autodesk 3ds Max, V-Ray, Lumion, and Unreal Engine, with BIM source files from Revit, AutoCAD, and related platforms as needed.",
+    a: "We employ Autodesk 3ds Max, V-Ray, Corona Renderer, Lumion, Enscape and Unreal Engine to produce high quality renders optimized for your preferred output format.",
   },
 ];
+
+export const visualizationFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: visualizationFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const visualizationContactDescription =
   "Tell us about your architectural visualization needs. Our visualization architects will help you turn drawings into photorealistic renders that get design approval faster.";

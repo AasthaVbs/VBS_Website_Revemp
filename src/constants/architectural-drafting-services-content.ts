@@ -302,25 +302,38 @@ export const architecturalDraftingFaqSection = {
 export const architecturalDraftingFaqs = [
   {
     q: "Do your drafters work directly on my projects?",
-    a: "Yes. Your drafter works only within your workflow, tools, and schedule. No one splits their time across other clients.",
+    a: "Yes. The drafter works exclusively within your workflow, tools, and schedule. They do not split their time across other clients.",
   },
   {
     q: "How is this different from a freelancer?",
-    a: "You get a managed drafting resource with structured QA, backup coverage, US code familiarity, and consistent office standards — not a one-person dependency.",
+    a: "Every drafter goes through a vetting process. A dedicated management layer handles quality control and ensures that a replacement can be arranged without disrupting your project.",
   },
   {
     q: "Do your drafters understand US documentation standards?",
-    a: "Yes. Our US-trained drafters prepare documents aligned with IBC, ADA, NFPA, and common AHJ submission expectations for residential and commercial projects.",
+    a: "Yes. Every drafter is trained specifically for US projects and works with standards and requirements such as IBC, ADA, NFPA, and AIA.",
   },
   {
     q: "What if the assigned drafter is not the right fit?",
-    a: "We replace the resource quickly and keep project continuity intact. Your account team manages the transition so deadlines stay protected.",
+    a: "We can replace the drafter promptly. Our team of 500+ pre-vetted experts allows us to find the right match quickly while minimizing any impact on your project timeline.",
   },
   {
     q: "How do you ensure quality when using AI?",
-    a: "AI accelerates production tasks, while experienced drafters review layers, dimensions, annotations, and code compliance through structured QA before every delivery.",
+    a: "Every deliverable passes through our structured quality assurance process. Senior BIM leads verify models, drawings, and documentation before project delivery to ensure the final output meets client standards and project requirements.",
   },
 ];
+
+export const architecturalDraftingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: architecturalDraftingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const architecturalDraftingContactDescription =
   "Tell us about your drafting scope, documentation standards, and delivery timeline. Our team will align the right US-trained Revit drafters for your firm.";

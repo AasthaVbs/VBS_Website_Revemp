@@ -6,6 +6,7 @@ import "@/styles/vbs-webinar-detail-page.scss";
 import "@/styles/vbs-static-webinar-detail.scss";
 import "@/styles/vbs-webinar-video-gate.scss";
 import "@/styles/vbs-legacy-projects.scss";
+import "@/styles/vbs-laptop-heading-scale.scss";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },

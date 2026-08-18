@@ -383,18 +383,31 @@ export const mepRevitFamilyCreationFaqs = [
   },
   {
     q: "Can you match our specific company standards and templates?",
-    a: "Yes. We align naming conventions, shared parameters, type catalogs, and hosting methods with your company templates and BIM Execution Plan so families drop into your existing libraries without rework.",
+    a: "Yes. We build every family around your naming conventions, shared parameters and LOD or LOI requirements. Our MEP Revit family experts use your existing templates and reduce the need for manual adjustments during project execution.",
   },
   {
     q: "How do you maintain high performance without bloating file sizes?",
-    a: "We use controlled geometry, nested components where appropriate, and LOD-appropriate detail. Each family is tested for file size, constraints, and Revit responsiveness before delivery.",
+    a: "We keep every component efficient, since large families lead to lower project performance. Our specialists use optimized geometry, nested families and controlled parameters to keep it flexible without making the file size unnecessarily large.",
   },
   {
     q: "How is the service priced, and what is the typical turnaround?",
-    a: "Pricing depends on family complexity, quantity, and documentation requirements. Typical turnaround ranges from a few days for standard components to longer cycles for large custom libraries—share your scope for a fixed quote.",
+    a: "Pricing depends on family complexity, required parameters and project volume. Standard MEP Family Creation Services are typically delivered within 48 to 72 hours. More complex parametric equipment may require further review and testing.",
   },
   {
     q: "Who owns the families and what about data security?",
-    a: "You own all delivered .RFA files, type catalogs, and related documentation. We follow strict access controls and project confidentiality practices so manufacturer and project data stay protected.",
+    a: "You get full ownership of all .RFA files and type catalogs upon project delivery. We work under signed NDAs and keep your project information protected throughout the engagement. We also share library updates when software versions or manufacturer specifications change.",
   },
 ] as const;
+
+export const mepRevitFamilyCreationFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: mepRevitFamilyCreationFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};

@@ -590,7 +590,7 @@ export const scanToBimFaqs = [
     a: "Our Scan to BIM team works directly in your local time zone. Daily updates are managed seamlessly via email, Microsoft Teams, or Slack.",
   },
   {
-    q: 'Do you just "do Revit" or follow a structured workflow?',
+    q: "Do you just “do Revit” or follow a structured workflow?",
     a: "No. Our specialists use ReCap for registration, and Revit, Archicad or AutoCAD for modeling. We also integrate Navisworks for clash detection. We use the proven software combo based entirely on your project requirements. Our 6-step scan to BIM workflow ensures absolute accuracy and strict tolerance compliance.",
   },
   {

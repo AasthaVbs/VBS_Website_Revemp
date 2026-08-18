@@ -358,25 +358,38 @@ export const revitFamilyCreationFaqSection = {
 export const revitFamilyCreationFaqs = [
   {
     q: "Do you provide project-specific Revit Family Creation services?",
-    a: "No, we provide access to top 1% US-trained Revit experts with deep experience in Revit Family Creation Services. Our professionals integrate into your team within 5 days and function as an extension of your in-house staff.",
+    a: "No, we give you access to top 1% US-trained Revit experts. These specialists integrate into your team within 3 business days and work as an extension of your staff.",
   },
   {
-    q: "Can I scale the Revit family creation team up or down based on workload?",
-    a: "Yes. You can scale your dedicated family creation team up or down as project demand changes. Engagement models support short spikes, steady pipelines, and longer-term capacity without restarting onboarding each time.",
+    q: "Can I scale the Revit family creation team up/down based on workload?",
+    a: "Yes, our flexible engagement model lets you scale your team up and down anytime. This suits firms handling multiple BIM Object Creation projects or tight structural delivery timelines.",
   },
   {
     q: "Do your experts work in the same time zone as our U.S. team?",
-    a: "Our Revit family experts align with U.S. business hours and collaboration windows so reviews, feedback, and handoffs stay in sync with your internal design and production schedules.",
+    a: "Yes. Our vetted Revit experts train to collaborate in US time zones. This means realtime revisions quick feedback loops and communication that stays smooth and direct.",
   },
   {
     q: "How fast can you onboard a resource for Revit Family Creation?",
-    a: "We typically onboard a dedicated Revit Family Creation resource within 5 business days, after aligning standards, naming conventions, LOD requirements, and preferred collaboration platforms.",
+    a: "We integrate a dedicated expert into your team in as little as 3 business days. No training is needed, they contribute value from day one on the job.",
   },
   {
     q: "How do you ensure quality when using AI?",
-    a: "AI accelerates parametric development and repetitive tasks, while US-trained Revit experts review geometry, parameters, metadata, and standards through structured QA so every family is code-compliant before delivery.",
+    a: "Every deliverable passes through our structured quality assurance process. Senior BIM leads verify models, drawings and documentation before project delivery. We make sure the final output meets client standards and project requirements.",
   },
 ];
+
+export const revitFamilyCreationFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: revitFamilyCreationFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const revitFamilyCreationContactDescription =
   "Tell us about your family library needs, LOD targets, and product or project standards. Our team will align the right US-trained Revit experts to build parametric BIM content that fits your workflow.";

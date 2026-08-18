@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import "@/styles/vbs-legacy-projects.scss";
 import "@/styles/malaysia-data-center-case.scss";
 import "@/styles/las-vegas-case.scss";
+import "@/styles/vbs-laptop-heading-scale.scss";
 
 /** Legacy Gatsby project / case study detail pages */
 export default function PortfolioProjectLayout({ children }: { children: ReactNode }) {

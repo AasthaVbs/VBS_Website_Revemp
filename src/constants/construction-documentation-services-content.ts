@@ -444,25 +444,38 @@ export const constructionDocumentationFaqSection = {
 export const constructionDocumentationFaqs = [
   {
     q: "What are construction documentation services?",
-    a: "Construction documentation services turn approved designs into permit-ready drawing sets, including plans, elevations, sections, schedules, and construction details needed for bidding, permitting and construction activities.",
+    a: "Construction documentation services turn approved designs into permit-ready drawing sets, including plans, elevations, sections, schedules, and construction details needed for bidding, permitting, and construction activities.",
   },
   {
     q: "Do you provide both architectural and structural construction drawings?",
-    a: "Yes. Our teams deliver coordinated architectural and structural construction drawings, including framing, foundations, plans, elevations, sections, schedules, and detail sheets.",
+    a: "Yes, we provide architectural construction drawings and structural construction drawings as coordinated packages. Both disciplines are modeled together, helping keep your drawing sets coordinated from issue to issue.",
   },
   {
     q: "Do you work with our existing CAD or PDF files?",
-    a: "Yes. We can start from your CAD, PDF, or Revit files, apply your office standards, and produce coordinated construction documentation inside your preferred collaboration environment.",
+    a: "Yes, we work from your existing CAD files, PDFs, or scanned drawings to build coordinated construction documentation. Legacy files can be converted into structured, code-compliant BIM-based drawing sets.",
   },
   {
     q: "Can we start with a small trial project?",
-    a: "Absolutely. Many firms begin with a risk-free trial or single project engagement so you can evaluate quality, turnaround, and workflow fit before scaling.",
+    a: "Yes. We offer a risk-free trial to test our construction documentation services on a real project before you decide to commit to a long-term engagement. Most firms use the trial to evaluate quality and turnaround time firsthand.",
   },
   {
     q: "How do you make sure quality when using AI?",
-    a: "AI accelerates production and coordination checks, while US-trained BIM leads run structured QA/QC on every set. Final sheets are reviewed against codes, coordination rules, and your office standards before delivery.",
+    a: "All construction drawings go through our structured quality assurance process. Senior BIM leads review the models, drawings, and documentation before project completion. We deliver the output according to the client's standards and project requirements.",
   },
 ];
+
+export const constructionDocumentationFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: constructionDocumentationFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const constructionDocumentationContactDescription =
   "Tell us about your construction documentation needs. Our BIM architects will help you clear drawing backlogs and deliver permit-ready sets faster.";

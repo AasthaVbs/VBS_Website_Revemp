@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { MepBimServicesNewYorkPage } from "@/components/vbs/mep-bim-services-new-york-page";
 
 export const metadata: Metadata = {
-  title: "MEP BIM Services in New York | Virtual Building Studio",
+  title: "MEP BIM Services in New York | Pre-Vetted MEP Experts",
   description:
-    "Hire US-trained MEP BIM modelers in New York for precise, clash-free, code-compliant models. Cut rework, beat delays, and keep NYC projects running smoothly.",
+    "Get the best BIM MEP services in New York from US-trained MEP modelers. Minimize rework, meet tight deadlines, and scale with a 30-day risk-free trial.",
 };
 
 export default function Page() {

@@ -5,7 +5,8 @@ import { CadToBimConversionServicesPage } from "@/components/vbs/cad-to-bim-conv
 export const metadata: Metadata = {
   title: "CAD to BIM Conversion Services USA",
   description:
-    "Expert CAD to BIM Conversion Services: From PDF to BIM, Clash Detection, and BIM Coordination to Lifecycle Modeling and Object Tagging, we ensure accuracy and efficiency in every project.",
+    "Expert CAD to BIM Conversion Services for PDF to BIM, Clash Detection, Coordination, Lifecycle Modeling & Object Tagging - ensuring accuracy and efficiency.",
+  robots: { index: false, follow: false },
 };
 
 export default function Page() {

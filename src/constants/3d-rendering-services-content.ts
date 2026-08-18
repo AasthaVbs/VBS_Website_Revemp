@@ -423,21 +423,34 @@ export const threeDRenderingFaqs = [
   },
   {
     q: "Why choose an architectural rendering company over a freelancer?",
-    a: "An architectural rendering company gives you a pre-vetted team, QA/QC on every render, and capacity that scales with your pipeline. You get consistent quality, faster turnaround, and a dedicated resource that learns your standards instead of starting over with a new freelancer each time.",
+    a: "An architectural rendering company gives you a full team, backup coverage and steady quality. A single freelancer cannot match that capacity during busy production periods.",
   },
   {
     q: "Do you offer 3D interior rendering services for design firms?",
-    a: "Yes. Our 3D interior rendering services capture room layouts, finishes, furniture and lighting so clients can picture the space before it exists. Interior designers also use these renders to test material and color choices and get sign-off before ordering materials.",
+    a: "Yes, our 3D interior rendering services cover furniture layouts, finishes, and lighting studies for interior designers. We also handle exterior, walkthrough and marketing renders for the same project.",
   },
   {
     q: "Can we outsource just one project instead of a long-term contract?",
-    a: "Yes. Project-based support is built for one-time projects and fast-moving delivery needs, with no long-term commitment. You can start with a no-risk trial and grow into a dedicated team if your pipeline needs it.",
+    a: "Yes. Many firms start by outsourcing architectural 3D rendering services for a single project, then expand into a dedicated monthly team once workload grows.",
   },
   {
     q: "How do you price 3D rendering service provider work?",
-    a: "Pricing follows the engagement model that fits your delivery needs—project-based support, a dedicated rendering resource, or a global delivery center. Scope, stills, walkthroughs and turnaround all factor into the quote.",
+    a: "As your 3D rendering service provider, we don't charge per render. Our architectural rendering services run through a dedicated monthly engagement, and your team handles revisions within that scope.",
   },
 ];
+
+export const threeDRenderingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: threeDRenderingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const threeDRenderingContactDescription =
   "Tell us about your rendering needs. Our US-trained rendering architects will help you deliver exterior, interior and walkthrough visuals faster so your firm can win design approvals with more confidence.";

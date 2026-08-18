@@ -445,21 +445,34 @@ export const structuralBimFaqs = [
   },
   {
     q: "Can you work from existing CAD, PDF, or point cloud data?",
-    a: "Yes. We can start from CAD, PDF, or point cloud inputs, convert or remodel as needed, then deliver coordinated structural BIM models aligned to your LOD and delivery standards.",
+    a: "Yes. We convert CAD files, PDFs and point cloud scans into coordinated structural models. Existing project data is used for training new models, reducing time for modeling.",
   },
   {
     q: "How do you ensure quality when using AI?",
-    a: "AI accelerates production steps, while US-trained structural BIM experts run QA/QC at each LOD milestone. Models are checked against codes, coordination rules, and your office standards before handover.",
+    a: "All deliverables go through our structured quality assurance process. Senior BIM leads verify models, drawings and documentation prior to project delivery. We guarantee that the output fulfills client standards and project requirements.",
   },
   {
     q: "What is your pricing for Structural BIM Outsourcing services?",
-    a: "Pricing depends on scope, LOD, discipline mix, and engagement model. Share your drawings or model requirements and we will propose a clear fixed-fee or dedicated-resource option.",
+    a: "We have resource models dedicated to your team size and LOD requirements. Structural BIM Outsourcing grows with your budget and ongoing workload, not just a single project.",
   },
   {
     q: "Can we do a pilot project before committing long term?",
-    a: "Yes. Most firms start with a pilot package or risk-free trial so you can evaluate quality, turnaround, and collaboration before expanding to ongoing delivery.",
+    a: "Yes.  We offer a risk-free trial period for you to try our Structural 3D Modeling Services on a real project. You can sign a longer engagement afterwards.",
   },
 ];
+
+export const structuralBimFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: structuralBimFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const structuralBimContactDescription =
   "Tell us about your structural modeling needs. Our BIM specialists will help you scale delivery with coordinated, code-compliant models.";

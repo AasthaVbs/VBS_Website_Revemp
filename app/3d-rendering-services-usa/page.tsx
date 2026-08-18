@@ -5,7 +5,8 @@ import { ThreeDRenderingServicesUsaPage } from "@/components/vbs/3d-rendering-se
 export const metadata: Metadata = {
   title: "3D Rendering Services - Architectural Rendering Services",
   description:
-    "Bring designs to life with our professional 3D Rendering Services. We deliver high-quality architectural renderings that enhance visualization, accuracy, and client presentations",
+    "Bring designs to life with professional 3D Rendering Services. Get high-quality architectural renderings for better visualization, accuracy, and client presentations.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "/3d-rendering-services-usa",
   },

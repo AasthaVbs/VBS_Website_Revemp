@@ -429,21 +429,34 @@ export const fourDBimSchedulingFaqs = [
   },
   {
     q: "How is 4D BIM different from a regular construction schedule?",
-    a: "A regular schedule is a list of activities and dates. 4D BIM links those activities to model elements so you can simulate construction sequences, spot conflicts in space and time, and validate logistics before work begins on site.",
+    a: "A regular schedule lists dates and tasks. 4D BIM Modeling Services then link those tasks to the actual model, so you see the full sequence visually.",
   },
   {
     q: "Which scheduling software do you use for 4D BIM Scheduling Services?",
-    a: "We work with Primavera P6, Microsoft Project, Synchro Pro, Navisworks, and Autodesk Construction Cloud / BIM 360—matched to your existing tools and delivery standards.",
+    a: "We work with Primavera P6, MS Project, Synchro Pro and Navisworks. We match the platform to your existing construction scheduling services and internal reporting needs.",
   },
   {
     q: "Can you work from CAD drawings that have not been converted to BIM yet?",
-    a: "Yes. We can convert CAD or PDF drawings into coordinated BIM models first, then build the 4D schedule and simulation from that model so sequencing stays accurate.",
+    a: "Yes, we convert your 2D CAD drawings into coordinated BIM models first. Then we build the full 4D construction simulation on top of that converted model.",
   },
   {
     q: "Can your AI-assisted workflow work with our existing BIM standards?",
-    a: "Yes. We align templates, naming, LOD, and QA/QC to your office standards before production starts, then use AI-assisted workflows to accelerate delivery without changing how your team reviews work.",
+    a: "Yes. Our BIM experts align AI-assisted workflows with your BIM execution plans, naming conventions, project standards, and delivery requirements before production begins.",
   },
 ];
+
+export const fourDBimSchedulingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: fourDBimSchedulingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const fourDBimSchedulingContactDescription =
   "Tell us about your construction schedule challenges. Our 4D BIM experts will help you connect models to reliable sequencing and delivery plans.";

@@ -10,9 +10,9 @@ import {
 import { buildResourceCatalog } from "@/lib/resource-catalog";
 
 export const metadata: Metadata = {
-  title: "Our Successfully Completed BIM Projects | Virtual Building Studio",
+  title: "BIM Portfolio | Successful Projects by Top 1% AEC Experts",
   description:
-    "Our portfolio offers a wide range of projects for AEC professionals, including Scan to BIM, CAD to BIM conversions, Clash Detection & Co-Ordination, Value Engineering, 4D simulations, 5D Quantity Take-Offs, and captivating 3D rendering and walkthroughs for architecture, structure, and MEPF disciplines.",
+    "Explore successful BIM projects by top 1% architects & engineers for AEC clients. Onboard in just 1 days and try our 30-day money-back guarantee.",
 };
 
 export default function PortfolioPage() {

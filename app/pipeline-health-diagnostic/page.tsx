@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "The Pipeline Health Diagnostic - 12 Questions",
   description:
     "Run a 12-question pipeline diagnostic to identify your highest-leverage intervention across senior time, documentation load, and delivery flow.",
-  robots: { index: false, follow: true },
+  robots: { index: false, follow: false },
 };
 
 export default function PipelineHealthDiagnosticPage() {

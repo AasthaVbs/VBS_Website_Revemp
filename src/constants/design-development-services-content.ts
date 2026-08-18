@@ -447,25 +447,42 @@ export const designDevelopmentFaqs = [
   },
   {
     q: "How is Design Development different from Schematic Design?",
-    a: "Schematic design locks in layout, massing, and design intent. Design development takes those approved concepts into coordinated systems—assemblies, schedules, structural alignment, and code-checked models ready for construction documentation.",
+    a: "Schematic Design gives the overall concept, while Design Development in architecture develops that concept into coordinated systems, material choices and technical detail suitable for construction planning.",
   },
   {
     q: "Can you work with our existing Revit standards and templates?",
-    a: "Yes. We model in your Revit standards and templates, then deliver through BIM 360 or ACC so files, families, and naming stay aligned with how your office already works.",
+    a: "Yes. Our Revit Design Development Services use your firm's templates, standards and naming conventions and keep every model consistent with your existing project library and workflow.",
   },
   {
     q: "How do you handle structural coordination during Design Development?",
-    a: "Architectural and structural teams work from one coordinated Revit model. Clash checks in Navisworks catch framing, load path, and geometry conflicts before drawings move into construction documentation.",
+    a: "Structural Design Development runs alongside architectural drafting, so framing, foundations, columns and load paths stay aligned with architectural intent before drawings move into review.",
   },
   {
     q: "How are your Design Development Services priced?",
-    a: "Pricing follows the engagement model you choose—project-based support, a dedicated architecture team, or a strategic delivery partnership. Many firms start with a single project or risk-free trial before expanding.",
+    a: "You get dedicated architects and engineers who work on your project throughout its full timeline. You pay a monthly engagement fee, not per-project invoices, giving your firm predictable costs.",
   },
   {
     q: "Can we start with a pilot project before committing long term?",
-    a: "Yes. A pilot or project engagement lets you evaluate quality, turnaround, and collaboration before moving to an ongoing dedicated team or longer-term partnership.",
+    a: "Yes. We offer a risk-free trial so your firm can review our Design Development consultants and process quality before making any long-term commitment to a full team.",
+  },
+  {
+    q: "How do you make sure quality when using AI?",
+    a: "All construction drawings go through our structured quality assurance process. Senior BIM leads review the models, drawings and documentation before project completion. We deliver the output according to the client's standards and project requirements.",
   },
 ];
+
+export const designDevelopmentFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: designDevelopmentFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const designDevelopmentContactDescription =
   "Tell us about your design development needs. Our BIM architects will help you move approved concepts into coordinated, construction-ready systems.";

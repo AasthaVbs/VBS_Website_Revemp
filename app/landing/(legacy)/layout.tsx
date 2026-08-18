@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/styles/vbs-legacy-projects.scss";
+import "@/styles/vbs-laptop-heading-scale.scss";
 
 /** Legacy Gatsby-style landing pages that still depend on Bootstrap + legacy SCSS. */
 export default function LandingLegacyLayout({ children }: { children: ReactNode }) {

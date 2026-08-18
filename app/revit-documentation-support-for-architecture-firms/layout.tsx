@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "@/styles/vbs-laptop-heading-scale.scss";
 
 /** Bootstrap + Font Awesome for gated PDF modal on this redesign case-study page. */
 export default function RevitDocumentationSupportLayout({ children }: { children: ReactNode }) {

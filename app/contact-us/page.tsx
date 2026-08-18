@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { VbsContactPage } from "@/components/vbs/contact-page";
 
 export const metadata: Metadata = {
-  title: "Fill Up the Form & Tell Us Your Requirements",
+  title: "Contact Us | BIM Company USA | Virtual Building Studio (VBS)",
   description:
-    "Need expert BIM support? Virtual Building Studio delivers reliable BIM solutions for architecture, engineering, and construction firms.",
+    "Get expert BIM advice from Virtual Building Studio (VBS), a global leader in BIM services delivering accurate, efficient, and high-quality solutions for projects.",
 };
 
 export default function ContactPage() {

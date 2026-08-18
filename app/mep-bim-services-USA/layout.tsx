@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/styles/vbs-mep-bim-usa.scss";
+import "@/styles/vbs-laptop-heading-scale.scss";
 
 export default function MepBimServicesUsaLayout({ children }: { children: ReactNode }) {
   return (

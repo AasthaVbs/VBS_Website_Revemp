@@ -446,25 +446,38 @@ export const asBuiltDraftingFaqSection = {
 export const asBuiltDraftingFaqs = [
   {
     q: "What does an as-built drafting provider deliver?",
-    a: "We deliver updated architectural and structural drawings, Revit models and BOMA area calculations that reflect real site conditions. Formats include RVT, DWG, IFC and PDF for every project.",
+    a: "We deliver updated architectural and structural drawings, Revit models, and BOMA area calculations that reflect real site conditions. Formats include RVT, DWG, IFC, and PDF for every project.",
   },
   {
     q: "How do you capture site conditions for as-built drawings?",
-    a: "We verify existing field conditions against original plans, then update plans, sections and elevations so walls, finishes, rooms, beams and columns match what is on site before drawings are issued.",
+    a: "Our team reviews laser scans, field photos, or your redline markups against existing drawings carefully. Mismatches are flagged, verified, and corrected before the model is fully updated.",
   },
   {
     q: "What file formats do you deliver for as-built drawing services?",
-    a: "Deliverables include plans, elevations, sections, schedules and BIM models in RVT, DWG, IFC and PDF so your team can use the records across design, permitting and facility workflows.",
+    a: "We provide drawings and models in RVT, DWG, IFC, and PDF formats according to the specifications of your project. Files remain compatible with your existing CDE or BIM 360 setup.",
   },
   {
     q: "How fast can you start an as-built drafting engagement?",
-    a: "Experienced CAD drafters can join within 24 hours for workload spikes, project deadlines and resource shortages. Production begins as soon as essential alignment is complete.",
+    a: "Your dedicated as-built team can be assembled within 24 hours of receiving the project scope and site data. Production begins right after onboarding to help keep project timelines predictable.",
   },
   {
     q: "How do you guarantee the quality of your drawings?",
-    a: "Multi-stage QA and QC checks catch dimensional errors before drawings reach your desk. Drawings are prepared to IBC, ADA and local AHJ requirements for permits and compliance reviews.",
+    a: "Multi-stage QA and QC checks help catch dimensional errors before drawings reach your desk. Drawings are prepared to IBC, ADA, and local AHJ requirements for permits and compliance reviews.",
   },
 ];
+
+export const asBuiltDraftingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: asBuiltDraftingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const asBuiltDraftingContactDescription =
   "Tell us about your as-built drafting needs. Our BIM experts will help you produce drawings that match current site conditions for renovation, compliance and facility records.";

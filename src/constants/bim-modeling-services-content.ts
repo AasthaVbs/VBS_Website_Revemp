@@ -448,21 +448,34 @@ export const bimModelingFaqs = [
   },
   {
     q: "What Levels of Development (LOD) do you support?",
-    a: "We deliver LOD 100–500 modeling aligned with AIA and BIMForum specifications, from conceptual massing through fabrication-ready and FM-ready as-built models based on your project requirements.",
+    a: "We support LOD 100-500, from schematic massing through detailed fabrication and as-built documentation, in accordance with AIA/BIMForum standards.",
   },
   {
     q: "What software do you use for coordination and clash detection?",
-    a: "We coordinate and detect clashes using Navisworks Manage, Solibri Model Checker, and BIMCollab, with cloud collaboration through Autodesk BIM 360 and Autodesk Construction Cloud (ACC).",
+    a: "For federated model clash analysis we use Navisworks Manage and Solibri Model Checker supported by Revit interference tools to ensure multi-disciplinary clash resolution.",
   },
   {
     q: "How do you maintain data interoperability between platforms?",
-    a: "We build IFC-compliant components and exchange deliverables in RVT, IFC, NWC, DWG, and PDF formats so models remain usable across Revit, ArchiCAD, Civil 3D, and downstream construction platforms.",
+    a: "We develop IFC compliant models and develop custom Revit families and BIM Collaboration Format (BCF) workflows to enable seamless integration with software such as ArchiCAD, Civil 3D and facility management systems.",
   },
   {
     q: "How do you ensure quality when using AI?",
-    a: "AI accelerates model generation and repetitive tasks, while US-trained BIM experts review geometry, data, and coordination through structured QA so every deliverable meets project standards before release.",
+    a: "Every deliverable passes through our structured quality assurance process. Senior BIM leads verify models, drawings and documentation before project delivery. We make sure the final output meets client standards and project requirements.",
   },
 ];
+
+export const bimModelingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: bimModelingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const bimModelingContactDescription =
   "Tell us about your BIM modeling scope, timelines, and delivery standards. Our team will align the right US-trained experts to keep your project coordinated and on schedule.";

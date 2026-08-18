@@ -332,18 +332,31 @@ export const mepPreBidFaqs = [
   },
   {
     q: "How accurate is a pre-bid estimate?",
-    a: "Accuracy depends on drawing completeness and scope clarity. Our estimators use BIM-supported takeoffs, current pricing libraries, and senior QC review to deliver bid-ready estimates aligned with SMACNA, NEC, and CSI standards.",
+    a: "Accuracy is determined by the design stage and quality of project documentation. As the details of the project get more complete, the estimate can be further refined.",
   },
   {
     q: "How long does it take to complete a pre-bid estimate?",
-    a: "Turnaround depends on project size, disciplines, and document quality. Share your drawings and deadline and we will confirm a delivery schedule that fits your bid submission window.",
+    a: "The turnaround depends on project size, complexity and document quality. Most estimates are delivered within a few business days after receiving the required information.",
   },
   {
     q: "What does your pre-bid estimation service include?",
-    a: "Typical deliverables include detailed cost estimate reports, bill of quantities, bidding documents, and MEP cost breakdown sheets for HVAC, electrical, and plumbing scopes.",
+    a: "Our Pre-Bid Estimation Services include scope review, pre-bid quantity takeoff, pricing analysis and bid-ready cost reports. We also help with sub-contractor bid comparison and cost planning as needed.",
   },
   {
     q: "How much do pre-bid estimation services cost?",
-    a: "Pricing is based on project scope, trades covered, and document complexity. Send your package for a clear quote tailored to your bid requirements.",
+    a: "Costs depend on the size of the project the scope of work, estimate complexity and delivery timeframe. We will provide pricing once we have reviewed your project requirements.",
   },
 ];
+
+export const mepPreBidFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: mepPreBidFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};

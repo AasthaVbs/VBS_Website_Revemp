@@ -452,33 +452,46 @@ export const pdfToCadFaqSection = {
 export const pdfToCadFaqs = [
   {
     q: "What types of drawings can you convert through your PDF to CAD Conversion Services?",
-    a: "We convert your architectural floor plans, elevations, sections, site plans, roof plans, structural plans, foundation plans, framing plans and other construction drawings into editable CAD files, while maintaining your drafting standards.",
+    a: "We convert architectural floor plans, elevations, sections, site plans, roof plans, structural plans, foundation plans, framing plans, and other construction drawings into editable CAD files while maintaining your drafting standards.",
   },
   {
     q: "Can you convert scanned paper drawings into CAD files?",
-    a: "Yes. Through our Paper to CAD Conversion Services we digitize scanned documents, hand-marked drawings, printed blueprints and archived plans into accurate, editable CAD files that simplify document management and extend the value of legacy project records.",
+    a: "Yes. Our Paper to CAD Conversion Services convert scanned blueprints, hand-marked drawings, and archived paper documents into accurate CAD files, checking dimensions, annotations, and drawing details where possible.",
   },
   {
     q: "Which CAD file formats do you deliver?",
-    a: "We deliver production-ready DWG and DXF files, along with editable plotting sheets, plans and design documentation aligned to your CAD standards, layering preferences and project requirements.",
+    a: "We can provide drawings in DWG, DXF, and other CAD formats you need. Whether you need PDF to DWG Conversion or PDF to DXF Conversion, the deliverables follow your layering, naming, and documentation standards.",
   },
   {
     q: "How do you maintain drawing accuracy during conversion?",
-    a: "Every conversion goes through scale verification, geometry checks, layer validation, dimension reviews and structured QA/QC before delivery so drawings stay accurate, consistent and ready for design development or construction documentation.",
+    a: "Each drawing is subject to technical reviews that check dimensions, line work, annotations, symbols, layers, and title blocks. Our specialists cross-check the final CAD files with the source drawings before delivering the project.",
   },
   {
     q: "How does AI assist you in your PDF to CAD conversion?",
-    a: "AI-assisted workflows help accelerate repetitive tasks such as line extraction and geometry recognition. Experienced CAD specialists still oversee model development, coordination, quality reviews and final deliverables to meet your standards.",
+    a: "Our specialists use AI workflows to automate repetitive drafting tasks and drawing recognition. Before delivering CAD files, each drawing is reviewed by experienced CAD drafters to resolve technical issues and complete quality checks.",
   },
   {
     q: "Can your team handle large drawing conversion projects?",
-    a: "Yes. We scale production capacity to match project volume—from single drawing packages to large documentation sets—so your team can meet deadlines without expanding headcount or sacrificing drafting quality.",
+    a: "Yes. We support clients with single projects, renovation programs, portfolio-wide drawing updates, and high-volume production requirements. Our scalable delivery model can handle different workloads without compromising drawing quality.",
   },
   {
     q: "Do you support revisions after the first CAD delivery?",
-    a: "Yes. We support revision cycles after the first delivery and update drawings to reflect current project markups, client standards and documentation requirements throughout the project lifecycle.",
+    a: "Yes. We incorporate client comments, markups, and redlines directly into the CAD drawings, keeping the drafting consistent throughout the documentation package.",
   },
 ];
+
+export const pdfToCadFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: pdfToCadFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const pdfToCadContactDescription =
   "Share your project requirements and our team will help you convert PDF and paper drawings into accurate, production-ready CAD files.";

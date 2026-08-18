@@ -540,18 +540,31 @@ export const mepBimModellingFaqs = [
   },
   {
     q: "What is the difference between your LOD 300 and LOD 400 MEP models?",
-    a: "LOD 300 focuses on design intent and high-level spatial validation. LOD 400 adds fabrication-level detail, including hangers, supports, and manufacturer-specific metadata. We can scale the model's complexity as your project moves from design to the field.",
+    a: "LOD 300 focuses on design intent with high level spatial validation. LOD 400 adds fabrication-level detail, including hangers, supports and manufacturer-specific metadata. We can scale the model complexity as your project moves from design to the field.",
   },
   {
     q: "How do you handle communication and time zone differences?",
-    a: "We turn time zones into a 24-hour production cycle. While your US team finishes the day, our dedicated modelers handle the 3D authoring overnight, providing updated Revit files for your morning review via Slack, Teams, or BIM 360.",
+    a: "We take time zones and make a 24 hour production cycle. Your US team finishes their day and our dedicated modelers work on the 3D authoring overnight, giving you updated Revit files to review in the morning over Slack, Teams or BIM 360.",
   },
   {
     q: "Are your dedicated modelers able to work within our BIM 360 / ACC environment?",
-    a: "Yes. We function as a virtual extension of your office. By working directly in your Autodesk Construction Cloud (ACC) hub, we enable real-time collaboration on central models, ensuring data security and eliminating file-transfer delays.",
+    a: "Yes. We serve as the virtual arm of your office. We work directly in your Autodesk Construction Cloud (ACC) hub allowing for real-time collaboration on central models, keeping your data secure and eliminating file transfer delays.",
   },
   {
     q: "Can I get help with Point Cloud to BIM for renovation projects?",
-    a: "Absolutely. We specialize in Post-Construction As-Built Capture. We transform raw laser scan data into precise, field-verified Revit models, providing a true-to-site digital foundation when original 2D drawings are missing or inaccurate.",
+    a: "Sure. We are experts in Post-Construction As-Builts Capture. We convert raw laser scan data into reliable, field-verified Revit models, providing a true-to-site digital basis when original 2D drawings are unavailable or inaccurate.",
   },
 ] as const;
+
+export const mepBimModellingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: mepBimModellingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};

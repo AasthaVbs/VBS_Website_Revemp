@@ -381,18 +381,31 @@ export const mepSpoolDrawingFaqs = [
   },
   {
     q: "Can you work from our model, markup or isometric sketches?",
-    a: "Yes. We accept coordinated 3D models, marked-up PDFs, isometric sketches, and P&IDs. Our team converts these inputs into dimensioned, fabrication-ready spool packages aligned to your shop standards.",
+    a: "Yes. We build piping spool drawings from BIM models, redline markups, PDFs or isometric sketches. Send us any format and we adapt our process to fit.",
   },
   {
     q: "Can spool drawings be customized to my fabrication standards?",
-    a: "Absolutely. We adapt spool segmentation, naming conventions, weld symbols, title blocks, and BOM formats to match your fabricator standards and project specifications before production begins.",
+    a: "Yes.  We match each drawing to your standards of fabrication, naming guides and project specific requirements. Your workflow is the same from beginning to end.",
   },
   {
     q: "How much do spool drawing services cost?",
-    a: "Pricing depends on spool count, pipe class complexity, revision cycles, and delivery format. Share your model or isometric package and we will provide a clear, fixed-scope quote with turnaround timelines.",
+    a: "Cost depends on project complexity, scope, LOD and turnaround time. Share your project inputs and timeline and we send a no obligation quote within 24 hours.",
   },
   {
     q: "How quickly can you deliver spool drawings?",
-    a: "Typical packages start within an agreed kickoff window and scale with volume. Priority and fast-track packages are available when your fabrication shop needs drawings to stay on the production schedule.",
+    a: "Depending on project size and complexity, timeline varies. We have a structured workflow that make sure fast turnaround, while maintaining the right dimensions and coordination throughout.",
   },
 ] as const;
+
+export const mepSpoolDrawingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: mepSpoolDrawingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};

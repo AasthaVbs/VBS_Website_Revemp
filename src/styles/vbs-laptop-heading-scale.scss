@@ -1,0 +1,130 @@
+/**
+ * Laptop / small-desktop heading scale (<1440px).
+ * Service pages, landings, and PPC pages: h2 40px / h3 20px.
+ * ≥1440px is unchanged (Figma 48 / 24). Header and footer are not targeted.
+ */
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  :is(
+    .vbs-redesign-page,
+    .vbs-landing-page,
+    .mep-bim-services-usa-page,
+    .mep-bim-html-root,
+    .cad-drafting-landing-page,
+    .cad-drafting-services-usa-page
+  ):not(.vbs-blog-detail-page):not(.legal-page) {
+    --vbs-laptop-h2-size: 40px;
+    --vbs-laptop-h2-line: 1.15;
+    --vbs-laptop-h3-size: 20px;
+    --vbs-laptop-h3-line: 1.3;
+  }
+
+  :is(
+    .vbs-redesign-page,
+    .vbs-landing-page,
+    .mep-bim-services-usa-page,
+    .mep-bim-html-root,
+    .cad-drafting-landing-page,
+    .cad-drafting-services-usa-page
+  ):not(.vbs-blog-detail-page):not(.legal-page)
+    main
+    :is(
+      h2,
+      h2 span,
+      .h2,
+      .text-section,
+      .text-accent,
+      .mep-section-heading,
+      .vbs-home-capabilities__title,
+      .vbs-home-about__title,
+      .vbs-our-clients__title,
+      .vbs-our-clients__title-accent,
+      .vbs-our-clients__title-dark,
+      .vbs-best-benefits__title,
+      .vbs-best-benefits__title-dark,
+      .vbs-best-benefits__title-accent,
+      .vbs-home-faq__title,
+      .vbs-home-faq__title-dark,
+      .vbs-home-faq__title-accent,
+      .vbs-engagement-models-section__title,
+      .vbs-client-success-stories__title,
+      .vbs-client-success-stories__title-dark,
+      .vbs-client-success-stories__title-accent,
+      .mep-figma-services__title,
+      .mep-figma-services__title-dark,
+      .mep-figma-services__title-accent,
+      .mep-figma-workflow__title,
+      .mep-figma-workflow__title-dark,
+      .mep-figma-workflow__title-accent,
+      .mep-figma-qa__title-dark,
+      .mep-figma-qa__title-accent,
+      .mep-figma-qa__title-heading,
+      .mep-figma-qa__title-heading span,
+      .mep-figma-benefits__title,
+      .mep-figma-benefits__title-dark,
+      .mep-figma-benefits__title-accent,
+      .mep-figma-why-choose__title,
+      .mep-figma-why-choose__title-dark,
+      .mep-figma-why-choose__title-accent,
+      .mep-figma-resources__title,
+      .mep-figma-resources__title-dark,
+      .mep-figma-resources__title-accent,
+      .vbs-get-in-touch__info-head .text-section,
+      .vbs-get-in-touch__info-head h2,
+      .vbs-listing-hero__title,
+      .evaluate-delivery-cta-panel h2,
+      .evaluate-delivery-cta-panel h2 span
+    ):not(.bim-resources__section-heading):not(.bim-resources__form-title),
+  main:is(
+      .vbs-redesign-page,
+      .vbs-landing-page
+    ):not(.vbs-blog-detail-page):not(.legal-page)
+    :is(
+      h2,
+      h2 span,
+      .h2,
+      .text-section,
+      .text-accent
+    ):not(.bim-resources__section-heading):not(.bim-resources__form-title),
+  .mep-bim-html-root :is(h2, .h2, h2 span) {
+    font-size: var(--vbs-laptop-h2-size, 40px) !important;
+    line-height: var(--vbs-laptop-h2-line, 1.15) !important;
+  }
+
+  :is(
+    .vbs-redesign-page,
+    .vbs-landing-page,
+    .mep-bim-services-usa-page,
+    .mep-bim-html-root,
+    .cad-drafting-landing-page,
+    .cad-drafting-services-usa-page
+  ):not(.vbs-blog-detail-page):not(.legal-page)
+    main
+    :is(
+      h3,
+      h3 span,
+      .h3,
+      .text-card-title,
+      .vbs-leadership-team__card-name,
+      .arch-svc-workflow__step h3,
+      .mep-figma-workflow__step-title,
+      .mep-figma-why-choose__card-title,
+      .resources-browse-card h3,
+      .vbs-capability-card h3,
+      .vbs-engagement-models-section__card-title
+    ),
+  main:is(
+      .vbs-redesign-page,
+      .vbs-landing-page
+    ):not(.vbs-blog-detail-page):not(.legal-page)
+    :is(h3, h3 span, .h3, .text-card-title),
+  .mep-bim-html-root :is(h3, .h3, h3 span) {
+    font-size: var(--vbs-laptop-h3-size, 20px) !important;
+    line-height: var(--vbs-laptop-h3-line, 1.3) !important;
+  }
+
+  .vbs-project-detail-page :is(h2, h2 span, .h2, .text-section) {
+    font-size: var(--vbs-laptop-h2-size, 40px) !important;
+    line-height: var(--vbs-laptop-h2-line, 1.15) !important;
+  }
+}

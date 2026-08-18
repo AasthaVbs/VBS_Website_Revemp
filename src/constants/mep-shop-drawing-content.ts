@@ -365,18 +365,31 @@ export const mepShopDrawingFaqs = [
   },
   {
     q: "How does an MEP Shop Drawing Company support interdisciplinary coordination and clash resolution?",
-    a: "Our team federates mechanical, electrical, plumbing, structural, and architectural models, runs clash detection, and resolves conflicts before shop drawings are released so field teams install from coordinated, constructible documentation.",
+    a: "The experienced MEP Shop drawing Company coordinates architectural, structural, and MEP disciplines in a shared BIM environment. Catching clashes early, project teams can solve conflicts before fabrication which leads to fewer field changes and installation delays.",
   },
   {
     q: "How do you guarantee that Revit MEP Shop Drawings are accurate and code-compliant?",
-    a: "Every package goes through QC against project specifications and standards such as SMACNA, NEC, IPC, and ASHRAE. Dimensions, clearances, hanger layouts, and annotations are verified before final delivery.",
+    a: "All Revit MEP Shop Drawings go through a formal QA/QC review process before delivery.  Our specialists review layouts to SMACNA, NFPA and NEC and project requirements and check constructability for fabrication and installation.",
   },
   {
     q: "How does outsourcing MEP Shop Drawing Services impact project costs and construction schedules?",
-    a: "Outsourcing accelerates drawing production, reduces field rework and RFIs, and frees your in-house team for coordination. Earlier fabrication-ready packages help keep installation milestones on track and lower change-order risk.",
+    a: "Outsourcing MEP Shop Drawing Services expands the production capacity of your team without increasing the in-house workload. Coordinated drawings reduce RFIs, limit field rework and help contractors maintain project schedules. Many firms also reduce production overhead by 30% to 50%.",
   },
   {
     q: "What is your typical turnaround time and process for handling revisions?",
-    a: "Turnaround depends on scope and trade count. After kickoff we deliver coordinated packages on an agreed schedule, then process design revisions through a controlled update cycle with re-coordination and reissue of affected sheets.",
+    a: "Turnaround depends on project size, drawing complexity and coordination requirements. All revisions go through a proven review process to make sure the updated MEP Shop Drawings are coordinated and aligned with the most current project information prior to final handover.",
   },
 ] as const;
+
+export const mepShopDrawingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: mepShopDrawingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};

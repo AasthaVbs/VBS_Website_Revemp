@@ -316,25 +316,38 @@ export const asBuiltModelingFaqs = [
   },
   {
     q: "How accurate is your as-built BIM model compared to actual site conditions?",
-    a: "Every model is aligned to registered scan data and verified through 100+ automated QC points plus expert review, so deliverables reflect true-to-site conditions within the agreed LOD tolerance.",
+    a: "Every as-built BIM model goes through 100+ automated QC checks. This means it reflects real site conditions closely enough for confident renovation and retrofit planning.",
   },
   {
     q: "Do you offer laser scanning for as built drawings, or only modeling from existing scans?",
-    a: "We specialize in modeling from existing laser scans and point clouds. If you need capture support, we can coordinate with scanning partners and then deliver the as-built BIM model.",
+    a: "We work with your existing scan data, or we coordinate laser scanning for as built drawings on site. Either option fits your project timeline and budget.",
   },
   {
     q: "Can you turn old CAD files into as built drafting services deliverables without new scans?",
-    a: "Yes. Our CAD to BIM conversion workflow upgrades legacy 2D drawings into accurate 3D as-built BIM models and construction as built drawings when new scans are not available.",
+    a: "Yes. Our as built drafting services convert legacy 2D drawings into accurate 3D as-built models. This means older documentation works inside your modern BIM workflows today.",
   },
   {
     q: "What LOD do you deliver for as-built BIM modeling projects?",
-    a: "We deliver LOD 200 through LOD 400 based on your project scope, including architectural, structural, and MEPF as-built BIM models ready for coordination and documentation.",
+    a: "We deliver models from LOD 200 to LOD 400, depending on your project needs. This gives you the right level of development for each project phase.",
   },
   {
     q: "How fast can your team deliver an as-built BIM model?",
-    a: "Our workflow supports up to 10,000 sq. ft. per day. After intake we confirm scope and schedule quickly, then move through registration, modeling, QC, and final delivery.",
+    a: "With 500+ BIM experts and an AI-powered workflow, we model up to 10,000 sq.ft. per day, every day. Your project stays right on schedule every time.",
   },
 ];
+
+export const asBuiltModelingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: asBuiltModelingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const asBuiltModelingContactDescription =
   "Tell us about your scan data, documentation standards, and delivery timeline. Our as-built BIM modeling specialists will align the right team for your project.";

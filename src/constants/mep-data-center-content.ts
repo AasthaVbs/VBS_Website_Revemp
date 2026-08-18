@@ -349,18 +349,31 @@ export const mepDataCenterFaqs = [
   },
   {
     q: "Why is BIM important for data center construction?",
-    a: "BIM enables teams to detect conflicts early, align disciplines before site work, and reduce field rework. For mission-critical environments, this improves schedule confidence and reduces commissioning risk.",
+    a: "Data centers contain highly dense MEP systems with strict operational requirements. BIM helps teams identify coordination issues before construction, improve installation planning, and reduce costly field conflicts.",
   },
   {
     q: "What LOD is required for data center BIM?",
-    a: "Most projects use LOD 300 for design coordination and LOD 400 for fabrication and installation planning. The required LOD depends on project scope, contract requirements, and execution phase.",
+    a: "Most data center projects use LOD 300 for coordination workflows and LOD 400 for fabrication and installation-level detailing. Project requirements typically determine the final level of development.",
   },
   {
     q: "Do BIM models support fabrication for MEP systems?",
-    a: "Yes. Fabrication-ready BIM models support spool generation, hanger layouts, and coordinated installation details that teams can use directly for off-site fabrication and field execution.",
+    a: "Yes. Fabrication-ready BIM models support spool drawings, shop drawings, hanger detailing, and coordinated installation planning for MEP systems.",
   },
   {
     q: "How does BIM reduce risks in data centers?",
-    a: "BIM reduces risk by improving visibility into dense MEP systems, resolving clashes before installation, and creating coordinated deliverables that reduce delays, RFIs, and costly rework.",
+    a: "BIM helps project teams identify clashes, validate clearances, coordinate installations, and improve construction planning before work begins on site. This reduces coordination errors, rework, and schedule disruptions.",
   },
 ] as const;
+
+export const mepDataCenterFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: mepDataCenterFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};

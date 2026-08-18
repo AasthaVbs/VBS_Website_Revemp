@@ -307,21 +307,34 @@ export const scanToCadFaqs = [
   },
   {
     q: "What file formats do you accept for scan to CAD conversion?",
-    a: "We accept common point cloud formats including E57, LAS, RCS, and PTX, plus PDF and legacy drawing files for conversion into editable CAD.",
+    a: "We accept E57, RCS, LAS, PTX and FLS scan formats, plus legacy PDF drawings for conversion into DWG or DXF files.",
   },
   {
     q: "What deliverables will I get from the scan to CAD process?",
-    a: "Deliverables typically include DWG, DXF, and PDF files, with optional RVT outputs formatted so your team can use them right away in AutoCAD or related workflows.",
+    a: "Deliverables include layered DWG, DXF and PDF files, plus 2D scan to CAD outputs like floor plans, elevations, sections and reflected ceiling plans.",
   },
   {
     q: "How long does a scan to CAD project take?",
-    a: "Timelines depend on scope and file quality. After intake we confirm schedule within 24 hours, and our workflow supports high daily throughput for predictable delivery.",
+    a: "Our team processes 10,000 sq.ft. per day, so most point cloud to CAD projects deliver within a few business days depending on scope and detail level.",
   },
   {
     q: "How much does scan to CAD conversion cost?",
-    a: "Pricing depends on scan size, LOD, drawing set complexity, and turnaround. Share your files and scope and we will provide a clear quote for your project.",
+    a: "Costs depend on square footage and project complexity. Share your scan files and we will send a free quote within 24 hours.",
   },
 ];
+
+export const scanToCadFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: scanToCadFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const scanToCadContactDescription =
   "Tell us about your scan data, drawing standards, and delivery timeline. Our scan to CAD specialists will align the right drafting team for your project.";

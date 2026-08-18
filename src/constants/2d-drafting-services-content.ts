@@ -438,25 +438,38 @@ export const twoDDraftingFaqSection = {
 export const twoDDraftingFaqs = [
   {
     q: "What is 2D Drafting Services?",
-    a: "2D Drafting Services offers the creation of accurate technical drawings including plans, elevations and sections that outline the design intent of a project. These drawings are the basis of construction documents and permitting.",
+    a: "2D Drafting Services involve creating accurate technical drawings, including plans, elevations, and sections, that outline the design intent of a project. These drawings form the basis of construction documents and permitting.",
   },
   {
     q: "Who can benefit from 2D Drafting Services?",
-    a: "Architecture firms, structural engineers, contractors, and developers who need scalable drafting capacity without hiring full-time staff. Teams facing deadline pressure, permit submissions, or documentation backlogs benefit the most.",
+    a: "Architects, engineers, contractors, and design firms use 2D drafting to communicate project details clearly and reduce confusion during construction. It is suitable for teams that need compliant drawings without hiring in-house drafters.",
   },
   {
-    q: "What's different about Virtual Building Studio's 2D Drafting Services?",
-    a: "Our pre-vetted, US-trained architects and engineers deliver AI-assisted drafting that follows your templates, standards, and US code requirements. You get faster turnaround, fewer revisions, and drafters who integrate into your existing tools and workflows.",
+    q: "What’s different about Virtual Building Studio’s 2D Drafting Services?",
+    a: "We connect you with US-trained architects who work as an extension of your team rather than as a separate vendor. This provides quicker turnaround and drawings prepared in accordance with US standards.",
   },
   {
     q: "Can I hire dedicated architects to provide ongoing drafting support?",
-    a: "Yes. Through our dedicated resource and strategic partnership models, you can add dedicated architects who work as an extension of your team for ongoing project pipelines and long-term production support.",
+    a: "Yes. You can hire dedicated architects who work exclusively on your projects. This continuity allows for faster revisions and smoother coordination throughout different stages of the project.",
   },
   {
     q: "How do you guarantee the quality of your drawings?",
-    a: "Every sheet goes through structured QA/QC checks before delivery. We align to your CAD standards, layer conventions, and dimensioning rules, then review for code compliance, completeness, and coordination before handover.",
+    a: "Each drawing is subjected to a multi-level quality control process with internal and client review loops. This process helps ensure compliance and consistency before the final drawings are handed over to your team.",
   },
 ];
+
+export const twoDDraftingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: twoDDraftingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const twoDDraftingContactDescription =
   "Let's discuss your 2D drafting requirements and see how our team can expand your documentation capacity.";

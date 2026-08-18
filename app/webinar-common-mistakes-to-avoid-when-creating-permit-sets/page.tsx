@@ -5,7 +5,7 @@ import { WebinarCommonMistakesView } from "@/components/sections/webinar/webinar
 export const metadata: Metadata = {
   title: "Webinar - 5 Common Mistakes to Avoid When Creating Permit Sets",
   description:
-    'Join our webinar on "5 Common Mistakes to Avoid When Creating Permit Sets" and learn how to streamline your workflow, avoid costly errors, and ensure smooth approvals.',
+    "Join our webinar on 5 Common Permit Set Mistakes. Learn to streamline workflows, avoid costly errors, improve accuracy, and ensure smoother project approvals.",
 };
 
 export default function WebinarCommonMistakesPage() {

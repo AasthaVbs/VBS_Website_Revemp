@@ -5,6 +5,7 @@ import "@/styles/vbs-webinar-detail-page.scss";
 import "@/styles/vbs-webinar-detail-sections.scss";
 import "@/styles/vbs-webinar-video-gate.scss";
 import "@/styles/vbs-webinar-detail-redesign.scss";
+import "@/styles/vbs-laptop-heading-scale.scss";
 
 export default function WebinarLayout({ children }: { children: ReactNode }) {
   return children;

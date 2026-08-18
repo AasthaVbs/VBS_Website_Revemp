@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Capacity Systems for Growing Architecture Firms | Virtual Building Studio",
   description:
     "Practical tools used by growing architecture firms to evaluate delivery capacity decisions before making the next hire.",
+  robots: { index: false, follow: false },
 };
 
 export default function DeliveryCapacityInArchitectureFirmsPage() {

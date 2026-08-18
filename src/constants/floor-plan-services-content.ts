@@ -451,21 +451,34 @@ export const floorPlanFaqs = [
   },
   {
     q: "Can you convert hand-drawn sketches into digital floor plans?",
-    a: "Yes. We draft dimensioned 2D floor plans from sketches, surveys, CAD redlines and scanned drawings, then convert those layouts into 3D models and renders when needed.",
+    a: "Yes. Our BIM specialists digitalize scanned drawings and hand sketches into 2D drawings. These plans arrive clean, fully dimensioned and ready for permits, listings or renovation work.",
   },
   {
     q: "How long does a typical floor plan project take?",
-    a: "Experienced drafters can join within 24 hours. Production starts as soon as essential alignment is complete, and turnaround depends on drawing count, conversion scope and review cycles.",
+    a: "Turnaround time varies depending on scope of project, complexity and number of drawings required. We review your files and deliverable list, and confirm an exact timeline.",
   },
   {
     q: "Do you follow US building codes for floor plans?",
-    a: "Yes. Drawings follow IBC, ADA and local jurisdiction codes for architecture and structural sets, which helps reduce permit rejections and keep submissions on schedule.",
+    a: "Yes, every plan follows IBC, ADA and local jurisdiction codes relevant to architecture and structural drawings. This applies to every project regardless of size or region.",
   },
   {
     q: "Can you work from existing CAD or Revit files?",
-    a: "Yes. Our teams model in Revit, AutoCAD and SketchUp to match your firm's standards, and collaborate through BIM 360 or ACC so every revision stays visible to your reviewers.",
+    a: "Yes, our team works directly from your existing CAD, Revit or PDF files. We match your layers, standards, and file structure from the first draft.",
   },
 ];
+
+export const floorPlanFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: floorPlanFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const floorPlanContactDescription =
   "Tell us about your 2D and 3D floor plan needs. Our BIM architects will help you convert sketches and CAD files into accurate, quality-assured plans faster.";

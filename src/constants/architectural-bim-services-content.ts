@@ -275,30 +275,43 @@ export const architecturalBimFaqSection = {
 
 export const architecturalBimFaqs = [
   {
-    q: "What is Virtual Building Studio's engagement model?",
+    q: "What is Virtual Building Studio’s engagement model?",
     a: "Think of VBS as an extension of your team. Our architects and BIM professionals work within your workflows, tools and timelines helping you increase capacity without adding headcount.",
   },
   {
     q: "Are these architects experienced in US building codes and standards?",
-    a: "Yes. Our US-trained BIM architects deliver LOD 100–500 Revit Architecture models aligned with AIA, IBC, ADA, BIMForum, and related US construction codes and standards.",
+    a: "Yes. Our architects have hands-on experience working on US projects and are familiar with AIA, ADA, IBC, LEED and ISO 19650 requirements, along with regional documentation standards.",
   },
   {
     q: "Am I allowed to scale my team up or down depending on project needs?",
-    a: "Yes. Flexible engagement models let you scale dedicated resources up or down as project pipelines change, without long hiring cycles.",
+    a: "Absolutely. Whether you need additional support for a busy phase or fewer resources after a milestone you can adjust your team size as project demands evolve.",
   },
   {
     q: "How quickly can VBS provide an architect or BIM expert assigned to my project?",
-    a: "Dedicated BIM architects can typically be ready within 24 hours to support workload spikes, deadlines, and resource shortages.",
+    a: "In most cases, we can have a prevetted architect or BIM specialist ready to join your project within three business days to keep your schedule on track.",
   },
   {
     q: "How does VBS protect data security and confidentiality during the project?",
-    a: "We follow strict NDAs, encrypted file transfers, and secure cloud collaboration practices so your design data stays protected at every stage.",
+    a: "We take data security seriously. From signed Non Disclosure Agreements and secure VPN access to controlled permissions and cloud based security protocols your project data remains protected at every stage.",
   },
   {
     q: "How do you ensure quality when using AI?",
-    a: "AI accelerates modeling and repetitive tasks, while US-trained BIM architects review geometry, data, and coordination through structured QA before every release.",
+    a: "Every deliverable passes through our structured quality assurance process. Senior BIM leads verify models, drawings and documentation before project delivery. We make sure the final output meets client standards and project requirements.",
   },
 ];
+
+export const architecturalBimFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: architecturalBimFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const architecturalBimContactDescription =
   "Tell us about your architectural BIM scope, LOD requirements, and delivery timeline. Our team will align the right US-trained BIM architects for your project.";

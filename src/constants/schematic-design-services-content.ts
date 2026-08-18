@@ -436,21 +436,34 @@ export const schematicDesignFaqs = [
   },
   {
     q: "Can we outsource schematic design services without a long-term commitment?",
-    a: "Yes. Most firms start with a project engagement or risk-free trial so you can evaluate quality, turnaround, and collaboration before expanding to ongoing dedicated support.",
+    a: "Yes. Our engagement models are flexible. You may also want to try a small project or a risk-free trial before you commit to a longer term outsourcing arrangement.",
   },
   {
     q: "What software do you use for schematic design and early-stage visualization?",
-    a: "Our modelers work in Revit, AutoCAD, SketchUp, and Enscape for early-stage visualization, with design reviews managed through BIM 360 and ACC for real-time markups.",
+    a: "We work in Revit, AutoCAD, SketchUp, Lumion and Enscape for schematic design and visualization. We also use BIM 360 and ACC for markup collaboration with the team.",
   },
   {
     q: "How do you keep architectural and structural layouts coordinated at the schematic stage?",
-    a: "Our structural team reviews early architectural layouts and flags framing, span, and foundation concerns before design development begins, keeping structural feasibility visible from day one.",
+    a: "Our structural team reviews architectural layouts early, flagging framing, span and foundation concerns before design development starts. This keeps both trades aligned from day one.",
   },
   {
     q: "How do you make sure quality when using AI?",
-    a: "AI accelerates production steps, while US-trained architects run QA checks at each milestone. Deliverables are reviewed against IBC, ADA, zoning requirements, and your office standards before handover.",
+    a: "All schematic drawings will go through our structured quality assurance process. Senior BIM leads review the models, drawings and documentation before project completion. We deliver the output as per the client standards and project requirements.",
   },
 ];
+
+export const schematicDesignFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: schematicDesignFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const schematicDesignContactDescription =
   "Tell us about your schematic design needs. Our architects will help you move from concept to approved layout faster with code-compliant deliverables.";

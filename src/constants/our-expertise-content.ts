@@ -270,5 +270,18 @@ export const ourExpertiseFaqs = [
   },
 ];
 
+export const ourExpertiseFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: ourExpertiseFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export const ourExpertiseContactDescription =
   "Tell us what expertise you need. We’ll match you with top 1% architects and engineers and share next steps within 3 days.";

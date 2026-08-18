@@ -435,21 +435,38 @@ export const permitDrawingFaqs = [
   },
   {
     q: "Can you work with our Revit or CAD standards?",
-    a: "Yes. Our team adopts your Revit or AutoCAD templates, naming conventions, and sheet standards, then works inside BIM 360, ACC, or your preferred shared environment.",
+    a: "Yes. Our drafters work inside your Revit templates and CAD standards. This keeps your permit drawings consistent with your existing firm files, formatting and review process.",
   },
   {
     q: "How do you establish scope and LOD for a permit drawing project?",
-    a: "We review your markups, jurisdiction requirements, and target LOD during kickoff, then confirm a clear deliverable list for plans, elevations, sections, schedules, and code notes before production starts.",
+    a: "We check the required level of development, number of sheets and jurisdiction before drafting. We lay this scope out in advance so all teams know exactly what will be included in the permit set.",
   },
   {
     q: "How do you ensure quality with AI?",
-    a: "AI accelerates drafting and coordination checks, while US-trained BIM leads run multi-stage QA before sign-off. Every sheet is reviewed against codes, coordination rules, and your office standards.",
+    a: "All permit sets are subject to our structured quality assurance process. Senior BIM leads review models, drawings and documentation before project completion. Once the outputs meet the client's standards and project requirements, we deliver them.",
   },
   {
     q: "Would you support permit revisions if a reviewer comments?",
-    a: "Yes. Our team handles permit revisions and resubmissions quickly so reviewer comments do not turn into months of back and forth.",
+    a: "Your dedicated architect or engineer works as an extension of your team, not a vendor. They revise the set as many times as your project needs, with no separate revision cycle.",
+  },
+  {
+    q: "Can we start with a trial before we commit to a long-term engagement?",
+    a: "Yes. New clients are welcome to try us with no risk. You can try our permit drawing services on a real project before making any long-term commitment.",
   },
 ];
+
+export const permitDrawingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: permitDrawingFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const permitDrawingContactDescription =
   "Tell us about your permit drawing needs. Our BIM architects will help you prepare code-ready sets that clear plan review faster.";

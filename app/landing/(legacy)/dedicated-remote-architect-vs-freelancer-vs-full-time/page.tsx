@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Dedicated Remote Architect vs Freelancer vs Full-Time Hire | VBS",
   description:
     "Struggling with delivery pressure? Compare remote architects, freelancers, and in-house hires to choose the right model for faster, more predictable project delivery.",
+  robots: { index: false, follow: false },
 };
 
 export default function DedicatedRemoteArchitectVsFreelancerVsFullTimePage() {

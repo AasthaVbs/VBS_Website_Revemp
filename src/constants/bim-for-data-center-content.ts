@@ -414,21 +414,34 @@ export const bimForDataCenterFaqs = [
   },
   {
     q: "What is Medical Data Center Design Support, and who is it for?",
-    a: "Medical Data Center Design Support is for architecture firms delivering hospital and clinical data center spaces. Hospital Data Center BIM Modeling covers server rooms, imaging support spaces and record storage areas, keeping every model aligned with clinical, security and code requirements.",
+    a: "Medical Data Center Design Support helps hospital systems and healthcare networks plan server rooms and IT spaces early. These spaces meet clinical, security and code requirements from day one.",
   },
   {
     q: "How does pricing work for data center design services?",
-    a: "Pricing follows the engagement model that fits your delivery needs—project-based support, a dedicated BIM resource, or a global delivery center. You can start with a no-risk trial and scale as your project pipeline changes.",
+    a: "We do not charge per project. You get a dedicated BIM resource on a monthly basis, so costs stay predictable as your data center workload changes.",
   },
   {
     q: "How fast can a dedicated BIM resource start on our data center project?",
-    a: "A dedicated BIM architect, backed by AI-assisted workflows, can start within 24 hours and fit your project scope, standards and timezone.",
+    a: "Most dedicated BIM resources start within 24 hours of approval. This lets your firm respond quickly to new data center projects without delaying design or construction documentation.",
   },
   {
     q: "What happens if we need revisions after delivery?",
-    a: "QA/QC checks run at every phase so clashes are caught before they reach the field. After delivery, your dedicated resource stays aligned with your standards, so revisions are handled as part of the ongoing partnership rather than a restart.",
+    a: "Revisions stay within scope, since your dedicated resource already understands your standards and workflows. Most changes turn around fast, without the back and forth of a new vendor relationship.",
   },
 ];
+
+export const bimForDataCenterFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: bimForDataCenterFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const bimForDataCenterContactDescription =
   "Tell us about your data center project. Our pre-vetted BIM architects will help you close capacity gaps, tighten coordination and move permit sets through review faster.";

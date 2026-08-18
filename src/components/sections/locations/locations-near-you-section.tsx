@@ -12,7 +12,7 @@ export function LocationsNearYouSection() {
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
         <div className="flex w-full flex-col items-start gap-5 max-lg:items-center max-lg:text-center">
           <h2
-            className="m-0 w-full text-[32px] font-medium leading-[1.15] text-[#111111] sm:text-[40px] lg:text-[48px]"
+            className="m-0 w-full text-[32px] font-medium leading-[1.15] text-[#111111] sm:text-[40px] min-[1440px]:text-[48px]"
             style={{ maxWidth: titleMaxWidth }}
           >
             <span>{titleLead}</span>
@@ -33,7 +33,7 @@ export function LocationsNearYouSection() {
               className="flex min-w-0 flex-1 flex-col gap-5 overflow-hidden rounded-[10px] border border-[#CBCCCD] bg-white p-5 transition-shadow duration-200 hover:shadow-[0px_4px_10px_rgba(0,0,0,0.15)]"
             >
               <div className="flex w-full flex-col items-start gap-5">
-                <h3 className="m-0 w-full text-[22px] font-normal leading-normal text-[#111111] sm:text-[24px]">
+                <h3 className="m-0 w-full text-[20px] font-normal leading-normal text-[#111111] min-[1440px]:text-[24px]">
                   {card.name}
                 </h3>
                 <ul className="m-0 flex w-full list-none flex-col items-start gap-4 p-0">

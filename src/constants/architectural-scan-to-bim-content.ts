@@ -312,21 +312,34 @@ export const architecturalScanToBimFaqs = [
   },
   {
     q: "How fast can you deliver a scan to BIM model?",
-    a: "Our AI-powered workflow helps BIM experts convert up to 10,000 sq.ft. of scans into a BIM model in a day. Timelines depend on LOD, scan quality, and project scope.",
+    a: "Our AI-powered workflow and BIM experts convert 10,000 sq.ft. of scan data into a finished model within a day for most projects.",
   },
   {
     q: "How do you make sure the models are reliable?",
-    a: "Every model passes 100+ automated QC checkpoints, then a second reviewer checks geometry, naming, and coordination before handoff.",
+    a: "Every model passes 100+ automated QC points, then a second reviewer checks geometry and coordination before we send it to your team.",
   },
   {
     q: "Do you provide reality capture architecture services along with modeling?",
-    a: "Yes. Our field teams can capture site data with laser scanners and reality capture architecture tools, then convert those scans into coordinated architectural BIM models.",
+    a: "Yes, our field teams handle site scanning and data capture, then our modelers convert that point cloud data into your finished BIM model.",
   },
   {
     q: "Can you handle large or complex architectural scanning services projects?",
-    a: "Yes. We support large and complex projects across commercial, healthcare, educational, mission critical, hospitality, industrial, civic, and heritage facilities.",
+    a: "Yes. Our 500+ BIM experts have worked on projects ranging from single buildings to large campuses, scaling production without slowing down delivery.",
   },
 ];
+
+export const architecturalScanToBimFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: architecturalScanToBimFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export const architecturalScanToBimContactDescription =
   "Tell us about your scan data, LOD requirements, and delivery timeline. Our architectural scan to BIM specialists will align the right team for your project.";

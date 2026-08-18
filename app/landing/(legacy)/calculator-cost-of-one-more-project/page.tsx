@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "project cost risk assessment",
     "architecture delivery profitability",
   ],
-  robots: { index: false, follow: true },
+  robots: { index: false, follow: false },
 };
 
 export default function CalculatorCostOfOneMoreProjectPage() {

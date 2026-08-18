@@ -90,6 +90,7 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_PUBLIC_KEY_WEBINAR:
       process.env.NEXT_PUBLIC_PUBLIC_KEY_WEBINAR || process.env.PUBLIC_KEY_WEBINAR || "",
   },
+  transpilePackages: ["mapbox-gl"],
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
@@ -106,6 +107,8 @@ const nextConfig: NextConfig = {
     const staticRedirects = [
       { source: "/about", destination: "/about-us", permanent: true },
       { source: "/about/:path*", destination: "/about-us", permanent: true },
+      { source: "/build-your-team", destination: "/60-minutes-team", permanent: true },
+      { source: "/build-your-team/:path*", destination: "/60-minutes-team", permanent: true },
       { source: "/blogs", destination: "/blog", permanent: true },
       { source: "/blogs/:path*", destination: "/blog/:path*", permanent: true },
       { source: "/contact", destination: "/contact-us", permanent: true },
@@ -137,26 +140,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/bim-modeling-services/coordination-clash-detection-services",
-        destination: "/mep-bim-services/mep-coordination-services",
-        permanent: true,
-      },
-      {
-        source: "/bim-modeling-services/coordination-clash-detection-services/:path*",
-        destination: "/mep-bim-services/mep-coordination-services",
-        permanent: true,
-      },
-      {
-        source: "/bim-services/coordination-clash-detection-services",
-        destination: "/mep-bim-services/mep-coordination-services",
-        permanent: true,
-      },
-      {
-        source: "/bim-services/coordination-clash-detection-services/:path*",
-        destination: "/mep-bim-services/mep-coordination-services",
-        permanent: true,
-      },
-      {
         source: "/mep-bim-services/mep-calsh-detection-services",
         destination: "/mep-bim-services/mep-clash-detection-services",
         permanent: true,
@@ -184,26 +167,6 @@ const nextConfig: NextConfig = {
       {
         source: "/aia-conference/:path*",
         destination: "/aia-conference-events",
-        permanent: true,
-      },
-      {
-        source: "/landing/cad-drafting-services-usa",
-        destination: "/cad-drafting-services-usa",
-        permanent: true,
-      },
-      {
-        source: "/landing/cad-drafting-services-usa/:path*",
-        destination: "/cad-drafting-services-usa",
-        permanent: true,
-      },
-      {
-        source: "/landing/bim-modeling-services-usa",
-        destination: "/bim-modeling-services-usa",
-        permanent: true,
-      },
-      {
-        source: "/landing/bim-modeling-services-usa/:path*",
-        destination: "/bim-modeling-services-usa",
         permanent: true,
       },
       { source: "/portfolio", destination: "/projects", permanent: true },

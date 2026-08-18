@@ -201,7 +201,13 @@ function SplitGrid({
   );
 }
 
-export function ProjectCaseStudy({ content }: { content: ProjectCaseStudyContent }) {
+export function ProjectCaseStudy({
+  content,
+  className,
+}: {
+  content: ProjectCaseStudyContent;
+  className?: string;
+}) {
   const {
     hero,
     overview,
@@ -252,7 +258,7 @@ export function ProjectCaseStudy({ content }: { content: ProjectCaseStudyContent
   );
 
   return (
-    <main className="lv-case">
+    <main className={`lv-case${className ? ` ${className}` : ""}`}>
       <section className="lv-case-hero">
         <PageContainer>
           <div className="lv-case-hero__row">
@@ -368,12 +374,14 @@ export function ProjectCaseStudy({ content }: { content: ProjectCaseStudyContent
             <div className="lv-case-io__grid">
               <div className="lv-case-io__col">
                 <h3 className="lv-case__h3">What We Received</h3>
-                <IoGallery
-                  images={io.inputImages}
-                  activeIndex={inputIndex}
-                  onSelect={setInputIndex}
-                  onOpen={() => openModal("input", inputIndex)}
-                />
+                {io.inputImages.length > 0 ? (
+                  <IoGallery
+                    images={io.inputImages}
+                    activeIndex={inputIndex}
+                    onSelect={setInputIndex}
+                    onOpen={() => openModal("input", inputIndex)}
+                  />
+                ) : null}
                 <ul className="lv-case-io__list">
                   {io.inputPoints.map((point) => (
                     <li key={point}>{point}</li>
@@ -383,12 +391,14 @@ export function ProjectCaseStudy({ content }: { content: ProjectCaseStudyContent
 
               <div className="lv-case-io__col">
                 <h3 className="lv-case__h3">What We Delivered</h3>
-                <IoGallery
-                  images={io.outputImages}
-                  activeIndex={outputIndex}
-                  onSelect={setOutputIndex}
-                  onOpen={() => openModal("output", outputIndex)}
-                />
+                {io.outputImages.length > 0 ? (
+                  <IoGallery
+                    images={io.outputImages}
+                    activeIndex={outputIndex}
+                    onSelect={setOutputIndex}
+                    onOpen={() => openModal("output", outputIndex)}
+                  />
+                ) : null}
                 <ul className="lv-case-io__list">
                   {io.outputPoints.map((point) => (
                     <li key={point}>{point}</li>

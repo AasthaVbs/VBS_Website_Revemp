@@ -280,20 +280,6 @@
     overflow-y: visible;
   }
 
-  /* Build Your Team — no clipped height; hide scrollbar chrome when page scrolls */
-  .build-your-team-page {
-    overflow-x: clip;
-  }
-
-  html:has(.build-your-team-page) {
-    overflow-x: hidden;
-    scrollbar-width: none;
-  }
-
-  html:has(.build-your-team-page)::-webkit-scrollbar {
-    display: none;
-  }
-
   .client-success-cards-scroll {
     scrollbar-width: none;
     -ms-overflow-style: none;

@@ -184,7 +184,7 @@ export const engagementModelCards = [
     ],
     bestSuitedFor: ["Mid-sized firms", "Ongoing project pipelines", "Long-term delivery support"],
     cta: "Build your Team",
-    ctaHref: "/build-your-team",
+    ctaHref: ROUTES.dedicatedTeam,
     shadow: false,
     badge: "Most Demanding",
     ctaHighlighted: true,

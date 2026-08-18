@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Commercial Tower",
     description:
       "LOD 400 architectural, structural, and MEPF modeling with clash detection, 4D simulation, construction scheduling, and comprehensive construction documents for a commercial tower.",
-    image: "/image/banner-design-1.png",
+    image: "/image/architectural-banner.jpg",
     imageAlt: "Commercial tower ACS and MEPF BIM modeling",
   },
   overview: {
-    image: "/image/banner-design-2.png",
+    image: "/image/architectural-overview.jpg",
     imageAlt: "Coordinated commercial tower BIM model",
     paragraphs: [
       "This commercial tower project required LOD 400 models across architectural, structural, and MEPF disciplines with integrated clash detection and coordination. Our team delivered coordinated models, clash reports, construction scheduling, and 4D simulation outputs.",
@@ -39,12 +39,8 @@ const content = {
   io: {
     description:
       "From design inputs to LOD 400 coordinated models, clash reports, 4D simulations, and construction documents.",
-    inputImages: [
-      { src: "/image/banner-design-1.png", label: "Design Drawings and Reference Models" },
-    ],
-    outputImages: [
-      { src: "/image/banner-design-2.png", label: "LOD 400 Coordinated ACS & MEPF Model" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "Architectural, structural, and MEPF design drawings",
       "Client BIM execution plan and standards",
@@ -147,5 +143,5 @@ const content = {
 };
 
 export default function PortfolioArchitecturalCommercialTowerPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--wide-hero" />;
 }

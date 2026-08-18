@@ -199,7 +199,8 @@ export function HiringVsDedicatedRemoteArchitectView() {
             <div className="hvd-timeline-header">
               <h2>
                 What Actually Shifts in{" "}
-                <span className="hvd-accent">The&nbsp;First 30–90 Days</span>
+                <br className="hvd-timeline-break" />
+                <span className="hvd-accent">The First 30–90 Days</span>
               </h2>
               <blockquote className="hvd-callout">
                 Ramp-up time collides with active deadlines.

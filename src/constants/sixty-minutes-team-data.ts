@@ -9,7 +9,7 @@ export const SIXTY_MINUTES_INTRO_VIDEO_ID = "lQFR-Cs-0Qs";
 /** Internal lead notification (wire to EmailJS / Zoho / API). */
 export const SIXTY_MINUTES_TEAM_NOTIFY_EMAIL = "contact@virtualbuildingstudio.com";
 
-/** Mapbox — set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN in env (do not hardcode tokens). */
+/** Mapbox — set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN (or GATSBY_MAPBOX_ACCESS_TOKEN) in env. */
 export const BUILD_YOUR_TEAM_MAPBOX_ACCESS_TOKEN =
   process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN ||
   process.env.GATSBY_MAPBOX_ACCESS_TOKEN ||

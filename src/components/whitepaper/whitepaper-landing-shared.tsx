@@ -50,7 +50,7 @@ export function WhitepaperForm({
             title={formTitle}
             initialHeight={zohoIframeInitialHeightPx}
             headerCropPreset={zohoHeaderCropPreset}
-            footerCropPreset="mep-dc-wp"
+            footerCropPreset={zohoHeaderCropPreset === "hidden-cost-wp" ? "hidden-cost-wp" : "mep-dc-wp"}
             minVisibleHeightPreset="mep-dc-wp"
             cropHeader=""
             lockHeight
@@ -1173,7 +1173,7 @@ export const WHITEPAPER_MEP_DC_PAGE_STYLES = `
       font-size: 18px !important;
     }
     .wb-page--mep-dc .wb-learn-item p {
-      font-size: 20px !important;
+      font-size: 18px !important;
     }
   }
 

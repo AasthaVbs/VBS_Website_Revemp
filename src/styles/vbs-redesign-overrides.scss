@@ -436,23 +436,6 @@ html:has(.resources-listing-page) body {
   }
 }
 
-.vbs-redesign-page [class*="build-your-team_barInner"],
-.vbs-redesign-page [class*="build-your-team_screenInner"] {
-  max-width: var(--vbs-page-max) !important;
-  padding-left: var(--vbs-page-gutter) !important;
-  padding-right: var(--vbs-page-gutter) !important;
-}
-
-@media (min-width: 768px) {
-
-  .vbs-redesign-page [class*="build-your-team_barInner"],
-  .vbs-redesign-page [class*="build-your-team_screenInner"] {
-    padding-left: var(--vbs-page-gutter-md) !important;
-    padding-right: var(--vbs-page-gutter-md) !important;
-  }
-}
-
-
 /* Client Success Stories — horizontal track within page shell */
 .vbs-redesign-page .client-success-cards-scroll {
   max-width: 100%;
@@ -466,15 +449,6 @@ html:has(.resources-listing-page) body {
   .vbs-redesign-page .vbs-client-success-stories__name {
     font-size: 18px;
   }
-}
-
-html:has(.vbs-redesign-page.build-your-team-page) {
-  overflow-x: hidden;
-  scrollbar-width: none;
-}
-
-html:has(.vbs-redesign-page.build-your-team-page)::-webkit-scrollbar {
-  display: none;
 }
 
 /* ── Service hub hero — shared 55/45 layout on all three pages ── */

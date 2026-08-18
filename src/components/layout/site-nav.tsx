@@ -45,7 +45,12 @@ export function SiteNav() {
 
         if ("hasDropdown" in item && item.hasDropdown === "resources") {
           return (
-            <NavDropdownTrigger key={item.label} label={item.label} href={item.href}>
+            <NavDropdownTrigger
+              key={item.label}
+              label={item.label}
+              href={item.href}
+              dropdownAlign="center"
+            >
               <ResourcesNavDropdown />
             </NavDropdownTrigger>
           );

@@ -49,7 +49,7 @@ export function SixtyMinutesTeamPage({ hideQuickSubmit = false }: { hideQuickSub
   }, []);
 
   return (
-    <div ref={rootRef} className="vbs-redesign-page sixty-minutes-team-page overflow-x-hidden bg-white">
+    <div ref={rootRef} className="vbs-redesign-page sixty-minutes-team-page">
       <SiteHeader />
       <main className="byt-v3-main">
         <SixtyMinutesTeamImmersive hideQuickSubmit={hideQuickSubmit} />

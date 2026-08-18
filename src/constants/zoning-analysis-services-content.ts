@@ -12,9 +12,6 @@ const iconEngageDedicated = "/image/architecture-services/icon-engage-dedicated.
 const iconEngageStrategic = "/image/architecture-services/icon-engage-strategic.svg";
 const workflowLogo = "/image/architecture-services/workflow-logo.svg";
 
-/** Temporary shared photo until zoning-specific assets are ready. */
-export const zoningPlaceholderImage = "/image/commercial-mixed-use.png";
-
 export const zoningAnalysisStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
   { value: "300+", color: "text-vbs-green", label: "Global Clients" },
@@ -29,7 +26,7 @@ export const zoningAnalysisHero = {
   description:
     "Zoning research slows site decisions and permit timelines. Our BIM specialists leverage AI-assisted workflows to deliver you code-verified zoning reports you can trust.",
   ctaLabel: "Connect With Us",
-  imageSrc: zoningPlaceholderImage,
+  imageSrc: "/image/zoning-analysis-banner.jpg",
   imageAlt: "Zoning Analysis Services",
   copyMaxWidth: 780,
   descriptionMaxWidth: 657,
@@ -54,7 +51,7 @@ export const zoningAnalysisIntro = {
     "Multi stage QA/QC checks verify every calculation against source zoning documents before delivery",
     "Deliverables include zoning reports, coverage calculations and development standard summaries ready for design teams",
   ],
-  mainImage: zoningPlaceholderImage,
+  mainImage: "/image/zoning-analysis-overview.jpg",
   imageAlt: "Zoning analysis overview",
 };
 
@@ -85,42 +82,42 @@ export const zoningAnalysisServiceCards = [
   {
     title: "Zoning District Identification",
     text: "We use county GIS portals and municipal zoning maps to identify your site's exact zoning district. This confirms base rules controlling use, height and density before designing.",
-    image: zoningPlaceholderImage,
+    image: "/image/zoning-district-identification.jpg",
   },
   {
     title: "Zoning Map Extraction",
     text: "Our experts obtain the appropriate zoning maps by accessing from municipal and county planning websites. The zoning maps extracted are then checked against zoning codes in writing.",
-    image: zoningPlaceholderImage,
+    image: "/image/zoning-map-extraction.jpg",
   },
   {
     title: "Property Boundary Analysis",
     text: "We study survey drawings and legal descriptions to establish the exact boundaries of the property. This stage highlights any encroachment, easement or boundary discrepancies at early stage of design.",
-    image: zoningPlaceholderImage,
+    image: "/image/property-boundary-analysis.jpg",
   },
   {
     title: "Building Coverage Calculation",
     text: "We calculate the maximum building footprint your lot allows as per local zoning rules. This number defines the ground floor limit before your design team starts layout planning.",
-    image: zoningPlaceholderImage,
+    image: "/image/building-coverage-calculation.jpg",
   },
   {
     title: "Floor Area Ratio (FAR) Calculation",
     text: "We calculate the FAR limits which indicate how much total floor area you can build on your lot. This figure guides massing decisions before your team commits design hours to a scheme.",
-    image: zoningPlaceholderImage,
+    image: "/image/floor-area-ratio.jpg",
   },
   {
     title: "Impervious Coverage Calculation",
     text: "We calculate the total impervious surface area on your site including roofs, paving and driveways. This figure is used by local stormwater and drainage regulations to approve permits.",
-    image: zoningPlaceholderImage,
+    image: "/image/impervious-coverage-calculation.jpg",
   },
   {
     title: "Survey Data Analysis",
     text: "We go through survey information and current zoning requirements to identify any potential gaps before we start the design process. This comparison confirms that lot area, setbacks and existing site conditions are as per your records.",
-    image: zoningPlaceholderImage,
+    image: "/image/survey-data-analysis.jpg",
   },
   {
     title: "Development Standards Collection",
     text: "We pull together all of the relevant development standards for your zoning district from setbacks to parking ratios. This research provides your team with a complete picture before schematic design begins.",
-    image: zoningPlaceholderImage,
+    image: "/image/development-standards-collection.jpg",
   },
 ];
 
@@ -139,7 +136,7 @@ export const zoningAnalysisAiBimWorkflowSection = {
   description:
     "Explore the workflow that combines proprietary AI tools with expert BIM oversight to accelerate production, maintain quality and support scalable project delivery.",
   videoAriaLabel: "Play AI-driven BIM workflow video",
-  posterSrc: zoningPlaceholderImage,
+  posterSrc: "/image/zoning-analysis-overview.jpg",
 };
 
 export const zoningAnalysisWhyChooseSection = {

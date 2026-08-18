@@ -489,17 +489,32 @@
   width: 100%;
 }
 
-@media (min-width: 1280px) and (max-width: 1399px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   .aia-hero__row,
   .aia-split__row,
   .aia-engage__row {
+    flex-direction: row;
+    align-items: center;
     gap: 28px;
   }
 
+  .aia-hero__copy,
+  .aia-split__copy,
+  .aia-engage__intro {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    align-items: flex-start;
+    text-align: left;
+  }
+
   .aia-hero__media {
+    flex: 1 1 0;
+    flex-shrink: 1;
+    min-width: 0;
     height: auto;
-    max-width: 520px;
-    aspect-ratio: 650 / 480;
+    max-width: 48%;
+    aspect-ratio: 650 / 530;
   }
 
   .aia-conference-events-page .aia-hero h1 {
@@ -514,20 +529,37 @@
     gap: 24px;
   }
 
+  .aia-split__media {
+    flex: 1 1 0;
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: 48%;
+  }
+
   .aia-split--pressure .aia-split__media {
-    max-width: 440px;
-    flex-basis: 440px;
+    flex: 0 0 32%;
+    width: 32%;
+    max-width: 340px;
+    min-width: 220px;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    align-self: center;
+  }
+
+  .aia-split--pressure .aia-split__media img {
+    object-fit: cover;
+    object-position: center 18%;
   }
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   .aia-split__row,
   .aia-split__row--walk,
   .aia-hero__row,
   .aia-engage__row {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: stretch;
+    text-align: left;
   }
 
   .aia-hero__copy,
@@ -540,8 +572,8 @@
   .aia-team__headline,
   .aia-split__copy,
   .aia-engage__intro {
-    align-items: center !important;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     max-width: none;
     width: 100%;
   }
@@ -554,15 +586,15 @@
   }
 
   .aia-conference-events-page .text-tag {
-    align-self: center !important;
+    align-self: flex-start;
   }
 
   .aia-hero__copy > .flex,
   .aia-clients__copy > .flex,
   .aia-split__copy > .flex,
   .aia-engage__intro > .flex {
-    align-items: center !important;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     width: 100%;
   }
 
@@ -580,23 +612,23 @@
   .aia-conference-events-page .vbs-client-success-stories__description,
   .aia-conference-events-page .vbs-home-faq__title,
   .aia-conference-events-page .vbs-home-faq__desc {
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .aia-conference-events-page .vbs-our-clients__container {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 40px !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
   }
 
   .aia-conference-events-page .vbs-our-clients__marquee-wrap {
-    width: 100% !important;
-    flex: 0 0 auto !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
+    width: 100%;
+    flex: 0 0 auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
   }
 
   .aia-conference-events-page .vbs-client-success-stories__container,
@@ -606,23 +638,23 @@
   .aia-conference-events-page .vbs-home-faq__container,
   .aia-conference-events-page .vbs-home-faq__head,
   .aia-conference-events-page .vbs-home-faq__head-top {
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .aia-conference-events-page .vbs-home-faq__container {
-    flex-direction: column !important;
+    flex-direction: column;
   }
 
   .aia-conference-events-page .vbs-home-faq__head,
   .aia-conference-events-page .vbs-home-faq__list {
-    max-width: 100% !important;
-    width: 100% !important;
+    max-width: 100%;
+    width: 100%;
   }
 
   .aia-conference-events-page .vbs-client-success-stories__header {
-    flex-direction: column !important;
-    align-items: center !important;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .aia-hero__media {
@@ -632,24 +664,40 @@
     aspect-ratio: 650 / 530;
   }
 
-  .aia-split--pressure .aia-split__media,
   .aia-split__media--walk {
     min-height: 0;
     max-width: 640px;
     width: 100%;
     flex: 0 1 auto;
-    margin-left: auto;
-    margin-right: auto;
+  }
+
+  .aia-split--pressure .aia-split__media {
+    min-height: 0;
+    width: min(100%, 360px);
+    max-width: 360px;
+    flex: 0 1 auto;
+    aspect-ratio: 2 / 3;
+    height: auto;
+  }
+
+  .aia-split--pressure .aia-split__media img {
+    object-fit: cover;
+    object-position: center 18%;
   }
 
   .aia-team__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    justify-items: center;
-    gap: 24px;
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    gap: 28px;
+  }
+
+  .aia-team .vbs-leadership-team__card {
+    width: 100%;
+    max-width: none;
   }
 
   .aia-team .vbs-leadership-team__card-media {
-    height: 300px;
+    height: 280px;
   }
 
   .aia-pressure__list,
@@ -664,23 +712,6 @@
 
   .aia-clients__fade {
     display: none;
-  }
-}
-
-@media (max-width: 1023px) {
-  .aia-team__grid {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 28px;
-  }
-
-  .aia-team .vbs-leadership-team__card {
-    width: 100%;
-    max-width: 360px;
-  }
-
-  .aia-team .vbs-leadership-team__card-media {
-    height: 280px;
   }
 }
 
@@ -714,7 +745,7 @@
     bottom: 36px;
     font-size: 14px !important;
     line-height: 20px !important;
-    text-align: center !important;
+    text-align: left;
   }
 
   .aia-hero__dots {
@@ -728,22 +759,125 @@
 
   .aia-engage__card {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     padding: 24px 16px;
   }
 
   .aia-engage__card-copy {
     width: 100%;
+    align-items: flex-start;
+  }
+
+  .aia-engage__card-cta {
+    align-self: flex-start;
+  }
+
+  .aia-engage__card-title {
+    font-size: 20px;
+  }
+
+  .aia-callout {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 749.98px) {
+  .aia-split__row,
+  .aia-split__row--walk,
+  .aia-hero__row,
+  .aia-engage__row {
+    align-items: center;
+    text-align: center;
+  }
+
+  .aia-hero__copy,
+  .aia-hero__intro,
+  .aia-hero__headline,
+  .aia-hero__cta,
+  .aia-clients__copy,
+  .aia-team__intro,
+  .aia-team__inner,
+  .aia-team__headline,
+  .aia-split__copy,
+  .aia-engage__intro {
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .aia-conference-events-page .text-tag {
+    align-self: center !important;
+  }
+
+  .aia-hero__copy > .flex,
+  .aia-clients__copy > .flex,
+  .aia-split__copy > .flex,
+  .aia-engage__intro > .flex {
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .aia-hero h1,
+  .aia-hero p,
+  .aia-clients__title,
+  .aia-clients__desc,
+  .aia-team h2,
+  .aia-team__intro p,
+  .aia-split h2,
+  .aia-split__copy > p,
+  .aia-engage h2,
+  .aia-engage__intro p,
+  .aia-conference-events-page .vbs-client-success-stories__title,
+  .aia-conference-events-page .vbs-client-success-stories__description,
+  .aia-conference-events-page .vbs-home-faq__title,
+  .aia-conference-events-page .vbs-home-faq__desc {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .aia-conference-events-page .vbs-our-clients__container,
+  .aia-conference-events-page .vbs-client-success-stories__container,
+  .aia-conference-events-page .vbs-client-success-stories__header,
+  .aia-conference-events-page .vbs-client-success-stories__intro,
+  .aia-conference-events-page .vbs-client-success-stories__head,
+  .aia-conference-events-page .vbs-home-faq__container,
+  .aia-conference-events-page .vbs-home-faq__head,
+  .aia-conference-events-page .vbs-home-faq__head-top {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .aia-split--pressure .aia-split__media,
+  .aia-split__media--walk,
+  .aia-hero__media {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .aia-team__grid {
+    justify-items: center;
+  }
+
+  .aia-team .vbs-leadership-team__card {
+    max-width: 360px;
+  }
+
+  .aia-hero__caption {
+    text-align: center !important;
+  }
+
+  .aia-engage__card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .aia-engage__card-copy {
     align-items: center;
   }
 
   .aia-engage__card-cta {
     align-self: center;
-  }
-
-  .aia-engage__card-title {
-    font-size: 20px;
   }
 
   .aia-callout {

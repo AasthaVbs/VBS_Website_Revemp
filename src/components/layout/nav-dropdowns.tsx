@@ -158,7 +158,7 @@ export function NavDropdownTrigger({
   label: string;
   href: string;
   children: ReactNode;
-  dropdownAlign?: "start" | "mega-menu";
+  dropdownAlign?: "start" | "center" | "mega-menu";
   active?: boolean;
 }) {
   return (
@@ -171,6 +171,7 @@ export function NavDropdownTrigger({
         className={cn(
           "pointer-events-none absolute top-full z-[60] w-max max-w-[calc(100vw-2rem)] pt-3 opacity-0 transition-opacity duration-150 group-hover/nav-item:pointer-events-auto group-hover/nav-item:opacity-100",
           dropdownAlign === "start" && "left-0",
+          dropdownAlign === "center" && "left-1/2 -translate-x-1/2",
           dropdownAlign === "mega-menu" && "left-1/2 -translate-x-1/2",
         )}
       >

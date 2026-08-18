@@ -1,14 +1,14 @@
-// @ts-nocheck — ported from Gatsby BuildYourTeamLocationMap.js
 "use client";
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 const DEFAULT_CENTER = { lng: -98.5795, lat: 39.8283 };
 const DEFAULT_ZOOM = 3.5;
 const SELECTED_ZOOM = 12;
 const MAP_STYLE = "mapbox://styles/mapbox/streets-v12";
 
-function buildOsmEmbedUrl(lat, lng) {
+function buildOsmEmbedUrl(lat?: number | null, lng?: number | null) {
   if (lat != null && lng != null) {
     const pad = 0.06;
     const bbox = [lng - pad, lat - pad, lng + pad, lat + pad].join(",");
@@ -29,11 +29,17 @@ export function SixtyMinutesTeamLocationMap({
   lng,
   label,
   isActive = true,
+}: {
+  accessToken?: string;
+  lat?: number | null;
+  lng?: number | null;
+  label?: string;
+  isActive?: boolean;
 }) {
   const hasCoords = lat != null && lng != null;
-  const mapRef = useRef(null);
-  const markerRef = useRef(null);
-  const containerRef = useRef(null);
+  const mapRef = useRef<any>(null);
+  const markerRef = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const [mapReady, setMapReady] = useState(false);
   const [useFallback, setUseFallback] = useState(false);
@@ -46,7 +52,7 @@ export function SixtyMinutesTeamLocationMap({
   }, []);
 
   const initMap = useCallback(
-    async (container) => {
+    async (container: HTMLDivElement) => {
       if (!container || !accessToken || !isActive || useFallback || mapRef.current) return;
 
       try {
@@ -61,7 +67,7 @@ export function SixtyMinutesTeamLocationMap({
         const map = new mapboxgl.Map({
           container,
           style: MAP_STYLE,
-          center: pinned ? [lng, lat] : [DEFAULT_CENTER.lng, DEFAULT_CENTER.lat],
+          center: pinned ? [lng as number, lat as number] : [DEFAULT_CENTER.lng, DEFAULT_CENTER.lat],
           zoom: pinned ? SELECTED_ZOOM : DEFAULT_ZOOM,
           attributionControl: false,
           dragPan: true,
@@ -83,7 +89,7 @@ export function SixtyMinutesTeamLocationMap({
           setMapReady(true);
         });
 
-        map.on("error", (event) => {
+        map.on("error", (event: { error?: unknown }) => {
           console.warn("[VBS] Mapbox GL error", event?.error || event);
           destroyMap();
           setUseFallback(true);
@@ -93,7 +99,7 @@ export function SixtyMinutesTeamLocationMap({
 
         if (pinned) {
           markerRef.current = new mapboxgl.Marker({ color: "#e5232b" })
-            .setLngLat([lng, lat])
+            .setLngLat([lng as number, lat as number])
             .addTo(map);
         }
       } catch (error) {
@@ -106,7 +112,7 @@ export function SixtyMinutesTeamLocationMap({
   );
 
   const setMapContainer = useCallback(
-    (node) => {
+    (node: HTMLDivElement | null) => {
       containerRef.current = node;
       if (node) {
         void initMap(node);

@@ -283,7 +283,7 @@ function NavDropdownTrigger({
   label: string;
   href: string;
   children: ReactNode;
-  dropdownAlign?: "start" | "end" | "mega-menu";
+  dropdownAlign?: "start" | "end" | "center" | "mega-menu";
   active?: boolean;
   toggleOnly?: boolean;
 }) {
@@ -307,6 +307,7 @@ function NavDropdownTrigger({
           "vbs-nav-dropdown-panel",
           dropdownAlign === "start" && "vbs-nav-dropdown-panel--start",
           dropdownAlign === "end" && "vbs-nav-dropdown-panel--end",
+          dropdownAlign === "center" && "vbs-nav-dropdown-panel--center",
           dropdownAlign === "mega-menu" && "vbs-nav-dropdown-panel--mega",
         )}
       >
@@ -341,7 +342,7 @@ export function SiteHeaderDesktopNav() {
               key={item.label}
               label={item.label}
               href={item.href}
-              dropdownAlign="end"
+              dropdownAlign="center"
               active={isResourcesPage}
               toggleOnly
             >

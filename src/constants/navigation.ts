@@ -34,8 +34,8 @@ export const ROUTES = {
   mepModeling: "/mep-bim-services/mep-bim-modeling-services",
   scanToBimServices: "/scan-to-bim-services",
   architectureServices: "/architecture-services",
-  dedicatedResource: "/build-your-team",
-  dedicatedTeam: "/build-your-team",
+  dedicatedResource: "/60-minutes-team",
+  dedicatedTeam: "/60-minutes-team",
   bimModeling: "/bim-modeling-services",
   bimModelingUsa: "/bim-modeling-services-usa",
   cadToBim: "/bim-modeling-services/cad-to-bim",
@@ -103,7 +103,6 @@ export const MAIN_NAV = [
 
 export const ABOUT_DROPDOWN_LINKS: NavDropdownLink[] = [
   { label: "About VBS", href: ROUTES.about },
-  { label: "Our Expertise", href: ROUTES.ourExpertise },
   { label: "Leadership Team", href: ROUTES.leadership },
   { label: "Careers", href: ROUTES.careers },
   { label: "Life at VBS", href: ROUTES.lifeAtVbs },

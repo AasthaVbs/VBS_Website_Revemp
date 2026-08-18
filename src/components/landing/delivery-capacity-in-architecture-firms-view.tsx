@@ -99,7 +99,7 @@ const RESOURCE_CARDS = [
     body: "Use this checklist to align production, coordination, and QA expectations before committing to your next delivery model.",
     href: "/landing/dedicated-remote-architect-vs-freelancer-vs-full-time/",
     cta: "Use the Planning Checklist",
-    image: "/image/Architectural-BIM-services.jpg",
+    image: "/image/actionable-checklist.jpg",
     imageAlt: "Delivery planning checklist resource preview",
   },
 ] as const;

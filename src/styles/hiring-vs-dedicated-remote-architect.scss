@@ -23,6 +23,7 @@
   .hvd-callout {
     margin: 0;
     padding: 20px;
+    box-sizing: border-box;
     background: rgba(215, 4, 22, 0.06);
     border: 1px solid var(--hvd-red);
     border-radius: 10px;
@@ -31,6 +32,10 @@
     line-height: 24px !important;
     color: var(--hvd-black) !important;
     white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    min-width: 0;
+    max-width: 100%;
   }
 
   .hvd-callout--green {
@@ -39,9 +44,9 @@
   }
 
   .hvd-callout--nowrap {
-    width: max-content;
+    width: 100%;
     max-width: 100%;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .hvd-icon-box {
@@ -92,6 +97,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+    min-width: 0;
   }
 
   .hvd-hero-copy {
@@ -143,7 +149,9 @@
     flex: 0 1 650px;
     width: 100%;
     max-width: 650px;
-    height: 460px;
+    height: auto;
+    aspect-ratio: 650 / 460;
+    position: relative;
     border-radius: 10px;
     overflow: hidden;
     background: #f4f4f4;
@@ -151,6 +159,8 @@
   }
 
   .hvd-hero-media img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -165,14 +175,17 @@
 
   .hvd-natural-inner {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 60px;
+    min-width: 0;
   }
 
   .hvd-natural-title {
     flex: 0 1 516px;
     width: 100%;
     max-width: 516px;
+    min-width: 0;
+    padding-top: 48px;
     font-size: 48px !important;
     font-weight: 500 !important;
     line-height: 1.15 !important;
@@ -211,6 +224,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+    min-width: 0;
   }
 
   .hvd-expect-copy {
@@ -233,13 +247,14 @@
   }
 
   .hvd-expect-copy .hvd-callout--nowrap {
-    width: max-content;
+    width: 100%;
   }
 
   .hvd-table {
     width: 100%;
     max-width: 780px;
     flex: 1 1 780px;
+    min-width: 0;
     border: 1px solid var(--hvd-border);
     border-radius: 10px;
     overflow: hidden;
@@ -263,12 +278,17 @@
     font-size: 16px !important;
     line-height: 24px !important;
     color: var(--hvd-black) !important;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
   }
 
   .hvd-table-cell--reality-head,
   .hvd-table-cell--reality {
     width: 51.28%;
-    flex: 0 0 51.28%;
+    flex: 1 1 51.28%;
+    min-width: 0;
     box-sizing: border-box;
   }
 
@@ -327,6 +347,7 @@
     align-items: flex-end;
     justify-content: space-between;
     gap: 40px;
+    min-width: 0;
   }
 
   .hvd-timeline h2 {
@@ -338,8 +359,13 @@
     max-width: 607px;
   }
 
+  .hvd-timeline-break {
+    display: block;
+  }
+
   .hvd-timeline-header .hvd-callout {
-    flex-shrink: 0;
+    flex: 0 1 auto;
+    min-width: 0;
   }
 
   .hvd-timeline-grid {
@@ -416,6 +442,12 @@
     align-items: flex-end;
     justify-content: center;
     gap: 60px;
+    min-width: 0;
+  }
+
+  .hvd-pressure-header .hvd-callout {
+    flex: 0 1 auto;
+    min-width: 0;
   }
 
   .hvd-pressure-intro {
@@ -493,6 +525,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 60px;
+    min-width: 0;
   }
 
   .hvd-question-copy {
@@ -519,6 +552,7 @@
     width: 100%;
     max-width: 621px;
     flex: 1 1 621px;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 80px;
@@ -583,7 +617,8 @@
   }
 
   .hvd-question-quote {
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: break-word;
   }
 
   /* ----- Final CTA ----- */
@@ -627,10 +662,110 @@
     padding-right: 16px !important;
   }
 
+  @media (min-width: 1440px) {
+    .hvd-callout--nowrap {
+      width: max-content;
+      max-width: 100%;
+      white-space: nowrap;
+    }
+
+    .hvd-expect-copy .hvd-callout--nowrap {
+      width: max-content;
+    }
+
+    .hvd-question-quote {
+      white-space: nowrap;
+    }
+  }
+
   @media (min-width: 768px) {
     .vbs-page-container {
       padding-left: 16px !important;
       padding-right: 16px !important;
+    }
+  }
+
+  @media (max-width: 1439px) {
+    .hvd-natural-inner,
+    .hvd-expect-inner,
+    .hvd-question-inner,
+    .hvd-timeline-header,
+    .hvd-pressure-header {
+      flex-wrap: wrap;
+      align-items: flex-start;
+      min-width: 0;
+    }
+
+    .hvd-hero-inner {
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 32px;
+    }
+
+    .hvd-expect-copy {
+      flex: 1 1 280px;
+      max-width: 100%;
+    }
+
+    .hvd-expect h2 {
+      max-width: 100%;
+    }
+
+    .hvd-table {
+      flex: 1 1 360px;
+      max-width: 100%;
+    }
+
+    .hvd-timeline-header .hvd-callout,
+    .hvd-pressure-header .hvd-callout {
+      flex: 1 1 240px;
+      max-width: 100%;
+    }
+
+    .hvd-timeline h2,
+    .hvd-pressure h2 {
+      flex: 1 1 320px;
+      max-width: 100%;
+    }
+
+    .hvd-question-copy {
+      flex: 1 1 280px;
+      max-width: 100%;
+    }
+
+    .hvd-question-cards {
+      flex: 1 1 320px;
+      max-width: 100%;
+    }
+
+    .hvd-natural-title {
+      flex: 1 1 280px;
+      max-width: 100%;
+    }
+
+    .hvd-natural-right {
+      flex: 1 1 360px;
+    }
+
+    .hvd-hero-copy {
+      flex: 1 1 0;
+      max-width: 520px;
+    }
+
+    .hvd-hero-media {
+      flex: 0 1 48%;
+      width: 48%;
+      max-width: 520px;
+      min-width: 0;
+      height: auto;
+      aspect-ratio: 650 / 460;
+    }
+
+    .hvd-callout,
+    .hvd-question-card p,
+    .hvd-timeline-card p,
+    .hvd-pressure-card p {
+      overflow-wrap: break-word;
     }
   }
 
@@ -644,7 +779,27 @@
     .hvd-question-inner,
     .hvd-pressure-header,
     .hvd-timeline-header {
+      flex-direction: column;
+      align-items: stretch;
       gap: 32px;
+    }
+
+    .hvd-natural-title,
+    .hvd-expect-copy,
+    .hvd-question-copy,
+    .hvd-table,
+    .hvd-question-cards,
+    .hvd-timeline h2,
+    .hvd-pressure h2,
+    .hvd-timeline-header .hvd-callout,
+    .hvd-pressure-header .hvd-callout {
+      flex: none;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .hvd-natural-title {
+      padding-top: 0;
     }
   }
 
@@ -664,8 +819,8 @@
     }
 
     .hvd-hero-media {
-      height: 400px;
-      flex-basis: min(48%, 520px);
+      width: 46%;
+      max-width: 460px;
     }
 
     .hvd-table-cell--reality-head,
@@ -853,6 +1008,10 @@
     }
 
     .hvd-final-cta h2 br {
+      display: none;
+    }
+
+    .hvd-timeline-break {
       display: none;
     }
   }

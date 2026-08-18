@@ -273,20 +273,20 @@ export function DocSystemsFigmaSections({ onSeeSlowing }: DocSystemsFigmaSection
             <h2 className="doc-figma-title" style={{ maxWidth: 696 }}>
               The Pattern Most Architecture <span className="text-accent">Firms Experience</span>
             </h2>
-            <p className="doc-figma-desc">
-              You&apos;re running more projects than before-but delivery feels slower.
-            </p>
-          </div>
-          <div className="doc-figma-stack doc-figma-stack--20">
-            <p className="doc-figma-desc">The pattern starts showing up:</p>
-            <div className="doc-figma-pattern__grid">
-              {PATTERN_CARDS.map((card) => (
-                <article key={card.text} className="doc-figma-card doc-figma-card--center">
-                  <IconBox src={card.icon} alt="" />
-                  <p className="doc-figma-desc doc-figma-card__center-text">{card.text}</p>
-                </article>
-              ))}
+            <div className="doc-figma-pattern__lead">
+              <p className="doc-figma-desc">
+                You&apos;re running more projects than before-but delivery feels slower.
+              </p>
+              <p className="doc-figma-desc">The pattern starts showing up:</p>
             </div>
+          </div>
+          <div className="doc-figma-pattern__grid">
+            {PATTERN_CARDS.map((card) => (
+              <article key={card.text} className="doc-figma-card doc-figma-card--center">
+                <IconBox src={card.icon} alt="" />
+                <p className="doc-figma-desc doc-figma-card__center-text">{card.text}</p>
+              </article>
+            ))}
           </div>
         </PageContainer>
       </section>

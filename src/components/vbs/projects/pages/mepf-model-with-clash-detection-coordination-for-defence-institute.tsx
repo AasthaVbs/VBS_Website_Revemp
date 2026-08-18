@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Defence Institute",
     description:
       "LOD 400 mechanical, electrical, plumbing, and fire protection modeling with inter-discipline clash detection, shop drawings, and fabrication drawings for a defence institute.",
-    image: "/image/project2-slider1.jpg",
+    image: "/image/architecture-mepf-3d-model-banner.jpg",
     imageAlt: "Defence institute MEPF BIM modeling project",
   },
   overview: {
-    image: "/image/project2-slider2.jpg",
+    image: "/image/architecture-mepf-3d-model-overview.jpg",
     imageAlt: "LOD 400 MEPF coordinated model defence institute",
     paragraphs: [
       "This defence institute project required LOD 400 MEPF models across mechanical, electrical, plumbing, and fire protection systems with inter-discipline clash detection and coordination. Our team delivered coordinated models along with shop and fabrication drawings.",
@@ -39,13 +39,8 @@ const content = {
   io: {
     description:
       "From MEPF design inputs to LOD 400 coordinated models, shop drawings, and fabrication drawings.",
-    inputImages: [
-      { src: "/image/project2-slider1.jpg", label: "MEPF Design Drawings and References" },
-    ],
-    outputImages: [
-      { src: "/image/project2-slider2.jpg", label: "LOD 400 Coordinated MEPF Model" },
-      { src: "/image/project2-slider3.jpg", label: "Shop and Fabrication Drawings" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "MEPF design drawings and specifications",
       "Architectural and structural reference models",
@@ -143,5 +138,5 @@ const content = {
 };
 
 export default function MepfModelDefenceInstitutePage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--wide-hero" />;
 }

@@ -3,6 +3,7 @@
 import React, { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { BUILD_YOUR_TEAM_MAPBOX_ACCESS_TOKEN } from "@/constants/sixty-minutes-team-data";
 import {
+  fetchMapboxAccessToken,
   geolocationErrorMessage,
   getLocationCoords,
   getLocationLabel,
@@ -35,17 +36,14 @@ export function SixtyMinutesTeamLocationInput({
   disabled?: boolean;
   isActive?: boolean;
 }) {
-  const accessToken = BUILD_YOUR_TEAM_MAPBOX_ACCESS_TOKEN;
-
   const listId = useId();
   const rootRef = useRef<HTMLDivElement | null>(null);
   const debounceRef = useRef<number | null>(null);
   const searchRequestRef = useRef(0);
 
+  const [accessToken, setAccessToken] = useState(BUILD_YOUR_TEAM_MAPBOX_ACCESS_TOKEN);
   const [query, setQuery] = useState(() => getLocationLabel(value));
-  const [suggestions, setSuggestions] = useState<
-    { label: string; lat: number; lng: number }[]
-  >([]);
+  const [suggestions, setSuggestions] = useState<{ label: string; lat: number; lng: number }[]>([]);
   const [open, setOpen] = useState(false);
   const [searching, setSearching] = useState(false);
   const [locating, setLocating] = useState(false);
@@ -56,6 +54,23 @@ export function SixtyMinutesTeamLocationInput({
   const coords = useMemo(() => getLocationCoords(value), [value]);
   const isSearchActive =
     inputFocused || searching || (open && suggestions.length > 0) || (query.trim().length >= 2 && !coords);
+
+  useEffect(() => {
+    if (accessToken) return undefined;
+
+    let cancelled = false;
+    fetchMapboxAccessToken()
+      .then((token) => {
+        if (!cancelled) setAccessToken(token);
+      })
+      .catch(() => {
+        if (!cancelled) setError("Map search is not configured yet. Enter your city manually.");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [accessToken]);
 
   useEffect(() => {
     setQuery(getLocationLabel(value));

@@ -128,7 +128,7 @@ export const ZOHO_BIM_RESOURCE_DOWNLOAD_VISIBLE_HEIGHT_PX = 500;
 export const ZOHO_BIM_RESOURCE_DOWNLOAD_HEADER_CROP_PX = 140;
 
 /** Trim Zoho footer / empty space below the submit button. */
-export const ZOHO_BIM_RESOURCE_DOWNLOAD_FOOTER_CROP_PX = 145;
+export const ZOHO_BIM_RESOURCE_DOWNLOAD_FOOTER_CROP_PX = 165;
 
 export function getZohoAcsInquiryHeaderCropPx() {
   if (typeof window === "undefined") {
@@ -180,22 +180,65 @@ export const ZOHO_HIDDEN_COST_WP_IFRAME_SRC =
 /** Fixed visible iframe area for hidden-cost whitepaper — taller than data center form. */
 export const ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_PX = 500;
 
+/** Match the laptop header crop so the submit button stays in view. */
+export const ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_LAPTOP_PX = 515;
+
 /** Taller locked viewport on mobile for the hidden-cost whitepaper form. */
 export const ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_MOBILE_PX = 740;
 
 /** Hide duplicate Zoho title — hidden-cost whitepaper only. */
 export const ZOHO_HIDDEN_COST_WP_HEADER_CROP_PX = 210;
 
+/** Laptop crop — 15px less than desktop so First / Last Name stay fully visible. */
+export const ZOHO_HIDDEN_COST_WP_HEADER_CROP_LAPTOP_PX = 196;
+
 export const ZOHO_HIDDEN_COST_WP_HEADER_CROP_MOBILE_PX = 300;
+
+/** Trim extra empty Zoho space below the hidden-cost form (20px more than the shared whitepaper crop). */
+export const ZOHO_HIDDEN_COST_WP_FOOTER_CROP_PX = 168;
+
+export const ZOHO_HIDDEN_COST_WP_FOOTER_CROP_MOBILE_PX = 190;
+
+export function getZohoHiddenCostWpFooterCropPx() {
+  if (typeof window === "undefined") {
+    return ZOHO_HIDDEN_COST_WP_FOOTER_CROP_PX;
+  }
+
+  return window.matchMedia("(max-width: 767px)").matches
+    ? ZOHO_HIDDEN_COST_WP_FOOTER_CROP_MOBILE_PX
+    : ZOHO_HIDDEN_COST_WP_FOOTER_CROP_PX;
+}
+
+export function getZohoHiddenCostWpVisibleHeightPx() {
+  if (typeof window === "undefined") {
+    return ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_PX;
+  }
+
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    return ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_MOBILE_PX;
+  }
+
+  if (window.matchMedia("(max-width: 1439px)").matches) {
+    return ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_LAPTOP_PX;
+  }
+
+  return ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_PX;
+}
 
 export function getZohoHiddenCostWpHeaderCropPx() {
   if (typeof window === "undefined") {
     return ZOHO_HIDDEN_COST_WP_HEADER_CROP_PX;
   }
 
-  return window.matchMedia("(max-width: 767px)").matches
-    ? ZOHO_HIDDEN_COST_WP_HEADER_CROP_MOBILE_PX
-    : ZOHO_HIDDEN_COST_WP_HEADER_CROP_PX;
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    return ZOHO_HIDDEN_COST_WP_HEADER_CROP_MOBILE_PX;
+  }
+
+  if (window.matchMedia("(max-width: 1439px)").matches) {
+    return ZOHO_HIDDEN_COST_WP_HEADER_CROP_LAPTOP_PX;
+  }
+
+  return ZOHO_HIDDEN_COST_WP_HEADER_CROP_PX;
 }
 
 /** Shared Zoho whitepaper embed crops — data center whitepaper only. */

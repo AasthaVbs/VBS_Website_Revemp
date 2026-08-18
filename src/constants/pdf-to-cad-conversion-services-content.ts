@@ -64,7 +64,7 @@ export const pdfToCadOurClientsSection = {
   breakTitle: false,
   titleMaxWidth: 528,
   description:
-    "Supporting a wide variety of project types and workflows for architecture, engineering, construction, and reality capture companies. We work with your standards, delivery processes and project requirements to offer you reliable CAD documentation support that grows with your business.",
+    "Supporting architecture, engineering, construction, and reality capture teams across diverse project types and workflows.",
 };
 
 export const pdfToCadServicesSection = {
@@ -286,9 +286,9 @@ export const pdfToCadTechnologyStackToolsRowTwo: MepBimTechnologyTool[] =
 
 export const pdfToCadAdvantagesSection = {
   tag: "Advantages",
-  titleLine1: "What Changes When VBS Becomes Part of ",
-  titleLine2: "Your Delivery Team",
-  titleMaxWidth: 824,
+  titleLine1: "What Changes When VBS Becomes ",
+  titleLine2: "Part of Your Delivery Team",
+  titleMaxWidth: 920,
   descriptionMaxWidth: 955,
   description:
     "Reliable CAD production creates more than editable drawings. Your team gains additional production capacity, predictable delivery schedules and consistent documentation that supports every phase of architectural and structural project execution.",

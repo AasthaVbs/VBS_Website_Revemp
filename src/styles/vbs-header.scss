@@ -504,6 +504,12 @@
     right: 0;
   }
 
+  .vbs-nav-dropdown-panel--center {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
   .vbs-nav-dropdown-panel--mega {
     left: 0;
     right: auto;

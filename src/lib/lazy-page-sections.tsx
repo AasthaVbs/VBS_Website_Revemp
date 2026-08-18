@@ -354,9 +354,3 @@ export const DeferredWhitepapersBrowseSection = createDeferredSection(
   "WhitepapersBrowseSection",
   { minHeight: 560 },
 );
-
-export const DeferredBuildYourTeamImmersive = createDeferredSection(
-  () => import("@/components/sections/build-your-team/build-your-team-immersive"),
-  "BuildYourTeamImmersive",
-  { minHeight: 640 },
-);

@@ -30,12 +30,6 @@ const COMPARISON_GUIDE_PDF_URL =
 
 const PDF_MODAL_TITLE = "Dedicated Remote Architect vs Freelancer vs Full-Time Hire";
 
-declare global {
-  interface Window {
-    lintrk?: (action: string, payload: { conversion_id: number }) => void;
-  }
-}
-
 const pressurePoints = [
   {
     number: "01",
@@ -158,7 +152,7 @@ function HeroMedia({
   height,
   priority = false,
 }: {
-  src: StaticImageData;
+  src: string | StaticImageData;
   alt: string;
   width: number;
   height: number;
@@ -167,14 +161,14 @@ function HeroMedia({
   return (
     <div
       className="relative w-full overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)]"
-      style={{ maxWidth: width, aspectRatio: `${width} / ${height}` }}
+      style={{ aspectRatio: `${width} / ${height}` }}
     >
       <Image
         src={src}
         alt={alt}
         fill
         className="object-cover"
-        sizes="(max-width: 1024px) 100vw, 650px"
+        sizes="(max-width: 1024px) 100vw, 50vw"
         priority={priority}
       />
     </div>
@@ -211,40 +205,39 @@ function VbsLogoTile() {
 
 function ImpactChangesDiagram({ points }: { points: readonly string[] }) {
   return (
-    <div className="relative h-[499px] w-full min-w-0 flex-1 overflow-hidden max-lg:h-auto max-lg:overflow-visible">
-      {/* Branching connector — desktop */}
-      <div
-        className="pointer-events-none absolute left-[67px] top-[81px] hidden h-[338px] w-[352px] items-center justify-center lg:flex"
-        aria-hidden
-      >
-        <div className="-rotate-90 -scale-y-100">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/landing/capacity-matrix/impact-branch-lines.svg"
-            alt=""
-            className="h-[352px] w-[338px] max-w-none"
-          />
-        </div>
-      </div>
-
-      {/* Logo hub — desktop only */}
-      <div className="absolute left-[46px] top-1/2 z-10 hidden -translate-y-1/2 lg:block">
+    <div className="relative flex w-full min-w-0 flex-1 items-center gap-3 min-[1440px]:h-[499px] min-[1440px]:gap-0">
+      <div className="relative z-10 hidden shrink-0 lg:block">
         <VbsLogoTile />
       </div>
 
-      {/* Numbered outcomes */}
-      <ol className="relative z-[1] flex w-full max-w-[508px] flex-col gap-4 max-lg:mx-auto sm:gap-5 lg:absolute lg:right-0 lg:top-1/2 lg:gap-[60px] lg:-translate-y-1/2">
-        {points.map((text, index) => (
-          <li key={text} className="flex items-start gap-3 sm:items-center sm:gap-5">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#D70416] bg-[#D70416] shadow-[0_6px_20px_rgba(255,192,192,0.55)] sm:h-[50px] sm:w-[50px]">
-              <span className="text-[16px] font-semibold uppercase leading-none text-white sm:text-[20px]">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-            </div>
-            <p className="text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]">{text}</p>
-          </li>
-        ))}
-      </ol>
+      <div className="relative min-w-0 flex-1 self-stretch pr-2 max-[1439px]:pr-12 lg:min-h-[360px] min-[1440px]:pr-0">
+        <div
+          className="pointer-events-none absolute inset-y-[28px] left-0 hidden w-8 lg:block min-[1440px]:w-14"
+          aria-hidden
+        >
+          <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-[#DC0000]" />
+          <span className="absolute left-[calc(100%-2px)] top-0 bottom-0 w-0.5 bg-[#DC0000]" />
+        </div>
+
+        <ol className="relative z-[1] flex h-full w-full flex-col justify-between gap-5 sm:gap-6 lg:gap-8 lg:pl-10 min-[1440px]:max-w-[508px] min-[1440px]:gap-[60px] min-[1440px]:py-8 min-[1440px]:pl-16">
+          {points.map((text, index) => (
+            <li key={text} className="relative flex items-start gap-3 sm:items-center sm:gap-5">
+              <span
+                className="pointer-events-none absolute left-[-40px] top-5 hidden h-px w-10 bg-[#DC0000] sm:top-[25px] lg:block min-[1440px]:left-[-64px] min-[1440px]:w-16"
+                aria-hidden
+              />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#D70416] bg-[#D70416] shadow-[0_6px_20px_rgba(255,192,192,0.55)] sm:h-[50px] sm:w-[50px]">
+                <span className="text-[16px] font-semibold uppercase leading-none text-white sm:text-[20px]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <p className="min-w-0 text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]">
+                {text}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </div>
     </div>
   );
 }
@@ -340,12 +333,12 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
       <main className="min-w-0">
         {/* Hero — Capacity Decision Framework */}
         <section className="overflow-hidden py-12 max-lg:py-10 lg:py-[70px]">
-          <PageContainer className="flex items-center justify-between gap-6 max-lg:flex-col max-lg:items-stretch max-lg:gap-8 lg:gap-6">
-            <div className="flex w-full max-w-[694px] flex-col items-start gap-6 max-lg:gap-5 lg:gap-[30px]">
+          <PageContainer className="grid grid-cols-1 items-center gap-8 max-lg:gap-8 lg:grid-cols-2 lg:gap-10">
+            <div className="flex w-full min-w-0 flex-col items-start gap-6 max-lg:gap-5 lg:gap-[30px]">
               <div className="flex w-full flex-col items-start gap-5">
                 <div className="flex w-full flex-col items-start gap-3">
                   <MepSectionTag label="Capacity Decision Framework" />
-                  <h1 className="max-w-[689px] text-section capitalize !text-[28px] !leading-9 sm:!text-[36px] sm:!leading-[44px] lg:!text-[48px] lg:!leading-[1.15]">
+                  <h1 className="w-full text-section capitalize !text-[28px] !leading-9 sm:!text-[36px] sm:!leading-[44px] lg:!text-[48px] lg:!leading-[1.15]">
                     <span className="font-medium text-[#111111]">
                       Adding People Should Reduce Delivery Pressure, But{" "}
                     </span>
@@ -376,7 +369,7 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
               </PrimaryCtaButton>
             </div>
 
-            <div className="w-full max-w-[650px] shrink-0 max-lg:max-w-full">
+            <div className="w-full min-w-0">
               <HeroMedia
                 src={heroImage}
                 alt="Adding people should reduce delivery pressure, but why does it often increase"
@@ -405,18 +398,18 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
               </p>
             </header>
 
-            <div className="flex w-full items-start gap-8 max-lg:flex-col max-lg:gap-8 lg:gap-[60px]">
-              <div className="relative h-[446px] w-full max-w-[710px] shrink-0 overflow-hidden rounded-[10px] bg-white max-lg:aspect-[710/446] max-lg:h-auto max-lg:max-w-full">
+            <div className="grid w-full grid-cols-1 items-center gap-8 max-lg:gap-8 lg:grid-cols-2 lg:gap-10">
+              <div className="relative aspect-[710/446] h-auto w-full min-w-0 overflow-hidden rounded-[10px] bg-white">
                 <Image
                   src={pressureImage}
                   alt="When work increases but delivery pressure does not ease"
                   fill
                   className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 710px"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
 
-              <div className="flex w-full max-w-[670px] mt-1 flex-col items-start gap-5">
+              <div className="flex w-full min-w-0 flex-col items-start gap-5">
                 <ul className="!m-0 flex w-full !list-none flex-col !p-0 !pl-0">
                   {pressurePoints.map((point, index) => (
                     <li key={point.number} className="!m-0 flex flex-col !p-0 !pl-0">
@@ -430,7 +423,7 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
                       </div>
                       {index < pressurePoints.length - 1 ? (
                         <div
-                          className="my-4 h-px w-full bg-gradient-to-r from-transparent via-[#CBCCCD] to-transparent lg:my-[34px]"
+                          className="my-3 h-px w-full bg-gradient-to-r from-transparent via-[#CBCCCD] to-transparent"
                           aria-hidden
                         />
                       ) : null}
@@ -526,8 +519,8 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
           id="capacity-matrix"
           className="scroll-mt-24 bg-white py-16 max-lg:py-12 lg:py-20"
         >
-          <PageContainer className="flex items-start gap-8 max-lg:flex-col max-lg:items-stretch max-lg:gap-8 lg:gap-[60px]">
-            <div className="flex w-full max-w-[670px] flex-col items-start gap-5 max-lg:max-w-full">
+          <PageContainer className="flex items-center gap-8 max-lg:flex-col max-lg:items-stretch max-lg:gap-8 lg:gap-10 min-[1440px]:gap-[60px]">
+            <div className="flex w-full min-w-0 max-w-[670px] flex-1 flex-col items-start gap-5 max-lg:max-w-full">
               <header className="flex w-full flex-col items-start gap-5">
                 <div className="flex w-full flex-col items-start gap-3">
                   <MepSectionTag label="What This Matrix Helps You Evaluate" />
@@ -569,7 +562,7 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
               </CalloutAside>
             </div>
 
-            <div className="relative h-[470px] w-full max-w-[512px] shrink-0 overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)] max-lg:aspect-[512/470] max-lg:h-auto max-lg:max-w-full">
+            <div className="relative mx-auto aspect-[512/470] h-auto w-full max-w-[512px] min-w-0 overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)] max-lg:max-w-full max-[1439px]:max-w-[420px]">
               <Image
                 src={matrixEvaluateImage}
                 alt="What this matrix helps you evaluate"
@@ -583,8 +576,8 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
 
         {/* What Actually Changes After You Decide */}
         <section className="bg-white py-16 max-lg:py-12 lg:py-20">
-          <PageContainer className="flex items-start gap-8 max-lg:flex-col max-lg:items-stretch max-lg:gap-6 lg:items-center lg:gap-10">
-            <div className="flex w-full max-w-[508px] shrink-0 flex-col items-start gap-5 max-lg:max-w-full">
+          <PageContainer className="flex items-center gap-8 max-lg:flex-col max-lg:items-stretch max-lg:gap-6 lg:gap-8 min-[1440px]:gap-10">
+            <div className="flex w-full min-w-0 max-w-[508px] flex-col items-start gap-5 max-lg:max-w-full lg:max-w-[420px] min-[1440px]:max-w-[508px] min-[1440px]:shrink-0">
               <div className="flex w-full flex-col items-start gap-3">
                 <MepSectionTag label="What Actually Changes After You Decide" />
                 <h2 className="w-full text-section">

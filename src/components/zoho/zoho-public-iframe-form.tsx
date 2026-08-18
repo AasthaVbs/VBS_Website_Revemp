@@ -14,20 +14,20 @@ import {
   getZohoAcsBimLandingFooterCropPx,
   getZohoAcsBimLandingHeaderCropPx,
   getZohoAcsBimLandingMinVisibleHeightPx,
+  getZohoHiddenCostWpFooterCropPx,
   getZohoHiddenCostWpHeaderCropPx,
+  getZohoHiddenCostWpVisibleHeightPx,
   getZohoIframeHeaderCropPx,
   getZohoMepDcWpFooterCropPx,
   getZohoMepDcWpHeaderCropPx,
   getZohoMepDcWpMinVisibleHeightPx,
-  ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_MOBILE_PX,
-  ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_PX,
   isZohoFormSubmissionMessage,
   parseZohoIframeResizeHeight,
   shouldRedirectAfterZohoSubmit,
 } from "@/utils/zoho-contact-form-embed";
 
 type HeaderCropPreset = "contact" | "mep-dc-wp" | "hidden-cost-wp" | "acs-bim";
-type FooterCropPreset = "mep-dc-wp" | "acs-bim";
+type FooterCropPreset = "mep-dc-wp" | "hidden-cost-wp" | "acs-bim";
 type MinVisibleHeightPreset = "mep-dc-wp" | "acs-bim";
 
 type ZohoPublicIframeFormProps = {
@@ -138,14 +138,7 @@ export function ZohoPublicIframeForm({
 
   const getLockBaseHeightPx = () => {
     if (headerCropPreset === "hidden-cost-wp") {
-      if (typeof window === "undefined") {
-        return Math.max(initialHeight, ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_PX);
-      }
-      const mobile = window.matchMedia("(max-width: 767px)").matches;
-      return Math.max(
-        initialHeight,
-        mobile ? ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_MOBILE_PX : ZOHO_HIDDEN_COST_WP_VISIBLE_HEIGHT_PX,
-      );
+      return Math.max(initialHeight, getZohoHiddenCostWpVisibleHeightPx());
     }
     if (minVisibleHeightPreset === "acs-bim" || headerCropPreset === "acs-bim") {
       return Math.max(initialHeight, getZohoAcsBimLandingMinVisibleHeightPx());
@@ -159,6 +152,9 @@ export function ZohoPublicIframeForm({
   const getFooterCropPx = () => {
     if (footerCropPreset === "acs-bim") {
       return getZohoAcsBimLandingFooterCropPx();
+    }
+    if (footerCropPreset === "hidden-cost-wp") {
+      return getZohoHiddenCostWpFooterCropPx();
     }
     if (footerCropPreset === "mep-dc-wp") {
       return getZohoMepDcWpFooterCropPx();

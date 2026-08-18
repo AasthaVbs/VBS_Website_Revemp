@@ -1287,3 +1287,71 @@
     }
   }
 }
+
+/* Commercial tower + defence institute — wider hero copy, tighter top section gaps */
+.lv-case.lv-case--wide-hero {
+  .lv-case-hero__row {
+    justify-content: flex-start;
+    gap: 24px;
+  }
+
+  .lv-case-hero__copy {
+    width: 700px;
+    max-width: 700px;
+    min-width: 0;
+    flex: 0 0 700px;
+  }
+
+  .lv-case-hero__title,
+  .lv-case-hero__desc {
+    max-width: none;
+  }
+
+  .lv-case-hero__media {
+    flex: 2 1 0;
+    width: auto;
+    max-width: none;
+  }
+
+  .lv-case-hero {
+    padding-bottom: 40px;
+  }
+
+  .lv-case-overview {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .lv-case-tools {
+    padding-top: 40px;
+  }
+
+  @media (max-width: 1200px) {
+    .lv-case-hero {
+      padding-bottom: 32px;
+    }
+
+    .lv-case-overview {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    .lv-case-tools {
+      padding-top: 32px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .lv-case-hero__copy {
+      width: 100%;
+      max-width: none;
+      flex: none;
+    }
+
+    .lv-case-hero__media {
+      flex: none;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}

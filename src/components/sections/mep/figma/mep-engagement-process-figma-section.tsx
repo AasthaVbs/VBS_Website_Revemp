@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import { PageContainer } from "@/components/layout/page-container";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
-import { cn } from "@/lib/utils";
+import { cn, laptopCappedMaxWidth } from "@/lib/utils";
 import {
   mepEngagementProcessSection,
   mepEngagementProcessSteps,
@@ -35,7 +35,9 @@ export function MepEngagementProcessSection({
             <MepSectionTag label={tag} />
             <h2
               className="mep-section-heading"
-              style={{ maxWidth: section.titleMaxWidth ?? titleMaxWidth }}
+              style={{
+                maxWidth: laptopCappedMaxWidth(section.titleMaxWidth ?? titleMaxWidth, "title"),
+              }}
             >
               {isInlineTitle ? (
                 <>
@@ -52,7 +54,9 @@ export function MepEngagementProcessSection({
           </div>
           <p
             className="text-[16px] font-normal leading-6 text-[#808080]"
-            style={{ maxWidth: descriptionMaxWidth ? `${descriptionMaxWidth}px` : 640 }}
+            style={{
+              maxWidth: laptopCappedMaxWidth(descriptionMaxWidth ?? 640, "desc"),
+            }}
           >
             {description}
           </p>

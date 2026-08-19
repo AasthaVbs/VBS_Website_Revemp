@@ -20,12 +20,11 @@ import {
 } from "lucide-react";
 
 import { SiteFooter } from "@/components/sections/site-footer";
-import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
+import { GetInTouchFormPanel } from "@/components/sections/get-in-touch/get-in-touch-form-panel";
 import { BimLandingZohoFormSection } from "@/components/sections/cad-landing/bim-landing-zoho-form-section";
 import { IndustriesSection } from "@/components/sections/industries-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
-import { ClientOnlyZohoContactForm } from "@/components/zoho/client-only-zoho-contact-form";
 import { mepFaqs } from "@/constants/mep-engineers-content";
 import {
   ensureNimbusBookingScript,
@@ -69,6 +68,21 @@ const ARCH_PAGE_CSS = `
 /* Smooth scroll when using header in-page links (hash targets) */
 html {
   scroll-behavior: smooth;
+}
+
+/* Entire page shell: 1440px content, 18px L/R gutters (header + sections + footer) */
+.arch-draft-lp-page {
+  --vbs-page-max: 1440px;
+  --vbs-page-gutter: 18px;
+}
+.arch-draft-lp-page .vbs-page-container,
+.arch-draft-lp-page .vbs-redesign-page .vbs-page-container,
+.arch-draft-lp-page .vbs-site-footer > .vbs-page-container,
+.arch-draft-lp-page .vbs-site-footer .vbs-page-container.vbs-site-footer__container {
+  max-width: 1440px !important;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+  box-sizing: border-box !important;
 }
 
 /* LP header: logo scales on narrow viewports (header sits outside .arch-drafting-lp) */
@@ -131,19 +145,14 @@ html {
   background: #fff !important;
 }
 
+.arch-draft-lp-header-anchor .container.arch-lp-header-container,
 .arch-draft-lp-header-anchor .arch-lp-header-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1440px !important;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-@media (max-width: 1199.98px) {
-  .arch-draft-lp-header-anchor .arch-lp-header-container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+  padding-left: 18px !important;
+  padding-right: 18px !important;
 }
 
 .arch-draft-lp-header-anchor .arch-lp-navbar-main > .container {
@@ -410,6 +419,13 @@ html {
   }
 }
 
+.arch-drafting-industries-host,
+.arch-drafting-faq-host,
+.arch-drafting-contact-host,
+.arch-drafting-want-to-know {
+  --vbs-page-max: 1440px;
+}
+
 /* Industries host — homepage IndustriesSection (outside LP reset) */
 .arch-drafting-industries-host.vbs-redesign-page {
   padding-top: 0 !important;
@@ -454,10 +470,11 @@ html {
   flex-direction: column;
   align-items: stretch;
   gap: 24px;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 18px;
+  padding-right: 18px;
   box-sizing: border-box;
 }
 .arch-drafting-contact-header {
@@ -466,7 +483,7 @@ html {
   align-items: flex-start;
   gap: 20px;
   width: 100%;
-  max-width: 780px;
+  max-width: none;
 }
 .arch-drafting-contact-header-top {
   display: flex;
@@ -509,10 +526,18 @@ html {
   line-height: 24px;
 }
 .arch-drafting-contact-body {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: start;
   gap: 40px;
+  width: 100%;
+}
+.arch-drafting-contact-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  min-width: 0;
   width: 100%;
 }
 .arch-drafting-contact-benefits {
@@ -520,8 +545,7 @@ html {
   flex-direction: column;
   gap: 24px;
   width: 100%;
-  max-width: 560px;
-  flex: 0 1 560px;
+  max-width: none;
   min-width: 0;
 }
 .arch-drafting-contact-benefit {
@@ -573,37 +597,22 @@ html {
   line-height: 24px;
 }
 .arch-drafting-contact-form {
-  flex: 1 1 0;
   min-width: 0;
   width: 100%;
-  max-width: 560px;
-  align-self: flex-start;
+  max-width: none;
+  align-self: start;
   margin-top: 0;
+  padding: 0 !important;
+  background: transparent !important;
 }
-.arch-drafting-contact-form .vbs-contact-zoho-wrap {
+.arch-drafting-contact-form.vbs-get-in-touch-section {
+  --vbs-get-in-touch-form-width: 100%;
+}
+.arch-drafting-contact-form .vbs-get-in-touch__tabs {
+  padding-left: 0;
+}
+.arch-drafting-contact-form .vbs-get-in-touch__panel {
   width: 100%;
-  --vbs-zoho-iframe-header-crop: 148px;
-  --vbs-zoho-iframe-visible-height: 595px;
-  --vbs-zoho-iframe-full-height: 760px;
-}
-.arch-drafting-contact-form .vbs-contact-zoho-wrap .vbs-zoho-iframe-form {
-  /* Beat ZohoContactUsIframeForm inline crop so the top rule is actually hidden */
-  --vbs-zoho-iframe-header-crop: 148px !important;
-  --vbs-zoho-iframe-visible-height: 595px !important;
-  --vbs-zoho-iframe-full-height: 760px !important;
-  height: 595px !important;
-  min-height: 595px !important;
-  max-height: 595px !important;
-  overflow: hidden !important;
-}
-.arch-drafting-contact-form .vbs-contact-zoho-wrap .vbs-zoho-iframe-form__shift {
-  transform: translate3d(0, -148px, 0) !important;
-}
-.arch-drafting-contact-form .vbs-contact-zoho-wrap .vbs-zoho-iframe-form__frame {
-  height: 760px !important;
-  min-height: 760px !important;
-  max-height: 760px !important;
-  overflow: hidden !important;
 }
 
 @media (max-width: 991.98px) {
@@ -614,35 +623,14 @@ html {
     gap: 20px;
   }
   .arch-drafting-contact-body {
+    display: flex;
     flex-direction: column;
     gap: 36px;
   }
-  .arch-drafting-contact-benefits,
+  .arch-drafting-contact-copy,
   .arch-drafting-contact-form {
     max-width: 100%;
-    flex: 1 1 auto;
-  }
-  .arch-drafting-contact-form .vbs-contact-zoho-wrap {
-    --vbs-zoho-iframe-header-crop: 186px;
-    --vbs-zoho-iframe-visible-height: 710px;
-    --vbs-zoho-iframe-full-height: 920px;
-  }
-  .arch-drafting-contact-form .vbs-contact-zoho-wrap .vbs-zoho-iframe-form {
-    --vbs-zoho-iframe-header-crop: 186px !important;
-    --vbs-zoho-iframe-visible-height: 710px !important;
-    --vbs-zoho-iframe-full-height: 920px !important;
-    height: 710px !important;
-    min-height: 710px !important;
-    max-height: 710px !important;
-  }
-  .arch-drafting-contact-form .vbs-contact-zoho-wrap .vbs-zoho-iframe-form__shift {
-    transform: translate3d(0, -186px, 0) !important;
-  }
-  .arch-drafting-contact-form .vbs-contact-zoho-wrap .vbs-zoho-iframe-form__frame {
-    height: 920px !important;
-    min-height: 920px !important;
-    max-height: 920px !important;
-    overflow: hidden !important;
+    width: 100%;
   }
 }
 
@@ -657,10 +645,11 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 18px;
+  padding-right: 18px;
   box-sizing: border-box;
 }
 .arch-drafting-tools-header {
@@ -762,6 +751,14 @@ html {
   object-fit: contain;
   object-position: center;
 }
+.arch-drafting-tools-grid-row:nth-child(2) .arch-drafting-tools-card-canvas {
+  aspect-ratio: 16 / 11;
+  min-height: 260px;
+}
+.arch-drafting-tools-grid-row:nth-child(2) .arch-drafting-tools-card-canvas img {
+  object-fit: cover;
+  object-position: center;
+}
 .arch-drafting-tools-card-title {
   margin: 0;
   color: #111;
@@ -803,6 +800,10 @@ html {
   .arch-drafting-tools-card-canvas {
     min-height: 180px;
     aspect-ratio: 2.2 / 1;
+  }
+  .arch-drafting-tools-grid-row:nth-child(2) .arch-drafting-tools-card-canvas {
+    min-height: 220px;
+    aspect-ratio: 16 / 10;
   }
   .arch-drafting-tools-card-canvas img {
     object-fit: cover;
@@ -848,10 +849,11 @@ html {
   flex-direction: column;
   align-items: flex-start;
   gap: 60px;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 18px;
+  padding-right: 18px;
   box-sizing: border-box;
 }
 .arch-drafting-stories-header {
@@ -1080,17 +1082,12 @@ html {
 }
 
 .arch-drafting-lp .wrap {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 18px;
+  padding-right: 18px;
   box-sizing: border-box;
-}
-@media (max-width: 1199.98px) {
-  .arch-drafting-lp .wrap {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
 }
 
 /* Reduce overall vertical gap between sections */
@@ -1310,6 +1307,88 @@ html {
   .arch-drafting-want-to-know .bim-landing-zoho-form__heading {
     font-size: clamp(26px, 8vw, 32px) !important;
     line-height: 1.15 !important;
+  }
+}
+
+/* Smaller desktops / laptops (<1440px) — same scale as homepage */
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .arch-draft-lp-page h1,
+  .arch-draft-lp-page h1 span,
+  .arch-drafting-lp h1,
+  .arch-drafting-lp .hero-h1,
+  .arch-drafting-lp .hero-h1 span,
+  .arch-drafting-tools h1,
+  .arch-drafting-testimonials h1,
+  .arch-drafting-contact h1,
+  .arch-drafting-industries-host h1,
+  .arch-drafting-faq-host h1,
+  .arch-drafting-want-to-know h1 {
+    font-size: 48px !important;
+    line-height: 1.15 !important;
+  }
+  .arch-draft-lp-page h2,
+  .arch-draft-lp-page h2 span,
+  .arch-drafting-lp h2,
+  .arch-drafting-lp h2 span,
+  .arch-drafting-lp .case-studies-title,
+  .arch-drafting-lp .case-studies-title .accent,
+  .arch-drafting-lp .services-offer-title,
+  .arch-drafting-lp .services-offer-title .accent,
+  .arch-drafting-lp .engage-title,
+  .arch-drafting-lp .engage-title .accent,
+  .arch-drafting-lp .why-stay-title,
+  .arch-drafting-lp .why-stay-title .accent,
+  .arch-drafting-lp .arch-portfolio-h2,
+  .arch-drafting-lp .section-heading,
+  .arch-drafting-tools h2,
+  .arch-drafting-tools-title,
+  .arch-drafting-tools-title .accent,
+  .arch-drafting-testimonials h2,
+  .arch-drafting-stories-title,
+  .arch-drafting-stories-title .accent,
+  .arch-drafting-contact h2,
+  .arch-drafting-contact-title,
+  .arch-drafting-contact-title .accent,
+  .arch-drafting-industries-host h2,
+  .arch-drafting-faq-host h2,
+  .arch-drafting-want-to-know h2,
+  .arch-drafting-want-to-know .bim-landing-zoho-form__heading {
+    font-size: 40px !important;
+    line-height: 1.15 !important;
+  }
+  .arch-draft-lp-page h3,
+  .arch-draft-lp-page h3 span,
+  .arch-drafting-lp h3,
+  .arch-drafting-lp .services-offer-copy h3,
+  .arch-drafting-lp .engage-card-title,
+  .arch-drafting-lp .why-stay-card-copy h3,
+  .arch-drafting-tools h3,
+  .arch-drafting-tools-card-title,
+  .arch-drafting-testimonials h3,
+  .arch-drafting-story-name,
+  .arch-drafting-contact h3,
+  .arch-drafting-industries-host h3,
+  .arch-drafting-faq-host h3,
+  .arch-drafting-want-to-know h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+  .arch-draft-lp-page h4,
+  .arch-drafting-lp h4,
+  .arch-drafting-tools h4,
+  .arch-drafting-testimonials h4,
+  .arch-drafting-contact h4,
+  .arch-drafting-industries-host h4,
+  .arch-drafting-faq-host h4,
+  .arch-drafting-want-to-know h4 {
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+  }
+  .arch-drafting-lp .engage-feature h4,
+  .arch-drafting-lp .engage-best h4,
+  .arch-drafting-lp .case-study-block h4 {
+    font-size: 16px !important;
+    line-height: 24px !important;
   }
 }
 
@@ -1605,20 +1684,26 @@ html {
   background: #fff;
   border: none;
 }
+.arch-drafting-lp .trust-strip > .wrap {
+  width: 100% !important;
+  max-width: 1440px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+  box-sizing: border-box !important;
+}
 .arch-drafting-lp .trust-strip-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
   display: flex;
   align-items: stretch;
-  gap: 20px;
+  gap: 24px;
   flex-wrap: nowrap;
   justify-content: flex-start;
-}
-@media (max-width: 1199.98px) {
-  .arch-drafting-lp .trust-strip-inner {
-    padding: 0 16px;
-  }
+  box-sizing: border-box !important;
 }
 .arch-drafting-lp .trust-strip .ts-item {
   flex: 1 1 0;
@@ -1659,7 +1744,7 @@ html {
 }
 .arch-drafting-lp .trust-strip .ts-label {
   width: 100%;
-  max-width: 220px;
+  max-width: none;
   margin: 0 auto;
   font-size: 16px;
   color: #808080;
@@ -2012,7 +2097,7 @@ html {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding-left: max(16px, calc((100vw - 1200px) / 2));
+  padding-left: max(18px, calc((100vw - 1440px) / 2));
   box-sizing: border-box;
 }
 .arch-drafting-lp .case-studies-track {
@@ -2021,7 +2106,7 @@ html {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding-right: max(16px, calc((100vw - 1200px) / 2 + 80px));
+  padding-right: max(18px, calc((100vw - 1440px) / 2 + 80px));
   padding-bottom: 8px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -2250,7 +2335,7 @@ html {
   align-items: center;
   gap: 40px;
   width: 100%;
-  max-width: 1150px;
+  max-width: none;
 }
 .arch-drafting-lp .case-studies-progress {
   position: relative;
@@ -2350,7 +2435,7 @@ html {
 .arch-drafting-lp .case-studies-fade--left {
   left: 0;
   /* Match track-wrap left inset so the fade never masks the snapped card */
-  width: max(16px, calc((100vw - 1200px) / 2));
+  width: max(18px, calc((100vw - 1440px) / 2));
   background: linear-gradient(90deg, #fff 0%, #fff 35%, rgba(255, 255, 255, 0) 100%);
   opacity: 0;
 }
@@ -3441,6 +3526,8 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 60px;
+  width: 100%;
+  max-width: 1440px;
 }
 .arch-drafting-lp .why-stay-header {
   display: flex;
@@ -3983,8 +4070,8 @@ body.vbs-professional-arch-drafting-lp--hide-float-ui .call-icon {
     margin-bottom: 40px;
   }
   .arch-drafting-lp .wrap {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
   .arch-drafting-lp .hero-stats {
     grid-template-columns: 1fr 1fr;
@@ -4136,7 +4223,7 @@ const ARCH_TOOLS_ROW_1 = ARCH_TOOLS_CATEGORIES.filter(c => c.row === 1);
 const ARCH_TOOLS_ROW_2 = ARCH_TOOLS_CATEGORIES.filter(c => c.row === 2);
 
 /** Client Success Stories — Figma 2991:50010 (same videos as prior Real Feedback section). */
-const ARCH_ICON = filename => encodeURI(`/icons/${filename}`);
+const ARCH_ICON = (filename: string) => encodeURI(`/icons/${filename}`);
 const ARCH_CONTACT_BENEFITS = [
   {
     title: "Free 30-Minute Scoping Call",
@@ -4369,7 +4456,11 @@ const ARCH_DRAWING_TYPES_GRID = [
   { label: "FaÃ§ade Drawings", showBullet: true },
 ];
 
-function ArchServiceCardIcon({ name }) {
+function ArchServiceCardIcon({
+  name,
+}: {
+  name: "floor" | "elevation" | "section" | "site" | "construction" | "revit" | "pdf" | "asbuilt";
+}) {
   const svgProps = {
     width: 18,
     height: 18,
@@ -4377,9 +4468,9 @@ function ArchServiceCardIcon({ name }) {
     fill: "none",
     stroke: "currentColor",
     strokeWidth: 2,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    "aria-hidden": "true",
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true as const,
   };
   switch (name) {
     case "floor":
@@ -4838,7 +4929,11 @@ const ARCH_ICON_MAP = {
   "upload-cloud": LuCloudUpload,
 };
 
-function renderArchIcon(name, size = 18, style) {
+function renderArchIcon(
+  name: keyof typeof ARCH_ICON_MAP,
+  size = 18,
+  style?: React.CSSProperties,
+) {
   const Cmp = ARCH_ICON_MAP[name];
   if (!Cmp) return null;
   return <Cmp size={size} strokeWidth={2} style={style} aria-hidden />;
@@ -4846,24 +4941,26 @@ function renderArchIcon(name, size = 18, style) {
 
 export function ProfessionalArchitecturalDraftingServicesView() {
   const [showVideoModal, setShowVideoModal] = useState(false);
-  const [activeVideo, setActiveVideo] = useState(null);
+  const [activeVideo, setActiveVideo] = useState<(typeof ARCH_CLIENT_SUCCESS_STORIES)[number] | null>(
+    null,
+  );
   const [isPlayingVideo, setIsPlayingVideo] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
   const [archNavExpanded, setArchNavExpanded] = useState(false);
   const [portfolioCarouselIndex, setPortfolioCarouselIndex] = useState(0);
   const [portfolioCarouselDir, setPortfolioCarouselDir] = useState(1);
-  const [portfolioModalIndex, setPortfolioModalIndex] = useState(null);
+  const [portfolioModalIndex, setPortfolioModalIndex] = useState<number | null>(null);
   const [portfolioModalSlide, setPortfolioModalSlide] = useState(0);
   const [portfolioModalDir, setPortfolioModalDir] = useState(1);
   const [portfolioModalZoom, setPortfolioModalZoom] = useState(1);
   const [portfolioModalZoomOrigin, setPortfolioModalZoomOrigin] = useState("50% 50%");
-  const trustStripRef = useRef(null);
+  const trustStripRef = useRef<HTMLElement>(null);
   const trustStatsAnimatedRef = useRef(false);
   const [trustCounts, setTrustCounts] = useState(() => ARCH_TRUST_STRIP_STATS.map(() => 1));
-  const caseStudiesTrackRef = useRef(null);
-  const caseStudiesProgressTrackRef = useRef(null);
-  const caseStudiesProgressThumbRef = useRef(null);
-  const archHeaderRef = useRef(null);
+  const caseStudiesTrackRef = useRef<HTMLDivElement>(null);
+  const caseStudiesProgressTrackRef = useRef<HTMLDivElement>(null);
+  const caseStudiesProgressThumbRef = useRef<HTMLDivElement>(null);
+  const archHeaderRef = useRef<HTMLElement>(null);
   const [archHeaderHeight, setArchHeaderHeight] = useState(112);
   const [caseGalleryIndexes, setCaseGalleryIndexes] = useState(() => ARCH_CASE_STUDIES.map(() => 0));
   const [caseTrackScrolled, setCaseTrackScrolled] = useState(false);
@@ -4913,7 +5010,7 @@ export function ProfessionalArchitecturalDraftingServicesView() {
     const roots = document.querySelectorAll(".arch-drafting-lp");
     if (!roots.length) return undefined;
 
-    const els = [];
+    const els: Element[] = [];
     roots.forEach(root => {
       root.querySelectorAll(".reveal, .reveal-left, .reveal-right").forEach(el => els.push(el));
     });
@@ -5006,7 +5103,7 @@ export function ProfessionalArchitecturalDraftingServicesView() {
     return () => ro.disconnect();
   }, []);
 
-  const scrollCaseStudiesByCard = direction => {
+  const scrollCaseStudiesByCard = (direction: number) => {
     const el = caseStudiesTrackRef.current;
     if (!el) return;
     const cards = el.querySelectorAll(".case-study-card");
@@ -5016,7 +5113,7 @@ export function ProfessionalArchitecturalDraftingServicesView() {
     el.scrollBy({ left: direction * step, behavior: "smooth" });
   };
 
-  const setCaseGalleryIndex = (studyIndex, nextIndex) => {
+  const setCaseGalleryIndex = (studyIndex: number, nextIndex: number) => {
     setCaseGalleryIndexes(prev => {
       const copy = [...prev];
       const total = ARCH_CASE_STUDIES[studyIndex].gallery.length;
@@ -5036,7 +5133,7 @@ export function ProfessionalArchitecturalDraftingServicesView() {
 
   useEffect(() => {
     if (portfolioModalIndex === null) return undefined;
-    const onKey = e => {
+    const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setPortfolioModalIndex(null);
     };
     window.addEventListener("keydown", onKey);
@@ -5054,8 +5151,8 @@ export function ProfessionalArchitecturalDraftingServicesView() {
         io.disconnect();
         const duration = 2200;
         const start = performance.now();
-        const ease = u => 1 - (1 - u) ** 3;
-        const tick = now => {
+        const ease = (u: number) => 1 - (1 - u) ** 3;
+        const tick = (now: number) => {
           const t = Math.min(1, (now - start) / duration);
           const k = ease(t);
           setTrustCounts(targets.map(max => Math.max(1, Math.round(1 + (max - 1) * k))));
@@ -5070,7 +5167,7 @@ export function ProfessionalArchitecturalDraftingServicesView() {
     return () => io.disconnect();
   }, []);
 
-  const handleOpenVideoModal = thumb => {
+  const handleOpenVideoModal = (thumb: (typeof ARCH_CLIENT_SUCCESS_STORIES)[number]) => {
     setActiveVideo(thumb);
     setShowVideoModal(true);
     setIsPlayingVideo(false);
@@ -5091,18 +5188,18 @@ export function ProfessionalArchitecturalDraftingServicesView() {
     setIsPlayingVideo(true);
   };
 
-  const portfolioCarouselGo = delta => {
+  const portfolioCarouselGo = (delta: number) => {
     const n = ARCH_PORTFOLIO_PROJECTS.length;
     setPortfolioCarouselDir(delta > 0 ? 1 : -1);
     setPortfolioCarouselIndex(i => (i + delta + n) % n);
   };
 
-  const portfolioCarouselSetIndex = idx => {
+  const portfolioCarouselSetIndex = (idx: number) => {
     setPortfolioCarouselDir(idx > portfolioCarouselIndex ? 1 : -1);
     setPortfolioCarouselIndex(idx);
   };
 
-  const openPortfolioModal = projectIdx => {
+  const openPortfolioModal = (projectIdx: number) => {
     setPortfolioModalIndex(projectIdx);
     setPortfolioModalSlide(0);
     setPortfolioModalDir(1);
@@ -5116,7 +5213,7 @@ export function ProfessionalArchitecturalDraftingServicesView() {
     setPortfolioModalZoomOrigin("50% 50%");
   };
 
-  const portfolioModalGoSlide = delta => {
+  const portfolioModalGoSlide = (delta: number) => {
     if (portfolioModalIndex === null) return;
     const totalProjects = ARCH_PORTFOLIO_PROJECTS.length;
     const currentProject = ARCH_PORTFOLIO_PROJECTS[portfolioModalIndex];
@@ -5155,7 +5252,7 @@ export function ProfessionalArchitecturalDraftingServicesView() {
     setPortfolioModalZoomOrigin("50% 50%");
   };
 
-  const portfolioModalSetSlide = idx => {
+  const portfolioModalSetSlide = (idx: number) => {
     if (portfolioModalIndex === null) return;
     const { slides } = ARCH_PORTFOLIO_PROJECTS[portfolioModalIndex];
     const m = slides.length;
@@ -5169,7 +5266,7 @@ export function ProfessionalArchitecturalDraftingServicesView() {
   const portfolioZoomIn = () => setPortfolioModalZoom(z => Math.min(3.5, +(z + 0.35).toFixed(2)));
   const portfolioZoomOut = () => setPortfolioModalZoom(z => Math.max(1, +(z - 0.35).toFixed(2)));
 
-  const handlePortfolioModalImageMove = e => {
+  const handlePortfolioModalImageMove = (e: React.MouseEvent<HTMLElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     if (!rect.width || !rect.height) return;
     const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -5184,6 +5281,7 @@ export function ProfessionalArchitecturalDraftingServicesView() {
       <style dangerouslySetInnerHTML={{ __html: ARCH_PAGE_CSS }} />
       <style dangerouslySetInnerHTML={{ __html: ZOHO_WIDGET_HIDE_CSS }} />
 
+      <div className="arch-draft-lp-page">
       <header ref={archHeaderRef} className="arch-draft-lp-header-anchor">
         <div className="arch-lp-header-topbar d-none d-lg-block">
           <Container className="arch-lp-header-container border-bottom border-primary border-opacity-25">
@@ -5893,48 +5991,48 @@ export function ProfessionalArchitecturalDraftingServicesView() {
       <div className="vbs-redesign-page arch-drafting-contact-host">
         <section id="contact" className="arch-drafting-contact" aria-label="Contact Us">
           <div className="arch-drafting-contact__wrap">
-            <div className="arch-drafting-contact-header">
-              <div className="arch-drafting-contact-header-top">
-                <span className="arch-drafting-contact-tag">Contact Us</span>
-                <h2 className="arch-drafting-contact-title">
-                  Start Your Project
-                  <br />
-                  With <span className="accent">Confidence</span>
-                </h2>
-              </div>
-              <p className="arch-drafting-contact-sub">
-                Whether you need support for a single project or a dedicated drafting team, our
-                specialists are ready to integrate with your workflow and deliver from day one.
-              </p>
-            </div>
-
             <div className="arch-drafting-contact-body">
-              <div className="arch-drafting-contact-benefits">
-                {ARCH_CONTACT_BENEFITS.map(item => (
-                  <div key={item.title} className="arch-drafting-contact-benefit">
-                    <div className="arch-drafting-contact-benefit-icon" aria-hidden>
-                      <img src={item.icon} alt="" width={36} height={36} loading="lazy" />
-                    </div>
-                    <div className="arch-drafting-contact-benefit-copy">
-                      <h3>{item.title}</h3>
-                      <p>{item.body}</p>
-                    </div>
+              <div className="arch-drafting-contact-copy">
+                <div className="arch-drafting-contact-header">
+                  <div className="arch-drafting-contact-header-top">
+                    <span className="arch-drafting-contact-tag">Contact Us</span>
+                    <h2 className="arch-drafting-contact-title">
+                      Start Your Project
+                      <br />
+                      With <span className="accent">Confidence</span>
+                    </h2>
                   </div>
-                ))}
+                  <p className="arch-drafting-contact-sub">
+                    Whether you need support for a single project or a dedicated drafting team, our
+                    specialists are ready to integrate with your workflow and deliver from day one.
+                  </p>
+                </div>
+
+                <div className="arch-drafting-contact-benefits">
+                  {ARCH_CONTACT_BENEFITS.map(item => (
+                    <div key={item.title} className="arch-drafting-contact-benefit">
+                      <div className="arch-drafting-contact-benefit-icon" aria-hidden>
+                        <img src={item.icon} alt="" width={36} height={36} loading="lazy" />
+                      </div>
+                      <div className="arch-drafting-contact-benefit-copy">
+                        <h3>{item.title}</h3>
+                        <p>{item.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="arch-drafting-contact-form">
-                <div className="vbs-contact-zoho-wrap">
-                  <ClientOnlyZohoContactForm />
-                </div>
+              <div className="arch-drafting-contact-form vbs-get-in-touch-section">
+                <GetInTouchFormPanel />
               </div>
             </div>
           </div>
         </section>
       </div>
 
-      <GetInTouchSection />
       <SiteFooter />
+      </div>
     </>
   );
 }

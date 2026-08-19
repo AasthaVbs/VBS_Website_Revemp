@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Commercial Project",
     description:
       "LOD 300 mechanical, electrical, and plumbing BIM modeling with clash detection and coordination for a commercial building project.",
-    image: "/image/project14-slider-1.jpg",
+    image: "/image/lod-300-mepf-banner.jpg",
     imageAlt: "Commercial LOD 300 MEPF BIM modeling project",
   },
   overview: {
-    image: "/image/project14-slider-1.jpg",
+    image: "/image/lod-300-mepf-overview.jpg",
     imageAlt: "LOD 300 MEP coordinated commercial model",
     paragraphs: [
       "This commercial project required LOD 300 BIM models for mechanical, electrical, and plumbing systems with integrated clash detection and coordination. Our team developed discipline models aligned with project standards.",
@@ -39,12 +39,8 @@ const content = {
   io: {
     description:
       "From MEP design inputs to LOD 300 coordinated models with clash-free MEP systems.",
-    inputImages: [
-      { src: "/image/project14-slider-1.jpg", label: "MEP Design Drawings and References" },
-    ],
-    outputImages: [
-      { src: "/image/project14-slider-1.jpg", label: "LOD 300 MEP Coordinated Model" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "MEP design drawings and specifications",
       "Architectural and structural reference models",
@@ -131,5 +127,5 @@ const content = {
 };
 
 export default function PortfolioCadToBimCommercialPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

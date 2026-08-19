@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Convention Center, Minnesota",
     description:
       "LOD 450 architectural BIM modeling with high-quality interior and exterior renderings, customized views, and walkthrough video for a Minnesota convention center.",
-    image: "/image/project5-slider1.jpg",
+    image: "/image/3d-rendering-banner.jpg",
     imageAlt: "Convention center architectural BIM and rendering project",
   },
   overview: {
-    image: "/image/project5-slider2.jpg",
+    image: "/image/3d-rendering-overview.jpg",
     imageAlt: "Convention center 3D visualization",
     paragraphs: [
       "This commercial convention center project required detailed LOD 450 architectural BIM modeling paired with high-quality interior and exterior renderings. Our team developed the building model and produced customized views and a walkthrough video for design presentation.",
@@ -39,13 +39,8 @@ const content = {
   io: {
     description:
       "From design references and architectural inputs to LOD 450 BIM models, renderings, and walkthrough video.",
-    inputImages: [
-      { src: "/image/project5-slider1.jpg", label: "Architectural Design References" },
-    ],
-    outputImages: [
-      { src: "/image/project5-slider2.jpg", label: "Interior & Exterior Renderings" },
-      { src: "/image/project5-slider3.jpg", label: "Customized Views and Walkthrough" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "Architectural design drawings and briefs",
       "Material and finish schedules",
@@ -143,5 +138,5 @@ const content = {
 };
 
 export default function ThreeModelingRenderingsMinnesotaPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

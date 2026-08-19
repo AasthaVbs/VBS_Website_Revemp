@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Residential Project, USA",
     description:
       "LOD 300 architectural and structural modeling with clash detection and interdisciplinary coordination for a residential project in the USA.",
-    image: "/image/project7-slider1.jpg",
+    image: "/image/revit-model-front-view-banner.jpg",
     imageAlt: "Residential architectural and structural BIM project",
   },
   overview: {
-    image: "/image/project7-slider1.jpg",
+    image: "/image/revit-model-front-view-overview.jpg",
     imageAlt: "Residential LOD 300 architectural and structural model",
     paragraphs: [
       "This residential project in the USA required LOD 300 architectural and structural BIM models with coordinated clash detection across disciplines. Our team developed accurate models aligned with the client's design standards.",
@@ -39,12 +39,8 @@ const content = {
   io: {
     description:
       "From design drawings to coordinated LOD 300 architectural and structural BIM models.",
-    inputImages: [
-      { src: "/image/project7-slider1.jpg", label: "Architectural and Structural Design Drawings" },
-    ],
-    outputImages: [
-      { src: "/image/project7-slider1.jpg", label: "LOD 300 Coordinated BIM Model" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "Architectural design drawings",
       "Structural engineering drawings",
@@ -131,5 +127,5 @@ const content = {
 };
 
 export default function ArchitecturalAndStructuralModelPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

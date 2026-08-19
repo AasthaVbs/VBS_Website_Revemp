@@ -35,9 +35,9 @@ export function LocationServiceNearYouSection({
             <Link
               key={location.href}
               href={location.href}
-              className="flex w-full items-center justify-between gap-3 rounded-[10px] border border-[#CBCCCD] bg-white px-4 py-6 no-underline transition-shadow duration-200 hover:shadow-[0px_4px_10px_rgba(0,0,0,0.12)] sm:gap-4 sm:px-5 sm:py-8 lg:py-10"
+              className="group flex w-full items-center justify-between gap-3 rounded-[10px] border border-[#CBCCCD] bg-white px-4 py-6 no-underline transition-shadow duration-200 hover:shadow-[0px_4px_10px_rgba(0,0,0,0.12)] sm:gap-4 sm:px-5 sm:py-8 lg:py-10"
             >
-              <span className="text-[18px] font-medium leading-[1.2] text-[#111111] sm:text-[20px] lg:text-[22px] lg:leading-[28px]">
+              <span className="text-[18px] font-medium leading-[1.2] text-[#111111] group-hover:!text-[#D70416] group-hover:!underline group-hover:underline-offset-[3px] sm:text-[20px] lg:text-[22px] lg:leading-[28px]">
                 {location.name}
               </span>
               <span className="inline-flex shrink-0 items-center gap-1.5 text-[16px] font-normal leading-[30px] text-[#2299D6]">

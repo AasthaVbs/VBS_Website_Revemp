@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Metro Station",
     description:
       "LOD 400 structural and architectural façade modeling with clash detection, quantity estimation, and constructability reviews for a metro station infrastructure project.",
-    image: "/image/project8-slider1.jpg",
+    image: "/image/architecture-structure-3d-models-banner.jpg",
     imageAlt: "Metro station structural and facade BIM modeling",
   },
   overview: {
-    image: "/image/project8-slider2.jpg",
+    image: "/image/architecture-structure-3d-models-overview.jpg",
     imageAlt: "Coordinated metro station BIM model",
     paragraphs: [
       "This public infrastructure metro station project required LOD 400 structural and architectural façade models with integrated clash detection and coordination. Our team developed detailed models supporting quantity estimation and constructability reviews.",
@@ -39,12 +39,8 @@ const content = {
   io: {
     description:
       "From design drawings and reference data to LOD 400 structural and façade models with coordinated clash-free outputs.",
-    inputImages: [
-      { src: "/image/project8-slider1.jpg", label: "Structural and Facade Design Drawings" },
-    ],
-    outputImages: [
-      { src: "/image/project8-slider2.jpg", label: "LOD 400 Coordinated BIM Model" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "Structural design drawings and calculations",
       "Architectural façade design documentation",
@@ -142,5 +138,5 @@ const content = {
 };
 
 export default function ThreeDModelingMetroStationPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

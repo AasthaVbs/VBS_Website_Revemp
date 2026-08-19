@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { LocationServiceNearYouSection } from "@/components/sections/locations/location-service-near-you-section";
 import { LocationServiceOverviewSection } from "@/components/sections/locations/location-service-overview-section";
+import { LocationsNearYouSection } from "@/components/sections/locations/locations-near-you-section";
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
 import { TrustStripSection } from "@/components/sections/trust-strip-section";
 import type { ClientSuccessStory } from "@/constants/client-success-stories-content";
@@ -96,6 +97,7 @@ export function LocationServicePage({ content }: { content: LocationServicePageC
         <TrustStripSection stats={content.stats} className="vbs-trust-strip-section bg-white" />
         <LocationServiceOverviewSection section={content.overview} />
         <LocationServiceNearYouSection section={content.nearYou} />
+        <LocationsNearYouSection />
         <DeferredClientSuccessStoriesSection
           className="!bg-[#FAFAFA]"
           tag={content.testimonials.tag}

@@ -6,7 +6,7 @@ import {
   mepBimDeliverablesSection,
   type MepBimDeliverableCard,
 } from "@/constants/mep-bim-modelling-content";
-import { cn, altFromImageSrc } from "@/lib/utils";
+import { cn, altFromImageSrc, laptopCappedMaxWidth } from "@/lib/utils";
 
 type DeliverablesLayout = "three-two" | "two-two";
 
@@ -46,7 +46,10 @@ export function MepBimDeliverablesSection({
     >
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
         <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
-          <div className="flex max-w-[833px] flex-col items-start gap-3">
+          <div
+            className="flex max-w-[833px] flex-col items-start gap-3"
+            style={{ maxWidth: laptopCappedMaxWidth(833, "title") }}
+          >
             <MepSectionTag label={tag} />
             <h2 id="mep-bim-deliverables-heading" className="mep-section-heading max-w-[833px]">
               <span className="font-medium">{titleLead}</span>
@@ -56,7 +59,7 @@ export function MepBimDeliverablesSection({
           </div>
           <p
             className="text-[16px] font-normal leading-6 text-[#808080]"
-            style={{ maxWidth: descriptionMaxWidth }}
+            style={{ maxWidth: laptopCappedMaxWidth(descriptionMaxWidth, "desc") }}
           >
             {description}
           </p>

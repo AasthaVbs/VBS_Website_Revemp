@@ -7,7 +7,7 @@ import {
   mepBimMeasurableResultsSection,
   type MepBimMeasurableResultCard,
 } from "@/constants/mep-bim-modelling-content";
-import { cn } from "@/lib/utils";
+import { cn, laptopCappedMaxWidth } from "@/lib/utils";
 
 function chunkCards<T>(cards: T[], size: number): T[][] {
   const rows: T[][] = [];
@@ -65,7 +65,7 @@ export function MepBimMeasurableResultsSection({
         <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading" style={{ maxWidth: titleMaxWidth }}>
+            <h2 className="mep-section-heading" style={{ maxWidth: laptopCappedMaxWidth(titleMaxWidth, "title") }}>
               {titleLead.split("\n").map((line, index, lines) => (
                 <span key={`title-lead-${index}`} className="font-medium">
                   {line}
@@ -77,7 +77,7 @@ export function MepBimMeasurableResultsSection({
           </div>
           <p
             className="text-[16px] font-normal leading-6 text-[#808080]"
-            style={{ maxWidth: descriptionMaxWidth }}
+            style={{ maxWidth: laptopCappedMaxWidth(descriptionMaxWidth, "desc") }}
           >
             {description}
           </p>

@@ -4,7 +4,7 @@
 import { Fragment, useState } from "react";
 import { PageContainer } from "@/components/layout/page-container";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
-import { altFromImageSrc, cn } from "@/lib/utils";
+import { altFromImageSrc, cn, laptopCappedMaxWidth } from "@/lib/utils";
 import {
   mepWhyChooseItems,
   mepWhyChooseSection,
@@ -74,10 +74,10 @@ export function MepWhyChooseSection({
       className={cn("mep-figma-why-choose", className)}
       style={{
         ...(section.titleMaxWidth
-          ? { ["--why-choose-title-max-w"]: `${section.titleMaxWidth}px` }
+          ? { ["--why-choose-title-max-w"]: laptopCappedMaxWidth(section.titleMaxWidth, "title") }
           : {}),
         ...(section.descriptionMaxWidth
-          ? { ["--why-choose-desc-max-w"]: `${section.descriptionMaxWidth}px` }
+          ? { ["--why-choose-desc-max-w"]: laptopCappedMaxWidth(section.descriptionMaxWidth, "desc") }
           : {}),
       }}
     >
@@ -92,7 +92,7 @@ export function MepWhyChooseSection({
               )}
               style={
                 section.titleMaxWidth
-                  ? { maxWidth: `${section.titleMaxWidth}px`, width: "100%" }
+                  ? { maxWidth: laptopCappedMaxWidth(section.titleMaxWidth, "title"), width: "100%" }
                   : undefined
               }
             >
@@ -123,7 +123,7 @@ export function MepWhyChooseSection({
             className="mep-figma-why-choose__section-desc"
             style={
               section.descriptionMaxWidth
-                ? { maxWidth: `${section.descriptionMaxWidth}px` }
+                ? { maxWidth: laptopCappedMaxWidth(section.descriptionMaxWidth, "desc") }
                 : undefined
             }
           >

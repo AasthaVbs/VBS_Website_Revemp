@@ -41,7 +41,7 @@ export function LocationsNearYouSection() {
                     <li key={service.href} className="w-full">
                       <Link
                         href={service.href}
-                        className="block w-full text-[16px] font-normal leading-6 text-[#808080] no-underline transition-colors hover:text-[#111111] hover:underline"
+                        className="block w-full text-[16px] font-normal leading-6 text-[#808080] no-underline transition-colors hover:!text-[#D70416] hover:!underline hover:underline-offset-[3px]"
                       >
                         {service.label}
                       </Link>

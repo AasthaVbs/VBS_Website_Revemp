@@ -13,6 +13,7 @@ import {
   type ClientSuccessStory,
 } from "@/constants/client-success-stories-content";
 import { ROUTES } from "@/constants/navigation";
+import { laptopCappedMaxWidth } from "@/lib/utils";
 
 const CARD_SCROLL_GAP = 16;
 const PROGRESS_THUMB_WIDTH = 320;
@@ -204,7 +205,11 @@ export function ClientSuccessStoriesSection({
               <span className="vbs-client-success-stories__tag">{tag}</span>
               <h2
                 className="vbs-client-success-stories__title"
-                style={titleMaxWidth != null ? { maxWidth: `${titleMaxWidth}px` } : undefined}
+                style={
+                  titleMaxWidth != null
+                    ? { maxWidth: laptopCappedMaxWidth(titleMaxWidth, "title") }
+                    : undefined
+                }
               >
                 <span className="vbs-client-success-stories__title-dark">{titleLead}</span>
                 <span className="vbs-client-success-stories__title-accent">{titleAccent}</span>

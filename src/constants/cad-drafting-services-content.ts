@@ -259,7 +259,6 @@ export const cadDraftingWorkflowIntegrateSteps = [
     tagRows: [
       ["Feedback", "Workflow Optimization", "Efficiency", "Scalability"],
       ["Continuous Improvement", "Knowledge Sharing"],
-      ["Continuous process refinement"],
     ],
   },
 ];

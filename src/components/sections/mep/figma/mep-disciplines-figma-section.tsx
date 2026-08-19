@@ -1,9 +1,9 @@
-﻿// @ts-nocheck
+// @ts-nocheck
 "use client";
 
 import { useState } from "react";
 import { PageContainer } from "@/components/layout/page-container";
-import { cn } from "@/lib/utils";
+import { cn, laptopCappedMaxWidth } from "@/lib/utils";
 import {
   mepDisciplinePanels,
   mepDisciplinesSection,
@@ -96,7 +96,11 @@ export function MepDisciplinesSection({
             </span>
             <h2
               className={cn(!section.titleMaxWidth && "max-w-[759px]")}
-              style={section.titleMaxWidth ? { maxWidth: `${section.titleMaxWidth}px` } : undefined}
+              style={
+                section.titleMaxWidth
+                  ? { maxWidth: laptopCappedMaxWidth(section.titleMaxWidth, "title") }
+                  : undefined
+              }
             >
               <span className="text-section font-medium text-[#111111]">{section.titleLine1}</span>
               <span className="text-section text-accent font-light">{section.titleLine2}</span>
@@ -107,7 +111,11 @@ export function MepDisciplinesSection({
           </div>
           <p
             className={cn("mep-figma-disciplines__section-desc", !section.descriptionMaxWidth && "max-w-[730px]")}
-            style={section.descriptionMaxWidth ? { maxWidth: `${section.descriptionMaxWidth}px` } : undefined}
+            style={
+              section.descriptionMaxWidth
+                ? { maxWidth: laptopCappedMaxWidth(section.descriptionMaxWidth, "desc") }
+                : undefined
+            }
           >
             {section.description}
           </p>

@@ -17,6 +17,8 @@
     --vbs-laptop-h2-line: 1.15;
     --vbs-laptop-h3-size: 20px;
     --vbs-laptop-h3-line: 1.3;
+    --vbs-section-title-max: 720px;
+    --vbs-section-desc-max: 640px;
   }
 
   :is(
@@ -126,5 +128,61 @@
   .vbs-project-detail-page :is(h2, h2 span, .h2, .text-section) {
     font-size: var(--vbs-laptop-h2-size, 40px) !important;
     line-height: var(--vbs-laptop-h2-line, 1.15) !important;
+  }
+
+  :is(
+    .vbs-redesign-page,
+    .vbs-landing-page,
+    .mep-bim-services-usa-page,
+    .mep-bim-html-root,
+    .cad-drafting-landing-page,
+    .cad-drafting-services-usa-page
+  ):not(.vbs-blog-detail-page):not(.legal-page)
+    main
+    :is(
+      .mep-figma-workflow__title,
+      .mep-figma-qa__title,
+      .mep-figma-qa__title-heading,
+      .mep-figma-benefits__title,
+      .mep-figma-why-choose__title,
+      .mep-figma-resources__title,
+      .mep-figma-disciplines__title,
+      .vbs-our-clients__title,
+      .vbs-best-benefits__title,
+      .vbs-home-faq__title,
+      .vbs-home-capabilities__title,
+      .vbs-client-success-stories__title,
+      .vbs-engagement-models-section__title
+    ) {
+    max-width: min(var(--vbs-section-title-max, 720px), 100%) !important;
+  }
+
+  :is(
+    .vbs-redesign-page,
+    .vbs-landing-page,
+    .mep-bim-services-usa-page,
+    .mep-bim-html-root,
+    .cad-drafting-landing-page,
+    .cad-drafting-services-usa-page
+  ):not(.vbs-blog-detail-page):not(.legal-page)
+    main
+    :is(
+      .mep-figma-services__section-desc,
+      .mep-figma-workflow__section-desc,
+      .mep-figma-qa__section-desc,
+      .mep-figma-benefits__section-desc,
+      .mep-figma-why-choose__section-desc,
+      .mep-figma-resources__section-desc,
+      .mep-figma-disciplines__section-desc,
+      .mep-figma-overview__section-desc,
+      .vbs-our-clients__desc,
+      .vbs-best-benefits__desc,
+      .vbs-home-faq__desc,
+      .vbs-home-capabilities__desc,
+      .vbs-client-success-stories__description,
+      .vbs-engagement-models-section__desc,
+      .arch-svc-engagement__section-desc
+    ) {
+    max-width: min(var(--vbs-section-desc-max, 640px), var(--services-desc-max-w, 833px), 100%) !important;
   }
 }

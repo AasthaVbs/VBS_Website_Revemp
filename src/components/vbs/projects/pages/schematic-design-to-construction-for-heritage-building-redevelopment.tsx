@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Heritage Building Redevelopment",
     description:
       "LOD 300 architectural and structural modeling with design revisions, quantity estimation, 3D rendering, and schematic through construction documentation for a heritage building redevelopment.",
-    image: "/image/project6-slider1.jpg",
+    image: "/image/architectural-structureal-banner.jpg",
     imageAlt: "Heritage building redevelopment documentation project",
   },
   overview: {
-    image: "/image/project6-slider2.jpg",
+    image: "/image/architectural-structure-model-overview.jpg",
     imageAlt: "Heritage building LOD 300 models and documentation",
     paragraphs: [
       "This heritage building redevelopment required LOD 300 architectural and structural models with design revisions, quantity estimation, and 3D rendering across schematic design through construction documentation stages. Our team supported the full documentation lifecycle.",
@@ -39,12 +39,8 @@ const content = {
   io: {
     description:
       "From heritage survey data and design inputs to LOD 300 models, documentation sets, and 3D renderings.",
-    inputImages: [
-      { src: "/image/project6-slider1.jpg", label: "Heritage Survey and Design Inputs" },
-    ],
-    outputImages: [
-      { src: "/image/project6-slider2.jpg", label: "LOD 300 Models and Documentation" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "Existing heritage building surveys and as-built data",
       "Schematic and design development drawings",
@@ -147,5 +143,5 @@ const content = {
 };
 
 export default function SchematicDesignHeritageBuildingPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

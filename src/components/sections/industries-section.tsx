@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
-import { cn } from "@/lib/utils";
+import { cn, laptopCappedMaxWidth } from "@/lib/utils";
 import {
   industriesMarqueeTrack,
   industriesSectionIntro,
@@ -42,7 +42,7 @@ export function IndustriesSection({
             <SectionTag label="Industries" />
             <h2
               className="text-section"
-              style={titleMaxWidth ? { maxWidth: `${titleMaxWidth}px` } : undefined}
+              style={titleMaxWidth ? { maxWidth: laptopCappedMaxWidth(titleMaxWidth, "title") } : undefined}
             >
               <span className="font-medium text-[#111111]">{titleLine1}</span>
               {breakTitle ? <br /> : null}
@@ -54,7 +54,7 @@ export function IndustriesSection({
           </div>
           <p
             className="text-[16px] font-normal leading-6 text-[#808080]"
-            style={{ maxWidth: `${introMaxWidth}px` }}
+            style={{ maxWidth: laptopCappedMaxWidth(introMaxWidth, "desc") }}
           >
             {intro}
           </p>

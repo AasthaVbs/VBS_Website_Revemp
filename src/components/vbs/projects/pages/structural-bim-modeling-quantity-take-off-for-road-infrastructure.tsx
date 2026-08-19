@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Road Infrastructure",
     description:
       "LOD 350 structural BIM modeling with 4D simulation and quantity take-off for a road infrastructure project.",
-    image: "/image/project16-slider-1.jpg",
+    image: "/image/4d-simulation-project-banner.jpg",
     imageAlt: "Road infrastructure structural BIM modeling project",
   },
   overview: {
-    image: "/image/project16-slider-2.jpg",
+    image: "/image/4d-simulation-project-overview.jpg",
     imageAlt: "LOD 350 road infrastructure BIM model",
     paragraphs: [
       "This road infrastructure project required LOD 350 structural BIM modeling with integrated 4D simulation and quantity take-off. Our team developed detailed structural models supporting construction sequencing and cost planning.",
@@ -39,12 +39,8 @@ const content = {
   io: {
     description:
       "From structural design inputs to LOD 350 models with 4D simulation and quantity take-off data.",
-    inputImages: [
-      { src: "/image/project16-slider-1.jpg", label: "Structural Design Drawings and Survey Data" },
-    ],
-    outputImages: [
-      { src: "/image/project16-slider-2.jpg", label: "LOD 350 Structural Model with 4D Simulation" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "Structural engineering drawings",
       "Road alignment and survey data",
@@ -137,5 +133,5 @@ const content = {
 };
 
 export default function PortfolioStructuralRoadInfrastructurePage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

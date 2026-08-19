@@ -263,7 +263,6 @@ export const cadToBimWorkflowIntegrateSteps = [
     tagRows: [
       ["Feedback", "Workflow Optimization", "Efficiency", "Scalability"],
       ["Continuous Improvement", "Knowledge Sharing"],
-      ["Continuous process refinement"],
     ],
   },
 ];

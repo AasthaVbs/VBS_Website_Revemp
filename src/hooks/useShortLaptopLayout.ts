@@ -1,12 +1,13 @@
-﻿// @ts-nocheck
+// @ts-nocheck
 import { useEffect, useState } from "react";
 
 /**
- * Desktop below 1400px — services section pins cards only;
- * title + description scroll away above the card track.
+ * Only unpin the heading when the viewport is actually short.
+ * Inspect / DevTools on the side drops width but keeps height — that must
+ * keep title + cards together like the default desktop layout.
  */
 export const SERVICES_CARDS_ONLY_PIN_MEDIA =
-  "(min-width: 768px) and (max-width: 1399px)";
+  "(min-width: 768px) and (max-height: 700px)";
 
 /** @deprecated Use SERVICES_CARDS_ONLY_PIN_MEDIA */
 export const SHORT_LAPTOP_MEDIA = SERVICES_CARDS_ONLY_PIN_MEDIA;

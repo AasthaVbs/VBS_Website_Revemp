@@ -11,11 +11,11 @@ const content = {
     titleAccent: "NYC School",
     description:
       "LOD 300 mechanical, electrical, plumbing, and fire protection modeling with clash detection and coordination for a New York City school building.",
-    image: "/image/project15-slider-1.jpg",
+    image: "/image/structure-3d-model-banner.jpg",
     imageAlt: "NYC school MEPF BIM modeling project",
   },
   overview: {
-    image: "/image/project15-slider-2.jpg",
+    image: "/image/archiectural-models-overview.jpg",
     imageAlt: "Coordinated MEPF BIM model for NYC school",
     paragraphs: [
       "This commercial school project required detailed LOD 300 MEPF modeling across mechanical, electrical, plumbing, and fire protection systems. Our team developed coordinated discipline models aligned with the client's standards and project requirements.",
@@ -39,12 +39,8 @@ const content = {
   io: {
     description:
       "From design inputs and reference drawings to coordinated LOD 300 MEPF models with clash-free coordination.",
-    inputImages: [
-      { src: "/image/project15-slider-1.jpg", label: "Design Reference Drawings" },
-    ],
-    outputImages: [
-      { src: "/image/project15-slider-2.jpg", label: "Coordinated LOD 300 MEPF Model" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "Architectural and structural reference models",
       "MEP design drawings and specifications",
@@ -131,5 +127,5 @@ const content = {
 };
 
 export default function Portfolio3dForSchoolPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

@@ -10,7 +10,7 @@ import { useMobileLayout } from "@/hooks/useMobileLayout";
 import { useShortLaptopLayout } from "@/hooks/useShortLaptopLayout";
 import { useStickyHoverWheelBridge } from "@/hooks/useStickyHoverWheelBridge";
 import { useStickyServicesCarousel } from "@/hooks/useStickyServicesCarousel";
-import { cn } from "@/lib/utils";
+import { cn, laptopCappedMaxWidth } from "@/lib/utils";
 
 export type StickyServicesImageCrop = {
   width: number;
@@ -223,7 +223,10 @@ function SectionHeader({
         style={
           section.descriptionMaxWidth
             ? ({
-                ["--services-desc-max-w"]: `${section.descriptionMaxWidth}px`,
+                ["--services-desc-max-w"]: laptopCappedMaxWidth(
+                  section.descriptionMaxWidth,
+                  "desc",
+                ),
               } as CSSProperties)
             : undefined
         }
@@ -353,7 +356,8 @@ export function StickyHorizontalServicesSection({
   const isHoverScroll = scrollInteraction === "hover";
   const { isMobile, ready: layoutReady } = useMobileLayout();
   const cardsOnlyViewport = useShortLaptopLayout();
-  // Below 1400px desktop: only cards pin. At 1400px+: title + description + cards pin together.
+  // Short-height viewports only: cards pin alone. Inspect/laptop width keeps
+  // title + description + cards together like the default desktop layout.
   const cardsOnlyPin =
     layoutReady && isHoverScroll && cardsOnlyViewport && !isMobile;
   const useHorizontalCarousel = layoutReady && !isMobile;

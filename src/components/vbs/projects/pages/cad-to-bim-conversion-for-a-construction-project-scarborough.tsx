@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Construction Project, Scarborough",
     description:
       "CAD to BIM conversion producing a coordinated LOD 300 3D model with construction documents and quantity extraction for a commercial construction project in Scarborough.",
-    image: "/image/project11-slider-1.jpg",
+    image: "/image/cad-to-bom-lod-model-banner.jpg",
     imageAlt: "Scarborough CAD to BIM conversion project",
   },
   overview: {
-    image: "/image/project11-slider-2.jpg",
+    image: "/image/cad-to-bom-lod-model-overview.jpg",
     imageAlt: "LOD 300 coordinated BIM model Scarborough",
     paragraphs: [
       "This commercial construction project in Scarborough required converting CAD documentation into a coordinated LOD 300 3D BIM model. Our team developed the model and produced construction documents with quantity extraction and material association.",
@@ -38,13 +38,8 @@ const content = {
   io: {
     description:
       "From 2D CAD drawings to a coordinated LOD 300 model with construction documents and quantity data.",
-    inputImages: [
-      { src: "/image/project11-slider-1.jpg", label: "2D CAD Construction Drawings" },
-    ],
-    outputImages: [
-      { src: "/image/project11-slider-2.jpg", label: "LOD 300 Coordinated 3D Model" },
-      { src: "/image/project11-slider-3.jpg", label: "Construction Documents and Quantities" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "2D CAD architectural and discipline drawings",
       "Construction specifications",
@@ -137,5 +132,5 @@ const content = {
 };
 
 export default function PortfolioCadToBimScarboroughPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

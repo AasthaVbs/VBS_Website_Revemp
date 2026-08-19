@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { Fragment } from "react";
 import { PageContainer } from "@/components/layout/page-container";
-import { cn } from "@/lib/utils";
+import { cn, laptopCappedMaxWidth } from "@/lib/utils";
 import {
   mepQualityAssuranceSection,
   mepQualityAssuranceStages,
@@ -59,7 +59,11 @@ export function MepQualityAssuranceSection({
             <span className="mep-figma-qa__tag">{section.tag}</span>
             <div
               className="mep-figma-qa__title"
-              style={section.titleMaxWidth ? { maxWidth: `${section.titleMaxWidth}px` } : undefined}
+              style={
+                section.titleMaxWidth
+                  ? { maxWidth: laptopCappedMaxWidth(section.titleMaxWidth, "title") }
+                  : undefined
+              }
             >
               {section.titleParts?.length ? (
                 <h2 className="mep-figma-qa__title-heading">

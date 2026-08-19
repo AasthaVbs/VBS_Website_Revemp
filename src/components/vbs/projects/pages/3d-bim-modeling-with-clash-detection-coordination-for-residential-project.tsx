@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Residential Project",
     description:
       "CAD to BIM conversion at LOD 350 with clash detection, interdisciplinary coordination, and construction scheduling support for a residential building project.",
-    image: "/image/project13-slider-1.jpg",
+    image: "/image/cad-to-bim-lod-500-banners.jpg",
     imageAlt: "Residential CAD to BIM conversion project",
   },
   overview: {
-    image: "/image/project13-slider-2.jpg",
+    image: "/image/cad-to-bim-lod-500-overview.jpg",
     imageAlt: "LOD 350 coordinated residential BIM model",
     paragraphs: [
       "This residential project required converting existing CAD documentation into a coordinated LOD 350 BIM model. Our team developed architectural and discipline models with clash detection and interdisciplinary coordination throughout.",
@@ -39,12 +39,8 @@ const content = {
   io: {
     description:
       "From 2D CAD drawings to coordinated LOD 350 BIM models with clash-free interdisciplinary coordination.",
-    inputImages: [
-      { src: "/image/project13-slider-1.jpg", label: "2D CAD Drawing Sets" },
-    ],
-    outputImages: [
-      { src: "/image/project13-slider-2.jpg", label: "LOD 350 Coordinated BIM Model" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "2D CAD architectural and discipline drawings",
       "Design specifications and standards",
@@ -147,5 +143,5 @@ const content = {
 };
 
 export default function Portfolio3dBimModelingResidentialPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

@@ -65,9 +65,9 @@ export const revitFamilyCreationOurClientsSection = {
 
 export const revitFamilyCreationServicesSection = {
   tag: "Our Services",
-  titleLine1: "Our Comprehensive Range of Parametric",
+  titleLine1: "Our Comprehensive Range of Parametric ",
   titleLine2: "BIM Content Creation Services",
-  titleMaxWidth: 1440,
+  titleMaxWidth: 1400,
   description:
     "From simple 2D symbols to complex parametric objects, our Revit family creation services cover every stage, from concept through construction to final delivery.",
   ctaLabel: "let's Talk Now",
@@ -250,7 +250,6 @@ export const revitFamilyCreationWorkflowIntegrateSteps = [
     tagRows: [
       ["Feedback", "Workflow Optimization", "Efficiency", "Scalability"],
       ["Continuous Improvement", "Knowledge Sharing"],
-      ["Continuous process refinement"],
     ],
   },
 ];

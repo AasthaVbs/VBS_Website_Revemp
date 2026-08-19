@@ -111,7 +111,7 @@ export const allPortfolioProjects = [
   {
     title: "Architectural BIM & Rendering",
     href: "/projects/3d-modeling-renderings-for-convention-center-in-minnesota/",
-    image: "/image/feature-img-project-5.jpg",
+    image: "/image/3d-rendering-banner.jpg",
     category: "Architecture",
     location: "Minnesota",
   },
@@ -125,7 +125,7 @@ export const allPortfolioProjects = [
   {
     title: "Architecture Drafting & SD, DD, CD Stage Documentation",
     href: "/projects/schematic-design-to-construction-for-heritage-building-redevelopment/",
-    image: "/image/feature-img-project-6.jpg",
+    image: "/image/architectural-structureal-banner.jpg",
     category: "Architecture",
   },
   {
@@ -138,7 +138,7 @@ export const allPortfolioProjects = [
   {
     title: "Architectural BIM with Interior & Exterior Rendering",
     href: "/projects/architectural-and-structural-model-service-for-residential-project-usa/",
-    image: "/image/feature-img-project-7.jpg",
+    image: "/image/revit-model-front-view-banner.jpg",
     category: "Architecture",
     location: "USA",
   },
@@ -152,7 +152,7 @@ export const allPortfolioProjects = [
   {
     title: "Structural and Facade 3D Modeling with Clash Detection",
     href: "/projects/3d-modeling-clash-detection-bim-coordination-for-a-metro-station/",
-    image: "/image/feature-img-project-8.jpg",
+    image: "/image/architecture-structure-3d-models-banner.jpg",
     category: "Architecture",
   },
   {
@@ -164,7 +164,7 @@ export const allPortfolioProjects = [
   {
     title: "LOD 500 As-Built Modeling",
     href: "/projects/bim-3d-model-clash-detection-and-coordination-for-government-building/",
-    image: "/image/feature-img-project-9.jpg",
+    image: "/image/lod-500-as-built%20modeling-banner.jpg",
     category: "Architecture",
   },
   {
@@ -176,60 +176,60 @@ export const allPortfolioProjects = [
   {
     title: "CAD to BIM with LOD 400",
     href: "/projects/cad-to-bim-conversion-for-resort-adventure-park-uk/",
-    image: "/image/feature-img-project-10.jpg",
+    image: "/image/cad-to-bom-lod-model-banner.jpg",
     category: "Architecture",
     location: "UK",
   },
   {
     title: "CAD to BIM Modeling with MEP Coordination",
     href: "/projects/cad-to-bim-conversion-for-a-commercial-project-in-new-york/",
-    image: "/image/feature-img-project-3.jpg",
+    image: "/image/cad-to-bim-project-banner.jpg",
     category: "MEP",
     location: "New York",
   },
   {
     title: "CAD to BIM with LOD 300",
     href: "/projects/cad-to-bim-conversion-for-a-construction-project-scarborough/",
-    image: "/image/feature-img-project-11.jpg",
+    image: "/image/cad-to-bom-lod-model-banner.jpg",
     category: "Architecture",
     location: "Scarborough",
   },
   {
     title: "MEPF Modeling with Clash Detection & Coordination",
     href: "/projects/mepf-modeling-with-clash-detection-coordination-for-healthcare-institute/",
-    image: "/image/feature-img-project-4.jpg",
+    image: "/image/architecture-3d-model-banner.jpg",
     category: "MEP",
   },
   {
     title: "CAD to BIM",
     href: "/projects/cad-to-bim-conversion-for-residential-project-usa/",
-    image: "/image/feature-img-project-12.jpg",
+    image: "/image/architectural-3d-modeling-banner.jpg",
     category: "Architecture",
     location: "USA",
   },
   {
     title: "LOD 300 MEPF Modeling",
     href: "/projects/cad-to-bim-modeling-with-clash-detection-coordination-for-commercial-project/",
-    image: "/image/feature-img-project-14.jpg",
+    image: "/image/lod-300-mepf-banner.jpg",
     category: "MEP",
   },
   {
     title: "CAD to BIM with LOD 350",
     href: "/projects/3d-bim-modeling-with-clash-detection-coordination-for-residential-project/",
-    image: "/image/feature-img-project-13.jpg",
+    image: "/image/cad-to-bim-lod-500-banners.jpg",
     category: "Architecture",
   },
   {
     title: "LOD 300 MEPF Modeling with Clash Detection & Coordination",
     href: "/projects/3d-bim-model-clash-detection-coordination-for-nyc-school/",
-    image: "/image/feature-img-project-15.jpg",
+    image: "/image/structure-3d-model-banner.jpg",
     category: "MEP",
     location: "NYC",
   },
   {
     title: "LOD 350 with Structural BIM Modeling & 4D Simulation",
     href: "/projects/structural-bim-modeling-quantity-take-off-for-road-infrastructure/",
-    image: "/image/feature-img-project-16.jpg",
+    image: "/image/4d-simulation-project-banner.jpg",
     category: "Architecture",
   },
 ].map(projectListingItem);

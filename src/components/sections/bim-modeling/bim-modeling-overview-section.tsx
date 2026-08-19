@@ -3,7 +3,7 @@ import Image, { type StaticImageData } from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { bimModelingIntro } from "@/constants/bim-modeling-services-content";
-import { altFromImageSrc, cn } from "@/lib/utils";
+import { altFromImageSrc, cn, laptopCappedMaxWidth } from "@/lib/utils";
 
 type BimModelingIntroContent = {
   tag: string;
@@ -51,7 +51,7 @@ export function BimModelingOverviewSection({
         <div className="flex w-full flex-col items-start gap-5">
           <div
             className="flex w-full flex-col items-start gap-3"
-            style={{ maxWidth: `${titleMaxWidth}px` }}
+            style={{ maxWidth: laptopCappedMaxWidth(titleMaxWidth, "title") }}
           >
             <MepSectionTag label={tag} />
             <h2 className="w-full">
@@ -65,7 +65,7 @@ export function BimModelingOverviewSection({
           </div>
           <p
             className="w-full text-[16px] font-normal leading-6 text-[#808080]"
-            style={{ maxWidth: `${descriptionMaxWidth}px` }}
+            style={{ maxWidth: laptopCappedMaxWidth(descriptionMaxWidth, "desc") }}
           >
             {description}
           </p>

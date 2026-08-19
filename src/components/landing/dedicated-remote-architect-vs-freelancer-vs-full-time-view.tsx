@@ -13,7 +13,7 @@ import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { cn } from "@/lib/utils";
 
 const heroImage = encodeURI("/image/Adding-People-Should-Reduce-Delivery-Pressure,-But-Why-Does-It-Often-Increase 1 (1).jpg");
-const pressureImage = encodeURI("/image/When-Work-Increases,-But-Delivery-Pressure-Does-Not-Ease 1 (1).jpg");
+const pressureImage = encodeURI("/image/When-Work-Increases,-But-Delivery-Pressure-Does-Not-Ease 1.png");
 const matrixEvaluateImage = encodeURI("/image/What-This-Matrix-Helps-You-Evaluate-512x470 1 (1).jpg");
 const decisionsWrongImage = encodeURI("/image/Where-Most-Decisions-Go-Wrong-512x300 1 (1).jpg");
 const coordinationBeginsIcon = encodeURI("/image/cooridntaion begins.svg");
@@ -23,6 +23,7 @@ const freelancersIcon = "/image/freelancers-icon.svg";
 const fullTimeHiresIcon = "/image/full-time-hires-icon.svg";
 const reviewCyclesIcon = encodeURI("/image/review cycles.svg");
 const seniorArchitectsIcon = encodeURI("/image/senior architects.svg");
+const matrixGuideCover = "/image/Dedicated-Remote-Architect-vs-Freelancer-vs-Full-Time-Hire.jpg";
 
 /** Local gated PDF (copied from src/assets/resources) + same UTM as Gatsby LP */
 const COMPARISON_GUIDE_PDF_URL =
@@ -66,7 +67,7 @@ const optionCards = [
   },
   {
     title: "Dedicated Remote Architects",
-    description: "Provide continuity but depend on structured onboarding.",
+    description: "Provide continuity but depend on structured\nonboarding.",
     positive: "Structured delivery continuity",
     negative: "Requires onboarding investment",
     icon: dedicatedRemoteArchitectsIcon,
@@ -168,7 +169,7 @@ function HeroMedia({
         alt={alt}
         fill
         className="object-cover"
-        sizes="(max-width: 1024px) 100vw, 50vw"
+        sizes="(max-width: 1024px) 100vw, 45vw"
         priority={priority}
       />
     </div>
@@ -178,11 +179,46 @@ function HeroMedia({
 function CalloutAside({ children }: { children: ReactNode }) {
   return (
     <aside
-      className="inline-flex w-fit max-w-full items-start justify-start gap-2.5 rounded-[10px] bg-[rgba(215,4,22,0.06)] p-3 sm:p-3.5"
+      className="inline-flex w-fit max-w-full items-start justify-start gap-2.5 rounded-[10px] bg-[rgba(215,4,22,0.06)] p-5"
       style={{ outline: "1px solid #D70416", outlineOffset: "-1px" }}
     >
-      <p className="!text-[#111111] text-[15px] font-medium leading-6 sm:text-[16px]">{children}</p>
+      <p className="!text-[#111111] text-[16px] font-normal leading-6">{children}</p>
     </aside>
+  );
+}
+
+function StatOverlay({
+  value,
+  label,
+  gapClassName = "gap-5",
+  widthClassName = "w-[220px]",
+}: {
+  value: string;
+  label: string;
+  gapClassName?: string;
+  widthClassName?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "absolute bottom-5 right-5 z-[1] inline-flex flex-col items-start rounded-[10px] bg-white p-5",
+        widthClassName,
+        gapClassName,
+      )}
+    >
+      <p
+        className="w-full !text-[24px] !font-semibold !leading-6 !text-[#D70416]"
+        style={{ color: "#D70416", fontSize: 24, fontWeight: 600, lineHeight: "24px" }}
+      >
+        {value}
+      </p>
+      <p
+        className="w-full whitespace-pre-line !text-[16px] !font-normal !leading-6 !text-[#808080]"
+        style={{ color: "#808080", fontSize: 16, fontWeight: 400, lineHeight: "24px" }}
+      >
+        {label}
+      </p>
+    </div>
   );
 }
 
@@ -203,45 +239,31 @@ function VbsLogoTile() {
   );
 }
 
-function ImpactChangesDiagram({ points }: { points: readonly string[] }) {
+function ImpactPointRow({
+  index,
+  text,
+  fontPx = 16,
+}: {
+  index: number;
+  text: string;
+  fontPx?: number;
+}) {
   return (
-    <div className="relative flex w-full min-w-0 flex-1 items-center gap-3 min-[1440px]:h-[499px] min-[1440px]:gap-0">
-      <div className="relative z-10 hidden shrink-0 lg:block">
-        <VbsLogoTile />
-      </div>
-
-      <div className="relative min-w-0 flex-1 self-stretch pr-2 max-[1439px]:pr-12 lg:min-h-[360px] min-[1440px]:pr-0">
-        <div
-          className="pointer-events-none absolute inset-y-[28px] left-0 hidden w-8 lg:block min-[1440px]:w-14"
-          aria-hidden
-        >
-          <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-[#DC0000]" />
-          <span className="absolute left-[calc(100%-2px)] top-0 bottom-0 w-0.5 bg-[#DC0000]" />
-        </div>
-
-        <ol className="relative z-[1] flex h-full w-full flex-col justify-between gap-5 sm:gap-6 lg:gap-8 lg:pl-10 min-[1440px]:max-w-[508px] min-[1440px]:gap-[60px] min-[1440px]:py-8 min-[1440px]:pl-16">
-          {points.map((text, index) => (
-            <li key={text} className="relative flex items-start gap-3 sm:items-center sm:gap-5">
-              <span
-                className="pointer-events-none absolute left-[-40px] top-5 hidden h-px w-10 bg-[#DC0000] sm:top-[25px] lg:block min-[1440px]:left-[-64px] min-[1440px]:w-16"
-                aria-hidden
-              />
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#D70416] bg-[#D70416] shadow-[0_6px_20px_rgba(255,192,192,0.55)] sm:h-[50px] sm:w-[50px]">
-                <span className="text-[16px] font-semibold uppercase leading-none text-white sm:text-[20px]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-              </div>
-              <p className="min-w-0 text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]">
-                {text}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </div>
+    <li className="flex w-full items-center gap-5">
+      <span className="flex size-[50px] shrink-0 items-center justify-center rounded-full border-2 border-[#D70416] bg-[#D70416] shadow-[0_6px_20px_rgba(255,192,192,0.55)] max-lg:size-10">
+        <span className="text-[20px] font-semibold uppercase leading-none text-white max-lg:text-[16px]">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+      </span>
+      <p
+        className="mb-0 min-w-0 flex-1 font-normal !text-[#808080]"
+        style={{ fontSize: fontPx, lineHeight: `${Math.round(fontPx * 1.5)}px`, color: "#808080" }}
+      >
+        {text}
+      </p>
+    </li>
   );
 }
-
 /** Gatsby LP “Delivery Fit Overview” bar panel (replaces delivery-fit-overview.png). */
 function DeliveryFitOverviewPanel() {
   const panelRef = useRef<HTMLDivElement>(null);
@@ -294,7 +316,10 @@ function DeliveryFitOverviewPanel() {
               </div>
               <div className="h-[5px] overflow-hidden rounded-[3px] border border-[#E8E8E8] bg-[#F9F9F9]">
                 <div
-                  className={cn("h-full rounded-[3px] transition-[width] duration-[1300ms] ease-[cubic-bezier(0.25,0.8,0.25,1)]", row.fill)}
+                  className={cn(
+                    "h-full rounded-[3px] transition-[width] duration-[1300ms] ease-[cubic-bezier(0.25,0.8,0.25,1)]",
+                    row.fill,
+                  )}
                   style={{ width: barsActive ? row.w : "0%" }}
                 />
               </div>
@@ -310,6 +335,63 @@ function DeliveryFitOverviewPanel() {
       <p className="mt-3.5 text-[10px] italic leading-4 text-[#CCCCCC]">
         Indicative. Full breakdown, best-fit scenarios &amp; risk analysis inside the matrix.
       </p>
+    </div>
+  );
+}
+
+function ImpactChangesDiagram({ points }: { points: readonly string[] }) {
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const box = boxRef.current;
+    if (!box) return;
+
+    const update = () => {
+      const width = box.clientWidth;
+      setScale(width > 0 ? Math.min(1, width / 856) : 1);
+    };
+
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(box);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="w-full min-w-0 max-w-[856px] flex-1">
+      <ol className="flex flex-col gap-5 lg:hidden">
+        {points.map((text, index) => (
+          <ImpactPointRow key={text} index={index} text={text} />
+        ))}
+      </ol>
+
+      <div ref={boxRef} className="hidden w-full min-w-0 lg:block">
+        <div
+          className="relative overflow-hidden rounded-[10px]"
+          style={{ width: "100%", height: 499 * scale }}
+        >
+          <div
+            className="absolute left-0 top-0 origin-top-left"
+            style={{ width: 856, height: 499, transform: `scale(${scale})` }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/landing/capacity-matrix/impact-changes-fork.svg"
+              alt=""
+              className="pointer-events-none absolute left-[31px] top-[81px] h-[340px] w-[353.811px] max-w-none"
+            />
+            <div className="absolute left-5 top-[190px] z-10">
+              <VbsLogoTile />
+            </div>
+            <ol className="absolute left-[348px] top-[60px] flex w-[508px] flex-col gap-[60px]">
+              {points.map((text, index) => (
+                <ImpactPointRow key={text} index={index} text={text} fontPx={16 / scale} />
+              ))}
+            </ol>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -332,8 +414,8 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
 
       <main className="min-w-0">
         {/* Hero — Capacity Decision Framework */}
-        <section className="overflow-hidden py-12 max-lg:py-10 lg:py-[70px]">
-          <PageContainer className="grid grid-cols-1 items-center gap-8 max-lg:gap-8 lg:grid-cols-2 lg:gap-10">
+        <section className="overflow-hidden py-16 max-lg:py-14 lg:py-[90px]">
+          <PageContainer className="grid grid-cols-1 items-center gap-8 max-lg:gap-8 lg:grid-cols-[minmax(0,55fr)_minmax(0,45fr)] lg:gap-10">
             <div className="flex w-full min-w-0 flex-col items-start gap-6 max-lg:gap-5 lg:gap-[30px]">
               <div className="flex w-full flex-col items-start gap-5">
                 <div className="flex w-full flex-col items-start gap-3">
@@ -342,7 +424,7 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
                     <span className="font-medium text-[#111111]">
                       Adding People Should Reduce Delivery Pressure, But{" "}
                     </span>
-                    <span className="font-light text-accent">Why Does It Often Increase?</span>
+                    <span className="font-light text-accent">Why Does It&nbsp;Often Increase?</span>
                   </h1>
                 </div>
                 <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
@@ -383,7 +465,7 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
 
         {/* When Work Increases */}
         <section id="delivery-pressure" className="bg-white py-16 max-lg:py-12 lg:py-20">
-          <PageContainer className="flex flex-col items-start gap-8 max-lg:gap-8">
+          <PageContainer className="flex flex-col items-start gap-5 max-lg:gap-5">
             <header className="flex w-full max-w-[868px] flex-col items-start gap-3">
               <div className="flex w-full flex-col items-start gap-3">
                 <MepSectionTag label="Question Behind Every Growing Firm" />
@@ -398,33 +480,46 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
               </p>
             </header>
 
-            <div className="grid w-full grid-cols-1 items-center gap-8 max-lg:gap-8 lg:grid-cols-2 lg:gap-10">
-              <div className="relative aspect-[710/446] h-auto w-full min-w-0 overflow-hidden rounded-[10px] bg-white">
+            <div className="grid w-full grid-cols-1 items-start gap-8 max-lg:gap-8 lg:grid-cols-[minmax(0,45fr)_minmax(0,55fr)] lg:items-stretch lg:gap-[60px]">
+              <div className="relative aspect-[710/446] h-auto w-full min-w-0 overflow-hidden rounded-[10px] bg-white lg:aspect-auto lg:h-full lg:min-h-full">
                 <Image
                   src={pressureImage}
                   alt="When work increases but delivery pressure does not ease"
                   fill
                   className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                />
+                <StatOverlay
+                  value="78%"
+                  label={"increased coordination\nload post-hire"}
+                  gapClassName="gap-2"
                 />
               </div>
 
-              <div className="flex w-full min-w-0 flex-col items-start gap-5">
+              <div className="flex w-full min-w-0 flex-col items-start gap-3">
                 <ul className="!m-0 flex w-full !list-none flex-col !p-0 !pl-0">
                   {pressurePoints.map((point, index) => (
-                    <li key={point.number} className="!m-0 flex flex-col !p-0 !pl-0">
-                      <div className="flex items-start gap-2.5 py-0 pl-0">
-                        <span className="shrink-0 text-[16px] font-semibold leading-normal text-[#D70416]">
-                          {point.number}
-                        </span>
-                        <p className="mb-0 !text-[16px] font-normal leading-normal !text-[#111111]">
-                          {point.text}
-                        </p>
-                      </div>
+                    <li
+                      key={point.number}
+                      className={cn(
+                        "relative !m-0 flex items-start gap-2.5",
+                        index === 0 ? "pt-0" : "pt-3",
+                        index === pressurePoints.length - 1 ? "pb-0" : "pb-4",
+                      )}
+                    >
+                      <span className="shrink-0 text-[16px] font-semibold leading-6 text-[#D70416]">
+                        {point.number}
+                      </span>
+                      <p
+                        className="mb-0 font-normal !text-[#111111]"
+                        style={{ fontSize: 16, lineHeight: "24px" }}
+                      >
+                        {point.text}
+                      </p>
                       {index < pressurePoints.length - 1 ? (
-                        <div
-                          className="my-3 h-px w-full bg-gradient-to-r from-transparent via-[#CBCCCD] to-transparent"
+                        <span
                           aria-hidden
+                          className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-[#E6E6E6] to-transparent"
                         />
                       ) : null}
                     </li>
@@ -432,10 +527,10 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
                 </ul>
 
                 <aside
-                  className="w-full max-w-[664px] rounded-[10px] bg-[#F8FFFA] p-3 sm:p-3.5"
+                  className="w-full rounded-[10px] bg-[#F8FFFA] p-5"
                   style={{ outline: "1px solid #42AA32", outlineOffset: "-1px" }}
                 >
-                  <p className="!text-[#111111] text-[16px] font-medium leading-6">
+                  <p className="!text-[#111111] text-[16px] font-normal leading-6">
                     “The issue is not the lack of capacity. It is how that capacity interacts with
                     your delivery system.”
                   </p>
@@ -463,13 +558,17 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
             </header>
 
             <div className="flex w-full flex-col items-start gap-5">
-              <div className="grid w-full grid-cols-1 gap-5 lg:grid-cols-3">
+              <div className="grid w-full grid-cols-1 items-start gap-3 lg:grid-cols-3">
                 {optionCards.map((card) => (
                   <article
                     key={card.title}
-                    className="flex flex-col items-start gap-3 overflow-hidden rounded-[10px] border border-[#CBCCCD] bg-white p-5"
+                    className="flex h-auto flex-col items-start justify-start gap-[30px] overflow-hidden rounded-[10px] bg-white p-5"
+                    style={{ outline: "1px solid #CBCCCD", outlineOffset: "-1px" }}
                   >
-                    <div className="flex h-[70px] w-[70px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] border border-[#CBCCCD] bg-white p-[15px]">
+                    <div
+                      className="flex h-[70px] w-[70px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-white p-[15px]"
+                      style={{ outline: "1px solid #CBCCCD", outlineOffset: "-1px" }}
+                    >
                       <Image
                         src={card.icon}
                         alt=""
@@ -479,28 +578,32 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
                       />
                     </div>
                     <div className="flex w-full flex-col items-start gap-2 overflow-hidden">
-                      <h3 className="w-full text-[20px] font-medium leading-normal text-[#111111] sm:text-[24px]">
+                      <h3
+                        className="mb-0 w-full !text-[24px] !font-medium !leading-normal !text-[#111111]"
+                        style={{ color: "#111111", fontSize: 24, fontWeight: 500 }}
+                      >
                         {card.title}
                       </h3>
-                      <p className="mb-0 w-full text-[16px] font-normal leading-6 text-[#808080]">
+                      <p
+                        className="mb-0 w-full whitespace-pre-line !text-[16px] !font-normal !leading-6 !text-[#808080]"
+                        style={{ color: "#808080", fontSize: 16, fontWeight: 400, lineHeight: "24px" }}
+                      >
                         {card.description}
                       </p>
-                      <ul className="!m-0 !list-none flex w-full flex-col gap-1.5 !p-0 pb-1">
-                        <li className="!m-0 flex items-center gap-2.5 !p-0 pb-1 text-[16px] font-normal leading-6 text-[#42AA32]">
-                          <span
-                            className="mb-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#42AA32]"
-                            aria-hidden
-                          />
-                          <span>{card.positive}</span>
-                        </li>
-                        <li className="!m-0 flex items-center gap-2.5 !p-0 pb-1 text-[16px] font-normal leading-6 text-[#D70416]">
-                          <span
-                            className="mb-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D70416]"
-                            aria-hidden
-                          />
-                          <span>{card.negative}</span>
-                        </li>
-                      </ul>
+                      <p
+                        className="mb-0 flex w-full items-start gap-2 !text-[16px] !font-normal !leading-6 !text-[#42AA32]"
+                        style={{ color: "#42AA32", fontSize: 16, fontWeight: 400, lineHeight: "24px" }}
+                      >
+                        <span className="mt-[7px] size-1.5 shrink-0 rounded-full bg-[#42AA32]" />
+                        {card.positive}
+                      </p>
+                      <p
+                        className="mb-0 flex w-full items-start gap-2 !text-[16px] !font-normal !leading-6 !text-[#D70416]"
+                        style={{ color: "#D70416", fontSize: 16, fontWeight: 400, lineHeight: "24px" }}
+                      >
+                        <span className="mt-[7px] size-1.5 shrink-0 rounded-full bg-[#D70416]" />
+                        {card.negative}
+                      </p>
                     </div>
                   </article>
                 ))}
@@ -519,65 +622,80 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
           id="capacity-matrix"
           className="scroll-mt-24 bg-white py-16 max-lg:py-12 lg:py-20"
         >
-          <PageContainer className="flex items-center gap-8 max-lg:flex-col max-lg:items-stretch max-lg:gap-8 lg:gap-10 min-[1440px]:gap-[60px]">
-            <div className="flex w-full min-w-0 max-w-[670px] flex-1 flex-col items-start gap-5 max-lg:max-w-full">
-              <header className="flex w-full flex-col items-start gap-5">
-                <div className="flex w-full flex-col items-start gap-3">
-                  <MepSectionTag label="What This Matrix Helps You Evaluate" />
-                  <h2 className="w-full text-section">
-                    <span className="font-medium text-[#111111]">Compare Options Based on </span>
-                    <span className="font-light text-accent">How Work Actually Flows</span>
-                  </h2>
-                </div>
-                <p className="max-w-[731px] text-[16px] font-normal leading-6 text-[#808080]">
-                  This matrix focuses on delivery behaviour, not hiring theory. It helps you evaluate
-                  how each model performs inside live project conditions.
-                </p>
-              </header>
+          <PageContainer className="flex flex-col items-start gap-4 max-lg:gap-4">
+            <header className="flex w-full max-w-[745px] flex-col items-start gap-3">
+              <div className="flex w-full flex-col items-start gap-3">
+                <MepSectionTag label="What This Matrix Helps You Evaluate" />
+                <h2 className="w-full text-section">
+                  <span className="font-medium text-[#111111]">
+                    Compare Options Based on
+                    <br />
+                  </span>
+                  <span className="font-light text-accent">How Work Actually Flows</span>
+                </h2>
+              </div>
+              <p className="max-w-[631px] text-[16px] font-normal leading-6 text-[#808080]">
+                This matrix focuses on delivery behaviour, not hiring theory. It helps you evaluate
+                how each model performs inside live project conditions.
+              </p>
+            </header>
 
-              <ul className="!m-0 flex w-full !list-none flex-col !p-0 !pl-0">
-                {matrixCriteria.map((item, index) => (
-                  <li key={item} className="!m-0 flex flex-col !p-0 !pl-0">
-                    <div className="flex items-start gap-3">
-                      <span
-                        className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#808080]"
-                        aria-hidden
-                      />
-                      <p className="!text-[16px] font-normal leading-normal !text-[#111111]">
+            <div className="grid w-full grid-cols-1 items-start gap-8 max-lg:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-stretch lg:gap-10">
+              <div className="relative aspect-[710/560] h-auto w-full min-w-0 overflow-hidden rounded-[10px] bg-white lg:aspect-auto lg:h-full lg:min-h-full">
+                <Image
+                  src={matrixEvaluateImage}
+                  alt="What this matrix helps you evaluate"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-[rgba(17,17,17,0.8)] from-[15%] to-transparent"
+                  aria-hidden
+                />
+                <p className="absolute bottom-5 left-10 right-5 text-[16px] font-medium leading-6 text-white">
+                  Evaluate every dimension before your next capacity commitment
+                </p>
+              </div>
+
+              <div className="flex w-full min-w-0 flex-col items-start gap-[30px]">
+                <div className="flex w-full flex-col items-start">
+                  {matrixCriteria.map((item, index) => (
+                    <div
+                      key={item}
+                      className={cn(
+                        "relative flex w-full items-start gap-2",
+                        index === 0 ? "pt-0" : "pt-3",
+                        index === matrixCriteria.length - 1 ? "pb-0" : "pb-3",
+                      )}
+                    >
+                      <span className="flex h-6 w-4 shrink-0 items-center justify-center">
+                        <span className="size-1.5 rounded-full bg-[#808080]" />
+                      </span>
+                      <p className="mb-0 min-w-0 flex-1 text-[16px] font-normal leading-6 text-[#808080]">
                         {item}
                       </p>
+                      {index < matrixCriteria.length - 1 ? (
+                        <span
+                          aria-hidden
+                          className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-[#E6E6E6] to-transparent"
+                        />
+                      ) : null}
                     </div>
-                    {index < matrixCriteria.length - 1 ? (
-                      <div
-                        className="my-[12px] h-px w-full bg-gradient-to-r from-transparent via-[#CBCCCD] to-transparent"
-                        aria-hidden
-                      />
-                    ) : null}
-                  </li>
-                ))}
-              </ul>
-
-              <CalloutAside>
-                It helps you evaluate impact before committing, not after.
-              </CalloutAside>
-            </div>
-
-            <div className="relative mx-auto aspect-[512/470] h-auto w-full max-w-[512px] min-w-0 overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)] max-lg:max-w-full max-[1439px]:max-w-[420px]">
-              <Image
-                src={matrixEvaluateImage}
-                alt="What this matrix helps you evaluate"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 1024px) 100vw, 512px"
-              />
+                  ))}
+                </div>
+                <CalloutAside>
+                  It helps you evaluate impact before committing, not after.
+                </CalloutAside>
+              </div>
             </div>
           </PageContainer>
         </section>
 
         {/* What Actually Changes After You Decide */}
         <section className="bg-white py-16 max-lg:py-12 lg:py-20">
-          <PageContainer className="flex items-center gap-8 max-lg:flex-col max-lg:items-stretch max-lg:gap-6 lg:gap-8 min-[1440px]:gap-10">
-            <div className="flex w-full min-w-0 max-w-[508px] flex-col items-start gap-5 max-lg:max-w-full lg:max-w-[420px] min-[1440px]:max-w-[508px] min-[1440px]:shrink-0">
+          <PageContainer className="flex items-center gap-8 max-lg:flex-col max-lg:items-stretch max-lg:gap-6 lg:gap-8 min-[1440px]:gap-[60px]">
+            <div className="flex w-full min-w-0 max-w-[508px] flex-col items-start gap-3 max-lg:max-w-full lg:shrink">
               <div className="flex w-full flex-col items-start gap-3">
                 <MepSectionTag label="What Actually Changes After You Decide" />
                 <h2 className="w-full text-section">
@@ -585,19 +703,20 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
                   <span className="font-light text-accent">Up Inside Active Projects</span>
                 </h2>
               </div>
-              <p className="w-full max-w-[508px] text-[16px] font-normal leading-6 text-[#808080]">
-                Capacity decisions reshape how drawings, reviews, and approvals move through your
-                firm.
-              </p>
-              <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
-                After implementation, firms often notice:
-              </p>
-              {/* Callout stays with copy on desktop; moved below diagram on mobile */}
-              <div className="hidden lg:block">
-                <CalloutAside>
-                  “These changes are not theoretical. They directly affect delivery timelines and
-                  project stability.”
-                </CalloutAside>
+              <div className="flex w-full flex-col items-start gap-2">
+                <p className="w-full max-w-[508px] text-[16px] font-normal leading-6 text-[#808080]">
+                  Capacity decisions reshape how drawings, reviews, and approvals move through your
+                  firm.
+                </p>
+                <p className="w-full text-[16px] font-normal leading-6 text-[#808080]">
+                  After implementation, firms often notice:
+                </p>
+                <div className="mt-1 hidden w-full lg:block">
+                  <CalloutAside>
+                    “These changes are not theoretical. They directly affect delivery timelines and
+                    project stability.”
+                  </CalloutAside>
+                </div>
               </div>
             </div>
 
@@ -614,11 +733,11 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
 
         {/* Where Most Decisions Go Wrong */}
         <section className="bg-white py-16 max-lg:py-12 lg:py-20">
-          <PageContainer className="flex items-start gap-8 max-lg:flex-col max-lg:items-stretch max-lg:gap-8 lg:gap-[60px]">
-            <div className="flex w-full max-w-[680px] flex-col items-start gap-5 max-lg:max-w-full">
+          <PageContainer className="grid grid-cols-1 items-start gap-8 max-lg:gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.85fr)] lg:items-center lg:gap-8 min-[1440px]:grid-cols-[minmax(0,55fr)_minmax(0,45fr)] min-[1440px]:gap-[60px]">
+            <div className="flex w-full min-w-0 flex-col items-start gap-5">
               <div className="flex w-full flex-col items-start gap-3">
                 <MepSectionTag label="Where Most Decisions Go Wrong" />
-                <h2 className="w-full max-w-[620px] text-section">
+                <h2 className="w-full text-section">
                   <span className="font-medium text-[#111111]">Choosing Based on Speed </span>
                   <span className="font-light text-accent">Instead of System Fit</span>
                 </h2>
@@ -642,13 +761,19 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
               </div>
             </div>
 
-            <div className="relative h-[300px] w-full max-w-[512px] shrink-0 overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)] max-lg:aspect-[512/300] max-lg:h-auto max-lg:max-w-full">
+            <div className="relative aspect-[710/446] h-auto w-full min-w-0 overflow-hidden rounded-[10px] bg-white">
               <Image
                 src={decisionsWrongImage}
                 alt="Where most capacity decisions go wrong"
                 fill
                 className="object-cover object-center"
-                sizes="(max-width: 1024px) 100vw, 512px"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+              />
+              <StatOverlay
+                value="60%"
+                label={"senior architect time lost to\nreviews vs. leading"}
+                gapClassName="gap-2"
+                widthClassName="w-[256px] max-w-[calc(100%-2.5rem)]"
               />
             </div>
           </PageContainer>
@@ -656,8 +781,8 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
 
         {/* Before You Choose a Model */}
         <section className="bg-[#FAFAFA] py-16 max-lg:py-12 lg:py-[100px]">
-          <PageContainer className="flex flex-col items-stretch gap-5">
-            <header className="flex w-full flex-col items-start gap-5">
+          <PageContainer className="flex flex-col items-stretch gap-2">
+            <header className="flex w-full flex-col items-start gap-2">
               <div className="flex flex-col items-start gap-3">
                 <MepSectionTag label="Before You Choose a Model" />
                 <h2 className="text-section">
@@ -674,7 +799,7 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
               <p className="text-[16px] font-normal leading-6 text-[#808080]">That is when:</p>
 
               <div className="flex w-full flex-col items-stretch gap-5">
-                <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+                <div className="grid w-full grid-cols-1 gap-3 lg:grid-cols-4">
                   {realityCheckCards.map((card) => (
                     <article
                       key={card.text}
@@ -742,7 +867,7 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
                     </div>
                     {index < matrixInsidePoints.length - 1 ? (
                       <div
-                        className="my-4 h-px w-full bg-gradient-to-r from-transparent via-[#CBCCCD] to-transparent lg:my-[34px]"
+                        className="my-3 h-px w-full bg-gradient-to-r from-transparent via-[#CBCCCD] to-transparent lg:my-6"
                         aria-hidden
                       />
                     ) : null}

@@ -8,7 +8,7 @@ import {
   mepBimServiceFeaturesSection,
   type MepBimFeatureCard,
 } from "@/constants/mep-bim-modelling-content";
-import { altFromImageSrc, cn } from "@/lib/utils";
+import { altFromImageSrc, cn, laptopCappedMaxWidth } from "@/lib/utils";
 
 /** Figma node 217:9292 — Service Features grid */
 export function MepBimServiceFeaturesSection({
@@ -44,7 +44,7 @@ export function MepBimServiceFeaturesSection({
             <MepSectionTag label={tag} />
             <h2
               className="mep-section-heading"
-              style={{ maxWidth: titleMaxWidth }}
+              style={{ maxWidth: laptopCappedMaxWidth(titleMaxWidth, "title") }}
             >
               <span className="whitespace-pre-line font-medium">{titleLead}</span>
               <span className="text-accent font-light">{titleAccent}</span>
@@ -52,7 +52,7 @@ export function MepBimServiceFeaturesSection({
           </div>
           <p
             className="text-[16px] font-normal leading-6 text-[#808080]"
-            style={{ maxWidth: descriptionMaxWidth }}
+            style={{ maxWidth: laptopCappedMaxWidth(descriptionMaxWidth, "desc") }}
           >
             {description}
           </p>

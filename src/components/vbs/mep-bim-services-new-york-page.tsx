@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { LocationServiceNearYouSection } from "@/components/sections/locations/location-service-near-you-section";
 import { LocationServiceOverviewSection } from "@/components/sections/locations/location-service-overview-section";
+import { LocationsNearYouSection } from "@/components/sections/locations/locations-near-you-section";
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
 import { TrustStripSection } from "@/components/sections/trust-strip-section";
 import {
@@ -44,6 +45,7 @@ export function MepBimServicesNewYorkPage() {
         <TrustStripSection stats={mepNyStatsStrip} className="vbs-trust-strip-section bg-white" />
         <LocationServiceOverviewSection section={mepNyOverviewSection} />
         <LocationServiceNearYouSection section={mepNyNearYouSection} />
+        <LocationsNearYouSection />
         <DeferredClientSuccessStoriesSection
           className="!bg-[#FAFAFA]"
           tag={mepNyTestimonials.tag}

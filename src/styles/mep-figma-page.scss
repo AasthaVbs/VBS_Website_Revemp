@@ -910,11 +910,13 @@
 
 /* Short laptop viewport — fit sticky content inside the pin (JS sets --services-card-h) */
 .vbs-redesign-page .mep-figma-services--compact-sticky {
-  /* Non-wide: hide in-sticky header (legacy compact). Wide ACS keeps title visible. */
-  &:not(.mep-figma-services--wide-cards).mep-figma-services--h-scroll
+  /* Keep heading visible in the sticky pin — inspect/laptop must match desktop. */
+  &.mep-figma-services--h-scroll
     .mep-figma-services__sticky
     .mep-figma-services__header {
-    display: none !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   &.mep-figma-services--h-scroll .mep-figma-services__sticky {
@@ -1013,6 +1015,95 @@
       min-height: min(200px, 48vw) !important;
       max-height: min(200px, 48vw) !important;
     }
+  }
+}
+
+/*
+ * Laptop / inspect (768–1439px): same heading + horizontal card row as desktop.
+ * Opening DevTools shrinks width — cards must scale, not switch layout.
+ */
+@media (min-width: 768px) and (max-width: 1439px) {
+  .vbs-redesign-page .mep-figma-services.mep-figma-services--h-scroll:not(.mep-figma-services--mobile-stack) {
+    --services-card-h: auto;
+
+    .mep-figma-services__header,
+    .mep-figma-services__intro .mep-figma-services__header {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .mep-figma-services__title {
+      max-width: 100% !important;
+    }
+
+    .mep-figma-services__section-desc,
+    .mep-figma-services__intro .mep-figma-services__section-desc {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      max-width: min(var(--vbs-section-desc-max, 640px), var(--services-desc-max-w, 833px), 100%) !important;
+    }
+
+    .mep-figma-services__carousel-viewport {
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: none !important;
+    }
+
+    .mep-figma-services__card {
+      width: min(360px, 42vw) !important;
+      min-width: min(360px, 42vw) !important;
+      max-width: min(360px, 42vw) !important;
+      flex: 0 0 min(360px, 42vw) !important;
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: none !important;
+    }
+
+    .mep-figma-services__card-image {
+      height: 210px !important;
+      min-height: 210px !important;
+      max-height: 210px !important;
+    }
+  }
+
+  .vbs-redesign-page .mep-figma-services--wide-cards.mep-figma-services--h-scroll:not(.mep-figma-services--mobile-stack) {
+    --services-card-image-h: 210px;
+
+    .mep-figma-services__card {
+      width: min(380px, 44vw) !important;
+      min-width: min(380px, 44vw) !important;
+      max-width: min(380px, 44vw) !important;
+      flex: 0 0 min(380px, 44vw) !important;
+    }
+
+    .mep-figma-services__card-image {
+      height: var(--services-card-image-h) !important;
+      min-height: var(--services-card-image-h) !important;
+      max-height: var(--services-card-image-h) !important;
+    }
+  }
+}
+
+.vbs-redesign-page.revit-family-creation-page
+  .mep-figma-services.mep-figma-services--h-scroll:not(.mep-figma-services--mobile-stack) {
+  .mep-figma-services__header,
+  .mep-figma-services__head-top,
+  .mep-figma-services__title {
+    width: 100% !important;
+    max-width: 100% !important;
+    align-self: stretch !important;
+  }
+
+  .mep-figma-services__title-dark {
+    display: inline !important;
+    max-width: none !important;
+  }
+
+  .mep-figma-services__title-accent {
+    display: block !important;
+    max-width: none !important;
   }
 }
 

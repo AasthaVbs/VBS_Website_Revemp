@@ -1355,3 +1355,52 @@
     }
   }
 }
+
+/* Compact project pages — tighter hero top and overview gaps */
+.lv-case.lv-case--compact-overview {
+  .lv-case-hero {
+    padding-top: 40px;
+    padding-bottom: 56px;
+  }
+
+  .lv-case-overview {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .lv-case-tools {
+    padding-top: 56px;
+  }
+
+  @media (max-width: 1200px) {
+    .lv-case-hero {
+      padding-top: 32px;
+      padding-bottom: 44px;
+    }
+
+    .lv-case-overview {
+      padding-top: 44px;
+      padding-bottom: 44px;
+    }
+
+    .lv-case-tools {
+      padding-top: 44px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .lv-case-hero {
+      padding-top: 24px;
+      padding-bottom: 36px;
+    }
+
+    .lv-case-overview {
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+
+    .lv-case-tools {
+      padding-top: 36px;
+    }
+  }
+}

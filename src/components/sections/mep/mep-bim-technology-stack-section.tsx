@@ -8,7 +8,7 @@ import {
   mepBimTechnologyStackToolsRowTwo,
   type MepBimTechnologyTool,
 } from "@/constants/mep-bim-modelling-content";
-import { altFromImageSrc, cn } from "@/lib/utils";
+import { altFromImageSrc, cn, laptopCappedMaxWidth } from "@/lib/utils";
 
 /** Figma — Tools & Platforms logo grid */
 export function MepBimTechnologyStackSection({
@@ -39,10 +39,10 @@ export function MepBimTechnologyStackSection({
         <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
           <div
             className="flex flex-col items-start gap-3"
-            style={{ maxWidth: Math.max(titleMaxWidth, 898) }}
+            style={{ maxWidth: laptopCappedMaxWidth(Math.max(titleMaxWidth, 898), "title") }}
           >
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading" style={{ maxWidth: titleMaxWidth }}>
+            <h2 className="mep-section-heading" style={{ maxWidth: laptopCappedMaxWidth(titleMaxWidth, "title") }}>
               <span className="font-medium">{titleLine1}</span>
               {titleLayout === "stacked" ? <br /> : " "}
               <span className="text-accent font-light">{titleAccent}</span>
@@ -50,7 +50,7 @@ export function MepBimTechnologyStackSection({
           </div>
           <p
             className="text-[16px] font-normal leading-6 text-[#808080]"
-            style={{ maxWidth: descriptionMaxWidth }}
+            style={{ maxWidth: laptopCappedMaxWidth(descriptionMaxWidth, "desc") }}
           >
             {description}
           </p>

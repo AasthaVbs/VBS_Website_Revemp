@@ -5,6 +5,20 @@
     padding-top: 30px !important;
     padding-bottom: 30px !important;
   }
+
+  .locations-near-you a:hover {
+    color: #d70416 !important;
+    text-decoration: underline !important;
+    text-decoration-color: #d70416 !important;
+    text-underline-offset: 3px;
+  }
+
+  .location-service-near-you a:hover span:first-child {
+    color: #d70416 !important;
+    text-decoration: underline !important;
+    text-decoration-color: #d70416 !important;
+    text-underline-offset: 3px;
+  }
 }
 
 @media (min-width: 1440px) {

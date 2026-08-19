@@ -1,5 +1,6 @@
 import { PageContainer } from "@/components/layout/page-container";
 import { homeOurClientsLogos, homeOurClientsSection } from "@/constants/home-content";
+import { laptopCappedMaxWidth } from "@/lib/utils";
 
 type OurClientsSectionContent = {
   tag: string;
@@ -42,7 +43,7 @@ export function OurClientsSection({
           className="vbs-our-clients__head"
           style={
             section.descriptionMaxWidth
-              ? { ["--our-clients-head-max-w"]: `${section.descriptionMaxWidth}px` }
+              ? { ["--our-clients-head-max-w"]: laptopCappedMaxWidth(section.descriptionMaxWidth, "desc") }
               : undefined
           }
         >
@@ -52,7 +53,7 @@ export function OurClientsSection({
               className="vbs-our-clients__title"
               style={
                 section.titleMaxWidth
-                  ? { ["--our-clients-title-max-w"]: `${section.titleMaxWidth}px` }
+                  ? { ["--our-clients-title-max-w"]: laptopCappedMaxWidth(section.titleMaxWidth, "title") }
                   : undefined
               }
             >
@@ -76,7 +77,7 @@ export function OurClientsSection({
               className="vbs-our-clients__desc"
               style={
                 section.descriptionMaxWidth
-                  ? { maxWidth: `${section.descriptionMaxWidth}px` }
+                  ? { maxWidth: laptopCappedMaxWidth(section.descriptionMaxWidth, "desc") }
                   : undefined
               }
             >

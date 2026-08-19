@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Residential Project, USA",
     description:
       "CAD to BIM conversion producing a LOD 300 BIM model with accurate architectural element representation for a residential project in the USA.",
-    image: "/image/project12-slider-1.jpg",
+    image: "/image/architectural-3d-modeling-banner.jpg",
     imageAlt: "Residential CAD to BIM conversion USA",
   },
   overview: {
-    image: "/image/project12-slider-1.jpg",
+    image: "/image/architectural-3d-modeling-overview.jpg",
     imageAlt: "LOD 300 residential BIM model",
     paragraphs: [
       "This residential project in the USA required converting existing CAD documentation into a LOD 300 BIM model with accurate architectural element representation. Our team developed the model following client standards and residential design requirements.",
@@ -38,12 +38,8 @@ const content = {
   io: {
     description:
       "From 2D CAD architectural drawings to a LOD 300 BIM model with accurate element representation.",
-    inputImages: [
-      { src: "/image/project12-slider-1.jpg", label: "2D CAD Architectural Drawings" },
-    ],
-    outputImages: [
-      { src: "/image/project12-slider-1.jpg", label: "LOD 300 Architectural BIM Model" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "2D CAD architectural drawing sets",
       "Design specifications and standards",
@@ -129,5 +125,5 @@ const content = {
 };
 
 export default function PortfolioCadToBimResidentialUsaPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

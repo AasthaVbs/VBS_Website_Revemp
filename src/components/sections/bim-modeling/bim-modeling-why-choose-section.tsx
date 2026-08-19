@@ -7,6 +7,7 @@ import {
   bimModelingWhyChooseItems,
   bimModelingWhyChooseSection,
 } from "@/constants/bim-modeling-services-content";
+import { laptopCappedMaxWidth } from "@/lib/utils";
 
 type WhyChooseItem = {
   prefix: string;
@@ -95,7 +96,7 @@ export function BimModelingWhyChooseSection({
         <header className="flex w-full flex-col items-start gap-5">
           <div
             className="flex w-full flex-col items-start gap-3"
-            style={{ maxWidth: `${titleMaxWidth}px` }}
+            style={{ maxWidth: laptopCappedMaxWidth(titleMaxWidth, "title") }}
           >
             <MepSectionTag label={section.tag} />
             <h2 className="w-full">
@@ -106,7 +107,7 @@ export function BimModelingWhyChooseSection({
           </div>
           <p
             className="w-full text-[16px] font-normal leading-6 text-[#808080]"
-            style={{ maxWidth: `${descriptionMaxWidth}px` }}
+            style={{ maxWidth: laptopCappedMaxWidth(descriptionMaxWidth, "desc") }}
           >
             {section.description}
           </p>

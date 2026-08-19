@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Commercial Project, New York",
     description:
       "CAD to BIM conversion producing a LOD 400 coordinated model with shop drawings, hanger drawings, and sleeve drawings for a commercial project in New York.",
-    image: "/image/project3-slider1.jpg",
+    image: "/image/cad-to-bim-project-banner.jpg",
     imageAlt: "New York commercial CAD to BIM conversion project",
   },
   overview: {
-    image: "/image/project3-slider2.jpg",
+    image: "/image/cad-to-bim-project-overview.jpg",
     imageAlt: "LOD 400 coordinated commercial BIM model",
     paragraphs: [
       "This commercial project in New York required converting CAD documentation into a LOD 400 coordinated BIM model with MEP-focused deliverables. Our team developed the coordinated model and produced shop, hanger, and sleeve drawings for construction.",
@@ -39,12 +39,8 @@ const content = {
   io: {
     description:
       "From 2D CAD MEP drawings to a LOD 400 coordinated model with shop, hanger, and sleeve drawing sets.",
-    inputImages: [
-      { src: "/image/project3-slider1.jpg", label: "2D CAD MEP Drawings" },
-    ],
-    outputImages: [
-      { src: "/image/project3-slider2.jpg", label: "LOD 400 Coordinated Model and Drawings" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "2D CAD MEP design drawings",
       "Equipment schedules and specifications",
@@ -142,5 +138,5 @@ const content = {
 };
 
 export default function CadToBimCommercialNewYorkPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

@@ -8,7 +8,7 @@ import {
   mepBimUseCasesSection,
   type MepBimUseCaseCard,
 } from "@/constants/mep-bim-modelling-content";
-import { altFromImageSrc, cn } from "@/lib/utils";
+import { altFromImageSrc, cn, laptopCappedMaxWidth } from "@/lib/utils";
 
 /** Figma node 242:16126 — Use Cases / Outsourcing Guide */
 export function MepBimUseCasesSection({
@@ -48,16 +48,19 @@ export function MepBimUseCasesSection({
     <section id={id} className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-stretch gap-10 lg:gap-[60px]">
         <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
-          <div className="flex flex-col items-start gap-3" style={{ maxWidth: titleMaxWidth }}>
+          <div
+            className="flex flex-col items-start gap-3"
+            style={{ maxWidth: laptopCappedMaxWidth(titleMaxWidth, "title") }}
+          >
             <MepSectionTag label={tag} />
-            <h2 className="mep-section-heading" style={{ maxWidth: titleMaxWidth }}>
+            <h2 className="mep-section-heading" style={{ maxWidth: laptopCappedMaxWidth(titleMaxWidth, "title") }}>
               <span className="font-medium">{titleLead}</span>
               <span className="text-accent font-light">{titleAccent}</span>
             </h2>
           </div>
           <p
             className="text-[15px] font-normal leading-6 text-[#808080] sm:text-[16px]"
-            style={{ maxWidth: descriptionMaxWidth }}
+            style={{ maxWidth: laptopCappedMaxWidth(descriptionMaxWidth, "desc") }}
           >
             {description}
           </p>

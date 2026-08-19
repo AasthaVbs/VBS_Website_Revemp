@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Healthcare Institute",
     description:
       "LOD 300 MEPF modeling with inter-discipline clash detection, shop drawings, and fabrication drawings for a healthcare institute project.",
-    image: "/image/project4-slider1.jpg",
+    image: "/image/architecture-3d-model-banner.jpg",
     imageAlt: "Healthcare institute MEPF BIM modeling project",
   },
   overview: {
-    image: "/image/project4-slider2.jpg",
+    image: "/image/structure-3d-model-overview.jpg",
     imageAlt: "LOD 300 MEPF coordinated healthcare model",
     paragraphs: [
       "This healthcare institute project required LOD 300 MEPF models with inter-discipline clash detection and coordination. Our team developed coordinated discipline models and produced shop and fabrication drawings for installation.",
@@ -39,13 +39,8 @@ const content = {
   io: {
     description:
       "From MEPF design inputs to LOD 300 coordinated models, shop drawings, and fabrication drawings.",
-    inputImages: [
-      { src: "/image/project4-slider1.jpg", label: "MEPF Design Drawings and References" },
-    ],
-    outputImages: [
-      { src: "/image/project4-slider2.jpg", label: "LOD 300 Coordinated MEPF Model" },
-      { src: "/image/project4-slider3.jpg", label: "Shop and Fabrication Drawings" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "MEPF design drawings and specifications",
       "Architectural and structural reference models",
@@ -143,5 +138,5 @@ const content = {
 };
 
 export default function MepfModelingHealthcareInstitutePage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Government Building",
     description:
       "LOD 500 as-built BIM modeling with inter-discipline clash detection and coordination for a government building project.",
-    image: "/image/project9-slider1.jpg",
+    image: "/image/lod-500-as-built%20modeling-banner.jpg",
     imageAlt: "Government building LOD 500 as-built modeling",
   },
   overview: {
-    image: "/image/project9-slider2.jpg",
+    image: "/image/lod-500-as-built-model-overview.jpg",
     imageAlt: "LOD 500 as-built government building model",
     paragraphs: [
       "This government building project required LOD 500 as-built BIM models capturing the constructed state of the facility. Our team developed accurate as-built models with inter-discipline clash detection and coordination.",
@@ -39,12 +39,8 @@ const content = {
   io: {
     description:
       "From field data and existing documentation to LOD 500 as-built models with coordinated discipline outputs.",
-    inputImages: [
-      { src: "/image/project9-slider1.jpg", label: "Existing Documentation and Field Data" },
-    ],
-    outputImages: [
-      { src: "/image/project9-slider2.jpg", label: "LOD 500 As-Built Coordinated Model" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "Existing design and construction drawings",
       "Field survey and laser scan data",
@@ -131,5 +127,5 @@ const content = {
 };
 
 export default function ThreedBimModelGovernmentBuildingPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

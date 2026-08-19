@@ -8,7 +8,7 @@ import {
   architectureEngagementModelsCards,
   architectureEngagementModelsSection,
 } from "@/constants/architecture-services-redesign-content";
-import { altFromImageSrc, cn } from "@/lib/utils";
+import { altFromImageSrc, cn, laptopCappedMaxWidth } from "@/lib/utils";
 
 export type EngagementModelsCard = {
   icon: string | StaticImageData;
@@ -116,7 +116,10 @@ export function ArchitectureEngagementModelsSection({
   return (
     <section id="engagement-models" className="arch-svc-engagement bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-start gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[840px] flex-col items-start gap-5">
+        <div
+          className="flex w-full max-w-[840px] flex-col items-start gap-5"
+          style={{ maxWidth: laptopCappedMaxWidth(840, "title") }}
+        >
           <div className="flex flex-col items-start gap-3">
             <SectionTag label={section.tag} />
             <h2 className="text-section w-full">
@@ -132,7 +135,7 @@ export function ArchitectureEngagementModelsSection({
           </div>
           <p
             className="arch-svc-engagement__section-desc w-full"
-            style={{ maxWidth: `${descriptionMaxWidth}px` }}
+            style={{ maxWidth: laptopCappedMaxWidth(descriptionMaxWidth, "desc") }}
           >
             {section.description}
           </p>

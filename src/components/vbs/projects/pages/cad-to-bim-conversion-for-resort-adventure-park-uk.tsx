@@ -11,11 +11,11 @@ const content = {
     titleAccent: "Resort Adventure Park, UK",
     description:
       "CAD to BIM conversion producing a LOD 400 BIM model with parametric data integration for a resort adventure park project in the UK.",
-    image: "/image/project10-slider1.jpg",
+    image: "/image/cad-to-bom-lod-model-banner.jpg",
     imageAlt: "UK resort adventure park CAD to BIM project",
   },
   overview: {
-    image: "/image/project10-slider1.jpg",
+    image: "/image/cad-to-bom-lod-model-overview.jpg",
     imageAlt: "LOD 400 resort adventure park BIM model",
     paragraphs: [
       "This resort adventure park project in the UK required converting CAD documentation into a LOD 400 BIM model with integrated parametric data. Our team developed the model with accurate element representation and embedded parametric properties.",
@@ -38,12 +38,8 @@ const content = {
   io: {
     description:
       "From 2D CAD design drawings to a LOD 400 BIM model with parametric data integration.",
-    inputImages: [
-      { src: "/image/project10-slider1.jpg", label: "2D CAD Design Drawings" },
-    ],
-    outputImages: [
-      { src: "/image/project10-slider1.jpg", label: "LOD 400 BIM Model with Parametric Data" },
-    ],
+    inputImages: [],
+    outputImages: [],
     inputPoints: [
       "2D CAD architectural design drawings",
       "Resort layout and facility schedules",
@@ -130,5 +126,5 @@ const content = {
 };
 
 export default function PortfolioCadToBimResortUkPage() {
-  return <ProjectCaseStudy content={content} />;
+  return <ProjectCaseStudy content={content} className="lv-case--compact-overview" />;
 }

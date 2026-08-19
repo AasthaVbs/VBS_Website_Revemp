@@ -9,7 +9,7 @@ import {
   architectureWorkflowIntegrateSection,
   architectureWorkflowIntegrateSteps,
 } from "@/constants/architecture-services-redesign-content";
-import { cn } from "@/lib/utils";
+import { cn, laptopCappedMaxWidth } from "@/lib/utils";
 
 type WorkflowTag = string | { label: string; tint?: string };
 
@@ -243,6 +243,7 @@ export function ArchitectureIntegrateWorkflowSection({
             "flex w-full max-w-[890px] flex-col gap-5",
             isCentered ? "items-center self-center text-center" : "items-start self-start text-left",
           )}
+          style={{ maxWidth: laptopCappedMaxWidth(890, "title") }}
         >
           <div className={cn("flex flex-col gap-3", isCentered ? "items-center" : "items-start")}>
             <SectionTag
@@ -262,7 +263,7 @@ export function ArchitectureIntegrateWorkflowSection({
           </div>
           <p
             className="w-full text-[16px] font-normal leading-6 text-[#808080]"
-            style={{ maxWidth: resolvedDescriptionMaxWidth }}
+            style={{ maxWidth: laptopCappedMaxWidth(resolvedDescriptionMaxWidth, "desc") }}
           >
             {section.description}
           </p>

@@ -112,7 +112,9 @@ export function isResourcesSectionPath(path: string) {
     path === "/whitepaper" ||
     path.startsWith("/whitepaper/") ||
     path === "/testimonials" ||
-    path === "/resources"
+    path === "/resources" ||
+    path === "/bim-resources" ||
+    path.startsWith("/bim-resources/")
   );
 }
 

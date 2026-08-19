@@ -13,6 +13,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { ResourceFeedPhoto } from "@/components/ui/resource-feed-photo";
+import { bimResourceHubItems } from "@/constants/bim-resources-content";
 import {
   resourceAllServicesLabel,
   resourceAllTypesLabel,
@@ -43,7 +44,8 @@ export type ResourcesBrowseVariant =
   | "blogs"
   | "webinars"
   | "whitepapers"
-  | "case-studies";
+  | "case-studies"
+  | "bim-resources";
 
 const ITEMS_PER_PAGE = 8;
 const FILTER_STICKY_MIN_WIDTH = 800;
@@ -136,6 +138,22 @@ function useDesktopStickyFilter() {
 }
 
 type CatalogItem = ResourceCatalogItem;
+
+function bimResourceCatalogItems(): CatalogItem[] {
+  return bimResourceHubItems.map((item) => ({
+    id: item.id,
+    title: item.title,
+    excerpt: item.excerpt,
+    type: "News",
+    service: item.service,
+    href: item.href,
+    image: item.image,
+    sortOrder: item.sortOrder,
+    publishedTimestamp: item.sortOrder,
+    badgeLabel: "Resource",
+    category: "Resource",
+  }));
+}
 
 function toServiceFilterItem(item: CatalogItem): ResourceServiceFilterInput {
   const type =
@@ -317,11 +335,13 @@ export function ResourcesBrowseSection({
   const isWebinarsPage = variant === "webinars";
   const isWhitepapersPage = variant === "whitepapers";
   const isCaseStudiesPage = variant === "case-studies";
+  const isBimResourcesPage = variant === "bim-resources";
   const hasPageHero =
     isBlogsPage ||
     isWebinarsPage ||
     isWhitepapersPage ||
     isCaseStudiesPage ||
+    isBimResourcesPage ||
     variant === "resources";
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -333,9 +353,13 @@ export function ResourcesBrowseSection({
   const [resourceCatalog, setResourceCatalog] = useState<ResourceCatalog>(
     () => initialCatalog ?? EMPTY_RESOURCE_CATALOG,
   );
-  const [catalogReady, setCatalogReady] = useState(() => Boolean(initialCatalog?.byType));
+  const [catalogReady, setCatalogReady] = useState(
+    () => isBimResourcesPage || Boolean(initialCatalog?.byType),
+  );
 
   useEffect(() => {
+    if (isBimResourcesPage) return undefined;
+
     let cancelled = false;
 
     fetch("/api/resources-catalog")
@@ -355,7 +379,7 @@ export function ResourcesBrowseSection({
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [isBimResourcesPage]);
 
   const filteredItems = useMemo(() => {
     if (!catalogReady) return [];
@@ -368,6 +392,8 @@ export function ResourcesBrowseSection({
         selectedWebinarType === webinarAllTypesLabel
           ? resourceCatalog.byType.Webinar
           : resourceCatalog.byType.Webinar.filter((item) => item.delivery === selectedWebinarType);
+    } else if (isBimResourcesPage) {
+      baseItems = bimResourceCatalogItems();
     } else if (isBlogsPage) {
       baseItems = resourceCatalog.byType.Blog;
     } else if (isWhitepapersPage) {
@@ -419,6 +445,7 @@ export function ResourcesBrowseSection({
     isWebinarsPage,
     isWhitepapersPage,
     isCaseStudiesPage,
+    isBimResourcesPage,
     searchQuery,
     selectedType,
     selectedSort,
@@ -504,7 +531,7 @@ export function ResourcesBrowseSection({
                     />
                   ))}
                 </FilterGroup>
-              ) : !isBlogsPage && !isWhitepapersPage && !isCaseStudiesPage ? (
+              ) : !isBlogsPage && !isWhitepapersPage && !isCaseStudiesPage && !isBimResourcesPage ? (
                 <FilterGroup title="Type of Resources">
                   {resourceTypeFilterOptions.map((type) => (
                     <FilterOption
@@ -559,9 +586,13 @@ export function ResourcesBrowseSection({
                       key={`${item.type}-${item.id}`}
                       item={item}
                       hideBadge={isCaseStudiesPage}
-                      hideMeta={isCaseStudiesPage}
+                      hideMeta={isCaseStudiesPage || isBimResourcesPage}
                       mediaSize={
-                        isBlogsPage ? "blog" : isWhitepapersPage ? "whitepaper" : "default"
+                        isBlogsPage || isBimResourcesPage
+                          ? "blog"
+                          : isWhitepapersPage
+                            ? "whitepaper"
+                            : "default"
                       }
                     />
                   ))}
@@ -587,7 +618,9 @@ export function ResourcesBrowseSection({
                           ? resourceCatalog.byType["Case Studies"].length === 0
                             ? "No case studies are available yet. Check back soon."
                             : "No case studies match your filters. Try another service or search term."
-                        : `No ${selectedType === resourceAllTypesLabel ? "resources" : selectedType.toLowerCase()} match your filters. Try another type or search term.`}
+                    : isBimResourcesPage
+                      ? "No resources match your filters. Try another service or search term."
+                      : `No ${selectedType === resourceAllTypesLabel ? "resources" : selectedType.toLowerCase()} match your filters. Try another type or search term.`}
               </p>
             )}
           </div>

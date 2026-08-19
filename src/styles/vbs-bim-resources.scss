@@ -10,10 +10,10 @@
   }
 
   .bim-resources__sidebar {
-    position: sticky;
-    top: calc(var(--vbs-header-offset, 132px) + 16px);
+    position: static;
+    top: auto;
     align-self: flex-start;
-    z-index: 2;
+    z-index: 1;
     width: 400px;
     max-width: 400px;
   }

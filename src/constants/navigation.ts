@@ -17,6 +17,7 @@ export const ROUTES = {
   capabilities: "/#capabilities",
   engagement: "/engagement-models",
   resources: "/resources",
+  bimResources: "/bim-resources",
   about: "/about-us",
   ourExpertise: "/our-expertise",
   locations: "/locations",
@@ -96,7 +97,7 @@ export const ROUTES = {
 export const MAIN_NAV = [
   { label: "Our Capabilities", href: ROUTES.capabilities, hasDropdown: "capabilities" as const },
   { label: "Engagement Model", href: ROUTES.engagement },
-  { label: "Resources", href: ROUTES.resources, hasDropdown: "resources" as const },
+  { label: "Resources", href: ROUTES.bimResources, hasDropdown: "resources" as const },
   { label: "About", href: ROUTES.about, hasDropdown: "about" as const },
   { label: "Contact Us", href: ROUTES.contact },
 ] as const;
@@ -109,6 +110,7 @@ export const ABOUT_DROPDOWN_LINKS: NavDropdownLink[] = [
 ];
 
 export const RESOURCES_DROPDOWN_LINKS: NavDropdownLink[] = [
+  { label: "Resources", href: ROUTES.bimResources },
   { label: "Case Studies", href: ROUTES.projects },
   { label: "Blog", href: ROUTES.blog },
   { label: "White Paper", href: ROUTES.whitepaper },
@@ -193,7 +195,7 @@ export const VBS_FOOTER_URLS = {
   projects: ROUTES.projects,
   successStories: ROUTES.successStories,
   testimonials: ROUTES.testimonials,
-  bimResources: ROUTES.resources,
+  bimResources: ROUTES.bimResources,
   whitepaper: ROUTES.whitepaper,
   privacyPolicy: ROUTES.privacy,
   termsOfUse: ROUTES.terms,

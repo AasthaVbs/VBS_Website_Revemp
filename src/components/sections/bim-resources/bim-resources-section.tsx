@@ -36,6 +36,13 @@ export function BimResourcesSection({
       <PageContainer className="!px-4">
         <div className="bim-resources__layout flex flex-col items-stretch gap-6 sm:gap-8 lg:flex-row lg:items-start lg:gap-[30px]">
           <div className="flex min-w-0 flex-1 flex-col gap-6 sm:gap-8 lg:gap-[30px]">
+            <div className="flex w-full flex-col gap-4 sm:gap-5">
+              <h1 id="bim-resources-title" className="bim-resources__title">
+                {title}
+              </h1>
+              <p className="bim-resources__body">{description}</p>
+            </div>
+
             <div className="bim-resources__hero relative aspect-[1010/640] w-full overflow-hidden rounded-[16px] bg-[#f5f5f5] sm:rounded-[21px] lg:h-[640px] lg:aspect-auto">
               <Image
                 src={heroImage}
@@ -49,13 +56,6 @@ export function BimResourcesSection({
             </div>
 
             <div className="flex w-full flex-col gap-6 sm:gap-8 lg:gap-[30px]">
-              <div className="flex flex-col gap-4 sm:gap-5">
-                <h1 id="bim-resources-title" className="bim-resources__title">
-                  {title}
-                </h1>
-                <p className="bim-resources__body">{description}</p>
-              </div>
-
               <div className="flex flex-col gap-4 sm:gap-5">
                 {highlightsHeading ? (
                   <h2 className="bim-resources__section-heading">{highlightsHeading}</h2>

@@ -55,7 +55,7 @@ const MEP_SHOP_RELATED: BimResourcesRelatedLink[] = [
   },
 ];
 
-/** Hub page `/bim-resources/` — Revit Families (existing redesign content). */
+/** Shared download-page copy — used by `/bim-resources/revit-families`. */
 export const bimResourcesContent: BimResourcePageContent = {
   title: "2,200+ Revit Families for Your Design Projects",
   description:
@@ -396,3 +396,81 @@ export const bimResourceDynamoScriptsContent: BimResourcePageContent = {
       "Boost your Revit experience with these 10 essential Dynamo scripts for better project organization, efficiency, automation, and productivity.",
   },
 };
+
+export const bimResourcesPageHero = {
+  tag: "Resources",
+  titleLead: "Resources & ",
+  titleAccent: "Industry Insights",
+  description:
+    "Explore expert perspectives, practical guides, case studies, and the latest trends in Scan to BIM, BIM modeling, MEP coordination, and digital project delivery.",
+  ctaLabel: "Contact Us",
+  imageAlt: "BIM resources and industry insights on a laptop at an architecture desk",
+} as const;
+
+export type BimResourceHubItem = {
+  id: string;
+  href: string;
+  title: string;
+  excerpt: string;
+  image: string;
+  service: "Architecture Firms" | "MEP Engineering Firms" | "Reality Capture & Survey Companies";
+  sortOrder: number;
+};
+
+/** Listing cards for `/bim-resources` — one item per download detail page. */
+export const bimResourceHubItems: BimResourceHubItem[] = [
+  {
+    id: "revit-families",
+    href: "/bim-resources/revit-families",
+    title: bimResourceRevitFamiliesContent.title,
+    excerpt: bimResourceRevitFamiliesContent.description,
+    image: bimResourceRevitFamiliesContent.heroImage,
+    service: "Architecture Firms",
+    sortOrder: 6,
+  },
+  {
+    id: "mechanical-piping",
+    href: "/bim-resources/mechanical-piping-estimations-templates",
+    title: bimResourceMechanicalPipingContent.title,
+    excerpt: bimResourceMechanicalPipingContent.description,
+    image: bimResourceMechanicalPipingContent.heroImage,
+    service: "MEP Engineering Firms",
+    sortOrder: 5,
+  },
+  {
+    id: "plumbing-estimation",
+    href: "/bim-resources/download-plumbing-estimation-templates",
+    title: bimResourcePlumbingEstimationContent.title,
+    excerpt: bimResourcePlumbingEstimationContent.description,
+    image: bimResourcePlumbingEstimationContent.heroImage,
+    service: "MEP Engineering Firms",
+    sortOrder: 4,
+  },
+  {
+    id: "hvac-estimation",
+    href: "/bim-resources/hvac-estimation-templates",
+    title: bimResourceHvacEstimationContent.title,
+    excerpt: bimResourceHvacEstimationContent.description,
+    image: bimResourceHvacEstimationContent.heroImage,
+    service: "MEP Engineering Firms",
+    sortOrder: 3,
+  },
+  {
+    id: "bim-execution-plan",
+    href: "/bim-resources/bim-execution-plan",
+    title: bimResourceBimExecutionPlanContent.title,
+    excerpt: bimResourceBimExecutionPlanContent.description,
+    image: bimResourceBimExecutionPlanContent.heroImage,
+    service: "Architecture Firms",
+    sortOrder: 2,
+  },
+  {
+    id: "dynamo-scripts",
+    href: "/bim-resources/dynamo-scripts-for-revit",
+    title: bimResourceDynamoScriptsContent.title,
+    excerpt: bimResourceDynamoScriptsContent.description,
+    image: bimResourceDynamoScriptsContent.heroImage,
+    service: "Architecture Firms",
+    sortOrder: 1,
+  },
+];

@@ -14,9 +14,9 @@ export function CoreValuesSection() {
 
   return (
     <section className="vbs-core-values overflow-hidden bg-[#FAFAFA] py-12 lg:py-[100px]">
-      <PageContainer className="vbs-core-values__inner flex flex-col items-center gap-10 lg:gap-[60px]">
-        <div className="vbs-core-values__header flex w-full flex-col items-center gap-5 text-center">
-          <div className="vbs-core-values__title-wrap flex flex-col items-center gap-3">
+      <PageContainer className="vbs-core-values__inner flex flex-col items-center">
+        <div className="vbs-core-values__header flex w-full flex-col items-center text-center">
+          <div className="vbs-core-values__title-wrap flex flex-col items-center">
             <SectionTag label={tag} className="self-center" />
             <h2 className="text-section vbs-core-values__title">
               {titleLead}

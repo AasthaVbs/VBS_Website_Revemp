@@ -7,6 +7,8 @@ import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { ROUTES } from "@/constants/navigation";
 import { cn } from "@/lib/utils";
 
+import "@/styles/vbs-listing-hero-spacing.scss";
+
 type ListingHeroProps = {
   tag: string;
   titleLead: string;
@@ -76,7 +78,7 @@ export function ListingPageHeroSection({
               fullWidth={false}
               href={ctaHref}
               className={cn(
-                "vbs-listing-hero__cta shrink-0 px-5 py-4 capitalize",
+                "vbs-listing-hero__cta shrink-0 px-4 py-2 capitalize",
                 ctaClassName,
               )}
             >

@@ -113,8 +113,9 @@
     align-items: flex-start;
     gap: 30px;
     flex: 1 1 0;
+    width: 50%;
     min-width: 0;
-    max-width: 750px;
+    max-width: none;
   }
 
   .dw-hero-copy-main {
@@ -125,7 +126,7 @@
   }
 
   .dw-hero h1 {
-    font-size: 48px !important;
+    font-size: 38px !important;
     font-weight: 500 !important;
     line-height: 1.15 !important;
     letter-spacing: 0 !important;
@@ -149,10 +150,12 @@
   }
 
   .dw-hero-media {
-    flex: 0 1 650px;
-    width: 100%;
-    max-width: 650px;
-    height: 460px;
+    flex: 1 1 0;
+    width: 50%;
+    max-width: none;
+    min-width: 0;
+    height: auto;
+    aspect-ratio: 650 / 460;
     border-radius: 10px;
     overflow: hidden;
     background: #f4f4f4;
@@ -739,7 +742,6 @@
       padding: 48px 0 40px;
     }
 
-    .dw-hero h1,
     .dw-linear h2,
     .dw-really h2,
     .dw-appears h2,
@@ -750,9 +752,13 @@
       font-size: 40px !important;
     }
 
+    .dw-hero h1 {
+      font-size: 38px !important;
+    }
+
     .dw-hero-media {
-      height: 400px;
-      flex-basis: min(48%, 520px);
+      height: auto;
+      aspect-ratio: 650 / 460;
     }
 
     .dw-table-cell--see-head,

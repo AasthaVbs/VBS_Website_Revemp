@@ -1,0 +1,17 @@
+/* Listing heroes — tighter top padding + slightly smaller Contact Us */
+
+.vbs-redesign-page section.vbs-listing-hero {
+  padding-top: 16px !important;
+}
+
+@media (min-width: 1024px) {
+  .vbs-redesign-page section.vbs-listing-hero {
+    padding-top: 40px !important;
+  }
+}
+
+.vbs-listing-hero .vbs-listing-hero__cta.primary-cta {
+  height: 46px !important;
+  min-height: 46px !important;
+  padding: 8px 16px !important;
+}

@@ -19,8 +19,8 @@ export function ArchitectureVbsDifferenceSection({
 }) {
   return (
     <section className="arch-svc-difference bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
-      <PageContainer className="flex flex-col items-start gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[1000px] flex-col items-start gap-5">
+      <PageContainer className="arch-svc-difference__inner flex flex-col items-start">
+        <div className="arch-svc-difference__header flex w-full max-w-[1000px] flex-col items-start">
           <div className="flex flex-col items-start gap-3">
             <SectionTag label={section.tag} />
             <h2 className="text-section w-full max-w-[812px]">
@@ -67,7 +67,7 @@ export function ArchitectureVbsDifferenceSection({
         </div>
 
         {section.note ? (
-          <div className="w-full rounded-[10px] border border-[#42AA32] bg-[#F8FFFA] p-5">
+          <div className="arch-svc-difference__note w-full rounded-[10px] border border-[#42AA32] bg-[#F8FFFA] p-5">
             <p className="m-0 text-[16px] font-normal leading-6 text-[#111111]">{section.note.text}</p>
           </div>
         ) : null}

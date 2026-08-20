@@ -34,6 +34,128 @@
   }
 }
 
+/* Overlay heroes — left-align on desktop, center on mobile */
+.architecture-services-page,
+.mep-bim-services-page,
+.scan-to-bim-services-page {
+  .mep-page-hero--overlay {
+    @media (min-width: 768px) {
+      .mep-page-hero__copy-wrap > div,
+      .mep-page-hero__copy-inner,
+      .mep-page-hero__copy-inner > div {
+        align-items: flex-start !important;
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      h1,
+      h1 span,
+      p {
+        text-align: left !important;
+      }
+
+      .text-tag {
+        align-self: flex-start !important;
+      }
+
+      .mep-page-hero__cta-row {
+        align-self: flex-start !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .mep-page-hero__copy-wrap > div,
+      .mep-page-hero__copy-inner,
+      .mep-page-hero__copy-inner > div {
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      h1,
+      h1 span,
+      p {
+        text-align: center !important;
+      }
+
+      .text-tag {
+        align-self: center !important;
+      }
+
+      .mep-page-hero__cta-row {
+        align-self: center !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+    }
+  }
+}
+
+/* Smaller laptops: 60% copy / 40% image on Architecture + MEP hubs */
+.architecture-services-page,
+.mep-bim-services-page:not(.scan-to-bim-services-page) {
+  .mep-page-hero--overlay {
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      .mep-page-hero__media {
+        width: 40% !important;
+        max-width: 40% !important;
+      }
+
+      .mep-page-hero__copy-wrap > div,
+      .mep-page-hero__copy-inner {
+        max-width: 60% !important;
+      }
+
+      h1,
+      h1 span,
+      p {
+        max-width: 100% !important;
+      }
+    }
+  }
+}
+
+/* /scan-to-bim-services — 1:1 copy/image on laptops <1440; keep full image height */
+.scan-to-bim-services-page .mep-page-hero--overlay {
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    min-height: calc(50vw * 753 / 1082) !important;
+    overflow: visible !important;
+
+    .mep-page-hero__media {
+      width: 50% !important;
+      max-width: 50% !important;
+      height: auto !important;
+      min-height: 0 !important;
+      aspect-ratio: 1082 / 753 !important;
+      overflow: visible !important;
+
+      img,
+      .mep-page-hero__photo {
+        position: relative !important;
+        inset: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        object-fit: contain !important;
+        object-position: center right !important;
+      }
+    }
+
+    .mep-page-hero__copy-wrap > div,
+    .mep-page-hero__copy-inner {
+      max-width: 50% !important;
+    }
+
+    h1,
+    h1 span,
+    p {
+      max-width: 100% !important;
+    }
+  }
+}
+
 /* Hero — taller container; light left fade; tighter copy↔image gap */
 .architecture-services-page {
   .mep-page-hero--overlay {
@@ -43,8 +165,6 @@
       .mep-page-hero__media {
         top: 0 !important;
         bottom: 0 !important;
-        width: min(48%, 900px) !important;
-        max-width: 900px !important;
         height: 100% !important;
         min-height: 100% !important;
         max-height: none !important;
@@ -72,6 +192,14 @@
           ) !important;
         }
       }
+    }
+
+    /* Large desktops keep the current split; laptops use the shared 60/40 rule */
+    @media (min-width: 1440px) {
+      .mep-page-hero__media {
+        width: min(48%, 900px) !important;
+        max-width: 900px !important;
+      }
 
       .mep-page-hero__copy-wrap {
         > div {
@@ -89,8 +217,8 @@
       min-height: calc(min(50vw, 730px) * 640 / 1024) !important;
 
       .mep-page-hero__media {
-        width: min(44%, 580px) !important;
-        max-width: 580px !important;
+        width: 40% !important;
+        max-width: 40% !important;
         height: 100% !important;
         min-height: 100% !important;
         aspect-ratio: auto !important;
@@ -102,84 +230,63 @@
       }
 
       .mep-page-hero__copy-wrap {
-        > div {
-          max-width: min(680px, 54%) !important;
+        > div,
+        .mep-page-hero__copy-inner {
+          max-width: 60% !important;
         }
 
         h1,
         h1 span,
         p {
-          max-width: min(680px, 100%) !important;
+          max-width: 100% !important;
         }
       }
     }
 
     @media (min-width: 1024px) and (max-width: 1199px) {
       min-height: calc(min(48vw, 600px) * 640 / 1024) !important;
-
-      .mep-page-hero__media {
-        width: min(42%, 460px) !important;
-        max-width: 460px !important;
-      }
-
-      .mep-page-hero__copy-wrap {
-        > div {
-          max-width: min(600px, 56%) !important;
-        }
-
-        h1,
-        h1 span {
-          max-width: min(600px, 100%) !important;
-        }
-      }
     }
   }
 }
 
-/* Engineering & Construction + Reality Capture hubs — same laptop overlay as architecture-services */
-.mep-bim-services-page:not(.architecture-services-page),
-.scan-to-bim-services-page {
+/* Engineering & Construction + Reality Capture hubs — laptop overlay height */
+.mep-bim-services-page:not(.architecture-services-page):not(.scan-to-bim-services-page) {
   .mep-page-hero--overlay {
     @media (min-width: 1024px) and (max-width: 1439px) {
       min-height: calc(min(50vw, 730px) * 640 / 1024) !important;
 
       .mep-page-hero__media {
-        width: min(44%, 580px) !important;
-        max-width: 580px !important;
+        width: 40% !important;
+        max-width: 40% !important;
       }
 
       .mep-page-hero__copy-wrap {
-        > div {
-          max-width: min(680px, 54%) !important;
+        > div,
+        .mep-page-hero__copy-inner {
+          max-width: 60% !important;
         }
 
         h1,
         h1 span,
         p {
-          max-width: min(680px, 100%) !important;
+          max-width: 100% !important;
         }
       }
     }
 
     @media (min-width: 1024px) and (max-width: 1199px) {
       min-height: calc(min(48vw, 600px) * 640 / 1024) !important;
-
-      .mep-page-hero__media {
-        width: min(42%, 460px) !important;
-        max-width: 460px !important;
-      }
-
-      .mep-page-hero__copy-wrap {
-        > div {
-          max-width: min(600px, 56%) !important;
-        }
-
-        h1,
-        h1 span {
-          max-width: min(600px, 100%) !important;
-        }
-      }
     }
+  }
+}
+
+.scan-to-bim-services-page .mep-page-hero--overlay {
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    min-height: calc(50vw * 753 / 1082) !important;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    min-height: calc(50vw * 753 / 1082) !important;
   }
 }
 
@@ -194,6 +301,14 @@
 /* ------------------------------------------------------------------ */
 /* Way to Scale — comparison table                                    */
 /* ------------------------------------------------------------------ */
+
+.arch-svc-scale__header {
+  gap: 16px;
+}
+
+.arch-svc-scale__title-wrap {
+  gap: 8px;
+}
 
 .arch-svc-scale__table-wrap {
   /* Room for the hovered column to lift upward without clipping. */
@@ -271,6 +386,18 @@
 /* Stage Services                                                      */
 /* ------------------------------------------------------------------ */
 
+.arch-svc-stages__inner {
+  gap: 32px;
+}
+
+.arch-svc-stages__header {
+  gap: 16px;
+}
+
+.arch-svc-stages__title-wrap {
+  gap: 8px;
+}
+
 .arch-svc-stages__card {
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
@@ -347,6 +474,20 @@
   flex-shrink: 0;
 }
 
+.architecture-services-page .arch-svc-workflow {
+  .arch-svc-workflow__header {
+    gap: 16px !important;
+  }
+
+  .arch-svc-workflow__inner {
+    gap: 32px !important;
+  }
+
+  .arch-svc-workflow__note {
+    margin-top: 0 !important;
+  }
+}
+
 .arch-svc-workflow__note {
   margin-top: 24px;
 }
@@ -401,6 +542,8 @@
     display: flex !important;
     flex-wrap: wrap;
     gap: 10px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .arch-svc-workflow__step--discover .arch-svc-workflow__tags--desktop,
@@ -609,7 +752,11 @@
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  gap: 40px;
+  gap: 32px;
+}
+
+.arch-svc-why-continue__intro {
+  gap: 16px !important;
 }
 
 .arch-svc-why-continue__row {
@@ -735,7 +882,7 @@
 
 @media (min-width: 1024px) {
   .arch-svc-why-continue__body {
-    gap: 60px;
+    gap: 24px;
   }
 
   .arch-svc-why-continue__list {
@@ -767,6 +914,18 @@
 /* ------------------------------------------------------------------ */
 /* The VBS Difference                                                 */
 /* ------------------------------------------------------------------ */
+
+.arch-svc-difference__inner {
+  gap: 32px;
+}
+
+.arch-svc-difference__header {
+  gap: 16px;
+}
+
+.arch-svc-difference__note {
+  margin-top: -8px;
+}
 
 .arch-svc-difference__card {
   cursor: pointer;
@@ -820,6 +979,43 @@
   font-weight: 400 !important;
   line-height: 24px !important;
   color: #808080 !important;
+}
+
+.architecture-services-page .arch-svc-engagement {
+  .arch-svc-engagement__header {
+    gap: 16px !important;
+  }
+
+  .arch-svc-engagement__inner {
+    gap: 32px !important;
+  }
+
+  .arch-svc-engagement__note {
+    margin-top: -8px;
+  }
+}
+
+/* Section descriptions — a little air above/below after earlier tightening */
+.architecture-services-page,
+.mep-bim-services-page:not(.scan-to-bim-services-page) {
+  [class*="__section-desc"],
+  .mep-figma-what-you-get__desc,
+  .mep-figma-overview__content p,
+  .mep-page-hero__copy-inner p,
+  .arch-svc-scale__header > p,
+  .arch-svc-stages__header > p,
+  .arch-svc-workflow__header > p,
+  .arch-svc-difference__header > p,
+  .arch-svc-why-continue__intro > p,
+  .vbs-home-faq__desc,
+  .vbs-client-success-stories__description,
+  .vbs-get-in-touch__info-head p,
+  .mep-engagement-process .vbs-page-container > div:first-child > p,
+  .evaluate-delivery-cta-panel > div > p,
+  section.py-20 > .vbs-page-container > div:first-child > p {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
 }
 
 .arch-svc-engagement__card {

@@ -237,10 +237,10 @@ export function ArchitectureIntegrateWorkflowSection({
 
   return (
     <section className="arch-svc-workflow bg-white py-12 sm:py-16 lg:py-[100px]">
-      <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
+      <PageContainer className="arch-svc-workflow__inner flex flex-col items-center gap-10 lg:gap-[60px]">
         <div
           className={cn(
-            "flex w-full max-w-[890px] flex-col gap-5",
+            "arch-svc-workflow__header flex w-full max-w-[890px] flex-col gap-5",
             isCentered ? "items-center self-center text-center" : "items-start self-start text-left",
           )}
           style={{ maxWidth: laptopCappedMaxWidth(890, "title") }}

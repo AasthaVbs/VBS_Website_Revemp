@@ -219,7 +219,7 @@ function ResourceCard({
   hideBadge?: boolean;
   hideMeta?: boolean;
   /** Taller image containers so cover art is not cropped */
-  mediaSize?: "default" | "blog" | "whitepaper";
+  mediaSize?: "default" | "blog" | "whitepaper" | "news";
   ctaLabel?: string;
 }) {
   const metaPrimary =
@@ -230,7 +230,9 @@ function ResourceCard({
   const metaSecondary = item.category || item.badgeLabel || item.type || null;
   const showMeta = !hideMeta && Boolean(metaPrimary || metaSecondary);
   const mediaClassName =
-    mediaSize === "blog"
+    mediaSize === "news"
+      ? "resources-browse-card__media relative h-[240px] w-full overflow-hidden rounded-[10px] min-[800px]:h-[280px] min-[1440px]:h-[320px]"
+      : mediaSize === "blog"
       ? "resources-browse-card__media relative h-[240px] w-full overflow-hidden rounded-[10px] min-[800px]:h-[280px] min-[1280px]:h-[320px]"
       : mediaSize === "whitepaper"
         ? "resources-browse-card__media relative h-[220px] w-full overflow-hidden rounded-[10px] min-[800px]:h-[255px] min-[1280px]:h-[290px]"
@@ -615,7 +617,9 @@ export function ResourcesBrowseSection({
                       hideMeta={isCaseStudiesPage || isBimResourcesPage}
                       ctaLabel={isNewsPage ? "Read More" : "Learn More"}
                       mediaSize={
-                        isBlogsPage || isNewsPage || isBimResourcesPage
+                        isNewsPage
+                          ? "news"
+                          : isBlogsPage || isBimResourcesPage
                           ? "blog"
                           : isWhitepapersPage
                             ? "whitepaper"

@@ -1,0 +1,7 @@
+/* News listing — keep default card image height; only shorten below 1440px */
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .vbs-news-listing-page .resources-browse-card__media {
+    height: 280px !important;
+  }
+}

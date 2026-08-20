@@ -241,8 +241,7 @@ export const architectureWorkflowIntegrateSteps = [
     title: "Understanding Your Practice",
     body: "Before production begins, we take time to understand how your team works so we can align with your expectations from day one.",
     tagRows: [
-      ["Project Goals", "Workflow", "Standards", "QA/QC", "Communication"],
-      ["Technology Stack"],
+      ["Project Goals", "Workflow", "Standards", "QA/QC", "Communication", "Technology Stack"],
     ],
   },
   {

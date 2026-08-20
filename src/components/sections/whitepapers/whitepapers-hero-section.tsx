@@ -1,6 +1,8 @@
 import { ListingPageHeroSection } from "@/components/sections/listing-page-hero-section";
 import { whitepapersPageHero } from "@/constants/whitepapers-page-content";
 
+import "@/styles/vbs-listing-hero-spacing.scss";
+
 const whitePaperBannerImg = "/image/white-paper-banner.jpg";
 
 export function WhitepapersHeroSection() {
@@ -8,7 +10,7 @@ export function WhitepapersHeroSection() {
 
   return (
     <ListingPageHeroSection
-      sectionClassName="resources-listing-hero"
+      sectionClassName="whitepapers-hero-section resources-listing-hero"
       tag={tag}
       titleLead={titleLead}
       titleAccent={titleAccent}

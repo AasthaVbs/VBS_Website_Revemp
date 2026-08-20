@@ -64,6 +64,37 @@
 }
 
 /* ── Overview (node 265-67101) ── */
+/* /mep-bim-services Overview — tighter image↔copy and title/description spacing */
+.mep-bim-services-page:not(.architecture-services-page):not(.scan-to-bim-services-page) {
+  .mep-figma-overview:not(.mep-figma-overview--features-below):not(.mep-figma-overview--scan-to-bim) {
+    .mep-figma-overview__layout {
+      gap: 48px !important;
+    }
+
+    .mep-figma-overview__content {
+      gap: 16px !important;
+    }
+
+    .mep-figma-overview__content > div:first-child {
+      gap: 8px !important;
+    }
+  }
+
+  .mep-figma-what-you-get {
+    .mep-figma-what-you-get__header {
+      gap: 16px !important;
+    }
+
+    .mep-figma-what-you-get__stack {
+      gap: 32px !important;
+    }
+
+    .mep-figma-what-you-get__desc {
+      max-width: 739px !important;
+    }
+  }
+}
+
 .vbs-redesign-page .mep-figma-overview {
   h2 .text-section {
     display: inline;
@@ -4854,7 +4885,7 @@
     @media (max-width: 1023px) {
       display: flex !important;
       flex-direction: column !important;
-      align-items: center !important;
+      align-items: flex-start !important;
       width: 100% !important;
       max-width: 100% !important;
       margin-left: 0 !important;
@@ -4878,6 +4909,16 @@
         margin-left: auto !important;
         margin-right: auto !important;
       }
+
+      h1,
+      h1 span,
+      p {
+        text-align: left !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      align-items: center !important;
 
       h1,
       h1 span,
@@ -4924,13 +4965,13 @@
       }
     }
 
-    /* Laptops & small desktops (<1440): keep ratio, shrink media so copy stays clear */
+    /* Laptops & small desktops (<1440): 60% copy / 40% image */
     @media (min-width: 1024px) and (max-width: 1439px) {
       min-height: calc(min(46vw, 640px) * 607 / 1024) !important;
 
       .mep-page-hero__media {
-        width: min(46%, 600px) !important;
-        max-width: 600px !important;
+        width: 40% !important;
+        max-width: 40% !important;
         aspect-ratio: 1024 / 607 !important;
         height: auto !important;
         min-height: 0 !important;
@@ -4940,13 +4981,14 @@
         padding-top: 56px !important;
         padding-bottom: 28px !important;
 
-        > div {
-          max-width: min(560px, 50%) !important;
+        > div,
+        .mep-page-hero__copy-inner {
+          max-width: 60% !important;
         }
 
         h1,
         p {
-          max-width: min(560px, 100%) !important;
+          max-width: 100% !important;
         }
       }
 
@@ -4958,18 +5000,8 @@
     @media (min-width: 1024px) and (max-width: 1199px) {
       min-height: calc(min(44vw, 520px) * 607 / 1024) !important;
 
-      .mep-page-hero__media {
-        width: min(44%, 480px) !important;
-        max-width: 480px !important;
-        aspect-ratio: 1024 / 607 !important;
-      }
-
       .mep-page-hero__copy-wrap {
         padding-top: 40px !important;
-
-        > div {
-          max-width: min(460px, 52%) !important;
-        }
 
         h1,
         h1 span {
@@ -4981,7 +5013,7 @@
 
   .mep-figma-overview--features-below {
     .mep-figma-overview__layout {
-      gap: 40px !important;
+      gap: 56px !important;
       align-items: stretch !important;
     }
 
@@ -5533,13 +5565,15 @@
   }
 
   main > .mep-figma-overview--scan-to-bim + .mep-figma-what-you-get {
-    padding-top: 16px !important;
+    padding-top: 8px !important;
   }
 
   .mep-page-hero--overlay {
-    .mep-page-hero__media {
-      width: min(54%, 1020px) !important;
-      max-width: 1020px !important;
+    @media (min-width: 1440px) {
+      .mep-page-hero__media {
+        width: min(54%, 1020px) !important;
+        max-width: 1020px !important;
+      }
     }
 
     @media (min-width: 1024px) {
@@ -5548,7 +5582,7 @@
   }
 
   .mep-figma-overview--scan-to-bim {
-    padding-bottom: 16px !important;
+    padding-bottom: 0 !important;
 
     .mep-figma-overview__layout {
       gap: 24px !important;
@@ -5563,12 +5597,13 @@
 
     .mep-figma-overview__photo {
       position: absolute !important;
-      left: -2px !important;
-      top: 0 !important;
-      width: 614px !important;
-      height: 526px !important;
+      inset: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
       max-width: none !important;
       object-fit: cover !important;
+      object-position: center !important;
     }
 
     .mep-figma-overview__content {
@@ -5637,11 +5672,11 @@
     }
 
     .mep-figma-overview--scan-to-bim {
-      padding-bottom: 12px !important;
+      padding-bottom: 0 !important;
     }
 
     main > .mep-figma-overview--scan-to-bim + .mep-figma-what-you-get {
-      padding-top: 12px !important;
+      padding-top: 8px !important;
     }
   }
 

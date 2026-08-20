@@ -141,7 +141,7 @@ function HeroCtas({
   return (
     <div
       className={cn(
-        "flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:gap-5",
+        "mep-page-hero__cta-row flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:gap-5",
         align === "center" ? "items-center self-center lg:items-start lg:self-start" : "items-start self-start",
         className,
       )}
@@ -369,13 +369,13 @@ export function MepPageHeroSection({
 
       <PageContainer className="mep-page-hero__copy-wrap relative z-10 flex min-h-0 flex-col justify-start py-8 pt-6 max-lg:min-h-0 sm:py-10 sm:pt-8 lg:min-h-0 lg:pt-[80px] lg:pb-6">
         <div
-          className="mx-auto flex w-full flex-col items-center gap-5 text-center lg:mx-0 lg:items-start lg:gap-[30px] lg:text-left"
+          className="mep-page-hero__copy-inner mx-auto flex w-full flex-col items-start gap-5 text-left max-md:items-center max-md:text-center md:mx-0 md:gap-[30px]"
           style={{ maxWidth: copyMaxWidth }}
         >
-          <div className="flex w-full flex-col items-center gap-4 self-stretch sm:gap-5 lg:items-start">
-            <div className="flex flex-col items-center gap-3 lg:items-start">
-              <MepSectionTag label={tag} className="max-lg:!self-center" />
-              <h1 className="w-full text-[#111111]" style={{ maxWidth: copyMaxWidth }}>
+          <div className="flex w-full flex-col items-start gap-4 self-stretch max-md:items-center sm:gap-5">
+            <div className="flex flex-col items-start gap-3 max-md:items-center">
+              <MepSectionTag label={tag} className="max-md:!self-center" />
+              <h1 className="w-full text-left text-[#111111] max-md:text-center" style={{ maxWidth: copyMaxWidth }}>
                 <HeroTitleLead titleLead={titleLead} titleAccent={titleAccent} />
               </h1>
             </div>
@@ -383,7 +383,7 @@ export function MepPageHeroSection({
               description={description}
               descriptions={descriptions}
               descriptionMaxWidth={descriptionMaxWidth}
-              className="items-center text-center lg:items-start lg:text-left"
+              className="items-start text-left max-md:items-center max-md:text-center"
             />
           </div>
 
@@ -406,7 +406,8 @@ export function MepPageHeroSection({
             ctaFilled={ctaFilled}
             secondaryCtaLabel={secondaryCtaLabel}
             secondaryCtaHref={secondaryCtaHref}
-            align="center"
+            align="start"
+            className="max-md:items-center max-md:self-center"
           />
         </div>
       </PageContainer>

@@ -39,6 +39,7 @@ export function ArchitectureWhyContinueSection({
               </>
             }
             description={section.description}
+            className="arch-svc-why-continue__intro"
             descriptionClassName="max-w-[749px] text-[16px] font-normal leading-6 text-[#808080]"
           />
 

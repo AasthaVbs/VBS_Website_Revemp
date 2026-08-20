@@ -20,8 +20,8 @@ export function MepWhatYouGetSection({
     <section id="what-you-get" className="mep-figma-what-you-get bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer>
         <div className="mep-figma-what-you-get__stack flex w-full flex-col items-center gap-[60px]">
-          <div className="flex w-full flex-col items-start gap-5">
-            <div className="flex flex-col items-start gap-3">
+          <div className="mep-figma-what-you-get__header flex w-full flex-col items-start gap-5">
+            <div className="mep-figma-what-you-get__title-wrap flex flex-col items-start gap-3">
               <MepSectionTag label={section.tag} />
               <h2
                 className={`mep-figma-what-you-get__title w-full${section.titleParts?.length ? " mep-figma-what-you-get__title--parts" : ""}`}
@@ -40,7 +40,7 @@ export function MepWhatYouGetSection({
                 )}
               </h2>
             </div>
-            <p className="w-full max-w-[709px] text-[16px] font-normal leading-6 text-[#808080]">
+            <p className="mep-figma-what-you-get__desc w-full max-w-[709px] text-[16px] font-normal leading-6 text-[#808080]">
               {section.description}
             </p>
           </div>

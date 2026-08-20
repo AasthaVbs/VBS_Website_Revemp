@@ -1,5 +1,17 @@
 /* Figma 4344:54318 — beat global `.vbs-redesign-page h1/h2` (60px / 48px) */
 .bim-resources-page.vbs-redesign-page {
+  .bim-resources-section {
+    padding-top: 24px !important;
+
+    @media (min-width: 640px) {
+      padding-top: 32px !important;
+    }
+
+    @media (min-width: 1024px) {
+      padding-top: 48px !important;
+    }
+  }
+
   .bim-resources-section .vbs-page-container {
     padding-left: 16px !important;
     padding-right: 16px !important;

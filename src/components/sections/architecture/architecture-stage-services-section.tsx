@@ -17,9 +17,9 @@ export function ArchitectureStageServicesSection({
 }) {
   return (
     <section id="services" className="arch-svc-stages bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
-      <PageContainer className="flex flex-col items-start gap-10 lg:gap-[60px]">
-        <div className="flex w-full max-w-[848px] flex-col items-start gap-5">
-          <div className="flex flex-col items-start gap-3">
+      <PageContainer className="arch-svc-stages__inner flex flex-col items-start">
+        <div className="arch-svc-stages__header flex w-full max-w-[848px] flex-col items-start">
+          <div className="arch-svc-stages__title-wrap flex flex-col items-start">
             <SectionTag label={section.tag} />
             <h2 className="text-section w-full">
               <span className="font-medium text-[#111111]">{section.titleLine1}</span>

@@ -115,9 +115,9 @@ export function ArchitectureEngagementModelsSection({
 
   return (
     <section id="engagement-models" className="arch-svc-engagement bg-white py-12 sm:py-16 lg:py-[100px]">
-      <PageContainer className="flex flex-col items-start gap-10 lg:gap-[60px]">
+      <PageContainer className="arch-svc-engagement__inner flex flex-col items-start gap-10 lg:gap-[60px]">
         <div
-          className="flex w-full max-w-[840px] flex-col items-start gap-5"
+          className="arch-svc-engagement__header flex w-full max-w-[840px] flex-col items-start gap-5"
           style={{ maxWidth: laptopCappedMaxWidth(840, "title") }}
         >
           <div className="flex flex-col items-start gap-3">

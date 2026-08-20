@@ -1,6 +1,8 @@
 import { ListingPageHeroSection } from "@/components/sections/listing-page-hero-section";
 import { portfolioPageHero } from "@/constants/portfolio-page-content";
 
+import "@/styles/vbs-listing-hero-spacing.scss";
+
 const caseStudyBannerImg = "/image/case-study-banner.jpg";
 
 /** Case Study listing hero — same pattern as /blog (ListingPageHeroSection). */

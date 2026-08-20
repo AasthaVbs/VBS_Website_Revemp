@@ -27,7 +27,7 @@ export const pdfToCadHero = {
   titleAccent: "Production-Ready CAD Files",
   description:
     "Our AutoCAD specialists use AI-powered workflows to convert PDF files into accurate CAD drawings with a faster turnaround, reliable quality and production support that scales to your workload.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: "/image/pdf-to-cad-conversion-banner.jpg",
   imageAlt: "PDF to CAD Conversion Services",
   copyMaxWidth: 670,
@@ -394,7 +394,7 @@ export const pdfToCadEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: `#${PDF_TO_CAD_CONTACT_SECTION_ID}`,
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -425,7 +425,7 @@ export const pdfToCadProjectCta = {
   description:
     "You need a single drawing package converted or require ongoing production support, our specialists are ready to provide you with accurate CAD documentation that meets your standards, deadlines and project workflow.",
   cta: "Contact Us",
-  ctaHref: `#${PDF_TO_CAD_CONTACT_SECTION_ID}`,
+  ctaHref: ROUTES.contact,
 };
 
 export const pdfToCadIndustriesIntro = {

@@ -36,7 +36,7 @@ export const visualizationHero = {
   titleAccent: "Faster Design Approvals",
   description:
     "Our pre-vetted visualization architects combine their expert skills with AI-assisted workflow to prepare photorealistic renders that help stakeholders to get design approval faster.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: visualizationBanner,
   imageAlt: "Photorealistic dusk rendering of a modern house for 3D visualization services",
   copyMaxWidth: 695,
@@ -403,7 +403,7 @@ export const visualizationEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#3d-visualization-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -434,7 +434,7 @@ export const visualizationProjectCta = {
   description:
     "Our Architectural Visualization Company works as an extension of your team, turning drawings into renders your clients and stakeholders will actually understand.",
   cta: "Contact Us",
-  ctaHref: "#3d-visualization-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const visualizationIndustriesIntro = {

@@ -11,6 +11,7 @@ import { TrustStripSection } from "@/components/sections/trust-strip-section";
 import {
   revitFamilyCreationAiBimWorkflowSection,
   revitFamilyCreationContactDescription,
+  revitFamilyCreationEngagementCards,
   revitFamilyCreationFaqSection,
   revitFamilyCreationFaqs,
   revitFamilyCreationHero,
@@ -96,7 +97,7 @@ export async function RevitFamilyCreationPage() {
           section={revitFamilyCreationKeyPointsSection}
           cards={revitFamilyCreationKeyPointsCards}
         />
-        <DeferredEngagementModelsSection />
+        <DeferredEngagementModelsSection cards={revitFamilyCreationEngagementCards} />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

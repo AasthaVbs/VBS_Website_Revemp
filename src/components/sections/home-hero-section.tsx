@@ -2,6 +2,7 @@ import { PageContainer } from "@/components/layout/page-container";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { LazyImg } from "@/components/ui/lazy-img";
 import { homeHeroTrustStats } from "@/constants/home-content";
+import { ROUTES } from "@/constants/navigation";
 import { TrustStripItems } from "@/components/sections/trust-strip-section";
 
 const architecturalDraftingImg = "/image/architectural-drafting.png";
@@ -131,7 +132,7 @@ export function HomeHeroSection() {
             </div>
 
             <div className="vbs-split-hero__cta-wrap">
-              <PrimaryCtaButton fullWidth={false} href="/engagement-models">
+              <PrimaryCtaButton fullWidth={false} href={ROUTES.engagement}>
                 See How We Engage
               </PrimaryCtaButton>
             </div>

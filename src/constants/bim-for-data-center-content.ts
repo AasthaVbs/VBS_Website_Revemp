@@ -8,6 +8,7 @@ import {
   mepBimTechnologyStackToolsRowOne,
   mepBimTechnologyStackToolsRowTwo,
 } from "@/constants/mep-bim-modelling-content";
+import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
 const workflowLogo = "/image/architecture-services/workflow-logo.svg";
@@ -37,7 +38,7 @@ export const bimForDataCenterHero = {
   titleAccent: "Coordination Errors and Permit Delays",
   description:
     "Data center deadlines leave no buffer for rework or missed coordination. Our pre-vetted BIM architects run AI-assisted workflows to close staffing gaps, tighten cross-discipline coordination and move permit sets through review faster.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: dataCenterBanner,
   imageAlt: "Cutaway BIM model of a data center showing server halls, cooling, and power systems",
   copyMaxWidth: 670,
@@ -99,11 +100,13 @@ export const bimForDataCenterServiceCards = [
     title: "Schematic Design Support",
     text: "Our BIM architects interpret your initial ideas and develop them into coordinated floor plans and massing studies for data center facilities. This groundwork sets clear space planning, security zoning and structural clearances before the design development process begins.",
     image: schematicDesignSupportImg,
+    href: ROUTES.schematicDesign,
   },
   {
     title: "Design Services Development",
     text: "As layouts are finalized we refine structural coordination, equipment room clearances and life safety egress paths. Design development services carry your project from concept intent into buildable construction documents ready for engineering handoff.",
     image: designServicesImg,
+    href: ROUTES.designDevelopment,
   },
   {
     title: "Healthcare Data Center BIM Services",
@@ -114,21 +117,25 @@ export const bimForDataCenterServiceCards = [
     title: "Data Center Construction Documentation",
     text: "Data Center Construction Documentation covers detailed floor plans, wall sections, equipment layouts and finish schedules ready for permit submission. Every sheet follows your firm's drawing standards and local jurisdiction requirements before it reaches the field.",
     image: dataCenterConstructionDocsImg,
+    href: ROUTES.constructionDocumentation,
   },
   {
     title: "Permit Drawing Services",
     text: "Permit rejections cost weeks on a data center schedule. Our permit drawing services check code compliance early. This keeps your data center design and construction timeline on track from the first submission.",
     image: permitDrawingImg,
+    href: ROUTES.permitDrawing,
   },
   {
     title: "As-Built Drafting Services",
     text: "Field conditions change during construction, especially in retrofit, renovation and expansion projects. Our data center drafting services document existing conditions in detail, giving your team a reliable base for future modifications.",
     image: asBuiltDraftingImg,
+    href: ROUTES.asBuiltDrafting,
   },
   {
     title: "Data Center Revit Construction Documents",
     text: "Data Center Revit Construction Documents keep every architectural, structural and civil discipline working from a single coordinated model. This reduces version conflicts and helps your team catch clashes before construction begins on site.",
     image: dataCenterRevitDocsImg,
+    href: ROUTES.constructionDocumentation,
   },
 ];
 
@@ -368,11 +375,15 @@ export const bimForDataCenterEngagementCards = [
     ...engagementModelCards[0],
     ctaHref: BIM_FOR_DATA_CENTER_CONTACT_HASH,
   },
-  engagementModelCards[1],
+  {
+    ...engagementModelCards[1],
+    ctaHref: BIM_FOR_DATA_CENTER_CONTACT_HASH,
+  },
   {
     ...engagementModelCards[2],
     description:
       "A fully managed offshore BIM delivery center exclusively aligned with your business.",
+    ctaHref: ROUTES.engagement,
   },
 ] as unknown as EngagementModelCard[];
 
@@ -382,7 +393,7 @@ export const bimForDataCenterProjectCta = {
   description:
     "A dedicated BIM architect, backed by AI-assisted workflows, starts within 24 hours and fits your project scope. Let's talk about your next project and how a dedicated BIM resource can help you meet it.",
   cta: "Contact Us",
-  ctaHref: BIM_FOR_DATA_CENTER_CONTACT_HASH,
+  ctaHref: ROUTES.contact,
 };
 
 export const bimForDataCenterIndustriesIntro = {

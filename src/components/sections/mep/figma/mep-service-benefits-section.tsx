@@ -16,7 +16,7 @@ function resolveImageSrc(icon) {
   return typeof icon === "string" ? icon : icon.src;
 }
 
-function BenefitCard({ card, index, activeIndex, className }) {
+function BenefitCard({ card, index, activeIndex, className, transparent }) {
   const [isHovered, setIsHovered] = useState(false);
   const highlighted = index <= activeIndex;
   const showColoredIcon = isHovered;
@@ -26,7 +26,8 @@ function BenefitCard({ card, index, activeIndex, className }) {
     <article
       data-scroll-reveal={index}
       className={cn(
-        "mep-figma-benefits__card flex min-w-0 flex-1 flex-col items-start gap-3 self-stretch overflow-hidden bg-white",
+        "mep-figma-benefits__card flex min-w-0 flex-1 flex-col items-start gap-3 self-stretch overflow-hidden",
+        !transparent && "bg-white",
         highlighted && "mep-figma-benefits__card--highlighted",
         isHovered && "mep-figma-benefits__card--hovered",
         className,
@@ -57,7 +58,7 @@ function BenefitCard({ card, index, activeIndex, className }) {
   );
 }
 
-function BenefitRow({ cards, startIndex, activeIndex, columns }) {
+function BenefitRow({ cards, startIndex, activeIndex, columns, transparent }) {
   const isPartial = cards.length > 0 && cards.length < columns;
 
   return (
@@ -74,6 +75,7 @@ function BenefitRow({ cards, startIndex, activeIndex, columns }) {
             card={card}
             index={startIndex + index}
             activeIndex={activeIndex}
+            transparent={transparent}
             className={
               isPartial
                 ? "w-full max-w-[min(100%,454px)] !flex-none lg:max-w-[calc((100%-40px)/3)]"
@@ -94,6 +96,8 @@ export function MepServiceBenefitsSection({
   section = mepServiceBenefitsSection,
   cards = mepServiceBenefitsCards,
   showCta = true,
+  className,
+  transparentCards = false,
 }) {
   const gridRef = useRef(null);
   const activeIndex = useScrollRevealProgress(gridRef, cards.length, "[data-scroll-reveal]", 0.55);
@@ -106,7 +110,13 @@ export function MepServiceBenefitsSection({
   const hasTitleParts = section.titleParts?.length > 0;
 
   return (
-    <section id={id} className="mep-figma-benefits bg-white py-12 sm:py-16 lg:py-[100px]">
+    <section
+      id={id}
+      className={cn(
+        "mep-figma-benefits py-12 sm:py-16 lg:py-[100px]",
+        className ?? "bg-white",
+      )}
+    >
       <PageContainer className="mep-figma-benefits__container flex flex-col items-center gap-[60px]">
         <header
           className="mep-figma-benefits__head"
@@ -172,6 +182,7 @@ export function MepServiceBenefitsSection({
                 startIndex={rowIndex * columns}
                 activeIndex={activeIndex}
                 columns={columns}
+                transparent={transparentCards}
               />
             </Fragment>
           ))}

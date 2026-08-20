@@ -25,7 +25,7 @@ export const schematicDesignHero = {
   titleAccent: "Our Schematic Design Support Services",
   description:
     "Your team loses time to tight deadlines during early design work. Our pre-vetted architects use AI-assisted workflows for fast, code-compliant schematic design services.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: "/image/schematic-design-services-banner.jpg",
   imageAlt: "Schematic Design Services",
   copyMaxWidth: 680,
@@ -87,6 +87,7 @@ export const schematicDesignServiceCards = [
     title: "2D & 3D Floor Plans",
     text: "Our architects draft clear floor layouts in both 2D and 3D formats. They resolve space planning, room adjacencies and circulation paths before your team moves into design development.",
     image: "/image/2d-3d-floor-plans.jpg",
+    href: ROUTES.floorPlan,
   },
   {
     title: "Building Elevations",
@@ -97,6 +98,7 @@ export const schematicDesignServiceCards = [
     title: "3D Visualizations",
     text: "Our team turns concept models into clear 3D visuals for fast client review. These visuals help your team make early decisions and speed up clients' approvals.",
     image: "/image/3d-visualizations.jpg",
+    href: ROUTES.visualization,
   },
   {
     title: "Programming & Space Planning",
@@ -107,6 +109,7 @@ export const schematicDesignServiceCards = [
     title: "Preliminary Structural System Coordination",
     text: "Our structural team reviews early architectural layouts and flags framing, span and foundation concerns before design development begins. This keeps structural feasibility in view from day one.",
     image: "/image/preliminary-structural-system-coordination.jpg",
+    href: ROUTES.structuralBim,
   },
 ];
 
@@ -375,7 +378,7 @@ export const schematicDesignEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#schematic-design-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -406,7 +409,7 @@ export const schematicDesignProjectCta = {
   description:
     "Our pre-vetted architects and engineers are ready to support your schematic design phase with fast, code-compliant deliverables your team can trust.",
   cta: "Contact Us",
-  ctaHref: "#schematic-design-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const schematicDesignIndustriesIntro = {

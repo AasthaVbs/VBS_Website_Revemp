@@ -4,7 +4,11 @@ import {
   mepBimTechnologyStackToolsRowOne,
   mepBimTechnologyStackToolsRowTwo,
 } from "@/constants/mep-bim-modelling-content";
+import { engagementModelCards } from "@/constants/engagement-models-content";
+import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
+
+const REVIT_FAMILY_CONTACT = "#revit-family-creation-page-contact";
 
 const workflowLogo = "/image/architecture-services/workflow-logo.svg";
 
@@ -25,7 +29,7 @@ export const revitFamilyCreationHero = {
   titleAccent: "Architecture and Structural Teams",
   description:
     "From parametric architectural walls to structural connections, our pre-vetted Revit experts provide AI-powered Revit Family Creation Services to keep your models coordinated and fully code-compliant.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: "/image/revit-family-creation-banner.jpg",
   imageAlt: "Custom Revit Family Creation Services",
   copyMaxWidth: 677,
@@ -331,8 +335,13 @@ export const revitFamilyCreationProjectCta = {
   description:
     "Get consistent, code-compliant Revit families across every project. Let's talk about your BIM content needs and get started this week.",
   cta: "Contact Us",
-  ctaHref: "#revit-family-creation-page-contact",
+  ctaHref: ROUTES.contact,
 };
+
+export const revitFamilyCreationEngagementCards = engagementModelCards.map((card) => ({
+  ...card,
+  ctaHref: card.cta === "Explore GDC Model" ? ROUTES.engagement : REVIT_FAMILY_CONTACT,
+}));
 
 export const revitFamilyCreationIndustriesIntro = {
   titleLine1: "Industries We Support with ",

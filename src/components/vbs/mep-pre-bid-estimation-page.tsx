@@ -9,6 +9,8 @@ import { MepBimUseCasesSection } from "@/components/sections/mep/mep-bim-use-cas
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
 import { MepTrustedByStripSection } from "@/components/sections/mep/mep-trusted-by-strip-section";
 import {
+  MEP_PRE_BID_CONTACT_HASH,
+  MEP_PRE_BID_CONTACT_ID,
   mepPreBidDeliverablesCards,
   mepPreBidDeliverablesSection,
   mepPreBidFaqSection,
@@ -53,7 +55,7 @@ export async function MepPreBidEstimationPage() {
         <MepPageHeroSection
           {...mepPreBidHero}
           imageSize="compact"
-          ctaHref="/contact-us"
+          ctaHref={MEP_PRE_BID_CONTACT_HASH}
           containerClassName="!pt-0 !pb-4 sm:!pt-0 sm:!pb-5 lg:!pt-0 lg:!pb-6"
         />
         <MepTrustedByStripSection
@@ -67,7 +69,7 @@ export async function MepPreBidEstimationPage() {
         <MepBimServiceFeaturesSection
           section={mepPreBidServiceFeaturesSection}
           cards={mepPreBidServiceFeatureCards}
-          ctaHref="/contact-us"
+          ctaHref={MEP_PRE_BID_CONTACT_HASH}
           columnsPerRow={2}
           titleMaxWidth={850}
           descriptionMaxWidth={702}
@@ -103,7 +105,7 @@ export async function MepPreBidEstimationPage() {
           section={mepPreBidWhyChooseSection}
           cards={mepPreBidWhyChooseCards}
           showCta
-          ctaHref="/contact-us"
+          ctaHref={MEP_PRE_BID_CONTACT_HASH}
           iconVariant="boxed"
           descriptionMaxWidth={603}
           titleMaxWidth={848}
@@ -138,7 +140,10 @@ export async function MepPreBidEstimationPage() {
           description={mepPreBidFaqSection.description}
           items={mepPreBidFaqs}
         />
-        <DeferredGetInTouchSection description={mepFaqDescription} />
+        <DeferredGetInTouchSection
+          sectionId={MEP_PRE_BID_CONTACT_ID}
+          description={mepFaqDescription}
+        />
       </main>
 
       <DeferredSiteFooter />

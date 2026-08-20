@@ -1,6 +1,10 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { EngagementModelsSection } from "@/components/sections/engagement-models-section";
-import { engagementPageTestimonialsDescription } from "@/constants/engagement-models-page-content";
+import {
+  ENGAGEMENT_MODELS_PAGE_CONTACT_ID,
+  engagementModelsPageCards,
+  engagementPageTestimonialsDescription,
+} from "@/constants/engagement-models-page-content";
 import {
   DeferredClientSuccessStoriesSection,
   DeferredEngagementModelAdvisorCtaSection,
@@ -20,13 +24,14 @@ export function EngagementModelsPage() {
         <EngagementModelsSection
           id="engagement"
           sectionClassName="bg-[#FAFAFA]"
+          cards={engagementModelsPageCards}
         />
         <DeferredEngagementModelFinderSection />
         <DeferredEngagementModelsCompareSection />
         <DeferredEngagementStartsSection />
         <DeferredEngagementModelAdvisorCtaSection />
         <DeferredClientSuccessStoriesSection description={engagementPageTestimonialsDescription} />
-        <DeferredGetInTouchSection />
+        <DeferredGetInTouchSection sectionId={ENGAGEMENT_MODELS_PAGE_CONTACT_ID} />
       </main>
 
       <DeferredSiteFooter />

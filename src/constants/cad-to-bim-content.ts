@@ -22,7 +22,7 @@ export const cadToBimHero = {
   titleAccentFirst: true,
   description:
     "Our pre-vetted BIM experts convert your CAD and PDF drawings into accurate Revit models. Teams get faster decisions, fewer clashes, and stronger stakeholder trust.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact Us",
   imageSrc: "/image/cad-to-bim-banner.jpg",
   imageAlt: "CAD to BIM Conversion Services",
   copyMaxWidth: 683,
@@ -91,12 +91,13 @@ export const cadToBimServiceCards = [
     title: "As-Built CAD Drawing to BIM Conversion",
     text: "Existing site drawings become accurate as-built models. Renovation and retrofit teams get a clear picture of the current structure.",
     image: "/image/as-built-cad-drawing-to-bim-conversion.jpg",
-    href: ROUTES.asBuiltModeling,
+    href: ROUTES.asBuiltDrafting,
   },
   {
     title: "AutoCAD to BIM Conversion",
     text: "AutoCAD files convert into intelligent Revit models with real building data. Every wall and system carries information your team can use.",
     image: "/image/autocad-to-bim-conversion.jpg",
+    href: ROUTES.cadToBim,
   },
   {
     title: "PDF to Revit Conversion",
@@ -108,11 +109,13 @@ export const cadToBimServiceCards = [
     title: "2D to 3D Floor Plan Conversion",
     text: "Transform 2D CAD drawings into 3D models with detailed, accurate and spatial layouts to improve dialogue with clients and stakeholders through visual clarity.",
     image: "/image/2d-to-3d-floor-plan-conversion.jpg",
+    href: ROUTES.floorPlan,
   },
   {
     title: "Construction Documentation",
     text: "Coordinated drawing sets and schedules come ready for permitting. Contractors get documents built for construction, not just design review.",
     image: "/image/construction-documentation.jpg",
+    href: ROUTES.constructionDocumentation,
   },
   {
     title: "Quantity Take-Offs & BOQs from CAD",
@@ -319,7 +322,7 @@ export const cadToBimEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#cad-to-bim-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -415,7 +418,7 @@ export const cadToBimProjectCta = {
   description:
     "Send us your CAD or PDF files, and our team will walk you through the conversion process and timeline.",
   cta: "Contact Us",
-  ctaHref: "#cad-to-bim-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const cadToBimIndustriesIntro = {

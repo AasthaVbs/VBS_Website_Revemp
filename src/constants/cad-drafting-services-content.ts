@@ -25,7 +25,7 @@ export const cadDraftingHero = {
   titleAccent: "Repetitive Drafting Time",
   description:
     "Our pre-vetted, US-trained CAD drafters will take care of detailed CAD drawing and AutoCAD drafting services for you so your design team can concentrate on core work.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: "/image/cad-drafting-services-banner-2.jpg",
   imageAlt: "CAD Drafting Services",
   copyMaxWidth: 670,
@@ -99,6 +99,7 @@ export const cadDraftingServiceCards = [
     title: "Permit & Construction Drawing Sets",
     text: "We prepare full permit-ready and construction documentation sets that meet US codes and local jurisdiction rules. When you outsource CAD drafting services in the USA to us, drawings pass inspection the first time.",
     image: "/image/permit-and-construction-drawing-sets.jpg",
+    href: ROUTES.permitDrawing,
   },
   {
     title: "Architectural CAD Drafting Services",
@@ -315,7 +316,7 @@ export const cadDraftingEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#cad-drafting-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -424,7 +425,7 @@ export const cadDraftingProjectCta = {
   description:
     "Connect with our CAD drafting team today and see how fast, code-compliant drawings free up time for higher value design work.",
   cta: "Contact Us",
-  ctaHref: "#cad-drafting-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const cadDraftingIndustriesIntro = {

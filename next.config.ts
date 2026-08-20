@@ -1,5 +1,10 @@
 import type { NextConfig } from "next";
 
+import {
+  noIndexHeaderSources,
+  X_ROBOTS_NOINDEX_NOFOLLOW,
+} from "./src/constants/site-robots";
+
 const nextConfig: NextConfig = {
   typescript: {
     // Ported Gatsby project pages are untyped legacy JSX.
@@ -8,6 +13,8 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Match Gatsby trailingSlash: "always" so live URLs stay identical.
+  trailingSlash: true,
   // Expose gated-PDF / pipeline-diag / contact EmailJS ids to the browser (Gatsby used GATSBY_*).
   env: {
     NEXT_PUBLIC_GATED_PDF_SERVICE_ID:
@@ -94,6 +101,12 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
+  async rewrites() {
+    // trailingSlash: true can 308 /api/foo → /api/foo/; keep Route Handlers working.
+    return {
+      beforeFiles: [{ source: "/api/:path*/", destination: "/api/:path*" }],
+    };
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     unoptimized: process.env.NODE_ENV === "development",
@@ -105,6 +118,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     const staticRedirects = [
+      { source: "/sitemap-index.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/sitemap-0.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/about", destination: "/about-us", permanent: true },
       { source: "/about/:path*", destination: "/about-us", permanent: true },
       { source: "/build-your-team", destination: "/60-minutes-team", permanent: true },
@@ -282,6 +297,21 @@ const nextConfig: NextConfig = {
         destination: "/pipeline-health-diagnostic",
         permanent: true,
       },
+      {
+        source: "/mep-bim-services-usa",
+        destination: "/mep-bim-services-USA",
+        permanent: true,
+      },
+      {
+        source: "/bim-modeling-services/mep-bim-services",
+        destination: "/mep-bim-services",
+        permanent: true,
+      },
+      {
+        source: "/gis-services",
+        destination: "/",
+        permanent: true,
+      },
     ];
 
     let sanityRedirects: { source: string; destination: string; permanent: boolean }[] = [];
@@ -302,6 +332,19 @@ const nextConfig: NextConfig = {
     }
 
     return [...staticRedirects, ...sanityRedirects];
+  },
+  async headers() {
+    const noIndexHeaders = [X_ROBOTS_NOINDEX_NOFOLLOW];
+    return [
+      {
+        source: "/resources/multi-family-apartment-bim-visualization-las-vegas.pdf",
+        headers: noIndexHeaders,
+      },
+      ...noIndexHeaderSources().map((source) => ({
+        source,
+        headers: noIndexHeaders,
+      })),
+    ];
   },
 };
 

@@ -1,4 +1,5 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import { ROUTES } from "@/constants/navigation";
 import type {
   MepBimFeatureCard,
   MepBimMeasurableResultCard,
@@ -17,6 +18,9 @@ const complexMepProjectsIcon = "/image/complex-mep-projects-icon.png";
 const resourceConstraintsIcon = "/image/resource-constraints-icon.png";
 const tenderStageIcon = "/image/tender-stage-icon.png";
 
+export const MEP_PRE_BID_CONTACT_ID = "mep-pre-bid-page-contact";
+export const MEP_PRE_BID_CONTACT_HASH = `#${MEP_PRE_BID_CONTACT_ID}`;
+
 export const mepPreBidHero = {
   tag: "Pre-Bid Estimation",
   titleLead: "Pre-Bid Estimation Service to ",
@@ -24,6 +28,7 @@ export const mepPreBidHero = {
   description:
     "Get bid-ready cost estimates from experienced estimators using accurate quantity takeoffs, current pricing and trade-specific expertise.",
   ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_PRE_BID_CONTACT_HASH,
   imageSrc: "/image/pre-bid-estimation-service-banner.png",
   imageAlt: "Pre-Bid Estimation Services",
   copyMaxWidth: 608,
@@ -62,7 +67,8 @@ export const mepPreBidServiceFeaturesSection = {
   titleAccent: "Pre-Bid Cost Estimation Services",
   description:
     "Every construction bid depends on exact quantities and reliable pricing. Our cost estimation for contractors covers the major disciplines needed to complete bid preparation.",
-  ctaLabel: "Get A Free Quote",
+  ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_PRE_BID_CONTACT_HASH,
 } as const;
 
 export const mepPreBidServiceFeatureCards: MepBimFeatureCard[] = [
@@ -101,7 +107,7 @@ export const mepPreBidWhatYouGetSection = {
     "Our construction pre-bid cost estimation provides you with the clarity of cost and quantity that is required to prepare competitive bidding proposals.",
   descriptionMaxWidth: 622,
   ctaLabel: "Let's Talk",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
 } as const;
 
 export const mepPreBidWhatYouGetCards = [
@@ -235,6 +241,7 @@ export const mepPreBidWhyChooseSection = {
   description:
     "Certain projects demand more estimating accuracy. These are the stages where a reliable pre-bid estimation services provider adds the most value.",
   ctaLabel: "Contact Now",
+  ctaHref: MEP_PRE_BID_CONTACT_HASH,
 } as const;
 
 export const mepPreBidWhyChooseCards: MepBimUseCaseCard[] = [
@@ -316,7 +323,7 @@ export const mepPreBidProjectCta = {
   description:
     "Choose a trusted Pre-bid Estimation Services Provider to receive precise, bid-ready estimates to enable contractors and MEP companies to develop winning bids.",
   cta: "Contact Us",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
 } as const;
 
 export const mepPreBidFaqSection = {

@@ -5,7 +5,7 @@ const blogBannerImg = "/image/blog-banner.jpg";
 
 /** Figma node 405:73045 — Blogs hero */
 export function BlogsHeroSection() {
-  const { tag, titleLead, titleAccent, description, ctaLabel, imageAlt } = blogsPageHero;
+  const { tag, titleLead, titleAccent, description, ctaLabel, ctaHref, imageAlt } = blogsPageHero;
 
   return (
     <ListingPageHeroSection
@@ -15,6 +15,7 @@ export function BlogsHeroSection() {
       titleAccent={titleAccent}
       description={description}
       ctaLabel={ctaLabel}
+      ctaHref={ctaHref}
       image={blogBannerImg}
       imageAlt={imageAlt}
       titleMaxWidthClass="max-w-[497px]"

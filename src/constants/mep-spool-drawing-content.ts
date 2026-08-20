@@ -1,4 +1,5 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import { ROUTES } from "@/constants/navigation";
 import type {
   MepBimFeatureCard,
   MepBimMeasurableResultCard,
@@ -19,6 +20,9 @@ const reducedInstallationErrorsIcon = "/image/mep-spool-drawing/reduced-installa
 const standardizedDrawingFormatIcon = "/image/mep-spool-drawing/standardized-drawing-format-icon.png";
 const prefabricationStageIcon = "/image/prefabrication-stage-icon.png";
 
+export const MEP_SPOOL_DRAWING_CONTACT_ID = "mep-spool-drawing-page-contact";
+export const MEP_SPOOL_DRAWING_CONTACT_HASH = `#${MEP_SPOOL_DRAWING_CONTACT_ID}`;
+
 export const mepSpoolDrawingHero = {
   tag: "Spool Drawing",
   titleLead: "Eliminate Fabrication\nErrors with ",
@@ -26,6 +30,7 @@ export const mepSpoolDrawingHero = {
   description:
     "Our pre-vetted MEP engineers prepare high quality 2D and 3D piping spool drawings to help AEC teams fasten project timelines and ensure better fabrication.",
   ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_SPOOL_DRAWING_CONTACT_HASH,
   imageSrc: "/image/spool-drawing-services-banner.jpg",
   imageAlt: "spool-drawing-services-banner",
   copyMaxWidth: 699,
@@ -65,7 +70,8 @@ export const mepSpoolDrawingServiceFeaturesSection = {
   titleAccent: "BIM Spool Drawing Services",
   description:
     "Close the gap between design intent and field work. Our 2D piping spool drawings give your crew clarity for fabrication and installation.",
-  ctaLabel: "Get A Free Quote",
+  ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_SPOOL_DRAWING_CONTACT_HASH,
 } as const;
 
 export const mepSpoolDrawingServiceFeatureCards: MepBimFeatureCard[] = [
@@ -114,7 +120,7 @@ export const mepSpoolDrawingServicesSection = {
   description:
     "Our piping spool drawing work covers every pipe class, joint type and fabrication standard. Each drawing is field-ready from day one.",
   ctaLabel: "Start New Project",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
   wideCards: true,
   titleMaxWidth: 875,
 } as const;
@@ -281,6 +287,7 @@ export const mepSpoolDrawingOutsourcingGuideSection = {
   description:
     "Partner with specialists to speed up fabrication documentation. You keep consistency and hold your production schedule.",
   ctaLabel: "Let's Talk",
+  ctaHref: MEP_SPOOL_DRAWING_CONTACT_HASH,
 } as const;
 
 export const mepSpoolDrawingOutsourcingGuideCards: MepBimUseCaseCard[] = [
@@ -365,7 +372,7 @@ export const mepSpoolDrawingProjectCta = {
   description:
     "We apply US BIM standards and technical expertise to deliver correct spool drawings with faster turnaround.",
   cta: "Book a Quick Call",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
 } as const;
 
 export const mepSpoolDrawingFaqSection = {

@@ -20,7 +20,6 @@ import {
   getZohoIframeVisibleHeight,
   isZohoFormSubmissionMessage,
   parseZohoIframeResizeHeight,
-  shouldRedirectAfterZohoSubmit,
 } from "@/utils/zoho-contact-form-embed";
 
 type ZohoContactUsIframeFormProps = {
@@ -66,6 +65,7 @@ export function ZohoContactUsIframeForm({
   const iframeHeightRef = useRef(ZOHO_IFRAME_INITIAL_HEIGHT_PX);
   const reportedHeightRef = useRef(ZOHO_IFRAME_INITIAL_HEIGHT_PX);
   const initialLoadRef = useRef(false);
+  const formReadyRef = useRef(false);
   const redirectedRef = useRef(false);
 
   const [iframeHeight, setIframeHeight] = useState(ZOHO_IFRAME_INITIAL_HEIGHT_PX);
@@ -194,16 +194,22 @@ export function ZohoContactUsIframeForm({
     applyZohoFormReferrer(iframe);
     applyZohoFormUtmToIframes();
 
+    let primeTimer: ReturnType<typeof setTimeout> | undefined;
+
     const onLoad = () => {
-      if (!initialLoadRef.current) {
-        initialLoadRef.current = true;
+      if (!formReadyRef.current) {
+        if (!initialLoadRef.current) {
+          initialLoadRef.current = true;
+        }
+        if (primeTimer) clearTimeout(primeTimer);
+        primeTimer = setTimeout(() => {
+          formReadyRef.current = true;
+        }, 800);
         return;
       }
 
-      if (shouldRedirectAfterZohoSubmit(iframe)) {
-        setIsSubmitting(true);
-        handleSubmissionSuccess();
-      }
+      setIsSubmitting(true);
+      handleSubmissionSuccess();
     };
 
     const onMessage = (event: MessageEvent) => {
@@ -230,6 +236,7 @@ export function ZohoContactUsIframeForm({
     window.addEventListener("resize", onResize);
 
     return () => {
+      if (primeTimer) clearTimeout(primeTimer);
       iframe.removeEventListener("load", onLoad);
       window.removeEventListener("message", onMessage);
       window.removeEventListener("resize", onResize);

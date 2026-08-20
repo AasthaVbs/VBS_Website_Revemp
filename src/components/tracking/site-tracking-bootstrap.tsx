@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 import {
@@ -8,11 +8,23 @@ import {
   LINKEDIN_INSIGHT_SCRIPT_SRC,
 } from "@/constants/site-tracking";
 import { grantClarityConsent, initCookieBannerHider } from "@/utils/hide-cookie-banners";
+import { trackSpaPageview } from "@/utils/site-tracking-events";
 
 import { SiteCookieConsent } from "./site-cookie-consent";
 
+function isPreviewHost(hostname: string) {
+  return (
+    hostname === "localhost" ||
+    hostname === "127.0.0.1" ||
+    hostname.endsWith(".pages.dev") ||
+    hostname.endsWith(".vercel.app") ||
+    hostname.endsWith(".netlify.app")
+  );
+}
+
 function initLinkedInInsightTag() {
   if (typeof window === "undefined" || typeof document === "undefined") return;
+  if (isPreviewHost(window.location.hostname)) return;
 
   try {
     window._linkedin_partner_id = LINKEDIN_INSIGHT_PARTNER_ID;
@@ -33,14 +45,16 @@ function initLinkedInInsightTag() {
     );
     if (alreadyLoaded) return;
 
-    const firstScript = document.getElementsByTagName("script")[0];
-    if (!firstScript?.parentNode) return;
-
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.async = true;
     script.src = LINKEDIN_INSIGHT_SCRIPT_SRC;
-    firstScript.parentNode.insertBefore(script, firstScript);
+    const firstScript = document.getElementsByTagName("script")[0];
+    if (firstScript?.parentNode) {
+      firstScript.parentNode.insertBefore(script, firstScript);
+    } else {
+      document.head.appendChild(script);
+    }
   } catch (error) {
     if (process.env.NODE_ENV === "development") {
       console.warn("LinkedIn Insight tag init failed:", error);
@@ -67,6 +81,7 @@ function refreshZohoUtmTracking() {
 export function SiteTrackingBootstrap() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const isFirstPageview = useRef(true);
 
   useEffect(() => {
     grantClarityConsent();
@@ -75,7 +90,15 @@ export function SiteTrackingBootstrap() {
   }, []);
 
   useEffect(() => {
+    const search = searchParams?.toString() ? `?${searchParams.toString()}` : "";
     refreshZohoUtmTracking();
+
+    if (isFirstPageview.current) {
+      isFirstPageview.current = false;
+      return;
+    }
+
+    trackSpaPageview(pathname || "/", search);
   }, [pathname, searchParams]);
 
   return <SiteCookieConsent />;

@@ -1,36 +1,5 @@
 /* Architectural Drafting Services USA — hero form + trust + clients */
-
-/* Desktop heading lock — ADS USA + Revit drafting pages */
-@media (min-width: 1024px) {
-  .architectural-drafting-services-usa-page.vbs-redesign-page {
-    h1,
-    h1 span,
-    .h1,
-    .ads-usa-hero h1,
-    .ads-usa-hero h1 span {
-      font-size: 54px !important;
-      line-height: 1.15 !important;
-    }
-
-    h2,
-    h2 span,
-    .h2,
-    h2.text-section,
-    .text-section,
-    .mep-figma-why-choose__title,
-    .mep-figma-why-choose__title--parts,
-    .mep-figma-why-choose__title-dark,
-    .mep-figma-why-choose__title-accent,
-    .vbs-our-clients__title,
-    .vbs-our-clients__title-dark,
-    .vbs-our-clients__title-accent,
-    .vbs-client-success-stories__title,
-    .vbs-client-success-stories__title span {
-      font-size: 48px !important;
-      line-height: 1.15 !important;
-    }
-  }
-}
+/* Heading sizes come from vbs-landing-home-type.scss (home page scale). */
 
 /* Override mep-bim hub section pad (64px) — keep hero tight under the header */
 .architectural-drafting-services-usa-page main > .ads-usa-hero {
@@ -637,3 +606,4 @@
 }
 
 @import "./vbs-laptop-heading-scale.scss";
+@import "./vbs-landing-home-type.scss";

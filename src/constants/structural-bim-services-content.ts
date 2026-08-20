@@ -25,7 +25,7 @@ export const structuralBimHero = {
   titleAccent: "Against Project Deadlines",
   description:
     "Our BIM specialists merge Revit structural modeling with AI-driven workflows for quicker, code-compliant models.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: "/image/structural-bim-banner.jpg",
   imageAlt: "Structural BIM Services",
   copyMaxWidth: 670,
@@ -384,7 +384,7 @@ export const structuralBimEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#structural-bim-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -415,7 +415,7 @@ export const structuralBimProjectCta = {
   description:
     "Let us share your structural BIM workload and build a dedicated team that stays with your firm project after project, not just once.",
   cta: "Contact Us",
-  ctaHref: "#structural-bim-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const structuralBimIndustriesIntro = {

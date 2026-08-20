@@ -17,7 +17,7 @@ export function JoinTeamCtaSection({
   titleAccent = joinTeamCtaCopy.titleAccent,
   description = joinTeamCtaCopy.description,
   ctaLabel = joinTeamCtaCopy.ctaLabel,
-  ctaHref,
+  ctaHref = joinTeamCtaCopy.ctaHref,
   accentAsLight = false,
 }: JoinTeamCtaSectionProps = {}) {
   return (

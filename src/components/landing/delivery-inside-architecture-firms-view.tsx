@@ -7,6 +7,7 @@ import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-deliv
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
+import { trackLinkedInConversion } from "@/utils/site-tracking-events";
 import "@/styles/delivery-inside-architecture-firms.scss";
 
 const heroImage = encodeURI("/image/awarness-hero-9601af6a691fd98560490a323edf9c5f 1.jpg");
@@ -17,12 +18,6 @@ const burnoutImage = encodeURI("/image/How Architecture Firms Avoid Burning Out 
 const helpsImage = encodeURI("/image/whatyouwillfind-90c7a2d0ba0213ef47b8013d4c8b5059 1.jpg");
 const documentationWallImage = encodeURI("/image/Why-Growing-Firms-Hit-a-Documentation-Wall-6611e6ffa78e228bd0fa436eebb1a12e 1.jpg");
 
-
-declare global {
-  interface Window {
-    lintrk?: (action: string, payload: { conversion_id: number }) => void;
-  }
-}
 
 const RESOURCE_UTM_QUERY = "?utm_source=LP&utm_medium=LPCTA&utm_campaign=T2TOFU";
 
@@ -72,19 +67,8 @@ type ResourceCard = {
   linkedinConversionId?: number;
 };
 
-function trackLinkedInOnDemandWebinarClick(conversionId: number, title: string) {
-  if (typeof window === "undefined") return;
-  console.log("[VBS] LinkedIn on-demand webinar card click (delivery-inside-architecture-firms)", {
-    conversion_id: conversionId,
-    title,
-  });
-  if (typeof window.lintrk === "function") {
-    try {
-      window.lintrk("track", { conversion_id: conversionId });
-    } catch (e) {
-      console.warn("[VBS] LinkedIn lintrk track failed", e);
-    }
-  }
+function trackLinkedInOnDemandWebinarClick(conversionId: number) {
+  trackLinkedInConversion(conversionId);
 }
 
 function useCountUp(end: number, suffix = "", duration = 1600) {
@@ -308,7 +292,7 @@ export function DeliveryInsideArchitectureFirmsView() {
               {resources.map((r) => {
                 const openResource = () => {
                   if (r.linkedinConversionId != null) {
-                    trackLinkedInOnDemandWebinarClick(r.linkedinConversionId, r.title);
+                    trackLinkedInOnDemandWebinarClick(r.linkedinConversionId);
                   }
                   window.open(r.downloadUrl, "_blank", "noopener,noreferrer");
                 };

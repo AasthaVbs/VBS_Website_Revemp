@@ -8,8 +8,8 @@ import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { MepWorkflowSection } from "@/components/sections/mep/figma/mep-workflow-figma-section";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
-import { ensureNimbusBookingScript, openBookMeetingModal } from "@/utils/nimbus-booking";
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import { ROUTES } from "@/constants/navigation";
 
 import type { CaseImage, ProjectCaseStudyContent } from "./types";
 
@@ -230,10 +230,6 @@ export function ProjectCaseStudy({
   );
 
   useEffect(() => {
-    ensureNimbusBookingScript().catch(() => {});
-  }, []);
-
-  useEffect(() => {
     const onKey = (e) => {
       if (!modalType) return;
       if (e.key === "Escape") setModalType(null);
@@ -251,8 +247,8 @@ export function ProjectCaseStudy({
     setModalIndex(index);
   };
 
-  const renderQuoteCta = () => (
-    <PrimaryCtaButton fullWidth={false} onClick={openBookMeetingModal}>
+  const renderQuoteCta = (href: string) => (
+    <PrimaryCtaButton fullWidth={false} href={href}>
       Get A Free Quote
     </PrimaryCtaButton>
   );
@@ -273,7 +269,7 @@ export function ProjectCaseStudy({
                 </div>
                 <p className="lv-case__body lv-case-hero__desc">{hero.description}</p>
               </div>
-              {renderQuoteCta()}
+              {renderQuoteCta("#case-study-page-contact")}
             </div>
             <div className="lv-case-hero__media">
               <img src={hero.image} alt={hero.imageAlt} />
@@ -407,7 +403,7 @@ export function ProjectCaseStudy({
               </div>
             </div>
 
-            {renderQuoteCta()}
+            {renderQuoteCta(ROUTES.contact)}
           </div>
         </PageContainer>
       </section>

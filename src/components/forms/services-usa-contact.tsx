@@ -138,7 +138,7 @@ export function ServicesUsaContact({
         );
         if (response.status === 200) {
           setSuccessMsg("Your message has been sent successfully");
-          router.push("/thank-you");
+          router.push("/thank-you/");
         } else {
           setSuccessMsg("Some error occurred else");
         }

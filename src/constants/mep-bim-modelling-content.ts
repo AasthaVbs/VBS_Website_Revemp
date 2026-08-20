@@ -1,10 +1,16 @@
+import { ROUTES } from "@/constants/navigation";
+
+export const MEP_BIM_MODELLING_CONTACT_ID = "mep-bim-modeling-page-contact";
+export const MEP_BIM_MODELLING_CONTACT_HASH = `#${MEP_BIM_MODELLING_CONTACT_ID}`;
+
 export const mepBimModellingHero = {
   tag: "MEP BIM Modeling",
   titleLead: "Code-Compliant MEP BIM Modeling Services that ",
   titleAccent: "Reduce Costly Rework",
   description:
     "Our pre-vetted BIM professionals help you with LOD 200 to LOD 450 Revit MEP 3D Modeling Services. They create accurate models to enable coordination, collaboration and clash free project delivery.",
-  ctaLabel: "Get A Free Quote",
+  ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_BIM_MODELLING_CONTACT_HASH,
   imageSrc: "/images/mep/mep-bim-modeling-hero.png",
   imageAlt: "mep-bim-modeling-hero",
   copyMaxWidth: 699,
@@ -81,7 +87,8 @@ export const mepBimServiceFeaturesSection = {
   titleAccent: "MEP Revit Modeling Services",
   description:
     "Your on-demand MEP BIM Modeling Company Delivering Highly Reliable Data for US Projects.",
-  ctaLabel: "Get A Free Quote",
+  ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_BIM_MODELLING_CONTACT_HASH,
 } as const;
 
 export type MepBimFeatureCard = {
@@ -300,6 +307,7 @@ export const mepBimDeliverablesSection = {
   description:
     "High Precision 3D Modeling Services for MEP for Smooth Construction and Fabrication.",
   ctaLabel: "Contact Now",
+  ctaHref: MEP_BIM_MODELLING_CONTACT_HASH,
 } as const;
 
 export type MepBimDeliverableCard = {
@@ -522,7 +530,7 @@ export const mepBimModellingProjectCta = {
   description:
     "From 2D-to-BIM validation to pre-coordination support, we provide the technical depth you need to succeed in the US construction market.",
   cta: "Contact Us",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
 } as const;
 
 export const mepBimModellingFaqDescription =

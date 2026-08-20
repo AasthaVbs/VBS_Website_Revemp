@@ -1,9 +1,14 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import {
+  engagementModelCards,
+  type EngagementModelCard,
+} from "@/constants/engagement-models-content";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
   mepBimTechnologyStackToolsRowOne,
   mepBimTechnologyStackToolsRowTwo,
 } from "@/constants/mep-bim-modelling-content";
+import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
 const scanToCadBanner = "/image/scan-to-cad-conversion-services-banner.jpg";
@@ -14,6 +19,9 @@ const reflectedCeilingPlanDraftingImg = "/image/reflected-ceiling-plan-drafting.
 const structuralMepCadDrawingImg = "/image/structural-and-mep-cad-drawing.jpg";
 const scanTo2d3dFloorPlanCadImg = "/image/scan-to-2d-and-3d-floor-plan-in-cad.jpg";
 const cadAsBuiltDocumentationImg = "/image/cad-as-built-documentation.jpg";
+
+export const SCAN_TO_CAD_CONTACT_ID = "scan-to-cad-page-contact";
+export const SCAN_TO_CAD_CONTACT_HASH = `#${SCAN_TO_CAD_CONTACT_ID}`;
 
 export const scanToCadStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -29,6 +37,7 @@ export const scanToCadHero = {
   description:
     "Manual drafting from scan data slows your project and includes unpredicted errors. Our CAD experts run an AI-powered workflow that converts scans into build-ready CAD drawings.",
   ctaLabel: "Get a Free Quote",
+  ctaHref: SCAN_TO_CAD_CONTACT_HASH,
   imageSrc: scanToCadBanner,
   imageAlt: "Scan to CAD conversion from point cloud to 2D and 3D drawings",
   copyMaxWidth: 860,
@@ -76,7 +85,7 @@ export const scanToCadServicesSection = {
   description:
     "From initial site capture to final drawing delivery, our scan to CAD conversion process supports every phase of your project lifecycle.",
   ctaLabel: "Start New Project",
-  ctaHref: "#scan-to-cad-page-contact",
+  ctaHref: SCAN_TO_CAD_CONTACT_HASH,
   wideCards: true,
   titleMaxWidth: 793,
 };
@@ -128,7 +137,7 @@ export const scanToCadWhyChooseSection = {
   description:
     "Our teams combine strong CAD drafting skills with an AI-enabled workflow for real project deadlines and real site conditions for every project type.",
   ctaLabel: "Start New Project",
-  ctaHref: "#scan-to-cad-page-contact",
+  ctaHref: SCAN_TO_CAD_CONTACT_HASH,
 };
 
 export const scanToCadWhyChooseItems = [
@@ -230,7 +239,7 @@ export const scanToCadAdvantagesSection = {
   description:
     "Outsourcing your scan to CAD conversion requirements to us helps you take the pressure off your in-house team from repetitive drafting work to concentrate on design and client relationships.",
   ctaLabel: "Contact Now",
-  ctaHref: "#scan-to-cad-page-contact",
+  ctaHref: SCAN_TO_CAD_CONTACT_HASH,
 };
 
 export const scanToCadAdvantagesCards = [
@@ -278,8 +287,13 @@ export const scanToCadProjectCta = {
   description:
     "Share your scan data or legacy drawings, and our BIM experts will handle the rest, from cleanup to final delivery.",
   cta: "Contact Us",
-  ctaHref: "#scan-to-cad-page-contact",
+  ctaHref: ROUTES.contact,
 };
+
+export const scanToCadEngagementCards = engagementModelCards.map((card) => ({
+  ...card,
+  ctaHref: ROUTES.contact,
+})) as unknown as EngagementModelCard[];
 
 export const scanToCadIndustriesIntro = {
   titleLine1: "Industries We Support with ",

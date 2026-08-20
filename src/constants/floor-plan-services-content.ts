@@ -34,7 +34,7 @@ export const floorPlanHero = {
   titleAccent: "Architecture, Real Estate and Construction Teams",
   description:
     "Manual floor plans slow approvals and confuse buyers. With AI-assisted workflows, our BIM architects provide accurate quality assured floor plans faster.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: floorPlanBanner,
   imageAlt: "2D and 3D floor plan views of a modern apartment layout",
   copyMaxWidth: 780,
@@ -390,7 +390,7 @@ export const floorPlanEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#floor-plan-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -421,7 +421,7 @@ export const floorPlanProjectCta = {
   description:
     "Stop chasing manual redraws and inconsistent layouts. Talk to our BIM experts and see how fast reliable floor plans move your project forward.",
   cta: "Contact Us",
-  ctaHref: "#floor-plan-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const floorPlanIndustriesIntro = {

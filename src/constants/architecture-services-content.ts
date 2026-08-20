@@ -530,7 +530,8 @@ export const architectureProjectCta = {
   titleLine2: "Dedicated BIM Support",
   description:
     "Trusted Architecture Services Provider in the USA delivering accurate, coordinated Revit Architectural and Structural BIM Services across every project phase.",
-  cta: "Get a Free Quote",
+  cta: "Talk to BIM Experts",
+  ctaHref: ROUTES.contact,
 };
 
 export const architectureTestimonialsDescription =

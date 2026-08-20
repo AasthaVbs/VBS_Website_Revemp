@@ -7,6 +7,7 @@ import {
   homeFaqItems,
   homeResourcesSection,
 } from "@/constants/home-content";
+import { ROUTES } from "@/constants/navigation";
 import {
   DeferredAboutUsSection,
   DeferredBestBenefitsSection,
@@ -38,7 +39,7 @@ export async function VbsHomePage() {
         titleLead={bestBenefitsSectionCopy.titleLead}
         titleAccent={bestBenefitsSectionCopy.titleAccent}
         description={bestBenefitsSectionCopy.description}
-        ctaHref="/contact-us"
+        ctaHref={ROUTES.contact}
       />
       <DeferredEngagementModelsSection sectionClassName="vbs-engagement-models-section--home" />
       <DeferredIndustriesSection />
@@ -49,7 +50,7 @@ export async function VbsHomePage() {
       />
       <DeferredCertificationSection />
       <DeferredClientSuccessStoriesSection />
-      <DeferredEvaluateDeliveryCtaSection cardOnMobile ctaHref="/contact-us" />
+      <DeferredEvaluateDeliveryCtaSection cardOnMobile ctaHref={ROUTES.contact} />
       <DeferredFaqSection variant="home" items={homeFaqItems} description={homeFaqDescription} />
       <DeferredGetInTouchSection />
       <DeferredSiteFooter />

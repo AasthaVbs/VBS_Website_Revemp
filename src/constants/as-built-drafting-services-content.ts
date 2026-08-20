@@ -34,7 +34,7 @@ export const asBuiltDraftingHero = {
   titleAccent: "Renovation, Compliance and Facility Records",
   description:
     "Old drawings stop matching the building as work moves forward. Our BIM experts use AI-assisted workflows to produce reliable as-built drawings, fast and code-ready.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: asBuiltDraftingBanner,
   imageAlt: "Architectural floor plan and elevations for as-built drafting services",
   copyMaxWidth: 670,
@@ -389,7 +389,7 @@ export const asBuiltDraftingEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#as-built-drafting-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -420,7 +420,7 @@ export const asBuiltDraftingProjectCta = {
   description:
     "Your team deserves drawings that match reality on site. Let's set up a dedicated as-built drafting team that keeps pace with your projects.",
   cta: "Contact Us",
-  ctaHref: "#as-built-drafting-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const asBuiltDraftingIndustriesIntro = {

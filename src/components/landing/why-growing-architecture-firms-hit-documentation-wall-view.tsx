@@ -3,6 +3,7 @@
 import Image from "next/image";
 import LandingPdfLeadModal from "@/components/landing/landing-pdf-lead-modal";
 import { LandingTopHeader } from "@/components/landing/landing-top-header";
+import { trackLinkedInConversion } from "@/utils/site-tracking-events";
 import { PageContainer } from "@/components/layout/page-container";
 import { GetInTouchSection } from "@/components/sections/get-in-touch-section";
 import { SiteFooter } from "@/components/sections/site-footer";
@@ -98,6 +99,7 @@ function PdfCta({
     <LandingPdfLeadModal
       title="Why Growing Architecture Firms Hit a Documentation Wall"
       downloadUrl={DOC_WALL_PDF_URL}
+      onBeforeOpen={() => trackLinkedInConversion()}
       trigger={(
         <PrimaryCtaButton fullWidth={false} className={`${fill ? "dw-cta-fill" : ""} ${className}`.trim()}>
           {label}

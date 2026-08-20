@@ -1,9 +1,14 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import {
+  engagementModelCards,
+  type EngagementModelCard,
+} from "@/constants/engagement-models-content";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
   mepBimTechnologyStackToolsRowOne,
   mepBimTechnologyStackToolsRowTwo,
 } from "@/constants/mep-bim-modelling-content";
+import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
 const architecturalScanToBimBanner = "/image/architectural-scan-to-bim-banner.jpg";
@@ -14,6 +19,9 @@ const asBuiltDocumentationImg = "/image/as-built-documentation.jpg";
 const scanToCadDraftingImg = "/image/scan-to-cad-drafting.jpg";
 const floorPlansRcpsElevationsImg = "/image/floor-plans-rcps-and-elevations.jpg";
 const facadeEnvelopeModelingImg = "/image/facade-and-envelope-modeling.jpg";
+
+export const ARCHITECTURAL_SCAN_TO_BIM_CONTACT_ID = "architectural-scan-to-bim-page-contact";
+export const ARCHITECTURAL_SCAN_TO_BIM_CONTACT_HASH = `#${ARCHITECTURAL_SCAN_TO_BIM_CONTACT_ID}`;
 
 export const architecturalScanToBimStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -29,6 +37,7 @@ export const architecturalScanToBimHero = {
   description:
     "In-house teams fall behind when point cloud data piles up. Our BIM professionals use AI-driven workflows to provide quality assured scan to BIM outsourcing services.",
   ctaLabel: "Get a Free Quote",
+  ctaHref: ARCHITECTURAL_SCAN_TO_BIM_CONTACT_HASH,
   imageSrc: architecturalScanToBimBanner,
   imageAlt: "Architectural Scan to BIM model of a commercial building facade",
   copyMaxWidth: 716,
@@ -76,7 +85,7 @@ export const architecturalScanToBimServicesSection = {
   description:
     "Our architectural scan to BIM outsourcing services support your project from initial site capture through design development to final construction documentation.",
   ctaLabel: "Start New Project",
-  ctaHref: "#architectural-scan-to-bim-page-contact",
+  ctaHref: ARCHITECTURAL_SCAN_TO_BIM_CONTACT_HASH,
   wideCards: true,
   titleMaxWidth: 779,
 };
@@ -128,7 +137,7 @@ export const architecturalScanToBimWhyChooseSection = {
   description:
     "Outsourcing scan to BIM services gives your firm quality assured models, faster timelines and greater production capacity without adding in-house overhead.",
   ctaLabel: "Start New Project",
-  ctaHref: "#architectural-scan-to-bim-page-contact",
+  ctaHref: ARCHITECTURAL_SCAN_TO_BIM_CONTACT_HASH,
 };
 
 export const architecturalScanToBimWhyChooseItems = [
@@ -235,7 +244,7 @@ export const architecturalScanToBimAdvantagesSection = {
   description:
     "Outsourcing your architectural scan to BIM work gives your firm faster turnarounds and fewer errors. You get models your whole team can rely on daily.",
   ctaLabel: "Contact Now",
-  ctaHref: "#architectural-scan-to-bim-page-contact",
+  ctaHref: ARCHITECTURAL_SCAN_TO_BIM_CONTACT_HASH,
 };
 
 export const architecturalScanToBimAdvantagesCards = [
@@ -283,8 +292,13 @@ export const architecturalScanToBimProjectCta = {
   description:
     "Share with us your scan data and project details and our BIM experts will get back to you with a clear scope and timeline.",
   cta: "Contact Us",
-  ctaHref: "#architectural-scan-to-bim-page-contact",
+  ctaHref: ROUTES.contact,
 };
+
+export const architecturalScanToBimEngagementCards = engagementModelCards.map((card) => ({
+  ...card,
+  ctaHref: ROUTES.contact,
+})) as unknown as EngagementModelCard[];
 
 export const architecturalScanToBimIndustriesIntro = {
   titleLine1: "Industries We Support with ",

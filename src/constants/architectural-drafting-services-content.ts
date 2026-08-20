@@ -1,3 +1,4 @@
+import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
   mepBimTechnologyStackToolsRowOne,
@@ -23,7 +24,7 @@ export const architecturalDraftingHero = {
   titleAccent: "Reduced Rework & Faster Approvals",
   description:
     "Dedicated Revit drafters combine our AI-powered workflow with your existing one, so your team delivers accurate, code-compliant construction documents on time, every time.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: "/image/architecture-drafting-banner.jpg",
   imageAlt: "Architectural Drafting Services",
   copyMaxWidth: 650,
@@ -79,31 +80,37 @@ export const architecturalDraftingServiceCards = [
     title: "Schematic Design Drafting Services",
     text: "Our remote drafters build scaled layouts, massing studies and preliminary elevations. Integrated CAD Architectural Drafting workflows keep that early communication clear and dimensionally accurate.",
     image: "/image/schematic-design-drafting-services.jpg",
+    href: ROUTES.schematicDesign,
   },
   {
     title: "Design Development Drafting Services",
     text: "Our drafting experts produce coordinated plans, sections and elevations aligned with those systems. Our Architectural Drawings Services carry that alignment through to construction documentation.",
     image: "/image/design-development-drafting-services.jpg",
+    href: ROUTES.designDevelopment,
   },
   {
     title: "Construction Documentation Services",
     text: "We deliver code-compliant sets, including plans, schedules, sections and reflected ceiling plans. Our CAD Architectural Drafting services build every set for permit-ready submission, so your team avoids rework.",
     image: "/image/construction-documentation-services.jpg",
+    href: ROUTES.constructionDocumentation,
   },
   {
     title: "2D Floor Plan Drawings Services",
     text: "Our experts create dimensionally accurate, layered 2D floor plans with annotations and area calculations. Our Architectural Drawings Services turn these into contractor-ready layouts for residential and commercial projects.",
     image: "/image/2d-floor-plan-drawings-services.jpg",
+    href: ROUTES.floorPlan,
   },
   {
     title: "As-Built Drawings Services",
     text: "Our drafters develop precise as-built documents from field data, surveys and redline markups. Our Architectural Drafting Services support renovations, retrofits and facility management with accurate existing-condition records.",
     image: "/image/as-built-drawings-services.jpg",
+    href: ROUTES.asBuiltDrafting,
   },
   {
     title: "Permit Set Drawings Services",
     text: "Every jurisdiction reviews permit sets against its own local codes. We prepare jurisdiction-specific permit sets compliant with IBC, ADA, NFPA and zoning regulations. Our CAD Architectural Drawing services speed up AHJ approvals.",
     image: "/image/permit-set-drawings-services.jpg",
+    href: ROUTES.permitDrawing,
   },
   {
     title: "Millwork and Joinery Drawings Services",
@@ -114,6 +121,7 @@ export const architecturalDraftingServiceCards = [
     title: "CAD Conversion Services",
     text: "We convert old sketches, PDFs and legacy files into editable CAD architectural drafting with accurate layer structuring. Our 2D CAD conversion services fold directly into your existing documentation workflows.",
     image: "/image/cad-conversion-services.jpg",
+    href: ROUTES.cadToBim,
   },
 ];
 
@@ -193,6 +201,57 @@ export const architecturalDraftingTechnologyStackToolsRowOne: MepBimTechnologyTo
 export const architecturalDraftingTechnologyStackToolsRowTwo: MepBimTechnologyTool[] =
   mepBimTechnologyStackToolsRowTwo;
 
+export const architecturalDraftingAdvantagesSection = {
+  tag: "Advantages",
+  titleLine1: "Advantages of Revit\n",
+  titleLine2: "Architectural Drafting Services",
+  titleMaxWidth: 834,
+  descriptionMaxWidth: 652,
+  description:
+    "Our architects build BIM-integrated documentation that keeps coordination tight, approvals fast, and quality consistent across every phase.",
+  ctaLabel: "Contact Now",
+  ctaHref: "#architectural-drafting-page-contact",
+};
+
+export const architecturalDraftingAdvantagesCards = [
+  {
+    title: "High-Quality 2D Construction Documentation",
+    text: "Contractors build from exact measurements. Our drafters use Revit to produce parameter-driven drawings with controlled annotations. These drawings follow AIA drafting standards, so consultants can start working on it.",
+    icon: benefitIconMuted,
+    iconHover: benefitIconColored,
+  },
+  {
+    title: "Standardized Layering and Annotation Management",
+    text: "Inconsistent layers slow down every team that touches a drawing set. Our drafters set up Revit families and CAD layers to AIA and NIBS standards. This keeps annotations and documentation sheets compliant throughout the project.",
+    icon: benefitIconMuted,
+    iconHover: benefitIconColored,
+  },
+  {
+    title: "Improved Design Revisions and Version Control",
+    text: "Our drafters use Revit to update views, sheets and schedules the moment a design changes. CAD teams keep that same coordination through controlled Xrefs and organized sheet management.",
+    icon: benefitIconMuted,
+    iconHover: benefitIconColored,
+  },
+  {
+    title: "Coordinated Base Documentation for Multiple Disciplines",
+    text: "Structural and MEPF teams need accurate references before they can start their own drawings. Our drafters build coordinated Revit models and CAD plans so that fewer clashes reach the construction phase.",
+    icon: benefitIconMuted,
+    iconHover: benefitIconColored,
+  },
+  {
+    title: "Scalable Documentation for Complex Building Programs",
+    text: "Large buildings generate large documentation sets. Our drafters manage RCPs, schedules and construction details without losing accuracy.",
+    icon: benefitIconMuted,
+    iconHover: benefitIconColored,
+  },
+  {
+    title: "Fewer Errors Through Structured Quality Checks",
+    text: "Our drafters run a structured QC process on layers, dimensions and annotations before a set goes out. This catches mistakes early so your team have to spend less time on field corrections.",
+    icon: benefitIconMuted,
+    iconHover: benefitIconColored,
+  },
+];
+
 export const architecturalDraftingEngagementModelsSection = {
   tag: "Engagement Models",
   titleParts: [
@@ -246,7 +305,7 @@ export const architecturalDraftingEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#architectural-drafting-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -277,7 +336,7 @@ export const architecturalDraftingProjectCta = {
   description:
     "Our drafters bridge the gap between design idea and a construction-ready drawing, so your architects stay focused on design instead of catching up on paperwork.",
   cta: "Contact Us",
-  ctaHref: "#architectural-drafting-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const architecturalDraftingIndustriesIntro = {

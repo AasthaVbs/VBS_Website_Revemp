@@ -25,7 +25,7 @@ export const twoDDraftingHero = {
   titleAccent: "Your Documentation Capacity",
   description:
     "Rework and missed deadlines happen when drafting capacity runs short. Our pre-vetted architects and engineers use an AI-assisted workflow to deliver fast, error-free 2D CAD drawings on time.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: "/image/2d-drafting-services-banner.jpg",
   imageAlt: "2D Drafting Services",
   copyMaxWidth: 670,
@@ -107,11 +107,13 @@ export const twoDDraftingServiceCards = [
     title: "2D As-Built Drawings",
     text: "We convert field changes into accurate as-built drawings that represent actual conditions on the project. These records are a reference for your team to rely on for years to come, and support future renovations.",
     image: "/image/2d-as-built-drawings.jpg",
+    href: ROUTES.asBuiltDrafting,
   },
   {
     title: "Design Development Drawings",
     text: "We take schematic concepts and turn them into design development drawings that have specific dimensions and material callouts. This step connects concept design with construction documentation so your project continues forward.",
     image: "/image/design-development-drawings.jpg",
+    href: ROUTES.designDevelopment,
   },
 ];
 
@@ -380,7 +382,7 @@ export const twoDDraftingEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#two-d-drafting-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -411,7 +413,7 @@ export const twoDDraftingProjectCta = {
   description:
     "Talk to a 2D drafting expert today and find out how an AI-powered workflow can help your team hit deadlines with less mistakes and rework.",
   cta: "Contact Us",
-  ctaHref: "#two-d-drafting-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const twoDDraftingIndustriesIntro = {

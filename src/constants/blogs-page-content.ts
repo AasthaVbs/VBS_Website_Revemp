@@ -1,3 +1,5 @@
+import { ROUTES } from "@/constants/navigation";
+
 export const blogsPageHero = {
   tag: "Blogs",
   titleLead: "Insights That Build ",
@@ -5,6 +7,7 @@ export const blogsPageHero = {
   description:
     "Explore in-depth articles, practical guidance, and innovative solutions shaping the future of BIM, Scan to BIM, and digital construction.",
   ctaLabel: "Contact Us",
+  ctaHref: ROUTES.contact,
   imageAlt: "Architect workspace with BIM plans and building model",
 } as const;
 

@@ -10,6 +10,7 @@ import {
   pointCloudToBimAdvantagesCards,
   pointCloudToBimAdvantagesSection,
   pointCloudToBimContactDescription,
+  pointCloudToBimEngagementCards,
   pointCloudToBimFaqSection,
   pointCloudToBimFaqs,
   pointCloudToBimHero,
@@ -55,7 +56,7 @@ export async function PointCloudToBimServicesPage() {
         <MepPageHeroSection
           {...pointCloudToBimHero}
           imageSize="compact"
-          ctaHref="#point-cloud-to-bim-page-contact"
+          ctaHref={pointCloudToBimHero.ctaHref}
           containerClassName="!pt-0 sm:!pt-1 lg:!pt-4"
         />
         <TrustStripSection
@@ -90,7 +91,7 @@ export async function PointCloudToBimServicesPage() {
           section={pointCloudToBimAdvantagesSection}
           cards={pointCloudToBimAdvantagesCards}
         />
-        <DeferredEngagementModelsSection />
+        <DeferredEngagementModelsSection cards={pointCloudToBimEngagementCards} />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

@@ -1,5 +1,6 @@
 import { SplitHeroSection } from "@/components/sections/split-hero-section";
 import { aboutHeroImages } from "@/constants/about-content";
+import { ROUTES } from "@/constants/navigation";
 
 const aboutHeroCopy = {
   tag: "About us",
@@ -18,6 +19,7 @@ export function AboutHeroSection() {
       images={aboutHeroImages}
       showCta
       ctaLabel="Contact Us"
+      ctaHref={ROUTES.contact}
       sectionClassName="about-hero-section pt-10 md:pt-16 lg:pt-[100px]"
     />
   );

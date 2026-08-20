@@ -10,6 +10,8 @@ import { MepBimServiceFeaturesSection } from "@/components/sections/mep/mep-bim-
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
 import { MepTrustedByStripSection } from "@/components/sections/mep/mep-trusted-by-strip-section";
 import {
+  MEP_COORDINATION_CONTACT_HASH,
+  MEP_COORDINATION_CONTACT_ID,
   mepCoordinationDeliverablesCards,
   mepCoordinationDeliverablesSection,
   mepCoordinationFaqSection,
@@ -53,7 +55,7 @@ export async function MepCoordinationPage() {
         <MepPageHeroSection
           {...mepCoordinationHero}
           imageSize="compact"
-          ctaHref="/contact-us"
+          ctaHref={MEP_COORDINATION_CONTACT_HASH}
           containerClassName="!pt-0 !pb-4 sm:!pt-0 sm:!pb-5 lg:!pt-0 lg:!pb-6"
         />
         <MepTrustedByStripSection
@@ -67,7 +69,7 @@ export async function MepCoordinationPage() {
         <MepBimServiceFeaturesSection
           section={mepCoordinationServiceFeaturesSection}
           cards={mepCoordinationServiceFeatureCards}
-          ctaHref="/contact-us"
+          ctaHref={MEP_COORDINATION_CONTACT_HASH}
           titleMaxWidth={680}
           descriptionMaxWidth={730}
         />
@@ -101,7 +103,7 @@ export async function MepCoordinationPage() {
           section={mepCoordinationOutsourcingGuideSection}
           cards={mepCoordinationOutsourcingGuideCards}
           showCta
-          ctaHref="/contact-us"
+          ctaHref={MEP_COORDINATION_CONTACT_HASH}
           iconVariant="boxed"
           titleMaxWidth={778}
           descriptionMaxWidth={618}
@@ -134,7 +136,10 @@ export async function MepCoordinationPage() {
           description={mepCoordinationFaqSection.description}
           items={mepCoordinationFaqs}
         />
-        <DeferredGetInTouchSection description={mepFaqDescription} />
+        <DeferredGetInTouchSection
+          sectionId={MEP_COORDINATION_CONTACT_ID}
+          description={mepFaqDescription}
+        />
       </main>
 
       <DeferredSiteFooter />

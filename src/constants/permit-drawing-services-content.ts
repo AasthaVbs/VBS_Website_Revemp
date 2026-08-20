@@ -25,7 +25,7 @@ export const permitDrawingHero = {
   titleAccent: "Our Permit\nDrawing Services",
   description:
     "Our pre-vetted BIM architects and engineers use AI-assisted workflows to produce building permit drawings that get through review faster.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: "/image/permit-drawings-banner.jpg",
   imageAlt: "Permit Drawing Services",
   copyMaxWidth: 675,
@@ -374,7 +374,7 @@ export const permitDrawingEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#permit-drawing-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -405,7 +405,7 @@ export const permitDrawingProjectCta = {
   description:
     "Send us your drawings and jurisdiction details. Our BIM experts will scope your permit drawing services and get your team a plan within a day.",
   cta: "Contact Us",
-  ctaHref: "#permit-drawing-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const permitDrawingIndustriesIntro = {

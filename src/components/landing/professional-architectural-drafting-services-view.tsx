@@ -1323,7 +1323,7 @@ html {
   .arch-drafting-industries-host h1,
   .arch-drafting-faq-host h1,
   .arch-drafting-want-to-know h1 {
-    font-size: 48px !important;
+    font-size: 54px !important;
     line-height: 1.15 !important;
   }
   .arch-draft-lp-page h2,

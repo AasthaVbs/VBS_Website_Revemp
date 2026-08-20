@@ -84,7 +84,9 @@ export function MepWhyChooseSection({
       <PageContainer className="mep-figma-why-choose__container">
         <header className="mep-figma-why-choose__head">
           <div className="mep-figma-why-choose__head-top">
-            <span className="mep-figma-why-choose__tag">{section.tag}</span>
+            {section.tag ? (
+              <span className="mep-figma-why-choose__tag">{section.tag}</span>
+            ) : null}
             <p
               className={cn(
                 "mep-figma-why-choose__title",

@@ -182,12 +182,16 @@ export const ourExpertiseEngagementCards = [
     ctaHref: OUR_EXPERTISE_CONTACT_HASH,
     shadow: true,
   },
-  engagementModelCards[1],
+  {
+    ...engagementModelCards[1],
+    ctaHref: OUR_EXPERTISE_CONTACT_HASH,
+  },
   {
     ...engagementModelCards[2],
     description:
       "A fully managed offshore BIM delivery center exclusively aligned with your business.",
     shadow: true,
+    ctaHref: ROUTES.engagement,
   },
 ] as unknown as EngagementModelCard[];
 

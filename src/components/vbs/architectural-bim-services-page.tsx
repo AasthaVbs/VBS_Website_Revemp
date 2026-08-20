@@ -12,6 +12,7 @@ import {
   architecturalBimAdvantagesSection,
   architecturalBimAiBimWorkflowSection,
   architecturalBimContactDescription,
+  architecturalBimEngagementCards,
   architecturalBimFaqSection,
   architecturalBimFaqs,
   architecturalBimHero,
@@ -86,7 +87,7 @@ export async function ArchitecturalBimServicesPage() {
           section={architecturalBimAdvantagesSection}
           cards={architecturalBimAdvantagesCards}
         />
-        <DeferredEngagementModelsSection />
+        <DeferredEngagementModelsSection cards={architecturalBimEngagementCards} />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

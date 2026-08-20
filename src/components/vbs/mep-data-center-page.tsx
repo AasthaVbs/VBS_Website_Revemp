@@ -18,6 +18,8 @@ import {
 } from "@/lib/lazy-page-sections";
 import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
 import {
+  MEP_DATA_CENTER_CONTACT_HASH,
+  MEP_DATA_CENTER_CONTACT_ID,
   mepDataCenterFaqSection,
   mepDataCenterFaqs,
   mepDataCenterHero,
@@ -49,7 +51,7 @@ export async function MepDataCenterPage() {
         <MepPageHeroSection
           {...mepDataCenterHero}
           imageSize="compact"
-          ctaHref="/contact-us"
+          ctaHref={MEP_DATA_CENTER_CONTACT_HASH}
           containerClassName="!pt-0 !pb-4 sm:!pt-0 sm:!pb-5 lg:!pt-0 lg:!pb-6"
         />
         <MepTrustedByStripSection
@@ -63,7 +65,7 @@ export async function MepDataCenterPage() {
         <MepBimServiceFeaturesSection
           section={mepDataCenterServiceFeaturesSection}
           cards={mepDataCenterServiceFeatureCards}
-          ctaHref="/contact-us"
+          ctaHref={MEP_DATA_CENTER_CONTACT_HASH}
           columnsPerRow={3}
           titleMaxWidth={716}
           descriptionMaxWidth={682}
@@ -71,7 +73,7 @@ export async function MepDataCenterPage() {
         <MepDataCenterWhoWeHelpSection
           section={mepDataCenterWhoWeHelpSection}
           cards={mepDataCenterWhoWeHelpCards}
-          ctaHref="/contact-us"
+          ctaHref={mepDataCenterWhoWeHelpSection.ctaHref}
         />
         <MepDataCenterKeyChallengesSection />
         <MepBimTechnologyStackSection
@@ -89,7 +91,7 @@ export async function MepDataCenterPage() {
         <MepDataCenterWhyChooseSection
           section={mepDataCenterWhyChooseSection}
           cards={mepDataCenterWhyChooseCards}
-          ctaHref="/contact-us"
+          ctaHref={MEP_DATA_CENTER_CONTACT_HASH}
         />
         <DeferredMepResourcesSection section={mepDataCenterResourcesSection} allItems={resourcesFeed} />
         <DeferredEvaluateDeliveryCtaSection
@@ -112,7 +114,10 @@ export async function MepDataCenterPage() {
           description={mepDataCenterFaqSection.description}
           items={mepDataCenterFaqs}
         />
-        <DeferredGetInTouchSection description={mepFaqDescription} />
+        <DeferredGetInTouchSection
+          sectionId={MEP_DATA_CENTER_CONTACT_ID}
+          description={mepFaqDescription}
+        />
       </main>
 
       <DeferredSiteFooter />

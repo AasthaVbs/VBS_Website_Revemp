@@ -1,4 +1,5 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import { engagementModelCards } from "@/constants/engagement-models-content";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
   mepBimTechnologyStackToolsRowOne,
@@ -6,6 +7,8 @@ import {
 } from "@/constants/mep-bim-modelling-content";
 import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
+
+const ARCHITECTURAL_BIM_CONTACT = "#architectural-bim-page-contact";
 
 export const architecturalBimStatsStrip = [
   { value: "2000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -20,7 +23,7 @@ export const architecturalBimHero = {
   titleAccent: "Overloaded AEC Teams",
   description:
     "When deadlines pile up, BIM production becomes the bottleneck. Our US-trained architects help your firm deliver Architectural BIM Modeling Services faster without compromising design quality.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: "/image/architectural-bim-banner.jpg",
   imageAlt: "Architectural BIM Services",
   copyMaxWidth: 670,
@@ -75,11 +78,13 @@ export const architecturalBimServiceCards = [
     title: "Revit Architecture Services",
     text: "Our BIM architects deliver 3D Revit Modeling Services keeping in mind the US building codes requirements to facilitate cross disciplinary teamwork throughout the entire project development period.",
     image: "/image/revit-architecture-services.jpg",
+    href: ROUTES.architecturalBim,
   },
   {
     title: "Design Development Support",
     text: "We support architectural firms in the USA by refining their concepts into detailed, buildable models aligned with industry standards, design intent and supporting seamless team coordination.",
     image: "/image/design-development-support.jpg",
+    href: ROUTES.designDevelopment,
   },
   {
     title: "Architectural 3D Visualization",
@@ -91,18 +96,19 @@ export const architecturalBimServiceCards = [
     title: "Construction Documentation",
     text: "We use the BIM model to prepare fully coordinated CD sets that follow AIA, ADA and local building codes to speed up review and approval process.",
     image: "/image/construction-documentation.jpg",
+    href: ROUTES.constructionDocumentation,
   },
   {
     title: "Clash Detection & BIM Coordination",
     text: "Our on demand Revit architects use Navisworks and Solibri to deliver BIM coordination services. It helps in minimizing rework and maintain project timelines.",
     image: "/image/clash-detection-bim-coordination.jpg",
-    href: ROUTES.mepCoordination,
+    href: ROUTES.mepClashDetection,
   },
   {
     title: "Shop Drawing Generation",
     text: "Our BIM architects create coordinated prefab drawings which include everything from plans and elevations to sections, dimensions, details, schedules and specifications.",
     image: "/image/shop-drawing-generation.jpg",
-    href: ROUTES.shopDrawings,
+    href: ROUTES.mepShopDrawings,
   },
   {
     title: "Parametric Revit Family Creation",
@@ -251,8 +257,13 @@ export const architecturalBimProjectCta = {
   description:
     "Leverage coordinated AI-driven BIM workflows for accurate documentation and multi disciplinary collaboration to deliver projects with greater efficiency and fewer construction challenges.",
   cta: "Contact Us",
-  ctaHref: "#architectural-bim-page-contact",
+  ctaHref: ROUTES.contact,
 };
+
+export const architecturalBimEngagementCards = engagementModelCards.map((card) => ({
+  ...card,
+  ctaHref: card.cta === "Explore GDC Model" ? ROUTES.engagement : ARCHITECTURAL_BIM_CONTACT,
+}));
 
 export const architecturalBimIndustriesIntro = {
   titleLine1: "Industries We Support with ",

@@ -27,7 +27,7 @@
   .mep-page-hero__title-text,
   .mep-page-hero__title-accent,
   .mep-page-hero__title-lead {
-    font-size: 48px !important;
+    font-size: 54px !important;
     line-height: 1.15 !important;
   }
 
@@ -340,7 +340,7 @@
 
       h1.mep-page-hero__title .mep-page-hero__title-text,
       h1.mep-page-hero__title .mep-page-hero__title-text span {
-        font-size: 48px !important;
+        font-size: 54px !important;
         line-height: 1.15 !important;
       }
 
@@ -1986,3 +1986,4 @@
 }
 
 @import "./vbs-laptop-heading-scale.scss";
+@import "./vbs-landing-home-type.scss";

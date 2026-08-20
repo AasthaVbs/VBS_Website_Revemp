@@ -17,24 +17,13 @@ import {
   revitDocSupportKeyAspects,
   revitDocSupportPainPoints,
 } from "@/constants/revit-documentation-support-content";
+import { trackLinkedInConversion } from "@/utils/site-tracking-events";
 
 import "@/styles/revit-documentation-support.scss";
 
-declare global {
-  interface Window {
-    lintrk?: (action: string, data: { conversion_id: number }) => void;
-  }
-}
-
 function useTrackPdfClick() {
   return useCallback(() => {
-    try {
-      if (typeof window !== "undefined" && typeof window.lintrk === "function") {
-        window.lintrk("track", { conversion_id: 24698708 });
-      }
-    } catch {
-      /* ignore */
-    }
+    trackLinkedInConversion();
   }, []);
 }
 

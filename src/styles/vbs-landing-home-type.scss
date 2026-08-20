@@ -1,0 +1,151 @@
+/**
+ * Homepage heading scale (matches /).
+ * Desktop ≥1440: h1 54px / h2 48px / h3 24px / h4 20px
+ * Laptop 768–1439: h1 54px / h2 40px / h3 20px / h4 20px
+ * Mobile ≤767: h1 clamp(32px, 8vw, 40px) / h2 clamp(28px, 4vw, 48px) / h3 20px / h4 18px
+ */
+
+@mixin vbs-home-type-roots {
+  :is(
+    .vbs-landing-page,
+    .cad-drafting-services-usa-page,
+    .cad-drafting-landing-page,
+    .architectural-drafting-services-usa-page,
+    .architectural-bim-services-usa-page,
+    .three-d-rendering-services-usa-page,
+    .revit-architectural-drafting-page,
+    .mep-bim-services-usa-page,
+    .mep-bim-html-root,
+    .delivery-inside-architecture-firms-page,
+    .dw-page,
+    .hvd-page,
+    .gaf-capacity-page,
+    .dc-page,
+    .doc-systems-page,
+    .dedicated-capacity-lp,
+    .margin-calc-page,
+    .arch-draft-lp-page,
+    .arch-drafting-lp,
+    .arch-drafting-want-to-know
+  ),
+  :is(
+    .vbs-landing-page,
+    .cad-drafting-services-usa-page,
+    .cad-drafting-landing-page,
+    .architectural-drafting-services-usa-page,
+    .architectural-bim-services-usa-page,
+    .three-d-rendering-services-usa-page,
+    .revit-architectural-drafting-page,
+    .mep-bim-services-usa-page,
+    .mep-bim-html-root,
+    .delivery-inside-architecture-firms-page,
+    .dw-page,
+    .hvd-page,
+    .gaf-capacity-page,
+    .dc-page,
+    .doc-systems-page,
+    .dedicated-capacity-lp,
+    .margin-calc-page,
+    .arch-draft-lp-page,
+    .arch-drafting-lp,
+    .arch-drafting-want-to-know
+  ).vbs-redesign-page,
+  .mep-bim-services-usa-page .mep-bim-html-root {
+    @content;
+  }
+}
+
+@mixin vbs-home-type-h2-selectors {
+  :is(
+    h2,
+    .h2,
+    h2 span,
+    h2 .text-section,
+    h2 .text-accent,
+    .mep-section-heading,
+    .mep-figma-why-choose__title,
+    .mep-figma-why-choose__title-dark,
+    .mep-figma-why-choose__title-accent,
+    .vbs-home-faq__title,
+    .vbs-home-faq__title-dark,
+    .vbs-home-faq__title-accent,
+    .vbs-our-clients__title,
+    .vbs-our-clients__title-dark,
+    .vbs-our-clients__title-accent,
+    .vbs-client-success-stories__title,
+    .vbs-get-in-touch__info-head h2,
+    .vbs-get-in-touch__info-head .text-section
+  ) {
+    @content;
+  }
+}
+
+@include vbs-home-type-roots {
+  :is(h1, .h1, .hero-h1, .mep-hero-h1, .text-display, .text-display-accent, h1 span) {
+    font-size: 54px !important;
+    line-height: 1.15 !important;
+  }
+
+  @include vbs-home-type-h2-selectors {
+    font-size: 48px !important;
+    line-height: 1.15 !important;
+  }
+
+  :is(h3, .h3, h3 span, .text-card-title) {
+    font-size: 24px !important;
+    line-height: 1.35 !important;
+  }
+
+  :is(h4, .h4, h4 span) {
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  @include vbs-home-type-roots {
+    :is(h1, .h1, .hero-h1, .mep-hero-h1, .text-display, .text-display-accent, h1 span) {
+      font-size: 54px !important;
+      line-height: 1.15 !important;
+    }
+
+    @include vbs-home-type-h2-selectors {
+      font-size: 40px !important;
+      line-height: 1.15 !important;
+    }
+
+    :is(h3, .h3, h3 span, .text-card-title) {
+      font-size: 20px !important;
+      line-height: 1.3 !important;
+    }
+
+    :is(h4, .h4, h4 span) {
+      font-size: 20px !important;
+      line-height: 1.35 !important;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  @include vbs-home-type-roots {
+    :is(h1, .h1, .hero-h1, .mep-hero-h1, .text-display, .text-display-accent, h1 span) {
+      font-size: clamp(32px, 8vw, 40px) !important;
+      line-height: 1.15 !important;
+    }
+
+    @include vbs-home-type-h2-selectors {
+      font-size: clamp(28px, 4vw, 48px) !important;
+      line-height: 1.15 !important;
+    }
+
+    :is(h3, .h3, h3 span, .text-card-title) {
+      font-size: 20px !important;
+      line-height: 1.35 !important;
+    }
+
+    :is(h4, .h4, h4 span) {
+      font-size: 18px !important;
+      line-height: 1.35 !important;
+    }
+  }
+}

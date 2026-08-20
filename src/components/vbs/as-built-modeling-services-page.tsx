@@ -10,6 +10,7 @@ import {
   asBuiltModelingAdvantagesCards,
   asBuiltModelingAdvantagesSection,
   asBuiltModelingContactDescription,
+  asBuiltModelingEngagementCards,
   asBuiltModelingFaqSection,
   asBuiltModelingFaqs,
   asBuiltModelingHero,
@@ -55,7 +56,7 @@ export async function AsBuiltModelingServicesPage() {
         <MepPageHeroSection
           {...asBuiltModelingHero}
           imageSize="compact"
-          ctaHref="#as-built-modeling-page-contact"
+          ctaHref={asBuiltModelingHero.ctaHref}
           containerClassName="!pt-0 sm:!pt-1 lg:!pt-4"
         />
         <TrustStripSection
@@ -91,7 +92,7 @@ export async function AsBuiltModelingServicesPage() {
           section={asBuiltModelingAdvantagesSection}
           cards={asBuiltModelingAdvantagesCards}
         />
-        <DeferredEngagementModelsSection />
+        <DeferredEngagementModelsSection cards={asBuiltModelingEngagementCards} />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Awareness | Virtual Building Studio",
   description:
     "Awareness | Virtual Building Studio. Scale delivery without the strain. Explore our approach to growth-ready project delivery for AEC.",
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Awareness | Virtual Building Studio",
     description:

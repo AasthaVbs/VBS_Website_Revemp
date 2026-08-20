@@ -10,6 +10,8 @@ import { MepBimUseCasesSection } from "@/components/sections/mep/mep-bim-use-cas
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
 import { MepTrustedByStripSection } from "@/components/sections/mep/mep-trusted-by-strip-section";
 import {
+  MEP_SPOOL_DRAWING_CONTACT_HASH,
+  MEP_SPOOL_DRAWING_CONTACT_ID,
   mepSpoolDrawingDeliverablesCards,
   mepSpoolDrawingDeliverablesSection,
   mepSpoolDrawingFaqSection,
@@ -54,7 +56,7 @@ export async function MepSpoolDrawingPage() {
         <MepPageHeroSection
           {...mepSpoolDrawingHero}
           imageSize="compact"
-          ctaHref="/contact-us"
+          ctaHref={MEP_SPOOL_DRAWING_CONTACT_HASH}
           containerClassName="!pt-0 !pb-4 sm:!pt-0 sm:!pb-5 lg:!pt-0 lg:!pb-6"
         />
         <MepTrustedByStripSection
@@ -68,7 +70,7 @@ export async function MepSpoolDrawingPage() {
         <MepBimServiceFeaturesSection
           section={mepSpoolDrawingServiceFeaturesSection}
           cards={mepSpoolDrawingServiceFeatureCards}
-          ctaHref="/contact-us"
+          ctaHref={MEP_SPOOL_DRAWING_CONTACT_HASH}
           columnsPerRow={3}
           titleMaxWidth={727}
           descriptionMaxWidth={621}
@@ -105,7 +107,7 @@ export async function MepSpoolDrawingPage() {
           section={mepSpoolDrawingOutsourcingGuideSection}
           cards={mepSpoolDrawingOutsourcingGuideCards}
           showCta
-          ctaHref="/contact-us"
+          ctaHref={MEP_SPOOL_DRAWING_CONTACT_HASH}
           iconVariant="boxed"
           titleMaxWidth={786}
           descriptionMaxWidth={494}
@@ -145,7 +147,10 @@ export async function MepSpoolDrawingPage() {
           description={mepSpoolDrawingFaqSection.description}
           items={mepSpoolDrawingFaqs}
         />
-        <DeferredGetInTouchSection description={mepFaqDescription} />
+        <DeferredGetInTouchSection
+          sectionId={MEP_SPOOL_DRAWING_CONTACT_ID}
+          description={mepFaqDescription}
+        />
       </main>
 
       <DeferredSiteFooter />

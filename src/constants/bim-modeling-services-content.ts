@@ -92,6 +92,7 @@ export const bimModelingServiceCards = [
     title: "LOD-Based BIM Modeling",
     text: "Get BIM models during the whole project life cycle with proper geometric information and fidelity of data according to industry standards.",
     image: "/image/lod-based-bim-modeling.jpg",
+    href: "/blog/bim-level-of-development-an-overview",
   },
   {
     title: "Creating Families in Revit",
@@ -109,7 +110,7 @@ export const bimModelingServiceCards = [
     title: "Shop or Building Drawing",
     text: "Generate detailed fabrication shop drawings directly from coordinated BIM models, enhancing constructability, installation accuracy and communication between project teams and trades.",
     image: "/image/shop-building-drawing.jpg",
-    href: ROUTES.shopDrawings,
+    href: ROUTES.mepSpoolDrawings,
   },
   {
     title: "3D Visualization Service",
@@ -322,7 +323,7 @@ export const bimModelingEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#bim-modeling-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -418,7 +419,7 @@ export const bimModelingProjectCta = {
   description:
     "Partner with a trusted BIM Modeling Company for coordinated, data-rich models that support design development, clash-free coordination, construction documentation, and project delivery.",
   cta: "Contact Us",
-  ctaHref: "#bim-modeling-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const bimModelingIndustriesIntro = {

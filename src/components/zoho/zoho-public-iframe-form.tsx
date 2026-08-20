@@ -23,7 +23,6 @@ import {
   getZohoMepDcWpMinVisibleHeightPx,
   isZohoFormSubmissionMessage,
   parseZohoIframeResizeHeight,
-  shouldRedirectAfterZohoSubmit,
 } from "@/utils/zoho-contact-form-embed";
 
 type HeaderCropPreset = "contact" | "mep-dc-wp" | "hidden-cost-wp" | "acs-bim";
@@ -108,6 +107,7 @@ export function ZohoPublicIframeForm({
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const iframeHeightRef = useRef(initialHeight);
   const initialLoadRef = useRef(false);
+  const formReadyRef = useRef(false);
   const redirectedRef = useRef(false);
 
   const getHeaderCropPx = () => {
@@ -250,7 +250,6 @@ export function ZohoPublicIframeForm({
     redirectedRef.current = true;
     if (typeof onSubmitSuccess === "function") {
       onSubmitSuccess();
-      return;
     }
     if (redirectOnSubmit) {
       router.push(thankYouPath || ZOHO_CONTACT_THANK_YOU_PATH);
@@ -264,16 +263,22 @@ export function ZohoPublicIframeForm({
     applyZohoFormReferrer(iframe);
     applyZohoFormUtmToIframes();
 
+    let primeTimer: ReturnType<typeof setTimeout> | undefined;
+
     const onLoad = () => {
-      if (!initialLoadRef.current) {
-        initialLoadRef.current = true;
+      if (!formReadyRef.current) {
+        if (!initialLoadRef.current) {
+          initialLoadRef.current = true;
+        }
+        if (primeTimer) clearTimeout(primeTimer);
+        primeTimer = setTimeout(() => {
+          formReadyRef.current = true;
+        }, 800);
         return;
       }
 
-      if (shouldRedirectAfterZohoSubmit(iframe)) {
-        setIsSubmitting(true);
-        handleSubmissionSuccess();
-      }
+      setIsSubmitting(true);
+      handleSubmissionSuccess();
     };
 
     const onMessage = (event: MessageEvent) => {
@@ -303,6 +308,7 @@ export function ZohoPublicIframeForm({
     window.addEventListener("resize", onResize);
 
     return () => {
+      if (primeTimer) clearTimeout(primeTimer);
       iframe.removeEventListener("load", onLoad);
       window.removeEventListener("message", onMessage);
       window.removeEventListener("resize", onResize);

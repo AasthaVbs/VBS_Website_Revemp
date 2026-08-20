@@ -3,8 +3,7 @@ import { engagementModelAdvisorCta } from "@/constants/engagement-models-page-co
 
 /** Figma node 960:33558 — Not Sure Which Engagement Model Fits Your Business? */
 export function EngagementModelAdvisorCtaSection() {
-  const { titleLead, titleAccent, description, ctaLabel } = engagementModelAdvisorCta;
-  const ctaHref = ctaLabel.trim().toLowerCase() === "contact us" ? "/contact-us" : undefined;
+  const { titleLead, titleAccent, description, ctaLabel, ctaHref } = engagementModelAdvisorCta;
 
   return (
     <EvaluateDeliveryCtaSection

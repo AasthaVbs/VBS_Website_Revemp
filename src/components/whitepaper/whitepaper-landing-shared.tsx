@@ -55,7 +55,7 @@ export function WhitepaperForm({
             cropHeader=""
             lockHeight
             transparentBackground
-            redirectOnSubmit={!downloadPdfUrl}
+            redirectOnSubmit
             onSubmitSuccess={downloadPdfUrl ? handleSubmitSuccess : undefined}
             className="wb-form-zoho-iframe"
             frameClassName="wb-form-zoho-iframe__frame"

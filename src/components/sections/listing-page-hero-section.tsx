@@ -4,6 +4,7 @@ import type { StaticImageData } from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
+import { ROUTES } from "@/constants/navigation";
 import { cn } from "@/lib/utils";
 
 type ListingHeroProps = {
@@ -12,6 +13,7 @@ type ListingHeroProps = {
   titleAccent: string;
   description: string;
   ctaLabel: string;
+  ctaHref?: string;
   image: StaticImageData | string;
   imageAlt: string;
   titleMaxWidthClass?: string;
@@ -30,6 +32,7 @@ export function ListingPageHeroSection({
   titleAccent,
   description,
   ctaLabel,
+  ctaHref = ROUTES.contact,
   image,
   imageAlt,
   titleMaxWidthClass = "max-w-[597px]",
@@ -71,7 +74,7 @@ export function ListingPageHeroSection({
             </div>
             <PrimaryCtaButton
               fullWidth={false}
-              href="/contact-us"
+              href={ctaHref}
               className={cn(
                 "vbs-listing-hero__cta shrink-0 px-5 py-4 capitalize",
                 ctaClassName,

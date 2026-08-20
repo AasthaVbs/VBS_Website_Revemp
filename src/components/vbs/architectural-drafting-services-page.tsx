@@ -9,6 +9,8 @@ import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-sect
 import { OurClientsSection } from "@/components/sections/our-clients-section";
 import { TrustStripSection } from "@/components/sections/trust-strip-section";
 import {
+  architecturalDraftingAdvantagesCards,
+  architecturalDraftingAdvantagesSection,
   architecturalDraftingAiBimWorkflowSection,
   architecturalDraftingContactDescription,
   architecturalDraftingEngagementModelsCards,
@@ -38,6 +40,7 @@ import {
   DeferredGetInTouchSection,
   DeferredIndustriesSection,
   DeferredMepResourcesSection,
+  DeferredMepServiceBenefitsSection,
   DeferredSiteFooter,
 } from "@/lib/lazy-page-sections";
 import { getMepResourcesFeedItemsLive } from "@/lib/mep-resources";
@@ -79,6 +82,13 @@ export async function ArchitecturalDraftingServicesPage() {
           toolsRowTwo={architecturalDraftingTechnologyStackToolsRowTwo}
           titleLayout="stacked"
           descriptionMaxWidth={539}
+        />
+        <DeferredMepServiceBenefitsSection
+          id="advantages"
+          section={architecturalDraftingAdvantagesSection}
+          cards={architecturalDraftingAdvantagesCards}
+          className="bg-[#FAFAFA]"
+          transparentCards
         />
         <ArchitectureEngagementModelsSection
           section={architecturalDraftingEngagementModelsSection}

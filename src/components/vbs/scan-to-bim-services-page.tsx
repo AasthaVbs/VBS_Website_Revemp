@@ -52,7 +52,7 @@ export async function ScanToBimServicesPage() {
     <div className="vbs-redesign-page scan-to-bim-services-page mep-bim-services-page">
       <SiteHeader />
       <main>
-        <MepPageHeroSection {...scanToBimHero} ctaHref="#services" />
+        <MepPageHeroSection {...scanToBimHero} ctaHref={scanToBimHero.ctaHref} />
         <TrustStripSection stats={scanToBimStatsStrip} className="vbs-mep-stats-strip bg-white" />
         <MepIntroSection
           copy={scanToBimIntroCopy}
@@ -100,7 +100,7 @@ export async function ScanToBimServicesPage() {
           }
           description={scanToBimProjectCta.description}
           ctaLabel={scanToBimProjectCta.cta}
-          ctaHref="#scan-page-contact"
+          ctaHref={scanToBimProjectCta.ctaHref}
           titleClassName="max-w-[791px] !text-[#111111] scan-to-bim-project-cta__title"
           descriptionClassName="max-w-[799px]"
         />

@@ -11,6 +11,10 @@ export const CLARITY_PROJECT_ID = "iqssc5h6gf";
 export const LINKEDIN_INSIGHT_PARTNER_ID = "706315";
 export const LINKEDIN_INSIGHT_SCRIPT_SRC =
   "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+/** LinkedIn Insight conversion used on gated PDF / webinar CTAs (Gatsby landing pages). */
+export const LINKEDIN_CONVERSION_ID = 24698708;
+
+export const CANONICAL_HOST = "www.virtualbuildingstudio.com";
 
 export const FACEBOOK_PIXEL_ID = "769456236059684";
 

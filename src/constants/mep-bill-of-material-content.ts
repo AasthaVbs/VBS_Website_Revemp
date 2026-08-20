@@ -1,4 +1,5 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import { ROUTES } from "@/constants/navigation";
 import type {
   MepBimFeatureCard,
   MepBimMeasurableResultCard,
@@ -17,6 +18,9 @@ const largeScaleProcurementIcon = "/image/large-scale-procurement-icon.png";
 const mepCoordinationComplexIcon = "/image/mep-coordination-complex-icon.png";
 const modelingForFabricationIcon = "/image/modeling-for-fabrication-icon.png";
 
+export const MEP_BOM_CONTACT_ID = "mep-bom-page-contact";
+export const MEP_BOM_CONTACT_HASH = `#${MEP_BOM_CONTACT_ID}`;
+
 export const mepBomHero = {
   tag: "Bill of Material (BOM)",
   titleLead: "Accurate Bill of Material Services to ",
@@ -24,6 +28,7 @@ export const mepBomHero = {
   description:
     "Our pre-vetted MEP experts provide accurate material takeoffs by using coordinated BIM models and helping procurement teams order correctly and keep projects on schedule.",
   ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_BOM_CONTACT_HASH,
   imageSrc: "/image/bill-materia-services-banner.jpg",
   imageAlt: "Bill of Material Services",
   copyMaxWidth: 692,
@@ -63,7 +68,8 @@ export const mepBomServiceFeaturesSection = {
   titleAccent: "Bill of Materials (BOM) Services",
   description:
     "Our MEP experts excel at transforming your raw design data into BIM enabled, structured and actionable material intelligence to improve your construction cost estimating.",
-  ctaLabel: "Get A Free Quote",
+  ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_BOM_CONTACT_HASH,
 } as const;
 
 export const mepBomServiceFeatureCards: MepBimFeatureCard[] = [
@@ -100,7 +106,7 @@ export const mepBomServicesSection = {
   description:
     "Multidisciplinary material quantification tailored for real-world construction and procurement needs.",
   ctaLabel: "Start New Project",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
   wideCards: true,
   titleMaxWidth: 875,
 } as const;
@@ -248,6 +254,7 @@ export const mepBomOutsourcingGuideSection = {
   description:
     "Outsource your BOM creation to improve quantity accuracy, reduce manual effort and speed up project decision making.",
   ctaLabel: "Let's Talk",
+  ctaHref: MEP_BOM_CONTACT_HASH,
 } as const;
 
 export const mepBomOutsourcingGuideCards: MepBimUseCaseCard[] = [
@@ -332,7 +339,7 @@ export const mepBomProjectCta = {
   description:
     "Use our Bill of Material (BOM) Services for faster procurement, enhanced accuracy and timely project execution.",
   cta: "Book a Quick Call",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
 } as const;
 
 export const mepBomFaqSection = {

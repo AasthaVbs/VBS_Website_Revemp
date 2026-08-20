@@ -1,5 +1,10 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import {
+  engagementModelCards,
+  type EngagementModelCard,
+} from "@/constants/engagement-models-content";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
+import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
 const asBuiltModelingBanner = "/image/as-built-modeling-banner.jpg";
@@ -10,6 +15,9 @@ const mepfAsBuiltModelingImg = "/image/mepf-as-built-modeling.jpg";
 const constructionAsBuiltsPlansImg = "/image/construction-as-builts-as-built-plans.jpg";
 const asBuiltDraftingServicesImg = "/image/as-built-drafting-services.jpg";
 const cadToBimAsBuiltDocumentationImg = "/image/cad-to-bim-conversion-for-as-built-documentation.jpg";
+
+export const AS_BUILT_MODELING_CONTACT_ID = "as-built-modeling-page-contact";
+export const AS_BUILT_MODELING_CONTACT_HASH = `#${AS_BUILT_MODELING_CONTACT_ID}`;
 
 export const asBuiltModelingStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -25,6 +33,7 @@ export const asBuiltModelingHero = {
   description:
     "It can take weeks of manual effort to turn raw scan data into usable drawings. Our BIM experts use an AI-enabled workflow to produce code-compliant coordinated as-built models.",
   ctaLabel: "Get a Free Quote",
+  ctaHref: AS_BUILT_MODELING_CONTACT_HASH,
   imageSrc: asBuiltModelingBanner,
   imageAlt: "As-built BIM model of a multi-level interior atrium",
   copyMaxWidth: 716,
@@ -71,7 +80,7 @@ export const asBuiltModelingServicesSection = {
   description:
     "From the first as built survey to final as built documents, we support your entire as-built BIM modeling project.",
   ctaLabel: "Start New Project",
-  ctaHref: "#as-built-modeling-page-contact",
+  ctaHref: AS_BUILT_MODELING_CONTACT_HASH,
   wideCards: true,
   titleMaxWidth: 720,
 };
@@ -123,7 +132,7 @@ export const asBuiltModelingWhyChooseSection = {
   description:
     "Our teams have advanced BIM skills, AI-enabled workflows and real project deadlines and site conditions.",
   ctaLabel: "Start New Project",
-  ctaHref: "#as-built-modeling-page-contact",
+  ctaHref: AS_BUILT_MODELING_CONTACT_HASH,
 };
 
 export const asBuiltModelingWhyChooseItems = [
@@ -239,7 +248,7 @@ export const asBuiltModelingAdvantagesSection = {
   description:
     "Outsourcing your as-built BIM modeling work gives your firm faster turnarounds and fewer errors. You get models your whole team can rely on daily.",
   ctaLabel: "Contact Now",
-  ctaHref: "#as-built-modeling-page-contact",
+  ctaHref: AS_BUILT_MODELING_CONTACT_HASH,
 };
 
 export const asBuiltModelingAdvantagesCards = [
@@ -287,8 +296,13 @@ export const asBuiltModelingProjectCta = {
   description:
     "Share your laser scan or point cloud data with our team. We handle registration, modeling and QC, so you get a construction-ready as-built model fast.",
   cta: "Contact Us",
-  ctaHref: "#as-built-modeling-page-contact",
+  ctaHref: ROUTES.contact,
 };
+
+export const asBuiltModelingEngagementCards = engagementModelCards.map((card) => ({
+  ...card,
+  ctaHref: ROUTES.contact,
+})) as unknown as EngagementModelCard[];
 
 export const asBuiltModelingIndustriesIntro = {
   titleLine1: "Industries We Support with ",

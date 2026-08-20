@@ -25,6 +25,7 @@ export function MepBimServiceFeaturesSection({
     titleAccent: string;
     description: string;
     ctaLabel: string;
+    ctaHref?: string;
   };
   cards?: MepBimFeatureCard[];
   ctaHref?: string;
@@ -33,8 +34,9 @@ export function MepBimServiceFeaturesSection({
   titleMaxWidth?: number;
   descriptionMaxWidth?: number;
 } = {}) {
-  const { tag, titleLead, titleAccent, description, ctaLabel } = section;
+  const { tag, titleLead, titleAccent, description, ctaLabel, ctaHref: sectionCtaHref } = section;
   const isTwoColumn = columnsPerRow === 2;
+  const resolvedCtaHref = ctaHref ?? sectionCtaHref;
 
   return (
     <section className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]">
@@ -91,7 +93,7 @@ export function MepBimServiceFeaturesSection({
 
         <PrimaryCtaButton
           fullWidth={false}
-          href={ctaHref}
+          href={resolvedCtaHref}
           className="h-auto min-h-[52px] self-center px-5 py-4 capitalize backdrop-blur-[50px]"
         >
           {ctaLabel}

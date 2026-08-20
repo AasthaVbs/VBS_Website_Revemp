@@ -25,7 +25,7 @@ export const zoningAnalysisHero = {
   titleAccent: "Architects Managing Compliance and Capacity\u00a0Gaps",
   description:
     "Zoning research slows site decisions and permit timelines. Our BIM specialists leverage AI-assisted workflows to deliver you code-verified zoning reports you can trust.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: "/image/zoning-analysis-banner.jpg",
   imageAlt: "Zoning Analysis Services",
   copyMaxWidth: 780,
@@ -386,7 +386,7 @@ export const zoningAnalysisEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#zoning-analysis-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -417,7 +417,7 @@ export const zoningAnalysisProjectCta = {
   description:
     "Stop chasing zoning codes across county websites. Our BIM experts turn scattered zoning data into a clear, permit-ready report your team can act on.",
   cta: "Contact Us",
-  ctaHref: "#zoning-analysis-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const zoningAnalysisIndustriesIntro = {

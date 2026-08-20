@@ -137,34 +137,29 @@
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 20px;
   }
 
   .vbs-leadership-team__row {
     display: grid;
     width: 100%;
     grid-template-columns: minmax(0, 345px);
-    gap: 10px;
+    gap: 20px;
     justify-content: start;
     justify-items: start;
 
     @media (min-width: 640px) {
-      grid-template-columns: repeat(2, 345px);
-      column-gap: 10px;
-      row-gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 345px));
     }
 
     @media (min-width: 1024px) {
-      grid-template-columns: repeat(3, 345px);
-      column-gap: 12px;
-      row-gap: 10px;
+      grid-template-columns: repeat(3, minmax(0, 345px));
     }
   }
 
-  .vbs-leadership-team__row--first,
-  .vbs-leadership-team__row--secondary {
+  .vbs-leadership-team__row--2 {
     @media (min-width: 1024px) {
-      grid-template-columns: repeat(2, 345px);
+      grid-template-columns: repeat(2, minmax(0, 345px));
     }
   }
 }
@@ -315,8 +310,8 @@
 }
 
 .vbs-leadership-team__view-more-chevron {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   color: currentColor;
 }

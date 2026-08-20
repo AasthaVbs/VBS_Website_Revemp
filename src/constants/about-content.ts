@@ -1,3 +1,5 @@
+import { ROUTES } from "@/constants/navigation";
+
 export const aboutHeroImages = {
   main: "/image/About-VBS.jpg",
 } as const;
@@ -69,7 +71,8 @@ export const joinTeamCtaCopy = {
   titleAccent: "the Team",
   description:
     "Join our team 150+ Architecture from the across the globe and contribute to groundbreaking projects with top-tier architects and engineers.",
-  ctaLabel: "Contact Us",
+  ctaLabel: "Join our Team",
+  ctaHref: ROUTES.careers,
 } as const;
 
 export const founderHighlights = [

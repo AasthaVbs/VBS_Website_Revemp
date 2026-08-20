@@ -10,6 +10,8 @@ import { MepBimServiceFeaturesSection } from "@/components/sections/mep/mep-bim-
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
 import { MepTrustedByStripSection } from "@/components/sections/mep/mep-trusted-by-strip-section";
 import {
+  MEP_REVIT_FAMILY_CREATION_CONTACT_HASH,
+  MEP_REVIT_FAMILY_CREATION_CONTACT_ID,
   mepRevitFamilyCreationDeliverablesCards,
   mepRevitFamilyCreationDeliverablesSection,
   mepRevitFamilyCreationFaqSection,
@@ -53,7 +55,7 @@ export async function MepRevitFamilyCreationPage() {
         <MepPageHeroSection
           {...mepRevitFamilyCreationHero}
           imageSize="compact"
-          ctaHref="/contact-us"
+          ctaHref={MEP_REVIT_FAMILY_CREATION_CONTACT_HASH}
           containerClassName="!pt-0 !pb-4 sm:!pt-0 sm:!pb-5 lg:!pt-0 lg:!pb-6"
         />
         <MepTrustedByStripSection
@@ -67,7 +69,7 @@ export async function MepRevitFamilyCreationPage() {
         <MepBimServiceFeaturesSection
           section={mepRevitFamilyCreationServiceFeaturesSection}
           cards={mepRevitFamilyCreationServiceFeatureCards}
-          ctaHref="/contact-us"
+          ctaHref={MEP_REVIT_FAMILY_CREATION_CONTACT_HASH}
         />
         <MepFullSpectrumServicesSection
           section={mepRevitFamilyCreationServicesSection}
@@ -98,7 +100,7 @@ export async function MepRevitFamilyCreationPage() {
           section={mepRevitFamilyCreationOutsourcingGuideSection}
           cards={mepRevitFamilyCreationOutsourcingGuideCards}
           showCta
-          ctaHref="/contact-us"
+          ctaHref={MEP_REVIT_FAMILY_CREATION_CONTACT_HASH}
           iconVariant="boxed"
           descriptionMaxWidth={666}
           columnsPerRow={2}
@@ -134,7 +136,10 @@ export async function MepRevitFamilyCreationPage() {
           description={mepRevitFamilyCreationFaqSection.description}
           items={mepRevitFamilyCreationFaqs}
         />
-        <DeferredGetInTouchSection description={mepFaqDescription} />
+        <DeferredGetInTouchSection
+          sectionId={MEP_REVIT_FAMILY_CREATION_CONTACT_ID}
+          description={mepFaqDescription}
+        />
       </main>
 
       <DeferredSiteFooter />

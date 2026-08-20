@@ -1,10 +1,18 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import {
+  engagementModelCards,
+  type EngagementModelCard,
+} from "@/constants/engagement-models-content";
 import type { MepBimTechnologyTool } from "@/constants/mep-bim-modelling-content";
 import {
   mepBimTechnologyStackToolsRowOne,
   mepBimTechnologyStackToolsRowTwo,
 } from "@/constants/mep-bim-modelling-content";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
+import { ROUTES } from "@/constants/navigation";
+
+export const POINT_CLOUD_TO_BIM_CONTACT_ID = "point-cloud-to-bim-page-contact";
+export const POINT_CLOUD_TO_BIM_CONTACT_HASH = `#${POINT_CLOUD_TO_BIM_CONTACT_ID}`;
 
 export const pointCloudToBimStatsStrip = [
   { value: "4000+", color: "text-vbs-red", label: "Projects Delivered" },
@@ -20,6 +28,7 @@ export const pointCloudToBimHero = {
   description:
     "Messy point cloud data slows every project down. Our BIM experts use an AI-powered workflow to convert scans into reliable models fast, without compromising quality.",
   ctaLabel: "Get a Free Quote",
+  ctaHref: POINT_CLOUD_TO_BIM_CONTACT_HASH,
   imageSrc: "/image/point-cloud-to-bim-services-banner.png",
   imageAlt: "Point Cloud to BIM Services",
   copyMaxWidth: 699,
@@ -66,7 +75,7 @@ export const pointCloudToBimServicesSection = {
   description:
     "Our team supports every phase of your project, from the first scan to the final construction-ready deliverable, without gaps in between.",
   ctaLabel: "Start New Project",
-  ctaHref: "#point-cloud-to-bim-page-contact",
+  ctaHref: POINT_CLOUD_TO_BIM_CONTACT_HASH,
   wideCards: true,
   titleMaxWidth: 747,
 };
@@ -128,7 +137,7 @@ export const pointCloudToBimWhyChooseSection = {
   description:
     "Our teams have advanced BIM skills, AI-enabled workflows and real project deadlines and site conditions.",
   ctaLabel: "Start New Project",
-  ctaHref: "#point-cloud-to-bim-page-contact",
+  ctaHref: POINT_CLOUD_TO_BIM_CONTACT_HASH,
 };
 
 export const pointCloudToBimWhyChooseItems = [
@@ -235,7 +244,7 @@ export const pointCloudToBimAdvantagesSection = {
   description:
     "Get faster delivery, less errors and more time to focus on design and client work by outsourcing your point cloud to BIM conversion.",
   ctaLabel: "Contact Now",
-  ctaHref: "#point-cloud-to-bim-page-contact",
+  ctaHref: POINT_CLOUD_TO_BIM_CONTACT_HASH,
 };
 
 export const pointCloudToBimAdvantagesCards = [
@@ -283,8 +292,13 @@ export const pointCloudToBimProjectCta = {
   description:
     "Your scans hold everything your team needs. Let our BIM experts convert point cloud to 3D model output that speeds up your next project.",
   cta: "Contact Us",
-  ctaHref: "#point-cloud-to-bim-page-contact",
+  ctaHref: ROUTES.contact,
 };
+
+export const pointCloudToBimEngagementCards = engagementModelCards.map((card) => ({
+  ...card,
+  ctaHref: ROUTES.contact,
+})) as unknown as EngagementModelCard[];
 
 export const pointCloudToBimIndustriesIntro = {
   titleLine1: "Industries We Support with ",

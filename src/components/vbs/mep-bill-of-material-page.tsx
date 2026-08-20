@@ -10,6 +10,8 @@ import { MepBimUseCasesSection } from "@/components/sections/mep/mep-bim-use-cas
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
 import { MepTrustedByStripSection } from "@/components/sections/mep/mep-trusted-by-strip-section";
 import {
+  MEP_BOM_CONTACT_HASH,
+  MEP_BOM_CONTACT_ID,
   mepBomDeliverablesCards,
   mepBomDeliverablesSection,
   mepBomFaqSection,
@@ -54,7 +56,7 @@ export async function MepBillOfMaterialPage() {
         <MepPageHeroSection
           {...mepBomHero}
           imageSize="compact"
-          ctaHref="/contact-us"
+          ctaHref={MEP_BOM_CONTACT_HASH}
           containerClassName="!pt-0 !pb-4 sm:!pt-0 sm:!pb-5 lg:!pt-0 lg:!pb-6"
         />
         <MepTrustedByStripSection
@@ -68,7 +70,7 @@ export async function MepBillOfMaterialPage() {
         <MepBimServiceFeaturesSection
           section={mepBomServiceFeaturesSection}
           cards={mepBomServiceFeatureCards}
-          ctaHref="/contact-us"
+          ctaHref={MEP_BOM_CONTACT_HASH}
           columnsPerRow={2}
           titleMaxWidth={727}
           descriptionMaxWidth={676}
@@ -102,7 +104,7 @@ export async function MepBillOfMaterialPage() {
           section={mepBomOutsourcingGuideSection}
           cards={mepBomOutsourcingGuideCards}
           showCta
-          ctaHref="/contact-us"
+          ctaHref={MEP_BOM_CONTACT_HASH}
           iconVariant="boxed"
           descriptionMaxWidth={598}
           columnsPerRow={2}
@@ -135,7 +137,10 @@ export async function MepBillOfMaterialPage() {
           description={mepBomFaqSection.description}
           items={mepBomFaqs}
         />
-        <DeferredGetInTouchSection description={mepFaqDescription} />
+        <DeferredGetInTouchSection
+          sectionId={MEP_BOM_CONTACT_ID}
+          description={mepFaqDescription}
+        />
       </main>
 
       <DeferredSiteFooter />

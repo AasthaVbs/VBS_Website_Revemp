@@ -15,6 +15,21 @@ import {
 } from "@/constants/leadership-content";
 import { cn } from "@/lib/utils";
 
+function groupMembersByRow(members: LeadershipMember[]): LeadershipMember[][] {
+  const keyed = new Map<number, LeadershipMember[]>();
+
+  members.forEach((member, index) => {
+    const row = member.row ?? Math.floor(index / 3) + 1;
+    const list = keyed.get(row) ?? [];
+    list.push(member);
+    keyed.set(row, list);
+  });
+
+  return [...keyed.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .map(([, list]) => list);
+}
+
 function ViewMoreControl({ member }: { member: LeadershipMember }) {
   const label = "View More";
 
@@ -28,10 +43,39 @@ function ViewMoreControl({ member }: { member: LeadershipMember }) {
   }
 
   return (
-    <button type="button" className="vbs-leadership-team__view-more">
+    <span className="vbs-leadership-team__view-more">
       <span>{label}</span>
       <ChevronRight className="vbs-leadership-team__view-more-chevron" strokeWidth={1.5} aria-hidden />
-    </button>
+    </span>
+  );
+}
+
+function LinkedInControl({ member }: { member: LeadershipMember }) {
+  if (!member.linkedinHref) {
+    return null;
+  }
+
+  return (
+    <a
+      href={member.linkedinHref}
+      className="vbs-leadership-team__linkedin"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${member.name} on LinkedIn`}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/icons/social/linkedin-leadership-gray.svg"
+        alt=""
+        className="vbs-leadership-team__linkedin-icon vbs-leadership-team__linkedin-icon--default"
+      />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/icons/social/linkedin-leadership-colored.svg"
+        alt=""
+        className="vbs-leadership-team__linkedin-icon vbs-leadership-team__linkedin-icon--hover"
+      />
+    </a>
   );
 }
 
@@ -58,9 +102,11 @@ function LeadershipMemberCard({ member }: { member: LeadershipMember }) {
           <div className="vbs-leadership-team__card-copy">
             <h3 className="vbs-leadership-team__card-name">{member.name}</h3>
             <p className="vbs-leadership-team__card-role">{member.role}</p>
-            <p className="vbs-leadership-team__card-bio">{member.bio}</p>
           </div>
-          <ViewMoreControl member={member} />
+          <div className="vbs-leadership-team__card-footer">
+            <ViewMoreControl member={member} />
+            <LinkedInControl member={member} />
+          </div>
         </div>
       </div>
     </article>
@@ -68,31 +114,29 @@ function LeadershipMemberCard({ member }: { member: LeadershipMember }) {
 }
 
 function LeadershipMemberGrid({ members }: { members: LeadershipMember[] }) {
+  const rows = useMemo(() => groupMembersByRow(members), [members]);
+
   if (!members.length) {
     return (
       <p className="vbs-leadership-team__empty">No team members listed for this group yet.</p>
     );
   }
 
-  const primaryRow = members.filter((m) => !m.compact);
-  const secondaryRow = members.filter((m) => m.compact);
-
   return (
     <div className="vbs-leadership-team__cards">
-      {primaryRow.length > 0 ? (
-        <div className="vbs-leadership-team__row">
-          {primaryRow.map((member) => (
-            <LeadershipMemberCard key={member.name} member={member} />
+      {rows.map((row, index) => (
+        <div
+          key={row.map((member) => member.name).join("-")}
+          className={cn(
+            "vbs-leadership-team__row",
+            row.length <= 2 && "vbs-leadership-team__row--2",
+          )}
+        >
+          {row.map((member) => (
+            <LeadershipMemberCard key={`${index}-${member.name}`} member={member} />
           ))}
         </div>
-      ) : null}
-      {secondaryRow.length > 0 ? (
-        <div className="vbs-leadership-team__row vbs-leadership-team__row--secondary">
-          {secondaryRow.map((member) => (
-            <LeadershipMemberCard key={member.name} member={member} />
-          ))}
-        </div>
-      ) : null}
+      ))}
     </div>
   );
 }

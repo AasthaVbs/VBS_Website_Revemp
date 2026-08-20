@@ -10,6 +10,7 @@ import {
   scanToCadAdvantagesCards,
   scanToCadAdvantagesSection,
   scanToCadContactDescription,
+  scanToCadEngagementCards,
   scanToCadFaqSection,
   scanToCadFaqs,
   scanToCadHero,
@@ -55,7 +56,7 @@ export async function ScanToCadServicesPage() {
         <MepPageHeroSection
           {...scanToCadHero}
           imageSize="compact"
-          ctaHref="#scan-to-cad-page-contact"
+          ctaHref={scanToCadHero.ctaHref}
           className="scan-to-cad-hero"
           copyClassName="scan-to-cad-hero__copy"
           rowClassName="scan-to-cad-hero__row"
@@ -94,7 +95,7 @@ export async function ScanToCadServicesPage() {
           section={scanToCadAdvantagesSection}
           cards={scanToCadAdvantagesCards}
         />
-        <DeferredEngagementModelsSection />
+        <DeferredEngagementModelsSection cards={scanToCadEngagementCards} />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

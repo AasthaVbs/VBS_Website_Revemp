@@ -19,7 +19,7 @@ export default function PortfolioProjectLayout({ children }: { children: ReactNo
     <div className="vbs-project-detail-page vbs-redesign-page min-h-screen bg-white">
       <SiteHeader />
       {children}
-      <GetInTouchSection />
+      <GetInTouchSection sectionId="case-study-page-contact" />
       <SiteFooter />
       <Script src="https://cdn.jsdelivr.net/npm/lucide@0.383.0/dist/umd/lucide.min.js" strategy="afterInteractive" />
     </div>

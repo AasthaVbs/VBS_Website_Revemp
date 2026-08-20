@@ -81,7 +81,7 @@ export const homeCapabilityCards: HomeCapabilityCard[] = [
   {
     image: "/image/architecture-structure.png",
     title: "Architecture & Structure",
-    href: "/architecture-services",
+    href: ROUTES.architectureServices,
     summary: "Architectural BIM Modeling Services, Documentation, And Design Support",
     description:
       "An integrated BIM Modeling Company functioning as a technical infrastructure layer, allowing principals to focus on design leadership and client engagement.",
@@ -97,7 +97,7 @@ export const homeCapabilityCards: HomeCapabilityCard[] = [
   {
     image: "/image/reality-capture-survey.png",
     title: "Reality Capture & Survey",
-    href: "/scan-to-bim-services",
+    href: ROUTES.scanToBimServices,
     summary: "Scan-To-BIM Modeling, Survey Data Integration, And Capture Deliverables",
     description:
       "Point cloud to BIM pipelines designed for speed, consistency, and scale across multi-site and portfolio programs.",
@@ -166,7 +166,7 @@ export const engagementModelCards = [
     ],
     bestSuitedFor: ["Small firms", "Pilot projects", "Short-term BIM needs"],
     cta: "Start a Project",
-    ctaHref: "/contact-us",
+    ctaHref: "#contact",
     shadow: false,
     ctaHighlighted: false,
     featured: false,
@@ -184,7 +184,7 @@ export const engagementModelCards = [
     ],
     bestSuitedFor: ["Mid-sized firms", "Ongoing project pipelines", "Long-term delivery support"],
     cta: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#contact",
     shadow: false,
     badge: "Most Demanding",
     ctaHighlighted: true,
@@ -208,7 +208,7 @@ export const engagementModelCards = [
       "Strategic outsourcing partnerships",
     ],
     cta: "Explore GDC Model",
-    ctaHref: "/contact-us",
+    ctaHref: "#contact",
     shadow: false,
     ctaHighlighted: false,
     featured: false,

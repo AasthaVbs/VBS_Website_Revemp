@@ -1,3 +1,27 @@
+import {
+  engagementModelCards,
+  type EngagementModelCard,
+} from "@/constants/engagement-models-content";
+import { ROUTES } from "@/constants/navigation";
+
+export const ENGAGEMENT_MODELS_PAGE_CONTACT_ID = "engagement-models-page-contact";
+export const ENGAGEMENT_MODELS_PAGE_CONTACT_HASH = `#${ENGAGEMENT_MODELS_PAGE_CONTACT_ID}`;
+
+export const engagementModelsPageCards = [
+  {
+    ...engagementModelCards[0],
+    ctaHref: ENGAGEMENT_MODELS_PAGE_CONTACT_HASH,
+  },
+  {
+    ...engagementModelCards[1],
+    ctaHref: ENGAGEMENT_MODELS_PAGE_CONTACT_HASH,
+  },
+  {
+    ...engagementModelCards[2],
+    ctaHref: ROUTES.contact,
+  },
+] as unknown as EngagementModelCard[];
+
 export const engagementModelFinderSection = {
   tag: "Engagement Guide",
   titleLead: "Which Engagement ",
@@ -114,6 +138,7 @@ export const engagementModelAdvisorCta = {
   description:
     "Our team can help you identify the right delivery structure based on your project volume, timelines, and operational goals.",
   ctaLabel: "Talk to BIM Experts",
+  ctaHref: ROUTES.contact,
 } as const;
 
 export const engagementPageTestimonialsDescription =

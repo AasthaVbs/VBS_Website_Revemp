@@ -73,7 +73,7 @@ export async function ArchitectureServicesPage() {
           }
           description={architectureProjectCta.description}
           ctaLabel={architectureProjectCta.cta}
-          ctaHref="#architecture-page-contact"
+          ctaHref={architectureProjectCta.ctaHref}
           titleClassName="max-w-[800px]"
           descriptionClassName="max-w-[720px]"
         />

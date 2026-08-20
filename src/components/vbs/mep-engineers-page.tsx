@@ -104,7 +104,7 @@ export async function MepEngineersPage() {
           }
           description={mepProjectCta.description}
           ctaLabel={mepProjectCta.cta}
-          ctaHref="#mep-page-contact"
+          ctaHref={mepProjectCta.ctaHref}
           titleClassName="max-w-[933px]"
           descriptionClassName="max-w-[840px]"
         />

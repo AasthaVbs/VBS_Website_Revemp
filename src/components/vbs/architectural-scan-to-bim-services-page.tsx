@@ -10,6 +10,7 @@ import {
   architecturalScanToBimAdvantagesCards,
   architecturalScanToBimAdvantagesSection,
   architecturalScanToBimContactDescription,
+  architecturalScanToBimEngagementCards,
   architecturalScanToBimFaqSection,
   architecturalScanToBimFaqs,
   architecturalScanToBimHero,
@@ -55,7 +56,7 @@ export async function ArchitecturalScanToBimServicesPage() {
         <MepPageHeroSection
           {...architecturalScanToBimHero}
           imageSize="compact"
-          ctaHref="#architectural-scan-to-bim-page-contact"
+          ctaHref={architecturalScanToBimHero.ctaHref}
           containerClassName="!pt-0 sm:!pt-1 lg:!pt-4"
         />
         <TrustStripSection
@@ -91,7 +92,7 @@ export async function ArchitecturalScanToBimServicesPage() {
           section={architecturalScanToBimAdvantagesSection}
           cards={architecturalScanToBimAdvantagesCards}
         />
-        <DeferredEngagementModelsSection />
+        <DeferredEngagementModelsSection cards={architecturalScanToBimEngagementCards} />
         <DeferredEvaluateDeliveryCtaSection
           cardOnMobile
           title={

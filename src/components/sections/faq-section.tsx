@@ -87,7 +87,7 @@ export function FaqSection({
         <PageContainer className="vbs-home-faq__container">
           <header className="vbs-home-faq__head">
             <div className="vbs-home-faq__head-top">
-              <span className="vbs-home-faq__tag">{tag}</span>
+              {tag ? <span className="vbs-home-faq__tag">{tag}</span> : null}
               <h2 className="vbs-home-faq__title">
                 {titleLine1 && titleLine2 ? (
                   <>

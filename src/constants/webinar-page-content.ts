@@ -1,3 +1,4 @@
+import { ROUTES } from "@/constants/navigation";
 import {
   figmaBlogListingItems,
   type ResourceListingItem,
@@ -11,6 +12,7 @@ export const webinarPageHero = {
   description:
     "Join industry experts as they share insights, best practices, and emerging trends in BIM, Scan to BIM, MEP engineering, and digital construction.",
   ctaLabel: "Contact Us",
+  ctaHref: ROUTES.contact,
   imageAlt: "Virtual Building Studio webinar session",
 } as const;
 

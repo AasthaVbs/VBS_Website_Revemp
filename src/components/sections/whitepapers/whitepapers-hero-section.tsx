@@ -4,7 +4,7 @@ import { whitepapersPageHero } from "@/constants/whitepapers-page-content";
 const whitePaperBannerImg = "/image/white-paper-banner.jpg";
 
 export function WhitepapersHeroSection() {
-  const { tag, titleLead, titleAccent, description, ctaLabel, imageAlt } = whitepapersPageHero;
+  const { tag, titleLead, titleAccent, description, ctaLabel, ctaHref, imageAlt } = whitepapersPageHero;
 
   return (
     <ListingPageHeroSection
@@ -14,6 +14,7 @@ export function WhitepapersHeroSection() {
       titleAccent={titleAccent}
       description={description}
       ctaLabel={ctaLabel}
+      ctaHref={ctaHref}
       image={whitePaperBannerImg}
       imageAlt={imageAlt}
       titleMaxWidthClass="max-w-[597px]"

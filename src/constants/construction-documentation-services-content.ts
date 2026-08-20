@@ -25,7 +25,7 @@ export const constructionDocumentationHero = {
   titleAccent: "Fully Occupied AEC Teams",
   description:
     "Your team needs permit-ready drawings fast, but limited team strength slows every submission. Our BIM experts run AI-assisted workflows to cut production time without hurting quality.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: "/image/construction-documentation-services-banner.jpg",
   imageAlt: "Construction Documentation Services",
   copyMaxWidth: 675,
@@ -386,7 +386,7 @@ export const constructionDocumentationEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#construction-documentation-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -417,7 +417,7 @@ export const constructionDocumentationProjectCta = {
   description:
     "Stop letting drawing backlogs slow down your permits and your projects. Let our BIM experts and AI-assisted workflows help your team catch up fast.",
   cta: "Contact Us",
-  ctaHref: "#construction-documentation-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const constructionDocumentationIndustriesIntro = {

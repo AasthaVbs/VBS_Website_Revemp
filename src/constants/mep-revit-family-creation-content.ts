@@ -1,4 +1,5 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import { ROUTES } from "@/constants/navigation";
 import type {
   MepBimFeatureCard,
   MepBimMeasurableResultCard,
@@ -20,6 +21,9 @@ const professionalRevitLibrariesScaleIcon = "/image/mep-revit-family/professiona
 const standardComponentsForMepIcon = "/image/mep-revit-family/standard-components-for-mep-icon.png";
 const unifyingDistributedTeamWorkflowsIcon = "/image/mep-revit-family/unifying-distributed-team-workflows-icon.png";
 
+export const MEP_REVIT_FAMILY_CREATION_CONTACT_ID = "mep-revit-family-creation-page-contact";
+export const MEP_REVIT_FAMILY_CREATION_CONTACT_HASH = `#${MEP_REVIT_FAMILY_CREATION_CONTACT_ID}`;
+
 export const mepRevitFamilyCreationHero = {
   tag: "MEP Revit Family Creation",
   titleLead: "Scalable MEP Revit Family Creation Services for\n",
@@ -27,6 +31,7 @@ export const mepRevitFamilyCreationHero = {
   description:
     "Our pre-vetted Revit expert provide custom Revit families and helping project teams maintain parametric accuracy, faster coordination and consistent BIM workflows.",
   ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_REVIT_FAMILY_CREATION_CONTACT_HASH,
   imageSrc: "/image/mep-revit-family-creation-banner.jpg",
   imageAlt: "mep-revit-family-creation-banner",
   copyMaxWidth: 703,
@@ -66,7 +71,8 @@ export const mepRevitFamilyCreationServiceFeaturesSection = {
   titleAccent: "MEP Family Creation Services",
   description:
     "Your reliable MEP family creation services provider offering high-performance parametric BIM content.",
-  ctaLabel: "Get A Free Quote",
+  ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_REVIT_FAMILY_CREATION_CONTACT_HASH,
 } as const;
 
 export const mepRevitFamilyCreationServiceFeatureCards: MepBimFeatureCard[] = [
@@ -127,7 +133,7 @@ export const mepRevitFamilyCreationServicesSection = {
   description:
     "Scalable Revit Mechanical, Plumbing, HVAC and Firefighting Family Creation built for consistent project data and reliable BIM coordination.",
   ctaLabel: "Start New Project",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
   wideCards: true,
   titleMaxWidth: 774,
 } as const;
@@ -284,6 +290,7 @@ export const mepRevitFamilyCreationOutsourcingGuideSection = {
   description:
     "Bring in a specialized MEP Family Creation Services Provider when project demands exceed your team's capacity, library standards, or delivery schedule.",
   ctaLabel: "Let's Talk",
+  ctaHref: MEP_REVIT_FAMILY_CREATION_CONTACT_HASH,
 } as const;
 
 export const mepRevitFamilyCreationOutsourcingGuideCards: MepBimUseCaseCard[] = [
@@ -367,7 +374,7 @@ export const mepRevitFamilyCreationProjectCta = {
   description:
     "Our MEP Revit Family Creation Services provide parametric families that fit your BIM standards, support project coordination, and reduce repetitive modeling work.",
   cta: "Book a Quick Call",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
 } as const;
 
 export const mepRevitFamilyCreationFaqSection = {

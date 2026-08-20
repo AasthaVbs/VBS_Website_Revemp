@@ -1,5 +1,5 @@
 /* CAD Drafting Services USA — Figma 3991:*
- * Heading scale: desktop h1 54px / h2 48px; mobile h1 34px / h2 30px.
+ * Heading sizes come from vbs-landing-home-type.scss (home page scale).
  */
 
 .cad-drafting-services-usa-page {
@@ -39,39 +39,6 @@
     }
   }
 
-  /* Desktop headings */
-  h1,
-  h1 span,
-  h1 .text-display,
-  h1 .text-display-accent,
-  .cad-usa-hero h1,
-  .cad-usa-hero h1 span {
-    font-size: 54px !important;
-    line-height: 1.15 !important;
-  }
-
-  h2,
-  h2 span,
-  h2 .text-section,
-  h2 .text-accent,
-  .cad-usa-testimonial h2,
-  .cad-usa-testimonial h2 span,
-  .cad-usa-expertise h2,
-  .cad-usa-expertise h2 span,
-  .cad-usa-clients h2,
-  .cad-usa-clients h2 span,
-  .mep-figma-why-choose__title,
-  .mep-figma-why-choose__title-dark,
-  .mep-figma-why-choose__title-accent,
-  .vbs-home-faq__title,
-  .vbs-home-faq__title-dark,
-  .vbs-home-faq__title-accent,
-  .vbs-get-in-touch__info-head h2,
-  .vbs-get-in-touch__info-head .text-section {
-    font-size: 48px !important;
-    line-height: 1.15 !important;
-  }
-
   .cad-usa-clients__track {
     animation: cad-usa-clients-marquee 28s linear infinite;
   }
@@ -98,38 +65,6 @@
 
 @media (max-width: 767px) {
   .cad-drafting-services-usa-page {
-    h1,
-    h1 span,
-    h1 .text-display,
-    h1 .text-display-accent,
-    .cad-usa-hero h1,
-    .cad-usa-hero h1 span {
-      font-size: 34px !important;
-      line-height: 1.15 !important;
-    }
-
-    h2,
-    h2 span,
-    h2 .text-section,
-    h2 .text-accent,
-    .cad-usa-testimonial h2,
-    .cad-usa-testimonial h2 span,
-    .cad-usa-expertise h2,
-    .cad-usa-expertise h2 span,
-    .cad-usa-clients h2,
-    .cad-usa-clients h2 span,
-    .mep-figma-why-choose__title,
-    .mep-figma-why-choose__title-dark,
-    .mep-figma-why-choose__title-accent,
-    .vbs-home-faq__title,
-    .vbs-home-faq__title-dark,
-    .vbs-home-faq__title-accent,
-    .vbs-get-in-touch__info-head h2,
-    .vbs-get-in-touch__info-head .text-section {
-      font-size: 30px !important;
-      line-height: 1.15 !important;
-    }
-
     /* Why Choose — balanced mobile layout */
     .cad-usa-why-choose.mep-figma-why-choose {
       padding-top: 48px !important;
@@ -241,3 +176,4 @@
 }
 
 @import "./vbs-laptop-heading-scale.scss";
+@import "./vbs-landing-home-type.scss";

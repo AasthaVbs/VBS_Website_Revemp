@@ -1,36 +1,5 @@
 /* Architectural BIM Services USA — hero form + trust + clients (mirrors ads-usa patterns) */
-
-/* Desktop heading lock — Architectural BIM USA */
-@media (min-width: 1024px) {
-  .architectural-bim-services-usa-page.vbs-redesign-page {
-    h1,
-    h1 span,
-    .h1,
-    .abs-usa-hero h1,
-    .abs-usa-hero h1 span {
-      font-size: 54px !important;
-      line-height: 1.15 !important;
-    }
-
-    h2,
-    h2 span,
-    .h2,
-    h2.text-section,
-    .text-section,
-    .mep-figma-why-choose__title,
-    .mep-figma-why-choose__title--parts,
-    .mep-figma-why-choose__title-dark,
-    .mep-figma-why-choose__title-accent,
-    .vbs-our-clients__title,
-    .vbs-our-clients__title-dark,
-    .vbs-our-clients__title-accent,
-    .vbs-client-success-stories__title,
-    .vbs-client-success-stories__title span {
-      font-size: 48px !important;
-      line-height: 1.15 !important;
-    }
-  }
-}
+/* Heading sizes come from vbs-landing-home-type.scss (home page scale). */
 
 /* Key Advantages + Why Choose — force Figma title/desc widths (beat mep !important) */
 .architectural-bim-services-usa-page.mep-bim-services-page {
@@ -855,3 +824,4 @@
 }
 
 @import "./vbs-laptop-heading-scale.scss";
+@import "./vbs-landing-home-type.scss";

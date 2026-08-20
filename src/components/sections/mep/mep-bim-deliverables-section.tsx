@@ -26,6 +26,7 @@ export function MepBimDeliverablesSection({
     titleAccent: string;
     description: string;
     ctaLabel?: string;
+    ctaHref?: string;
   };
   cards?: MepBimDeliverableCard[];
   showCta?: boolean;
@@ -34,7 +35,7 @@ export function MepBimDeliverablesSection({
   sectionClassName?: string;
   descriptionMaxWidth?: number;
 } = {}) {
-  const { tag, titleLead, titleAccent, description, ctaLabel } = section;
+  const { tag, titleLead, titleAccent, description, ctaLabel, ctaHref } = section;
   const rowOne = layout === "two-two" ? cards.slice(0, 2) : cards.slice(0, 3);
   const rowTwo = layout === "two-two" ? cards.slice(2, 4) : cards.slice(3, 5);
 
@@ -100,6 +101,7 @@ export function MepBimDeliverablesSection({
         {showCta && ctaLabel ? (
           <PrimaryCtaButton
             fullWidth={false}
+            href={ctaHref}
             className="h-auto min-h-[52px] px-5 py-4 capitalize backdrop-blur-[50px]"
           >
             {ctaLabel}

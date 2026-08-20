@@ -29,6 +29,7 @@ export function MepBimUseCasesSection({
     titleAccent: string;
     description: string;
     ctaLabel?: string;
+    ctaHref?: string;
   };
   cards?: MepBimUseCaseCard[];
   showCta?: boolean;

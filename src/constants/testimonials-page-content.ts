@@ -1,4 +1,5 @@
 import { clientSuccessStories } from "@/constants/client-success-stories-content";
+import { ROUTES } from "@/constants/navigation";
 
 export const testimonialsPageHero = {
   tag: "Testimonials",
@@ -7,6 +8,7 @@ export const testimonialsPageHero = {
   description:
     "Real feedback from clients who rely on our BIM, Scan to BIM, MEP, and digital construction services to deliver successful projects with confidence.",
   ctaLabel: "Contact Us",
+  ctaHref: ROUTES.contact,
   imageAlt: "Client testimonials on Virtual Building Studio BIM services",
 } as const;
 
@@ -23,8 +25,8 @@ export const testimonialsJoinTeamCta = {
   titleAccent: "the Team",
   description:
     "Join 500+ BIM experts, architects, and engineers driving innovation for leading architecture, engineering, and construction firms worldwide. Grow your skills, work with cutting-edge technologies, and help deliver exceptional projects.",
-  ctaLabel: "Contact Us",
-  ctaHref: "/contact-us",
+  ctaLabel: "Join our Team",
+  ctaHref: ROUTES.careers,
 } as const;
 
 export type ClientReviewItem = {

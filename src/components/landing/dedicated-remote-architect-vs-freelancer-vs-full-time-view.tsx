@@ -11,6 +11,9 @@ import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { cn } from "@/lib/utils";
+import { trackLinkedInConversion } from "@/utils/site-tracking-events";
+
+import "@/styles/vbs-landing-home-type.scss";
 
 const heroImage = encodeURI("/image/Adding-People-Should-Reduce-Delivery-Pressure,-But-Why-Does-It-Often-Increase 1 (1).jpg");
 const pressureImage = encodeURI("/image/When-Work-Increases,-But-Delivery-Pressure-Does-Not-Ease 1.png");
@@ -399,13 +402,7 @@ function ImpactChangesDiagram({ points }: { points: readonly string[] }) {
 /** Landing: Dedicated Remote Architect vs Freelancer vs Full-Time */
 export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
   const trackPdfClick = useCallback(() => {
-    try {
-      if (typeof window !== "undefined" && typeof window.lintrk === "function") {
-        window.lintrk("track", { conversion_id: 24698708 });
-      }
-    } catch {
-      /* ignore */
-    }
+    trackLinkedInConversion();
   }, []);
 
   return (
@@ -420,7 +417,7 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
               <div className="flex w-full flex-col items-start gap-5">
                 <div className="flex w-full flex-col items-start gap-3">
                   <MepSectionTag label="Capacity Decision Framework" />
-                  <h1 className="w-full text-section capitalize !text-[28px] !leading-9 sm:!text-[36px] sm:!leading-[44px] lg:!text-[48px] lg:!leading-[1.15]">
+                  <h1 className="w-full text-section capitalize !text-[clamp(32px,8vw,40px)] !leading-[1.15] sm:!text-[clamp(32px,8vw,40px)] lg:!text-[54px] lg:!leading-[1.15]">
                     <span className="font-medium text-[#111111]">
                       Adding People Should Reduce Delivery Pressure, But{" "}
                     </span>

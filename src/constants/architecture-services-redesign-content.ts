@@ -437,7 +437,7 @@ export const architectureEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#architecture-page-contact",
     ctaVariant: "solid",
     featured: true,
     badge: "Most Demanding",

@@ -1,4 +1,5 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import { ROUTES } from "@/constants/navigation";
 import type {
   MepBimFeatureCard,
   MepBimTechnologyTool,
@@ -20,6 +21,9 @@ const scalableTeamsForAnyProjectSizeIcon = "/image/scalable-teams-for-any-projec
 const upscaleImageIcon = encodeURI("/image/source/upscale_image [Upscaled].png");
 const topMepBimExpertsIcon = "/image/top-mep-bim-experts-icons.png";
 
+export const MEP_DATA_CENTER_CONTACT_ID = "mep-data-center-page-contact";
+export const MEP_DATA_CENTER_CONTACT_HASH = `#${MEP_DATA_CENTER_CONTACT_ID}`;
+
 export const mepDataCenterHero = {
   tag: "MEP BIM for data Canters",
   titleLead: "Fabrication-Ready\n",
@@ -27,6 +31,7 @@ export const mepDataCenterHero = {
   description:
     "Our pre-vetted BIM team helps contractors, consultants, and developers deliver mission-critical facilities with coordinated MEP models built for construction, fabrication, and long-term operations.",
   ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_DATA_CENTER_CONTACT_HASH,
   imageSrc: "/image/mep-bim-data-canter-banner.png",
   imageAlt: "mep-bim-data-canter-banner",
   copyMaxWidth: 550,
@@ -63,7 +68,8 @@ export const mepDataCenterServiceFeaturesSection = {
   titleAccent: "MEP BIM Services for Data Centers",
   description:
     "Specialized Data Center MEP BIM Services that improve coordination, prefabrication, constructability, and installation efficiency for mission-critical facilities.",
-  ctaLabel: "Get A Free Quote",
+  ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_DATA_CENTER_CONTACT_HASH,
 } as const;
 
 export const mepDataCenterServiceFeatureCards: MepBimFeatureCard[] = [
@@ -118,6 +124,7 @@ export const mepDataCenterWhoWeHelpSection = {
   description:
     "We Work with the Engineers, Contractors, Consultants, and Developers Who Plan, Build, and Operate Data Centers.",
   ctaLabel: "Let's Talk",
+  ctaHref: ROUTES.contact,
 } as const;
 
 export type MepDataCenterWhoWeHelpCard = {
@@ -282,6 +289,7 @@ export const mepDataCenterWhyChooseSection = {
   description:
     "Proven expertise, global standards compliance, and scalable teams that deliver MEP BIM Services for Data Centers on your schedule.",
   ctaLabel: "Let's Talk",
+  ctaHref: MEP_DATA_CENTER_CONTACT_HASH,
 } as const;
 
 export const mepDataCenterWhyChooseCards = [
@@ -333,7 +341,7 @@ export const mepDataCenterProjectCta = {
   description:
     "Virtual Building Studio provides the BIM engineering expertise your contractors and project managers need to take a mission-critical facility from coordinated model to commissioned operation on schedule.",
   cta: "Book a Quick Call",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
 } as const;
 
 export const mepDataCenterFaqSection = {

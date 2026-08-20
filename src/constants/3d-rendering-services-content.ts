@@ -8,6 +8,7 @@ import {
   mepBimTechnologyStackToolsRowOne,
   mepBimTechnologyStackToolsRowTwo,
 } from "@/constants/mep-bim-modelling-content";
+import { ROUTES } from "@/constants/navigation";
 import { acsServicePagesResourcesSection } from "@/constants/shared-sections";
 
 const workflowLogo = "/image/architecture-services/workflow-logo.svg";
@@ -38,7 +39,7 @@ export const threeDRenderingHero = {
   titleAccent: "Firms Awaiting Design Approvals",
   description:
     "Our US-trained BIM experts use AI-powered workflows to deliver exterior, interior and walkthrough visuals faster, without losing design quality.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: renderingBanner,
   imageAlt: "Photorealistic 3D rendering of a modern house at dusk",
   copyMaxWidth: 670,
@@ -378,11 +379,15 @@ export const threeDRenderingEngagementCards = [
     ...engagementModelCards[0],
     ctaHref: THREE_D_RENDERING_CONTACT_HASH,
   },
-  engagementModelCards[1],
+  {
+    ...engagementModelCards[1],
+    ctaHref: THREE_D_RENDERING_CONTACT_HASH,
+  },
   {
     ...engagementModelCards[2],
     description:
       "A fully managed offshore BIM delivery center exclusively aligned with your business.",
+    ctaHref: ROUTES.engagement,
   },
 ] as unknown as EngagementModelCard[];
 
@@ -392,7 +397,7 @@ export const threeDRenderingProjectCta = {
   description:
     "Connect with our team and get renders that help your firm win approvals faster. Our rendering architects handle exterior, interior and walkthrough visuals, so you present finished designs to clients with more confidence, every time.",
   cta: "Contact Us",
-  ctaHref: THREE_D_RENDERING_CONTACT_HASH,
+  ctaHref: ROUTES.contact,
 };
 
 export const threeDRenderingIndustriesIntro = {

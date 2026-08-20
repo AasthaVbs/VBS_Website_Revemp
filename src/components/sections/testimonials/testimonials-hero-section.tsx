@@ -5,7 +5,8 @@ const testimonialsBannerImg = "/image/testimonials-banner.png";
 
 /** Figma — Testimonials hero */
 export function TestimonialsHeroSection() {
-  const { tag, titleLead, titleAccent, description, ctaLabel, imageAlt } = testimonialsPageHero;
+  const { tag, titleLead, titleAccent, description, ctaLabel, ctaHref, imageAlt } =
+    testimonialsPageHero;
 
   return (
     <ListingPageHeroSection
@@ -14,6 +15,7 @@ export function TestimonialsHeroSection() {
       titleAccent={titleAccent}
       description={description}
       ctaLabel={ctaLabel}
+      ctaHref={ctaHref}
       image={testimonialsBannerImg}
       imageAlt={imageAlt}
       titleMaxWidthClass="max-w-[680px]"

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-20T07:22:14.647Z",
+  "fetchedAt": "2026-08-20T11:41:52.886Z",
   "posts": [
     {
       "_id": "a5c28aec-4bed-4856-b8e1-6ebfa366ab6b",
@@ -20986,6 +20986,369 @@
       "title": "Future of Architectural BIM Services: AI, Automation, and Digital Twins"
     },
     {
+      "_id": "3d4d99d3-69b3-49b6-bfa2-a0d09f94af62",
+      "body": [
+        {
+          "_key": "72d87242d841",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-1c996ed5623c60b861349f556428980ac4086e84-1460x926-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "4dd654d73ad6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c9033eebf7b2",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "IRVING, Texas, June 17, 2026."
+            },
+            {
+              "_key": "b61f0eed6663",
+              "_type": "span",
+              "marks": [],
+              "text": " The Sheet Metal and Air Conditioning Contractors' National Association (SMACNA) announced Virtual Building Studio as its newest Silver Associate Member."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "09ba854b82ba",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a58e8ad02e28",
+              "_type": "span",
+              "marks": [],
+              "text": "Project pipelines have grown heavier for MEP engineering firms, contractors, and sheet metal fabricators. More projects bring more BIM modeling, CAD drafting, and coordination work for the same internal teams. Many firms reach production capacity before a single project wraps up. That gap between workload and available team hours slows down delivery schedules across the industry."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "624d0797e97f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9fa98464fb27",
+              "_type": "span",
+              "marks": [],
+              "text": "Virtual Building Studio gives firms a way to close that gap. The company supplies dedicated BIM and drafting professionals who plug directly into existing project teams. Firms gain modeling and drafting capacity without adding fixed overhead costs."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1d9d37c771dd",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p><a href=\"https://www.smacna.org/\" rel=\"nofollow\" target=\"_blank\">SMACNA</a> members now receive this support as an official member benefit. The benefit includes pricing reserved exclusively for SMACNA members, on top of the standard service offering.</P>"
+          }
+        },
+        {
+          "_key": "b82b60949034",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "75899aedf3c3",
+              "_type": "span",
+              "marks": [],
+              "text": "SMACNA members now receive this support as an official member benefit. The benefit includes pricing reserved exclusively for SMACNA members, on top of the standard service offering."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "94430e898ba9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "224af81a1b63",
+              "_type": "span",
+              "marks": [],
+              "text": "SMACNA brings together contractors, manufacturers, suppliers, and industry partners who contribute to the sheet metal and HVAC sector. The association provides a platform for workforce development and knowledge sharing. It is also involved in technical education and industry collaboration. Through its Associate Member program, SMACNA connects contractors with organizations that support project delivery across different stages of construction."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ba279835d272",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "224af81a1b63",
+              "_type": "span",
+              "marks": [],
+              "text": "The new member benefit gives SMACNA members several specific advantages."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "841186523058",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "292d7fe7f1f1",
+              "_type": "span",
+              "marks": [],
+              "text": "Dedicated BIM and drafting support for active projects"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7e3879b07187",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e6be942470e5",
+              "_type": "span",
+              "marks": [],
+              "text": "Faster project execution"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "22bd1c72cef8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3b8d0a457843",
+              "_type": "span",
+              "marks": [],
+              "text": "Improved coordination across disciplines"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d56cd9926b51",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5f0e23b45bff",
+              "_type": "span",
+              "marks": [],
+              "text": "Greater flexibility to scale production as workloads shift"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e2a5fcd0fce5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2dd373d39524",
+              "_type": "span",
+              "marks": [],
+              "text": "Pricing reserved exclusively for SMACNA members"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "92ff867d480e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "01ad06457779",
+              "_type": "span",
+              "marks": [],
+              "text": "Virtual Building Studio's team explained why the company joined SMACNA. According to Ankit Kansara, Founder and CEO of Virtual Building Studio, the SMACNA membership creates new opportunities for industry engagement."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7f4a25e61824",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a99952a70721",
+              "_type": "span",
+              "marks": [
+                "em"
+              ],
+              "text": "\"SMACNA has long served as an important platform for contractors and industry partners. Joining as a Silver Associate Member allows us to participate in conversations that directly impact project delivery, workforce challenges, and digital construction practices. We look forward to connecting with contractors and contributing to the broader industry community.\" "
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1216c5d0e836",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f7e68858394f",
+              "_type": "span",
+              "marks": [],
+              "text": "The construction industry continues to place greater emphasis on coordination and planning before work begins on-site. That shift has increased the importance of accurate building information. Especially for renovation and retrofit projects where existing conditions can influence every downstream decision."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "44aa486fcca2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "57fff075b424",
+              "_type": "span",
+              "marks": [],
+              "text": "More information about Virtual Building Studio is available at "
+            },
+            {
+              "_key": "d96a604d9ade",
+              "_type": "span",
+              "marks": [
+                "6bc485cc6fa9"
+              ],
+              "text": "virtualbuildingstudio.com"
+            },
+            {
+              "_key": "d5e2bb7d8625",
+              "_type": "span",
+              "marks": [],
+              "text": "."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "6bc485cc6fa9",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "81a3ee4bed67",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d6e67323dda5",
+              "_type": "span",
+              "marks": [],
+              "text": "About SMACNA"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "e8494d84e0ee",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d6e67323dda5",
+              "_type": "span",
+              "marks": [],
+              "text": "SMACNA represents more than 3,500 contractor members across 97 chapters in the United States, Canada, Australia, and Brazil. The association sets technical standards for the sheet metal and HVAC industry. The American National Standards Institute has accredited SMACNA as a standards-setting body. SMACNA also provides labor relations, government affairs, and education support for member contractors. The association is headquartered in Chantilly, Virginia, with an additional office in Washington, D.C."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "87f2ef5eebbc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "959c5f3d1566",
+              "_type": "span",
+              "marks": [],
+              "text": "About Virtual Building Studio"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "1c2e56827dd5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "959c5f3d1566",
+              "_type": "span",
+              "marks": [],
+              "text": "Virtual Building Studio has worked inside U.S. AEC delivery for more than 11 years. It supports architecture, engineering, and reality capture teams with "
+            },
+            {
+              "_key": "933f1e0ddf8c",
+              "_type": "span",
+              "marks": [
+                "e4d12d7381fc"
+              ],
+              "text": "MEP BIM services"
+            },
+            {
+              "_key": "bd9ec5f520c0",
+              "_type": "span",
+              "marks": [],
+              "text": ", BIM modeling, CAD drafting, and Scan to BIM services. Its delivery centers employ more than 300 production professionals, and client engagements with the company average five years. The company holds ISO 9001 and ISO 27001 certifications for quality and information security."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "e4d12d7381fc",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/mep-bim-services/"
+            }
+          ],
+          "style": "normal"
+        }
+      ],
+      "categories": [
+        {
+          "_id": "b1e92d50-103f-4e2f-a871-0d48d2e600b7",
+          "title": "News & Updates"
+        }
+      ],
+      "featuredImage": {
+        "asset": {
+          "originalFilename": "SMACNA as Silver Associate Member..jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/1c996ed5623c60b861349f556428980ac4086e84-1460x926.jpg"
+        }
+      },
+      "publishedAt": "2026-06-29",
+      "slug": "smacna-associate-member",
+      "tags": null,
+      "title": "New Silver SMACNA Associate Member: Virtual Building Studio"
+    },
+    {
       "_id": "bfc099cd-7bd1-40b1-9a5f-2b96903fa696",
       "body": [
         {
@@ -32838,6 +33201,358 @@
       "slug": "bim-outsourcing-services-cost-usa",
       "tags": null,
       "title": "BIM Outsourcing Services Cost in the USA: What You Should Really Expect to Pay"
+    },
+    {
+      "_id": "8bafe07f-da3d-4a21-a4cc-f390cef3c80a",
+      "body": [
+        {
+          "_key": "babb615fb6cf",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-7b4fe3697943e0d57bfebf4f06444abd596c08f0-1460x926-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "fba47fdd83ff",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "86ca0bbca64e",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "SAN DIEGO, Calif., June 8, 2026"
+            },
+            {
+              "_key": "ec7cdc36694c",
+              "_type": "span",
+              "marks": [],
+              "text": ". The American Institute of Architects (AIA) San Diego chapter has welcomed Virtual Building Studio as a Bronze Member."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "668d6391ad48",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b5a2bf2c63c9",
+              "_type": "span",
+              "marks": [],
+              "text": "Virtual Building Studio joined AIA San Diego to strengthen its footprint in the region. The chapter brings together more than 6,000 professionals from the architecture industry, giving Virtual Building Studio a direct line to local architects, firms, and industry partners shaping design and construction practice in San Diego."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a73e6d420621",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>As a Bronze Member of <a href=\"https://aiasandiego.org/\" rel=\"nofollow\" target=\"_blank\">AIA San Diego</a>, Virtual Building Studio gains several engagement points:</p>"
+          }
+        },
+        {
+          "_key": "553a7a318019",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d8c51361607f",
+              "_type": "span",
+              "marks": [],
+              "text": "A place within the AIA San Diego chapter community"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3dddeed8ce91",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "60e0e65f9873",
+              "_type": "span",
+              "marks": [],
+              "text": "Access to chapter events and programs"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "878b0bd38fcd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5a19c831c08e",
+              "_type": "span",
+              "marks": [],
+              "text": "Connections with local architects and firms"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "383676dd382a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "90f6e405f052",
+              "_type": "span",
+              "marks": [],
+              "text": "Deeper engagement with the San Diego design community"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "35f3a9ee7ba2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "433e746e0ed0",
+              "_type": "span",
+              "marks": [],
+              "text": "A stronger regional presence in the architecture sector"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2472e0a704d8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "36b62af2758c",
+              "_type": "span",
+              "marks": [],
+              "text": "At AIA '26, the Conference on Architecture & Design held in San Diego, Virtual Building Studio introduced its AI Workflow, a solution built to accelerate the transition from schematic design to construction documents. The AI workflow applies automation to reduce manual drafting and coordination effort, helping project teams achieve up to 30% greater efficiency during this stage of a project."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a8f1f5d7a825",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "fb46d6fbc251",
+              "_type": "span",
+              "marks": [],
+              "text": "The Bronze Membership gives Virtual Building Studio a platform to continue building visibility for the AI Workflow among architects and firms across the San Diego region while deepening its ties with the local design community."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1754b9282acc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "15f087ea780c",
+              "_type": "span",
+              "marks": [],
+              "text": "Virtual Building Studio's team explained why the company joined AIA San Diego. According to "
+            },
+            {
+              "_key": "21b807a005c4",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Ar. Ankit Kansara, Founder and CEO of Virtual Building Studio,"
+            },
+            {
+              "_key": "d63e28f8cac6",
+              "_type": "span",
+              "marks": [],
+              "text": " the membership reflects the company's ongoing commitment to closer regional engagement."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e5254483e2f7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cb9022dba1e9",
+              "_type": "span",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "text": "“"
+            },
+            {
+              "_key": "809c82ac66b1",
+              "_type": "span",
+              "marks": [
+                "em"
+              ],
+              "text": "AIA San Diego gives us a place among the architects and firms shaping design and construction here. Membership also gives us a natural home to introduce the AI workflow we launched at AIA'26 to more of the local community, which is already helping teams move from schematic design to construction documents with up to 30% greater efficiency. We look forward to connecting further with architects and firms across the region.”"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "34d47611a53c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a7c1524dd751",
+              "_type": "span",
+              "marks": [],
+              "text": "The architecture and construction sector continues to place greater weight on coordination and accurate building information before work begins on-site. Local chapters give firms and industry partners a shared space to stay close to those shifts and to one another."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a03848226362",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "73de89728a42",
+              "_type": "span",
+              "marks": [],
+              "text": "More information about Virtual Building Studio is available at "
+            },
+            {
+              "_key": "f44ef87c0bb8",
+              "_type": "span",
+              "marks": [
+                "9b45f7a7c6b3"
+              ],
+              "text": "virtualbuildingstudio.com."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "9b45f7a7c6b3",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "afd15afe2cc6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9b5b90dd548a",
+              "_type": "span",
+              "marks": [],
+              "text": "About AIA San Diego"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "8767c99ad906",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "20bccaf13dbb",
+              "_type": "span",
+              "marks": [],
+              "text": "AIA San Diego is the San Diego County chapter of the American Institute of Architects. Founded in 1928, it represents nearly 1,000 members. The chapter is part of AIA California, the association's largest state component with more than 11,000 members, and part of AIA's national network of roughly 250 chapters, representing more than 95,000 members. AIA San Diego supports members through advocacy, education, professional development, design awards, and civic engagement."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a8e200c8423b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8c5964b67509",
+              "_type": "span",
+              "marks": [],
+              "text": "About Virtual Building Studio"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "ba9c318636a0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1c0629eccdd6",
+              "_type": "span",
+              "marks": [],
+              "text": "Virtual Building Studio has worked within the U.S. AEC delivery sector for more than 11 years. It supports architecture, engineering, and reality capture teams with MEP BIM services, "
+            },
+            {
+              "_key": "2dfe03ef07c5",
+              "_type": "span",
+              "marks": [
+                "ea58e2ca6bf6"
+              ],
+              "text": "BIM modeling services"
+            },
+            {
+              "_key": "d2b490cc8863",
+              "_type": "span",
+              "marks": [],
+              "text": ", CAD drafting, and Scan to BIM services. Its delivery centers employ more than 500 production professionals, and client engagements with the company average five years. The company holds ISO 9001 and ISO 27001 certifications for quality and information security."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "ea58e2ca6bf6",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/"
+            }
+          ],
+          "style": "normal"
+        }
+      ],
+      "categories": [
+        {
+          "_id": "b1e92d50-103f-4e2f-a871-0d48d2e600b7",
+          "title": "News & Updates"
+        }
+      ],
+      "featuredImage": {
+        "asset": {
+          "originalFilename": "AIA San Diego Bronze Member.jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/7b4fe3697943e0d57bfebf4f06444abd596c08f0-1460x926.jpg"
+        }
+      },
+      "publishedAt": "2026-06-01",
+      "slug": "aia-bronze-member-san-diego",
+      "tags": null,
+      "title": "New AIA San Diego Bronze Member: Virtual Building Studio"
     },
     {
       "_id": "146bd456-ba76-4b55-8815-9128f98f247c",
@@ -188805,6 +189520,144 @@
               "_type": "span",
               "marks": [],
               "text": "Why Access Matters: Moving Beyond ADA Compliance to Inclusive Design"
+            }
+          ],
+          "markDefs": [],
+          "style": "h1"
+        }
+      ],
+      "upcomingImage": null,
+      "youtubeThumbnail": null
+    },
+    {
+      "_id": "959c0d55-0c7f-4ed6-be7d-cc893cd95963",
+      "bannerImage": {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/rog08jar/production/582fb20d2aeb61b94aa756df2ee99e9d97446670-1250x700.jpg"
+        }
+      },
+      "body": [
+        {
+          "_key": "267a001f5fd2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7ed7b21ed2bd",
+              "_type": "span",
+              "marks": [],
+              "text": "Architects can struggle to turn a site’s many conditions into one clear design direction. Climate, culture, landscape, movement, program, and human experience can compete for attention. This webinar explores how architects can read these conditions and turn them into meaningful design concepts. Our guest speaker Kai Sheng, AIA, will share how contextual observations shaped projects such as the Hai-Tian Center in Qingdao and Azure Tower in Flushing. Through these case studies, you’ll see how a strong design narrative can guide form, spatial planning, outdoor environments, and architectural expression across complex projects."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "bb0317e1b0fc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "867c72f7602e",
+              "_type": "span",
+              "marks": [],
+              "text": "What You'll Learn"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "938cfbb6b4c2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4ff9a638b7b6",
+              "_type": "span",
+              "marks": [],
+              "text": "Identify contextual factors that can generate stronger architectural concepts."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "336c5566f444",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1ec70f022aea",
+              "_type": "span",
+              "marks": [],
+              "text": "Turn observations and inspiration into form, space and material expression."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ee88d63d9acb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "77eda9b8d25f",
+              "_type": "span",
+              "marks": [],
+              "text": "Build a clear design narrative for complex projects."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0bc47769573a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c4a4a03029a4",
+              "_type": "span",
+              "marks": [],
+              "text": "Incorporate landscape and outdoor spaces in high-density urban development."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d3da18b48603",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "30dc4029d0d6",
+              "_type": "span",
+              "marks": [],
+              "text": "Think contextually across scales, locations and building types."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "eventDate": "2026-09-10T16:00:00.000Z",
+      "slug": "how-place-shapes-architecture",
+      "title": [
+        {
+          "_key": "0ea0e35f726f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2591894234cd",
+              "_type": "span",
+              "marks": [],
+              "text": "From Context to Concept: How Place Shapes Architecture"
             }
           ],
           "markDefs": [],

@@ -2,7 +2,7 @@ import { EvaluateDeliveryCtaSection } from "@/components/sections/evaluate-deliv
 import { careersJoinTeamCtaCopy } from "@/constants/careers-content";
 
 export function CareersJoinTeamCtaSection() {
-  const { titleLine1, titleAccent, description, ctaLabel } = careersJoinTeamCtaCopy;
+  const { titleLine1, titleAccent, description, ctaLabel, ctaHref } = careersJoinTeamCtaCopy;
 
   return (
     <EvaluateDeliveryCtaSection
@@ -14,6 +14,7 @@ export function CareersJoinTeamCtaSection() {
       }
       description={description}
       ctaLabel={ctaLabel}
+      ctaHref={ctaHref}
     />
   );
 }

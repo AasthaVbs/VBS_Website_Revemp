@@ -26,7 +26,7 @@ export const mepEngineersHero = {
   titleAccent: "Improve Project Coordination",
   description:
     "From pre-bid estimation to clash-free coordination and as-built models we help contractors and AEC firms deliver projects faster and more efficiently.",
-  ctaLabel: "View All Service",
+  ctaLabel: "View all Services",
   imageSrc: "/image/mep-bim-service-banner.jpg",
 };
 
@@ -132,7 +132,7 @@ export const mepFullSpectrumSection = {
   titleLine2: "MEP Services",
   description:
     "We deliver accurate 3D MEPF models (LOD 200–500) that ensure seamless clash detection, coordinated shop drawings, and constructible BIM models across every stage from pre-bid to as-built handover.",
-  ctaLabel: "Let's Talk",
+  ctaLabel: "Let's Talk Now",
   ctaHref: "#mep-page-contact",
   wideCards: true,
 };
@@ -144,7 +144,7 @@ export const mepFullSpectrumCards = [
     text: "We deliver data-rich 3D MEPF models (LOD 300–500) that ensure seamless integration with architectural and structural systems. Our models comply with ASHRAE, NEC, IPC, and NFPA standards to enhance coordination, reduce rework, and support design validation and facility management.",
     image: "/image/MEP BIM Modeling-1.jpeg",
     imageCrop: { width: 522, height: 292, left: -31, top: -4.88 },
-    href: "/mep-bim-services/mep-bim-modeling-services",
+    href: ROUTES.mepModeling,
   },
   {
     title: "MEP Revit Family Creation Services",
@@ -152,7 +152,7 @@ export const mepFullSpectrumCards = [
     image: "/image/MEP Revit Family Creation-2.jpeg",
     imageCrop: { width: 502, height: 280, left: -21, top: 0 },
     elevated: false,
-    href: "/mep-bim-services/mep-revit-family-creation-services",
+    href: ROUTES.mepRevitFamily,
   },
   {
     title: "MEP Shop Drawing Services",
@@ -160,7 +160,7 @@ export const mepFullSpectrumCards = [
     image: "/image/MEP-BIM-Modeling-Services-2.jpg",
     imageCrop: { width: 532, height: 280, left: -36, top: 0 },
     elevated: false,
-    href: "/mep-bim-services/mep-shop-drawing-services",
+    href: ROUTES.mepShopDrawings,
   },
   {
     title: "Bill of Material (BOM) Services",
@@ -168,7 +168,7 @@ export const mepFullSpectrumCards = [
     image: "/image/Bill-of-Material-(BOM)-Services.jpg",
     imageCrop: { width: 532, height: 280, left: -30, top: 0 },
     elevated: false,
-    href: "/mep-bim-services/bill-of-material-services",
+    href: ROUTES.mepBom,
   },
   {
     title: "Pre-Bid Estimation Services",
@@ -176,7 +176,7 @@ export const mepFullSpectrumCards = [
     image: "/image/Pre-Bid-Estimation-Services-1.jpg",
     imageCrop: { width: 532, height: 280, left: -25, top: 0 },
     elevated: false,
-    href: "/mep-bim-services/pre-bid-estimation-services",
+    href: ROUTES.mepPreBid,
   },
   {
     title: "MEP Spool Drawing Services",
@@ -184,7 +184,7 @@ export const mepFullSpectrumCards = [
     image: "/image/MEP-Spool-Drawing-Services-1.jpg",
     imageCrop: { width: 532, height: 280, left: -36, top: 0 },
     elevated: false,
-    href: "#",
+    href: ROUTES.mepSpoolDrawings,
   },
   {
     title: "MEP Clash Detection & Coordination Services",
@@ -193,16 +193,15 @@ export const mepFullSpectrumCards = [
     imageCrop: { width: 501, height: 280, left: -21, top: 0 },
     elevated: false,
     titleMinHeight: 30,
-    href: "/mep-bim-services/mep-coordination-services",
+    href: ROUTES.mepClashDetection,
   },
   {
-    title: "Scan to BIM Services for MEP Systems",
-    text: "We convert point cloud data into detailed MEP as-built models for renovation and facility management projects. These models represent real-world conditions and help with accurate planning, coordination, advanced clash detection, improved decision-making, and lifecycle documentation, ensuring higher efficiency across all project stages.",
-    image: "/image/Scan to BIM Services for MEP Systems.jpeg",
+    title: "MEP Data Center Services",
+    text: "Our BIM team delivers coordinated MEP models for mission-critical data centers, covering high-density cooling, electrical infrastructure, and fire protection. Fabrication-ready models improve constructability, reduce site rework, and keep fast-track facilities on schedule.",
+    image: "/image/data-center-mep-bim-overview.png",
     imageCrop: { width: 502, height: 280, left: -21, top: 0 },
     elevated: false,
     titleMinHeight: 30,
-    href: "#",
   },
 ];
 
@@ -421,7 +420,7 @@ export const mepServiceBenefitsSection = {
   titleMaxWidth: 700,
   description:
     "MEP BIM Services transform every phase of your project from design to facility management. Virtual Building Studio delivers measurable outcomes across coordination, cost, and construction efficiency.",
-  ctaLabel: "Let's Talk",
+  ctaLabel: "Let's Talk Now",
   ctaHref: "#mep-page-contact",
 };
 
@@ -521,7 +520,7 @@ export const mepProjectCta = {
   description:
     "From pre-bid modeling to as-built documentation Virtual Building Studio delivers end-to-end BIM MEP Services that drive accuracy, coordination, and efficiency across every project phase.",
   cta: "Book a call",
-  ctaHref: ROUTES.contact,
+  ctaHref: "#mep-page-contact",
 };
 
 export const mepTestimonialsDescription =

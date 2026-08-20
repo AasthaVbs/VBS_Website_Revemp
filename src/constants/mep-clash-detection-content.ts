@@ -1,4 +1,5 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import { ROUTES } from "@/constants/navigation";
 import type {
   MepBimFeatureCard,
   MepBimMeasurableResultCard,
@@ -21,6 +22,9 @@ const preFabricationModelReleaseIcon = "/image/pre-fabrication-model-release-ico
 const precisionSeismicBracingIcon = "/image/precision-seismic-bracing-icon.png";
 const zeroInterferenceRoutingIcon = "/image/zero-interference-routing-icon.png";
 
+export const MEP_CLASH_DETECTION_CONTACT_ID = "mep-clash-detection-page-contact";
+export const MEP_CLASH_DETECTION_CONTACT_HASH = `#${MEP_CLASH_DETECTION_CONTACT_ID}`;
+
 export const mepClashDetectionHero = {
   tag: "MEP Clash Detection",
   titleLead: "MEP Clash Detection Services\n",
@@ -28,6 +32,7 @@ export const mepClashDetectionHero = {
   description:
     "Our BIM Experts provide MEP Clash Detection Services in USA. They help teams coordinate mechanical, electrical, plumbing and fire protection systems early.",
   ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_CLASH_DETECTION_CONTACT_HASH,
   imageSrc: "/image/mep-clash-detection-banner.jpg",
   imageAlt: "mep-clash-detection-banner",
   copyMaxWidth: 730,
@@ -70,7 +75,8 @@ export const mepClashDetectionServiceFeaturesSection = {
   titleAccent: "BIM Clash Detection Services",
   description:
     "Bridge the gap between coordinated BIM models and field-ready construction execution with accurate Hard and Soft Clash Detection workflows.",
-  ctaLabel: "Get A Free Quote",
+  ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_CLASH_DETECTION_CONTACT_HASH,
 } as const;
 
 export const mepClashDetectionServiceFeatureCards: MepBimFeatureCard[] = [
@@ -269,6 +275,7 @@ export const mepClashDetectionOutsourcingGuideSection = {
   description:
     "Work with dedicated coordination experts when project complexity, deadlines or internal resource constraints begin to affect model quality.",
   ctaLabel: "Let's Talk",
+  ctaHref: ROUTES.contact,
 } as const;
 
 export const mepClashDetectionOutsourcingGuideCards: MepBimUseCaseCard[] = [
@@ -379,7 +386,7 @@ export const mepClashDetectionProjectCta = {
   description:
     "Our BIM team follows US standards and follows structured workflows, transparent reporting, and disciplined coordination practices that support all project stages.",
   cta: "Book a Quick Call",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
 } as const;
 
 export const mepClashDetectionFaqSection = {

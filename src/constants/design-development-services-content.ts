@@ -34,7 +34,7 @@ export const designDevelopmentHero = {
   titleAccent: "Expanding In-House Team",
   description:
     "Our US-trained BIM architects and engineers run AI-driven workflows that speed up design development phase in architecture while keeping quality and expertise front and center.",
-  ctaLabel: "Connect With Us",
+  ctaLabel: "Contact with Us",
   imageSrc: designDevelopmentBanner,
   imageAlt: "Architectural section drawing of a multi-story building for design development services",
   copyMaxWidth: 750,
@@ -93,16 +93,19 @@ export const designDevelopmentServiceCards = [
     title: "Architectural Design Development",
     text: "Approved schematic layouts move into detailed Revit models with wall assemblies, door and window schedules, material callouts and interior component coordination ready for construction planning.",
     image: architecturalDesignDevelopmentImg,
+    href: ROUTES.designDevelopment,
   },
   {
     title: "Structural Design Development",
     text: "Early structural concepts are developed into coordinated Revit models including framing, foundations, columns and load paths. These models are coordinated with the architectural geometry before documentation and construction planning begins.",
     image: structuralDesignDevelopmentImg,
+    href: ROUTES.structuralBim,
   },
   {
     title: "Architectural & Structural BIM Modeling",
     text: "One coordinated model for architectural and structural systems helps in detecting conflicts early and maintain design intent throughout the entire set of drawings.",
     image: architecturalStructuralBimModelingImg,
+    href: ROUTES.bimModeling,
   },
   {
     title: "Material & Building System Development",
@@ -113,11 +116,13 @@ export const designDevelopmentServiceCards = [
     title: "Design Validation & Clash Detection",
     text: "Structured Clash Checks in Navisworks are done with coordinated Architectural and Structural models, identifying conflicts early and ensuring that design development drawings are ready for construction documentation without re-work.",
     image: designValidationClashDetectionImg,
+    href: ROUTES.mepClashDetection,
   },
   {
     title: "Building Code & Zoning Compliance Review",
     text: "Every model and drawing set are checked against IBC, ADA and local zoning requirements so that your Design Development Drawings move through permitting and review without delay.",
     image: buildingCodeZoningComplianceReviewImg,
+    href: ROUTES.zoningAnalysis,
   },
 ];
 
@@ -386,7 +391,7 @@ export const designDevelopmentEngagementModelsCards = [
     nextText:
       "Your dedicated team becomes increasingly familiar with your practice, improving consistency, efficiency, and communication with every project.",
     ctaLabel: "Build your Team",
-    ctaHref: ROUTES.dedicatedTeam,
+    ctaHref: "#design-development-page-contact",
     ctaVariant: "solid" as const,
     featured: true,
     badge: "Most Demanding",
@@ -417,7 +422,7 @@ export const designDevelopmentProjectCta = {
   description:
     "Your architectural and structural teams deserve a Design Development Architecture Company that keeps pace with deadlines. Let's build your next project phase together.",
   cta: "Contact Us",
-  ctaHref: "#design-development-page-contact",
+  ctaHref: ROUTES.contact,
 };
 
 export const designDevelopmentIndustriesIntro = {

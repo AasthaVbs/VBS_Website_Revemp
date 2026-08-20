@@ -1,4 +1,5 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
+import { ROUTES } from "@/constants/navigation";
 import type {
   MepBimFeatureCard,
   MepBimMeasurableResultCard,
@@ -26,6 +27,9 @@ const reducedReworkChangeOrdersIcon = encodeURI("/image/reduced-rework-&-change-
 const reviztoIcon = "/image/revizto-icon.png";
 const transparentIssueTrackingIcon = encodeURI("/image/transparent-issue-tracking-icon 1.png");
 
+export const MEP_COORDINATION_CONTACT_ID = "mep-coordination-page-contact";
+export const MEP_COORDINATION_CONTACT_HASH = `#${MEP_COORDINATION_CONTACT_ID}`;
+
 export const mepCoordinationHero = {
   tag: "MEP Coordination",
   titleLead: "MEP Coordination Services\nfor ",
@@ -33,6 +37,7 @@ export const mepCoordinationHero = {
   description:
     "Our BIM experts offer MEP Coordination Services to coordinate all the disciplines ahead of construction to help your team reduce rework, avoid delays, and keep projects on schedule.",
   ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_COORDINATION_CONTACT_HASH,
   imageSrc: "/image/mep-coordinations-banner.jpg",
   imageAlt: "mep-coordinations-banner",
   copyMaxWidth: 730,
@@ -71,7 +76,8 @@ export const mepCoordinationServiceFeaturesSection = {
   titleAccent: "BIM Coordination Services",
   description:
     "Our BIM Coordination Services transform design-intent models into construction-ready coordination deliverables through fully coordinated MEPF Coordination Services built for field execution.",
-  ctaLabel: "Get A Free Quote",
+  ctaLabel: "Get a Free Quote",
+  ctaHref: MEP_COORDINATION_CONTACT_HASH,
 } as const;
 
 export const mepCoordinationServiceFeatureCards: MepBimFeatureCard[] = [
@@ -120,7 +126,7 @@ export const mepCoordinationServicesSection = {
   description:
     "Our multi-disciplinary coordination workflows improve constructability, sequencing of installation and field level usability for complex commercial and infrastructure projects.",
   ctaLabel: "Start New Project",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
   wideCards: true,
   titleMaxWidth: 747,
 } as const;
@@ -286,7 +292,8 @@ export const mepCoordinationOutsourcingGuideSection = {
   titleAccent: "MEP clash detection services",
   description:
     "Get expert coordination support when multidisciplinary projects require faster issue resolution and reliable model accuracy.",
-  ctaLabel: "Let’s Talk",
+  ctaLabel: "Let's Talk",
+  ctaHref: MEP_COORDINATION_CONTACT_HASH,
 } as const;
 
 export const mepCoordinationOutsourcingGuideCards = [
@@ -385,7 +392,7 @@ export const mepCoordinationProjectCta = {
   description:
     "Our US-certified MEP engineers deliver coordinated, fabrication-ready BIM models through precise coordination, clash resolution, and installation-focused workflows.",
   cta: "Book a Quick Call",
-  ctaHref: "/contact-us",
+  ctaHref: ROUTES.contact,
 } as const;
 
 export const mepCoordinationFaqDescription =

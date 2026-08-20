@@ -10,6 +10,8 @@ import { MepBimUseCasesSection } from "@/components/sections/mep/mep-bim-use-cas
 import { MepPageHeroSection } from "@/components/sections/mep/mep-page-hero-section";
 import { MepTrustedByStripSection } from "@/components/sections/mep/mep-trusted-by-strip-section";
 import {
+  MEP_CLASH_DETECTION_CONTACT_HASH,
+  MEP_CLASH_DETECTION_CONTACT_ID,
   mepClashDetectionDeliverablesCards,
   mepClashDetectionDeliverablesSection,
   mepClashDetectionFaqSection,
@@ -53,7 +55,7 @@ export async function MepClashDetectionPage() {
         <MepPageHeroSection
           {...mepClashDetectionHero}
           imageSize="compact"
-          ctaHref="/contact-us"
+          ctaHref={MEP_CLASH_DETECTION_CONTACT_HASH}
           containerClassName="!pt-0 !pb-4 sm:!pt-0 sm:!pb-5 lg:!pt-0 lg:!pb-6"
         />
         <MepTrustedByStripSection
@@ -67,7 +69,7 @@ export async function MepClashDetectionPage() {
         <MepBimServiceFeaturesSection
           section={mepClashDetectionServiceFeaturesSection}
           cards={mepClashDetectionServiceFeatureCards}
-          ctaHref="/contact-us"
+          ctaHref={MEP_CLASH_DETECTION_CONTACT_HASH}
         />
         <MepEngagementProcessSection
           section={mepClashDetectionTypesSection}
@@ -100,7 +102,7 @@ export async function MepClashDetectionPage() {
           section={mepClashDetectionOutsourcingGuideSection}
           cards={mepClashDetectionOutsourcingGuideCards}
           showCta
-          ctaHref="/contact-us"
+          ctaHref={mepClashDetectionOutsourcingGuideSection.ctaHref}
           iconVariant="boxed"
           descriptionMaxWidth={636}
           columnsPerRow={3}
@@ -133,7 +135,10 @@ export async function MepClashDetectionPage() {
           description={mepClashDetectionFaqSection.description}
           items={mepClashDetectionFaqs}
         />
-        <DeferredGetInTouchSection description={mepFaqDescription} />
+        <DeferredGetInTouchSection
+          sectionId={MEP_CLASH_DETECTION_CONTACT_ID}
+          description={mepFaqDescription}
+        />
       </main>
 
       <DeferredSiteFooter />

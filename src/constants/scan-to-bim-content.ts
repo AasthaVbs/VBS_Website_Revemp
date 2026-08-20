@@ -20,6 +20,7 @@ export const scanToBimHero = {
   description:
     "We convert point cloud data into construction-ready scan-to-BIM models in Revit for renovation, coordination, and facility management, be it heritage restoration or complex MEP retrofits.",
   ctaLabel: "Claim Your Free Pilot",
+  ctaHref: "#services",
   imageSrc: "/image/scan-to-bim-banner-2.png",
   copyMaxWidth: 660,
   descriptionMaxWidth: 620,
@@ -126,7 +127,7 @@ export const scanToBimFullSpectrumCards = [
     text: "Stop relying on outdated drawings and incomplete site data. We scan your building or site with high-definition LiDAR equipment, giving your team verified, millimeter-accurate point cloud data. Every project starts with a reliable foundation.",
     image: "/image/3d-laser-scanning-services.jpg",
     elevated: true,
-    href: "#",
+    href: "https://www.scantobim.online/laser-scanning-services/",
   },
   {
     title: "Scan to 3D Modeling Services",
@@ -138,13 +139,13 @@ export const scanToBimFullSpectrumCards = [
     title: "As-built Drawing Services",
     text: "Our scan to BIM specialists convert your scan data into an accurate as-built Revit model. Floor plans, sections, and elevations are then extracted directly from that model. Your team gets dimensioned, annotated drawings ready for design, permits, and contractor coordination.",
     image: "/image/as-built-drawing-services.jpg",
-    href: "/as-built-modeling-services",
+    href: ROUTES.asBuiltModeling,
   },
   {
     title: "Point Cloud to BIM",
     text: "When standard BIM models are not enough, we deliver high-resolution BIM that preserves every surface, texture, and geometric detail from your scan. Ideal for heritage projects, facade assessments, and visual condition reporting.",
     image: "/image/point-cloud-to-3d-meshes.jpg",
-    href: "https://www.scantobim.online/point-cloud-to-bim-services/",
+    href: ROUTES.pointCloudToBim,
   },
   {
     title: "Scan to 3D Visualization",
@@ -162,13 +163,13 @@ export const scanToBimFullSpectrumCards = [
     title: "Scan to CAD Conversion",
     text: "Your team needs accurate site data in the format they already work with. We convert your point cloud data into layered DWG files that are ready for design renovation and documentation workflows. Your team gets reliable CAD deliverables that fit straight into your existing process.",
     image: "/image/scan-to-cad-conversion.jpg",
-    href: "https://www.scantobim.online/portfolio/scan-to-cad-conversion-for-metro-station/",
+    href: ROUTES.scanToCad,
   },
   {
     title: "Scan to Archicad",
     text: "ArchiCAD teams get the same scan accuracy without leaving their preferred platform. We convert your point cloud data directly into accurate ArchiCAD models that fit your existing workflow. Every model is ready for renovation design and as-built documentation from day one.",
     image: "/image/scab-to-archicad.jpg",
-    href: "#",
+    href: "https://www.scantobim.online/architectural-scan-to-bim-services/",
   },
 ];
 
@@ -468,7 +469,7 @@ export const scanToBimWhyChooseSection = {
   descriptionMaxWidth: 780,
   description:
     "Combine AI-powered BIM production, 100+ QC checkpoints, and high-speed delivery workflows to convert reality capture data into dependable project-ready models.",
-  ctaLabel: "Book a Call",
+  ctaLabel: "Build Your Team",
   ctaHref: ROUTES.contact,
   gridRows: [2, 2],
 };

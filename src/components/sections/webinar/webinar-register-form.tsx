@@ -101,7 +101,7 @@ export function WebinarRegisterForm() {
         await sendToEmailJS(formValues);
         setSuccessMsg("Your message has been sent successfully");
         resetForm();
-        router.push("/thank-you");
+        router.push("/thank-you/");
       } catch {
         setSuccessMsg("Some error occurred");
       } finally {

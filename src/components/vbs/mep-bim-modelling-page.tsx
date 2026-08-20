@@ -5,6 +5,7 @@ import { MepBimModellingProcessSection } from "@/components/sections/mep/mep-bim
 import {
   mepBimLodStickyCards,
   mepBimLodStickySection,
+  MEP_BIM_MODELLING_CONTACT_ID,
   mepBimModellingFaqSection,
   mepBimModellingFaqs,
   mepBimModellingHero,
@@ -36,7 +37,7 @@ export async function MepBimModellingPage() {
       <SiteHeader />
 
       <main>
-        <MepPageHeroSection {...mepBimModellingHero} imageSize="compact" ctaHref="#services" />
+        <MepPageHeroSection {...mepBimModellingHero} imageSize="compact" ctaHref={mepBimModellingHero.ctaHref} />
         <DeferredMepTrustedByStripSection />
         <DeferredMepBimModellingIntroSection />
         <DeferredMepBimServiceFeaturesSection />
@@ -71,7 +72,10 @@ export async function MepBimModellingPage() {
           description={mepBimModellingFaqSection.description}
           items={mepBimModellingFaqs}
         />
-        <DeferredGetInTouchSection description={mepFaqDescription} />
+        <DeferredGetInTouchSection
+          sectionId={MEP_BIM_MODELLING_CONTACT_ID}
+          description={mepFaqDescription}
+        />
       </main>
 
       <DeferredSiteFooter />

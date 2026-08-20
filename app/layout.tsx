@@ -28,6 +28,7 @@ import "@/styles/mep-figma-page.scss";
 import "@/styles/vbs-legal-page.scss";
 import "@/styles/vbs-thank-you-page.scss";
 import "@/styles/vbs-blog-detail.scss";
+import "@/styles/vbs-news-detail.scss";
 import "@/styles/vbs-webinar-detail-redesign.scss";
 import "@/styles/vbs-cookie-consent.scss";
 import "@/styles/vbs-architecture-services-redesign.scss";

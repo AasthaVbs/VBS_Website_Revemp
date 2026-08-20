@@ -29,7 +29,7 @@ export type SanityPostRecord = {
   };
   featuredImage?: { asset?: { url?: string } };
   socialImage?: { asset?: { url?: string } };
-  categories?: Array<{ title?: string }>;
+  categories?: Array<{ title?: string | null; slug?: string | null }>;
   faqs?: Array<{ _id?: string; question?: string; answer?: string }>;
 };
 

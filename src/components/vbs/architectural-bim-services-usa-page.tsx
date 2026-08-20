@@ -73,8 +73,9 @@ export function ArchitecturalBimServicesUsaPage() {
           titleLine1={architecturalBimUsaIndustriesIntro.titleLine1}
           titleLine2={architecturalBimUsaIndustriesIntro.titleLine2}
           titleMaxWidth={architecturalBimUsaIndustriesIntro.titleMaxWidth}
+          introMaxWidth={architecturalBimUsaIndustriesIntro.introMaxWidth}
           breakTitle
-          className="!bg-[#FAFAFA]"
+          className="abs-usa-industries !bg-[#FAFAFA]"
         />
         <DeferredEngagementModelsSection
           tag={architecturalBimUsaEngagementSection.tag}

@@ -33,6 +33,32 @@
   }
 }
 
+/* Revit hero banner — tighter top/bottom padding around the form image */
+.revit-architectural-drafting-page .ads-usa-hero__form-wrap {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @media (min-width: 640px) {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  @media (min-width: 1280px) {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+}
+
 /* Shared hero spacing (Revit + ADS USA) — fixed 55/45 copy:form ratio */
 .architectural-drafting-services-usa-page {
   .ads-usa-hero > .vbs-page-container,
@@ -127,6 +153,22 @@
 
 .revit-architectural-drafting-page .ads-usa-workflow {
   background: #ffffff !important;
+
+  .ads-usa-workflow__copy {
+    max-width: 680px !important;
+  }
+
+  .ads-usa-workflow__copy h2 {
+    max-width: 680px !important;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .revit-architectural-drafting-page .ads-usa-workflow__copy {
+    width: 680px !important;
+    max-width: 680px !important;
+  }
 }
 
 /* Showcase section + card spacing (match Revit page) */
@@ -212,6 +254,18 @@
     .mep-figma-why-choose__intro,
     .mep-figma-why-choose__head {
       gap: 10px !important;
+    }
+
+    .mep-figma-why-choose__icon-wrap {
+      width: 60px !important;
+      height: 60px !important;
+    }
+
+    .mep-figma-why-choose__icon {
+      width: 48px !important;
+      height: 48px !important;
+      max-width: 48px !important;
+      max-height: 48px !important;
     }
   }
 }

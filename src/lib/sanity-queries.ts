@@ -36,7 +36,7 @@ export const SANITY_POST_DETAIL_PROJECTION = `{
   },
   featuredImage { asset->{ url, originalFilename } },
   socialImage { asset->{ url } },
-  categories[]->{ title },
+  categories[]->{ title, "slug": slug.current },
   "faqs": faqs[]{
     "question": coalesce(@->question, *[_id == "drafts." + @._ref][0].question),
     "answer": coalesce(@->answer, *[_id == "drafts." + @._ref][0].answer),
@@ -52,8 +52,9 @@ export const SANITY_POST_LISTING_QUERY = `*[_type == "post" && defined(slug.curr
   title,
   publishedAt,
   "slug": slug.current,
-  categories[]->{ "_id": _id, title },
+  categories[]->{ "_id": _id, title, "slug": slug.current },
   tags,
+  "plainBody": pt::text(body),
   featuredImage {
     asset->{ url, originalFilename }
   }

@@ -1,5 +1,6 @@
 import { revitFamilyCreationPost } from "@/constants/blog-posts/posts/revit-family-creation";
 import type { BlogPostDetail } from "@/constants/blog-posts/types";
+import { isNewsCatalogItem } from "@/constants/news-page-content";
 import type { ResourceListingItem } from "@/constants/resources-page-content";
 import { mapSanityPostToBlogDetail } from "@/lib/sanity-blog";
 import { fetchSanityPostBySlug, fetchSanityPostSlugs, fetchSanityResourceListing } from "@/lib/sanity-fetch";
@@ -9,7 +10,9 @@ const fullPosts: Record<string, BlogPostDetail> = {
   [revitFamilyCreationPost.slug]: revitFamilyCreationPost,
 };
 
-function stubPostFromListing(item: ResourceListingItem): BlogPostDetail {
+function stubPostFromListing(
+  item: ResourceListingItem & { publishedAt?: string | null },
+): BlogPostDetail {
   const slug = item.id;
   return {
     slug,
@@ -85,15 +88,17 @@ function stubPostFromListing(item: ResourceListingItem): BlogPostDetail {
   };
 }
 
-async function getBlogListingItems(): Promise<ResourceListingItem[]> {
+async function getBlogListingItems(): Promise<Array<ResourceListingItem & { publishedAt?: string | null }>> {
   const { posts } = await fetchSanityResourceListing();
-  return mapSanityPostsToListing(posts) as ResourceListingItem[];
+  return mapSanityPostsToListing(posts).filter((item) => !isNewsCatalogItem(item)) as Array<
+    ResourceListingItem & { publishedAt?: string | null }
+  >;
 }
 
 export async function getAllBlogSlugs(): Promise<string[]> {
-  const sanitySlugs = await fetchSanityPostSlugs();
-  if (sanitySlugs.length) return sanitySlugs;
-  return (await getBlogListingItems()).map((item) => item.id);
+  const listing = await getBlogListingItems();
+  if (listing.length) return listing.map((item) => item.id);
+  return fetchSanityPostSlugs();
 }
 
 export async function getBlogPostBySlug(slug: string): Promise<BlogPostDetail | undefined> {

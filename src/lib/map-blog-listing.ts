@@ -22,6 +22,7 @@ export function mapBlogListingToCatalog(posts?: SanityPostNode[]): BlogCatalogIt
       publishedTimestamp: item.publishedTimestamp ?? item.sortOrder ?? index,
       publishedAt: item.publishedAt,
       categoryTitles: item.categoryTitles,
+      categorySlugs: item.categorySlugs ?? [],
       badgeLabel: item.badgeLabel ?? "Blog",
       category: item.category ?? "Blog",
       tags: item.tags ?? [],

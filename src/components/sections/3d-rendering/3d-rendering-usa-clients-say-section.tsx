@@ -21,7 +21,7 @@ export function ThreeDRenderingUsaClientsSaySection({
           </div>
 
           <div className="trs-usa-clients-say__card min-w-0 flex-1 overflow-hidden rounded-[18px] border border-[#CBCCCD] bg-white p-[30px]">
-            <div className="flex w-full flex-col items-start gap-[30px]">
+            <div className="trs-usa-clients-say__body flex w-full flex-col items-start gap-[30px]">
               <div className="flex items-center gap-[30px]">
                 <div className="relative size-20 shrink-0 overflow-hidden rounded-full">
                   <Image
@@ -32,7 +32,7 @@ export function ThreeDRenderingUsaClientsSaySection({
                     sizes="80px"
                   />
                 </div>
-                <div className="flex min-w-0 flex-col items-start gap-3">
+                <div className="trs-usa-clients-say__person flex min-w-0 flex-col items-start gap-3">
                   <p className="m-0 text-[24px] font-normal leading-normal text-[#111111]">
                     {content.name}
                   </p>

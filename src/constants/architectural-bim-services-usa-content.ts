@@ -159,7 +159,7 @@ export const architecturalBimUsaAdvantagesSection = {
   ctaLabel: "Scale your team at your terms!",
   ctaHref: "#abs-usa-contact",
   titleMaxWidth: 900,
-  descriptionMaxWidth: 900,
+  descriptionMaxWidth: 980,
   gridRows: [3, 3, 3] as [number, number, number],
 };
 
@@ -365,7 +365,7 @@ export const architecturalBimUsaWhyChooseSection = {
   ctaLabel: "Hire top 1% BIM Architects",
   ctaHref: "#abs-usa-contact",
   titleMaxWidth: 864,
-  descriptionMaxWidth: 723,
+  descriptionMaxWidth: 900,
   gridRows: [3, 3] as [number, number],
 };
 
@@ -420,6 +420,7 @@ export const architecturalBimUsaIndustriesIntro = {
   description:
     "From commercial developments to public infrastructure, our Architectural BIM Services support a wide range of sectors with accurate modeling and seamless coordination.",
   titleMaxWidth: 764,
+  introMaxWidth: 700,
 };
 
 /** Shared EngagementModelsSection header (same component as other service pages). */

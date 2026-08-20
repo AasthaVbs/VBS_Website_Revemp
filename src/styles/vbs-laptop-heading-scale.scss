@@ -12,7 +12,7 @@
     .mep-bim-html-root,
     .cad-drafting-landing-page,
     .cad-drafting-services-usa-page
-  ):not(.vbs-blog-detail-page):not(.legal-page) {
+  ):not(.vbs-blog-detail-page):not(.vbs-news-detail-page):not(.legal-page) {
     --vbs-laptop-h2-size: 40px;
     --vbs-laptop-h2-line: 1.15;
     --vbs-laptop-h3-size: 20px;
@@ -28,7 +28,7 @@
     .mep-bim-html-root,
     .cad-drafting-landing-page,
     .cad-drafting-services-usa-page
-  ):not(.vbs-blog-detail-page):not(.legal-page)
+  ):not(.vbs-blog-detail-page):not(.vbs-news-detail-page):not(.legal-page)
     main
     :is(
       h2,
@@ -80,7 +80,7 @@
   main:is(
       .vbs-redesign-page,
       .vbs-landing-page
-    ):not(.vbs-blog-detail-page):not(.legal-page)
+    ):not(.vbs-blog-detail-page):not(.vbs-news-detail-page):not(.legal-page)
     :is(
       h2,
       h2 span,
@@ -100,7 +100,7 @@
     .mep-bim-html-root,
     .cad-drafting-landing-page,
     .cad-drafting-services-usa-page
-  ):not(.vbs-blog-detail-page):not(.legal-page)
+  ):not(.vbs-blog-detail-page):not(.vbs-news-detail-page):not(.legal-page)
     main
     :is(
       h3,
@@ -118,7 +118,7 @@
   main:is(
       .vbs-redesign-page,
       .vbs-landing-page
-    ):not(.vbs-blog-detail-page):not(.legal-page)
+    ):not(.vbs-blog-detail-page):not(.vbs-news-detail-page):not(.legal-page)
     :is(h3, h3 span, .h3, .text-card-title),
   .mep-bim-html-root :is(h3, .h3, h3 span) {
     font-size: var(--vbs-laptop-h3-size, 20px) !important;
@@ -137,7 +137,7 @@
     .mep-bim-html-root,
     .cad-drafting-landing-page,
     .cad-drafting-services-usa-page
-  ):not(.vbs-blog-detail-page):not(.legal-page)
+  ):not(.vbs-blog-detail-page):not(.vbs-news-detail-page):not(.legal-page)
     main
     :is(
       .mep-figma-workflow__title,
@@ -164,7 +164,7 @@
     .mep-bim-html-root,
     .cad-drafting-landing-page,
     .cad-drafting-services-usa-page
-  ):not(.vbs-blog-detail-page):not(.legal-page)
+  ):not(.vbs-blog-detail-page):not(.vbs-news-detail-page):not(.legal-page)
     main
     :is(
       .mep-figma-services__section-desc,

@@ -81,6 +81,8 @@
 }
 
 .three-d-rendering-services-usa-page .trs-usa-pricing {
+  padding-top: 64px !important;
+
   .trs-usa-pricing__title {
     line-height: 1.15 !important;
   }
@@ -113,6 +115,8 @@
   }
 
   @media (min-width: 1024px) {
+    padding-top: 80px !important;
+
     .trs-usa-pricing__copy {
       gap: 16px !important;
     }
@@ -124,11 +128,19 @@
 }
 
 .three-d-rendering-services-usa-page .trs-usa-clients-say {
+  padding-top: 64px !important;
+
   .trs-usa-clients-say__title {
     line-height: 1.15 !important;
   }
 
+  .trs-usa-clients-say__person {
+    gap: 4px !important;
+  }
+
   @media (min-width: 1024px) {
+    padding-top: 80px !important;
+
     .trs-usa-clients-say__title {
       white-space: nowrap;
     }
@@ -137,39 +149,89 @@
   .trs-usa-clients-say__card {
     padding: 30px !important;
   }
+
+  .trs-usa-clients-say__body {
+    gap: 20px !important;
+  }
+}
+
+.three-d-rendering-services-usa-page .trs-usa-why-trust {
+  padding-top: 64px !important;
+  padding-bottom: 64px !important;
+
+  .trs-usa-why-trust__head {
+    gap: 10px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .three-d-rendering-services-usa-page .trs-usa-why-trust {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+  }
 }
 
 @media (min-width: 1024px) {
   .trs-usa-why-trust__grid {
     position: relative;
+  }
 
-    &::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: #cbcccd;
-      transform: translateX(-0.5px);
-      pointer-events: none;
-    }
+  .trs-usa-why-trust__row {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    gap: 30px;
 
-    &::after {
+    &:not(:last-child)::after {
       content: "";
       position: absolute;
       left: 0;
       right: 0;
-      top: 50%;
+      bottom: -15px;
       height: 1px;
-      background: #cbcccd;
-      transform: translateY(-0.5px);
       pointer-events: none;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        #cbcccd 22%,
+        #cbcccd 78%,
+        transparent 100%
+      );
     }
+  }
 
-    > article {
-      padding: 8px 20px;
+  .trs-usa-why-trust__card {
+    position: relative;
+    overflow: visible;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 8px 20px;
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 16%;
+      bottom: 16%;
+      right: -15px;
+      width: 1px;
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #cbcccd 32%,
+        #cbcccd 68%,
+        transparent 100%
+      );
     }
+  }
+}
+
+@media (max-width: 1023px) {
+  .trs-usa-why-trust__row {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
   }
 }
 

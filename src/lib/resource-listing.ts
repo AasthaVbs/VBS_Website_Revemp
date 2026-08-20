@@ -233,6 +233,11 @@ export function buildBlogHref(slug: string) {
   return `/blog/${cleanSlug}`;
 }
 
+export function buildNewsHref(slug: string) {
+  const cleanSlug = String(slug).replace(/^\/+|\/+$/g, "");
+  return `/news/${cleanSlug}`;
+}
+
 export function buildWebinarHref(slug: string) {
   const cleanSlug = normalizeWebinarSlug(slug);
   if (!cleanSlug) return "/webinar";

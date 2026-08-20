@@ -17,25 +17,25 @@
     display: inline-flex !important;
   }
 
-  /* Why Choose — center-aligned title block */
+  /* Why Choose — left-aligned title on CAD USA, CAD-to-BIM, and BIM USA */
   .cad-usa-why-choose {
     .mep-figma-why-choose__head,
     .mep-figma-why-choose__head-top {
-      align-items: center !important;
-      text-align: center !important;
+      align-items: flex-start !important;
+      text-align: left !important;
       width: 100%;
     }
 
     .mep-figma-why-choose__title {
-      text-align: center !important;
-      margin-left: auto;
-      margin-right: auto;
+      text-align: left !important;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     .mep-figma-why-choose__section-desc {
-      text-align: center !important;
-      margin-left: auto;
-      margin-right: auto;
+      text-align: left !important;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 
@@ -76,14 +76,14 @@
 
       .mep-figma-why-choose__head,
       .mep-figma-why-choose__head-top {
-        align-items: center !important;
-        text-align: center !important;
+        align-items: flex-start !important;
+        text-align: left !important;
       }
 
       .mep-figma-why-choose__title {
         width: 100% !important;
         max-width: 100% !important;
-        text-align: center !important;
+        text-align: left !important;
       }
 
       .mep-figma-why-choose__grid {

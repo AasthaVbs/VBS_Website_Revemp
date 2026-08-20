@@ -66,7 +66,7 @@ export function ArchitecturalDraftingUsaWorkflowSection({
       className="ads-usa-workflow bg-[#FAFAFA] py-12 sm:py-16 lg:py-[100px]"
     >
       <PageContainer className="flex flex-col items-start gap-10 lg:flex-row lg:items-start lg:justify-center lg:gap-[60px]">
-        <div className="flex w-full max-w-[500px] shrink-0 flex-col items-start gap-5 lg:w-[500px]">
+        <div className="ads-usa-workflow__copy flex w-full max-w-[500px] shrink-0 flex-col items-start gap-5 lg:w-[500px]">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={section.tag} />
             <h2 className="text-section capitalize">

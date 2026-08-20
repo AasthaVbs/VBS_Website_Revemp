@@ -42,6 +42,7 @@ import { cn } from "@/lib/utils";
 export type ResourcesBrowseVariant =
   | "resources"
   | "blogs"
+  | "news"
   | "webinars"
   | "whitepapers"
   | "case-studies"
@@ -212,12 +213,14 @@ function ResourceCard({
   hideBadge = false,
   hideMeta = false,
   mediaSize = "default",
+  ctaLabel = "Learn More",
 }: {
   item: CatalogItem;
   hideBadge?: boolean;
   hideMeta?: boolean;
   /** Taller image containers so cover art is not cropped */
   mediaSize?: "default" | "blog" | "whitepaper";
+  ctaLabel?: string;
 }) {
   const metaPrimary =
     item.publishedAt ||
@@ -246,7 +249,14 @@ function ResourceCard({
       <div className={mediaClassName}>
         <ResourceFeedPhoto src={item.image} className={photoClassName} />
         {!hideBadge ? (
-          <span className="absolute bottom-3 right-3 rounded-[10px] bg-[#D70416] px-3.5 py-1 text-[13px] text-white">
+          <span
+            className={cn(
+              "absolute bottom-3 right-3 rounded-[10px] px-2.5 py-1 text-[13px] text-white",
+              item.type === "News"
+                ? "bg-[#000004] outline outline-1 outline-[#000004]"
+                : "bg-[#D70416] px-3.5",
+            )}
+          >
             {item.badgeLabel || item.type || "Resource"}
           </span>
         ) : null}
@@ -265,7 +275,7 @@ function ResourceCard({
           <p className="text-[16px] leading-6 text-[#808080]">{item.excerpt}</p>
         </div>
         <span className="inline-flex items-center gap-1.5 text-[16px] text-[#2299D6]">
-          Learn More
+          {ctaLabel}
           <ChevronRight className="h-5 w-5" strokeWidth={1.5} />
         </span>
       </div>
@@ -332,12 +342,14 @@ export function ResourcesBrowseSection({
   initialCatalog?: ResourceCatalog | null;
 }) {
   const isBlogsPage = variant === "blogs";
+  const isNewsPage = variant === "news";
   const isWebinarsPage = variant === "webinars";
   const isWhitepapersPage = variant === "whitepapers";
   const isCaseStudiesPage = variant === "case-studies";
   const isBimResourcesPage = variant === "bim-resources";
   const hasPageHero =
     isBlogsPage ||
+    isNewsPage ||
     isWebinarsPage ||
     isWhitepapersPage ||
     isCaseStudiesPage ||
@@ -396,6 +408,8 @@ export function ResourcesBrowseSection({
       baseItems = bimResourceCatalogItems();
     } else if (isBlogsPage) {
       baseItems = resourceCatalog.byType.Blog;
+    } else if (isNewsPage) {
+      baseItems = resourceCatalog.byType.News;
     } else if (isWhitepapersPage) {
       baseItems = resourceCatalog.byType.Whitepapers;
     } else if (isCaseStudiesPage) {
@@ -442,6 +456,7 @@ export function ResourcesBrowseSection({
   }, [
     catalogReady,
     isBlogsPage,
+    isNewsPage,
     isWebinarsPage,
     isWhitepapersPage,
     isCaseStudiesPage,
@@ -531,7 +546,7 @@ export function ResourcesBrowseSection({
                     />
                   ))}
                 </FilterGroup>
-              ) : !isBlogsPage && !isWhitepapersPage && !isCaseStudiesPage && !isBimResourcesPage ? (
+              ) : !isBlogsPage && !isNewsPage && !isWhitepapersPage && !isCaseStudiesPage && !isBimResourcesPage ? (
                 <FilterGroup title="Type of Resources">
                   {resourceTypeFilterOptions.map((type) => (
                     <FilterOption
@@ -577,18 +592,30 @@ export function ResourcesBrowseSection({
             </aside>
           </div>
 
-          <div className="flex min-w-0 flex-1 flex-col gap-5">
+          <div
+            className={cn(
+              "flex min-w-0 flex-1 flex-col",
+              isNewsPage ? "gap-3" : "gap-5",
+            )}
+          >
             {cardRows.length > 0 ? (
               cardRows.map((row, rowIndex) => (
-                <div key={rowIndex} className="grid grid-cols-1 gap-5 min-[800px]:grid-cols-2">
+                <div
+                  key={rowIndex}
+                  className={cn(
+                    "grid grid-cols-1 min-[800px]:grid-cols-2",
+                    isNewsPage ? "gap-3" : "gap-5",
+                  )}
+                >
                   {row.map((item) => (
                     <ResourceCard
                       key={`${item.type}-${item.id}`}
                       item={item}
                       hideBadge={isCaseStudiesPage}
                       hideMeta={isCaseStudiesPage || isBimResourcesPage}
+                      ctaLabel={isNewsPage ? "Read More" : "Learn More"}
                       mediaSize={
-                        isBlogsPage || isBimResourcesPage
+                        isBlogsPage || isNewsPage || isBimResourcesPage
                           ? "blog"
                           : isWhitepapersPage
                             ? "whitepaper"
@@ -610,6 +637,10 @@ export function ResourcesBrowseSection({
                       ? resourceCatalog.byType.Blog.length === 0
                         ? "No blog posts are available yet. Check back soon."
                         : "No blogs match your filters. Try another service or search term."
+                      : isNewsPage
+                        ? resourceCatalog.byType.News.length === 0
+                          ? "No news posts are available yet. Check back soon."
+                          : "No news items match your filters. Try another service or search term."
                       : isWhitepapersPage
                         ? resourceCatalog.byType.Whitepapers.length === 0
                           ? "No white papers are available yet. Check back soon."
@@ -634,6 +665,8 @@ export function ResourcesBrowseSection({
                 ? "Webinars pagination"
                 : isBlogsPage
                   ? "Blogs pagination"
+                  : isNewsPage
+                    ? "News pagination"
                   : isWhitepapersPage
                     ? "White papers pagination"
                     : isCaseStudiesPage

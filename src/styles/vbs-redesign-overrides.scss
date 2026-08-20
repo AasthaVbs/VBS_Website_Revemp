@@ -56,11 +56,12 @@ html:has(.resources-listing-page) body {
   background-color: #ffffff;
 
   /* overflow-x: clip on .vbs-redesign-page kills sticky — keep this page fully visible */
-  &:not(.mep-bim-services-page):not(.scan-to-bim-services-page):not(.architecture-services-page):not(.mep-bim-modeling-services-page):not(.mep-bim-coordination-services-page):not(.vbs-blog-detail-page):not(.vbs-webinar-detail-page):not(.vbs-blogs-listing-page):not(.resources-listing-page):not(.bim-resources-page) {
+  &:not(.mep-bim-services-page):not(.scan-to-bim-services-page):not(.architecture-services-page):not(.mep-bim-modeling-services-page):not(.mep-bim-coordination-services-page):not(.vbs-blog-detail-page):not(.vbs-news-detail-page):not(.vbs-webinar-detail-page):not(.vbs-blogs-listing-page):not(.resources-listing-page):not(.bim-resources-page) {
     overflow-x: clip;
   }
 
-  &.vbs-blog-detail-page {
+  &.vbs-blog-detail-page,
+  &.vbs-news-detail-page {
     overflow: visible !important;
   }
 

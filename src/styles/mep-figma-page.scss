@@ -2235,6 +2235,49 @@
     word-wrap: break-word !important;
   }
 
+  &__row {
+    position: relative;
+  }
+
+  &__card {
+    overflow: visible !important;
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 16%;
+      bottom: 16%;
+      right: -10px;
+      width: 1px;
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #cbcccd 32%,
+        #cbcccd 68%,
+        transparent 100%
+      );
+    }
+  }
+
+  &__row:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -15px;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      #cbcccd 22%,
+      #cbcccd 78%,
+      transparent 100%
+    );
+  }
+
   @media (max-width: 1023px) {
     &__title {
       font-size: clamp(28px, 6vw, 48px) !important;
@@ -2254,6 +2297,11 @@
       max-width: 100% !important;
       min-height: min-content !important;
       overflow: visible !important;
+    }
+
+    &__card:not(:last-child)::after,
+    &__row:not(:last-child)::after {
+      display: none !important;
     }
   }
 

@@ -15,6 +15,7 @@ type SanityPortableTextProps = {
   value: unknown[];
   previewMode?: boolean;
   author?: BlogPostDetail["author"];
+  variant?: "blog" | "news";
 };
 
 function getSanityFileUrl(assetRef?: string) {
@@ -29,7 +30,10 @@ function getSanityFileUrl(assetRef?: string) {
 function buildPortableTextComponents(
   previewMode?: boolean,
   author?: BlogPostDetail["author"],
+  variant: "blog" | "news" = "blog",
 ): PortableTextComponents {
+  const isNews = variant === "news";
+
   return {
     types: {
       image: () => null,
@@ -150,8 +154,15 @@ function buildPortableTextComponents(
       h3: ({ children }) => (
         <h3 className="vbs-blog-detail__h2 text-[20px]">{children}</h3>
       ),
+      blockquote: ({ children }) => (
+        <blockquote className={isNews ? "vbs-news-detail__quote" : "vbs-blog-detail__paragraph vbs-blog-detail__em"}>
+          {children}
+        </blockquote>
+      ),
       normal: ({ children }) => (
-        <p className="vbs-blog-detail__paragraph">{children}</p>
+        <p className={isNews ? "vbs-news-detail__paragraph" : "vbs-blog-detail__paragraph"}>
+          {children}
+        </p>
       ),
     },
     marks: {
@@ -170,40 +181,70 @@ function buildPortableTextComponents(
         );
       },
       strong: ({ children }) => (
-        <strong className="vbs-blog-detail__em">{children}</strong>
+        <strong className={isNews ? "vbs-news-detail__strong" : "vbs-blog-detail__em"}>
+          {children}
+        </strong>
+      ),
+      em: ({ children }) => (
+        <em className={isNews ? "vbs-news-detail__quote" : "vbs-blog-detail__em"}>{children}</em>
       ),
     },
     list: {
       bullet: ({ children }) => (
-        <ul className="list-disc space-y-2 pl-6 text-[16px] leading-7 text-[#808080]">{children}</ul>
+        <ul
+          className={
+            isNews
+              ? "list-disc space-y-2 pl-6 text-[16px] leading-6 text-[#808080]"
+              : "list-disc space-y-2 pl-6 text-[16px] leading-7 text-[#808080]"
+          }
+        >
+          {children}
+        </ul>
       ),
       number: ({ children }) => (
-        <ol className="list-decimal space-y-2 pl-6 text-[16px] leading-7 text-[#808080]">
+        <ol
+          className={
+            isNews
+              ? "list-decimal space-y-2 pl-6 text-[16px] leading-6 text-[#808080]"
+              : "list-decimal space-y-2 pl-6 text-[16px] leading-7 text-[#808080]"
+          }
+        >
           {children}
         </ol>
       ),
     },
     listItem: {
-      bullet: ({ children }) => <li className="leading-7">{children}</li>,
-      number: ({ children }) => <li className="leading-7">{children}</li>,
+      bullet: ({ children }) => (
+        <li className={isNews ? "leading-6" : "leading-7"}>{children}</li>
+      ),
+      number: ({ children }) => (
+        <li className={isNews ? "leading-6" : "leading-7"}>{children}</li>
+      ),
     },
   };
 }
 
-export function SanityPortableText({ value, previewMode, author }: SanityPortableTextProps) {
+export function SanityPortableText({
+  value,
+  previewMode,
+  author,
+  variant = "blog",
+}: SanityPortableTextProps) {
   const components = useMemo(
-    () => buildPortableTextComponents(previewMode, author),
-    [previewMode, author],
+    () => buildPortableTextComponents(previewMode, author, variant),
+    [previewMode, author, variant],
   );
 
   if (!Array.isArray(value) || !value.length) return null;
 
+  const showAuthor = variant !== "news" && Boolean(author?.bio);
+
   return (
-    <div className="vbs-blog-detail__body">
+    <div className={variant === "news" ? "vbs-news-detail__body" : "vbs-blog-detail__body"}>
       <div className="vbs-blog-detail__section vbs-blog-detail__prose">
         <PortableText value={value as PortableTextBlock[]} components={components} />
       </div>
-      {author?.bio ? (
+      {showAuthor && author ? (
         <div className="vbs-blog-detail__author-bio">
           <div className="vbs-blog-detail__author-bio-image">
             <Image

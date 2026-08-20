@@ -11,6 +11,7 @@ export type BlogCatalogItem = {
   publishedTimestamp: number;
   publishedAt: string | null;
   categoryTitles: string[];
+  categorySlugs?: string[];
   badgeLabel: string;
   category: string;
   author?: string | null;
@@ -40,6 +41,7 @@ export type CatalogListingItem = {
   badgeLabel?: string;
   delivery?: string | null;
   categoryTitles?: string[];
+  categorySlugs?: string[];
   tags?: string[];
 };
 

@@ -26,6 +26,7 @@ const quickLinks = [
 const resourceLinks = [
   { label: "Resources", href: VBS_FOOTER_URLS.bimResources },
   { label: "Blog", href: VBS_FOOTER_URLS.blog },
+  { label: "News & Updates", href: VBS_FOOTER_URLS.news },
   { label: "Case Studies", href: VBS_FOOTER_URLS.projects },
   { label: "Whitepapers", href: VBS_FOOTER_URLS.whitepaper },
   { label: "Webinar", href: VBS_FOOTER_URLS.webinar },

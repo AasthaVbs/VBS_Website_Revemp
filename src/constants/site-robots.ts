@@ -54,7 +54,6 @@ export const ACS_NOINDEX_PATHS = [
   "/60-minutes-team",
   "/roi-calculator",
   "/aia-conference-events",
-  "/news",
 ] as const;
 
 const LEGACY_ROBOTS_DISALLOW = [
@@ -105,7 +104,6 @@ export const SITEMAP_EXCLUDE_PREFIXES = [
   "/60-minutes-team",
   "/roi-calculator",
   "/aia-conference-events",
-  "/news",
   "/talent-vs-tech-the-secret-boosting-your-architecture",
   "/webinar-challenges-in-design-development-and-how-to-overcome-them",
   "/webinar-common-mistakes-to-avoid-when-creating-permit-sets",

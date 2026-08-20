@@ -66,6 +66,7 @@ export function ArchitecturalDraftingServicesUsaPage() {
           titleLine1={architecturalDraftingUsaIndustriesIntro.titleLine1}
           titleLine2={architecturalDraftingUsaIndustriesIntro.titleLine2}
           titleMaxWidth={architecturalDraftingUsaIndustriesIntro.titleMaxWidth}
+          introMaxWidth={architecturalDraftingUsaIndustriesIntro.introMaxWidth}
           className="!bg-[#FAFAFA]"
         />
         <ArchitecturalDraftingUsaWorkflowSection

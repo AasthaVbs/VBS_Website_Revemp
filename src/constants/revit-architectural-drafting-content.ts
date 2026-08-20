@@ -19,7 +19,7 @@ export const revitArchitecturalDraftingHero = {
   formTitleLead: "Get a ",
   formTitleAccent: "Drafting Estimate",
   submitLabel: "Offload Your Drafting today",
-  formBg: "/image/revit-architectural-drafting-services.jpg",
+  formBg: "/image/revit-architectural-drafting-services-banner.jpg",
   formBgAlt: "Revit architectural drafting estimate",
   copyMaxWidth: 640,
   descMaxWidth: 600,
@@ -140,6 +140,7 @@ export const revitArchitecturalDraftingIndustriesIntro = {
   titleLine2: "of Expertise",
   description: "Our drafting services support diverse industries with tailored precision.",
   titleMaxWidth: 536,
+  introMaxWidth: 850,
 };
 
 export const revitArchitecturalDraftingWorkflowSection = {

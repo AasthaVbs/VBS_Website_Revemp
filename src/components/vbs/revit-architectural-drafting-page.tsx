@@ -72,6 +72,7 @@ export function RevitArchitecturalDraftingPage() {
           titleLine1={revitArchitecturalDraftingIndustriesIntro.titleLine1}
           titleLine2={revitArchitecturalDraftingIndustriesIntro.titleLine2}
           titleMaxWidth={revitArchitecturalDraftingIndustriesIntro.titleMaxWidth}
+          introMaxWidth={revitArchitecturalDraftingIndustriesIntro.introMaxWidth}
           className="!bg-[#FAFAFA]"
         />
         <ArchitecturalDraftingUsaWorkflowSection

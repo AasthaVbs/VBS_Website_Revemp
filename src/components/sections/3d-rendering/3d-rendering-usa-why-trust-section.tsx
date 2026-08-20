@@ -64,7 +64,7 @@ export function ThreeDRenderingUsaWhyTrustSection({
   return (
     <section className="trs-usa-why-trust bg-white py-12 sm:py-16 lg:py-[100px]">
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
-        <div className="flex w-full flex-col items-start gap-5">
+        <div className="trs-usa-why-trust__head flex w-full flex-col items-start gap-5">
           <h2 className="text-section w-full max-w-[643px]">
             <span className="font-medium text-[#111111]">{section.titleLead}</span>
             <span className="font-light text-accent">{section.titleAccent}</span>
@@ -74,9 +74,13 @@ export function ThreeDRenderingUsaWhyTrustSection({
           </p>
         </div>
 
-        <div className="trs-usa-why-trust__grid grid w-full grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-[30px] sm:gap-y-[30px]">
-          {items.map((item) => (
-            <WhyTrustCard key={item.title} item={item} />
+        <div className="trs-usa-why-trust__grid flex w-full flex-col gap-[30px]">
+          {[items.slice(0, 2), items.slice(2, 4)].map((rowItems, rowIndex) => (
+            <div key={rowIndex} className="trs-usa-why-trust__row">
+              {rowItems.map((item) => (
+                <WhyTrustCard key={item.title} item={item} />
+              ))}
+            </div>
           ))}
         </div>
 

@@ -1,9 +1,5 @@
+import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { clientSuccessStories } from "@/constants/client-success-stories-content";
-
-const threeDayOnboardingIcon = "/image/3-day-onboarding.svg";
-const riskFreeTrialIcon = "/image/risk-free-trial.png";
-const flexibleEngagementIcon = "/image/flexible-engagement-models.png";
-const timezoneIcon = "/image/multi-time-zone-availability-icon.png";
 
 export const architecturalDraftingUsaStatsStrip = [
   { value: "1000+", color: "text-vbs-red", label: "Firms Trust Our Drafting Services" },
@@ -20,8 +16,8 @@ export const architecturalDraftingUsaHero = {
   formTitleLead: "Get a ",
   formTitleAccent: "Drafting Estimate",
   submitLabel: "Offload Your Drafting today",
-  formBg: "/image/architectural-drafting-usa/hero-form-bg.png",
-  formBgAlt: "Architectural drafting estimate",
+  formBg: "/image/Frame 2147227371.png",
+  formBgAlt: "Architectural drafting from sketch to finished building visualization",
   copyMaxWidth: 588,
 };
 
@@ -162,22 +158,26 @@ export const architecturalDraftingUsaWhyChooseItems = [
   {
     title: "Seamless Start in 24 hours",
     description: "Integrate our team into your workflow quickly, aligned with your standards and tools.",
-    icon: threeDayOnboardingIcon,
+    icon: benefitIconMuted,
+    iconHover: benefitIconColored,
   },
   {
     title: "Risk-Free First Month",
     description: "Experience our services with confidence — if you're not satisfied, you don't pay.",
-    icon: riskFreeTrialIcon,
+    icon: benefitIconMuted,
+    iconHover: benefitIconColored,
   },
   {
     title: "No Lock-Ins, Full Flexibility",
     description: "Scale services up or down as your project pipeline shifts.",
-    icon: flexibleEngagementIcon,
+    icon: benefitIconMuted,
+    iconHover: benefitIconColored,
   },
   {
     title: "Time zone Aligned & Data Secure",
     description: "Work in real-time with enterprise-grade file security.",
-    icon: timezoneIcon,
+    icon: benefitIconMuted,
+    iconHover: benefitIconColored,
   },
 ];
 
@@ -186,6 +186,7 @@ export const architecturalDraftingUsaIndustriesIntro = {
   titleLine2: "of Expertise",
   description: "Our drafting services support diverse industries with tailored precision.",
   titleMaxWidth: 536,
+  introMaxWidth: 780,
 };
 
 export const architecturalDraftingUsaWorkflowSection = {

@@ -1,5 +1,7 @@
 import "server-only";
 
+import { isNewsCatalogItem, NEWS_CATEGORY_TITLE } from "@/constants/news-page-content";
+import { buildNewsHref } from "@/lib/resource-listing";
 import {
   caseStudyListingItems,
   extendedWhitepaperListingItems,
@@ -33,22 +35,14 @@ export type ResourceCatalogListingInput = {
   webinars?: SanityWebinarNode[];
 };
 
-function isNewsItem(item: { tags?: string[]; categoryTitles?: string[] }) {
-  const tags = (item.tags || []).map((tag) => String(tag).toLowerCase());
-  const categories = (item.categoryTitles || []).map((title) => String(title).toLowerCase());
-
-  return (
-    tags.some((tag) => tag.includes("news")) ||
-    categories.some((category) => category.includes("news"))
-  );
-}
-
 function toNewsListingItem<T extends Record<string, unknown>>(item: T) {
+  const slug = String(item.id || "").replace(/^\/+|\/+$/g, "");
   return {
     ...item,
     type: "News",
-    badgeLabel: "News",
-    category: "News",
+    badgeLabel: NEWS_CATEGORY_TITLE,
+    category: NEWS_CATEGORY_TITLE,
+    href: slug ? buildNewsHref(slug) : "/news",
   };
 }
 
@@ -59,7 +53,11 @@ export function buildResourceCatalog(
 ): ResourceCatalog {
   const posts = listing?.posts ?? getSanityResourcePosts();
   const webinars = listing?.webinars ?? getSanityResourceWebinars();
-  const blogItems = mapBlogListingToCatalog(posts);
+  const mappedBlogItems = mapBlogListingToCatalog(posts);
+  const newsItems = mappedBlogItems
+    .filter(isNewsCatalogItem)
+    .map(toNewsListingItem) as unknown as CatalogListingItem[];
+  const blogItems = mappedBlogItems.filter((item) => !isNewsCatalogItem(item));
   const webinarItems = buildSanityWebinarListingItems(
     webinars,
     referenceDate ?? new Date(),
@@ -70,9 +68,6 @@ export function buildResourceCatalog(
     category: item.delivery ?? "Webinar",
     publishedTimestamp: item.publishedTimestamp ?? item.sortOrder ?? 0,
   })) as CatalogListingItem[];
-  const newsItems = blogItems
-    .filter(isNewsItem)
-    .map(toNewsListingItem) as unknown as CatalogListingItem[];
   const whitepaperItems = extendedWhitepaperListingItems as CatalogListingItem[];
   const caseStudyItems = caseStudyListingItems as CatalogListingItem[];
   const portfolioItems = portfolioListingItems as CatalogListingItem[];
@@ -80,6 +75,7 @@ export function buildResourceCatalog(
 
   const allItems = [
     ...blogItems,
+    ...newsItems,
     ...webinarItems,
     ...whitepaperItems,
     ...portfolioItems,

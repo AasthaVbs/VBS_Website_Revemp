@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 
 import { SiteHeader } from "@/components/layout/site-header";
 import { BlogDetailFaqSection } from "@/components/sections/blog/blog-detail-faq-section";
@@ -12,6 +12,8 @@ import {
   getBlogPostBySlug,
   getRelatedBlogPosts,
 } from "@/constants/blog-posts";
+import { isNewsSanityPost } from "@/constants/news-page-content";
+import { buildNewsHref } from "@/lib/resource-listing";
 import { sanityPostSeo } from "@/lib/sanity-blog";
 import { fetchSanityPostBySlug } from "@/lib/sanity-fetch";
 
@@ -29,6 +31,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const sanityPost = await fetchSanityPostBySlug(slug);
+  if (sanityPost && isNewsSanityPost(sanityPost)) {
+    const seo = sanityPostSeo(sanityPost);
+    return {
+      title: seo.title,
+      description: seo.description,
+      alternates: { canonical: buildNewsHref(slug) },
+    };
+  }
   if (sanityPost) {
     const seo = sanityPostSeo(sanityPost);
     return {
@@ -50,6 +60,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function BlogDetailPage({ params }: PageProps) {
   const { slug } = await params;
+  const sanityPost = await fetchSanityPostBySlug(slug);
+  if (sanityPost && isNewsSanityPost(sanityPost)) {
+    permanentRedirect(buildNewsHref(slug));
+  }
+
   const post = await getBlogPostBySlug(slug);
 
   if (!post) {

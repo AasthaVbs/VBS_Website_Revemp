@@ -24,7 +24,9 @@ export type SanityPostNode = {
   title?: string | null;
   body?: unknown;
   publishedAt?: string | null;
-  categories?: Array<{ title?: string | null } | null> | null;
+  categories?: Array<{ title?: string | null; slug?: string | null } | null> | null;
+  featuredImage?: { asset?: { url?: string | null } | null } | null;
+  plainBody?: string | null;
   tags?: string[] | null;
   mainImage?: { asset?: { url?: string | null } | null } | null;
   bannerImage?: { asset?: { url?: string | null } | null } | null;
@@ -242,12 +244,15 @@ export function mapSanityPostsToListing(posts: SanityPostNode[] = []) {
     .filter((post) => post.slug)
     .map((post, index) => {
       const slug = post.slug;
-      const excerptSource = portableTextToPlainText(post.body) || FIGMA_RESOURCE_EXCERPT;
+      const excerptSource = post.plainBody || portableTextToPlainText(post.body) || FIGMA_RESOURCE_EXCERPT;
       const excerpt =
         excerptSource.length > 160 ? `${excerptSource.slice(0, 160)}…` : excerptSource;
       const image = resolvePostListingImage(post, index);
       const categoryTitles = (post.categories || [])
-        .map((category) => (category.title || "").trim())
+        .map((category) => (category?.title || "").trim())
+        .filter(Boolean) as string[];
+      const categorySlugs = (post.categories || [])
+        .map((category) => (category?.slug || "").trim())
         .filter(Boolean) as string[];
       const service = resolveBlogService(post.categories || [], slug);
       const publishedAtRaw = post.publishedAt || null;
@@ -264,6 +269,7 @@ export function mapSanityPostsToListing(posts: SanityPostNode[] = []) {
         publishedAt: formatListingDate(publishedAtRaw),
         publishedTimestamp: Number.isFinite(publishedTimestamp) ? publishedTimestamp : null,
         categoryTitles,
+        categorySlugs,
         tags: post.tags || [],
         sortOrder: index + 1,
         badgeLabel: "Blog",

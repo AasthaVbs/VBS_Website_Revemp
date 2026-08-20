@@ -10,8 +10,20 @@
     }
 
     .mep-figma-why-choose__section-desc {
-      max-width: 900px !important;
+      max-width: 980px !important;
       width: 100% !important;
+    }
+
+    .mep-figma-why-choose__icon-wrap {
+      width: 65px !important;
+      height: 65px !important;
+    }
+
+    .mep-figma-why-choose__icon {
+      width: 47px !important;
+      height: 47px !important;
+      max-width: 47px !important;
+      max-height: 47px !important;
     }
   }
 
@@ -22,10 +34,28 @@
     }
 
     .mep-figma-why-choose__section-desc {
-      max-width: 723px !important;
+      max-width: 900px !important;
+      width: 100% !important;
       text-transform: capitalize;
     }
+
+    .mep-figma-why-choose__icon-wrap {
+      width: 65px !important;
+      height: 65px !important;
+    }
+
+    .mep-figma-why-choose__icon {
+      width: 47px !important;
+      height: 47px !important;
+      max-width: 47px !important;
+      max-height: 47px !important;
+    }
   }
+}
+
+.architectural-bim-services-usa-page .abs-usa-industries p {
+  max-width: 700px !important;
+  width: 100% !important;
 }
 
 /* Override mep-bim hub section pad (64px) — keep hero tight under the header */
@@ -385,8 +415,13 @@
 /* Services grid — tighten gaps on mobile */
 @media (max-width: 639px) {
   .architectural-bim-services-usa-page .abs-usa-services__grid {
-    gap: 16px !important;
+    gap: 12px !important;
   }
+}
+
+.architectural-bim-services-usa-page.vbs-redesign-page .abs-usa-services__card h3 {
+  font-size: 22px !important;
+  line-height: 1.3 !important;
 }
 
 /* Case studies — match /landing/professional-architectural-drafting-services */

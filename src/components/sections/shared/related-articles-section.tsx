@@ -49,6 +49,8 @@ export function RelatedArticlesSection({
       case "Whitepapers":
       case "White Paper":
         return "border-vbs-blue bg-vbs-blue text-white";
+      case "News":
+        return "border-[#111111] bg-[#111111] text-white";
       default:
         return "border-vbs-yellow bg-vbs-yellow text-[#FBF9F9]";
     }
@@ -65,7 +67,7 @@ export function RelatedArticlesSection({
             <SectionTag label={tag} />
             <h2 className="text-section">
               <span className="font-medium text-[#111111]">{titleLead}</span>
-              <span className="font-light text-[#D70416]">{titleAccent}</span>
+              <span className="font-light text-accent text-[#D70416]">{titleAccent}</span>
             </h2>
           </div>
           <p

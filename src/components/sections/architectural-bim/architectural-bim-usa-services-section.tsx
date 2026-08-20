@@ -10,7 +10,7 @@ type ServiceCard = (typeof architecturalBimUsaServiceCards)[number];
 
 function ServiceCardArticle({ card }: { card: ServiceCard }) {
   return (
-    <article className="abs-usa-services__card flex min-w-0 flex-col items-start gap-5 rounded-[10px] border border-[#CBCCCD] bg-white p-6 transition-shadow duration-200 hover:shadow-[0_4px_15px_rgba(0,0,0,0.1)]">
+    <article className="abs-usa-services__card flex min-w-0 flex-col items-start gap-3 rounded-[10px] border border-[#CBCCCD] bg-white p-6 transition-shadow duration-200 hover:shadow-[0_4px_15px_rgba(0,0,0,0.1)]">
       <div className="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[10px] border border-[#CBCCCD] bg-[#FAFAFA] p-3.5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -22,7 +22,7 @@ function ServiceCardArticle({ card }: { card: ServiceCard }) {
         />
       </div>
       <div className="flex flex-col gap-2.5">
-        <h3 className="text-[20px] font-medium leading-[1.3] text-[#111111]">{card.title}</h3>
+        <h3 className="text-[22px] font-medium leading-[1.3] text-[#111111]">{card.title}</h3>
         <p className="text-[16px] font-normal leading-6 text-[#808080]">{card.description}</p>
       </div>
     </article>
@@ -39,8 +39,8 @@ export function ArchitecturalBimUsaServicesSection({
 }) {
   return (
     <section className="abs-usa-services bg-white py-12 sm:py-16 lg:py-[100px]">
-      <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
-        <div className="flex w-full flex-col items-start gap-5">
+      <PageContainer className="flex flex-col items-center gap-6 lg:gap-8">
+        <div className="flex w-full flex-col items-start gap-2">
           <div className="flex flex-col items-start gap-3">
             <MepSectionTag label={section.tag} />
             <h2 className="text-section w-full max-w-[760px]">
@@ -52,7 +52,7 @@ export function ArchitecturalBimUsaServicesSection({
           <p className="max-w-[720px] text-[16px] font-normal leading-6 text-[#808080]">{section.description}</p>
         </div>
 
-        <div className="abs-usa-services__grid grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="abs-usa-services__grid grid w-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((card) => (
             <ServiceCardArticle key={card.title} card={card} />
           ))}

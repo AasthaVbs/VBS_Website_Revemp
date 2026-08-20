@@ -1,6 +1,2674 @@
 {
-  "fetchedAt": "2026-08-20T11:41:52.886Z",
+  "fetchedAt": "2026-08-20T14:12:40.415Z",
   "posts": [
+    {
+      "_id": "3a7d272b-b4a7-436d-81d3-8ce36c56966a",
+      "body": [
+        {
+          "_key": "4e2327dbfb1e",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-96c527b1cf027e5a0567815aaf2143cf868fd4cd-1460x926-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "fbd2575a842c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "de439fdb1a8b",
+              "_type": "span",
+              "marks": [],
+              "text": "AEC teams lose time when drawings, models, RFIs and field updates tell different versions of the project. That disconnect creates duplicate work, delayed decisions, coordination conflicts, and avoidable site changes."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "06dd98976645",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "177b070b6055",
+              "_type": "span",
+              "marks": [],
+              "text": "A structured BIM Workflow addresses this problem by defining how teams create, review, share, and approve project information. Building Information Modeling becomes the working information structure, rather than another design deliverable. The results can be significant when teams apply the process consistently."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "47088b859739",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p><i><a href=\"https://link.springer.com/content/pdf/10.1007/s43939-025-00200-2.pdf?\" rel=\"nofollow\" target=\"_blank\">Peer-reviewed research reports</a>, average <strong>project timeline reductions of around 20% and cost reductions of around 15% with BIM adoption.</strong>The same research reported <style>30% fewer design errors and 25% fewer RFIs.</style></i></P>"
+          }
+        },
+        {
+          "_key": "01ae92c72043",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d911c712f3f2",
+              "_type": "span",
+              "marks": [],
+              "text": "Those results depend on much more than software. Teams need defined information requirements, responsibilities, modeling standards, review procedures, and handover requirements. Understanding that complete information chain starts with defining the workflow itself."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "11b1d2dc1e34",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "fb1f289ac61e",
+              "_type": "span",
+              "marks": [],
+              "text": "What Is a BIM Workflow?"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "3bca61e6e2fa",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cd91aa3414ab",
+              "_type": "span",
+              "marks": [],
+              "text": "Once teams recognize the information problem, they need a repeatable method for controlling that information. A BIM Workflow provides that method across design, construction, and operations. It defines how people create, coordinate, check, approve, exchange, and eventually hand over model information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ea55276ac80b",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p><a href=\"https://www.bsigroup.com/en-US/products-and-services/standards/iso-19650-building-information-modeling-bim/\" rel=\"nofollow\" target=\"_blank\">ISO 19650</a> summarizes the information management sequence as require, plan, produce, check, and hand over. That structure makes the BIM Process broader than 3D modeling.</P>"
+          }
+        },
+        {
+          "_key": "60771cf88fdf",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "94190333f091",
+              "_type": "span",
+              "marks": [],
+              "text": "Architects might author spaces whereas engineers develop systems and contractors review constructability. Each team contributes information according to agreed requirements and milestones."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d102af988a77",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a72704a4e47a",
+              "_type": "span",
+              "marks": [],
+              "text": "The workflow also connects authoring, coordination, document management, construction and facility-management tools. However, software cannot establish responsibilities on its own. Project teams must define those responsibilities before production starts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0eba8421407c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1783a156efba",
+              "_type": "span",
+              "marks": [],
+              "text": "Key Stages of a BIM Workflow"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "28df4a9579bb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a9c0136d48ba",
+              "_type": "span",
+              "marks": [],
+              "text": "With the overall structure established, project teams can organize delivery into practical stages. Each stage prepares information needed by the next project activity."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "daf98467a59a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ee12893d5e6b",
+              "_type": "span",
+              "marks": [],
+              "text": "Project Planning and BIM Information Requirements"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "f4e38788be70",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c38625ed04ab",
+              "_type": "span",
+              "marks": [],
+              "text": "Normal project planning establishes scope, schedule, deliverables, and decision points. BIM planning adds another question: what information will each decision require?"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5cc0ff6d58ac",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5598331719fa",
+              "_type": "span",
+              "marks": [],
+              "text": "Under ISO 19650, owners can define organizational, asset, and project information requirements. Teams then translate applicable requirements into exchange requirements for project delivery."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6e97d031f52f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "eee74323f64c",
+              "_type": "span",
+              "marks": [],
+              "text": "This prevents unnecessary modeling while identifying information that cannot be missed. The resulting requirements provide the basis for execution planning."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3d47eab228e5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9d7689ff6197",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Execution Planning"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "f1535470834f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f942a4d4d13f",
+              "_type": "span",
+              "marks": [],
+              "text": "Once requirements exist, teams need agreed rules for meeting them. A BIM execution plandocuments those working rules."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "175cfb4f4c49",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p<a href=\"https://boards.autodesk.com/iso-standards/items/bim-execution-plan-bep\" rel=\"nofollow\" target=\"_blank\">Autodesk describes a BEP</a> as a project document covering goals, standards, responsibilities, workflows, technology, and quality procedures. </P>"
+          }
+        },
+        {
+          "_key": "ee42d7b05d75",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4f83575ae5d6",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "A practical BIM execution plan should establish:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7395c762ef77",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7211abc586ab",
+              "_type": "span",
+              "marks": [],
+              "text": "Intended BIM uses, including coordination, quantities, scheduling, and handover"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fe7269401262",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "be2fa6e0fa4c",
+              "_type": "span",
+              "marks": [],
+              "text": "File naming, model structure, shared parameters, and data exchange rules"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5c1a3cdacf1e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3625b6b24c57",
+              "_type": "span",
+              "marks": [],
+              "text": "Responsibilities for managers, coordinators, discipline leads, and authors"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ecdef5ad9dff",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d3248525957c",
+              "_type": "span",
+              "marks": [],
+              "text": "Model deliverables and Level of Development (LOD) requirements"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6e103071f38e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "566a60c5adc9",
+              "_type": "span",
+              "marks": [],
+              "text": "Common data environment procedures and approval routes"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0788ad0ec903",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c11ea2a7d5ac",
+              "_type": "span",
+              "marks": [],
+              "text": "Software, coordination frequency, and quality checks"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8568796d0c1a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f0e2615b1883",
+              "_type": "span",
+              "marks": [],
+              "text": "Clear execution rules give model authors a controlled production framework."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fda4e7d14aef",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9da8ecdd584d",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Modeling and LOD Development"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "8a08d12aae29",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8fd32bb9d510",
+              "_type": "span",
+              "marks": [],
+              "text": "After teams agree on production rules, each discipline develops its assigned model content. The required maturity depends on project stage and intended use."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "dee3e7d169c3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7d1c9c043f3e",
+              "_type": "span",
+              "marks": [],
+              "text": "BIMForum explains that LOD describes development and reliability of an element instead of its visual detail alone."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "dfa61f290f09",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3b3fc4c12125",
+              "_type": "span",
+              "marks": [],
+              "text": "Typical levels include conceptual LOD 100, approximate geometry LOD 200 and accurate LOD 300. LOD 350 adds interfaces, LOD 400 enables fabrication and LOD 500 is set for field verified conditions for operational use."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "681e36c66334",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "026cf35a80d8",
+              "_type": "span",
+              "marks": [],
+              "text": "Teams can use internal staff or "
+            },
+            {
+              "_key": "24d2ba02bc29",
+              "_type": "span",
+              "marks": [
+                "f2dee41bd832"
+              ],
+              "text": "BIM Modeling Services"
+            },
+            {
+              "_key": "0835be4e36f8",
+              "_type": "span",
+              "marks": [],
+              "text": " to meet production requirements. Either approach needs the same standards and review controls before coordination begins."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "f2dee41bd832",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "bfaca53a0329",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nLearn about Level of Development (LOD) --> \n<a href=\"https://www.virtualbuildingstudio.com/blog/bim-level-of-development-an-overview/\">\nLOD 100-500 Explained\n</a>\n</div>\n \n<style>\n\n.highlight-note {\n\n  border-left: 5px solid #d70416;\n\n  background-color: #f5f5f4;\n\n  padding: 12px 16px;\n\n  margin: 20px 0;\n\n  font-size: 17px;\n\n  line-height: 1.6;\n\n  color: #333;\n\n  font-style: italic;\n\n}\n \n.highlight-note a {\n\n  color: #1e73be;\n\n  font-weight: 600;\n\n  text-decoration: underline;\n\n}\n \n.highlight-note a:hover {\n\n  text-decoration: none;\n\n}\n</style>"
+          }
+        },
+        {
+          "_key": "012d7b43380e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "30d0c93991cc",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Model Coordination and Clash Detection"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "8330a4ada075",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8a763cb90297",
+              "_type": "span",
+              "marks": [],
+              "text": "Individual models can be correct within their disciplines while still conflicting when combined. Coordination gives project teams a shared environment for finding those conflicts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "93ccfacd3f41",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "01dd7d8f2c2b",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM coordinators federate architectural, structural and MEP models and run clash checks. Then they assign issues to responsible trade teams and track resolutions."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b8b9d8a6e9c1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "18ab713bcd9d",
+              "_type": "span",
+              "marks": [],
+              "text": "The process must distinguish meaningful conflicts from irrelevant software alerts. That requires agreed tolerances, priorities, deadlines and model versions. Once teams resolve major interfaces, reviewers can assess the coordinated design against wider project requirements."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0b0148324d4e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ce2501c126c6",
+              "_type": "span",
+              "marks": [],
+              "text": "Design Review and Validation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "71ce7d078899",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b1c09045186c",
+              "_type": "span",
+              "marks": [],
+              "text": "Coordination checks whether systems fit together whereas validation asks whether the coordinated design meets project requirements. Teams may review accessibility, performance, structural criteria, sustainability and model completeness."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "96dddea40930",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>Automation can reduce repetitive analytical work. <i><a href=\"https://www.mdpi.com/2075-5309/16/4/710\" rel=\"nofollow\" target=\"_blank\">One peer-reviewed embodied-carbon study </a>reduced first-time assessment from 290–380 minutes to 83–98 minutes. Reusing established assemblies and rules reduced later assessments to within 30 minutes.</i></P>"
+          }
+        },
+        {
+          "_key": "fb16707336c5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "840409dd53b2",
+              "_type": "span",
+              "marks": [],
+              "text": "Validated information then becomes a dependable basis for project documentation."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8694ab3a884b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8893bf41fdc1",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM-Based Construction Documentation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "fef81696ae70",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "db30948ef900",
+              "_type": "span",
+              "marks": [],
+              "text": "After validation, teams convert approved model information into drawings, schedules, quantities, details, and required data exports. Model-based documentation helps teams maintain consistency between information views."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "375d013ae27f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1a463a126f79",
+              "_type": "span",
+              "marks": [],
+              "text": "That advantage still depends on production discipline. Authors must control annotations, revisions, sheet standards, and model content throughout document development."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2659c3534bde",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4b81a231204a",
+              "_type": "span",
+              "marks": [],
+              "text": "Approved construction information then gives contractors a stronger basis for planning field activities."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fbfaaa256a4c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "276636476738",
+              "_type": "span",
+              "marks": [],
+              "text": "Construction and Site Coordination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "ebaaece86889",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c3c4d37ebcd8",
+              "_type": "span",
+              "marks": [],
+              "text": "During construction, teams use approved BIM information for sequencing, logistics, RFIs, submittals, changes, and trade coordination. Contractors can also connect model elements with schedules for 4D planning."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c3c6373b00b3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9695746ffc95",
+              "_type": "span",
+              "marks": [],
+              "text": "Field changes introduce another requirement, i.e., project information must stay current. Teams need defined procedures for recording approvals and updating affected models."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a1f9497acd56",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "561d4c903320",
+              "_type": "span",
+              "marks": [],
+              "text": "That controlled record becomes particularly valuable when the owner needs verified operational information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "87905968b1b6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0f559c185d24",
+              "_type": "span",
+              "marks": [],
+              "text": "As-Built BIM and Handover"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "abe9976a509e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4a86e4e8db20",
+              "_type": "span",
+              "marks": [],
+              "text": "At handover, owners need installed conditions rather than outdated design assumptions. Project teams therefore verify relevant geometry and asset information before final delivery."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1eb7c08e503b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3820e801b778",
+              "_type": "span",
+              "marks": [],
+              "text": "Scan to BIM methods can help teams capture existing conditions where contracts require that accuracy. LOD 500 can describe field-verified elements intended for operational use."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c0c1543fcca8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7c93c77219ca",
+              "_type": "span",
+              "marks": [],
+              "text": "Useful handover information may include equipment identifiers, locations, specifications, and maintenance data. The owner's information requirements should determine what the final model contains."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7ead73ddc495",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f70a7c23a227",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Workflow by AEC Discipline"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "d76edee57204",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4d805d68cd75",
+              "_type": "span",
+              "marks": [],
+              "text": "The core workflow remains connected across the project, but each discipline produces and uses information differently. Architects shape design information, engineers develop technical systems, and contractors prepare that information for construction. Defining these activities early reduces duplicated modeling and unclear ownership."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5b3d7efdc8ab",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5996e4839c38",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Workflow for Architects"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "e6d1906f1f6e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "30029165d6be",
+              "_type": "span",
+              "marks": [],
+              "text": "A BIM workflow for architects connects design intent with information needed by engineers, contractors, and owners."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ee5f70fab217",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2525599a30f4",
+              "_type": "span",
+              "marks": [],
+              "text": "Concept development"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "fa9d7e0aaad9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c857284c2b07",
+              "_type": "span",
+              "marks": [],
+              "text": "Architects develop massing, spaces, layouts, and preliminary building elements from early design requirements."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a17cdc772007",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1fee061ce24d",
+              "_type": "span",
+              "marks": [],
+              "text": "Design development"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "540223ab5cd3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "104db477d0b9",
+              "_type": "span",
+              "marks": [],
+              "text": "They develop architectural elements to the agreed Level of Development (LOD) and add required object information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b5e4fd97faeb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9c44745e10f8",
+              "_type": "span",
+              "marks": [],
+              "text": "Design coordination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "2e9ee30ae68c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "15e6595d5990",
+              "_type": "span",
+              "marks": [],
+              "text": "Architects share models with structural and MEP teams, then resolve openings, clearances, ceiling zones, and spatial conflicts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "41d0ac144898",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e6510f995ba4",
+              "_type": "span",
+              "marks": [],
+              "text": "Design validation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "66c77fab877c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "09d37e65ade5",
+              "_type": "span",
+              "marks": [],
+              "text": "They review model information against accessibility, project requirements, and applicable design criteria."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a02065fbd4b4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d2ef33dffc82",
+              "_type": "span",
+              "marks": [],
+              "text": "Documentation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "a4f67e1ef03e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9c8123a53761",
+              "_type": "span",
+              "marks": [],
+              "text": "Architects generate coordinated plans, sections, elevations, schedules, and details from approved information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a8a610ec9192",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8e74f94355c1",
+              "_type": "span",
+              "marks": [],
+              "text": "Handover support"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "b1aeb1c363f8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ca5f94c9b4c5",
+              "_type": "span",
+              "marks": [],
+              "text": "They update required architectural information to reflect approved changes and final project records."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5d1f02bf9999",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nLearn About the Future of Architectural BIM -->\n<a href=\"https://www.virtualbuildingstudio.com/blog/future-of-architectural-bim-ai-automation-digital-twins/\">\nAI, Automation & Digital Twins\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
+        },
+        {
+          "_key": "d325ecdaa5d9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "63d6c8d829d3",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Workflow for Engineers"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "8bb53f912b22",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "47c9830e2df5",
+              "_type": "span",
+              "marks": [],
+              "text": "A BIM workflow for engineers connects technical design and analysis with coordinated physical systems. Structural and MEP teams therefore need reliable architectural inputs before developing detailed systems."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d97bb3834ecf",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "68b012a2ad82",
+              "_type": "span",
+              "marks": [],
+              "text": "Engineering design"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "b9c85cd60108",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5e5d3d86c31a",
+              "_type": "span",
+              "marks": [],
+              "text": "Engineers develop structural framing, mechanical, electrical, plumbing, and other assigned systems."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "090b4ab084a4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c9361778cc67",
+              "_type": "span",
+              "marks": [],
+              "text": "Analysis"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "82d0c648e54c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d5f4deef0844",
+              "_type": "span",
+              "marks": [],
+              "text": "They use appropriate engineering applications to evaluate performance while maintaining agreed model information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4cd56881ec58",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a64478ffdd00",
+              "_type": "span",
+              "marks": [],
+              "text": "Model development"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "2dbac4ce67bb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "dbf51b5b08a8",
+              "_type": "span",
+              "marks": [],
+              "text": "Engineering teams develop elements to milestone-specific LOD requirements rather than adding unnecessary detail."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f79438bb914d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c0278e719aa9",
+              "_type": "span",
+              "marks": [],
+              "text": "Multidiscipline coordination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "63a266d7a9a7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ea32913cad03",
+              "_type": "span",
+              "marks": [],
+              "text": "Engineers check routes, equipment, structural elements, openings, access zones, and system clearances against other models."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f7caa96ea923",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f10f1ec2962c",
+              "_type": "span",
+              "marks": [],
+              "text": "Documentation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "011e031b011e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "119c346d8c3c",
+              "_type": "span",
+              "marks": [],
+              "text": "They produce engineering drawings, schedules, quantities, and required technical information from validated models."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "10ac30531af3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cefb99e2c1a9",
+              "_type": "span",
+              "marks": [],
+              "text": "Construction support"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "40edec8a570e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5157331fff22",
+              "_type": "span",
+              "marks": [],
+              "text": "Engineers review approved changes and update applicable design information throughout construction."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9745c272160c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "af73f67fbdcc",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Workflow for Contractors"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "bdd48969aa41",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "278810c2bb73",
+              "_type": "span",
+              "marks": [],
+              "text": "A BIM workflow for contractors takes coordinated design information into planning and field execution. The focus therefore moves from defining the design toward determining how teams will build it."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a1709af7a2be",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a63f8fa90a72",
+              "_type": "span",
+              "marks": [],
+              "text": "Constructability review"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "d63e02c10d44",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "081625e1935a",
+              "_type": "span",
+              "marks": [],
+              "text": "Contractors assess coordinated models for access, sequencing, installation constraints, and construction feasibility."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b52d8763a0de",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "baef3dd1d131",
+              "_type": "span",
+              "marks": [],
+              "text": "Trade coordination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "e0bb10292d55",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b18ca3ca7905",
+              "_type": "span",
+              "marks": [],
+              "text": "They coordinate subcontractor and fabrication models against architectural, structural, and MEP information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "aedb31891bf3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "149adf268aa0",
+              "_type": "span",
+              "marks": [],
+              "text": "4D and quantity planning"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "1b8aabafd61d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a5546ad0bf63",
+              "_type": "span",
+              "marks": [],
+              "text": "Contractors can connect model elements with schedules and quantities to evaluate sequences, logistics and procurement needs."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d3b13dd7f096",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nLearn About BIM Dimensions --> \n<a href=\"https://www.virtualbuildingstudio.com/blog/bim-dimensions-2d-3d-4d-5d-6d-7d-8d/\">\nBIM 2D to 10D Explained  \n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
+        },
+        {
+          "_key": "bdc633b748ab",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4327ab17cad9",
+              "_type": "span",
+              "marks": [],
+              "text": "Field coordination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "96aedfbe73c4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6bdb097bd4a1",
+              "_type": "span",
+              "marks": [],
+              "text": "Site teams use current model information to support installation planning, RFIs, issue tracking and change management."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "acd5c34c21c9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "22f692f0998e",
+              "_type": "span",
+              "marks": [],
+              "text": "Fabrication support"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "9190a8de7732",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cbf01339a984",
+              "_type": "span",
+              "marks": [],
+              "text": "Approved LOD 400 information can support shop drawings, prefabrication, and installation where contract requirements specify it."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b09018c6d46a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1470805aa72f",
+              "_type": "span",
+              "marks": [],
+              "text": "As-built handover"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "c7c9920584fd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "19d37a007091",
+              "_type": "span",
+              "marks": [],
+              "text": "Contractors record approved field changes and contribute verified information required for final asset delivery."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "588f6b540ec9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5abde96d6ff6",
+              "_type": "span",
+              "marks": [],
+              "text": "These discipline specific activities depend on defined ownership at every project phase, which makes BIM responsibilities the next part of the workflow."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "54dd37b46a18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a42db1d76aff",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Roles and Responsibilities"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "419e15144221",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "afdfd2d24083",
+              "_type": "span",
+              "marks": [],
+              "text": "Clear ownership keeps project information accurate as it moves between disciplines and project phases. ISO 19650 assigns information responsibilities across appointing, lead appointed, and appointed parties. Project teams translate those responsibilities into practical BIM roles."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c9f0cc70dc7f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "829756048a81",
+              "_type": "span",
+              "marks": [],
+              "text": "Planning and Requirements"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "8c4f4ae97a52",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b03ed2dbe317",
+              "_type": "span",
+              "marks": [],
+              "text": "The owner defines required project and asset information. The BIM Manager establishes standards and team leads confirm deliverables and modeling needs."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "947564e530d3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a9cf4201fb33",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Execution Planning"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "528a4432e731",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9c665a5a1e04",
+              "_type": "span",
+              "marks": [],
+              "text": "The Project BIM Manager develops and maintains the "
+            },
+            {
+              "_key": "1cf0ec91fd15",
+              "_type": "span",
+              "marks": [
+                "0ff6ce18b403"
+              ],
+              "text": "BIM execution plan"
+            },
+            {
+              "_key": "86a2ceac26dd",
+              "_type": "span",
+              "marks": [],
+              "text": ". The Information Manager establishes CDE procedures, naming rules, approvals and information exchange requirements."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "0ff6ce18b403",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-resources/bim-execution-plan/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "882663140b89",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5652981c8c9b",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Modeling"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "176050d8e694",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b148f107fb3e",
+              "_type": "span",
+              "marks": [],
+              "text": "Model authors create architectural, structural and MEP content according to agreed LOD requirements. Discipline leads remain responsible for design accuracy within their professional scope."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "434468b3d07e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f705c62491ab",
+              "_type": "span",
+              "marks": [],
+              "text": "Model Coordination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "8ae66bd0b9ed",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "56acaef96242",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Coordinators federate discipline models, run clash detection, assign issues and track resolutions. Discipline leads review proposed design changes before authors update their models."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9149ad9a1757",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cce02380455b",
+              "_type": "span",
+              "marks": [],
+              "text": "Construction"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "a1650fe3359f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "020948030bfe",
+              "_type": "span",
+              "marks": [],
+              "text": "Contractor BIM teams use coordinated information for sequencing, logistics, trade coordination and field planning. Design teams address relevant RFIs and approved changes."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5a8b3b298255",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "fa6d3b8e1ff0",
+              "_type": "span",
+              "marks": [],
+              "text": "As-Built and Handover"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "a36777388c16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2acc60a4074f",
+              "_type": "span",
+              "marks": [],
+              "text": "Contractors and trade teams provide field verified documentation. BIM Coordinators will review the final models and Information Managers will check the required files and data before delivery."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "23fcc96a3799",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e15d67e4f468",
+              "_type": "span",
+              "marks": [],
+              "text": "Smaller projects may combine roles, but every responsibility still needs a named owner.."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d004e7274cc7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "252cf755d96f",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Software Used in the Workflow"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "79ef81e5c3a0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6fbd8eeca4e8",
+              "_type": "span",
+              "marks": [],
+              "text": "Software should follow the BIM Process rather than define it. Each application supports a specific task, while project teams remain responsible for creating, reviewing, approving, and exchanging information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3bc34257f7d3",
+          "_type": "table",
+          "columnWidths": [
+            "20%",
+            "30%",
+            "30%",
+            "20%"
+          ],
+          "rows": [
+            {
+              "_key": "1f8df055073c",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "b40e5e4e22f1",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Project Stage",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "5236f7ca88a6",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Typical Software",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "87dab990cf60",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Primary Use",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "38e2da40c9ac",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Typical Users",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "d652d75b1996",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "3fa3a3a42d11",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Planning and BIM Execution",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "b0f6d2a44eef",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Autodesk Construction Cloud, BIM 360",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "5369f59e88e1",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "CDE setup, document control, standards, permissions, and information planning",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "a7635bd1fefb",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "BIM Managers, Information Managers, Project Managers",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "d5bb83407ed8",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "d54aaec6bb98",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "BIM Modeling",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "a3fe751cd783",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Autodesk Revit",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "39a2d1b67194",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Architectural, structural, and MEP model authoring and documentation",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "fa892a57f62e",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Architects, Engineers, BIM Modelers",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "0c96d1b99615",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "0d64c28f51a9",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Model Coordination",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "bb4fc6301cab",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Autodesk Navisworks",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "4214d8a7d00b",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Model federation, clash detection, issue review, and 4D coordination",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "940f7e2dbbf1",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "BIM Coordinators, Contractors, Discipline Teams",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "21dfe8331034",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "0894e6daa142",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Cloud Collaboration",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "d3359e3cbe69",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Autodesk Construction Cloud, BIM 360",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "c82264858f41",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Version control, model sharing, issues, RFIs, approvals, and project records",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "32b86851d790",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Designers, Contractors, Owners",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "29090ba87bf5",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "2c8a87a4e812",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Automation",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "b1ae91a3c23a",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Dynamo for Revit",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "540cd731834f",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Rule-based model tasks, data processing, repetitive operations, and information checks",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "c7cf9326e9f2",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "BIM Specialists, Model Authors",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "34b57cd17c64",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "c18cee0e757e",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Construction Planning",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "1300fccf2b98",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Navisworks, Autodesk Construction Cloud",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "688711c812db",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Sequencing, model review, construction coordination, and issue management",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "c8a864db618d",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Contractors, VDC Teams, Trade Coordinators",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "1d2920a478a0",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "16f0d0ca9e96",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "As-Built and Facility Management",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "d9a91b6d8738",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Facility and Asset Management Platforms",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "f16262336b79",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Asset records, operational information, maintenance data, and digital twin connections",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "abf070cdb09f",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Owners, Facility Managers",
+                  "rowspan": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_key": "b20b618c4c6d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "23b0145beb1a",
+              "_type": "span",
+              "marks": [],
+              "text": "Connected tools prepare teams to capture broader project-delivery benefits."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "74610abce0be",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7b0451dea1e1",
+              "_type": "span",
+              "marks": [],
+              "text": "How BIM Improves AEC Project Delivery"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "6db696216c03",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a036d207037c",
+              "_type": "span",
+              "marks": [],
+              "text": "A controlled information chain reduces uncertainty where disciplines and project phases intersect. That gives teams better opportunities to find problems before those problems reach construction."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "270013f3460b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2d8a31b3f6ac",
+              "_type": "span",
+              "marks": [],
+              "text": "Coordination supports earlier conflict resolution, while model-based quantities improve access to measurable design information. Scheduling connections help construction teams test sequences before field execution."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5fda88cc9443",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ae89bb41b4a1",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM also gives teams a reusable source for performance analysis. They can assess energy, carbon, quantities, or other criteria when model information supports those purposes."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b75e85bbddf0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2540a735de23",
+              "_type": "span",
+              "marks": [],
+              "text": "However, these benefits depend on information quality. Poor standards can carry incorrect data through the same connected workflow, creating another category of problems."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "22f2f9e6ed52",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0fefa5f2cc66",
+              "_type": "span",
+              "marks": [],
+              "text": "Common BIM Workflow Challenges"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "5e951124af1b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c88c360492db",
+              "_type": "span",
+              "marks": [],
+              "text": "A well-managed BIM Process gives teams consistent information for design, coordination, construction, and handover. Problems develop when standards, responsibilities, or information exchanges vary between project participants. Several challenges deserve attention throughout delivery."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "75396ef58646",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f8ad4b606008",
+              "_type": "span",
+              "marks": [],
+              "text": "Interoperability and data exchange"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "5e51412616be",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d3c6cf54480c",
+              "_type": "span",
+              "marks": [],
+              "text": "Different applications may interpret model information differently. Research identifies missing data, mapping errors, incompatible formats and repeated conversions as common interoperability concerns."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "617471e491ac",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c49edc59807b",
+              "_type": "span",
+              "marks": [],
+              "text": "Unclear BIM responsibilities"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "febf41977019",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e7d278a85ad6",
+              "_type": "span",
+              "marks": [],
+              "text": "Project information can remain unchecked when responsibilities are not assigned to right teams. A clear BIM execution plan should specify who creates, reviews, approves and publishes each of the project files."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a48be2a25ab0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "eedcb8b20170",
+              "_type": "span",
+              "marks": [],
+              "text": "Inconsistent modeling standards"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "cf67b77899b1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c22a85c91dc7",
+              "_type": "span",
+              "marks": [],
+              "text": "Different naming, classification and modeling practices make multidisciplinary coordination harder. Shared standards give authors and coordinators consistent rules throughout production."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "315b6cc59f6b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7ae54df80376",
+              "_type": "span",
+              "marks": [],
+              "text": "Incorrect LOD expectations"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "04b8c4f62527",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "74e25574cb7a",
+              "_type": "span",
+              "marks": [],
+              "text": "Too much modeling costs money, but too little development constrains downstream use. Teams should determine the desired purpose and Level of Development for each milestone."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b6cc3444c183",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5296796e838a",
+              "_type": "span",
+              "marks": [],
+              "text": "Weak CDE governance"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "718829799aef",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "81a10a92bc6a",
+              "_type": "span",
+              "marks": [],
+              "text": "If file sharing is not controlled, teams can only have access to old models and documents. Information Managers should control versions, approvals, permissions and publishing procedures."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "31d38da63ead",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e3d483ba9660",
+              "_type": "span",
+              "marks": [],
+              "text": "Training and process gaps"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "3647145d0018",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8211fdb8be0c",
+              "_type": "span",
+              "marks": [],
+              "text": "Software skills alone cannot maintain an effective workflow. Training is needed for the teams in project standards, coordination procedures and information responsibilities."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b738118c8757",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "01f478e6d7d5",
+              "_type": "span",
+              "marks": [],
+              "text": "Addressing these issues early provides a stronger foundation for consistent BIM working practices."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fd9198b22ece",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "bcdfa972c2ff",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Workflow Best Practices"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "f0fc2b8b7132",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9d16ea5796fb",
+              "_type": "span",
+              "marks": [],
+              "text": "The earlier challenges usually concern ownership, information quality, or process consistency. Best practices should address those causes before teams focus on advanced technology."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "da42cd76e359",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c3430a98ed6d",
+              "_type": "span",
+              "marks": [],
+              "text": "Project teams should:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ddc665c6deaf",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9aa07c885857",
+              "_type": "span",
+              "marks": [],
+              "text": "Define information requirements before model production begins."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "86114dc7bb36",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c74c21d468e7",
+              "_type": "span",
+              "marks": [],
+              "text": "Align project procedures with applicable ISO 19650 principles."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "96a1290a6d81",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "bb370cb2bd9c",
+              "_type": "span",
+              "marks": [],
+              "text": "Specify LOD according to model use and project milestones."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3d7a1097aacc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "09d0968a38d2",
+              "_type": "span",
+              "marks": [],
+              "text": "Develop the BEP collaboratively and maintain it as delivery requirements change."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5154d140d8c5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f076b23c0dd6",
+              "_type": "span",
+              "marks": [],
+              "text": "Establish one controlled environment for approved project information."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ec04e71cf34a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0efd9ed92c46",
+              "_type": "span",
+              "marks": [],
+              "text": "Set regular model review, clash detection and issue-resolution cycles."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "57be770d0e66",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "40b4b2423962",
+              "_type": "span",
+              "marks": [],
+              "text": "Assign quality checks to named people rather than assuming software will catch problems."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7c79887d0a14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c65db8bf65a9",
+              "_type": "span",
+              "marks": [],
+              "text": "Test information exchanges before major submission deadlines."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2304bd69f365",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5eb02dbad565",
+              "_type": "span",
+              "marks": [],
+              "text": "Model information required for decisions, coordination, construction or operations."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "79c2cdb52f92",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "432931e6ffc4",
+              "_type": "span",
+              "marks": [],
+              "text": "These controls also provide the foundation automation needs to produce dependable results."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "18f7633baea1",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nDownload Your BIM Execution Plan --> \n<a href=\"https://www.virtualbuildingstudio.com/bim-resources/bim-execution-plan/\">\nBlueprint for Construction Excellence\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
+        },
+        {
+          "_key": "f199196e0f9a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "665b80f33f14",
+              "_type": "span",
+              "marks": [],
+              "text": "AI and Automation in BIM Workflows"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "4f335ea7919d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "65572ed7ce62",
+              "_type": "span",
+              "marks": [],
+              "text": "Structured data gives automation something consistent to examine. Poorly structured information produces less dependable automated outputs, regardless of the technology involved."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "104cd1a77611",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7a2c86b97244",
+              "_type": "span",
+              "marks": [],
+              "text": "Current research on AI in BIM workflow applications covers model classification, semantic matching, computer vision, performance analysis and Scan to BIM processing. Machine learning can help specialists classify point cloud information and identify building elements from captured conditions."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "77a7ee54a34b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "49fe3849118b",
+              "_type": "span",
+              "marks": [],
+              "text": "Natural-language methods also show potential for matching incomplete BIM properties with external sustainability databases. Research prototypes have connected large language models with parametric environments for model modifications."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8518771857f7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "97952dcd1887",
+              "_type": "span",
+              "marks": [],
+              "text": "AI in BIM workflow tasks still requires human verification. Teams remain responsible for design decisions, source information, security, privacy, and model quality. As these capabilities mature, automation will influence how teams structure future project information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f950bd0a25f2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6b10033931b5",
+              "_type": "span",
+              "marks": [],
+              "text": "Future of BIM Workflows"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "9f6949e842ee",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "86f08495681c",
+              "_type": "span",
+              "marks": [],
+              "text": "Automation builds on a broader move toward connected lifecycle information. Owners increasingly need usable asset data beyond design and construction."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "58299c58c41f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e577a19dddec",
+              "_type": "span",
+              "marks": [],
+              "text": "Digital twins, IoT data, cloud platforms, and facility systems can extend model information into operations. However, those connections increase requirements for interoperability and controlled information governance."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d78ca76457c3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d818f92494cf",
+              "_type": "span",
+              "marks": [],
+              "text": "Security will get greater attention for assets containing sensitive operational data. ISO 19650-5 provides guidance for security-minded information management in built-asset environments."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cbf3add582c2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4ae1d91ef21f",
+              "_type": "span",
+              "marks": [],
+              "text": "Skills must develop alongside technology. Future teams will need people who understand both discipline requirements and information management principles."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0ee9fcde4f27",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0422f8e50202",
+              "_type": "span",
+              "marks": [],
+              "text": "That combination brings the discussion back to the central purpose of BIM."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fc2574374a49",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "80bed28a481b",
+              "_type": "span",
+              "marks": [],
+              "text": "Conclusion"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "5e9ac710a15c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1252ba6fba65",
+              "_type": "span",
+              "marks": [],
+              "text": "Successful BIM delivery depends less on producing impressive models and more on controlling useful project information. Requirements establish purpose, while execution planning defines how teams will deliver that information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4fb794b9f922",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "73aa5a6977da",
+              "_type": "span",
+              "marks": [],
+              "text": "Modeling, coordination, validation, documentation, field use and handover then form one connected delivery sequence. Architects, engineers, contractors and owners each contribute at different points."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "961f45e8d9fd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0d159dad8bed",
+              "_type": "span",
+              "marks": [],
+              "text": "A repeatable BIM process can reduce information gaps, and support earlier project decisions for AEC firms. Technology strengthens that approach when people establish clear requirements, responsibilities, standards and quality controls first."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "638037472471",
+          "_type": "cta",
+          "buttonText": "Contact Us",
+          "buttonUrl": "/contact-us/",
+          "title": "Need a BIM workflow that works across design, coordination, and construction?"
+        }
+      ],
+      "categories": [
+        {
+          "_id": "c4570779-37fa-4762-8173-57e0a7f8de73",
+          "title": "BIM Modeling "
+        }
+      ],
+      "featuredImage": {
+        "asset": {
+          "originalFilename": "bim-workflow-process.jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/96c527b1cf027e5a0567815aaf2143cf868fd4cd-1460x926.jpg"
+        }
+      },
+      "publishedAt": "2026-08-20",
+      "slug": "bim-workflow-design-to-construction",
+      "tags": null,
+      "title": "BIM Workflow Explained: A Complete Guide for AEC Project Teams"
+    },
     {
       "_id": "a5c28aec-4bed-4856-b8e1-6ebfa366ab6b",
       "body": [

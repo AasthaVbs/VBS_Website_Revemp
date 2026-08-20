@@ -158,7 +158,7 @@ export const allPortfolioProjects = [
   {
     title: "LOD 400 ACS & MEPF Modeling with Clash Detection & Coordination",
     href: "/projects/architectural-structural-mepf-modeling-for-a-commercial-tower/",
-    image: "/image/banner-design-1.png",
+    image: "/image/architectural-banner.jpg",
     category: "MEP",
   },
   {
@@ -170,7 +170,7 @@ export const allPortfolioProjects = [
   {
     title: "LOD 400 ACS & MEPF Modeling with Shop Drawings & Clash Detection & Coordination",
     href: "/projects/mepf-model-with-clash-detection-coordination-for-defence-institute/",
-    image: "/image/banner-design-2.png",
+    image: "/image/architecture-mepf-3d-model-banner.jpg",
     category: "MEP",
   },
   {

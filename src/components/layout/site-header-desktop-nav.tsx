@@ -64,7 +64,7 @@ function SimpleNavDropdown({ links }: { links: typeof ABOUT_DROPDOWN_LINKS }) {
 
   return (
     <div className="vbs-nav-dropdown-menu vbs-nav-dropdown-menu--simple">
-      <div className="vbs-nav-dropdown-links flex w-full min-w-[200px] max-w-[226px] flex-col gap-8">
+      <div className="vbs-nav-dropdown-links flex w-max flex-col gap-8">
         {links.map((link) => {
           const isActive = isNavPathActive(path, link.href);
           return (
@@ -290,7 +290,7 @@ function NavDropdownTrigger({
   const triggerClass = navLinkClass(active, true);
 
   return (
-    <div className="vbs-nav-dropdown-wrap">
+    <div className={cn("vbs-nav-dropdown-wrap", dropdownAlign !== "mega-menu" && "vbs-nav-dropdown-wrap--simple")}>
       {toggleOnly ? (
         <button type="button" className={triggerClass} aria-haspopup="true">
           <span className="nav-link-label">{label}</span>
@@ -357,7 +357,7 @@ export function SiteHeaderDesktopNav() {
               key={item.label}
               label={item.label}
               href={item.href}
-              dropdownAlign="end"
+              dropdownAlign="center"
               active={isAbout}
             >
               <SimpleNavDropdown links={ABOUT_DROPDOWN_LINKS} />

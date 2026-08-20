@@ -62,7 +62,7 @@ export function MepHeader({ menuItems, onSectionClick, onBookMeeting }: MepHeade
           <Navbar.Brand as={Link} href="/">
             <Image
               className="me-2"
-              src="/image/logo.svg"
+              src="/vbs-logo.svg"
               width={294}
               height={56}
               alt="virtualbuilding studio"
@@ -107,7 +107,7 @@ export function MepHeader({ menuItems, onSectionClick, onBookMeeting }: MepHeade
                 onClick={() => setShowMobileNav(true)}
               />
               <Navbar.Brand as={Link} href="/" className="mx-auto">
-                <Image src="/image/logo.svg" width={200} height={56} alt="virtualbuilding studio" />
+                <Image src="/vbs-logo.svg" width={200} height={56} alt="virtualbuilding studio" />
               </Navbar.Brand>
               <Navbar.Offcanvas
                 id={`mep-offcanvas-navbar-${expand}`}
@@ -121,7 +121,7 @@ export function MepHeader({ menuItems, onSectionClick, onBookMeeting }: MepHeade
                     <Link href="/" className="d-inline-block">
                       <Image
                         className="me-2"
-                        src="/image/logo.svg"
+                        src="/vbs-logo.svg"
                         width={200}
                         height={56}
                         alt="virtualbuilding studio"

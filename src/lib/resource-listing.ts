@@ -138,20 +138,17 @@ export function matchesWhitepaperServiceFilter(
   if (isAllResourceServicesFilter(targetService)) return true;
 
   const normalizedService = normalizeResourceServiceFilter(targetService);
-  const services = item.services?.length ? item.services : [item.service].filter(Boolean) as string[];
+  const primary = item.service || null;
 
   if (normalizedService === "MEP Engineering Firms") {
-    return services.includes("MEP Engineering Firms");
+    return primary === "MEP Engineering Firms";
   }
 
   if (isAcsResourceServiceFilter(targetService)) {
-    return (
-      services.includes(ACS_RESOURCES_SERVICE_FILTER) ||
-      services.includes("Reality Capture & Survey Companies")
-    );
+    return primary === ACS_RESOURCES_SERVICE_FILTER;
   }
 
-  return services.includes(normalizedService as string);
+  return primary === normalizedService;
 }
 
 export function normalizeWebinarSlug(slug?: string | null) {

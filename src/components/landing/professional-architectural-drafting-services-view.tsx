@@ -32,7 +32,7 @@ import {
 } from "@/utils/nimbus-booking";
 import { scrollToPageSection } from "@/hooks/scrollToPageSection";
 
-const Logo = "/image/logo.svg";
+const Logo = "/vbs-logo.svg";
 
 function AiFillYoutube({ className }: { className?: string }) {
   return (

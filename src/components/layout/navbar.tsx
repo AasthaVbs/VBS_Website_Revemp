@@ -23,7 +23,7 @@ export function Navbar() {
       <div className="container flex h-20 items-center justify-between">
         <a href="#" className="flex items-center">
           <Image
-            src="/logos/logo.svg"
+            src="/vbs-logo.svg"
             alt="Virtual Building Studio"
             width={230}
             height={44}

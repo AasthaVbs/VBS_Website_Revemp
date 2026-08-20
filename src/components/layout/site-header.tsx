@@ -154,7 +154,7 @@ export function SiteHeader() {
             <div className="vbs-header-main-inner">
               <VbsLink href="/" className="vbs-header-logo shrink-0" aria-label="Virtual Building Studio">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/logos/logo.svg" alt="Virtual Building Studio" width={261} height={50} />
+                <img src="/vbs-logo.svg" alt="Virtual Building Studio" width={261} height={50} />
               </VbsLink>
 
               <button

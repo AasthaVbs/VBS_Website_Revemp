@@ -24,7 +24,7 @@ export function LandingTopHeader({ maxWidth, fixed = false }: LandingTopHeaderPr
           style={maxWidth ? { maxWidth } : undefined}
         >
           <Link href="/" className="landing-top-header-logo" aria-label="Virtual Building Studio home">
-            <Image src="/image/logo.svg" width={260} height={50} alt="Virtual Building Studio" />
+            <Image src="/vbs-logo.svg" width={260} height={50} alt="Virtual Building Studio" />
           </Link>
           <div className="landing-top-header-contact">
             <a className="landing-top-header-link" href="mailto:contact@virtualbuildingstudio.com">

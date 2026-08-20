@@ -62,6 +62,7 @@ export function SiteNav() {
               key={item.label}
               label={item.label}
               href={item.href}
+              dropdownAlign="center"
               active={isAbout}
             >
               <AboutNavDropdown />

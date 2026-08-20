@@ -126,7 +126,7 @@ export function CadDraftingLandingHeader({
 
         <div className="cad-landing-header-inner">
           <VbsLink to="/" className="cad-landing-header-logo" aria-label="Virtual Building Studio home">
-            <img src="/logos/logo.svg" alt="Virtual Building Studio" width={261} height={50} decoding="async" />
+            <img src="/vbs-logo.svg" alt="Virtual Building Studio" width={261} height={50} decoding="async" />
           </VbsLink>
 
           <nav

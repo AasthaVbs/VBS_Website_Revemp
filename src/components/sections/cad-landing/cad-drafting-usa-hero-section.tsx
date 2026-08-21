@@ -88,7 +88,7 @@ export function CadDraftingUsaHeroSection({
 
           <div
             className={cn(
-              "relative h-[280px] w-full overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)] sm:h-[400px] lg:h-[530px] lg:w-[650px] lg:shrink-0",
+              "cad-usa-hero__media relative h-[280px] w-full overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)] sm:h-[400px] lg:h-[530px] lg:w-[650px] lg:shrink-0",
               copyImageCta && "max-lg:h-[220px] sm:max-lg:h-[360px]",
               copyImageCta && "max-lg:order-2",
             )}

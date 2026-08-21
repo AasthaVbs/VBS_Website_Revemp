@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-20T15:16:35.995Z",
+  "fetchedAt": "2026-08-21T07:15:20.601Z",
   "posts": [
     {
       "_id": "3a7d272b-b4a7-436d-81d3-8ce36c56966a",
@@ -71461,6 +71461,2088 @@
       "slug": "mep-coordination-bim-benefits-process-outsourcing",
       "tags": null,
       "title": "MEP Coordination: Everything You Need to Know About Its Importance & Benefits"
+    },
+    {
+      "_id": "d48d8ef5-7ec4-438e-98ba-5b72dde38b66",
+      "body": [
+        {
+          "_key": "e00a70c8ea56",
+          "_type": "image",
+          "asset": {
+            "_ref": "image-8796817d99958eb33fa2126fbb7cf267684380fe-1460x926-jpg",
+            "_type": "reference"
+          }
+        },
+        {
+          "_key": "17f364202b73",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f1b6482f7a0d",
+              "_type": "span",
+              "marks": [],
+              "text": "Your 3D model looks great in the coordination meeting. Then the schedule slips, the budget runs over and nobody can explain why the model did not catch it. This happens because a single 3D model only shows geometry. It does not show when work happens, what it costs, or how the asset will perform after handover."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9f2856ea4db2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "fe2261177791",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM Dimensions close this gap by adding structured layers of information to that same model. Each dimension adds one category of data, from time and cost to safety and sustainability."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "98fc9f39791b",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p><a href=\"https://www.autodesk.com/blogs/construction/bim-dimensions/\" rel=\"nofollow\" target=\"_blank\">Autodesk and academic reviews </a> confirm strong industry agreement on three layers: 3D geometry, 4D time and 5D cost. Dimensions beyond that are less standardized, but teams still use them to manage lifecycle and safety.</P>"
+          }
+        },
+        {
+          "_key": "e5338aa32261",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b723812196fb",
+              "_type": "span",
+              "marks": [],
+              "text": "This BIM Dimensions Guide walks through each dimension from 2D to 10D. You will see what each one does and where it delivers real value on a project."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7b24fb9092d9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8c3218084f77",
+              "_type": "span",
+              "marks": [],
+              "text": "Understanding BIM Dimensions: 2D, 3D, 4D, 5D….10D"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "6ce06488ce59",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "944b8bd2a0d4",
+              "_type": "span",
+              "marks": [],
+              "text": "Every dimension builds on the one before it. Geometry comes first, then time, then cost, then everything a building needs to run for decades."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f68d44cda12e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "96f13067eaa5",
+              "_type": "span",
+              "marks": [],
+              "text": "2D BIM - Traditional Documentation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "10c13de0b7bd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "81f3a22538e2",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM 2D refers to plans, sections, elevations and details produced or coordinated from a BIM model. These sheets carry structured metadata even without full parametric behavior in three dimensions."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7a6d9c6b93a2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "56517ed9317b",
+              "_type": "span",
+              "marks": [],
+              "text": "Benefits"
+            }
+          ],
+          "markDefs": [],
+          "style": "h5"
+        },
+        {
+          "_key": "ff1f70267372",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "830843e30874",
+              "_type": "span",
+              "marks": [],
+              "text": "Supports regulatory submissions where 2D drawings remain the required deliverable."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "744bde96c58a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b2e99c8626c5",
+              "_type": "span",
+              "marks": [],
+              "text": "Gives CAD-based teams a familiar interface, which lowers resistance during adoption."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e9f9c7e96a4d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8f65eb681344",
+              "_type": "span",
+              "marks": [],
+              "text": "Allows a "
+            },
+            {
+              "_key": "8fb076a95853",
+              "_type": "span",
+              "marks": [
+                "d7bae668b106"
+              ],
+              "text": "BIM modeling company"
+            },
+            {
+              "_key": "c4ee5e9d6a90",
+              "_type": "span",
+              "marks": [],
+              "text": " to generate 2D sheets automatically from coordinated 3D models."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [
+            {
+              "_key": "d7bae668b106",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "d893d288dade",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e8d4c375f9a3",
+              "_type": "span",
+              "marks": [],
+              "text": "Keeps contractual design records while the model holds the master geometry and quantities."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "462e781feb55",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "09cc0a9e4f79",
+              "_type": "span",
+              "marks": [],
+              "text": "Even on mature BIM projects, teams keep BIM 2D sheets on hand for permit and code review packages."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "db14394877ee",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "55fb473b0e65",
+              "_type": "span",
+              "marks": [],
+              "text": "3D BIM - Intelligent Modeling"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "ac903b054e6d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8ea924220333",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM 3D is the foundational layer. Walls, beams, pipes and equipment are modeled as objects and enriched with parametric data such as material and size. These models act as data hubs for architecture, structure and MEP teams and every higher dimension builds on this geometry."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "86dd79348207",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c032bf3bc941",
+              "_type": "span",
+              "marks": [],
+              "text": "Benefits"
+            }
+          ],
+          "markDefs": [],
+          "style": "h5"
+        },
+        {
+          "_key": "abcdaf6826d2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "451d1f445018",
+              "_type": "span",
+              "marks": [],
+              "text": "Improves design communication through accurate visualization of complex buildings and systems."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "55d577101d53",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "13a97df7c8e0",
+              "_type": "span",
+              "marks": [],
+              "text": "Supports clash detection between disciplines, reducing conflicts and rework on site."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8d053bec1eb6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "97a79f1befa0",
+              "_type": "span",
+              "marks": [],
+              "text": "Provides the quantities that later feed "
+            },
+            {
+              "_key": "305501123bfc",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "4D BIM scheduling"
+            },
+            {
+              "_key": "7e80f513e473",
+              "_type": "span",
+              "marks": [],
+              "text": " and 5D BIM cost estimation."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e8295c599f44",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3345a3af1d41",
+              "_type": "span",
+              "marks": [],
+              "text": "Forms the backbone for AI-powered BIM and digital twin workflows linking sensor data to geometry."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "33c143d36e42",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0bce73072a7a",
+              "_type": "span",
+              "marks": [],
+              "text": "Teams that get BIM 3D right find every dimension built on top of it easier to trust."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "440ca475589f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "fd705fda8442",
+              "_type": "span",
+              "marks": [],
+              "text": "4D BIM - Time & Scheduling"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "40210f9ec256",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "30c0f4cdbdd2",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM 4D links the 3D model to construction schedules and sequencing data. Activities, durations and dependencies connect to specific elements, so the model can simulate how a project gets built over time."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f78d7ad86e5b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "484be967a168",
+              "_type": "span",
+              "marks": [],
+              "text": "Benefits"
+            }
+          ],
+          "markDefs": [],
+          "style": "h5"
+        },
+        {
+          "_key": "1a88a5e11e27",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b7a8b90821a4",
+              "_type": "span",
+              "marks": [],
+              "text": "It improves construction planning by simulating sequences and site logistics before the work starts."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b4e2be7a964d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "24bace5116a1",
+              "_type": "span",
+              "marks": [],
+              "text": "Early detection of sequencing conflicts and resource issues prevent delays."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9537781a960b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f4df9903bf59",
+              "_type": "span",
+              "marks": [],
+              "text": "4D BIM scheduling linked to earned value tracking allowing teams to identify slippage earlier."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "65725b3cddd3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7f029b4a4a53",
+              "_type": "span",
+              "marks": [],
+              "text": "Produces structured time sequence data for "
+            },
+            {
+              "_key": "773d27dcb61f",
+              "_type": "span",
+              "marks": [
+                "0500763cdb36"
+              ],
+              "text": "AI in Construction"
+            },
+            {
+              "_key": "a6758113fa91",
+              "_type": "span",
+              "marks": [],
+              "text": " tools for mining for improved phasing."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [
+            {
+              "_key": "0500763cdb36",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/blog/ai-in-construction/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "6504bf295154",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "dc667beaf5d4",
+              "_type": "span",
+              "marks": [],
+              "text": "In practice, BIM 4D turns a static plan into a moving timeline stakeholder can walk through."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8e0fbbbb3987",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e0c3fd004da1",
+              "_type": "span",
+              "marks": [],
+              "text": "5D BIM - Cost Estimation & Budget Control"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "a296a736783e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c1a9b9813b9d",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM 5D adds cost to the model by linking quantities, unit rates and cost breakdowns to elements and schedule data. Automated takeoff and dynamic budget analysis become possible once pricing lives in the same environment as geometry and schedule."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e1176ff5739a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "87d55398783c",
+              "_type": "span",
+              "marks": [],
+              "text": "Benefits"
+            }
+          ],
+          "markDefs": [],
+          "style": "h5"
+        },
+        {
+          "_key": "e26a0b3b40fb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3059307bc16e",
+              "_type": "span",
+              "marks": [],
+              "text": "Automates quantity takeoff, cutting manual measurement effort and the errors that come with it."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7413ebc087bd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "48f3eb5a929c",
+              "_type": "span",
+              "marks": [],
+              "text": "Gives more accurate estimates relating items to formal bills of quantities."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "59c5b3d71dc1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e1aefa9d2fc7",
+              "_type": "span",
+              "marks": [],
+              "text": "Performs 5D BIM cost estimating that automatically updates budgets as designs or schedules change."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1a40af75ccda",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9e93ea707b6a",
+              "_type": "span",
+              "marks": [],
+              "text": "Enables stakeholders to evaluate design alternatives on joint effect of time and cost."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b1842a70b002",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f443e5fd220c",
+              "_type": "span",
+              "marks": [],
+              "text": "For finance teams, BIM 5D turns quantity data into a budget owner can trust."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "506e69b416f5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6daa517e5209",
+              "_type": "span",
+              "marks": [],
+              "text": "6D BIM - Sustainability & Facility Management"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "cdaee4625c64",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6f798dbcc49a",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM 6D carries sustainability and environmental performance data, including energy use, lifecycle costs and carbon emissions. Some practitioners fold operational data into this layer too. That is one reason BIM Dimensions Explained beyond 5D still varies by source."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b6a056c5b7e0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1a259c6c2740",
+              "_type": "span",
+              "marks": [],
+              "text": "Benefits"
+            }
+          ],
+          "markDefs": [],
+          "style": "h5"
+        },
+        {
+          "_key": "848b98facb8c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c460b4baaf75",
+              "_type": "span",
+              "marks": [],
+              "text": "Feeds simulation tools that assess heating, cooling and lighting performance early in design."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "99e760e136e5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cd20588f918c",
+              "_type": "span",
+              "marks": [],
+              "text": "Supports lifecycle carbon assessment by linking material choices to emission factors."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4f837c71972f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b73986161d5f",
+              "_type": "span",
+              "marks": [],
+              "text": "Provides the structured data needed for green building compliance and certification reporting."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "34db39fed38e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "281b9d4420f8",
+              "_type": "span",
+              "marks": [],
+              "text": "Feeds AI-powered BIM tools that compare actual energy performance against design targets."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4f11ec867c44",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b48f9fbbb5df",
+              "_type": "span",
+              "marks": [],
+              "text": "Owners chasing certification credits typically start their sustainability work directly inside BIM 6D."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "61c9aa0719ee",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "441cad3ecbd7",
+              "_type": "span",
+              "marks": [],
+              "text": "7D BIM - Lifecycle & Maintenance Management"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "c62b105ec544",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "80691e56874e",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM 7D integrates asset registers, maintenance plans, warranty details, and operational procedures with model elements. This turns the model into an Asset Information Model that facility teams use throughout the operational phase."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2bce937d880d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1644c3e9fcf1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Benefits"
+            }
+          ],
+          "markDefs": [],
+          "style": "h5"
+        },
+        {
+          "_key": "7332c0fe53a8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "98035f6d915d",
+              "_type": "span",
+              "marks": [],
+              "text": "Creates a visual asset register showing location and maintenance needs of every system."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f91589f97fe4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "dcace94d56a2",
+              "_type": "span",
+              "marks": [],
+              "text": "Centralizes documentation, warranties and specifications that improve facility management efficiency."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "bc63b971d45e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "329793ab14d4",
+              "_type": "span",
+              "marks": [],
+              "text": "Combines with 5D cost data to support long term life cycle cost analysis for owners."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c51f691d539e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5f0cb2bf7c72",
+              "_type": "span",
+              "marks": [],
+              "text": "Feeds AI in BIM modeling and digital twins, enabling predictive maintenance from live data."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b6cf0ee3b44a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "10beb83ec364",
+              "_type": "span",
+              "marks": [],
+              "text": "Facility managers who adopt BIM 7D early get a head start on the maintenance backlog."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8a4b55700dc2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "452972c8f77f",
+              "_type": "span",
+              "marks": [],
+              "text": "8D BIM - Safety & Risk Management"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "4b77e1054048",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5cb031dd54af",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM 8D overlays health, safety, and welfare data onto the model. This includes hazard identification, risk ratings and method statements tied to specific locations and activities."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6f7670832eb1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4cda9c70054f",
+              "_type": "span",
+              "marks": [],
+              "text": "Benefits"
+            }
+          ],
+          "markDefs": [],
+          "style": "h5"
+        },
+        {
+          "_key": "d34716d5206a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "77a0fdd1c249",
+              "_type": "span",
+              "marks": [],
+              "text": "Maps hazards and required controls to specific work areas and construction phases."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cc5a79af963a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "590127fbe3ab",
+              "_type": "span",
+              "marks": [],
+              "text": "Maintains a safety risk register linked to geometry and tasks results in improved traceability."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "675c7de506ea",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "444240b403f8",
+              "_type": "span",
+              "marks": [],
+              "text": "Lets teams simulate high-risk work like crane lifts, before it happens on site."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cbc8d0ab9145",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ea81e52a08f0",
+              "_type": "span",
+              "marks": [],
+              "text": "Feeds safety KPIs and inspection records into dashboards for ongoing analytics."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "de201093931a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7426fe643d10",
+              "_type": "span",
+              "marks": [],
+              "text": "Safety leads increasingly ask for BIM 8D data before signing off on a work plan."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4c6ed722d26f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "bf0ad639a671",
+              "_type": "span",
+              "marks": [],
+              "text": "9D BIM - Lean Construction"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "b483ceaccf94",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2ce320dc489d",
+              "_type": "span",
+              "marks": [],
+              "text": "9D BIM uses time, cost, logistics, resource, and quality data from the model to support lean construction. It uses 4D and 5D data to help teams remove waste and stabilize workflow."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d3be0c3ae9fc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3cf037640a7c",
+              "_type": "span",
+              "marks": [],
+              "text": "Benefits"
+            }
+          ],
+          "markDefs": [],
+          "style": "h5"
+        },
+        {
+          "_key": "4d877671b2e2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "521fcba2de82",
+              "_type": "span",
+              "marks": [],
+              "text": "Supports Design for manufacture and assembly thru accurate, fabrication-ready models."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d7672ade556b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "de3bb6570e17",
+              "_type": "span",
+              "marks": [],
+              "text": "Synchronizes planning with lean techniques such as pull planning, on the basis of shared model data."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f6070050013d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7f3a06674eca",
+              "_type": "span",
+              "marks": [],
+              "text": "Connects logistics to BIM based planning directly, saving material and time."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "992cc5fa733d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "daacb40b21d9",
+              "_type": "span",
+              "marks": [],
+              "text": "Provides AI-powered "
+            },
+            {
+              "_key": "eccf73b8605a",
+              "_type": "span",
+              "marks": [
+                "57a0cb808516"
+              ],
+              "text": "BIM tools"
+            },
+            {
+              "_key": "98cec7ed6ade",
+              "_type": "span",
+              "marks": [],
+              "text": " with a dataset to find inefficiencies and bottlenecks"
+            },
+            {
+              "_key": "d95bd32ce575",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [
+            {
+              "_key": "57a0cb808516",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/blog/top-bim-software-tool/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "aff477fd04c5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e707d091e876",
+              "_type": "span",
+              "marks": [],
+              "text": "Lean thinking sets up the last dimension well, since waste reduction and standardized production go hand in hand."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ff06d1f6b199",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e3678d51dbdb",
+              "_type": "span",
+              "marks": [],
+              "text": "10D BIM - Construction Industrialisation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "6b5c19f56b76",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "51f9ab9adbb3",
+              "_type": "span",
+              "marks": [],
+              "text": "10D BIM connects design, manufacturing, logistics and assembly thru data-rich models and networked systems. It connects the model to manufacturing drawings, CNC instructions and supply chain information."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7f1b535c9022",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5ddf89cf9cd9",
+              "_type": "span",
+              "marks": [],
+              "text": "Benefits"
+            }
+          ],
+          "markDefs": [],
+          "style": "h5"
+        },
+        {
+          "_key": "bd6c40e955b2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "843cdaf49a88",
+              "_type": "span",
+              "marks": [],
+              "text": "Helps design for Manufacture and Assembly through accurate, fabrication-ready models."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6560eb2870d3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "499d320eeae8",
+              "_type": "span",
+              "marks": [],
+              "text": "Coordinates component libraries, production schedules and logistics for modular construction."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "01946f57ade9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "372c95d44a3d",
+              "_type": "span",
+              "marks": [],
+              "text": "Enables direct model to machine workflows and reduces manual translation and fabrication errors."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1d0093210103",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "34989f1d205f",
+              "_type": "span",
+              "marks": [],
+              "text": "Links procurement and delivery data to model elements for just-in-time installation."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5dd4c00f0b04",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2ffec8d1bfff",
+              "_type": "span",
+              "marks": [],
+              "text": "10D closes the loop, turning years of BIM data into models a factory can build from directly."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8db70c9c6a17",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9b8aeda251c8",
+              "_type": "span",
+              "marks": [],
+              "text": "Comparison Table of BIM Dimensions (2D–10D)"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "a22f2cb3be50",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "09ef9fe0f401",
+              "_type": "span",
+              "marks": [],
+              "text": "The table below places the nine core dimensions side by side. It shows what each one adds and where teams typically apply it."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7ab5903ee1cf",
+          "_type": "table",
+          "columnWidths": [
+            "20%",
+            "20%",
+            "30%",
+            "30%"
+          ],
+          "rows": [
+            {
+              "_key": "cf200440dc94",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "e836905723e6",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "BIM Dimension",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "f47d3dc375f5",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Core Focus",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "4619eedf92f5",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Key Data Types",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "123267cf65ce",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Typical Use",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "fe3ba4683ea7",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "868fa6d9899a",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "2D BIM",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "5d6002e11ca0",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Documentation",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "f1b26e5ade2c",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Plans, sections, annotations",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "ef019bbc5c52",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Regulatory submissions, drafting",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "70427e494d53",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "d12a0dd8eb7c",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "3D BIM",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "c27f05ecda9a",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Geometry",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "cbfae7b6b9d0",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Object properties in X, Y, Z",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "6471898df8e1",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Design coordination, clash detection",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "5561a8d0b0c8",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "cf9dc5f9b0f7",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "4D BIM",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "a1f1f9346291",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Time",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "93e834d0693f",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Tasks, durations, dependencies",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "6e7541598be2",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Construction scheduling, simulation",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "022b2e5cc5cc",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "11cdf5380503",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "5D BIM",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "d426bfbe61ef",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Cost",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "6634754f66cb",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Quantities, unit rates",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "28fc40d4f647",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Cost estimation, budget analysis",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "29584b702533",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "5bba75f27311",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "6D BIM",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "9220c2e82642",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Sustainability",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "469d581d736c",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Energy, carbon data",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "a6635d33f57b",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Environmental assessment, energy modeling",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "4afecb75e59f",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "2519f6e044fd",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "7D BIM",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "60ce1a5aa681",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Lifecycle",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "db250f8cb17b",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Asset registers, maintenance plans",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "5c40145f1aae",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Facility management, Asset Information Models",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "dfed4fa8a35f",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "5c4f6c9232c3",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "8D BIM",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "174c5efed5e6",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Safety",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "6cd216207232",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Hazards, risk ratings",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "b7e25b6d7279",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Safety planning, risk registers",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "df0c75b426b3",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "4c07b9fbf118",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "9D BIM",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "f2e674ac4db8",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Lean Construction",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "02c401c55efe",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Takt plans, resource metrics",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "e785b05d3d5b",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Flow optimization, waste reduction",
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "_key": "fe02eae22d05",
+              "_type": "tableRow",
+              "cells": [
+                {
+                  "_key": "9f7d6f9dbdb7",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "10D BIM",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "03ff77241cb6",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Industrialisation",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "0311fe9a21ae",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "Manufacturing, logistics parameters",
+                  "rowspan": 1
+                },
+                {
+                  "_key": "f8281102bd5b",
+                  "_type": "tableCell",
+                  "colspan": 1,
+                  "content": "DfMA, modular construction",
+                  "rowspan": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_key": "c8bcb5cdabe5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ed4b44fc8f50",
+              "_type": "span",
+              "marks": [],
+              "text": "Benefits of Using Multi-Dimensional BIM"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "7056ef829500",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9fef9561c1bf",
+              "_type": "span",
+              "marks": [],
+              "text": "Multi-dimensional BIM turns a static model into an information platform that supports decisions across design, construction and operations. Layering 4D time, 5D cost and 6D sustainability data gives teams one connected environment, not scattered spreadsheets."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "19f7f1cb2675",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "867360bf6597",
+              "_type": "span",
+              "marks": [],
+              "text": "Improves project control, since 4D and 5D analytics predict durations and costs more reliably than traditional estimates."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b9ec44e351bc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "055649a395b2",
+              "_type": "span",
+              "marks": [],
+              "text": "Helps in life cycle decision-making as it allows owners to evaluate energy performance and maintenance needs from early design onward."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "66a5223c1c71",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "28ddc7db23f6",
+              "_type": "span",
+              "marks": [],
+              "text": "Multi-dimensional BIM extends value after handover. Using 7D data for asset registration and long-term planning."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "15fcf5d47f6a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5fe42fea17fb",
+              "_type": "span",
+              "marks": [],
+              "text": "BIM dimensions build a foundation for AI. BIM helps produce structured datasets that feed AI in BIM modeling applications such as clash detection and schedule optimization."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "bf476ec66c27",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ba70064b9601",
+              "_type": "span",
+              "marks": [],
+              "text": "These benefits compound when dimensions work together instead of standing alone. The next section shows how AEC teams apply this thinking on real building, infrastructure and utility projects."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "22d3cf3f5b1f",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<div class=\"highlight-note\">\nLearn about Level of Development (LOD) in BIM --> \n<a href=\"https://www.virtualbuildingstudio.com/blog/bim-level-of-development-an-overview/\">\nLOD 100 to LOD 500\n</a>\n</div>\n \n<style>\n.highlight-note {\n  border-left: 5px solid #d70416;\n  background-color: #f5f5f4;\n  padding: 12px 16px;\n  margin: 20px 0;\n  font-size: 17px;\n  line-height: 1.6;\n  color: #333;\n  font-style: italic;\n}\n \n.highlight-note a {\n  color: #1e73be;\n  font-weight: 600;\n  text-decoration: underline;\n}\n \n.highlight-note a:hover {\n  text-decoration: none;\n}\n</style>"
+          }
+        },
+        {
+          "_key": "ddf7fb726c36",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "38899b6335ac",
+              "_type": "span",
+              "marks": [],
+              "text": "Real-World Applications of BIM Dimensions"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "20d70b023b62",
+          "_type": "rawHtml",
+          "code": {
+            "_type": "code",
+            "code": "<p>These benefits show up on actual projects, not just in theory. A<a href=\"https://jurnaldinarek.id/index.php/jidr/article/view/51\" rel=\"nofollow\" target=\"_blank\">Building 2 Hermina hospital redesign</a> in Indonesia used Revit 3D modeling with Navisworks and Microsoft Project for 4D scheduling. The team then layered in 5D cost analysis to quantify volumes, durations and total cost.</P>"
+          }
+        },
+        {
+          "_key": "c399ba09f700",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "750c9af9862b",
+              "_type": "span",
+              "marks": [],
+              "text": "Infrastructure teams apply the same approach at larger scale. Bridge planning research applied 3D, 4D and 5D BIM to model geometry, sequence work and calculate cost. It improved multi discipline coordination. A dam spillway project used the same three dimensions and kept cost deviations below conservative thresholds."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "456c77af7b1b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "84efa83d43b7",
+              "_type": "span",
+              "marks": [],
+              "text": "Utility and facility applications extend the range further. Geospatial research on utilities management uses point clouds and georeferencing to extend BIM Dimensions from 3D through 10D for tracking."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ef8f9cba20d7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "412cf849ec5b",
+              "_type": "span",
+              "marks": [],
+              "text": "Automation research points to where this is heading. One study describes software that automatically builds 4D schedules, 5D budgets and 6D through 8D safety plans from linked data. Multi-dimensional BIM, combined with AI and robotics, already supports digital twins on complex jobs."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e18c5b094271",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2c035bf9056f",
+              "_type": "span",
+              "marks": [],
+              "text": "Challenges in Implementing BIM Dimensions"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "fc1d55193895",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b6890426909d",
+              "_type": "span",
+              "marks": [],
+              "text": "Real projects also reveal where multi-dimensional BIM gets difficult, especially past the widely accepted 3D, 4D and 5D layers."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9836662cb423",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "dd3d401531d1",
+              "_type": "span",
+              "marks": [],
+              "text": "Ambiguity of definition"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "08dcf6a27ffa",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7f240ac883a4",
+              "_type": "span",
+              "marks": [],
+              "text": "Surveys show confusion about what data is in 6D and what is in 7D. Teams map those data differently."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "33dcbcb7e634",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "99c3c345fb34",
+              "_type": "span",
+              "marks": [],
+              "text": "Missing BEP"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "3841b522f977",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "fafacc1266aa",
+              "_type": "span",
+              "marks": [],
+              "text": "Without a clear "
+            },
+            {
+              "_key": "f35fb0e5be44",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "BIM execution plan"
+            },
+            {
+              "_key": "747eb139b566",
+              "_type": "span",
+              "marks": [],
+              "text": ", stakeholders misread expectations and delivery gaps follow."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fc7d17b56cc4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cb1d0242e30b",
+              "_type": "span",
+              "marks": [],
+              "text": "Technical friction"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "e30941060c10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "de6b273180cf",
+              "_type": "span",
+              "marks": [],
+              "text": "Evaluations of 4D and 5D software shows interoperability gaps between Revit and Navisworks that makes schedule and cost visualization complex."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "605b76ad1a51",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c5a1d38e18ae",
+              "_type": "span",
+              "marks": [],
+              "text": "Organizational habits"
+            }
+          ],
+          "markDefs": [],
+          "style": "h4"
+        },
+        {
+          "_key": "3cc50f0e8d40",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3581348f444b",
+              "_type": "span",
+              "marks": [],
+              "text": "Adoption stays sporadic without leadership support and many practitioners still know little beyond 3D."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8bb574ce52aa",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3510acd0e891",
+              "_type": "span",
+              "marks": [],
+              "text": "None of these challenges rule out multi-dimensional BIM. They point to where planning, training and clear documentation need the most attention before rollout."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a7ea4ff4c962",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9f7ff919d58c",
+              "_type": "span",
+              "marks": [],
+              "text": "Conclusion"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "3970a1a49c4b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c463c9b357ea",
+              "_type": "span",
+              "marks": [],
+              "text": "Understanding BIM Dimensions from 2D through 10D gives AEC teams a structured way to manage project data. Industry consensus is strong on 3D geometry, 4D BIM scheduling and 5D BIM cost estimation. 6D through 10D remain useful but less standardized."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6c37885230c6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "369a302a2e38",
+              "_type": "span",
+              "marks": [],
+              "text": "For architects, engineers and MEP professionals, this BIM Dimensions Guide offers a practical way to plan what a model carries. Getting there requires a clear "
+            },
+            {
+              "_key": "10a3bd038228",
+              "_type": "span",
+              "marks": [
+                "21933c5f70e7"
+              ],
+              "text": "BIM execution plan"
+            },
+            {
+              "_key": "78012c7fa8a8",
+              "_type": "span",
+              "marks": [],
+              "text": " (BEP), alignment with standards such as ISO 19650 and investment in training."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "21933c5f70e7",
+              "_type": "link",
+              "href": "https://www.virtualbuildingstudio.com/bim-resources/bim-execution-plan/"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "f38652f69fb8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f1b78d5e373f",
+              "_type": "span",
+              "marks": [],
+              "text": "Teams that move from 3D only modeling into integrated 4D and 5D workflows open the door to more. That includes AI-powered BIM, digital twins and industrialised construction that can reshape long-term asset performance."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3b2c3ba3fad9",
+          "_type": "cta",
+          "buttonText": "Contact Us",
+          "buttonUrl": "/contact-us/",
+          "title": "Not sure which BIM dimension your next project needs? We will map it out in your BEP "
+        }
+      ],
+      "categories": [
+        {
+          "_id": "c4570779-37fa-4762-8173-57e0a7f8de73",
+          "title": "BIM Modeling "
+        }
+      ],
+      "featuredImage": {
+        "asset": {
+          "originalFilename": "bim-dimensions.jpg",
+          "url": "https://cdn.sanity.io/images/rog08jar/production/8796817d99958eb33fa2126fbb7cf267684380fe-1460x926.jpg"
+        }
+      },
+      "publishedAt": "2026-02-02",
+      "slug": "bim-dimensions-2d-3d-4d-5d-6d-7d-8d",
+      "tags": [
+        "blog"
+      ],
+      "title": "BIM Dimensions – 2D, 3D, 4D, 5D, 6D, 7D, 8D, 9D, 10D: Details and Benefits"
     },
     {
       "_id": "55990822-735c-4558-993e-d36e435ca8cd",
@@ -156123,882 +158205,6 @@
         "Blog"
       ],
       "title": "Download 2,200+ Revit Families for Your Design Projects!"
-    },
-    {
-      "_id": "d48d8ef5-7ec4-438e-98ba-5b72dde38b66",
-      "body": [
-        {
-          "_key": "00e9cf80d817",
-          "_type": "image",
-          "asset": {
-            "_ref": "image-659a7fc0dc8d294fd72cb41a4a8b761ad1315ce2-600x400-jpg",
-            "_type": "reference"
-          }
-        },
-        {
-          "_key": "39a1c392aa17",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "b4c621119c31",
-              "_type": "span",
-              "marks": [],
-              "text": "Building information modeling (BIM) is a dynamic process of developing information-oriented models depicting the entire project lifecycle. The 3D BIM modeling process crafts a coordinated digital description of every aspect of the built asset. It involves information about the 3D views, structural details, and information on the execution, completion, and handover as well. Internationally, The BIM process and related structural data are defined precisely in the ISO 19650 and ISO 12006 series of standards."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "51e5ff33a158",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "b4edfdf25920",
-              "_type": "span",
-              "marks": [],
-              "text": "What are BIM dimensions?"
-            }
-          ],
-          "markDefs": [],
-          "style": "h2"
-        },
-        {
-          "_key": "8a48d8a12003",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "03a66844b00e",
-              "_type": "span",
-              "marks": [],
-              "text": "The revolutionary leap towards transforming a "
-            },
-            {
-              "_key": "839e434a3ae4",
-              "_type": "span",
-              "marks": [
-                "3bd3ec2ad7b4"
-              ],
-              "text": "2D CAD drawing"
-            },
-            {
-              "_key": "fefa8997aa84",
-              "_type": "span",
-              "marks": [],
-              "text": " of a project to an information-rich 3D model has drastically impacted the design process. The evolution benefits the stakeholders by adding different aspects to the modeling process with different dimensions."
-            }
-          ],
-          "markDefs": [
-            {
-              "_key": "3bd3ec2ad7b4",
-              "_type": "link",
-              "href": "https://www.virtualbuildingstudio.com/cad-drafting-services/2d-drafting-services/"
-            }
-          ],
-          "style": "normal"
-        },
-        {
-          "_key": "ee9d34175464",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "6c2f23411b20",
-              "_type": "span",
-              "marks": [],
-              "text": "Building Information Modeling can be incorporated to deal with pre-defined specific purposes known as use cases. Specific parameters are added to the existing information in the BIM as per the project requirement and its complexities. These pre-entailed used cases are referred to as BIM dimensions."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "5eedb6b3e2f1",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "98a7f7a30788",
-              "_type": "span",
-              "marks": [],
-              "text": "Dealing with different dimensions provides the user with detailed information about every nuance of the project, facilitating enhanced design and execution. The requirements should be listed clearly in the information list briefed to the project team."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "8dcb97a7af3d",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "168a62c16506",
-              "_type": "span",
-              "marks": [],
-              "text": "The list should also elaborate on the required fields and format. The BIM technology gained traction from 3D & 4D dimensions towards 5D, 6D, and 7D dimensions, enhancing the future of the AEC industry."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "28cf2224ed60",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "699fe2a7159f",
-              "_type": "span",
-              "marks": [],
-              "text": "Exploring the Seven Types of BIM Dimensions"
-            }
-          ],
-          "markDefs": [],
-          "style": "h2"
-        },
-        {
-          "_key": "acb0ec7a175a",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "23eb1e62a073",
-              "_type": "span",
-              "marks": [],
-              "text": "2D, 3D, 4D, 5D, 6D, and 7D, each of these BIM dimensions have their unique purpose and benefits. These are useful in finding out the project cost, timeline, and sustainability graph for future purposes. We will discuss below each of the dimensions in detail."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "5b183c76bb17",
-          "_type": "image",
-          "asset": {
-            "_ref": "image-167a5a678532e6ad593edaba74ae7534a175beb8-850x270-jpg",
-            "_type": "reference"
-          }
-        },
-        {
-          "_key": "1814c9373f17",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "a6ec1bdd9e4a",
-              "_type": "span",
-              "marks": [],
-              "text": "2D BIM: Dimensional View"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "e2382b680200",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "d511611bdef2",
-              "_type": "span",
-              "marks": [],
-              "text": "A digital geometric model that constitutes an X and Y axis related to other information about the project falls under 2D BIM. The CAD systems used earlier were 2D models where plans and sections were created digitally more accurately and quickly than manual processes."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "17b50412b7c0",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "1bf6dec03acf",
-              "_type": "span",
-              "marks": [],
-              "text": "2D geometry is not usually considered anymore for BIM modeling, but it provides parameters, constraints, and concepts associated with the model."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "884c80581b5a",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "ac7b75e0e279",
-              "_type": "span",
-              "marks": [],
-              "text": "3D BIM: Dimensional Model"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "aec60b7a00a9",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "13547114715e",
-              "_type": "span",
-              "marks": [],
-              "text": "A digital geometric model that constitutes an X, Y, and Z axis associated with other information about the project falls under 3D BIM. The AEC industry widely uses the technology of "
-            },
-            {
-              "_key": "2a059f110308",
-              "_type": "span",
-              "marks": [
-                "7b57e3e5f4ac"
-              ],
-              "text": "3D BIM modeling"
-            },
-            {
-              "_key": "f411e81581c6",
-              "_type": "span",
-              "marks": [],
-              "text": "."
-            }
-          ],
-          "markDefs": [
-            {
-              "_key": "7b57e3e5f4ac",
-              "_type": "link",
-              "href": "https://www.virtualbuildingstudio.com/bim-modeling-services/"
-            }
-          ],
-          "style": "normal"
-        },
-        {
-          "_key": "cdf14317396d",
-          "_type": "image",
-          "asset": {
-            "_ref": "image-b399c776e33a78b7c50b71ce8a08db6e595125db-600x400-jpg",
-            "_type": "reference"
-          }
-        },
-        {
-          "_key": "d0cba65667ff",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "9ed6dc98d1fe",
-              "_type": "span",
-              "marks": [],
-              "text": "The 3D models facilitate the production of 2D views at different levels of detail."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "82fee5fbe5fe",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "0fc15cb3e59f",
-              "_type": "span",
-              "marks": [],
-              "text": "Benefits"
-            }
-          ],
-          "markDefs": [],
-          "style": "h4"
-        },
-        {
-          "_key": "78d5ffdb0b76",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "0021b647cb27",
-              "_type": "span",
-              "marks": [],
-              "text": "The 3D BIM dimension induces accuracy and efficiency in the project and lessens the risk of clashes occurring on the projects."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "54f9167a7fde",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "831c1a4f04ad",
-              "_type": "span",
-              "marks": [],
-              "text": "It helps in better internal coordination among the design team and the sharing of design expectations."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "b2e0614e1299",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "d5aa1af3824b",
-              "_type": "span",
-              "marks": [],
-              "text": "The transparency of work from the beginning eliminates instances of rework and revisions."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "1b54e1d17c80",
-          "_type": "readMore",
-          "label": "Read More",
-          "linkText": "Level of Development (LOD) in BIM",
-          "url": "https://www.virtualbuildingstudio.com/blog/bim-level-of-development-an-overview/"
-        },
-        {
-          "_key": "75fb8eed90f4",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "380f04bf84c1",
-              "_type": "span",
-              "marks": [],
-              "text": "4D BIM: Time Schedule"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "9fd81bdc183f",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "44bca01db9e5",
-              "_type": "span",
-              "marks": [],
-              "text": "4D BIM Modeling is planning the project with a dimension of ‘Time’ to the other three geometrical coordinates. It involves scheduling the data that dictates the completion timeline of the project and its evolution over time. It elaborates on the time required for installation or construction and for the project to become operational."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "a5fa0a95653b",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "2bc1fce143c9",
-              "_type": "span",
-              "marks": [],
-              "text": "It serves as a beneficial modeling process that bridges the gap between project visualization and the time taken for its conversion to reality."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "c89cbe729548",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "978af5f68f0d",
-              "_type": "span",
-              "marks": [],
-              "text": "Benefits"
-            }
-          ],
-          "markDefs": [],
-          "style": "h4"
-        },
-        {
-          "_key": "b6d7591e5e61",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "ce2479ecfcf4",
-              "_type": "span",
-              "marks": [],
-              "text": "It caters to improved site planning and scheduling optimization."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "dceec8f1db53",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "9f5d85131ea6",
-              "_type": "span",
-              "marks": [],
-              "text": "It articulates a seamless communication and collaboration between the architects, contractors, engineers, and other related stakeholders."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "3fc59d6885b1",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "ce5abca11cf0",
-              "_type": "span",
-              "marks": [],
-              "text": "It prepares the team in advance for every step of construction, also eliminating costly delays."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "85ffa5d184f1",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "023585e9f473",
-              "_type": "span",
-              "marks": [],
-              "text": "5D BIM: Budget"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "354add410f3d",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "0767981f4b69",
-              "_type": "span",
-              "marks": [],
-              "text": "5D BIM modeling deals with an added feature of cost estimation. It is beneficial in scenarios where budget and cost analysis is a priority from the project initiation. It enables the project owners and promoters to analyze financial incurrences over time for the project construction."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "f71ca6d0ee4a",
-          "_type": "image",
-          "asset": {
-            "_ref": "image-a8d5383b4895c9e1794bcafc8b034ec84b8d3542-600x400-jpg",
-            "_type": "reference"
-          }
-        },
-        {
-          "_key": "a4d29ff4d101",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "a6db85c56e36",
-              "_type": "span",
-              "marks": [],
-              "text": "Questions about the cost expectations to be pre-tender estimates or a record of as-built and if the team is supposed to provide operational costs are answered with the cost information dimension of 5D BIM modeling."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "d8473ededd9c",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "86e637098990",
-              "_type": "span",
-              "marks": [],
-              "text": "Benefits"
-            }
-          ],
-          "markDefs": [],
-          "style": "h4"
-        },
-        {
-          "_key": "d1789279882a",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "301ae7e9d4f4",
-              "_type": "span",
-              "marks": [],
-              "text": "It induces the process with real-time cost visualization and is notified about the changes in costs throughout construction."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "0a2673363b68",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "44b558229d2d",
-              "_type": "span",
-              "marks": [],
-              "text": "It prepares a simplified list of predicted or actual project expenditures over time, recorded using cost or budgetary analysis."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "613eb37287fd",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "4ea60fe004ec",
-              "_type": "span",
-              "marks": [],
-              "text": "This BIM dimension eliminates the possibility of budget offshoot through regular cost reporting and monitoring."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "4634dfa01ff5",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "4f3187f2b719",
-              "_type": "span",
-              "marks": [],
-              "text": "6D BIM: Facilities Management"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "98b778d7a548",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "6d5cc7fed0d9",
-              "_type": "span",
-              "marks": [],
-              "text": "6D BIM dimension elaborates on the facility management aspects of the project. However, there is less consensus on this in the industry, and this feature isn’t a ‘dimension’ at all. For 6D BIM modeling, all stakeholders should have clarity about project expectations and the required data set."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "db090efadaf2",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "1a17471d2d50",
-              "_type": "span",
-              "marks": [],
-              "text": "Benefits"
-            }
-          ],
-          "markDefs": [],
-          "style": "h4"
-        },
-        {
-          "_key": "b0572b5c489f",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "17af94e7e606",
-              "_type": "span",
-              "marks": [],
-              "text": "It monitors data about project status, maintenance, warranty information, technical specifications, and other details required in the future."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "fde3b4a1c9aa",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "5694a2d34dac",
-              "_type": "span",
-              "marks": [],
-              "text": "It collates all relevant data to facility management in one place, improving the quality of service delivery for the project lifecycle."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "9f1753f6d164",
-          "_type": "readMore",
-          "label": "Read More",
-          "linkText": "Level of Development (LOD) in BIM: a Detailed Overview",
-          "url": "https://www.virtualbuildingstudio.com/blog/bim-level-of-development-an-overview/"
-        },
-        {
-          "_key": "14f60e0324a7",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "6f0d0f16c0cb",
-              "_type": "span",
-              "marks": [],
-              "text": "7D BIM: Sustainability"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "7a6753fa8f68",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "f23f946e65ba",
-              "_type": "span",
-              "marks": [],
-              "text": "7D BIM Modeling helps in analyzing the energy consumption estimates about a building and caters to the sustainability quotient of a design. It helps in quantifying the energy estimates at initial design stages, taking the AEC sector to an advanced level that is beyond just focusing on the upfront project costs."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "395089550b6e",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "c1fb3d100284",
-              "_type": "span",
-              "marks": [],
-              "text": "Benefits"
-            }
-          ],
-          "markDefs": [],
-          "style": "h4"
-        },
-        {
-          "_key": "e7c5e5431361",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "b789b12bc467",
-              "_type": "span",
-              "marks": [],
-              "text": "It caters to reduced energy consumption throughout the project lifecycle."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "307cbebecc9a",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "4dd010c93356",
-              "_type": "span",
-              "marks": [],
-              "text": "It helps the stakeholders in faster decision-making regarding the component selection."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "d542454a8e23",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "4cb1c072cff7",
-              "_type": "span",
-              "marks": [],
-              "text": "It facilitates the analysis of the economic and operational aspects of a building."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "bba5b33d5c3c",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "804fe2d775d6",
-              "_type": "span",
-              "marks": [],
-              "text": "8D BIM: Occupational Safety and Health"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "06b18abcad95",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "f34d281468d0",
-              "_type": "span",
-              "marks": [],
-              "text": "8D BIM Modeling supposedly adds health and safety information relevant to the project to the data set. Similarly to 6D BIM, the data type, scope, units, rule of measure, or other details should be carefully specified for accurate results"
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "adfc197da4d0",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "a0675f05fcbd",
-              "_type": "span",
-              "marks": [],
-              "text": "Benefits"
-            }
-          ],
-          "markDefs": [],
-          "style": "h4"
-        },
-        {
-          "_key": "52078570620d",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "2bd742b6ec76",
-              "_type": "span",
-              "marks": [],
-              "text": "It prevents accidents and incidents by introducing safety elements into the design."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "8405c4c72e61",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "fdc4b68abace",
-              "_type": "span",
-              "marks": [],
-              "text": "It enables the designers to execute a thorough risk assessment of the building they are designing."
-            }
-          ],
-          "level": 1,
-          "listItem": "bullet",
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "565e210218d1",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "eba419c0872a",
-              "_type": "span",
-              "marks": [],
-              "text": "Conclusion"
-            }
-          ],
-          "markDefs": [],
-          "style": "h3"
-        },
-        {
-          "_key": "9b559c39b8c9",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "03f29e9d6cf2",
-              "_type": "span",
-              "marks": [],
-              "text": "Building Information Modeling with BIM dimension can be used to define data requirements and stir conversations with the clientele about project expectations and potential deliverables. Using a guide such as the RIBA Plan of Work, in combination with the ISO 12006 and ISO 19650 series of standards, deems fit for understanding the information typology about a specific project."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "76c78e83da43",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "6bd92ccdce2f",
-              "_type": "span",
-              "marks": [],
-              "text": "The RIBA Plan of Work enlists the major project strategies including sustainability, inclusive design, planning for use, fire safety, and more."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "c90154eeacbe",
-          "_type": "block",
-          "children": [
-            {
-              "_key": "b4ac04248e17",
-              "_type": "span",
-              "marks": [],
-              "text": "The companies can study the needs of a project and then work on the information required for that project, when it is required and who holds the development responsibility with the extracted information."
-            }
-          ],
-          "markDefs": [],
-          "style": "normal"
-        },
-        {
-          "_key": "f432c3d1d2d8",
-          "_type": "cta",
-          "buttonText": "Contact Us",
-          "buttonUrl": "/contact-us/",
-          "title": "Ready to take your BIM Projects to the next level?"
-        }
-      ],
-      "categories": [
-        {
-          "_id": "c4570779-37fa-4762-8173-57e0a7f8de73",
-          "title": "BIM Modeling "
-        }
-      ],
-      "featuredImage": {
-        "asset": {
-          "originalFilename": "bim-dimensions-main-image.webp",
-          "url": "https://cdn.sanity.io/images/rog08jar/production/bc832c38a5b3ab331f00a2a2edcc786c5aba874f-945x600.webp"
-        }
-      },
-      "publishedAt": "2023-10-12",
-      "slug": "bim-dimensions-2d-3d-4d-5d-6d-7d-8d",
-      "tags": [
-        "blog"
-      ],
-      "title": "BIM Dimensions – 2D, 3D, 4D, 5D, 6D, 7D, 8D: Details and Benefits"
     },
     {
       "_id": "114d909c-f6db-414a-a11e-a38b8fde5e0b",

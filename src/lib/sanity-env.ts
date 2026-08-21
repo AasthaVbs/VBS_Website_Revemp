@@ -20,6 +20,10 @@ export const sanityReadToken = readEnv("SANITY_READ_TOKEN");
 export const sanityPreviewSecret =
   readEnv("SANITY_PREVIEW_SECRET") || readEnv("PREVIEW_SECRET");
 
+export function hasSanityReadToken() {
+  return Boolean(sanityReadToken);
+}
+
 export function hasSanityCredentials() {
   return Boolean(sanityProjectId && sanityReadToken);
 }

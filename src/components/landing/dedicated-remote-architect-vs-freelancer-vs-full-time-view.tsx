@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 import { trackLinkedInConversion } from "@/utils/site-tracking-events";
 
 import "@/styles/vbs-landing-home-type.scss";
+import "@/styles/vbs-landing-hero-laptop.scss";
 
 const heroImage = encodeURI("/image/Adding-People-Should-Reduce-Delivery-Pressure,-But-Why-Does-It-Often-Increase 1 (1).jpg");
 const pressureImage = encodeURI("/image/When-Work-Increases,-But-Delivery-Pressure-Does-Not-Ease 1.png");
@@ -164,7 +165,7 @@ function HeroMedia({
 }) {
   return (
     <div
-      className="relative w-full overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)]"
+      className="dedicated-capacity-lp-hero-media relative w-full overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)]"
       style={{ aspectRatio: `${width} / ${height}` }}
     >
       <Image
@@ -417,7 +418,7 @@ export function DedicatedRemoteArchitectVsFreelancerVsFullTimeView() {
               <div className="flex w-full flex-col items-start gap-5">
                 <div className="flex w-full flex-col items-start gap-3">
                   <MepSectionTag label="Capacity Decision Framework" />
-                  <h1 className="w-full text-section capitalize !text-[clamp(32px,8vw,40px)] !leading-[1.15] sm:!text-[clamp(32px,8vw,40px)] lg:!text-[54px] lg:!leading-[1.15]">
+                  <h1 className="w-full text-section capitalize !text-[clamp(32px,8vw,40px)] !leading-[1.15] sm:!text-[clamp(32px,8vw,40px)] lg:!text-[38px] lg:!leading-[1.15] min-[1440px]:!text-[54px]">
                     <span className="font-medium text-[#111111]">
                       Adding People Should Reduce Delivery Pressure, But{" "}
                     </span>

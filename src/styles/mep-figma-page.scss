@@ -1076,6 +1076,18 @@
       max-width: min(var(--vbs-section-desc-max, 640px), var(--services-desc-max-w, 833px), 100%) !important;
     }
 
+    &.bim-modeling-hub-services {
+      .mep-figma-services__title {
+        max-width: 680px !important;
+        width: min(680px, 100%) !important;
+      }
+
+      .mep-figma-services__section-desc,
+      .mep-figma-services__intro .mep-figma-services__section-desc {
+        max-width: 600px !important;
+      }
+    }
+
     .mep-figma-services__carousel-viewport {
       height: auto !important;
       min-height: 0 !important;
@@ -1114,6 +1126,19 @@
       min-height: var(--services-card-image-h) !important;
       max-height: var(--services-card-image-h) !important;
     }
+  }
+}
+
+/* /bim-modeling-services Our Services — tighter title + description than the default 900/833 */
+.vbs-redesign-page .mep-figma-services.bim-modeling-hub-services {
+  .mep-figma-services__title {
+    max-width: 680px !important;
+    width: min(680px, 100%) !important;
+  }
+
+  .mep-figma-services__section-desc,
+  .mep-figma-services__intro .mep-figma-services__section-desc {
+    max-width: 600px !important;
   }
 }
 
@@ -4965,13 +4990,13 @@
       }
     }
 
-    /* Laptops & small desktops (<1440): 60% copy / 40% image */
+    /* Laptops & small desktops (<1440): 1:1 copy / image */
     @media (min-width: 1024px) and (max-width: 1439px) {
       min-height: calc(min(46vw, 640px) * 607 / 1024) !important;
 
       .mep-page-hero__media {
-        width: 40% !important;
-        max-width: 40% !important;
+        width: 50% !important;
+        max-width: 50% !important;
         aspect-ratio: 1024 / 607 !important;
         height: auto !important;
         min-height: 0 !important;
@@ -4983,7 +5008,7 @@
 
         > div,
         .mep-page-hero__copy-inner {
-          max-width: 60% !important;
+          max-width: 50% !important;
         }
 
         h1,

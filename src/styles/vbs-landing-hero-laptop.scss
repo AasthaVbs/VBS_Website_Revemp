@@ -1,0 +1,123 @@
+/**
+ * Laptop / small-desktop hero scale for listed campaign landings.
+ * <1440px: hero h1 38px, hero image slightly smaller.
+ * ≥1440px and phones (≤767px) stay on each page’s existing defaults.
+ */
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .cad-drafting-services-usa-page:not(.cad-to-bim-conversion-services-page) .cad-usa-hero h1,
+  .cad-drafting-services-usa-page:not(.cad-to-bim-conversion-services-page) .cad-usa-hero h1 span,
+  .bim-modeling-services-usa-page .cad-usa-hero h1,
+  .bim-modeling-services-usa-page .cad-usa-hero h1 span,
+  .vbs-landing-page .margin-calc-page .mch-hero h1,
+  .vbs-landing-page .margin-calc-page .mch-hero h1 span,
+  .margin-calc-page .mch-hero h1,
+  .margin-calc-page .mch-hero h1 span,
+  .vbs-landing-page .dedicated-capacity-lp h1,
+  .vbs-landing-page .dedicated-capacity-lp h1 span,
+  .dedicated-capacity-lp section:first-of-type h1,
+  .dedicated-capacity-lp section:first-of-type h1 span,
+  .vbs-landing-page .dc-page .dc-hero h1,
+  .vbs-landing-page .dc-page .dc-hero h1 span,
+  .dc-page .dc-hero h1,
+  .dc-page .dc-hero h1 span,
+  .vbs-landing-page .delivery-inside-architecture-firms-page .diaf-hero h1,
+  .vbs-landing-page .delivery-inside-architecture-firms-page .diaf-hero h1 span,
+  .delivery-inside-architecture-firms-page .diaf-hero h1,
+  .delivery-inside-architecture-firms-page .diaf-hero h1 span,
+  .vbs-redesign-page.doc-systems-page .doc-figma-lp .doc-figma-hero h1,
+  .vbs-redesign-page.doc-systems-page .doc-figma-lp .doc-figma-hero h1 span,
+  .vbs-redesign-page.doc-systems-page .doc-figma-lp h1.doc-figma-title,
+  .vbs-landing-page .gaf-capacity-page .gaf-hero h1,
+  .vbs-landing-page .gaf-capacity-page .gaf-hero h1 span,
+  .gaf-capacity-page .gaf-hero h1,
+  .gaf-capacity-page .gaf-hero h1 span,
+  .vbs-landing-page .hvd-page .hvd-hero h1,
+  .vbs-landing-page .hvd-page .hvd-hero h1 span,
+  .hvd-page .hvd-hero h1,
+  .hvd-page .hvd-hero h1 span,
+  .arch-draft-lp-page .arch-drafting-lp .hero-h1,
+  .arch-draft-lp-page .arch-drafting-lp .hero-h1 span,
+  .arch-drafting-lp .hero-h1,
+  .arch-drafting-lp .hero-h1 span,
+  .vbs-landing-page .dw-page .dw-hero h1,
+  .vbs-landing-page .dw-page .dw-hero h1 span,
+  .dw-page .dw-hero h1,
+  .dw-page .dw-hero h1 span,
+  .hyatt-case-page.hyatt-page .hyatt-hero__title,
+  .vbs-redesign-page.hyatt-case-page .hyatt-hero__title,
+  .revit-doc-support-page .revit-doc-support-hero h1.revit-doc-support__title,
+  .revit-doc-support-page .revit-doc-support-hero h1.revit-doc-support__title span {
+    font-size: 38px !important;
+    line-height: 1.15 !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .cad-drafting-services-usa-page:not(.cad-to-bim-conversion-services-page) .cad-usa-hero .cad-usa-hero__media,
+  .bim-modeling-services-usa-page .cad-usa-hero .cad-usa-hero__media {
+    width: 560px !important;
+    max-width: 560px !important;
+    height: 456px !important;
+    flex: 0 0 560px !important;
+  }
+
+  .dw-page .dw-hero-media {
+    max-width: 560px !important;
+  }
+
+  .dedicated-capacity-lp .dedicated-capacity-lp-hero-media {
+    max-width: 520px;
+    margin-left: auto;
+  }
+
+  .arch-drafting-lp .hero-visual {
+    flex: 0 0 520px;
+    width: 520px;
+    max-width: 520px;
+  }
+
+  .hyatt-case-page .hyatt-hero,
+  .hyatt-case-page .hyatt-hero__inner {
+    min-height: 480px;
+  }
+}
+
+/* These landings already compact the image below 1100px — only shrink the large 650px desktop size. */
+@media (min-width: 1101px) and (max-width: 1439px) {
+  .margin-calc-page .mch-hero-media {
+    max-width: 560px !important;
+    height: 456px !important;
+    flex: 0 1 560px !important;
+  }
+
+  .dc-page .dc-hero-media {
+    max-width: 560px !important;
+    height: 396px !important;
+    flex: 0 1 560px !important;
+  }
+
+  .delivery-inside-architecture-firms-page .diaf-hero-media {
+    max-width: 560px !important;
+    height: 456px !important;
+    flex: 0 1 560px !important;
+  }
+
+  .gaf-capacity-page .gaf-hero-media {
+    max-width: 560px !important;
+    height: 456px !important;
+    flex: 0 1 560px !important;
+  }
+
+  .hvd-page .hvd-hero-media {
+    max-width: 560px !important;
+    flex: 0 1 560px !important;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1439px) {
+  .revit-doc-support-page {
+    --revit-hero-media-w-desktop: 560px;
+    --revit-hero-media-h-desktop: 368px;
+  }
+}

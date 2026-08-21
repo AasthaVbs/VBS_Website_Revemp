@@ -24,24 +24,38 @@ export type SanityListingSnapshot = {
   webinars: SanitySnapshotWebinar[];
 };
 
-async function fetchPublishedListing<T>(query: string): Promise<T | null> {
-  if (!hasSanityCredentials()) return null;
+function slugQueryParams(slug: string) {
+  const cleanSlug = decodeURIComponent(String(slug || "")).replace(/^\/+|\/+$/g, "");
+  return { slug: cleanSlug, slugWithSlash: `${cleanSlug}/` };
+}
+
+/** Published content: token client when available, otherwise public CDN (no token required). */
+async function fetchPublishedContent<T>(
+  query: string,
+  params: Record<string, unknown> = {},
+): Promise<T | null> {
+  if (hasSanityCredentials()) {
+    try {
+      return await publishedSanityClient.fetch<T>(query, params);
+    } catch (error) {
+      console.error("[sanity] token fetch failed, falling back to public CDN:", error);
+    }
+  }
+
   try {
-    return await publishedSanityClient.fetch<T>(query);
+    return await publicSanityClient.fetch<T>(query, params);
   } catch (error) {
-    console.error("[sanity] published listing fetch failed:", error);
+    console.error("[sanity] public fetch failed:", error);
     return null;
   }
 }
 
+async function fetchPublishedListing<T>(query: string): Promise<T | null> {
+  return fetchPublishedContent<T>(query);
+}
+
 async function fetchFromSanity<T>(query: string, params: Record<string, unknown> = {}): Promise<T | null> {
-  if (!hasSanityCredentials()) return null;
-  try {
-    return await publishedSanityClient.fetch<T>(query, params);
-  } catch (error) {
-    console.error("[sanity] fetch failed:", error);
-    return null;
-  }
+  return fetchPublishedContent<T>(query, params);
 }
 
 function snapshotListing(): SanityListingSnapshot {
@@ -67,13 +81,7 @@ export async function fetchSanityResourceListing(): Promise<SanityListingSnapsho
 }
 
 export async function fetchSanityPostBySlug(slug: string): Promise<SanityPostRecord | null> {
-  if (!hasSanityCredentials()) return null;
-  try {
-    return await publishedSanityClient.fetch<SanityPostRecord | null>(SANITY_POST_BY_SLUG_QUERY, { slug });
-  } catch (error) {
-    console.error("[sanity] post fetch failed:", error);
-    return null;
-  }
+  return fetchPublishedContent<SanityPostRecord | null>(SANITY_POST_BY_SLUG_QUERY, slugQueryParams(slug));
 }
 
 export async function fetchSanityPostSlugs(): Promise<string[]> {
@@ -82,30 +90,15 @@ export async function fetchSanityPostSlugs(): Promise<string[]> {
 }
 
 export async function fetchSanityWebinarBySlug(slug: string): Promise<SanityWebinarRecord | null> {
-  const cleanSlug = slug.replace(/^\/+|\/+$/g, "").toLowerCase();
-  const params = { slug: cleanSlug, slugWithSlash: `${cleanSlug}/` };
-
-  try {
-    if (hasSanityCredentials()) {
-      return await publishedSanityClient.fetch<SanityWebinarRecord | null>(SANITY_WEBINAR_BY_SLUG_QUERY, params);
-    }
-
-    return await publicSanityClient.fetch<SanityWebinarRecord | null>(SANITY_WEBINAR_BY_SLUG_QUERY, params);
-  } catch (error) {
-    console.error("[sanity] webinar fetch failed:", error);
-    return null;
-  }
+  return fetchPublishedContent<SanityWebinarRecord | null>(
+    SANITY_WEBINAR_BY_SLUG_QUERY,
+    slugQueryParams(slug),
+  );
 }
 
 export async function fetchSanityWebinarSlugs(): Promise<string[]> {
-  if (!hasSanityCredentials()) return [];
-  try {
-    const rows = await publishedSanityClient.fetch<Array<{ slug?: string }>>(SANITY_WEBINAR_SLUGS_QUERY);
-    return rows.map((row) => row.slug).filter(Boolean) as string[];
-  } catch (error) {
-    console.error("[sanity] webinar slugs fetch failed:", error);
-    return [];
-  }
+  const rows = await fetchPublishedContent<Array<{ slug?: string }>>(SANITY_WEBINAR_SLUGS_QUERY);
+  return (rows || []).map((row) => row.slug).filter(Boolean) as string[];
 }
 
 export async function fetchSanityPreviewPost(options: {

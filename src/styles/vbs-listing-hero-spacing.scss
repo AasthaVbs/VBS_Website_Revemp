@@ -15,3 +15,13 @@
   min-height: 46px !important;
   padding: 8px 16px !important;
 }
+
+.vbs-blogs-listing-page section.vbs-listing-hero {
+  padding-top: 12px !important;
+}
+
+@media (min-width: 1024px) {
+  .vbs-blogs-listing-page section.vbs-listing-hero {
+    padding-top: 24px !important;
+  }
+}

@@ -36,7 +36,7 @@ export function ArchitectureVbsDifferenceSection({
           </p>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-10">
+        <div className="arch-svc-difference__grid grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-10">
           {cards.map((card) => (
             <article key={card.title} className="arch-svc-difference__card flex min-w-0 flex-col items-start gap-5 p-2.5">
               <div className="flex flex-col items-start gap-2.5">

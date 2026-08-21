@@ -1312,11 +1312,14 @@ html {
 
 /* Smaller desktops / laptops (<1440px) — same scale as homepage */
 @media (min-width: 768px) and (max-width: 1439.98px) {
+  .arch-drafting-lp .hero-h1,
+  .arch-drafting-lp .hero-h1 span {
+    font-size: 38px !important;
+    line-height: 1.15 !important;
+  }
   .arch-draft-lp-page h1,
   .arch-draft-lp-page h1 span,
   .arch-drafting-lp h1,
-  .arch-drafting-lp .hero-h1,
-  .arch-drafting-lp .hero-h1 span,
   .arch-drafting-tools h1,
   .arch-drafting-testimonials h1,
   .arch-drafting-contact h1,
@@ -1325,6 +1328,11 @@ html {
   .arch-drafting-want-to-know h1 {
     font-size: 54px !important;
     line-height: 1.15 !important;
+  }
+  .arch-drafting-lp .hero-visual {
+    flex: 0 0 520px;
+    width: 520px;
+    max-width: 520px;
   }
   .arch-draft-lp-page h2,
   .arch-draft-lp-page h2 span,

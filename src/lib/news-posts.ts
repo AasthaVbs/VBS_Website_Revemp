@@ -7,9 +7,21 @@ import { buildResourceCatalogLive } from "@/lib/resource-catalog";
 import type { CatalogListingItem } from "@/lib/resource-catalog-types";
 
 export async function getNewsPostBySlug(slug: string) {
-  const sanityPost = await fetchSanityPostBySlug(slug);
-  if (!sanityPost || !isNewsSanityPost(sanityPost)) return undefined;
-  return mapSanityPostToBlogDetail(sanityPost);
+  const cleanSlug = decodeURIComponent(String(slug || "")).replace(/^\/+|\/+$/g, "");
+  const sanityPost = await fetchSanityPostBySlug(cleanSlug);
+  if (!sanityPost) return undefined;
+
+  if (isNewsSanityPost(sanityPost)) {
+    return mapSanityPostToBlogDetail(sanityPost);
+  }
+
+  const catalog = await buildResourceCatalogLive();
+  const listedAsNews = catalog.byType.News.some((item) => item.id === cleanSlug);
+  if (listedAsNews) {
+    return mapSanityPostToBlogDetail(sanityPost);
+  }
+
+  return undefined;
 }
 
 export async function getAllNewsSlugs(): Promise<string[]> {

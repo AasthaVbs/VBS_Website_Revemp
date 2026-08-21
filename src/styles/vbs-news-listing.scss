@@ -1,7 +1,13 @@
 /* News listing — keep default card image height; only shorten below 1440px */
 
+.vbs-news-listing-page .news-hero-section .vbs-listing-hero__media,
+.news-hero-section .vbs-listing-hero__media {
+  aspect-ratio: 589 / 485;
+}
+
 @media (min-width: 1280px) and (max-width: 1439px) {
   .vbs-news-listing-page .resources-browse-card__media {
     height: 280px !important;
   }
 }
+

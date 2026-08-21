@@ -102,17 +102,19 @@ export async function getAllBlogSlugs(): Promise<string[]> {
 }
 
 export async function getBlogPostBySlug(slug: string): Promise<BlogPostDetail | undefined> {
-  if (fullPosts[slug]) {
-    return fullPosts[slug];
+  const cleanSlug = decodeURIComponent(String(slug || "")).replace(/^\/+|\/+$/g, "");
+
+  if (fullPosts[cleanSlug]) {
+    return fullPosts[cleanSlug];
   }
 
-  const sanityPost = await fetchSanityPostBySlug(slug);
+  const sanityPost = await fetchSanityPostBySlug(cleanSlug);
   if (sanityPost) {
     const mapped = mapSanityPostToBlogDetail(sanityPost);
     if (mapped) return mapped;
   }
 
-  const listing = (await getBlogListingItems()).find((item) => item.id === slug);
+  const listing = (await getBlogListingItems()).find((item) => item.id === cleanSlug);
   if (!listing) {
     return undefined;
   }

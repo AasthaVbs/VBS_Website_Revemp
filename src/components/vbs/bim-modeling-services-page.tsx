@@ -68,6 +68,7 @@ export async function BimModelingServicesPage() {
           section={bimModelingServicesSection}
           cards={bimModelingServiceCards}
           scrollInteraction="hover"
+          className="bim-modeling-hub-services"
         />
         <ArchitectureAiBimWorkflowSection section={bimModelingAiBimWorkflowSection} />
         <BimModelingWhyChooseSection />

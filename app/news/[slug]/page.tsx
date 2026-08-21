@@ -21,6 +21,7 @@ import { sanityPostSeo } from "@/lib/sanity-blog";
 import { fetchSanityPostBySlug } from "@/lib/sanity-fetch";
 
 export const revalidate = 60;
+export const dynamicParams = true;
 
 type PageProps = {
   params: Promise<{ slug: string }>;

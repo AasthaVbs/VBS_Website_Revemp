@@ -73,6 +73,8 @@ export const bimModelingServicesSection = {
   ctaLabel: "Start New Project",
   ctaHref: "#bim-modeling-page-contact",
   wideCards: true,
+  titleMaxWidth: 680,
+  descriptionMaxWidth: 600,
 };
 
 export const bimModelingServiceCards = [
@@ -283,6 +285,7 @@ export const bimModelingEngagementModelsSection = {
       className: "text-section text-accent font-light capitalize",
     },
   ],
+  stackTitle: false,
   description:
     "Whether you need project-based BIM support, a dedicated remote team, or a fully managed global delivery center, our engagement models are designed to scale with your business.",
   note: {

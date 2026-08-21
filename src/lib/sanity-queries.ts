@@ -38,9 +38,9 @@ export const SANITY_POST_DETAIL_PROJECTION = `{
   socialImage { asset->{ url } },
   categories[]->{ title, "slug": slug.current },
   "faqs": faqs[]{
-    "question": coalesce(@->question, *[_id == "drafts." + @._ref][0].question),
-    "answer": coalesce(@->answer, *[_id == "drafts." + @._ref][0].answer),
-    "_id": coalesce(@->_id, *[_id == "drafts." + @._ref][0]._id, @._ref)
+    "question": coalesce(@->question, question),
+    "answer": coalesce(@->answer, answer),
+    "_id": coalesce(@->_id, _id, @._ref)
   }
 }`;
 
@@ -129,7 +129,7 @@ export const SANITY_WEBINAR_BY_SLUG_QUERY = `*[_type == "webinar" && (slug.curre
 
 export const SANITY_WEBINAR_SLUGS_QUERY = `*[_type == "webinar" && defined(slug.current) && ${SANITY_PUBLISHED_ID_FILTER}]{ "slug": slug.current }`;
 
-export const SANITY_POST_BY_SLUG_QUERY = `*[_type == "post" && slug.current == $slug][0] ${SANITY_POST_DETAIL_PROJECTION}`;
+export const SANITY_POST_BY_SLUG_QUERY = `*[_type == "post" && (slug.current == $slug || slug.current == $slugWithSlash)][0] ${SANITY_POST_DETAIL_PROJECTION}`;
 
 export const SANITY_PREVIEW_BY_ID_QUERY = `*[_id in [$id, $draftId]][0] ${SANITY_POST_DETAIL_PROJECTION}`;
 

@@ -208,7 +208,9 @@ function SectionHeader({
         <span className="mep-figma-services__tag">{section.tag}</span>
         <h2
           className={cn("mep-figma-services__title", titleClassName)}
-          style={{ maxWidth: `${section.titleMaxWidth ?? 900}px` }}
+          style={{
+            maxWidth: laptopCappedMaxWidth(section.titleMaxWidth ?? 900, "title"),
+          }}
         >
           <span className={cn("mep-figma-services__title-dark", titleLine1ClassName)}>
             {section.titleLine1}

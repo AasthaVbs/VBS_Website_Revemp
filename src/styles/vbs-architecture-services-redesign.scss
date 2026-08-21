@@ -93,19 +93,18 @@
   }
 }
 
-/* Smaller laptops: 60% copy / 40% image on Architecture + MEP hubs */
-.architecture-services-page,
-.mep-bim-services-page:not(.scan-to-bim-services-page) {
+/* Smaller laptops: 1:1 copy / image on MEP hub */
+.mep-bim-services-page:not(.architecture-services-page):not(.scan-to-bim-services-page) {
   .mep-page-hero--overlay {
     @media (min-width: 1024px) and (max-width: 1439px) {
       .mep-page-hero__media {
-        width: 40% !important;
-        max-width: 40% !important;
+        width: 50% !important;
+        max-width: 50% !important;
       }
 
       .mep-page-hero__copy-wrap > div,
       .mep-page-hero__copy-inner {
-        max-width: 60% !important;
+        max-width: 50% !important;
       }
 
       h1,
@@ -114,6 +113,29 @@
         max-width: 100% !important;
       }
     }
+  }
+}
+
+/* /scan-to-bim-services — keep hero edge fades to 2px left and right */
+.scan-to-bim-services-page .mep-page-hero--overlay {
+  .mep-page-hero__media > div[aria-hidden] {
+    width: 2px !important;
+    max-width: 2px !important;
+    background: linear-gradient(
+      90deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    ) !important;
+  }
+
+  .mep-page-hero__fade-right {
+    width: 2px !important;
+    max-width: 2px !important;
+    background: linear-gradient(
+      270deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    ) !important;
   }
 }
 
@@ -194,7 +216,7 @@
       }
     }
 
-    /* Large desktops keep the current split; laptops use the shared 60/40 rule */
+    /* Large desktops keep the current split; laptops use 1:1 */
     @media (min-width: 1440px) {
       .mep-page-hero__media {
         width: min(48%, 900px) !important;
@@ -217,8 +239,8 @@
       min-height: calc(min(50vw, 730px) * 640 / 1024) !important;
 
       .mep-page-hero__media {
-        width: 40% !important;
-        max-width: 40% !important;
+        width: 50% !important;
+        max-width: 50% !important;
         height: 100% !important;
         min-height: 100% !important;
         aspect-ratio: auto !important;
@@ -232,7 +254,7 @@
       .mep-page-hero__copy-wrap {
         > div,
         .mep-page-hero__copy-inner {
-          max-width: 60% !important;
+          max-width: 50% !important;
         }
 
         h1,
@@ -256,14 +278,14 @@
       min-height: calc(min(50vw, 730px) * 640 / 1024) !important;
 
       .mep-page-hero__media {
-        width: 40% !important;
-        max-width: 40% !important;
+        width: 50% !important;
+        max-width: 50% !important;
       }
 
       .mep-page-hero__copy-wrap {
         > div,
         .mep-page-hero__copy-inner {
-          max-width: 60% !important;
+          max-width: 50% !important;
         }
 
         h1,
@@ -927,9 +949,63 @@
   margin-top: -8px;
 }
 
+.arch-svc-difference__grid {
+  position: relative;
+}
+
 .arch-svc-difference__card {
+  position: relative;
   cursor: pointer;
   transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+@media (min-width: 1024px) {
+  .arch-svc-difference__grid {
+    column-gap: 40px !important;
+    row-gap: 40px !important;
+  }
+
+  /* One horizontal rule between the two rows — fades left and right */
+  .arch-svc-difference__grid::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+    height: 1px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    background: linear-gradient(
+      to right,
+      rgba(203, 204, 205, 0) 0%,
+      rgba(203, 204, 205, 0.25) 12%,
+      #cbcccd 50%,
+      rgba(203, 204, 205, 0.25) 88%,
+      rgba(203, 204, 205, 0) 100%
+    );
+  }
+
+  /* Separate vertical rules per row — fade top and bottom, do not cross the horizontal */
+  .arch-svc-difference__card:nth-child(3n + 2)::before,
+  .arch-svc-difference__card:nth-child(3n)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -20px;
+    z-index: 1;
+    width: 1px;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      rgba(203, 204, 205, 0) 0%,
+      rgba(203, 204, 205, 0.35) 18%,
+      #cbcccd 50%,
+      rgba(203, 204, 205, 0.35) 82%,
+      rgba(203, 204, 205, 0) 100%
+    );
+  }
 }
 
 .arch-svc-difference__icon-wrap {
@@ -1220,6 +1296,25 @@
   }
 }
 
+/* /bim-modeling-services — keep “Around Your Delivery Needs” from splitting; slightly wider copy on laptops */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .bim-modeling-services-page .arch-svc-engagement {
+    .arch-svc-engagement__header {
+      max-width: 820px !important;
+    }
+
+    h2,
+    h2 span {
+      max-width: 820px !important;
+      width: min(820px, 100%) !important;
+    }
+
+    .arch-svc-engagement__section-desc {
+      max-width: 680px !important;
+    }
+  }
+}
+
 /* Engineering & Construction sub-pages — pull trusted-by strip up under compact hero */
 .mep-bim-modeling-services-page {
   main > section:first-of-type {
@@ -1253,6 +1348,31 @@
     .mep-page-hero--overlay h1,
     .mep-page-hero--overlay h1 span {
       font-size: 34px !important;
+      line-height: 1.15 !important;
+    }
+  }
+}
+
+/* /architecture-services — laptop hero title +2px */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .architecture-services-page {
+    h1,
+    h1 span,
+    .mep-page-hero--overlay h1,
+    .mep-page-hero--overlay h1 span {
+      font-size: 42px !important;
+      line-height: 1.15 !important;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .architecture-services-page {
+    h1,
+    h1 span,
+    .mep-page-hero--overlay h1,
+    .mep-page-hero--overlay h1 span {
+      font-size: 36px !important;
       line-height: 1.15 !important;
     }
   }

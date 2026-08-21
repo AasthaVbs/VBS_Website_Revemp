@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import "@/styles/vbs-laptop-heading-scale.scss";
 import "@/styles/vbs-cad-drafting-services-usa.scss";
 import "@/styles/vbs-landing-home-type.scss";
+import "@/styles/vbs-landing-hero-laptop.scss";
 
 /** Redesign landings (Tailwind / MEP shell) — keep CSS free of Bootstrap reboot. */
 export default function LandingRedesignLayout({ children }: { children: ReactNode }) {

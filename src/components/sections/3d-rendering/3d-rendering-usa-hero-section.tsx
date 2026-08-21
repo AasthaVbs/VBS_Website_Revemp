@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { shouldUnoptimizeImage } from "@/lib/utils";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
@@ -46,7 +47,7 @@ export function ThreeDRenderingUsaHeroSection({
               alt={content.imageAlt}
               fill
               priority
-              unoptimized={typeof content.image === "string"}
+              unoptimized={shouldUnoptimizeImage(content.image)}
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 650px"
             />

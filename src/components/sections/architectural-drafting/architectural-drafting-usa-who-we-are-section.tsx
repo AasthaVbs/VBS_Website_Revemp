@@ -10,7 +10,7 @@ import {
   architecturalDraftingUsaWhoWeAreItems,
   architecturalDraftingUsaWhoWeAreSection,
 } from "@/constants/architectural-drafting-services-usa-content";
-import { cn } from "@/lib/utils";
+import { cn, shouldUnoptimizeImage } from "@/lib/utils";
 
 /** Figma 3910:65669 — Who We Are accordion + drafting image. */
 export function ArchitecturalDraftingUsaWhoWeAreSection({
@@ -46,7 +46,7 @@ export function ArchitecturalDraftingUsaWhoWeAreSection({
                 alt={section.imageAlt}
                 width={540}
                 height={420}
-                unoptimized={typeof section.image === "string"}
+                unoptimized={shouldUnoptimizeImage(section.image)}
                 className="block h-auto w-full object-cover"
                 sizes="(max-width: 1024px) 100vw, 540px"
               />

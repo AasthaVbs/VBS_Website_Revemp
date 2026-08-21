@@ -34,6 +34,6 @@ export const previewSanityClient: SanityClient = sanityClient.withConfig({
 
 /** Published documents only — live FAQ refresh on blog pages. */
 export const publishedSanityClient: SanityClient = sanityClient.withConfig({
-  useCdn: false,
+  useCdn: true,
   perspective: "published",
 });

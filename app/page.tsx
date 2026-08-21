@@ -7,6 +7,8 @@ const HOME_TITLE = "BIM Modeling Company | Scan to BIM & MEP BIM Services";
 const HOME_DESCRIPTION =
   "Expand project capacity with BIM modeling, MEP BIM, and Scan to BIM services. Reduce overhead, improve efficiency, and deliver projects faster.";
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: HOME_TITLE,
   description: HOME_DESCRIPTION,

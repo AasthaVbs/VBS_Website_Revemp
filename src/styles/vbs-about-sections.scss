@@ -56,7 +56,7 @@
   }
 
   @media (max-width: 767px) {
-    --vbs-about-hero-pad-top: 32px;
+    --vbs-about-hero-pad-top: 12px;
   }
 
   > section.about-hero-section:first-of-type {
@@ -78,7 +78,7 @@
     }
 
     @media (max-width: 767px) {
-      padding-top: 32px !important;
+      padding-top: 12px !important;
       padding-bottom: 16px !important;
     }
   }
@@ -109,7 +109,7 @@
 @media (max-width: 767px) {
   .vbs-redesign-page.about-section-page.vbs-about-page {
     > section.about-hero-section:first-of-type {
-      padding-top: 32px !important;
+      padding-top: 12px !important;
       padding-bottom: 16px !important;
     }
 
@@ -133,7 +133,7 @@
     }
 
     @media (max-width: 767px) {
-      padding-top: 28px !important;
+      padding-top: 12px !important;
       padding-bottom: 8px !important;
     }
   }
@@ -170,7 +170,7 @@
   .vbs-redesign-page.about-section-page.vbs-leadership-page {
     > section.leadership-hero-section.about-hero-section:first-of-type {
       margin-top: 0 !important;
-      padding-top: 28px !important;
+      padding-top: 12px !important;
       padding-bottom: 8px !important;
     }
 
@@ -232,10 +232,10 @@
   }
 
   @media (max-width: 767px) {
-    --vbs-about-hero-pad-top: 24px;
+    --vbs-about-hero-pad-top: 12px;
 
     > section.about-hero-section:first-of-type:not(.careers-hero-section):not(.leadership-hero-section) {
-      padding-top: 32px !important;
+      padding-top: 12px !important;
     }
 
     h1.text-section {
@@ -251,7 +251,7 @@
 
     .about-hero-section:not(.careers-hero-section) {
       .vbs-split-hero__row--balanced {
-        gap: 12px !important;
+        gap: 8px !important;
       }
 
       .vbs-split-hero__copy {
@@ -273,6 +273,10 @@
     }
 
     .leadership-hero-section {
+      .vbs-split-hero__row--balanced {
+        gap: 8px !important;
+      }
+
       .vbs-split-hero__copy {
         gap: 12px !important;
 

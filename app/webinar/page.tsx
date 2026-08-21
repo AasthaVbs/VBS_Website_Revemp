@@ -9,6 +9,8 @@ import {
 } from "@/lib/lazy-page-sections";
 import { buildResourceCatalogLive } from "@/lib/resource-catalog";
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: "Join our live and On Demand Webinar for Architect & Engineers",
   description:

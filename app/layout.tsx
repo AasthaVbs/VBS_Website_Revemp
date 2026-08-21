@@ -5,6 +5,7 @@ import {
   SiteTrackingNoscript,
   SiteTrackingScripts,
 } from "@/components/tracking/site-tracking-scripts";
+import { ScrollToTopOnNavigate } from "@/components/layout/scroll-to-top-on-navigate";
 import {
   GOOGLE_SITE_VERIFICATION,
   SITE_URL,
@@ -76,6 +77,7 @@ export default function RootLayout({
     <html lang="en-US" className={inter.variable} suppressHydrationWarning>
       <body className={inter.className} suppressHydrationWarning>
         <SiteTrackingNoscript />
+        <ScrollToTopOnNavigate />
         {children}
         <SiteTrackingScripts />
       </body>

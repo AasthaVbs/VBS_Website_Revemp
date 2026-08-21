@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { shouldUnoptimizeImage } from "@/lib/utils";
 import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/page-container";
@@ -49,7 +50,7 @@ export function BimResourcesSection({
                 alt={heroImageAlt}
                 fill
                 priority
-                unoptimized={typeof heroImage === "string"}
+                unoptimized={shouldUnoptimizeImage(heroImage)}
                 sizes="(max-width: 1024px) calc(100vw - 24px), 1010px"
                 className="object-cover object-center"
               />

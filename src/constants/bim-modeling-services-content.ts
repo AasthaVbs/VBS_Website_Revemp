@@ -74,7 +74,7 @@ export const bimModelingServicesSection = {
   ctaHref: "#bim-modeling-page-contact",
   wideCards: true,
   titleMaxWidth: 680,
-  descriptionMaxWidth: 600,
+  descriptionMaxWidth: 650,
 };
 
 export const bimModelingServiceCards = [
@@ -370,7 +370,7 @@ export const bimModelingAdvantagesSection = {
   titleLine1: "Top Advantages to Choose\n",
   titleLine2: "BIM Modeling Services",
   titleMaxWidth: 746,
-  descriptionMaxWidth: 880,
+  descriptionMaxWidth: 930,
   description:
     "Use Revit BIM Services to lower project risks, enhance collaboration and ease delivery from design to construction.",
   ctaLabel: "Contact Now",

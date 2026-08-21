@@ -365,6 +365,20 @@
   }
 }
 
+@media (max-width: 1023px) {
+  .hyatt-overview__copy {
+    order: 1;
+  }
+
+  .hyatt-overview__meta {
+    order: 2;
+  }
+
+  .hyatt-overview__media {
+    order: 3;
+  }
+}
+
 @media (max-width: 899px) {
   .hyatt-hero,
   .hyatt-hero__inner {

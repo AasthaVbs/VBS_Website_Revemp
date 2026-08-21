@@ -5,7 +5,7 @@ import Image from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { cadDraftingUsaHero } from "@/constants/cad-drafting-services-usa-content";
-import { cn } from "@/lib/utils";
+import { cn, shouldUnoptimizeImage } from "@/lib/utils";
 
 export type CadDraftingUsaHeroContent = {
   titleLead: string;
@@ -98,7 +98,7 @@ export function CadDraftingUsaHeroSection({
               alt={hero.imageAlt}
               fill
               priority
-              unoptimized={typeof hero.image === "string"}
+              unoptimized={shouldUnoptimizeImage(hero.image)}
               className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 650px"
             />

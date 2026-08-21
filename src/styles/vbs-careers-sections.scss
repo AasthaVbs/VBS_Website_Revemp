@@ -94,16 +94,16 @@
 /* Mobile — tighter hero heading spacing */
 @media (max-width: 767px) {
   .vbs-redesign-page .careers-section-page {
-    --vbs-about-hero-pad-top: 32px;
+    --vbs-about-hero-pad-top: 12px;
     --vbs-about-section-gap: 40px;
 
     > section:first-of-type {
-      padding-top: 32px !important;
+      padding-top: 12px !important;
       padding-bottom: 0 !important;
     }
 
     > section.careers-hero-section:first-of-type {
-      padding-top: 32px !important;
+      padding-top: 12px !important;
       padding-bottom: 48px !important;
     }
 
@@ -134,7 +134,7 @@
 
     .careers-hero-section {
       .vbs-split-hero__row--balanced {
-        gap: 12px !important;
+        gap: 8px !important;
       }
 
       .vbs-split-hero__copy {
@@ -478,7 +478,7 @@
 
 @media (max-width: 767px) {
   .vbs-redesign-page .about-section-page.careers-section-page > section.vbs-careers-hero.careers-hero-section {
-    padding-top: 32px !important;
+    padding-top: 12px !important;
     padding-bottom: 48px !important;
   }
 

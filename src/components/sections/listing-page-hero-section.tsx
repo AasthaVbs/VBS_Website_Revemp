@@ -5,7 +5,7 @@ import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
 import { PrimaryCtaButton } from "@/components/ui/primary-cta-button";
 import { ROUTES } from "@/constants/navigation";
-import { cn } from "@/lib/utils";
+import { cn, shouldUnoptimizeImage } from "@/lib/utils";
 
 import "@/styles/vbs-listing-hero-spacing.scss";
 
@@ -91,7 +91,7 @@ export function ListingPageHeroSection({
               src={image}
               alt={imageAlt}
               fill
-              unoptimized={typeof image === "string"}
+              unoptimized={shouldUnoptimizeImage(image)}
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 589px"
               priority

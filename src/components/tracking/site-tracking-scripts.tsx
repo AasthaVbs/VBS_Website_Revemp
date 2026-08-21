@@ -15,6 +15,7 @@ import {
   LINKEDIN_INSIGHT_PARTNER_ID,
   LOCAL_BUSINESS_SCHEMA,
   MOUSEFLOW_SCRIPT,
+  ORGANIZATION_SCHEMA,
   PAGESENSE_SCRIPT_SRC,
   WEBSITE_SCHEMA,
   ZOHO_SALESIQ_BOOTSTRAP,
@@ -90,6 +91,10 @@ export function SiteTrackingScripts() {
       </Script>
 
       {/* JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }}

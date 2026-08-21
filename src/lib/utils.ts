@@ -30,3 +30,15 @@ export function altFromImageSrc(src: string | { src: string }): string {
     .replace(/_[a-f0-9]{6,}$/i, "");
   return withoutHash || "image";
 }
+
+/** Only skip Next.js image optimization for SVG / data / blob URLs. */
+export function shouldUnoptimizeImage(src: unknown): boolean {
+  if (typeof src !== "string") return false;
+  const value = src.trim().toLowerCase();
+  return (
+    value.startsWith("data:") ||
+    value.startsWith("blob:") ||
+    value.endsWith(".svg") ||
+    value.includes(".svg?")
+  );
+}

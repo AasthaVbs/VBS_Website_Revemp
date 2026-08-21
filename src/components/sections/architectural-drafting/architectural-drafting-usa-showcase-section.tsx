@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { shouldUnoptimizeImage } from "@/lib/utils";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
@@ -49,7 +50,7 @@ export function ArchitecturalDraftingUsaShowcaseSection({
                   src={project.image}
                   alt={`${project.title} — ${project.location}`}
                   fill
-                  unoptimized={typeof project.image === "string"}
+                  unoptimized={shouldUnoptimizeImage(project.image)}
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 420px"
                 />

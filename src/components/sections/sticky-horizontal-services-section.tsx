@@ -10,7 +10,7 @@ import { useMobileLayout } from "@/hooks/useMobileLayout";
 import { useShortLaptopLayout } from "@/hooks/useShortLaptopLayout";
 import { useStickyHoverWheelBridge } from "@/hooks/useStickyHoverWheelBridge";
 import { useStickyServicesCarousel } from "@/hooks/useStickyServicesCarousel";
-import { cn, laptopCappedMaxWidth } from "@/lib/utils";
+import { cn, laptopCappedMaxWidth, shouldUnoptimizeImage } from "@/lib/utils";
 
 export type StickyServicesImageCrop = {
   width: number;
@@ -90,7 +90,7 @@ function LodInfoCard({ card, isActive }: { card: StickyServicesCard; isActive: b
           src={card.image}
           alt={card.title}
           fill
-          unoptimized={card.image.startsWith("/image/")}
+          unoptimized={shouldUnoptimizeImage(card.image)}
           className="object-cover object-center"
           sizes="460px"
         />

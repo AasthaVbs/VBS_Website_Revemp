@@ -17,13 +17,17 @@
     .mep-figma-why-choose__icon-wrap {
       width: 65px !important;
       height: 65px !important;
+      overflow: visible !important;
+      background: transparent !important;
     }
 
     .mep-figma-why-choose__icon {
-      width: 47px !important;
-      height: 47px !important;
-      max-width: 47px !important;
-      max-height: 47px !important;
+      width: 56px !important;
+      height: 56px !important;
+      max-width: 56px !important;
+      max-height: 56px !important;
+      object-fit: contain !important;
+      filter: none !important;
     }
   }
 
@@ -89,17 +93,17 @@
   }
 
   .abs-usa-hero__copy {
-    flex: 1 1 55% !important;
-    width: 55% !important;
-    max-width: 55% !important;
+    flex: 1 1 48% !important;
+    width: 48% !important;
+    max-width: 48% !important;
     min-width: 0 !important;
     margin-top: -20px !important;
   }
 
   .abs-usa-hero__media {
-    flex: 0 1 45% !important;
-    width: 45% !important;
-    max-width: 45% !important;
+    flex: 0 1 52% !important;
+    width: 52% !important;
+    max-width: 52% !important;
     min-width: 0 !important;
     align-self: flex-start;
   }
@@ -107,7 +111,7 @@
 
 @media (min-width: 1280px) {
   .abs-usa-hero__row {
-    gap: 56px !important;
+    gap: 40px !important;
   }
 }
 
@@ -233,6 +237,14 @@
 
   .architectural-bim-services-usa-page .abs-usa-overview__card {
     padding: 20px !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
+    border: none !important;
+  }
+
+  .architectural-bim-services-usa-page .abs-usa-overview__card h3 {
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    line-height: normal !important;
   }
 }
 
@@ -245,6 +257,30 @@
 
 .architectural-bim-services-usa-page .vbs-client-success-stories {
   background: #fafafa;
+}
+
+.architectural-bim-services-usa-page .abs-usa-overview__card {
+  padding: 20px !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
+  border: none !important;
+}
+
+.architectural-bim-services-usa-page .abs-usa-overview__card h3 {
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+}
+
+.architectural-bim-services-usa-page .abs-usa-overview__desc {
+  max-width: 771px !important;
+}
+
+.architectural-bim-services-usa-page
+  .vbs-client-success-stories__card[data-story-id="pmpc"]
+  .vbs-client-success-stories__media
+  img {
+  inset: 4% !important;
+  object-fit: contain !important;
 }
 
 #abs-usa-contact {
@@ -299,15 +335,15 @@
   }
 
   @media (min-width: 1024px) {
-    padding: 28px 22px;
+    padding: 24px 16px;
   }
 
   @media (min-width: 1280px) {
-    padding: 40px 36px;
+    padding: 32px 22px;
   }
 
   @media (min-width: 1440px) {
-    padding: 48px 44px;
+    padding: 36px 24px;
   }
 
   .acs-inquiry-zoho-hero {
@@ -422,6 +458,10 @@
 .architectural-bim-services-usa-page.vbs-redesign-page .abs-usa-services__card h3 {
   font-size: 22px !important;
   line-height: 1.3 !important;
+}
+
+.architectural-bim-services-usa-page .abs-usa-services__card img {
+  filter: none;
 }
 
 /* Case studies — match /landing/professional-architectural-drafting-services */

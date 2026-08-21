@@ -98,6 +98,11 @@ const nextConfig: NextConfig = {
       process.env.NEXT_PUBLIC_PUBLIC_KEY_WEBINAR || process.env.PUBLIC_KEY_WEBINAR || "",
   },
   transpilePackages: ["mapbox-gl"],
+  poweredByHeader: false,
+  compress: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error"] } : false,
+  },
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
@@ -110,6 +115,7 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     unoptimized: process.env.NODE_ENV === "development",
+    minimumCacheTTL: 60 * 60 * 24 * 30,
     remotePatterns: [
       { protocol: "https", hostname: "cdn.sanity.io", pathname: "/**" },
       { protocol: "https", hostname: "img.youtube.com", pathname: "/**" },

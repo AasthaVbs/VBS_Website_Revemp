@@ -81,6 +81,22 @@ window.clarity("consentv2",{ad_storage:"granted",analytics_storage:"granted"});
   y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");`;
 
+export const ORGANIZATION_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Virtual Building Studio Inc",
+  alternateName: "Virtual Building Studio Inc",
+  url: SITE_URL,
+  logo: `${SITE_URL}/vbs-logo.svg`,
+  sameAs: [
+    "https://www.facebook.com/virtualbuildingstudio/",
+    "https://x.com/vbsglobal",
+    "https://www.instagram.com/virtualbuildingstudios/",
+    "https://www.youtube.com/channel/UCCNVUKdB5rncH-J1E-8xcoA",
+    "https://www.linkedin.com/company/virtual-building-studio-inc/",
+  ],
+} as const;
+
 export const LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",

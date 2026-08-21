@@ -6,7 +6,7 @@ import { PageContainer } from "@/components/layout/page-container";
 import { TestimonialVideoModal } from "@/components/sections/testimonial-video-modal";
 import { BookMeetingButton } from "@/components/ui/book-meeting-button";
 import { cadDraftingUsaTestimonial } from "@/constants/cad-drafting-services-usa-content";
-import { cn } from "@/lib/utils";
+import { cn, shouldUnoptimizeImage } from "@/lib/utils";
 
 const videoFillIcon = "/image/video-fill-icon.svg";
 
@@ -68,7 +68,7 @@ export function CadDraftingUsaTestimonialSection({
               alt={content.imageAlt}
               fill
               className="object-cover"
-              unoptimized={typeof content.image === "string"}
+              unoptimized={shouldUnoptimizeImage(content.image)}
               sizes="(max-width: 1024px) 100vw, 690px"
             />
             <span

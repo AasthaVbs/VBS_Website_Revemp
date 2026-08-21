@@ -129,6 +129,7 @@
 
   .lv-case-overview__row {
     display: flex;
+    flex-direction: row-reverse;
     align-items: stretch;
     gap: 32px;
   }
@@ -934,12 +935,20 @@
       max-width: none;
     }
 
+    .lv-case-overview__content {
+      order: 1;
+    }
+
     .lv-case-hero__media,
     .lv-case-overview__media {
       flex: none;
       width: 100%;
       max-width: 100%;
       aspect-ratio: 16 / 11;
+    }
+
+    .lv-case-overview__media {
+      order: 2;
     }
 
     .lv-case-overview__media img {

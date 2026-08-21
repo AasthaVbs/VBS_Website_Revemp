@@ -3,7 +3,7 @@ import Image, { type StaticImageData } from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { bimModelingIntro } from "@/constants/bim-modeling-services-content";
-import { altFromImageSrc, cn, laptopCappedMaxWidth } from "@/lib/utils";
+import { altFromImageSrc, cn, laptopCappedMaxWidth, shouldUnoptimizeImage } from "@/lib/utils";
 
 type BimModelingIntroContent = {
   tag: string;
@@ -72,18 +72,18 @@ export function BimModelingOverviewSection({
         </div>
 
         <div className="flex w-full flex-col items-stretch gap-8 lg:flex-row lg:items-stretch lg:gap-10">
-          <div className="relative min-h-[320px] w-full overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)] lg:min-h-[670px] lg:flex-1">
+          <div className="relative order-2 min-h-[320px] w-full overflow-hidden rounded-[10px] bg-[#F4F4F4] shadow-[0_0_16.8px_rgba(0,0,0,0.15)] lg:order-none lg:min-h-[670px] lg:flex-1">
             <Image
               src={mainImage}
               alt={imageAlt ?? altFromImageSrc(mainImage)}
               fill
-              unoptimized={typeof mainImage === "string"}
+              unoptimized={shouldUnoptimizeImage(mainImage)}
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
 
-          <div className="flex w-full flex-col justify-between gap-8 lg:flex-1">
+          <div className="order-1 flex w-full flex-col justify-between gap-8 lg:order-none lg:flex-1">
             <p className="text-[16px] font-normal leading-6 text-[#808080]">{sideDescription}</p>
 
             <div className="flex w-full flex-col items-start gap-6 rounded-[10px] bg-white p-5 shadow-[0_0_20px_rgba(0,0,0,0.20)]">

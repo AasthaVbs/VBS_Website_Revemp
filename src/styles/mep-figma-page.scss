@@ -141,6 +141,11 @@
     .mep-figma-overview__frame {
       width: 100% !important;
       max-width: 100% !important;
+      order: 2;
+    }
+
+    .mep-figma-overview__content {
+      order: 1;
     }
 
     .mep-figma-overview__layout {
@@ -1084,7 +1089,7 @@
 
       .mep-figma-services__section-desc,
       .mep-figma-services__intro .mep-figma-services__section-desc {
-        max-width: 600px !important;
+        max-width: 650px !important;
       }
     }
 
@@ -1138,7 +1143,7 @@
 
   .mep-figma-services__section-desc,
   .mep-figma-services__intro .mep-figma-services__section-desc {
-    max-width: 600px !important;
+    max-width: 650px !important;
   }
 }
 
@@ -3770,6 +3775,19 @@
     }
   }
 
+  /* /mep-bim-services — 10px gap above the hero image */
+  &:not(.architecture-services-page):not(.scan-to-bim-services-page) {
+    .mep-page-hero--overlay .mep-page-hero__media {
+      @media (min-width: 1024px) {
+        top: 10px !important;
+      }
+    }
+
+    .mep-page-hero__media-mobile {
+      margin-top: 10px !important;
+    }
+  }
+
   .mep-page-hero__photo {
     display: block;
     width: 100%;
@@ -5585,12 +5603,22 @@
 
 /* ── Scan to BIM — hero copy width + overview Figma 1983-19121 ── */
 .scan-to-bim-services-page {
+  main > .vbs-mep-stats-strip {
+    margin-top: 0 !important;
+    padding-top: 40px !important;
+  }
+
+  .vbs-mep-stats-strip .vbs-home-hero-trust {
+    padding-top: 0 !important;
+  }
+
   main > .vbs-mep-stats-strip + section.mep-figma-overview--scan-to-bim {
-    padding-top: 72px !important;
+    padding-top: 40px !important;
+    padding-bottom: 32px !important;
   }
 
   main > .mep-figma-overview--scan-to-bim + .mep-figma-what-you-get {
-    padding-top: 8px !important;
+    padding-top: 24px !important;
   }
 
   .mep-page-hero--overlay {
@@ -5607,7 +5635,7 @@
   }
 
   .mep-figma-overview--scan-to-bim {
-    padding-bottom: 0 !important;
+    padding-bottom: 32px !important;
 
     .mep-figma-overview__layout {
       gap: 24px !important;
@@ -5692,16 +5720,22 @@
   }
 
   @media (max-width: 767px) {
+    main > .vbs-mep-stats-strip {
+      padding-top: 28px !important;
+      margin-top: 0 !important;
+    }
+
     main > .vbs-mep-stats-strip + section.mep-figma-overview--scan-to-bim {
-      padding-top: 56px !important;
+      padding-top: 32px !important;
+      padding-bottom: 24px !important;
     }
 
     .mep-figma-overview--scan-to-bim {
-      padding-bottom: 0 !important;
+      padding-bottom: 24px !important;
     }
 
     main > .mep-figma-overview--scan-to-bim + .mep-figma-what-you-get {
-      padding-top: 8px !important;
+      padding-top: 20px !important;
     }
   }
 

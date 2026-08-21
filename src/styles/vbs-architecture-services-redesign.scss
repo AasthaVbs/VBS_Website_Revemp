@@ -1315,6 +1315,22 @@
   }
 }
 
+/* /bim-modeling-services — Workflow + Advantages copy a bit wider; Tools title tighter */
+.bim-modeling-services-page {
+  .arch-svc-workflow__header > p {
+    max-width: 722px !important;
+  }
+
+  .mep-figma-benefits__section-desc {
+    max-width: 930px !important;
+  }
+
+  .bim-modeling-tools-platforms .mep-section-heading {
+    max-width: 680px !important;
+    width: min(680px, 100%) !important;
+  }
+}
+
 /* Engineering & Construction sub-pages — pull trusted-by strip up under compact hero */
 .mep-bim-modeling-services-page {
   main > section:first-of-type {

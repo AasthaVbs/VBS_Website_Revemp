@@ -70,19 +70,27 @@ export async function BimModelingServicesPage() {
           scrollInteraction="hover"
           className="bim-modeling-hub-services"
         />
-        <ArchitectureAiBimWorkflowSection section={bimModelingAiBimWorkflowSection} />
+        <ArchitectureAiBimWorkflowSection
+          section={{
+            ...bimModelingAiBimWorkflowSection,
+            descriptionMaxWidth: 730,
+          }}
+        />
         <BimModelingWhyChooseSection />
         <ArchitectureIntegrateWorkflowSection
           section={bimModelingWorkflowIntegrateSection}
           steps={bimModelingWorkflowIntegrateSteps}
           headerAlign="center"
+          descriptionMaxWidth={722}
         />
         <MepBimTechnologyStackSection
           section={bimModelingTechnologyStackSection}
           toolsRowOne={bimModelingTechnologyStackToolsRowOne}
           toolsRowTwo={bimModelingTechnologyStackToolsRowTwo}
           titleLayout="inline"
+          titleMaxWidth={680}
           descriptionMaxWidth={539}
+          className="bim-modeling-tools-platforms"
         />
         <DeferredMepServiceBenefitsSection
           id="advantages"

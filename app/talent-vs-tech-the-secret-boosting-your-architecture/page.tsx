@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 
 import { TalentVsTechWebinarView } from "@/components/sections/webinar/talent-vs-tech-webinar-view";
+import { NOINDEX_NOFOLLOW_ROBOTS } from "@/constants/site-robots";
 
 export const metadata: Metadata = {
   title:
     "Webinar - Talent vs. Tech—What’s the Secret to Boosting Your Architecture Practice",
   description:
     "Discover how top talent and tech like VBS’s Virtual Studio & BidLight’s BIM automation can boost your architecture firm. Join the exclusive webinar now!",
+  robots: NOINDEX_NOFOLLOW_ROBOTS,
 };
 
 export default function TalentVsTechWebinarPage() {

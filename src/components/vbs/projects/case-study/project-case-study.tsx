@@ -281,9 +281,6 @@ export function ProjectCaseStudy({
       <section className="lv-case-overview">
         <PageContainer>
           <div className="lv-case-overview__row">
-            <div className="lv-case-overview__media">
-              <img src={overview.image} alt={overview.imageAlt} />
-            </div>
             <div className="lv-case-overview__content">
               <div className="lv-case-overview__heading">
                 <MepSectionTag label="Overview" />
@@ -307,6 +304,9 @@ export function ProjectCaseStudy({
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="lv-case-overview__media">
+              <img src={overview.image} alt={overview.imageAlt} />
             </div>
           </div>
         </PageContainer>

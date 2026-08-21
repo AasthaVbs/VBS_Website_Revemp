@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { shouldUnoptimizeImage } from "@/lib/utils";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
@@ -46,7 +47,7 @@ export function ArchitecturalDraftingUsaHeroSection({
                 alt={content.formBgAlt}
                 fill
                 priority
-                unoptimized={typeof content.formBg === "string"}
+                unoptimized={shouldUnoptimizeImage(content.formBg)}
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover object-center"
               />

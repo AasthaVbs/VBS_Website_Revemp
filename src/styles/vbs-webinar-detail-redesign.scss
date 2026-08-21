@@ -339,8 +339,17 @@ html:has(.vbs-webinar-detail-page) body {
   &__iframe-wrap {
     display: flex;
     width: 100%;
+    min-width: 0;
     flex-direction: column;
     gap: 12px;
+
+    .vbs-get-in-touch__tabs {
+      padding-left: 0;
+    }
+
+    .vbs-get-in-touch__panel {
+      min-width: 0;
+    }
   }
 
   &__iframe {

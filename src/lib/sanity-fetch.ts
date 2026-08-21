@@ -1,3 +1,5 @@
+import { unstable_cache } from "next/cache";
+
 import { hasSanityCredentials } from "@/lib/sanity-env";
 import { previewSanityClient, publishedSanityClient, publicSanityClient } from "@/lib/sanity-client";
 import {
@@ -29,25 +31,42 @@ function slugQueryParams(slug: string) {
   return { slug: cleanSlug, slugWithSlash: `${cleanSlug}/` };
 }
 
-/** Published content: token client when available, otherwise public CDN (no token required). */
+const SANITY_FETCH_TIMEOUT_MS = 2500;
+
+async function withTimeout<T>(promise: Promise<T>, ms = SANITY_FETCH_TIMEOUT_MS): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    return await Promise.race([
+      promise,
+      new Promise<never>((_, reject) => {
+        timer = setTimeout(() => reject(new Error(`Sanity fetch timed out after ${ms}ms`)), ms);
+      }),
+    ]);
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
+/** Published content: public CDN first (fast), token client as fallback. */
 async function fetchPublishedContent<T>(
   query: string,
   params: Record<string, unknown> = {},
 ): Promise<T | null> {
+  try {
+    return await withTimeout(publicSanityClient.fetch<T>(query, params));
+  } catch (error) {
+    console.error("[sanity] public fetch failed, trying token client:", error);
+  }
+
   if (hasSanityCredentials()) {
     try {
-      return await publishedSanityClient.fetch<T>(query, params);
+      return await withTimeout(publishedSanityClient.fetch<T>(query, params));
     } catch (error) {
-      console.error("[sanity] token fetch failed, falling back to public CDN:", error);
+      console.error("[sanity] token fetch failed:", error);
     }
   }
 
-  try {
-    return await publicSanityClient.fetch<T>(query, params);
-  } catch (error) {
-    console.error("[sanity] public fetch failed:", error);
-    return null;
-  }
+  return null;
 }
 
 async function fetchPublishedListing<T>(query: string): Promise<T | null> {
@@ -66,7 +85,7 @@ function snapshotListing(): SanityListingSnapshot {
 }
 
 /** Posts + webinars for resource listings — published Sanity only, JSON snapshot fallback. */
-export async function fetchSanityResourceListing(): Promise<SanityListingSnapshot> {
+async function fetchSanityResourceListingUncached(): Promise<SanityListingSnapshot> {
   const [posts, webinars] = await Promise.all([
     fetchPublishedListing<SanitySnapshotPost[]>(SANITY_POST_LISTING_QUERY),
     fetchPublishedListing<SanitySnapshotWebinar[]>(SANITY_WEBINAR_LISTING_QUERY),
@@ -79,6 +98,12 @@ export async function fetchSanityResourceListing(): Promise<SanityListingSnapsho
     webinars: webinars?.length ? webinars : fallback.webinars,
   };
 }
+
+export const fetchSanityResourceListing = unstable_cache(
+  fetchSanityResourceListingUncached,
+  ["sanity-resource-listing"],
+  { revalidate: 60 },
+);
 
 export async function fetchSanityPostBySlug(slug: string): Promise<SanityPostRecord | null> {
   return fetchPublishedContent<SanityPostRecord | null>(SANITY_POST_BY_SLUG_QUERY, slugQueryParams(slug));

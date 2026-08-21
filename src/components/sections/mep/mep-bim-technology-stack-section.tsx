@@ -18,6 +18,7 @@ export function MepBimTechnologyStackSection({
   titleLayout = "stacked",
   descriptionMaxWidth = 591,
   titleMaxWidth = 798,
+  className,
 }: {
   section?: {
     tag: string;
@@ -30,11 +31,12 @@ export function MepBimTechnologyStackSection({
   titleLayout?: "stacked" | "inline";
   descriptionMaxWidth?: number;
   titleMaxWidth?: number;
+  className?: string;
 } = {}) {
   const { tag, titleLine1, titleAccent, description } = section;
 
   return (
-    <section className="overflow-hidden bg-white py-12 sm:py-16 lg:py-[100px]">
+    <section className={cn("overflow-hidden bg-white py-12 sm:py-16 lg:py-[100px]", className)}>
       <PageContainer className="flex flex-col items-center gap-10 lg:gap-[60px]">
         <div className="flex w-full max-w-[1400px] flex-col items-start gap-5">
           <div

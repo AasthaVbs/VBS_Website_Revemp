@@ -6,7 +6,7 @@ import { PageContainer } from "@/components/layout/page-container";
 import { MepSectionTag } from "@/components/sections/mep/mep-section-tag";
 import { TestimonialVideoModal } from "@/components/sections/testimonial-video-modal";
 import { architectureAiBimWorkflowSection } from "@/constants/architecture-services-content";
-import { altFromImageSrc } from "@/lib/utils";
+import { altFromImageSrc, shouldUnoptimizeImage } from "@/lib/utils";
 
 const videoFillIcon = "/image/video-fill-icon.svg";
 
@@ -19,6 +19,7 @@ type AiBimWorkflowSectionContent = typeof architectureAiBimWorkflowSection & {
   videoHref?: string;
   onPlay?: () => void;
   titleMaxWidth?: number;
+  descriptionMaxWidth?: number;
 };
 
 function youtubeThumbnailUrl(videoId: string) {
@@ -61,7 +62,7 @@ export function ArchitectureAiBimWorkflowSection({
           fill
           className="object-cover"
           sizes="(max-width: 1024px) 100vw, 640px"
-          unoptimized={typeof posterSrc === "string"}
+          unoptimized={shouldUnoptimizeImage(posterSrc)}
         />
       ) : (
         <div className="absolute inset-0 bg-[#1a1a1a]" aria-hidden />
@@ -101,7 +102,14 @@ export function ArchitectureAiBimWorkflowSection({
                 ))}
               </h2>
             </div>
-            <p className="w-full max-w-[680px] text-[16px] font-normal leading-6 text-[#808080]">
+            <p
+              className="w-full max-w-[680px] text-[16px] font-normal leading-6 text-[#808080]"
+              style={
+                section.descriptionMaxWidth
+                  ? { maxWidth: `${section.descriptionMaxWidth}px` }
+                  : undefined
+              }
+            >
               {section.description}
             </p>
           </div>

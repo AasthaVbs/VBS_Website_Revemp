@@ -25,3 +25,13 @@
     padding-top: 24px !important;
   }
 }
+
+@media (max-width: 767px) {
+  .vbs-listing-hero .vbs-listing-hero__copy {
+    gap: 10px !important;
+  }
+
+  .vbs-listing-hero .vbs-listing-hero__row {
+    gap: 16px !important;
+  }
+}

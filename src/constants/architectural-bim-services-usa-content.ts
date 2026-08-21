@@ -1,8 +1,8 @@
 import { benefitIconColored, benefitIconMuted } from "@/constants/benefit-icons";
 import { clientSuccessStories } from "@/constants/client-success-stories-content";
 
-/** Public `/icon` assets (filenames contain spaces/`&`, so encode for safe URLs). */
-const usaIcon = (file: string) => encodeURI(`/icon/${file}`);
+/** Service icons copied to stable filenames (no spaces or `&`). */
+const usaIcon = (file: string) => `/image/abs-usa-services/${file}`;
 const caseLogo = (file: string) => `/image/arch-drafting-lp/${file}`;
 
 export const architecturalBimUsaStatsStrip = [
@@ -57,7 +57,7 @@ export const architecturalBimUsaOverviewSection = {
   titleTrail: " for Fast, Accurate Project Delivery",
   description:
     "Virtual Building Studio provides precision-driven Architectural BIM Modeling Services tailored to the evolving needs of the AEC industry in the USA.",
-  image: "/image/architectural-bim-overview.jpg",
+  image: "/image/abs-usa-overview.jpg",
   imageAlt: "Architectural BIM modeling",
   bodyText:
     "As a trusted architectural BIM services provider, we specialize in delivering accurate, code-compliant BIM models and documentation that align with US building codes and project standards. From early-stage design to construction-ready deliverables, our top 1% vetted BIM experts empower architects to work faster, smarter, and more collaboratively.",
@@ -89,55 +89,55 @@ export const architecturalBimUsaServiceCards = [
     title: "3D Revit Modeling",
     description:
       "We build precise, data-rich architectural models in Revit that reflect design intent and construction logic from day one.",
-    icon: usaIcon("Revit Architecture Service.svg"),
+    icon: usaIcon("3d-revit-modeling.jpg"),
   },
   {
     title: "Design Development Support",
     description:
       "Our experts translate conceptual sketches into detailed, code-aligned BIM models that evolve seamlessly through the design phases.",
-    icon: usaIcon("Design Development Support.svg"),
+    icon: usaIcon("design-development-support.jpg"),
   },
   {
     title: "Presentation Models & Visualization",
     description:
       "We craft visually striking architectural 3D rendered images and walkthroughs that communicate design narratives to clients and stakeholders with clarity.",
-    icon: usaIcon("Architectural 3D Visualization.svg"),
+    icon: usaIcon("presentation-models-visualization.jpg"),
   },
   {
     title: "Construction Documentation",
     description:
       "From annotated floor plans to detailed sections, our dedicated architects generate permit-ready drawing sets directly from BIM with full standards compliance.",
-    icon: usaIcon("Project Support & Delivery.svg"),
+    icon: usaIcon("construction-documentation.jpg") + "?v=3",
   },
   {
     title: "Clash Detection & BIM Coordination",
     description:
       "We identify and resolve design conflicts early by coordinating architecture with MEP and structural systems using advanced clash-detection tools.",
-    icon: usaIcon("Clash Detection & BIM Coordination.svg"),
+    icon: usaIcon("clash-detection-bim-coordination.jpg") + "?v=3",
   },
   {
     title: "Shop Drawing Generation",
     description:
       "Our team extracts accurate shop drawings from BIM models, ensuring fabrication precision and field-ready clarity.",
-    icon: usaIcon("Shop Drawing Generation.svg"),
+    icon: usaIcon("shop-drawing-generation.jpg"),
   },
   {
     title: "Architectural Scan to BIM",
     description:
       "We convert point clouds into LOD-specific as-built architectural models that capture existing site conditions down to the millimeter.",
-    icon: usaIcon("Architectural Scan to BIM.svg"),
+    icon: usaIcon("architectural-scan-to-bim.jpg"),
   },
   {
     title: "Parametric Revit Family Creation",
     description:
       "We develop intelligent, lightweight BIM Content, Revit families with flexible parameters that enhance project performance and modeling speed.",
-    icon: usaIcon("BIM Modeling & Design.svg"),
+    icon: usaIcon("parametric-revit-family-creation.jpg") + "?v=3",
   },
   {
     title: "CAD to BIM Conversion",
     description:
       "We transform legacy 2D CAD drawings into smart BIM models, optimizing for reusability, coordination, and design accuracy.",
-    icon: usaIcon("Architectural CAD to BIM.svg"),
+    icon: usaIcon("cad-to-bim-conversion.jpg"),
   },
 ];
 
@@ -168,64 +168,64 @@ export const architecturalBimUsaAdvantagesItems = [
     title: "LOD-Based 3D Revit Modeling for Design Accuracy",
     description:
       "LOD-Based 3D Revit Modeling allows architects to manage design details progressively, improving clarity and collaboration.",
-    icon: benefitIconMuted,
-    iconHover: benefitIconColored,
+    icon: usaIcon("3d-revit-modeling.jpg"),
+    iconHover: usaIcon("3d-revit-modeling.jpg"),
   },
   {
     title: "Coordinated Design Development with BIM",
     description:
       "Design Development with BIM helps align architectural layouts with structural and MEP systems early on, reducing rework.",
-    icon: benefitIconMuted,
-    iconHover: benefitIconColored,
+    icon: usaIcon("design-development-support.jpg"),
+    iconHover: usaIcon("design-development-support.jpg"),
   },
   {
     title: "Enhanced Visualization for Stakeholder Buy-In",
     description:
       "Visualization-Ready Models offer realistic 3D views and walkthroughs, enhancing client communication and design validation.",
-    icon: benefitIconMuted,
-    iconHover: benefitIconColored,
+    icon: usaIcon("presentation-models-visualization.jpg"),
+    iconHover: usaIcon("presentation-models-visualization.jpg"),
   },
   {
     title: "Accurate Construction Documentation from Models",
     description:
       "Construction Documentation from BIM ensures that plans, sections, and elevations are consistent and automatically updated with design changes.",
-    icon: benefitIconMuted,
-    iconHover: benefitIconColored,
+    icon: usaIcon("construction-documentation.jpg") + "?v=3",
+    iconHover: usaIcon("construction-documentation.jpg") + "?v=3",
   },
   {
     title: "Proactive Clash Detection and Coordination",
     description:
       "Clash Detection and Coordination identify issues before construction begins, minimizing costly site conflicts.",
-    icon: benefitIconMuted,
-    iconHover: benefitIconColored,
+    icon: usaIcon("clash-detection-bim-coordination.jpg") + "?v=3",
+    iconHover: usaIcon("clash-detection-bim-coordination.jpg") + "?v=3",
   },
   {
     title: "Fabrication-Ready Shop Drawings",
     description:
       "BIM-derived shop drawings support precise fabrication and assembly of architectural components for smoother on-site execution.",
-    icon: benefitIconMuted,
-    iconHover: benefitIconColored,
+    icon: usaIcon("shop-drawing-generation.jpg"),
+    iconHover: usaIcon("shop-drawing-generation.jpg"),
   },
   {
     title: "Accurate As-Built Models from Point Clouds",
     description:
       "Scan to BIM services for architecture convert laser scan data into intelligent models that reflect existing conditions with high fidelity, essential for renovations and retrofits.",
-    icon: benefitIconMuted,
-    iconHover: benefitIconColored,
+    icon: usaIcon("architectural-scan-to-bim.jpg"),
+    iconHover: usaIcon("architectural-scan-to-bim.jpg"),
   },
   {
     title: "Flexible Parametric Revit Families",
     description:
       "Parametric modeling in BIM enables architects to efficiently model customizable components, improving consistency, speeding up design iterations, and reducing modeling errors.",
-    icon: benefitIconMuted,
-    iconHover: benefitIconColored,
+    icon: usaIcon("parametric-revit-family-creation.jpg") + "?v=3",
+    iconHover: usaIcon("parametric-revit-family-creation.jpg") + "?v=3",
   },
   {
     title: "Seamless CAD to BIM Transition for Legacy Projects",
     description:
       "CAD to BIM Conversion transforms legacy 2D drawings into intelligent models, modernizing project documentation for future use.",
-    icon: benefitIconMuted,
-    iconHover: benefitIconColored,
+    icon: usaIcon("cad-to-bim-conversion.jpg"),
+    iconHover: usaIcon("cad-to-bim-conversion.jpg"),
   },
 ];
 

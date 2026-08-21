@@ -10,7 +10,7 @@ import {
   architectureWhyContinueItems,
   architectureWhyContinueSection,
 } from "@/constants/architecture-services-redesign-content";
-import { altFromImageSrc, cn } from "@/lib/utils";
+import { altFromImageSrc, cn, shouldUnoptimizeImage } from "@/lib/utils";
 
 export function ArchitectureWhyContinueSection({
   section = architectureWhyContinueSection,
@@ -86,7 +86,7 @@ export function ArchitectureWhyContinueSection({
                 alt={section.imageAlt ?? altFromImageSrc(section.image)}
                 width={710}
                 height={710}
-                unoptimized={typeof section.image === "string"}
+                unoptimized={shouldUnoptimizeImage(section.image)}
                 className="arch-svc-why-continue__photo"
                 sizes="(max-width: 1280px) 100vw, 710px"
               />

@@ -8,7 +8,7 @@ import {
   cadDraftingUsaExpertiseItems,
   cadDraftingUsaExpertiseSection,
 } from "@/constants/cad-drafting-services-usa-content";
-import { cn } from "@/lib/utils";
+import { cn, shouldUnoptimizeImage } from "@/lib/utils";
 
 /** Figma 3991:48072 — Our CAD Expertise list + preview */
 export function CadDraftingUsaExpertiseSection({
@@ -80,7 +80,7 @@ export function CadDraftingUsaExpertiseSection({
                 src={activeItem.image}
                 alt={activeItem.title}
                 fill
-                unoptimized={typeof activeItem.image === "string"}
+                unoptimized={shouldUnoptimizeImage(activeItem.image)}
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 710px"
               />

@@ -15,17 +15,17 @@ html:has(.vbs-news-detail-page) body {
 .vbs-news-detail {
   background: #ffffff;
   padding-top: 36px;
-  padding-bottom: 100px;
+  padding-bottom: 40px;
   overflow: visible;
 
   @media (max-width: 1023px) {
     padding-top: 20px;
-    padding-bottom: 48px;
+    padding-bottom: 32px;
   }
 
   @media (max-width: 767px) {
     padding-top: 16px;
-    padding-bottom: 40px;
+    padding-bottom: 24px;
   }
 
   &__layout {
@@ -365,8 +365,14 @@ html:has(.vbs-news-detail-page) body {
 }
 
 .vbs-news-detail-page .vbs-related-articles {
-  @media (max-width: 767px) {
+  padding-top: 40px !important;
+
+  @media (max-width: 1023px) {
     padding-top: 32px !important;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 24px !important;
     padding-bottom: 32px !important;
   }
 }

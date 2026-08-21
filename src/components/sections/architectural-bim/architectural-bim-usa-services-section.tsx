@@ -11,14 +11,13 @@ type ServiceCard = (typeof architecturalBimUsaServiceCards)[number];
 function ServiceCardArticle({ card }: { card: ServiceCard }) {
   return (
     <article className="abs-usa-services__card flex min-w-0 flex-col items-start gap-3 rounded-[10px] border border-[#CBCCCD] bg-white p-6 transition-shadow duration-200 hover:shadow-[0_4px_15px_rgba(0,0,0,0.1)]">
-      <div className="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[10px] border border-[#CBCCCD] bg-[#FAFAFA] p-3.5">
+      <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-visible rounded-[10px] bg-white p-1">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={card.icon}
           alt=""
-          className="h-full w-full object-contain brightness-0"
+          className="h-full w-full object-contain"
           aria-hidden
-          loading="lazy"
         />
       </div>
       <div className="flex flex-col gap-2.5">

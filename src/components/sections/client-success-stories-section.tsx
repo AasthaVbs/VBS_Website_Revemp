@@ -17,7 +17,7 @@ import { laptopCappedMaxWidth } from "@/lib/utils";
 
 const CARD_SCROLL_GAP = 16;
 const PROGRESS_THUMB_WIDTH = 320;
-const AUTO_SCROLL_MS = 5000;
+const AUTO_SCROLL_MS = 3000;
 
 function ClientSuccessStoryCard({
   story,
@@ -27,7 +27,7 @@ function ClientSuccessStoryCard({
   onPlayVideo: (story: ClientSuccessStory) => void;
 }) {
   return (
-    <article className="vbs-client-success-stories__card">
+    <article className="vbs-client-success-stories__card" data-story-id={story.id}>
       <div className="vbs-client-success-stories__card-copy">
         <p className="vbs-client-success-stories__quote">{story.quote}</p>
         <div className="vbs-client-success-stories__author">
@@ -77,6 +77,7 @@ export function ClientSuccessStoriesSection({
   showViewAll = true,
   stories = clientSuccessStories,
   className,
+  autoScrollMs = AUTO_SCROLL_MS,
 }: {
   description?: string;
   viewAllHref?: string;
@@ -88,6 +89,7 @@ export function ClientSuccessStoriesSection({
   showViewAll?: boolean;
   stories?: readonly ClientSuccessStory[];
   className?: string;
+  autoScrollMs?: number;
 }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const progressTrackRef = useRef<HTMLDivElement>(null);
@@ -189,10 +191,10 @@ export function ClientSuccessStoriesSection({
       if (!isPausedRef.current) {
         scrollToNextCard();
       }
-    }, AUTO_SCROLL_MS);
+    }, autoScrollMs);
 
     return () => window.clearInterval(intervalId);
-  }, [activeVideo, scrollToNextCard]);
+  }, [activeVideo, autoScrollMs, scrollToNextCard]);
 
   const progressOffset = scrollProgress * progressMaxOffset;
 

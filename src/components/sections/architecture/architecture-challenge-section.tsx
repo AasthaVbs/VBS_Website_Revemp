@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionTag } from "@/components/sections/section-primitives";
 import { architectureChallengeSection } from "@/constants/architecture-services-redesign-content";
-import { altFromImageSrc } from "@/lib/utils";
+import { altFromImageSrc, shouldUnoptimizeImage } from "@/lib/utils";
 
 type ChallengeParagraphSegment = {
   text: string;
@@ -25,7 +25,7 @@ export function ArchitectureChallengeSection({
               alt={section.imageAlt ?? altFromImageSrc(section.image)}
               width={520}
               height={480}
-              unoptimized={typeof section.image === "string"}
+              unoptimized={shouldUnoptimizeImage(section.image)}
               className="block h-full w-full object-cover"
               sizes="(max-width: 1024px) 100vw, 520px"
             />

@@ -2,6 +2,7 @@
 
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { shouldUnoptimizeImage } from "@/lib/utils";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
@@ -186,7 +187,7 @@ export function ThreeDRenderingUsaShowcaseSection({
                     src={project.image}
                     alt={`${project.title} — ${project.category}`}
                     fill
-                    unoptimized={typeof project.image === "string"}
+                    unoptimized={shouldUnoptimizeImage(project.image)}
                     className="object-cover"
                     sizes="420px"
                   />
